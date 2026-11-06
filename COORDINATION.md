@@ -1,17 +1,46 @@
-# Coordination board
+# COORDINATION.md — Shared Task Board (merged: sessions 5cb84cd0 + ff406d61)
 
-Session: `5cb84cd0` · started 2026-11-06 UTC.
+Repo: `wingbangboozle1-lang/Jack3`. Both sessions started from README-only `0c9e609`
+without seeing each other; scopes below are non-overlapping and both are preserved.
 
-This session must use the Arena-assigned branch `arena/5cb84cd0-jack3`; separate session branches cannot be created here. No existing claims were present. This is the final integration session.
+## Session 5cb84cd0 — root-level dashboard (merged to main via PR #1)
 
-| Task | Status | Owner | File scope |
-|---|---|---|---|
-| Official-source research, privacy review, dashboard, automated validation and final integration | in progress | 5cb84cd0 | index.html, assets/, data/, scripts/, .github/, README.md, COORDINATION.md, research/ |
+File scope: `index.html`, `place.html`, `economy.html`, `tenant.html`, `risk.html`,
+`model.html`, `decisions.html`, `sources.html`, `review.html`, `assets/`, `data/`,
+`scripts/`, `.github/`, `README.md`, `research/VERIFICATION.md` — Status: done/merged.
 
-## Log
+Log (preserved verbatim):
 - 2026-11-06: Inspected initial repository: README only; no existing data, application, or competing claims. Property identity, lease, financials and exact location absent. Do not research owner identities or publish personal information.
 - Initial claim pull used the not-yet-created remote session ref and failed; rebased on origin/main instead, then successfully pushed the claim to the assigned session branch. No conflict or work loss.
 - Completed manual inspection of 11 official/primary sources, captured field-level provenance in data/evidence.json and verification notes in research/VERIFICATION.md. All government statistics and issuer figures are labeled by geography and period. Conditional analysis is not labeled verified.
 - Built nine static responsive pages with no executable third-party assets or private data. Flagged missing lease, financial, parcel, local school/traffic and hazard inputs on review.html; these are needs-review items and do not block publication. A calibrated parcel forecast is unavailable and numerical predictions remain blank.
-- Validation initially flagged the word “analytics” in the privacy disclosure; narrowed the check to actual prohibited vendor/embed patterns. Source-row, local-link, blank-value and deterministic build validation pass.
+- Validation initially flagged the word "analytics" in the privacy disclosure; narrowed the check to actual prohibited vendor/embed patterns. Source-row, local-link, blank-value and deterministic build validation pass.
 - Sources: https://www.census.gov/quickfacts/losangelescitycalifornia ; https://www.census.gov/quickfacts/losangelescountycalifornia ; https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf ; remaining official hazard, school, planning, tax, labor and issuer links are listed individually in data/evidence.json and sources.html.
+
+## Session ff406d61 — research + docs/ dashboard (branch arena/ff406d61-jack3, PR #2)
+
+| # | Task | Status | Owner | Files / Scope | Sources / Verification | Irregularities |
+|---|------|--------|-------|---------------|------------------------|----------------|
+| T1 | Coordination board + repo review | done | ff406d61 | `COORDINATION.md` (merged section only) | Repo review at start; other session discovered at merge time | None |
+| T2 | Research: geography, demographics, income (Census) | done | ff406d61 | `research/demographics.md` | Census QuickFacts (all 4 chunks fetched) + LA EWDD/DOF report; line-by-line links | F1, F2 flagged |
+| T3 | Research: employment, job growth, economy (BLS/BEA/EDD/Fed) | done | ff406d61 | `research/economy.md` | EDD Sept-2026 PDF, BEA/FRED, BLS CPI, Fed FOMC statement (fetched), DIR AB1228, LA28/IPC | F3, F4 flagged |
+| T4 | Research: schools (CDE/LAUSD) | done | ff406d61 | `research/schools.md` | CA School Dashboard graduation 2019–2025; Census attainment | F5, F6 flagged |
+| T5 | Research: Jack in the Box corporate + NNN lease (SEC 10-K) | done | ff406d61 | `research/corporate-lease.md` | FY2025 10-K (Item 1 + financials fetched) + official IR release 4/23/2025 | F7, F8, F9 flagged |
+| T6 | Research: risks incl. black swan (USGS/CalFire/FEMA/NOAA) | done | ff406d61 | `research/risks.md` | USGS UCERF3 + Jan-2025 fires, CRS IF12871, LA County 2025 AHMP + Board docs | F10, F11, F12 flagged |
+| T7 | Research: decision analysis sell vs renew + projections | done | ff406d61 | `research/decision.md` | Framework from verified inputs only; numeric answer blocked on F4/F7–F9/F11 | See flagged |
+| T8 | Site build: landing + subpages + tables + flagged page | done | ff406d61 | `docs/**` | 10 pages + CSS; every row sourced; internal-link check passed, 0 broken | None |
+| T9 | Final integration: merge, re-verify, links check, Pages deploy | in progress | ff406d61 | COORDINATION.md, PR | Re-verified: all values trace to research/*.md official links | None |
+
+Claims log:
+- 2026-11-06 ff406d61: Claimed T1–T9; no other sessions visible at claim time.
+
+## Handoffs / Conflicts
+- 2026-11-06 ff406d61: PR #2 merge blocked — session 5cb84cd0 had merged PR #1 into main
+  in parallel. Resolved by merging origin/main into arena/ff406d61-jack3; only
+  COORDINATION.md conflicted (add/add) and was combined with 5cb84cd0's log preserved
+  verbatim. No work from either session discarded. Request logged (not edited):
+  consider cross-linking root dashboard (index.html) and docs/ dashboard for visitors.
+
+## PR / Merge Record
+- PR #1 (5cb84cd0 → main): merged (a47bf0d).
+- PR #2 (ff406d61 → main): pending re-merge after integration.
