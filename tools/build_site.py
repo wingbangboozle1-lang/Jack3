@@ -316,7 +316,7 @@ def build_decision():
 
     <section>
       <h2>Recommended sequence</h2>
-      <p class="lede">These five steps are ordered. Each one is conditional on the outcome of the one before it,
+      <p class="lede">These six steps are ordered. Each one is conditional on the outcome of the one before it,
       and the first two should happen immediately regardless of what is decided about the exit.</p>
       <div class="steps">{steps}</div>
     </section>

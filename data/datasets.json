@@ -1336,6 +1336,15 @@
      "source": "S17",
      "status": "verified",
      "note": "Computed: the step from 4% to 5.5% on $10,900,000 = $163,500."
+    },
+    {
+     "metric": "Net proceeds from a cash sale, base case ($6,500,000 asset, 40% basis)",
+     "value": 4826838,
+     "unit": "USD",
+     "period": "model output",
+     "source": "S17",
+     "status": "verified",
+     "note": "Model output, not an observation. Comprises $6,500,000 less 4.0% selling costs (A09), county and city transfer tax plus Measure ULA (S16, S17), and 33.4% tax on the resulting gain (A11). The 25.74% haircut against asset value is arithmetic. Reproduce with tools/model.py."
     }
    ]
   },

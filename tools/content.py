@@ -76,9 +76,11 @@ KEY_FINDINGS = [
             "or <strong>6.06%</strong> above $10.9 million because ULA is a cliff applied to the whole "
             "price (S16, S17). Stack a blended <strong>33.4%</strong> capital gains rate on the gain and an "
             "outright sale surrenders roughly a third of all accumulated appreciation. A &#167;1031 "
-            "exchange defers that entire amount (S18). In the model the terminal-wealth gap between selling for cash and "
-            "renewing into a deferred exit is about <strong>$7.6 million</strong> on a $6.5 million base "
-            "case &#8212; more than an extra asset's worth of wealth."
+            "exchange defers that entire amount (S18). Stack that on selling costs and the arithmetic is brutal: on a $6.5 million "
+            "asset with a 40% basis, a cash sale delivers <strong>$4.83 million</strong> of net proceeds "
+            "&#8212; a 25.7% haircut taken before a dollar is reinvested. The same-day &#167;1031 "
+            "exchange of the identical asset delivers <strong>$5.94 million</strong>. Nothing about the "
+            "property changed between those two figures; only the structure did."
         ),
         "flag": None,
     },
@@ -131,57 +133,72 @@ DECISION_MATRIX_INTRO = (
 RECOMMENDATION_STEPS = [
     {
         "step": "1",
-        "title": "Do not sell for cash. Ever, in this fact pattern.",
+        "title": "Do not sell for cash. In this fact pattern it is dominated.",
         "body": (
-            "The outright cash sale ranks last or near-last on every risk-adjusted measure computed. "
-            "It is dominated by a &#167;1031 exchange of the same asset on the same day, because the only "
-            "difference between the two is the tax bill: roughly <strong>$1.12 million</strong> on a $6.5 "
-            "million asset with a 40% basis, which is about <strong>17% of asset value</strong> destroyed "
-            "for no economic reason. If a sale happens, it must be structured."
+            "On a $6.5 million asset with a 40% adjusted basis, a cash sale nets about "
+            "<strong>$4.83 million</strong> after brokerage, Los Angeles transfer tax and capital gains "
+            "&#8212; a 25.7% haircut. A &#167;1031 exchange of the identical asset on the identical day "
+            "nets about <strong>$5.94 million</strong>, because the capital gains tax of roughly $1.12 "
+            "million is deferred rather than paid. Roughly <strong>17% of asset value</strong> is destroyed "
+            "for no economic reason other than liquidity. If a sale happens, it must be structured."
         ),
     },
     {
         "step": "2",
-        "title": "Open renewal discussions now, not at the option deadline.",
+        "title": "Separate the exit decision from the structure decision.",
         "body": (
-            "The renewal decision is worth more than the exit decision. A renewal removes the cap-rate "
-            "penalty (A16), converts the asset back into a long-dated income stream, and creates the "
-            "window in which a deferred exchange can be arranged calmly. Approach the tenant's real-estate "
-            "group while same-store sales are improving, because that is when a franchisee will commit "
-            "capital and a landlord has leverage."
+            "These are two different decisions and they are routinely conflated. <em>Should I exit?</em> is "
+            "a question about the tenant, the lease term and concentration risk. <em>How do I exit?</em> is a "
+            "question about tax. The model says the second decision is worth more than the first: on the base "
+            "case, changing only the structure of a sale changes terminal after-tax wealth by more than the "
+            "entire difference between selling in 2026 and selling in 2035."
         ),
     },
     {
         "step": "3",
-        "title": "If the tenant commits: renew, then exit through a &#167;1031 into diversified assets.",
+        "title": "Open renewal discussions now, while the tenant is improving.",
         "body": (
-            "This is the highest risk-adjusted outcome in the model (strategy S7). The point of the "
-            "renewal is not to hold forever &#8212; it is to be holding a <em>long-lease, low-friction</em> "
-            "asset at the moment you choose to exchange it. A renewed 2,115-unit-brand box with ten years "
-            "of term trades to a different buyer pool at a tighter cap rate than the same box with four "
-            "years left."
+            "A renewal is worth more than the exit it precedes, because it removes the short-lease cap-rate "
+            "penalty (A16) and converts a decaying asset back into a long-dated income stream. Approach the "
+            "tenant's real-estate group while same-store sales are recovering &#8212; from &#8722;7.4% to "
+            "&#8722;1.1% (S12, S13) &#8212; because that is when a franchisee will commit capital and a "
+            "landlord has leverage. Do it well before any contractual renewal notice deadline, which is "
+            "currently unknown (F-01)."
         ),
     },
     {
         "step": "4",
-        "title": "If the tenant will not commit: exchange out before the term erodes.",
+        "title": "If the tenant commits: renew, then exchange out on a planned horizon.",
         "body": (
-            "If renewal is refused, the asset is on a clock and the clock is priced. Sell into a &#167;1031 "
-            "while four to six years of term remain, not after. In the model, exchanging out in 2032 rather "
-            "than holding to expiry preserves roughly <strong>$4.5 million</strong> of terminal wealth on a "
-            "$6.5 million asset. Do not wait for certainty; the market charges for it."
+            "This is the highest risk-adjusted outcome in the model (strategy S7, and the best strategy at "
+            "risk aversion &#947;=4). The point of renewing is not to hold forever. It is to be holding a "
+            "<em>long-lease, low-friction</em> asset at the moment you choose to exchange it, because a box "
+            "with ten years of term trades to a different buyer pool at a tighter cap rate than the same box "
+            "with four years left."
         ),
     },
     {
         "step": "5",
+        "title": "If the tenant will not commit: exchange out before the term erodes.",
+        "body": (
+            "If renewal is refused, the asset is on a clock and the clock is priced. Sell into a &#167;1031 "
+            "while four to six years of term remain, not after. The cost of waiting is visible in the exit "
+            "scan: cumulative exposure to at least one shock rises from 11.4% at a 2032 exit to 16.6% at "
+            "2035, and the cap-rate penalty widens every year in between. Do not wait for certainty. The "
+            "market charges for it."
+        ),
+    },
+    {
+        "step": "6",
         "title": "Use the exchange to fix the concentration, not to replicate it.",
         "body": (
-            "The real risk here is not the tenant, the cap rate, or the wildfires &#8212; it is that one "
-            "individual's wealth is concentrated in one box, in one county, whose population is projected "
-            "to fall and which has just experienced the largest urban fire loss in its history. A &#167;1031 "
-            "into a diversified portfolio of net-lease assets, or into a professionally managed Delaware "
-            "Statutory Trust, keeps the deferral and removes the single-asset, single-metro bet. If the "
-            "owner will not diversify, the case for selling early gets materially stronger."
+            "The real risk in this file is not the tenant, the cap rate or the wildfires. It is that one "
+            "individual's wealth is concentrated in one box, in one county, whose population is projected to "
+            "fall by 240,800 school students over ten years (S09) and which has just absorbed the largest "
+            "urban fire loss in its history (S21, S22). A &#167;1031 into a diversified set of net-lease "
+            "assets, or into a professionally managed Delaware Statutory Trust, keeps the deferral and "
+            "removes the single-asset, single-metro bet. If the owner will not diversify, the case for "
+            "exiting earlier gets materially stronger."
         ),
     },
 ]
