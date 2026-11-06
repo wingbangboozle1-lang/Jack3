@@ -44,6 +44,7 @@ NAV = [
     ("flagged.html", "Flagged"),
     ("sources.html", "Sources"),
     ("methodology.html", "Method"),
+    ("../index.html", "All dashboards"),
 ]
 
 
@@ -753,6 +754,10 @@ ranking changes; that is the point of publishing them.</p>
 <h2 id="rec">Recommendation</h2>
 <div class="card">
 <p><b>Primary recommendation: Option B, executed as a conditional hold with prepared optionality — not a passive hold.</b></p>
+<p class="small">Note on the scoring: Option B and Option E (ground-lease recapitalisation) score level at 73/100 on these weights.
+They are not substitutes — E is the route to take <i>only if</i> the entitlement study shows the land is worth materially more
+than the income stream, because E depends on the same approvals that Option C needs. On the evidence available today, B is
+the lower-execution-risk way to hold the same option.</p>
 <ol>
 <li><b>Do not list in 2026–2027.</b> The model shows a 0.8–1.6 percentage-point annual return advantage to holding, and the
 market is at a decade-high cap rate with financing costs above yields ({srclink("S24")}): a seller is competing for a thin
