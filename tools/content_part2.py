@@ -57,11 +57,12 @@ Cap-rate benchmarks are <b>industry</b> data (CBRE) — there is no official gov
 <h1 class="page-title">Growth Catalysts — 2026 to 2035</h1>
 <p class="lede">What could push demand and pricing up inside the holding window — and what is merely narrative. Official where possible;
 estimates explicitly labeled.</p>
+{T('la28_dates')}
 {T('la28')}
 <h2>Catalyst inventory</h2>
 <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
   <div class="card" style="margin:0"><h3 style="margin-top:0">🏟️ 2028 Olympic & Paralympic Games</h3>
-    <p class="small">Jul 2028, LA Memorial Coliseum / Downtown &amp; regional venues. SCAG (governmental): <b>$13.6–17.6B</b> added regional GDP 2024–2029 (six counties). LAEDC commissioned study (non-governmental): $20–40B output. LA28 budget ~$7.15B (reported). <b>Not a measurement — an estimate.</b></p>
+    <p class="small">Paralympic Games <b>Aug 15–27, 2028</b> (verified, IPC); Olympic Games July 2028 (dates reported 14–30 July — not re-verified, Flagged F-16). LA Memorial Coliseum / Downtown &amp; regional venues. SCAG (governmental): <b>$13.6–17.6B</b> added regional GDP 2024–2029 (six counties). LAEDC commissioned study (non-governmental): $20–40B output. LA28 budget ~$7.15B (reported). <b>Not a measurement — an estimate.</b></p>
     <p class="small"><b>Property impact:</b> visitor surge 2027–2028 around venues; downtown/East-LA corridors see traffic spikes; retail leasing and consumer spending bump. One-time pulse, not a permanent lift — but it lands <i>inside</i> your sale window.</p>
   </div>
   <div class="card" style="margin:0"><h3 style="margin-top:0">🚇 Transit & infrastructure buildout</h3>

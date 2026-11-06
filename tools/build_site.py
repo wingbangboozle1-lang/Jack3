@@ -147,6 +147,8 @@ def index_page():
     kpis = [
         ("LA County population (2025)", "9,694,934", "DOF proj. 2035: 9.71M", "census.gov / dof.ca.gov"),
         ("LA city population (2025)", "3,869,089", "−0.8% vs 2020", "census.gov"),
+        ("LA County unemployment", "4.8%", "Sep 2026 (SA, EDD) · year-ago 5.6%", "CA EDD"),
+        ("LA CPI-U (12-mo)", "+3.7%", "Sep 2026 · energy +20.3% · core +2.6%", "BLS"),
         ("LA MSA unemployment", "4.4%", "Sep 2026 (NSA) · US 4.2% · CA 5.1%", "BLS via FRED"),
         ("LA MSA payrolls", "6.30M", "Sep 2026 (SA) · flat", "BLS via FRED"),
         ("10-Year Treasury", "4.90%", "2026-11-04", "FRED DGS10"),
@@ -168,7 +170,7 @@ def index_page():
         ("decision-analysis.html", "⚖️", "Decision Analysis", "Weighted matrix: sell vs renew vs hybrid. Triggers for action."),
         ("projection-studio.html", "📈", "Projection Studio", "Interactive PV model: renew-and-hold vs sell, with sensitivity grid."),
         ("demographics.html", "🗺️", "Demographics & Geography", "Density 8,304/sq mi; 47.2% Hispanic/Latino; foreign-born 35.7%."),
-        ("economy-jobs.html", "💼", "Economy & Jobs", "LA MSA unemployment 4.4%; payrolls 6.30M; $81.4B city retail sales."),
+        ("economy-jobs.html", "💼", "Economy & Jobs", "County UE 4.8% SA; CPI +3.7%; payrolls 6.30M; $81.4B city retail sales."),
         ("population-projections.html", "📉", "Population Projections", "DOF P-2A: 9.73M (2030) → 9.71M (2035) → 8.96M (2060)."),
         ("income-housing.html", "🏘️", "Income, Poverty & Housing", "$81,939 median HH income; 16.5% poverty; rent $1,933."),
         ("schools-education.html", "🎓", "Schools & Education", "LAUSD graduation 86.5% (2025); absenteeism 21.9%, improving."),

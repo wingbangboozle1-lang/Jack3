@@ -111,6 +111,14 @@ the expiry “cliff” into a negotiated event on your timeline, not the tenant�
   <li><b>Cons:</b> requires active management; possible negotiation friction with tenant; broker opinions cost ~0.1–0.3% (fee estimate — not verified; typical practice).</li>
 </ul>
 
+<h2>Parallel official-source studies in this repository</h2>
+<div class="callout callout-info"><div class="c-ico">🧩</div><div>Two independently produced, official-source studies were completed in parallel in this repo and are preserved in full:
+<ul class="tight" style="margin-top:.4rem">
+<li><b><a href="property-study/index.html">Property Study (companion)</a></b> — recommends <i>selling into the LA28 2028 window, monetizing with the term clock,</i> and treating a renewal only as a conditional, corporate-guaranteed, strong-escalation, site-performer deal (“blend &amp; extend”). Explicit framing: neither option is demonstrably superior — <b>decide early; do not drift to expiry.</b></li>
+<li><b><a href="legacy-dashboard/index.html">Evidence dashboard (original)</a></b> — the first structured evidence board built in this repo (per-row source links, scripts/build.py + scripts/validate.py, data/evidence.json).</li>
+</ul>
+<p class="small" style="margin-bottom:0">This page’s Option C (hybrid: negotiate now, keep optionality) is the decision framework that operationalizes the convergence shared by both framings: act on the owner’s timeline, not the tenant’s; keep the LA28-window sale fully available; renew only on hard conditions (corporate guarantee + escalations + performance). Where the companion study’s default differs (sell-first vs negotiate-first), the difference is framing, not data — every factual input is the same official series, and both agree the worst outcome is <b>drifting to 2030–2035 expiry without a decision.</b></p></div></div>
+
 <h2>Tax note (general information, not tax advice)</h2>
 <div class="callout callout-warn"><div class="c-ico">🧾</div><div>A sale triggers federal capital gains + depreciation recapture (gain on depreciable property generally taxed up to 25% federal on recapture) and California tax on the gain; ongoing NNN income is taxed as ordinary passive income with depreciation shelter. A §1031 exchange can defer all federal and California gain only into like-kind property identified/acquired on strict deadlines. <b>Engage a qualified CPA/tax attorney before signing anything.</b> No parcel-specific tax bill or basis data appears here by design.</div></div>
 
@@ -179,13 +187,17 @@ patterns suit a Jack in the Box drive-through. Population is declining modestly 
     "economy-jobs": f"""
 <h1 class="page-title">Economy & Jobs</h1>
 <p class="lede">Employment, unemployment and the consumer-economy base supporting Central LA retail. Official: Bureau of Labor Statistics
-(retrieved via FRED), U.S. Census Bureau.</p>
+(LA CPI release; via FRED), U.S. Census Bureau, CA EDD (LA County report), Federal Reserve, BEA via FRED.</p>
 {T('labor_market')}
+{T('macro_rates')}
 {T('business_economy')}
 {T('labor_force_commute')}
 <h2>What the numbers mean</h2>
 <ul class="tight">
-  <li><b>Labour market:</b> LA MSA unemployment 4.4% (Sep 2026, NSA) — better than California (5.1% SA) and slightly above the US (4.2% SA). The 2026 trend: May 4.8 → Jun 5.0 → Jul 5.0 → Aug 4.8 → Sep 4.4; easing, not deteriorating. Payrolls flat at ~6.30M — no recession signal, no boom either.</li>
+  <li><b>Labour market:</b> LA County SA unemployment <b>4.8%</b> (Sep 2026, EDD — vs 5.0% Aug revised, 5.6% a year earlier; below CA 5.1% SA, above US 4.2% SA); LA MSA UE 4.4% (FRED, Sep 2026, NSA). County nonfarm +20,300 / +0.4% YoY (NSA); LA MSA nonfarm +0.6% YoY (BLS, Aug 2026, NSA). Payrolls flat at ~6.30M — no recession signal, no boom either. Methodologies and geographies differ — see Flagged for Review (F-17).</li>
+  <li><b>Restaurant pipeline:</b> LA County accommodation &amp; food services +8,600 YoY and restaurants &amp; other eating places +7,300 YoY (EDD, Sep 2026, NSA) — your direct comps are adding staff; leisure &amp; hospitality +8,900. Educational &amp; health services +37,500 YoY (health care ≈ 83% — see F-18).</li>
+  <li><b>Inflation vs escalators:</b> LA CPI-U <b>+3.7%</b> 12-month (Sep 2026, NSA — core +2.6%, energy +20.3%, shelter +3.7%; BLS). Federal funds <b>3.75–4.00%</b> (FOMC hold Oct 28, 2026, 10–2). Typical stacked 5-yr bumps (~1.55%/yr) lose real purchasing power to LA inflation — the renewal reset matters more than contractual escalators.</li>
+  <li><b>Fast-food wage floor:</b> AB 1228 — $20.00/hr effective 2024-04-01 (DIR-confirmed); Fast Food Council may adjust annually (statutory cap: lesser of 3.5% or CPI — statute; verify current rate at <a class="src-link" href="https://www.dir.ca.gov/AB1228/AB1228.html" target="_blank" rel="noopener">dir.ca.gov/AB1228 ↗</a>). Tenant labor cost is structurally higher; pass-through into same-store sales is partial.</li>
   <li><b>Consumer scale:</b> $44.0B food &amp; accommodation sales countywide (2022) and $81.35B retail sales in the city (2022, $21,281 per capita). The operating pond for a QSR is enormous; capture rate, not market size, is the question.</li>
   <li><b>Chain-area jobs base:</b> 3.99M county payroll jobs across 304,988 employer establishments (2023), +2.3% employment growth 2022→2023 — modest but positive.</li>
   <li><b>Commute burden:</b> 30.4–30.7 minutes average — heavy car dependence favors drive-through; weekday lunch/dinner dayparts near employment nodes.</li>
@@ -200,6 +212,7 @@ A flat-to-soft 2026–27 is a headwind for same-store sales — exactly what JAC
 <p class="lede">California Department of Finance P-2A projections (2024 Baseline, Vintage 2026 release, March 2026) for Los Angeles County —
 the official planning series every public agency in the state uses. This is the single most important long-run demand indicator for the Property.</p>
 {T('population_projections')}
+<div class="callout callout-warn"><div class="c-ico">🗂️</div><div><b>Vintage caution.</b> LA EWDD publishes a county forecast citing an <b>older DOF vintage</b> (≈9.3M by 2040; ≈8.3M by 2060). That predates the P-2A Vintage 2026 series shown here (2040 ≈ 9.64M; 2060 ≈ 8.96M). The two vintages are not comparable — this site always cites P-2A Vintage 2026; the EWDD figures are kept only as historical context. See Flagged for Review (F-15).</div></div>
 <h2>Reading the projection</h2>
 <ul class="tight">
   <li><b>2030:</b> 9,727,305 (−1.3% vs 2025) — essentially flat through the early expiry window.</li>

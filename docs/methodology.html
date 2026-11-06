@@ -50,7 +50,14 @@
   <li>Jack in the Box Inc. investor relations (official) — <a href="https://investors.jackinthebox.com/" target="_blank" rel="noopener">investors.jackinthebox.com</a> (Q1/Q3 FY2026 earnings; JACK on Track; Del Taco sale completion)</li>
   <li>CAL FIRE — <a href="https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire" target="_blank" rel="noopener">Eaton Fire</a>; <a href="https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire" target="_blank" rel="noopener">Palisades Fire</a></li>
   <li>FEMA — <a href="https://gis-fema.hub.arcgis.com/pages/1ee8ccb97b8d44a7ae2ae0d23e90ee26" target="_blank" rel="noopener">DR-4856-CA</a>; Flood maps: <a href="https://msc.fema.gov/" target="_blank" rel="noopener">msc.fema.gov</a></li>
-  <li>U.S. Geological Survey — <a href="https://pubs.usgs.gov/publication/70029508" target="_blank" rel="noopener">Puente Hills loss estimates (Earthquake Spectra 2005)</a></li>
+  <li>U.S. Geological Survey — <a href="https://pubs.usgs.gov/publication/70029508" target="_blank" rel="noopener">Puente Hills loss estimates (Earthquake Spectra 2005)</a>; <a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area" target="_blank" rel="noopener">UCERF3 regional 30-year probabilities</a></li>
+  <li>U.S. Bureau of Labor Statistics — <a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener">Consumer Price Index, Los Angeles area — September 2026</a>; <a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" target="_blank" rel="noopener">Los Angeles Area Summary — Aug 2026</a></li>
+  <li>Board of Governors of the Federal Reserve System — <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm" target="_blank" rel="noopener">FOMC statement, October 28, 2026</a></li>
+  <li>U.S. Bureau of Economic Analysis via FRED — <a href="https://fred.stlouisfed.org/series/GDPALL06037" target="_blank" rel="noopener">GDP: All Industries LA County (nominal)</a> · <a href="https://fred.stlouisfed.org/series/REALGDPALL06037" target="_blank" rel="noopener">Real GDP, chained 2017</a></li>
+  <li>California Employment Development Department — <a href="https://labormarketinfo.edd.ca.gov/file/lfmonth/la$pds.pdf" target="_blank" rel="noopener">Los Angeles–Long Beach–Glendale Metropolitan Division — September 2026</a></li>
+  <li>California Department of Industrial Relations — <a href="https://www.dir.ca.gov/AB1228/AB1228.html" target="_blank" rel="noopener">AB 1228 — Fast Food Council / $20.00/hr floor (Apr 2024)</a></li>
+  <li>International Paralympic Committee — <a href="https://www.paralympic.org/la-2028" target="_blank" rel="noopener">LA28 Paralympic Games (Aug 15–27, 2028)</a></li>
+  <li>County of Los Angeles Board of Supervisors — <a href="https://file.lacounty.gov/SDSInter/bos/supdocs/207228.pdf" target="_blank" rel="noopener">Motion to adopt 2025 All-Hazards Mitigation Plan (Sep 9, 2025)</a> — FEMA National Risk Index quote, 2025 AHMP</li>
   <li>Southern California Association of Governments (SCAG) — 2025 Southern California Economic Update (LA28 GDP estimate $13.6–17.6B) — <a href="https://www.scag.ca.gov" target="_blank" rel="noopener">scag.ca.gov</a></li>
 </ul>
 <h3>Industry / non-official (labeled, never as verified)</h3>
@@ -60,6 +67,15 @@
   <li>LAEDC (non-profit), study commissioned by LA28 — $20–40B output estimate — flagged</li>
   <li>Los Angeles Times, Politico, E&amp;E News, indexbox/USA Today — reporting on LA28 budget, FAIR Plan growth, activist stake — flagged, not primary</li>
 </ul>
+
+<h2>Parallel studies preserved in this repository (integration record)</h2>
+<div class="callout callout-info"><div class="c-ico">📚</div><div>This site is the canonical published dashboard. Two independently built, official-source bodies of work were completed in parallel and are preserved intact:
+<ul class="tight" style="margin-top:.4rem">
+  <li><b><a href="property-study/index.html">Property Study</a></b> — standalone 10-page study (executive summary, decision framing, economy, schools, risks, flagged review, sources) with its own validated build (<code>scripts/build.py</code>, <code>scripts/validate.py</code>) and evidence allowlist (<code>data/evidence.json</code>). Its recommendation: sell into the LA28 2028 window or sign a conditional, corporate-guaranteed, strong-escalation renewal only — never drift to expiry.</li>
+  <li><b><a href="legacy-dashboard/index.html">Evidence Dashboard</a></b> — the original consolidated dashboard (place / economy / model / risk / review / tenant / sources) preserved verbatim; same <code>evidence.json</code> backbone.</li>
+  <li><b>COORDINATION.md</b> (repo root) — the full parallel-session coordination log: boards, PR links (#1, #2, #4), and the union-merge conflict-resolution record.</li>
+</ul>
+<p class="small" style="margin-bottom:0">All three share the same official sources. Where numbers differ between them, they reflect different vintages or methodologies (e.g., DOF P-2A Vintage 2026 vs older EWDD vintage — see F-15) and both are shown with vintage labels. Nothing from any preserved tree was deleted; duplicates were folded into the canonical site only after verification.</p></div></div>
 
 <h2>Privacy statement</h2>
 <div class="callout callout-privacy"><div class="c-ico">🔒</div><div><b>No personal information appears on this site.</b> The property is described only as “a NNN-leased Jack in the Box restaurant in Central Los Angeles
@@ -77,7 +93,7 @@ Consult a licensed CPA, attorney, real-estate broker and structural engineer bef
   <footer class="footer">
     <b>Jack3 Decision Desk</b> · Anonymized analysis for a Central Los Angeles NNN Jack in the Box (lease expiry 2030–2035).
     Not legal, tax, or investment advice. Every figure carries a source link on-page or is explicitly flagged.
-    <a href="methodology.html">Methodology &amp; sources</a> · <a href="flagged-for-review.html">Flagged for review (14)</a> ·
+    <a href="methodology.html">Methodology &amp; sources</a> · <a href="flagged-for-review.html">Flagged for review (19)</a> ·
     <a href="https://github.com/wingbangboozle1-lang/Jack3" target="_blank" rel="noopener noreferrer">GitHub repo</a> · Generated 2026-11-06.
   </footer>
 </div>
