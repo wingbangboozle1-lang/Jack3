@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Interactive scenario model: project NNN NOI, exit value, Measure ULA drag, cumulative rent, and sensitivity grid for the sell-vs-renew decision. Scenario arithmetic, not official data.">
+<title>Projection Model | Jack3 — Central LA NNN Decision Brief</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">J3</span><span class="brand-text"><strong>Jack3</strong><small>Central LA NNN Decision Brief</small></span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+  </div>
+  <nav class="mainnav" id="mainnav" aria-label="Site navigation"><div class="mainnav-inner">
+    <a href="index.html">Dashboard</a>
+    <a href="executive-summary.html">Executive Summary</a>
+    <a href="market-demographics.html">Market &amp; Demographics</a>
+    <a href="economic-outlook.html">Economic Outlook</a>
+    <a href="decision.html">Sell vs Renew</a>
+    <a href="risk-analysis.html">Risk Register</a>
+    <a href="projection-model.html" class="active">Projection Model</a>
+    <a href="sources.html">Sources</a>
+    <a href="flagged.html">Flagged for Review</a>
+  </div></nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Dashboard</a> / Projection Model</div>
+    <div class="eyebrow">Scenario arithmetic — NOT official data, NOT an appraisal</div>
+    <h1>Projection Model — NOI → Exit Value, ULA Drag, Sensitivity</h1>
+    <p class="lede">An interactive, transparent scenario engine. Defaults are <strong>illustrative placeholders</strong> (The Property’s actual net rent is unknown). Edit the inputs; the math is shown; every assumption is labeled. Official source links anchor the cap-rate and tax inputs.</p>
+    <div class="toc"><a href="#calculator">Calculator</a><a href="#sensitivity">Sensitivity grid</a><a href="#methodology">Methodology</a><a href="#limits">Limitations</a></div>
+  </div>
+</section>
+
+<main><div class="container">
+
+<h2 class="section-title" id="calculator">1 · Interactive Calculator</h2>
+<div class="card chart-card">
+<form id="proj-form" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">
+  <label style="font-size:.8rem">NNN net rent / year (illustrative $)
+    <input type="number" id="p-rent" value="275000" min="0" step="5000" style="width:100%;padding:10px;margin-top:6px;border:1px solid var(--line);border-radius:8px">
+  </label>
+  <label style="font-size:.8rem">Annual escalation (%)
+    <input type="number" id="p-esc" value="2.0" min="0" max="10" step="0.1" style="width:100%;padding:10px;margin-top:6px;border:1px solid var(--line);border-radius:8px">
+  </label>
+  <label style="font-size:.8rem">Exit cap rate (%)
+    <input type="number" id="p-cap" value="6.0" min="3" max="12" step="0.1" style="width:100%;padding:10px;margin-top:6px;border:1px solid var(--line);border-radius:8px">
+  </label>
+  <label style="font-size:.8rem">Holding period (years)
+    <select id="p-years" style="width:100%;padding:10px;margin-top:6px;border:1px solid var(--line);border-radius:8px">
+      <option value="5" selected>5 years</option><option value="7">7 years</option><option value="10">10 years</option><option value="15">15 years</option>
+    </select>
+  </label>
+  <label style="font-size:.8rem">Measure ULA tier on sale
+    <select id="p-ula" style="width:100%;padding:10px;margin-top:6px;border:1px solid var(--line);border-radius:8px">
+      <option value="0">0% — price ≤ $5.3M (2025-07-01 tiers)</option>
+      <option value="4" selected>4.0% — price &gt; $5.3M and &lt; $10.6M</option>
+      <option value="5.5">5.5% — price ≥ $10.6M</option>
+    </select>
+  </label>
+</form>
+<div class="grid kpi-grid" style="margin-top:16px">
+  <div class="card"><div class="kpi-label">Projected exit price (NOIₜ ÷ cap)</div><div class="kpi-value" id="out-price">—</div></div>
+  <div class="card"><div class="kpi-label">Measure ULA tax on exit</div><div class="kpi-value" id="out-ula">—</div></div>
+  <div class="card"><div class="kpi-label">Net sale proceeds (after ULA only)</div><div class="kpi-value" id="out-net">—</div></div>
+  <div class="card"><div class="kpi-label">Cumulative NNN rent over hold</div><div class="kpi-value" id="out-cumrent">—</div></div>
+  <div class="card"><div class="kpi-label">Hold-then-sell total (rent + net)</div><div class="kpi-value" id="out-total">—</div></div>
+</div>
+<p class="small" style="margin-top:10px">Excludes: brokerage, title/escrow, county &amp; city DTT, federal/state cap gains, depreciation recapture, NIIT — see <a href="decision.html#friction">Sale friction</a>. ULA tiers shown for 2025-07-01; they index upward every July 1 (2026-07-01: $5.4M / $10.9M). Confirm at <a href="https://finance.lacity.gov/" target="_blank" rel="noopener">finance.lacity.gov</a>.</p>
+</div>
+
+<h2 class="section-title" id="sensitivity">2 · Sensitivity Grid <small>Illustrative: $275,000 net rent, 2.0% escalation</small></h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Exit cap rate</th><th>Sale price @ yr 5 (NOI $303,622)</th><th>ULA @4%</th><th>Net of ULA</th><th>Sale price @ yr 10 (NOI $335,223)</th><th>ULA @4%</th><th>Net of ULA</th></tr></thead>
+<tbody>
+<tr><td class="mono">5.0%</td><td class="mono">$6,072,444</td><td class="mono">$242,898</td><td class="mono">$5,829,547</td><td class="mono">$6,704,469</td><td class="mono">$268,179</td><td class="mono">$6,436,291</td></tr>
+<tr><td class="mono">5.5%</td><td class="mono">$5,520,404</td><td class="mono">$220,816</td><td class="mono">$5,299,588</td><td class="mono">$6,094,972</td><td class="mono">$243,799</td><td class="mono">$5,851,173</td></tr>
+<tr><td class="mono">6.0%</td><td class="mono">$5,060,370</td><td class="mono">$0*</td><td class="mono">$5,060,370</td><td class="mono">$5,587,058</td><td class="mono">$223,482</td><td class="mono">$5,363,575</td></tr>
+<tr><td class="mono">6.5%</td><td class="mono">$4,671,111</td><td class="mono">$0*</td><td class="mono">$4,671,111</td><td class="mono">$5,157,284</td><td class="mono">$0*</td><td class="mono">$5,157,284</td></tr>
+<tr><td class="mono">7.0%</td><td class="mono">$4,337,460</td><td class="mono">$0*</td><td class="mono">$4,337,460</td><td class="mono">$4,788,907</td><td class="mono">$0*</td><td class="mono">$4,788,907</td></tr>
+</tbody>
+</table></div>
+<div class="callout info" style="margin-top:10px">*Below the 2025-07-01 $5.3M ULA threshold — zero ULA, but only if the true market value supports the price. <strong>Pricing below a cliff to dodge tax is not a strategy; it is mispricing.</strong> Note the honest cliff at 5.5–6.0% cap in year 5 ($5.06M vs $5.52M crosses the tier) — this is why ULA timing and pricing strategy belong in every listing conversation, and why holding is often the tax-optimal answer inside City of LA.</div>
+<div class="table-wrap" style="margin-top:14px"><table>
+<thead><tr><th>Cumulative NNN rent (2% esc.)</th><th>5 years</th><th>10 years</th><th>15 years</th></tr></thead>
+<tbody><tr><td>Gross rent collected</td><td class="mono">$1,431,111</td><td class="mono">$3,011,173</td><td class="mono">$4,755,690</td></tr></tbody>
+</table></div>
+
+<h2 class="section-title" id="methodology">3 · Methodology</h2>
+<ol>
+  <li><strong>NOI projection</strong>: rent compounds at escalation <em>e</em> per year: NOIₜ = rent × (1+e)ᵗ. NNN means no OpEx deduction (tenant pays taxes/insurance/maintenance).</li>
+  <li><strong>Exit valuation</strong>: price = NOIₜ ÷ cap rate. Cap rates are mark-to-market assumptions, anchored to 2026-11-04: STNL mean 6.5% (M&amp;M via CRE Daily, industry), JIB-quoted NNN 5.0–6.0% (broker, industry) — never treated as official.</li>
+  <li><strong>ULA</strong>: applied to FULL consideration when price crosses tier (2025-07-01 tiers; annually CPI-indexed each July 1).</li>
+  <li><strong>Total hold-then-sell</strong> = Σ rent over hold + (price − ULA). Excludes cap gains/recapture/commissions — see friction table.</li>
+</ol>
+
+<h2 class="section-title" id="limits">4 · Limitations — Read This</h2>
+<div class="callout danger">
+  <ul style="margin:0;padding-left:1.15em">
+    <li>The $275,000 rent and 2.0% escalation are <strong>illustrative placeholders</strong>, not the actual lease. Actual values must come from the lease/estoppel.</li>
+    <li>Scenario math is not an appraisal (USPAP) and not a CMA. It encodes no location premium/discount beyond your own cap-rate input.</li>
+    <li>ULA applies to City of LA transfers only. If any portion of consideration qualifies for exemption, the Office of Finance decides — not this model.</li>
+    <li>Cap-rate inputs are industry quotes, flagged <span class="pill pill-industry">Industry</span>; they are stale within weeks. Re-cut the grid at listing time with two live broker opinions.</li>
+    <li>All figures as of 2026-11-06. Nothing here is legal, tax, or investment advice.</li>
+  </ul>
+</div>
+
+<p class="kpi-footnote">Sources: <a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve_rate&amp;field_tdr_date_value=202611" target="_blank" rel="noopener">US Treasury</a> · <a href="https://finance.lacity.gov/" target="_blank" rel="noopener">LA Office of Finance</a> · <a href="https://thesisdriven.com/guides/triple-net-lease" target="_blank" rel="noopener">M&amp;M via CRE Daily (industry)</a> · <a href="https://www.solidinvestmentsfl.com/tenants/" target="_blank" rel="noopener">Solid Investments (industry)</a></p>
+</div></main>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><h4>Jack3 — Central LA NNN Decision Brief</h4><p>Confidential internal analysis. Anonymized. Not legal, tax, or investment advice.</p></div>
+    <div><h4>Quick links</h4><p><a href="decision.html">Sell vs Renew</a><br><a href="risk-analysis.html">Risk Register</a><br><a href="flagged.html">Flagged for Review</a><br><a href="sources.html">Sources</a></p></div>
+    <div><h4>Integrity notes</h4><p>All defaults are editable, all math is explicit, nothing is hidden in the model.</p></div>
+  </div>
+  <p class="kpi-footnote">© 2026 · Compiled 2026-11-06</p>
+</div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
