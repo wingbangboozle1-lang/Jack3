@@ -1,79 +1,53 @@
-# Jack in the Box NNN — Central Los Angeles · decision research
+# Jack / Property intelligence
+
+Privacy-safe, static research dashboard for an unidentified Los Angeles-area net lease asset.
 
 **Live site:** https://wingbangboozle1-lang.github.io/Jack3/
 
-A verified, source-linked research package answering one question: for a Jack in the Box triple-net property in central
-Los Angeles whose lease expires between 2030 and 2035, is it better to **sell before expiry** or **renew** — and what is
-the best decision for the owner as an individual, balancing wealth preservation against growth and manageable risk?
+## Evidence boundary
+Official observations were manually checked on 2026-11-06. Property identity, lease, rent, debt and owner financial circumstances are absent. Regional context is not a parcel forecast. Missing numerical values stay blank; conditional analyst rules are not official recommendations. See `review.html` for nonblocking review flags and `sources.html` for methodology.
 
-## What is inside
+No personal information, addresses, parcel identifiers, owner research, analytics, forms or third-party executable assets are included. Do not commit private records, even in history.
+
+## Build and check
+```
+python scripts/build.py
+python scripts/validate.py
+python -m http.server 8000 --bind 0.0.0.0
+```
+
+`data/evidence.json` is the public source of truth. Rebuild HTML after edits. Validation checks internal links and row provenance, not live external availability or semantic truth. Source checks are manual and the site is a dated snapshot, not an automatic data feed. GitHub Pages serves the repository root on main; PR validation checks deterministic output before integration.
+
+---
+
+## Deep-dive evidence dashboard (`analysis/`)
+
+A third, additive layer produced by session `sess-8d650ba0` sits in **`analysis/`** — 11 pages generated from JSON, with
+113 sourced indicators, a 22-row risk register, a deterministic scenario model and a decision framework.
+
+**Open it at:** `/analysis/index.html` (or the "Deep-dive evidence dashboard" link on the two landing pages).
 
 | Page | What it answers |
 |---|---|
-| `index.html` | Dashboard: recommendation, executive summary, top risks, verification counts |
-| `economy.html` | Population, income, housing, employment by sector, prices and rates |
-| `tenant.html` | Jack in the Box Inc. unit counts, closures, same-store sales, guidance, Del Taco divestiture |
-| `property.html` | Proposition 13, the 2026 assessment roll, transfer taxes, Measure ULA, value matrix, §1031 |
-| `risk.html` | 22 risks: 13 business-as-usual and 9 black swan, with mitigations |
-| `scenarios.html` | Deterministic hold-versus-sell model, sensitivity grids, after-tax illustration |
-| `decision.html` | Five options scored, the recommendation, sell triggers, dated action plan |
-| `data.html` | The full dataset — 113 rows, each with a source link and a verification status |
-| `flagged.html` | 13 items that could not be verified, with what is needed to close each one |
-| `sources.html` | 28 sources with tier, publisher, URL and access date |
-| `methodology.html` | Verification standard, anonymisation rules, model method, limitations |
+| `analysis/index.html` | Dashboard: recommendation, executive summary, top risks, verification counts |
+| `analysis/economy.html` | Population, income, housing, employment by sector, prices and rates |
+| `analysis/tenant.html` | Jack in the Box Inc. unit counts, closures, same-store sales, guidance, Del Taco divestiture |
+| `analysis/property.html` | Proposition 13, 2026 roll, transfer taxes, Measure ULA, value matrix, §1031 |
+| `analysis/risk.html` | 22 risks: 13 business-as-usual and 9 black swan, with mitigations |
+| `analysis/scenarios.html` | Hold-versus-sell model, sensitivity grids, after-tax illustration |
+| `analysis/decision.html` | Five options scored, recommendation, sell triggers, dated action plan |
+| `analysis/data.html` | 113-row master table, each row with a source link and status |
+| `analysis/flagged.html` | 13 items that could not be verified, and what closes each one |
+| `analysis/sources.html` | 28 sources with tier, publisher, URL and access date |
+| `analysis/methodology.html` | Verification standard, anonymisation, model method, limitations |
 
-## Privacy
-
-The property address, parcel number, owner identity, franchisee identity and all personal information are **not** in this
-repository or on the site. The asset is `[PROPERTY-A]` and the owner `[OWNER-1]`. Every published statistic is
-area-level (Los Angeles County, City of Los Angeles, or the LA–Long Beach–Anaheim metro) and available to the public.
-See `methodology.html` for the full rule.
-
-## The short answer
-
-Hold, extend and prepare; sell only on a defined trigger. Under the disclosed base case an unlevered hold returns
-**8.03%/yr** against **7.25%/yr** for selling now and deferring tax through a §1031 exchange, and holding only loses if the
-exit cap rate widens to **7.22%** or more. The counterweight is tenant contraction (86 closures vs 31 openings in FY2025,
-same-store sales −4.2%), which is why the recommendation is a *conditional* hold with a hard decision gate in 2029.
-Full reasoning in `decision.html`; every assumption disclosed in `scenarios.html`.
-
-## Repository layout
+Rebuild just this layer:
 
 ```
-*.html                     built pages (GitHub Pages serves main /)
-assets/css/style.css        styling
-assets/js/app.js           table filtering on the master dataset page
-assets/data/sources.json    28 sources, tiered, with URLs
-assets/data/dataset.json    113 verified indicators
-assets/data/risks.json      22-row risk register
-assets/data/flagged.json    13 unverified items
-assets/data/scenarios.json  model output (generated, not hand-edited)
-tools/model.py             deterministic scenario model
-tools/build.py             static site generator
-tools/linkcheck.py         internal link and anchor checker
-research/verification-log.md  line-by-line record of every check
-COORDINATION.md            shared task board, claims and log
+python3 tools/model.py       # recompute analysis/data/scenarios.json
+python3 tools/build.py       # regenerate the 11 pages in analysis/
+python3 tools/linkcheck.py   # fail on any broken internal link or anchor
 ```
 
-## Rebuild
-
-```bash
-python3 tools/model.py     # recompute scenarios.json
-python3 tools/build.py     # regenerate all HTML
-python3 tools/linkcheck.py # fail on any broken internal link or anchor
-```
-
-The build is deterministic: no network access, no hand-typed figures in the HTML.
-
-## Sources
-
-28 sources, tiered. Tier 1 is government, statute or court (Census, BLS, FRED/Federal Reserve, LA County Assessor and
-Recorder, USGS/CGS, CAL FIRE, CDE, DIR, IRS, California Secretary of State). Tier 2 is filed or official issuer
-disclosure (SEC EDGAR, LA28). Tier 3 is industry research (The Boulder Group) and is labelled as such everywhere it
-appears.
-
-## Not advice
-
-Research for internal decision support only — not legal, tax or investment advice. Engage a California-licensed
-appraiser, a CPA with real-estate tax experience and a land-use attorney before acting, and re-confirm every statutory
-rate for the closing date.
+The two earlier dashboards (root, `docs/`) are unchanged apart from one additive link to the deep dive. Line-by-line check
+record: `research/verification-log.md`.
