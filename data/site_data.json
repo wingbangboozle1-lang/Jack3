@@ -1,0 +1,1194 @@
+{
+  "generated": "2026-11-06",
+  "tables": {
+    "population_overview": {
+      "title": "Population & density — Los Angeles city vs. Los Angeles County",
+      "columns": [
+        "Metric",
+        "Los Angeles city",
+        "Los Angeles County",
+        "Period / vintage"
+      ],
+      "source": "U.S. Census Bureau QuickFacts",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia/PST045224",
+      "status": "verified",
+      "rows": [
+        [
+          "Population (estimate)",
+          "3,869,089",
+          "9,694,934",
+          "July 1, 2025 (V2025)"
+        ],
+        [
+          "Population change vs 2020 base",
+          "−0.8%",
+          "−3.2%",
+          "2020 → 2025"
+        ],
+        [
+          "Population, Census 2020",
+          "3,898,747",
+          "10,014,009",
+          "Apr 1, 2020"
+        ],
+        [
+          "Population, Census 2010",
+          "3,792,621",
+          "9,818,605",
+          "Apr 1, 2010"
+        ],
+        [
+          "Land area",
+          "469.49 sq mi",
+          "4,059.28 sq mi",
+          "2020"
+        ],
+        [
+          "Population density",
+          "8,304.2 / sq mi",
+          "2,466.9 / sq mi",
+          "2020"
+        ],
+        [
+          "Households",
+          "1,439,097",
+          "3,416,449",
+          "2020–2024 ACS"
+        ],
+        [
+          "Persons per household",
+          "2.61",
+          "2.81",
+          "2020–2024 ACS"
+        ],
+        [
+          "Housing units (county estimate)",
+          "—",
+          "3,726,923",
+          "July 1, 2025"
+        ],
+        [
+          "Building permits",
+          "—",
+          "22,250",
+          "2025"
+        ]
+      ]
+    },
+    "demographics_composition": {
+      "title": "Demographic composition (2020–2024 ACS, unless noted)",
+      "columns": [
+        "Metric",
+        "Los Angeles city",
+        "Los Angeles County"
+      ],
+      "source": "U.S. Census Bureau QuickFacts",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia/PST045224",
+      "status": "verified",
+      "rows": [
+        [
+          "Hispanic or Latino (any race)",
+          "47.2%",
+          "49.3%"
+        ],
+        [
+          "White alone, not Hispanic",
+          "28.1%",
+          "24.6%"
+        ],
+        [
+          "Asian alone",
+          "12.1%",
+          "16.6%"
+        ],
+        [
+          "Black alone",
+          "8.4%",
+          "8.9%"
+        ],
+        [
+          "Two or more races",
+          "18.9%",
+          "5.8%"
+        ],
+        [
+          "Foreign-born persons",
+          "35.7%",
+          "33.4%"
+        ],
+        [
+          "Language other than English spoken at home (age 5+)",
+          "56.4%",
+          "55.1%"
+        ],
+        [
+          "Under 18 years",
+          "19.2%",
+          "19.2%"
+        ],
+        [
+          "65 years and over",
+          "14.2%",
+          "17.1%"
+        ],
+        [
+          "Female persons",
+          "50.2%",
+          "51.1%"
+        ]
+      ]
+    },
+    "income_poverty": {
+      "title": "Income & poverty (in 2024 dollars)",
+      "columns": [
+        "Metric",
+        "Los Angeles city",
+        "Los Angeles County",
+        "Period"
+      ],
+      "source": "U.S. Census Bureau QuickFacts (ACS / SAIPE)",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia/PST045224",
+      "status": "verified",
+      "rows": [
+        [
+          "Median household income",
+          "$81,939",
+          "$90,112",
+          "2020–2024 ACS"
+        ],
+        [
+          "Per capita income",
+          "$47,685",
+          "$45,792",
+          "2020–2024 ACS"
+        ],
+        [
+          "Persons in poverty",
+          "16.5%",
+          "13.3%",
+          "2025 (SAIPE)"
+        ]
+      ]
+    },
+    "housing_market": {
+      "title": "Housing & cost of living",
+      "columns": [
+        "Metric",
+        "Los Angeles city",
+        "Los Angeles County",
+        "Period"
+      ],
+      "source": "U.S. Census Bureau QuickFacts",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia/PST045224",
+      "status": "verified",
+      "rows": [
+        [
+          "Median gross rent",
+          "$1,933",
+          "$1,954",
+          "2020–2024 ACS"
+        ],
+        [
+          "Median value of owner-occupied housing",
+          "$921,200",
+          "$834,200",
+          "2020–2024 ACS"
+        ],
+        [
+          "Owner-occupied housing unit rate",
+          "36.0%",
+          "45.9%",
+          "2020–2024 ACS"
+        ],
+        [
+          "Median monthly owner costs with mortgage",
+          "$3,497",
+          "$3,160",
+          "2020–2024 ACS"
+        ],
+        [
+          "Median monthly owner costs without mortgage",
+          "$1,001",
+          "$843",
+          "2020–2024 ACS"
+        ]
+      ]
+    },
+    "housing_hpi": {
+      "title": "FHFA All-Transactions House Price Index — Los Angeles County (2000 = 100)",
+      "columns": [
+        "Year",
+        "HPI (2000=100)",
+        "Change vs 2021"
+      ],
+      "source": "U.S. Federal Housing Finance Agency via FRED (ATNHPIUS06037A)",
+      "url": "https://fred.stlouisfed.org/series/ATNHPIUS06037A",
+      "status": "verified",
+      "rows": [
+        [
+          "2021",
+          "314.32",
+          "—"
+        ],
+        [
+          "2022",
+          "362.89",
+          "+15.5%"
+        ],
+        [
+          "2023",
+          "374.44",
+          "+19.1%"
+        ],
+        [
+          "2024",
+          "396.98",
+          "+26.3%"
+        ],
+        [
+          "2025",
+          "403.74",
+          "+28.4%"
+        ]
+      ]
+    },
+    "labor_market": {
+      "title": "Labor market indicators (latest available)",
+      "columns": [
+        "Indicator",
+        "Latest value",
+        "Period",
+        "Source & series"
+      ],
+      "source": "U.S. BLS via FRED; U.S. BLS",
+      "url": "https://fred.stlouisfed.org/series/LOSA106URN",
+      "status": "verified",
+      "rows": [
+        [
+          "Unemployment rate — LA–Long Beach–Anaheim MSA",
+          "4.4%",
+          "Sep 2026 (NSA)",
+          "BLS via FRED LOSA106URN — https://fred.stlouisfed.org/series/LOSA106URN"
+        ],
+        [
+          "Unemployment — LA MSA, prior months",
+          "Aug 4.8% · Jul 5.0% · Jun 5.0% · May 4.8%",
+          "May–Sep 2026",
+          "BLS via FRED LOSA106URN"
+        ],
+        [
+          "Total nonfarm payrolls — LA MSA",
+          "6,299.9 thousand",
+          "Sep 2026 (SA)",
+          "BLS via FRED SMS06310800000000001 — https://fred.stlouisfed.org/series/SMS06310800000000001"
+        ],
+        [
+          "Unemployment rate — California",
+          "5.1%",
+          "Sep 2026 (SA)",
+          "BLS via FRED CAUR — https://fred.stlouisfed.org/series/CAUR"
+        ],
+        [
+          "Unemployment rate — United States",
+          "4.2%",
+          "Sep 2026 (SA)",
+          "BLS via FRED UNRATE — https://fred.stlouisfed.org/series/UNRATE"
+        ]
+      ]
+    },
+    "business_economy": {
+      "title": "Business & consumer economy — Los Angeles",
+      "columns": [
+        "Metric",
+        "Los Angeles city",
+        "Los Angeles County",
+        "Period"
+      ],
+      "source": "U.S. Census Bureau QuickFacts (Economic Census / CBP / SUSB)",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia/PST045224",
+      "status": "verified",
+      "rows": [
+        [
+          "Total retail sales",
+          "$81,351,523,000 ($21,281 per capita)",
+          "$213,932,785,000 ($22,010 per capita)",
+          "2022"
+        ],
+        [
+          "Accommodation & food services sales",
+          "$17,366,966,000",
+          "$44,000,801,000",
+          "2022"
+        ],
+        [
+          "Health care & social assistance receipts",
+          "$46,297,839,000",
+          "$113,488,435,000",
+          "2022"
+        ],
+        [
+          "Employer establishments",
+          "—",
+          "304,988",
+          "2023"
+        ],
+        [
+          "Total employment",
+          "—",
+          "3,987,736",
+          "2023"
+        ],
+        [
+          "Total annual payroll",
+          "—",
+          "$299,616,607,000",
+          "2023"
+        ],
+        [
+          "Total employment change 2022→2023",
+          "—",
+          "+2.3%",
+          "2023"
+        ],
+        [
+          "Nonemployer establishments",
+          "—",
+          "1,165,040",
+          "2024"
+        ]
+      ]
+    },
+    "labor_force_commute": {
+      "title": "Labor force & commuting",
+      "columns": [
+        "Metric",
+        "Los Angeles city",
+        "Los Angeles County",
+        "Period"
+      ],
+      "source": "U.S. Census Bureau QuickFacts (ACS)",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia/PST045224",
+      "status": "verified",
+      "rows": [
+        [
+          "In civilian labor force (% of population 16+)",
+          "66.4%",
+          "64.7%",
+          "2020–2024"
+        ],
+        [
+          "In civilian labor force — female",
+          "61.1%",
+          "59.3%",
+          "2020–2024"
+        ],
+        [
+          "Mean travel time to work (minutes)",
+          "30.7",
+          "30.4",
+          "2020–2024"
+        ]
+      ]
+    },
+    "education_attainment": {
+      "title": "Education attainment (persons 25+)",
+      "columns": [
+        "Metric",
+        "Los Angeles city",
+        "Los Angeles County",
+        "Period"
+      ],
+      "source": "U.S. Census Bureau QuickFacts (ACS)",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia/PST045224",
+      "status": "verified",
+      "rows": [
+        [
+          "High school graduate or higher",
+          "79.6%",
+          "80.9%",
+          "2020–2024"
+        ],
+        [
+          "Bachelor's degree or higher",
+          "38.5%",
+          "36.0%",
+          "2020–2024"
+        ]
+      ]
+    },
+    "population_projections": {
+      "title": "California DOF projected population — Los Angeles County (2024 Baseline; Vintage 2026 release)",
+      "columns": [
+        "Year",
+        "Projected population",
+        "Change vs 2025"
+      ],
+      "source": "California Department of Finance, P-2A County Population Projections 2020–2070 (FIPS 6037)",
+      "url": "https://dof.ca.gov/media/docs/forecasting/Demographics/projections/P2A_County_Total.xlsx",
+      "status": "verified",
+      "rows": [
+        [
+          "2025 (actual estimate)",
+          "9,853,435",
+          "—"
+        ],
+        [
+          "2026",
+          "9,811,358",
+          "−0.4%"
+        ],
+        [
+          "2027",
+          "9,778,629",
+          "−0.8%"
+        ],
+        [
+          "2028",
+          "9,754,806",
+          "−1.0%"
+        ],
+        [
+          "2029",
+          "9,733,907",
+          "−1.2%"
+        ],
+        [
+          "2030",
+          "9,727,305",
+          "−1.3%"
+        ],
+        [
+          "2032",
+          "9,721,552",
+          "−1.3%"
+        ],
+        [
+          "2035",
+          "9,708,647",
+          "−1.5%"
+        ],
+        [
+          "2040",
+          "9,637,524",
+          "−2.2%"
+        ],
+        [
+          "2045",
+          "9,536,756",
+          "−3.2%"
+        ],
+        [
+          "2050",
+          "9,390,823",
+          "−4.7%"
+        ],
+        [
+          "2055",
+          "9,196,469",
+          "−6.7%"
+        ],
+        [
+          "2060",
+          "8,961,332",
+          "−9.1%"
+        ],
+        [
+          "2070",
+          "8,413,331",
+          "−14.6%"
+        ]
+      ]
+    },
+    "lausd_dashboard": {
+      "title": "Los Angeles Unified School District — California School Dashboard indicators (all students)",
+      "columns": [
+        "Indicator",
+        "2019",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "source": "California School Dashboard (California Department of Education) — LA Unified (County 19, District 6473300)",
+      "url": "https://www.caschooldashboard.org/reports/19647330000000/2025",
+      "status": "verified",
+      "rows": [
+        [
+          "Graduation rate",
+          "82.1%",
+          "86.0%",
+          "83.6%",
+          "86.7%",
+          "86.5%"
+        ],
+        [
+          "Chronic absenteeism",
+          "18.2%",
+          "39.8%",
+          "31.0%",
+          "23.3%",
+          "21.9%"
+        ]
+      ]
+    },
+    "jack_revenue": {
+      "title": "Jack in the Box Inc. — reported revenue (Form 10-K, FY ends late September/early October)",
+      "columns": [
+        "Fiscal year",
+        "Total revenue",
+        "Jack in the Box segment",
+        "Del Taco segment"
+      ],
+      "source": "SEC EDGAR — Jack in the Box Inc. Form 10-K (FY2025, filed Nov 2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "status": "verified",
+      "rows": [
+        [
+          "FY2025 (ended 2025-09-28)",
+          "$1,465.3M",
+          "$1,154.0M",
+          "$311.3M"
+        ],
+        [
+          "FY2024 (ended 2024-09-29)",
+          "$1,571.3M",
+          "$1,197.4M",
+          "$373.9M"
+        ],
+        [
+          "FY2023 (ended 2023-10-01)",
+          "$1,692.3M",
+          "$1,195.3M",
+          "$497.0M"
+        ]
+      ]
+    },
+    "jack_ops": {
+      "title": "Jack in the Box Inc. — operating indicators",
+      "columns": [
+        "Metric",
+        "Value",
+        "Period / note"
+      ],
+      "source": "SEC EDGAR (10-K); Jack in the Box Inc. investor relations (official releases)",
+      "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx",
+      "status": "verified",
+      "rows": [
+        [
+          "Restaurant count (end of Q3 FY2026)",
+          "2,115 (149 company + 1,966 franchise)",
+          "Jul 5, 2026"
+        ],
+        [
+          "Jack in the Box brand presence",
+          "~21–22 states; ~2,135 restaurants (reported Dec 2025)",
+          "Q4 FY2025"
+        ],
+        [
+          "System same-store sales — Q3 FY2026",
+          "−1.1%",
+          "12 weeks ended 2026-07-05"
+        ],
+        [
+          "System same-store sales — Q1 FY2026",
+          "−6.7%",
+          "13 weeks ended 2026-01-18"
+        ],
+        [
+          "System same-store sales — FY2025",
+          "−4.2% (Del Taco −3.7%)",
+          "FY2025"
+        ],
+        [
+          "Q3 FY2026 revenue",
+          "$257.7M",
+          "Q3 FY2026"
+        ],
+        [
+          "Q3 FY2026 adjusted EBITDA",
+          "$61.2M",
+          "Q3 FY2026 (non-GAAP)"
+        ],
+        [
+          "FY2025 restaurant-level margin",
+          "19.6% (JACK) / 11.1% (Del Taco)",
+          "FY2025"
+        ],
+        [
+          "FY2025 franchise-level margin",
+          "39.9% (JACK) / 26.7% (Del Taco)",
+          "FY2025"
+        ],
+        [
+          "FY2025 openings / closures (JACK brand)",
+          "31 opened / 86 closed",
+          "FY2025"
+        ],
+        [
+          "FY2025 company restaurant sales",
+          "$627.3M",
+          "FY2025"
+        ],
+        [
+          "FY2025 franchise rental revenues",
+          "$368.6M",
+          "FY2025"
+        ],
+        [
+          "FY2025 franchise royalties & other",
+          "$232.8M",
+          "FY2025"
+        ]
+      ]
+    },
+    "jack_timeline": {
+      "title": "Jack in the Box Inc. — balance sheet & strategy timeline (official company releases)",
+      "columns": [
+        "Date",
+        "Event"
+      ],
+      "source": "Jack in the Box Inc. investor relations (official)",
+      "url": "https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx",
+      "status": "verified",
+      "rows": [
+        [
+          "2025-04-23",
+          "“JACK on Track” announced: ~150–200 underperforming restaurant closures (block closure program); dividend discontinued; proceeds from real-estate sales earmarked to pay down debt; strategic review of Del Taco launched"
+        ],
+        [
+          "2025-10-15",
+          "Definitive agreement to sell Del Taco Holdings to Yadav Enterprises (~$115–119M)"
+        ],
+        [
+          "2025-12-22",
+          "Del Taco sale completed (~$119M: ~$109M cash + $10M promissory note @ 8%); net proceeds used to retire ~$105M debt"
+        ],
+        [
+          "2026-02-05",
+          "Company reiterates plan: $100M+ debt already paid down; expects additional $200M+ paydown over 1–2 years; target Net Debt/EBITDA of 4–5x"
+        ],
+        [
+          "2026-02-18",
+          "Q1 FY2026 results: system SSS −6.7%"
+        ],
+        [
+          "2026-08-12",
+          "Q3 FY2026 results: system SSS −1.1%; $110.0M prepayment of Series 2019-1 Class A-2-II notes; completion of $500M 2026-1 Class A-2 Notes financing; Mark King serving as Interim CEO"
+        ]
+      ]
+    },
+    "jack_stock": {
+      "title": "Jack in the Box Inc. — share price performance vs S&P 500 (proxy performance graph)",
+      "columns": [
+        "Date",
+        "JACK ($100 invested)",
+        "S&P 500 ($100 invested)"
+      ],
+      "source": "SEC EDGAR — Jack in the Box Inc. proxy statement FY2025",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000076/jack-20251216.htm",
+      "status": "verified",
+      "rows": [
+        [
+          "FY2020",
+          "$100",
+          "$100"
+        ],
+        [
+          "FY2021",
+          "$125",
+          "$130"
+        ],
+        [
+          "FY2022",
+          "$97",
+          "$110"
+        ],
+        [
+          "FY2023",
+          "$93",
+          "$134"
+        ],
+        [
+          "FY2024",
+          "$64",
+          "$182"
+        ],
+        [
+          "FY2025",
+          "$28",
+          "$214"
+        ]
+      ]
+    },
+    "hazards_fire": {
+      "title": "January 2025 Southern California wildfires (CAL FIRE)",
+      "columns": [
+        "Fire",
+        "Started",
+        "Contained",
+        "Acres",
+        "Structures destroyed",
+        "Fatalities",
+        "Cause"
+      ],
+      "source": "CAL FIRE (official) — Eaton Fire and Palisades Fire incident pages",
+      "url": "https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire",
+      "status": "verified",
+      "rows": [
+        [
+          "Eaton Fire (Altadena/Pasadena)",
+          "2025-01-07 18:18",
+          "2025-01-31",
+          "14,021",
+          "9,419 (1,076 damaged)",
+          "19 civilian",
+          "Electrical"
+        ],
+        [
+          "Palisades Fire (Pacific Palisades)",
+          "2025-01-07 10:30",
+          "2025-01-31",
+          "23,448",
+          "6,845 (975 damaged)",
+          "12 civilian",
+          "Arson (as listed on CAL FIRE incident page)"
+        ]
+      ]
+    },
+    "hazards_earthquake": {
+      "title": "Earthquake scenarios — Los Angeles region (USGS/SCEC)",
+      "columns": [
+        "Scenario",
+        "Estimate",
+        "Source"
+      ],
+      "source": "U.S. Geological Survey (official)",
+      "url": "https://pubs.usgs.gov/publication/70029508",
+      "status": "verified",
+      "rows": [
+        [
+          "Puente Hills blind-thrust, full rupture — total economic loss",
+          "$82B – $252B (potentially costliest U.S. disaster)",
+          "Field et al. 2005, Earthquake Spectra 21(2):329–338; DOI 10.1193/1.1898332"
+        ],
+        [
+          "Puente Hills scenario — potential fatalities",
+          "3,000 – 18,000 (USGS/SCEC scenario estimates)",
+          "Same USGS publication series; see also USGS ShakeOut materials"
+        ],
+        [
+          "Northridge 1994 (M6.7) — reference event",
+          "57 deaths; tens of billions in losses",
+          "USGS post-earthquake documentation"
+        ]
+      ]
+    },
+    "fema_declaration": {
+      "title": "Federal disaster declaration — January 2025 California wildfires",
+      "columns": [
+        "Field",
+        "Value"
+      ],
+      "source": "FEMA (official)",
+      "url": "https://gis-fema.hub.arcgis.com/pages/1ee8ccb97b8d44a7ae2ae0d23e90ee26",
+      "status": "verified",
+      "rows": [
+        [
+          "Declaration",
+          "DR-4856-CA"
+        ],
+        [
+          "Incident period",
+          "2025-01-07 to 2025-01-31"
+        ],
+        [
+          "Declaration date",
+          "2025-01-08"
+        ],
+        [
+          "Fires covered",
+          "Palisades, Eaton, Hurst, etc."
+        ]
+      ]
+    },
+    "rates_returns": {
+      "title": "Rates & return context",
+      "columns": [
+        "Metric",
+        "Value",
+        "As of / period",
+        "Source"
+      ],
+      "source": "FRED (Federal Reserve Bank of St. Louis)",
+      "url": "https://fred.stlouisfed.org/series/DGS10",
+      "status": "verified",
+      "rows": [
+        [
+          "10-Year U.S. Treasury yield",
+          "4.90%",
+          "2026-11-04",
+          "FRED DGS10 — https://fred.stlouisfed.org/series/DGS10"
+        ],
+        [
+          "California unemployment (SA)",
+          "5.1%",
+          "Sep 2026",
+          "FRED CAUR — https://fred.stlouisfed.org/series/CAUR"
+        ],
+        [
+          "U.S. unemployment (SA)",
+          "4.2%",
+          "Sep 2026",
+          "FRED UNRATE — https://fred.stlouisfed.org/series/UNRATE"
+        ]
+      ]
+    },
+    "industry_caprates": {
+      "title": "Net-lease cap-rate context (INDUSTRY — non-governmental sources)",
+      "columns": [
+        "Metric",
+        "Value",
+        "Period"
+      ],
+      "source": "CBRE Research (industry); MMCG citing CBRE H1 2026 (third-party)",
+      "url": "https://www.cbre.com/press-releases/net-lease-investment-rises-q2-2026-extending-broad-market-momentum",
+      "status": "industry",
+      "rows": [
+        [
+          "U.S. net-lease average cap rate",
+          "6.9%",
+          "Q2 2026"
+        ],
+        [
+          "Retail net-lease average cap rate",
+          "6.9%",
+          "Q2 2026"
+        ],
+        [
+          "Industrial net-lease average cap rate",
+          "6.7%",
+          "Q2 2026"
+        ],
+        [
+          "Office net-lease average cap rate",
+          "7.1%",
+          "Q2 2026"
+        ],
+        [
+          "Average 10-Year Treasury (Q2 2026 avg)",
+          "4.5%",
+          "Q2 2026"
+        ],
+        [
+          "Net-lease cap-rate spread over 10Y",
+          "241 bps",
+          "Q2 2026"
+        ],
+        [
+          "Trailing-12M net-lease investment volume",
+          "$57B (+14% YoY)",
+          "Q2 2026"
+        ],
+        [
+          "Net-lease QSR cap rates (third-party citing CBRE H1 2026)",
+          "~5–6% (low end of retail)",
+          "H1 2026 — FLAGGED, secondary source"
+        ]
+      ]
+    },
+    "la28": {
+      "title": "2028 Olympic & Paralympic Games — estimated economic impact (STUDY ESTIMATES)",
+      "columns": [
+        "Source",
+        "Estimate",
+        "Nature of source"
+      ],
+      "source": "SCAG (governmental); LAEDC report commissioned by LA28 (non-profit)",
+      "url": "https://www.scag.ca.gov",
+      "status": "industry",
+      "rows": [
+        [
+          "SCAG, 2025 Southern California Economic Update",
+          "$13.6B–$17.6B additional regional GDP, 2024–2029 (six-county region)",
+          "Governmental joint-powers association — estimate, not a measurement"
+        ],
+        [
+          "LAEDC study commissioned by LA28 (reported Sep 2026)",
+          "$20B–$40B economic output",
+          "Commissioned by LA28; non-governmental; flagged for review"
+        ],
+        [
+          "LA28 organizing budget (reported)",
+          "~$7.15B",
+          "Reported figure; official LA28 communications should be checked"
+        ]
+      ]
+    }
+  },
+  "risks": [
+    {
+      "id": "R-01",
+      "cat": "Business as usual",
+      "risk": "Tenant store closure risk — subject store could fall inside JACK on Track 150–200-store cull (franchise agreement termination path)",
+      "likelihood": 3,
+      "impact": 5,
+      "mitigant": "Obtain estoppel certificate + tenant solvency review; ask for renewal commitment; if no renewal, market the asset 12–18 months ahead of expiry. Verify whether subject store is company- or franchisee-operated and identify the guarantor.",
+      "status": "open"
+    },
+    {
+      "id": "R-02",
+      "cat": "Business as usual",
+      "risk": "Lease expiry value cliff — NNN asset value decays as remaining term shortens; at <5 years remaining, buyers demand deep discounts",
+      "likelihood": 4,
+      "impact": 4,
+      "mitigant": "Initiate renewal negotiation ≥24 months before expiry; if renewal fails, list by 2028–2029 while ≥6–8 years of term remain. Do not let the term quietly run down.",
+      "status": "open"
+    },
+    {
+      "id": "R-03",
+      "cat": "Business as usual",
+      "risk": "Cap-rate expansion / rate volatility (10Y at 4.90%; net-lease avg cap 6.9%) compresses sale proceeds",
+      "likelihood": 3,
+      "impact": 4,
+      "mitigant": "Stress-test sale at +50/100 bps cap expansion; compare vs PV of renewed rent stream; consider 1031 exchange; time sale to rate dips; obtain multiple broker opinions of value (non-binding).",
+      "status": "open"
+    },
+    {
+      "id": "R-04",
+      "cat": "Business as usual",
+      "risk": "LA County population decline (DOF: −1.5% by 2035; −9.1% by 2060) and flat retail demand",
+      "likelihood": 4,
+      "impact": 3,
+      "mitigant": "Infill density (8,304/sq mi city) and drive-through formats outperform; monitor trade-area sales; focus on rent bump at renewal rather than market rent growth assumptions.",
+      "status": "open"
+    },
+    {
+      "id": "R-05",
+      "cat": "Business as usual",
+      "risk": "Tenant sales deterioration (system SSS −4.2% FY2025; −1.1% Q3 FY2026) pressures franchisees and rent coverage",
+      "likelihood": 3,
+      "impact": 3,
+      "mitigant": "Require sales reporting under the lease (if it grants it), monitor quarterly JACK results, confirm percentage rent (if any), verify insurance and tax payments current.",
+      "status": "open"
+    },
+    {
+      "id": "R-06",
+      "cat": "Business as usual",
+      "risk": "Property tax escalation after change of ownership (Prop 13 base reset — LA County base 1% + voter bonds; effective rate varies)",
+      "likelihood": 4,
+      "impact": 2,
+      "mitigant": "In NNN the tenant bears taxes, but a reset can stress tenant coverage — factor into renewal negotiation and lease-clause review. No parcel-specific rate published; confirm with LA County Assessor (not verified this session).",
+      "status": "open"
+    },
+    {
+      "id": "R-07",
+      "cat": "Business as usual",
+      "risk": "Insurance market hardening in California (FAIR Plan growth reported; premiums rising post-2025 fires)",
+      "likelihood": 4,
+      "impact": 2,
+      "mitigant": "NNN shifts insurance to tenant; obtain certificates annually; confirm tenant carries L&I + property per lease; confirm landlord is additional insured. FAIR Plan stats are REPORTED, not verified — flagged.",
+      "status": "open"
+    },
+    {
+      "id": "R-08",
+      "cat": "Business as usual",
+      "risk": "Vacancy/re-leasing downtime at expiry if tenant exits (QSR space has limited alternative uses; entitlement friction)",
+      "likelihood": 2,
+      "impact": 5,
+      "mitigant": "Begin renewal talks 24–36 months early; pre-qualify alternate QSR covenants; understand demolition/redevelopment value as floor (land residual).",
+      "status": "open"
+    },
+    {
+      "id": "R-09",
+      "cat": "Black swan",
+      "risk": "Major earthquake (Puente Hills blind thrust — full-rupture loss scenario $82B–$252B)",
+      "likelihood": 2,
+      "impact": 5,
+      "mitigant": "Confirm seismic retrofit status (LA URM/non-ductile concrete ordinances), tenant insurance + loss-payee, landlord loss-of-rents endorsement; 1994 Northridge (M6.7, 57 deaths) as calibration; verify parcel seismic zone (ZIMAS) — flagged, not verified.",
+      "status": "open"
+    },
+    {
+      "id": "R-10",
+      "cat": "Black swan",
+      "risk": "Wildfire / smoke / regional disaster economics (Jan 2025 Eaton & Palisades: 16,256 structures destroyed region-wide) depressing Central LA retail and insurance availability",
+      "likelihood": 2,
+      "impact": 4,
+      "mitigant": "Central LA parcel is outside burn scars but shares insurer repricing and regional demand shocks; require tenant insurance verification; monitor CDI actions; confirm no smoke-damage/business-interruption exposure for the tenant.",
+      "status": "open"
+    },
+    {
+      "id": "R-11",
+      "cat": "Black swan",
+      "risk": "Recession with LA-specific labor weakness (LA MSA unemployment 4.4% vs US 4.2%; CA 5.1%; payrolls flat ~6.30M)",
+      "likelihood": 3,
+      "impact": 3,
+      "mitigant": "QSR value segment is recession-resilient but ticket-splitting hurts; stress-test 10% rent sensitivity; preserve liquidity; avoid over-leveraging the asset with proceeds.",
+      "status": "open"
+    },
+    {
+      "id": "R-12",
+      "cat": "Black swan",
+      "risk": "Tenant credit event — JACK insolvency or distressed exchange (stock $100→$28 FY2020–FY2025; activist campaign; poison pill)",
+      "likelihood": 2,
+      "impact": 5,
+      "mitigant": "Escalation rights & guarantees review; if corporate lease, monitor 8-Ks; consider requiring corporate guarantee renewal or security deposit increase at renewal; consider early sale if credit inflects down.",
+      "status": "open"
+    },
+    {
+      "id": "R-13",
+      "cat": "Black swan",
+      "risk": "Civil unrest / property damage events (historical 1992 Central LA unrest relevance)",
+      "likelihood": 2,
+      "impact": 4,
+      "mitigant": "NNN passes repair cost to tenant; verify tenant riot/civil commotion insurance; consider landlord policy review; keep tenant relations strong.",
+      "status": "open"
+    },
+    {
+      "id": "R-14",
+      "cat": "Business as usual",
+      "risk": "Concentration risk — single-tenant, single-asset, single-market exposure; no diversification",
+      "likelihood": 5,
+      "impact": 3,
+      "mitigant": "Size position as % of net worth; compare 1031 into diversified DST/REIT or multi-tenant retail; keep ≥6–12 months liquidity post-any-sale.",
+      "status": "open"
+    }
+  ],
+  "decision_matrix": {
+    "criteria": [
+      {
+        "name": "Wealth preservation (capital protection)",
+        "weight": 0.25
+      },
+      {
+        "name": "Income stability & passivity",
+        "weight": 0.2
+      },
+      {
+        "name": "Growth / upside opportunity",
+        "weight": 0.15
+      },
+      {
+        "name": "Manageable risk (volatility & tail risk)",
+        "weight": 0.2
+      },
+      {
+        "name": "Tax efficiency",
+        "weight": 0.1
+      },
+      {
+        "name": "Liquidity / flexibility",
+        "weight": 0.1
+      }
+    ],
+    "options": [
+      {
+        "name": "Option A — Sell before expiry (2026–2028 window)",
+        "scores": [
+          4,
+          3,
+          3,
+          4,
+          2,
+          5
+        ],
+        "notes": "Captures remaining-term premium; crystalizes gain (capital gains + depreciation recapture); redeploys into diversified assets (1031). Risk: selling into 4.9% 10Y / 6.9% net-lease cap environment locks in today's pricing; loses renewal rent bump and long-term inflation hedge."
+      },
+      {
+        "name": "Option B — Renew at expiry / hold long-term (2030–2035+)",
+        "scores": [
+          4,
+          5,
+          4,
+          3,
+          4,
+          2
+        ],
+        "notes": "Preserves NNN passive income; renewal bump (typically +10–20% for QSR NNN, per industry practice — VERIFY against lease comps) resets basis value; Prop 13 shields basis; tenant bears OpEx inflation. Risk: tenant credit deterioration; term runs down if renewal fails; concentration persists."
+      },
+      {
+        "name": "Option C — Hybrid: negotiate renewal/extension now + keep sale optionality",
+        "scores": [
+          5,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "notes": "Negotiate extension option or early renewal with escalator reset (e.g., +10% bump then 8–10% stacked 5-yr bumps — illustrative, verify w/ lease), simultaneously commission broker opinions of value and keep the asset market-ready. Revisit trigger points quarterly (tenant SSS, cap rates, LA DOF estimates)."
+      }
+    ]
+  },
+  "flagged": [
+    {
+      "item": "Subject-property asking price / cap rate",
+      "detail": "No official valuation source exists for the subject asset; any listing data found online is excluded (privacy) and unverified.",
+      "action": "Obtain 2–3 independent broker opinions of value or appraisal (internal use only)."
+    },
+    {
+      "item": "Lease escalation schedule, option terms, guarantor entity, percentage rent",
+      "detail": "Internal documents; not public; never published on this site.",
+      "action": "Abstract the lease; confirm corporate vs franchisee guarantor; confirm renewal option mechanics and notice deadlines."
+    },
+    {
+      "item": "Parcel flood zone & seismic designation",
+      "detail": "FEMA MSC and LA ZIMAS require the address; lookup not performed.",
+      "action": "Check https://msc.fema.gov and https://zimas.lacity.org; note in lease file."
+    },
+    {
+      "item": "Seismic retrofit status of the structure",
+      "detail": "Required for LA non-ductile concrete / URM compliance; unverified.",
+      "action": "Order structural assessment; confirm tenant compliance with lease maintenance clause."
+    },
+    {
+      "item": "School quality for the specific attendance zone",
+      "detail": "Address-based lookup required; district-level data shown instead (LAUSD 86.5% grad rate, 21.9% absenteeism, 2025).",
+      "action": "If family-relevant, look up attendance zone on LAUSD / CA School Dashboard."
+    },
+    {
+      "item": "Crime statistics for the immediate submarket",
+      "detail": "Not asserted; LAPD open data portal exists but no figure verified this session.",
+      "action": "Pull 12-month incident counts from https://data.lacity.org (official) before pricing decisions."
+    },
+    {
+      "item": "California FAIR Plan latest exposure / premium trajectory",
+      "detail": "News reports cite +43% enrollment growth Sep 2024–Dec 2025 and >$750B exposure; not confirmed from CDI this session.",
+      "action": "Verify at https://www.insurance.ca.gov before underwriting tenant insurance adequacy."
+    },
+    {
+      "item": "Activist investor (Biglari) ~9.9% stake & July 2025 poison pill",
+      "detail": "Widely reported; not confirmed against a specific EDGAR filing this session.",
+      "action": "Check EDGAR for JACK 8-K/DEF 14A."
+    },
+    {
+      "item": "Net-lease QSR cap rates ~5–6%",
+      "detail": "Third-party blog citing CBRE H1 2026; not a primary source.",
+      "action": "Obtain CBRE U.S. Cap Rate Survey (H2 2026) direct or broker quotes before underwriting a sale."
+    },
+    {
+      "item": "LA28 economic impact ($20–40B LAEDC; ~$7.15B budget; $13.6–17.6B SCAG)",
+      "detail": "Study estimates, not measurements; LAEDC figure non-governmental commissioned by LA28.",
+      "action": "Treat as scenario upside; do not capitalize into underwriting."
+    },
+    {
+      "item": "LA city-specific median household income vs subject trade area",
+      "detail": "Citywide $81,939 shown; trade-area (Census tract) values may differ materially for Central LA corridors.",
+      "action": "Pull tract-level ACS B19013 via data.census.gov (API key required) — not performed this session."
+    },
+    {
+      "item": "Property tax effective rate for the parcel",
+      "detail": "County base 1% + voter-approved assessments; parcel-specific bill not retrieved.",
+      "action": "Check LA County Office of the Auditor-Controller / tax bill; Pass-Through under NNN to tenant."
+    },
+    {
+      "item": "2020 Census QuickFacts county population discrepancy",
+      "detail": "QuickFacts shows county 2020 Census 10,014,009; DOF P-2A Vintage 2026 shows 10,012,050 for 2020 (estimates methodology differences).",
+      "action": "Use Census for decennial facts; DOF for projections; do not mix series. Noted — not an error."
+    },
+    {
+      "item": "Palisades Fire structures-destroyed figure (6,837 vs 6,845)",
+      "detail": "LA County anniversary fact sheet says 6,837 destroyed / 23,448 acres and 973 damaged; CAL FIRE incident page (fetched 2026-11-06) says 6,845 destroyed / 975 damaged. Minor inter-agency discrepancy.",
+      "action": "Use CAL FIRE incident page as primary; note discrepancy in any external reporting."
+    }
+  ]
+}

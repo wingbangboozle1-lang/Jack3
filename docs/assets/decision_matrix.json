@@ -1,0 +1,66 @@
+{
+  "criteria": [
+    {
+      "name": "Wealth preservation (capital protection)",
+      "weight": 0.25
+    },
+    {
+      "name": "Income stability & passivity",
+      "weight": 0.2
+    },
+    {
+      "name": "Growth / upside opportunity",
+      "weight": 0.15
+    },
+    {
+      "name": "Manageable risk (volatility & tail risk)",
+      "weight": 0.2
+    },
+    {
+      "name": "Tax efficiency",
+      "weight": 0.1
+    },
+    {
+      "name": "Liquidity / flexibility",
+      "weight": 0.1
+    }
+  ],
+  "options": [
+    {
+      "name": "Option A \u2014 Sell before expiry (2026\u20132028 window)",
+      "scores": [
+        4,
+        3,
+        3,
+        4,
+        2,
+        5
+      ],
+      "notes": "Captures remaining-term premium; crystalizes gain (capital gains + depreciation recapture); redeploys into diversified assets (1031). Risk: selling into 4.9% 10Y / 6.9% net-lease cap environment locks in today's pricing; loses renewal rent bump and long-term inflation hedge."
+    },
+    {
+      "name": "Option B \u2014 Renew at expiry / hold long-term (2030\u20132035+)",
+      "scores": [
+        4,
+        5,
+        4,
+        3,
+        4,
+        2
+      ],
+      "notes": "Preserves NNN passive income; renewal bump (typically +10\u201320% for QSR NNN, per industry practice \u2014 VERIFY against lease comps) resets basis value; Prop 13 shields basis; tenant bears OpEx inflation. Risk: tenant credit deterioration; term runs down if renewal fails; concentration persists."
+    },
+    {
+      "name": "Option C \u2014 Hybrid: negotiate renewal/extension now + keep sale optionality",
+      "scores": [
+        5,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "notes": "Negotiate extension option or early renewal with escalator reset (e.g., +10% bump then 8\u201310% stacked 5-yr bumps \u2014 illustrative, verify w/ lease), simultaneously commission broker opinions of value and keep the asset market-ready. Revisit trigger points quarterly (tenant SSS, cap rates, LA DOF estimates)."
+    }
+  ]
+}

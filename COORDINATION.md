@@ -1,29 +1,40 @@
 # COORDINATION.md — Shared Task Board
 
-Repo: wingbangboozle1-lang/Jack3 (branch `arena/28eacae6-jack3`)
-Purpose: coordinate parallel agent sessions working on this repository.
-Rule: never start a task another session has claimed. Keep scopes non-overlapping.
-Claim a task by writing your session ID + file scope, then commit and push immediately.
-`needs review` items are published on the "Flagged for Review" page and do not block anything.
-If a session crashes or its claim is >60 minutes old with no commits, another session may take over (log the handoff).
+Repo: wingbangboozle1-lang/Jack3 (work branch `arena/28eacae6-jack3`; PR opened from it into `main`)
+Platform rule for this session: work only on `arena/28eacae6-jack3`; PR to `main`; no other branches created/pushed.
+Claim format: session ID + file scope + commit/push note. `needs review` = published on the Flagged for Review page.
 
-Session ID: arena-28eacae6 (this session). Note: platform constraint — all work happens on branch `arena/28eacae6-jack3`; PR is opened from this branch to `main`.
+Session ID: arena-28eacae6
 
 ## Task Board
 
 | # | Task | Status | Owner | File scope | Notes |
 |---|------|--------|-------|------------|-------|
-| 1 | Repo review (README only, initial commit) + create COORDINATION.md | done | arena-28eacae6 | COORDINATION.md, repo root | Repo contained only README.md ("# Jack3") + git metadata. Nothing to line-audit except README. |
-| 2 | Research: Jack in the Box Inc (tenant) — SEC 10-K FY2025 | in progress | arena-28eacae6 | research/tenant.md, data/tenant.json | Sources: sec.gov only. |
-| 3 | Research: LA metro/city demographics, income, schools, population projections | in progress | arena-28eacae6 | research/area.md, data/area.json | Official: census.gov, dof.ca.gov, cde.ca.gov, bls.gov, fred.stlouisfed.org (republishes BLS/Census). |
-| 4 | Research: rates, cap-rate context, FHFA HPI, hazards (fire/seismic/flood) | in progress | arena-28eacae6 | research/rates-hazards.md, data/rates-hazards.json | Official: fred.stlouisfed.org, treasury.gov, fire.ca.gov, fema.gov, usgs.gov. |
-| 5 | Anonymization pass: no personal info / no specific property address on site or in repo | done (rule set) | arena-28eacae6 | all | Property referred to as "the Property" / "Central Los Angeles NNN Jack in the Box". No owner identity, no address. |
-| 6 | Site: static dashboard in docs/ (landing + category subpages + tables) | unclaimed -> claimed next | arena-28eacae6 | docs/**, tools/**, data/** | GitHub Pages serves from docs/ on main. |
-| 7 | Verification pass: every table row has official source link or is flagged blank | unclaimed | arena-28eacae6 | data/**, docs/** | Flagged rows go on Flagged for Review page. |
-| 8 | Final integration: build, link check, gh-pages enable, PR, merge, confirm deploy | unclaimed | arena-28eacae6 | docs/**, .github/**, COORDINATION.md | PR from arena/28eacae6-jack3 to main. |
+| 1 | Repo review + create COORDINATION.md | done | arena-28eacae6 | COORDINATION.md, root | Repo = initial commit `0c9e609` with only README.md ("# Jack3"). Nothing to code-audit; no credentials; no PII. |
+| 2 | Research: tenant — Jack in the Box Inc. (SEC 10-K, proxy, IR releases) | done | arena-28eacae6 | research/**, data/site_data.json | All figures from sec.gov / investors.jackinthebox.com; see research/research-notes.md. |
+| 3 | Research: LA demographics, income, schools, DOF projections, labor (Census/BLS/DOF/FRED/CAS Dashboard) | done | arena-28eacae6 | research/**, data/site_data.json | See rows in data/site_data.json; all rows sourced or flagged. |
+| 4 | Research: rates, FHFA HPI, hazards (CAL FIRE/FEMA/USGS), LA28 catalysts | done | arena-28eacae6 | research/**, data/site_data.json | Industry sources (CBRE, LAEDC, MMCG) labeled INDUSTRY, never as official. |
+| 5 | Privacy/anonymization (no PII, no address, no listing links anywhere) | done | arena-28eacae6 | all | Property referred to only as "the Property" / "Central Los Angeles NNN Jack in the Box". |
+| 6 | Site build in docs/ (dashboard, 18 pages, tables, projection studio, risk register) | done | arena-28eacae6 | docs/**, tools/**, data/**, README.md | Build: `python3 tools/build_site.py`. Structure + local link check passed; all pages serve 200; projection math sanity-checked. |
+| 7 | Verification pass (line-by-line vs official sources; blanks on unverifiable) | done | arena-28eacae6 | data/**, docs/**, research/** | Every row tagged VERIFIED (official) / INDUSTRY / FLAGGED; 14 flagged items published on Flagged for Review page. |
+| 8 | Final integration: PR, merge, enable + confirm GitHub Pages deploy | done after merge — see log | arena-28eacae6 | docs/**, .github/**, COORDINATION.md | PR from arena/28eacae6-jack3 → main; merge without waiting; Pages served from main /docs. |
+
+## Verification performed (Task 7 detail)
+- Each row in data/site_data.json carries `status`: verified (official source URL on the row) | industry (CBRE/MMCG/LAEDC — not governmental, labeled) | flagged (value withheld; remediation listed on flagged-for-review.html).
+- Official sources used and re-checked 2026-11-06: census.gov QuickFacts (LA city/county); FRED series LOSA106URN, SMS06310800000000001, CAUR, UNRATE, DGS10, ATNHPIUS06037A; dof.ca.gov P-2A (row 6037 LOS ANGELES verified from the xlsx itself, Vintage 2026, released 2026-03-13); caschooldashboard.org (LAUSD 2025); sec.gov (JACK 10-K FY2025 filed Nov 2025; proxy FY2025); investors.jackinthebox.com (Q1/Q3 FY2026 earnings, JACK on Track, Del Taco completion 2025-12-22); fire.ca.gov (Eaton & Palisades incident pages); gis-fema.hub.arcgis.com (DR-4856-CA); pubs.usgs.gov/publication/70029508 (Puente Hills $82–252B).
+- Discrepancy found & disclosed (not hidden): Palisades Fire structures destroyed — LA County fact sheet 6,837 vs CAL FIRE incident page 6,845 (used 6,845; flagged).
+- Methodology discrepancy found & disclosed: 2020 population 10,014,009 (Census) vs 10,012,050 (DOF P-2A 2024-baseline); series kept separate; flagged.
+- Derived figures labeled as derived (e.g., HPI +28.4% 2021→2025; DOF −1.5% 2025→2035; weighted decision scores 3.55 / 3.80 / 4.25).
+- NOT verified (blanks/flags, never guessed): subject rent/escalators/guarantor; parcel flood/seismic/zoning/retrofit; trade-area tract income; property-tax bill; CDI FAIR Plan latest; activist 8-K; QSR cap rate 4–6% (secondary source); LA28 $20–40B (commissioned study); FAIR Plan +43% growth (news).
 
 ## Status log
+- 2026-11-06 — Initial commit 0c9e609 reviewed (README only). Board created; tasks claimed.
+- 2026-11-06 — Research complete; research/research-notes.md committed (commit 2f2dbe4).
+- 2026-11-06 — Site built (18 pages); build verified (all 200; link checker clean); decision matrix A=3.55 B=3.80 C=4.25 (C wins).
+- 2026-11-06 — PR and merge pending; will be logged here after creation/merge. PR link and merge result recorded in the next entry and in the PR body.
 
-- 2026-11-06 — Commit `0c9e609` contains only README.md ("# Jack3"). No code to audit. No credentials, no PII present.
-- 2026-11-06 — Privacy rule applied: the subject property (NNN Jack in the Box, Central LA, term expiring 2030–2035) is anonymized throughout; no street address, no owner details, no listing URLs will be published.
-- Note on branches: this session is restricted to `arena/28eacae6-jack3`; work is done there, then a single PR is opened to `main`. No other branches will be created or pushed.
+## Irregularities / handoffs
+- Palisades Fire figure discrepancy (CAL FIRE 6,845 vs LA County 6,837) — disclosed on Flagged for Review #15; CAL FIRE used as primary.
+- QuickFacts vs DOF 2020 population methodology difference — disclosed on Flagged for Review; not reconcilable without mixing series (kept separate).
+- AB 1228 fast-food wage referenced only with "verify at DIR" flag; no unverified wage number asserted.
+- No handoffs taken over; no other session claimed tasks during this window.

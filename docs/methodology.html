@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology &amp; Privacy · Jack3 — Central LA NNN Jack in the Box</title>
+<meta name="description" content="Anonymized analytical dashboard for a single-tenant NNN Jack in the Box in Central Los Angeles: sell vs renew decision, official-source verified data, risk register and projections.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">📦</div>
+    <div><h1>Jack3 — NNN Decision Desk</h1><small>Central LA · Sell vs Renew</small></div>
+  </div>
+  <nav class="nav" aria-label="Site navigation"><div class="nav-group">Home</div><a href="index.html"><span aria-hidden="true">🏠</span><span>Dashboard</span></a><div class="nav-group">Overview</div><a href="executive-summary.html"><span aria-hidden="true">📋</span><span>Executive Summary</span></a><a href="decision-analysis.html"><span aria-hidden="true">⚖️</span><span>Decision Analysis</span></a><a href="projection-studio.html"><span aria-hidden="true">📈</span><span>Projection Studio</span></a><div class="nav-group">Market &amp; Area</div><a href="demographics.html"><span aria-hidden="true">🗺️</span><span>Demographics &amp; Geography</span></a><a href="economy-jobs.html"><span aria-hidden="true">💼</span><span>Economy &amp; Jobs</span></a><a href="population-projections.html"><span aria-hidden="true">📉</span><span>Population Projections</span></a><a href="income-housing.html"><span aria-hidden="true">🏘️</span><span>Income, Poverty &amp; Housing</span></a><a href="schools-education.html"><span aria-hidden="true">🎓</span><span>Schools &amp; Education</span></a><a href="real-estate-market.html"><span aria-hidden="true">🏢</span><span>Real Estate Market</span></a><a href="growth-catalysts.html"><span aria-hidden="true">🚀</span><span>Growth Catalysts</span></a><div class="nav-group">Asset &amp; Tenant</div><a href="tenant-jackinthebox.html"><span aria-hidden="true">🍔</span><span>Tenant: Jack in the Box</span></a><a href="property-operations.html"><span aria-hidden="true">🔑</span><span>Asset &amp; NNN Operations</span></a><div class="nav-group">Risk</div><a href="hazards-black-swans.html"><span aria-hidden="true">🌋</span><span>Hazards &amp; Black Swans</span></a><a href="risk-register.html"><span aria-hidden="true">🛡️</span><span>Risk Register</span></a><div class="nav-group">Reference</div><a href="methodology.html" class="active" aria-current="page"><span aria-hidden="true">📚</span><span>Methodology &amp; Privacy</span></a><a href="flagged-for-review.html"><span aria-hidden="true">🚩</span><span>Flagged for Review</span><span class="tag">REVIEW</span></a></nav>
+</aside>
+<div class="main">
+  <div class="topbar">
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">☰</button>
+    <div class="crumb">Jack3 / <b>Methodology &amp; Privacy</b></div>
+    <div class="top-right">
+      <span class="pill pill-privacy">🔒 Anonymized — no PII</span>
+      <span class="pill pill-date">Data as of 2026-11-06</span>
+    </div>
+  </div>
+  <main class="content">
+
+<h1 class="page-title">Methodology, Sources & Privacy</h1>
+<p class="lede">How every number on this site was produced, verified, and sourced — and the privacy rules under which the work was done.</p>
+
+<h2>Verification protocol (line-by-line)</h2>
+<ol class="action tight">
+  <li>Every table row on this site is tagged <span class="badge b-verified">VERIFIED · OFFICIAL SOURCE</span> (link to a .gov / SEC / state source), <span class="badge b-industry">INDUSTRY · NON-GOVERNMENTAL</span> (brokerage/commissioned studies — never presented as official), or <span class="badge b-flagged">FLAGGED · UNVERIFIED</span> (confirmed blank or approximate).</li>
+  <li>If a value could not be confirmed from an official source, the cell is left as “—” or an explicit “unverified” note and the item is reproduced on <a href="flagged-for-review.html">Flagged for Review</a> with a remediation action. No value was invented, interpolated, or “estimated” without a label.</li>
+  <li>Where two official agencies publish the same fact with different methodologies (e.g., Census decennial vs DOF projections), both are shown and the discrepancy is disclosed in Flagged for Review.</li>
+  <li>Derived figures (e.g., 2021→2025 HPI change +28.4%; 2025→2035 population change −1.5%) are computed from the cited official series and labeled as computed.</li>
+  <li>Analysis, judgment and recommendations are labeled as such and are not “verified data.”</li>
+</ol>
+
+<h2>Official sources used</h2>
+<ul class="tight">
+  <li>U.S. Census Bureau — <a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia/PST045224" target="_blank" rel="noopener">QuickFacts: LA city &amp; LA County</a></li>
+  <li>U.S. Bureau of Labor Statistics via <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener">FRED (Federal Reserve Bank of St. Louis)</a> — LOSA106URN (LA MSA unemployment); SMS06310800000000001 (LA MSA payrolls); CAUR (CA unemployment); UNRATE (US unemployment); DGS10 (10Y Treasury); ATNHPIUS06037A (FHFA HPI, LA County)</li>
+  <li>California Department of Finance — <a href="https://dof.ca.gov/forecasting/demographics/" target="_blank" rel="noopener">Demographics unit</a>; P-2A County Population Projections 2020–2070 (Vintage 2026) — <a href="https://dof.ca.gov/media/docs/forecasting/Demographics/projections/P2A_County_Total.xlsx" target="_blank" rel="noopener">P2A_County_Total.xlsx</a></li>
+  <li>California Department of Education — <a href="https://www.caschooldashboard.org/reports/19647330000000/2025" target="_blank" rel="noopener">California School Dashboard — LA Unified (2025)</a></li>
+  <li>U.S. Securities and Exchange Commission — <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener">Jack in the Box Inc. Form 10-K (FY2025)</a>; <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000076/jack-20251216.htm" target="_blank" rel="noopener">Proxy FY2025</a></li>
+  <li>Jack in the Box Inc. investor relations (official) — <a href="https://investors.jackinthebox.com/" target="_blank" rel="noopener">investors.jackinthebox.com</a> (Q1/Q3 FY2026 earnings; JACK on Track; Del Taco sale completion)</li>
+  <li>CAL FIRE — <a href="https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire" target="_blank" rel="noopener">Eaton Fire</a>; <a href="https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire" target="_blank" rel="noopener">Palisades Fire</a></li>
+  <li>FEMA — <a href="https://gis-fema.hub.arcgis.com/pages/1ee8ccb97b8d44a7ae2ae0d23e90ee26" target="_blank" rel="noopener">DR-4856-CA</a>; Flood maps: <a href="https://msc.fema.gov/" target="_blank" rel="noopener">msc.fema.gov</a></li>
+  <li>U.S. Geological Survey — <a href="https://pubs.usgs.gov/publication/70029508" target="_blank" rel="noopener">Puente Hills loss estimates (Earthquake Spectra 2005)</a></li>
+  <li>Southern California Association of Governments (SCAG) — 2025 Southern California Economic Update (LA28 GDP estimate $13.6–17.6B) — <a href="https://www.scag.ca.gov" target="_blank" rel="noopener">scag.ca.gov</a></li>
+</ul>
+<h3>Industry / non-official (labeled, never as verified)</h3>
+<ul class="tight">
+  <li>CBRE — <a href="https://www.cbre.com/press-releases/net-lease-investment-rises-q2-2026-extending-broad-market-momentum" target="_blank" rel="noopener">US Net-Lease Investment, Q2 2026</a> (6.9% avg net-lease cap rate)</li>
+  <li>MMCG (third-party) citing CBRE H1 2026 — NET-lease QSR ~4–6% — flagged secondary source</li>
+  <li>LAEDC (non-profit), study commissioned by LA28 — $20–40B output estimate — flagged</li>
+  <li>Los Angeles Times, Politico, E&amp;E News, indexbox/USA Today — reporting on LA28 budget, FAIR Plan growth, activist stake — flagged, not primary</li>
+</ul>
+
+<h2>Privacy statement</h2>
+<div class="callout callout-privacy"><div class="c-ico">🔒</div><div><b>No personal information appears on this site.</b> The property is described only as “a NNN-leased Jack in the Box restaurant in Central Los Angeles
+(lease expiring 2030–2035).” No owner identity, address, parcel number, rent roll, loan, entity name, listing link, or tax data is published anywhere in this
+repository or the live site. Internal research marked “internal” stays in this repository only as COORDINATION.md process notes — and even there, no personal data.
+Any personal information encountered during research was disregarded for publication purposes.</div></div>
+
+<h2>Disclaimers</h2>
+<p class="small">This site is informational only and is <b>not legal, tax, accounting, appraisal, or investment advice</b>; it is not a broker opinion of value and not an appraisal.
+Figures are as of retrieval dates shown (mostly 2026-11-06) and change. NNN lease, real-estate and tax outcomes depend on documents and counsel this analysis has not seen.
+Consult a licensed CPA, attorney, real-estate broker and structural engineer before transacting. Sources are linked for your manual review — broken or moved links should be reported to the repo issue tracker.</p>
+<p class="small">Repository: <a href="https://github.com/wingbangboozle1-lang/Jack3" target="_blank" rel="noopener">github.com/wingbangboozle1-lang/Jack3</a> · Coordination log: COORDINATION.md at repo root · Site generated 2026-11-06.</p>
+
+  </main>
+  <footer class="footer">
+    <b>Jack3 Decision Desk</b> · Anonymized analysis for a Central Los Angeles NNN Jack in the Box (lease expiry 2030–2035).
+    Not legal, tax, or investment advice. Every figure carries a source link on-page or is explicitly flagged.
+    <a href="methodology.html">Methodology &amp; sources</a> · <a href="flagged-for-review.html">Flagged for review (14)</a> ·
+    <a href="https://github.com/wingbangboozle1-lang/Jack3" target="_blank" rel="noopener noreferrer">GitHub repo</a> · Generated 2026-11-06.
+  </footer>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
