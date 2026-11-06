@@ -31,7 +31,7 @@ Session ID: arena-28eacae6
 - 2026-11-06 — Initial commit 0c9e609 reviewed (README only). Board created; tasks claimed.
 - 2026-11-06 — Research complete; research/research-notes.md committed (commit 2f2dbe4).
 - 2026-11-06 — Site built (18 pages); build verified (all 200; link checker clean); decision matrix A=3.55 B=3.80 C=4.25 (C wins).
-- 2026-11-06 — PR and merge pending; will be logged here after creation/merge. PR link and merge result recorded in the next entry and in the PR body.
+- 2026-11-06 — PR #4 created: https://github.com/wingbangboozle1-lang/Jack3/pull/4 (arena/28eacae6-jack3 → main). Merge pending; deploy + merge result recorded below after completion.
 
 ## Irregularities / handoffs
 - Palisades Fire figure discrepancy (CAL FIRE 6,845 vs LA County 6,837) — disclosed on Flagged for Review #15; CAL FIRE used as primary.
