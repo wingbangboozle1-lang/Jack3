@@ -1,0 +1,22 @@
+metric,value,unit,geography,as_of,source_key,verified,note
+Eaton Fire - acres burned,"14,021",acres,Los Angeles County,2025-01-07 to 2025-01-31,lacounty_fact,VERIFIED,
+Eaton Fire - structures destroyed,"9,414",structures,Los Angeles County,2025-01-07 to 2025-01-31,lacounty_fact,VERIFIED,
+Eaton Fire - structures damaged,"1,074",structures,Los Angeles County,2025-01-07 to 2025-01-31,lacounty_fact,VERIFIED,
+Eaton Fire - agency with jurisdiction,LA County Fire Department,,Los Angeles County,2025-01-07,calfire_eaton,VERIFIED,
+Palisades Fire - acres burned,"23,448",acres,Los Angeles County,2025-01-07 to 2025-01-31,lacounty_fact,VERIFIED,
+Palisades Fire - structures destroyed,"6,837",structures,Los Angeles County,2025-01-07 to 2025-01-31,lacounty_fact,VERIFIED,
+Palisades Fire - structures damaged,973,structures,Los Angeles County,2025-01-07 to 2025-01-31,lacounty_fact,VERIFIED,
+Palisades Fire - confirmed fatalities,12,persons,Los Angeles County,2025-01-31,lacounty_fact,VERIFIED,
+Palisades Fire - agency with jurisdiction,LA City Fire Department,,Los Angeles County,2025-01-07,calfire_palisades,VERIFIED,
+January 2025 Los Angeles County wildfire event count,"10 wildfires beginning 2025-01-07 (Palisades, Eaton, Hurst, Woodley, Lidia, Sunset, Kenneth, Archer, Auto, Little Mountain)",events,Los Angeles County and adjacent counties,2025-01-07,crs,VERIFIED,
+"January 2025 fires - acres burned (CAL FIRE, as of 2025-01-16)","over 40,000",acres,Los Angeles County and adjacent,2025-01-16,crs,VERIFIED,
+January 2025 fires - structures destroyed,"over 12,000",structures,Los Angeles County and adjacent,2025-01-16,crs,VERIFIED,
+"Economic output lost, Eaton and Palisades Fires",$5.2 billion to $10.1 billion,USD,Los Angeles County,2025,lacounty_fact,VERIFIED,THE key black-swan benchmark: a single wind-driven wildfire event removed 0.5-1.0% of the county's annual economic output.
+"Businesses impacted, Eaton and Palisades Fires","approximately 6,800",businesses,Los Angeles County,2025,lacounty_fact,VERIFIED,
+"Workers impacted, Eaton and Palisades Fires","approximately 47,000",workers,Los Angeles County,2025,lacounty_fact,VERIFIED,
+"Labor income lost, Eaton and Palisades Fires",$2.2 billion to $4.2 billion,USD,Los Angeles County,2025,lacounty_fact,VERIFIED,
+"Tax revenue losses, Eaton and Palisades Fires",$900 million to $1.6 billion,USD,Los Angeles County,2025,lacounty_fact,VERIFIED,
+Statutory basis for Fire Hazard Severity Zone mapping,"California Public Resources Code sections 4201-4204 directs CAL FIRE to map fire hazard in State Responsibility Areas as Moderate, High or Very High",,California,current,calfire_fhsz,VERIFIED,
+Los Angeles County Local Responsibility Area zones,"Non-Wildland, Moderate, High and Very High Fire Hazard Severity Zones within LRA; these zones were established in 2025",,la-county,2025,lacounty_fhsz,VERIFIED,A 2025 re-mapping means prior zone designations are stale. Parcel-level determination requires the subject address.
+Fire Hazard Severity Zone of PROPERTY-01,,Moderate / High / Very High,PROPERTY-01,,calfire_fhsz_project,UNVERIFIED,"INPUT REQUIRED - parcel-specific. Cannot be determined without the property address or APN, which are withheld under the privacy directive."
+"FEMA NRI expected annual loss, wildfire, Los Angeles County",,USD/year,la-county,,fema_rapt,UNVERIFIED,Not read directly from fema.gov in this session. Wildfire loss is highly tract-concentrated in LA County; a county average is not a usable proxy for a specific parcel.

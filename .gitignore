@@ -1,6 +1,32 @@
-# Scratch / local tooling
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+venv/
+
+# Build / tooling artifacts (site is committed as static HTML; nothing generated at runtime)
+node_modules/
+dist/
+build/
+.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS / editor noise
 .DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Local scratch — never publish
+scratch/
+*.local.*
+private/
+pii/
+
+# --- from origin/main (other sessions) ---
+# Scratch / local tooling
+*.pyc
 research/raw/

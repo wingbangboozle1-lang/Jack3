@@ -1,0 +1,278 @@
+"""Verified data snapshot: demographics, housing and income for the Central
+Los Angeles market.
+
+Every row carries: value, unit, as_of, geography, source organisation and a
+direct source URL.  Rows that could NOT be confirmed from an official source
+carry value=None and verified="UNVERIFIED" -- the site renders those as blank
+and lists them on the Flagged for Review page.  Nothing is inferred.
+
+Retrieved 2026-11-06 (UTC) by session arena-d989a5c6-jack3.
+"""
+
+SNAPSHOT_DATE = "2026-11-06"
+
+# ---------------------------------------------------------------- geography --
+# "Central Los Angeles" is NOT an official Census geography.  The analysis is
+# therefore nested across three official geographies, and every table states
+# which one it describes.  See docs/geography.html for the mapping rationale.
+GEOGRAPHIES = [
+    {
+        "id": "la-county",
+        "label": "Los Angeles County, California",
+        "fips": "06037",
+        "official": True,
+        "source_url": "https://www.census.gov/quickfacts/losangelescountycalifornia",
+    },
+    {
+        "id": "la-city",
+        "label": "Los Angeles city, California",
+        "fips": "0644000",
+        "official": True,
+        "source_url": "https://www.census.gov/quickfacts/losangelescitycalifornia",
+    },
+    {
+        "id": "la-msa",
+        "label": "Los Angeles-Long Beach-Anaheim, CA Metropolitan Statistical Area",
+        "fips": "31080",
+        "official": True,
+        "source_url": "https://www.bls.gov/news.release/pdf/metro.pdf",
+    },
+]
+
+_QF_COUNTY = "https://www.census.gov/quickfacts/losangelescountycalifornia"
+_QF_CITY = "https://www.census.gov/quickfacts/losangelescitycalifornia"
+_CENSUS = "U.S. Census Bureau, QuickFacts"
+
+# ------------------------------------------------------------- population --
+POPULATION = [
+    dict(metric="Population estimate", value="9,694,934", unit="persons",
+         geography="la-county", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Population estimate", value="3,869,089", unit="persons",
+         geography="la-city", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Population estimates base", value="10,017,414", unit="persons",
+         geography="la-county", as_of="2020-04-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Population estimates base", value="3,899,342", unit="persons",
+         geography="la-city", as_of="2020-04-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Population change, 2020 base to 2025 estimate", value="-3.2",
+         unit="percent", geography="la-county", as_of="2020-04-01 to 2025-07-01",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Population change, 2020 base to 2025 estimate", value="-0.8",
+         unit="percent", geography="la-city", as_of="2020-04-01 to 2025-07-01",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Population, decennial census", value="10,014,009", unit="persons",
+         geography="la-county", as_of="2020-04-01",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Population, decennial census", value="3,898,747", unit="persons",
+         geography="la-city", as_of="2020-04-01",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Population, decennial census", value="9,818,605", unit="persons",
+         geography="la-county", as_of="2010-04-01",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Population, decennial census", value="3,792,621", unit="persons",
+         geography="la-city", as_of="2010-04-01",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+]
+
+# -------------------------------------------------------- density / land ----
+DENSITY = [
+    dict(metric="Population per square mile", value="2,466.9", unit="persons/sq mi",
+         geography="la-county", as_of="2020-04-01",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Population per square mile", value="8,304.2", unit="persons/sq mi",
+         geography="la-city", as_of="2020-04-01",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Population per square mile", value="2,419.6", unit="persons/sq mi",
+         geography="la-county", as_of="2010-04-01",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Population per square mile", value="8,092.3", unit="persons/sq mi",
+         geography="la-city", as_of="2010-04-01",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Land area", value="4,059.28", unit="sq mi",
+         geography="la-county", as_of="2020-04-01",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Land area", value="469.49", unit="sq mi",
+         geography="la-city", as_of="2020-04-01",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+]
+
+# ------------------------------------------------------------ households ----
+HOUSEHOLDS = [
+    dict(metric="Households", value="3,416,449", unit="households",
+         geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Households", value="1,439,097", unit="households",
+         geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Persons per household", value="2.81", unit="persons",
+         geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Persons per household", value="2.61", unit="persons",
+         geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Housing units", value="3,726,923", unit="units",
+         geography="la-county", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Housing units", value=None, unit="units",
+         geography="la-city", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="UNVERIFIED",
+         note="QuickFacts displays [X] (not available) for this geography."),
+    dict(metric="Building permits", value="22,250", unit="permits",
+         geography="la-county", as_of="2025",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Living in same house 1 year ago (age 1+)", value="90.8",
+         unit="percent", geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Living in same house 1 year ago (age 1+)", value="89.3",
+         unit="percent", geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+]
+
+# ---------------------------------------------------------------- income ----
+INCOME = [
+    dict(metric="Median household income (2024 dollars)", value="$90,112",
+         unit="USD", geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Median household income (2024 dollars)", value="$81,939",
+         unit="USD", geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Per capita income (2024 dollars)", value="$45,792", unit="USD",
+         geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Per capita income (2024 dollars)", value="$47,685", unit="USD",
+         geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Persons in poverty", value="13.3", unit="percent",
+         geography="la-county", as_of="2024 (SAIPE / ACS)",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Persons in poverty", value="16.5", unit="percent",
+         geography="la-city", as_of="2024 (SAIPE / ACS)",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Median value of owner-occupied housing units", value="$834,200",
+         unit="USD", geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Median value of owner-occupied housing units", value="$921,200",
+         unit="USD", geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Median gross rent", value="$1,954", unit="USD/month",
+         geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Median gross rent", value="$1,933", unit="USD/month",
+         geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Owner-occupied housing unit rate", value="45.9", unit="percent",
+         geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Owner-occupied housing unit rate", value="36.0", unit="percent",
+         geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+]
+
+# ------------------------------------------------- age & market composition -
+COMPOSITION = [
+    dict(metric="Persons under 5 years", value="4.8", unit="percent",
+         geography="la-county", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Persons under 5 years", value="5.0", unit="percent",
+         geography="la-city", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Persons under 18 years", value="19.2", unit="percent",
+         geography="la-county", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Persons under 18 years", value="19.2", unit="percent",
+         geography="la-city", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Persons 65 years and over", value="17.1", unit="percent",
+         geography="la-county", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Persons 65 years and over", value="14.2", unit="percent",
+         geography="la-city", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Hispanic or Latino", value="49.3", unit="percent",
+         geography="la-county", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Hispanic or Latino", value="47.2", unit="percent",
+         geography="la-city", as_of="2025-07-01 (Vintage 2025)",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Foreign-born persons", value="33.4", unit="percent",
+         geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Foreign-born persons", value="35.7", unit="percent",
+         geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Language other than English spoken at home (age 5+)",
+         value="55.1", unit="percent", geography="la-county",
+         as_of="2020-2024 ACS 5-year", source_org=_CENSUS,
+         source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Language other than English spoken at home (age 5+)",
+         value="56.4", unit="percent", geography="la-city",
+         as_of="2020-2024 ACS 5-year", source_org=_CENSUS,
+         source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="High school graduate or higher (age 25+)", value="80.9",
+         unit="percent", geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="High school graduate or higher (age 25+)", value="79.6",
+         unit="percent", geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Bachelor's degree or higher (age 25+)", value="36.0",
+         unit="percent", geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Bachelor's degree or higher (age 25+)", value="38.5",
+         unit="percent", geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+]
+
+# ---------------------------------------- economic census (spending power) --
+_BLS_SUMMARY = "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf"
+ECONOMIC_CENSUS = [
+    dict(metric="Total accommodation and food services sales", value="$44,000,801",
+         unit="$1,000", geography="la-county", as_of="2022 Economic Census",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED",
+         note="Directly relevant: this is the demand pool the tenant competes in."),
+    dict(metric="Total accommodation and food services sales", value="$17,366,966",
+         unit="$1,000", geography="la-city", as_of="2022 Economic Census",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Total retail sales", value="$213,932,785", unit="$1,000",
+         geography="la-county", as_of="2022 Economic Census",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Total retail sales", value="$81,351,523", unit="$1,000",
+         geography="la-city", as_of="2022 Economic Census",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Total retail sales per capita", value="$22,010", unit="USD",
+         geography="la-county", as_of="2022 Economic Census",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Total retail sales per capita", value="$21,281", unit="USD",
+         geography="la-city", as_of="2022 Economic Census",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+    dict(metric="Average annual household expenditure - food", value="$11,858",
+         unit="USD", geography="la-msa", as_of="2023-2024 Consumer Expenditure Survey",
+         source_org="U.S. Bureau of Labor Statistics", source_url=_BLS_SUMMARY,
+         verified="VERIFIED", note="U.S. comparison value: $10,077."),
+    dict(metric="Average annual household expenditure - housing", value="$33,126",
+         unit="USD", geography="la-msa", as_of="2023-2024 Consumer Expenditure Survey",
+         source_org="U.S. Bureau of Labor Statistics", source_url=_BLS_SUMMARY,
+         verified="VERIFIED", note="U.S. comparison value: $25,853."),
+    dict(metric="Average annual household expenditure - transportation",
+         value="$14,497", unit="USD", geography="la-msa",
+         as_of="2023-2024 Consumer Expenditure Survey",
+         source_org="U.S. Bureau of Labor Statistics", source_url=_BLS_SUMMARY,
+         verified="VERIFIED", note="U.S. comparison value: $13,278."),
+    dict(metric="Mean travel time to work (workers age 16+)", value="30.4",
+         unit="minutes", geography="la-county", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_COUNTY, verified="VERIFIED"),
+    dict(metric="Mean travel time to work (workers age 16+)", value="30.7",
+         unit="minutes", geography="la-city", as_of="2020-2024 ACS 5-year",
+         source_org=_CENSUS, source_url=_QF_CITY, verified="VERIFIED"),
+]
+
+ALL_TABLES = {
+    "population": POPULATION,
+    "density": DENSITY,
+    "households": HOUSEHOLDS,
+    "income": INCOME,
+    "composition": COMPOSITION,
+    "economic_census": ECONOMIC_CENSUS,
+}

@@ -1,0 +1,14 @@
+metric,value,as_of,source_key,verified,note
+"California state minimum wage, all employers",$16.90/hour,effective 2026-01-01,dir_minwage,VERIFIED,
+"California state minimum wage, all employers",$16.50/hour,effective 2025-01-01,dir_minwage,VERIFIED,
+"California state minimum wage, all employers",$16.00/hour,effective 2024-01-01,dir_minwage,VERIFIED,
+California fast food restaurant employee minimum wage (AB 1228),$20.00/hour,effective 2024-04-01,dir_fastfood,VERIFIED,Governs this tenant. Applies regardless of whether the employer is the brand owner or a FRANCHISEE.
+Statutory authority for the fast food wage,"AB 1228, adding Labor Code sections 1474, 1475 and 1476; establishes the Fast Food Council",,dir_fastfood,VERIFIED,
+Fast food coverage test,Limited-service restaurant in California + part of a chain of at least 60 establishments nationwide + primarily selling food and beverages for immediate consumption,,dir_fastfood,VERIFIED,"Jack in the Box operates 2,115+ establishments and meets all three tests."
+Local-ordinance interaction,"A city or county may not set a fast-food-specific wage, but a higher general local minimum wage applies to fast food employees",,dir_fastfood,VERIFIED,
+"City of Los Angeles minimum wage, all employers",$18.42/hour,effective 2026-07-01,lacity_ows,VERIFIED,
+"City of Los Angeles minimum wage, all employers",$17.87/hour,effective 2025-07-01,lacity_ows,VERIFIED,
+"City of Los Angeles minimum wage, all employers",$17.28/hour,effective 2024-07-01,lacity_ows,VERIFIED,
+"City of Los Angeles minimum wage, all employers",$16.78/hour,effective 2023-07-01,lacity_ows,VERIFIED,
+City of Los Angeles wage adjustment mechanism,Adjusted annually on July 1 based on CPI-W for the Los Angeles metropolitan area published by the U.S. Bureau of Labor Statistics; new rate announced February 1 each year,,lacity_ows,VERIFIED,
+Governing rate for a Jack in the Box restaurant inside City of Los Angeles,$20.00/hour,2026,dir_fastfood,VERIFIED,The higher of the state fast food rate ($20.00) and the City general rate ($18.42). This is the binding floor for the tenant's labour cost.

@@ -1,0 +1,18 @@
+metric,value,unit,geography,as_of,source_key,verified,note
+"Los Angeles County population, baseline estimate","9,721,138",residents,la-county,2022 (ACS 1-year),lacity_ewdd,VERIFIED,
+"City of Los Angeles population, baseline estimate","3,822,224",residents,la-city,2022 (ACS 1-year),lacity_ewdd,VERIFIED,
+Los Angeles County median household income,"$82,516",USD,la-county,2022 (ACS 1-year),lacity_ewdd,VERIFIED,
+City of Los Angeles median household income,"$76,135",USD,la-city,2022 (ACS 1-year),lacity_ewdd,VERIFIED,
+California median household income,"$91,551",USD,california,2022 (ACS 1-year),lacity_ewdd,VERIFIED,
+Los Angeles County median home value,"$805,600",USD,la-county,2022 (ACS 1-year),lacity_ewdd,VERIFIED,
+City of Los Angeles median home value,"$903,700",USD,la-city,2022 (ACS 1-year),lacity_ewdd,VERIFIED,
+Los Angeles County median age,38.2,years,la-county,2022 (ACS 1-year),lacity_ewdd,VERIFIED,
+City of Los Angeles median age,37.1,years,la-city,2022 (ACS 1-year),lacity_ewdd,VERIFIED,
+Los Angeles County annual population growth rate,approximately -0.7%,percent/year,la-county,as stated in the 2024 City of LA plan,lacity_ewdd,VERIFIED,
+"CA Dept. of Finance forecast, Los Angeles County population",approximately 9.3 million,residents,la-county,2040 forecast (as cited in the 2024 City of LA plan),lacity_ewdd,VERIFIED,This is a DOF projection of an EARLIER vintage. DOF has since published Baseline 2024 projections.
+"CA Dept. of Finance forecast, Los Angeles County population",approximately 8.3 million,residents,la-county,2060 forecast (as cited in the 2024 City of LA plan),lacity_ewdd,VERIFIED,
+CA Dept. of Finance current projection series,"Population Projections, Baseline 2024; Vintage 2026 released 2026-03-13; county file P-2A covers 2020-2070",,California and all counties,2026-03-13,dof_proj,VERIFIED,"The numeric county projections themselves are published only in .xlsx files (P2A_County_Total.xlsx). This environment cannot download from dof.ca.gov, so the individual projected values are left UNVERIFIED below."
+"CA DOF P-2A projected population, Los Angeles County, 2030",,residents,la-county,Vintage 2026,dof_proj,UNVERIFIED,"Download P2A_County_Total.xlsx from the official DOF page to confirm. Third-party figures for this year disagree between vintages by more than 100,000 residents, so no value is asserted here."
+"CA DOF P-2A projected population, Los Angeles County, 2035",,residents,la-county,Vintage 2026,dof_proj,UNVERIFIED,THE MOST IMPORTANT SINGLE FORECAST YEAR for this decision (mid-point of the 2030-2035 expiry window). Download P2A_County_Total.xlsx to confirm.
+"CA DOF P-2A projected population, Los Angeles County, 2040",,residents,la-county,Vintage 2026,dof_proj,UNVERIFIED,
+"CA DOF P-4 projected households, Los Angeles County",,households,la-county,"2010-2040 series, Baseline 2024",dof_proj,UNVERIFIED,Published in P4_HHProjections_B2024.xlsx.

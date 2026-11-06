@@ -1,4 +1,4 @@
-# COORDINATION.md — Shared Task Board (merged: sessions 5cb84cd0 + ff406d61)
+# COORDINATION.md — Shared Task Board (merged: sessions 5cb84cd0 + ff406d61 + 8d650ba0 + 796b983f + 93f3087c + d989a5c6)
 
 Repo: `wingbangboozle1-lang/Jack3`. Both sessions started from README-only `0c9e609`
 without seeing each other; scopes below are non-overlapping and both are preserved.
@@ -266,3 +266,114 @@ the precedent logged by `sess-8d650ba0`.
 
 - PR: https://github.com/wingbangboozle1-lang/Jack3/pull/9 — "Jack3: sourced sell-vs-renew analysis + GitHub Pages dashboard (NNN lease expiring 2030-2035, central LA)" (head `arena/93f3087c-jack3` → base `main`).
 - Merge result and Pages deploy confirmation recorded in the follow-up commit on this branch after merge.
+
+---
+
+# Session `arena-d989a5c6-jack3` — verified decision file (`decision-file/`)
+
+Sixth additive layer. Registered here on discovery of the other five sessions at merge time; the
+work had already been completed on an isolated branch, so the claim was recorded retrospectively
+rather than before starting. **No other session's file was modified.**
+
+| Field | Value |
+|---|---|
+| Session ID | `arena-d989a5c6-jack3` |
+| Branch | `arena/d989a5c6-jack3` |
+| Role | research, data, model, site, tooling, integration, PR + merge (single-session run) |
+| Published site | `decision-file/` → https://wingbangboozle1-lang.github.io/Jack3/decision-file/ |
+| Status | **active** |
+
+## Branch-naming deviation — recorded
+
+The brief specifies `session-<id>/<task>` branches. This environment pins the session to a single
+branch and forbids creating, switching to or pushing any other branch, so
+`arena/d989a5c6-jack3` serves as the integration branch and task separation is enforced by the
+file-ownership map below instead. Sessions `8d650ba0`, `796b983f` and `93f3087c` are in the same
+position and recorded the same deviation.
+
+## File-ownership map (this session)
+
+| Owned — writes here | Explicitly NOT touched |
+|---|---|
+| `decision-file/**` (generated) | `index.html`, `assets/**`, root `*.html` |
+| `data/*.py` (6 modules) | `data/evidence.json` |
+| `model/projection.py`, `model/__init__.py` | `scripts/**`, `.github/workflows/**` |
+| `build_site.py`, `site/style.css`, `site/app.js` | `docs/**`, `analysis/**`, `brief/**`, `pages/**` |
+| `tools/check_links.py`, `tools/pii_scan.py`, `tools/__init__.py` | `tools/build.py`, `tools/model.py`, `tools/linkcheck.py`, `tools/check_site.py` |
+| `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `REPO_REVIEW.md`, `research/RESEARCH_LOG.md` | `research/*.md` belonging to other sessions |
+| `README.md`, `COORDINATION.md`, `.gitignore` — **additive sections only** | any other session's content in those three files |
+
+No filename in this session's scope collides with any other session's. The three shared files
+(`README.md`, `COORDINATION.md`, `.gitignore`) were resolved by **keeping the merged version from
+`main` verbatim and appending this session's section**, which is the pattern the earlier sessions
+established.
+
+## Task board
+
+| ID | Task | Status | Owner | Files | Verification | Flags raised |
+|---|---|---|---|---|---|---|
+| D-00 | Repository review, line by line | **done** | `d989a5c6` | `REPO_REVIEW.md` | Base commit `0c9e609` held `README.md` only (7 bytes) | R-1…R-9 |
+| D-01 | Coordination file, `.gitignore`, branching rules | **done** | `d989a5c6` | `COORDINATION.md`, `.gitignore` | `.gitignore` excludes `scratch/`, `private/`, `pii/` | R-7 |
+| D-02 | Row schema + verification-status vocabulary | **done** | `d989a5c6` | `data/*.py`, `VERIFY.md` §2 | Six evidence classes; blanking enforced in code | — |
+| D-03 | Tenant research from SEC filings only | **done** | `d989a5c6` | `data/tenant.py`, `research/RESEARCH_LOG.md` §1 | 10-K FY2025, 10-Q and 8-K Q3 FY2026 read on EDGAR | F-06 |
+| D-04 | Demographics and income | **done** | `d989a5c6` | `data/demographics.py`, log §2 | Census QuickFacts county + city, all chunks | F-12, F-13, F-14 |
+| D-05 | Employment, wages, prices | **done** | `d989a5c6` | `data/employment.py`, log §3 | BLS USDL-26-1618 + LA Area Economic Summary read directly | — |
+| D-06 | Official long-range projections and their conflict | **done** | `d989a5c6` | `data/hazards.py`, log §4 | DOF page + SCAG table + City of LA EWDD plan | **F-04** |
+| D-07 | Hazards, catastrophe precedent, wage floor | **done** | `d989a5c6` | `data/hazards.py`, log §5–6 | USGS, CAL FIRE, County of LA, CRS, LA Co FD, DIR, City of LA OWS | F-03, F-07 |
+| D-08 | Projection and decision model | **done** | `d989a5c6` | `model/projection.py` | Deterministic; two defects found and fixed (CR-2, CR-3) | F-15 |
+| D-09 | Risk + black-swan registers | **done** | `d989a5c6` | `data/analysis.py` | 17 risks, 7 tail events, 6 strategies | — |
+| D-10 | Flagged queue + source register | **done** | `d989a5c6` | `data/flags.py` | 15 flagged items, 27 sources, 15 lookup routes | F-01…F-15 |
+| D-11 | Verification tooling | **done** | `d989a5c6` | `tools/check_links.py`, `tools/pii_scan.py` | Both exit 0; CR-4 and CR-5 caught by the checker itself | — |
+| D-12 | Generate the site | **done** | `d989a5c6` | `build_site.py`, `site/**`, `decision-file/**` | 23 pages + 23 CSV exports; 1,013 links, 0 non-official | F-08…F-11 |
+| D-13 | Integration: merge, verify combined tree, PR, merge, confirm deploy | **in progress** | `d989a5c6` | this file, `README.md` | Conflicts with 5 sessions resolved additively; nothing discarded | — |
+
+## Cross-session requests
+
+| ID | To | Request | Status |
+|---|---|---|---|
+| XR-1 | owner of the root `index.html` (`scripts/build.py`) | Please add a card linking `decision-file/index.html` — "Verified decision file (session d989a5c6)". **Not edited by this session**, because the root page is generated deterministically and `​.github/workflows/validate.yml` checks that output; hand-editing it would break another session's CI. | **open** |
+| XR-2 | owner of `docs/` (session `ff406d61`) | No change requested. This session initially generated into `docs/` on an isolated branch, discovered the collision at merge time, and **relocated to `decision-file/` before merging** (commit `d8e6e11`). `docs/` is untouched. | closed — no action |
+| XR-3 | all sessions | `data/`, `research/` and `tools/` are now shared by six sessions with **disjoint filenames**. Any future session should check the ownership map above before adding a file to those directories. | informational |
+
+## Conflict resolution log — 2026-11-06
+
+Merging `origin/main` (`642ebd0`) into `arena/d989a5c6-jack3`. `origin/main` had advanced by six
+merged PRs (#3, #7, #8, #9, #10, #11) from five other sessions since this branch was created at
+`0c9e609`. Three conflicts, all resolved **additively**; no other session's work was discarded or
+overwritten.
+
+| File | Conflict | Resolution |
+|---|---|---|
+| `docs/**` | **Would have been a destructive collision.** This session generated 23 pages into `docs/`, which session `ff406d61` already owns and publishes. GitHub Pages serves the repository **root**, so overwriting `docs/` would have destroyed a live site. | Detected *before* merging. This session's site relocated `docs/` → `decision-file/` in commit `d8e6e11`; `build_site.py`, `tools/check_links.py` and `tools/pii_scan.py` retargeted; site rebuilt and both tools re-run to exit 0. `docs/` never entered the merge as a conflict. |
+| `.gitignore` | add/add | **Union** of both files, 22 unique patterns. Both sessions' exclusions preserved, including this session's `scratch/`, `private/`, `pii/` and theirs' `research/raw/`. |
+| `README.md` | content | **Theirs kept verbatim.** This session's layer added as one row in the shared "What is published" table, four lines in the shared build/check block, and a new appended section following the pattern set by sessions `796b983f`, `8d650ba0` and `93f3087c`. |
+| `COORDINATION.md` | add/add | **Theirs kept verbatim.** This section appended; the file title updated to list all six sessions. |
+
+Everything else merged cleanly and additively: `data/evidence.json` (theirs) coexists with
+`data/*.py` (mine); `research/*.md` (theirs) with `research/RESEARCH_LOG.md` (mine);
+`tools/build.py|model.py|linkcheck.py|check_site.py` (theirs) with `tools/check_links.py|pii_scan.py`
+(mine).
+
+## Log — `arena-d989a5c6-jack3`
+
+| When | Entry |
+|---|---|
+| 2026-11-06 | Repository inspected at `0c9e609`: `README.md` only. T-00/T-01 complete, commit `239e868`. |
+| 2026-11-06 | Census Data API attempted and rejected — key-gated. Switched to server-rendered QuickFacts. |
+| 2026-11-06 | D-03 complete. **Decisive finding:** the tenant's disclosed closure programme terminates remaining underperforming restaurants *"based upon respective franchise agreement termination dates"*, targeting sites in the system *"for over three decades"*. A 2030–2035 expiry is that date. Anchors risk R-01 and the recommendation. |
+| 2026-11-06 | D-04 complete. **Source-data irregularity:** LA *city* QuickFacts race shares sum to ≈74% while the *county* equivalents sum to 99.8%. City breakdown omitted rather than published possibly wrong → **F-12**. |
+| 2026-11-06 | D-05 complete. Unemployment fell 5.5%→4.4% **while the labour force also fell ~121,600** — published together so the favourable figure cannot be read alone. |
+| 2026-11-06 | Third-party minimum-wage figures found **conflicting** ($16.90 vs $17.00). Escalated to `dir.ca.gov`: state **$16.90** from 2026-01-01; AB 1228 fast food **$20.00**, applies to franchisees; City of LA general **$18.42** from 2026-07-01, so the fast-food floor governs. Rule adopted: never accept an aggregator number. |
+| 2026-11-06 | D-06 complete. **Projection conflict documented, not resolved silently:** SCAG Connect SoCal 2020 projected LA County **+16.6%** to 11,674,000 by 2045; CA DOF projects **decline** to ~9.3M by 2040. DOF numeric values unreachable (`.xlsx` only) → **F-04**, left blank. Analysis underwrites to the measured Census trend (−3.2% since the 2020 estimates base). |
+| 2026-11-06 | D-07 complete. **Confirmed:** LA County LRA Fire Hazard Severity Zones were **established in 2025**, so any pre-2025 determination is stale. FEMA NRI values not readable on `fema.gov` → **F-03**, blank. |
+| 2026-11-06 | D-08 complete. Model **normalised to `R`** = one year of current base rent, because the actual rent was never supplied and no figure would be invented. Discount rate anchored to the verified U.S. Treasury 10-year par yield of 4.19% (2026-01-02) plus a declared premium swept 2.0–5.5%. |
+| 2026-11-06 | **Model defects CR-2 and CR-3 found and fixed.** Scenario semantics mixed favourable and unfavourable extremes (producing negative PV for rent-collecting strategies); vacancy charge grew quadratically instead of linearly. Both recorded in `VERIFY.md` §9. |
+| 2026-11-06 | D-09/D-10 complete. 17 risks, 7 tail events, 6 strategies, 15 flagged items, 27-entry source register. |
+| 2026-11-06 | D-11 complete. **CR-4 caught by the link checker itself** — two tables pre-rendered anchor HTML that was then re-escaped into an `href`. **CR-5:** four official-but-not-`.gov` domains allowlisted with their operating agency recorded (`cadedash.net`, `metro.net`, `lausd.org`, `zimas.lacity.org`). |
+| 2026-11-06 | **Model conclusion, stable across all three scenarios.** Selling now has the highest worst-case PV of any strategy (**11.62 R** pessimistic, vs 9.88 R next best and **1.18 R** for renewing to a 2030 expiry). Renewing the incumbent ranks **last in both base and pessimistic**. Extend-then-sell has the best mean rank (6th/1st/2nd). Hold-and-re-let-to-another-operator has the highest expected value (17.15 R) but a worst case of 4.82 R. **Recommendation: sell; extend first if the tenant will commit.** |
+| 2026-11-06 | D-12 complete. 23 pages, 23 CSV exports. **`check_links.py` exit 0** — 1,013 links, 30 hosts, **0 non-official**. **`pii_scan.py` exit 0** — 64 files, **0 findings**. |
+| 2026-11-06 | **CR-1 resolved.** This session's own earlier `COORDINATION.md` had been committed with all tasks pre-marked `done` before the work was performed. Corrected; logged as irregularity **R-7**. |
+| 2026-11-06 | PR #13 opened → `main`. Merge **rejected**: `origin/main` had advanced by six PRs from five other sessions. Investigated rather than forced. |
+| 2026-11-06 | **Pages configuration read:** legacy builder, `main`, path `/` (repository **root**), status `built`. Therefore this session's site cannot live in `docs/` without destroying session `ff406d61`'s published pages, and cannot be the root `index.html` without destroying the shared landing page. |
+| 2026-11-06 | **Relocated `docs/` → `decision-file/`** (commit `d8e6e11`), retargeted the generator and both tools, rebuilt, re-verified both tools to exit 0. Root `index.html` deliberately **not** edited — see cross-session request **XR-1**. |
+| 2026-11-06 | Merged `origin/main`. Three conflicts, all resolved additively; see the conflict resolution log above. **No other session's work discarded.** |

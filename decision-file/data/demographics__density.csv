@@ -1,0 +1,7 @@
+metric,value,unit,geography,as_of,source_org,source_url,verified
+Population per square mile,"2,466.9",persons/sq mi,la-county,2020-04-01,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Population per square mile,"8,304.2",persons/sq mi,la-city,2020-04-01,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Population per square mile,"2,419.6",persons/sq mi,la-county,2010-04-01,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Population per square mile,"8,092.3",persons/sq mi,la-city,2010-04-01,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Land area,"4,059.28",sq mi,la-county,2020-04-01,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Land area,469.49,sq mi,la-city,2020-04-01,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED

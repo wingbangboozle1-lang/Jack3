@@ -1,0 +1,5 @@
+as_of,company,franchise,total,source_key,verified,note
+2024-09-29 (FY2024 year end),150,"2,041","2,191",10K_FY2025,VERIFIED,
+2025-04-13 (Q2 FY2025),146,"2,037","2,183",10K_FY2025,VERIFIED,
+2025-09-28 (FY2025 year end),150,"1,986","2,136",10K_FY2025,VERIFIED,
+2026-07-05 (Q3 FY2026),,,"2,115",10Q_Q3FY2026,VERIFIED,"Company/franchise split at this date to be read from the 10-Q restaurant-count table; total confirmed. 40 restaurants closed in the first three quarters of FY2026; FY2025 openings 31, closures 86."

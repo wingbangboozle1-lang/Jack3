@@ -1,0 +1,6 @@
+metric,value,unit,geography,source_key,verified,note
+"Probability of M6.7 or greater in the Los Angeles region, next 30 years",60%,probability,Los Angeles region,usgs,VERIFIED,"UCERF3, the Uniform California Earthquake Rupture Forecast. M6.7 matches the 1994 Northridge earthquake."
+"Probability of M7.0 or greater in the Los Angeles region, next 30 years",46%,probability,Los Angeles region,usgs,VERIFIED,
+"Probability of M7.5 or greater in the Los Angeles region, next 30 years",31%,probability,Los Angeles region,usgs,VERIFIED,
+"FEMA NRI expected annual loss, earthquake, Los Angeles County",,USD/year,la-county,fema_rapt,UNVERIFIED,Value circulates in secondary aggregators of FEMA NRI v1.20 but was NOT read on a fema.gov page in this session. Confirm in RAPT for the subject tract; left blank rather than inferred.
+"FEMA NRI composite risk score, Los Angeles County",,score 0-100,la-county,fema_nri,UNVERIFIED,Not read directly from fema.gov in this session. Confirm in RAPT.

@@ -1,0 +1,13 @@
+metric,value,unit,geography,as_of,source_org,source_url,verified
+Median household income (2024 dollars),"$90,112",USD,la-county,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Median household income (2024 dollars),"$81,939",USD,la-city,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Per capita income (2024 dollars),"$45,792",USD,la-county,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Per capita income (2024 dollars),"$47,685",USD,la-city,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Persons in poverty,13.3,percent,la-county,2024 (SAIPE / ACS),"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Persons in poverty,16.5,percent,la-city,2024 (SAIPE / ACS),"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Median value of owner-occupied housing units,"$834,200",USD,la-county,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Median value of owner-occupied housing units,"$921,200",USD,la-city,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Median gross rent,"$1,954",USD/month,la-county,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Median gross rent,"$1,933",USD/month,la-city,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Owner-occupied housing unit rate,45.9,percent,la-county,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Owner-occupied housing unit rate,36.0,percent,la-city,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
