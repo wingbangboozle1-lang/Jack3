@@ -1,0 +1,8 @@
+metric,value,prior_year,source_key,verified,note
+"Food and packaging, % of company restaurant sales",29.3%,28.6%,IR_Q3FY2026,VERIFIED,
+"Labor, % of company restaurant sales",33.7%,34.5%,IR_Q3FY2026,VERIFIED,
+Restaurant-level margin,17.6%,17.9%,IR_Q3FY2026,VERIFIED,
+"Franchised restaurant average unit volume, FY2025","$1,549 thousand","$1,573 thousand",10K_FY2025,VERIFIED,
+"Royalties as % of franchised restaurant sales, FY2025",4.6%,4.7%,10K_FY2025,VERIFIED,
+"Employees, system-wide","5,046 (both brands)",,10K_FY2025,VERIFIED,
+Geographic concentration,Approximately 70% of system-wide restaurants located in California and Texas,,10K_FY2025,VERIFIED,"California is the brand's core market - a reason it defends LA sites, and a reason LA weakness hits system results directly."

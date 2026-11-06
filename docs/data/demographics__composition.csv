@@ -1,0 +1,17 @@
+metric,value,unit,geography,as_of,source_org,source_url,verified
+Persons under 5 years,4.8,percent,la-county,2025-07-01 (Vintage 2025),"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Persons under 5 years,5.0,percent,la-city,2025-07-01 (Vintage 2025),"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Persons under 18 years,19.2,percent,la-county,2025-07-01 (Vintage 2025),"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Persons under 18 years,19.2,percent,la-city,2025-07-01 (Vintage 2025),"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Persons 65 years and over,17.1,percent,la-county,2025-07-01 (Vintage 2025),"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Persons 65 years and over,14.2,percent,la-city,2025-07-01 (Vintage 2025),"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Hispanic or Latino,49.3,percent,la-county,2025-07-01 (Vintage 2025),"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Hispanic or Latino,47.2,percent,la-city,2025-07-01 (Vintage 2025),"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Foreign-born persons,33.4,percent,la-county,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Foreign-born persons,35.7,percent,la-city,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Language other than English spoken at home (age 5+),55.1,percent,la-county,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Language other than English spoken at home (age 5+),56.4,percent,la-city,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+High school graduate or higher (age 25+),80.9,percent,la-county,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+High school graduate or higher (age 25+),79.6,percent,la-city,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED
+Bachelor's degree or higher (age 25+),36.0,percent,la-county,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+Bachelor's degree or higher (age 25+),38.5,percent,la-city,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED

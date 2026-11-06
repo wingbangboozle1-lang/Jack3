@@ -1,0 +1,18 @@
+metric,value,unit,geography,as_of,source_org,source_url,verified
+Civilian labor force,"6,646,903",persons,la-msa,2026-09 (preliminary),U.S. Bureau of Labor Statistics,https://www.bls.gov/news.release/pdf/metro.pdf,VERIFIED
+Civilian labor force,"6,768,502",persons,la-msa,2025-09,U.S. Bureau of Labor Statistics,https://www.bls.gov/news.release/pdf/metro.pdf,VERIFIED
+Civilian labor force,"6,589,304",persons,la-msa,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/news.release/pdf/metro.pdf,VERIFIED
+"Unemployed, number","294,000",persons,la-msa,2026-09 (preliminary),U.S. Bureau of Labor Statistics,https://www.bls.gov/news.release/pdf/metro.pdf,VERIFIED
+"Unemployed, number","372,871",persons,la-msa,2025-09,U.S. Bureau of Labor Statistics,https://www.bls.gov/news.release/pdf/metro.pdf,VERIFIED
+Unemployment rate,4.4,percent,la-msa,2026-09 (preliminary),U.S. Bureau of Labor Statistics,https://www.bls.gov/news.release/pdf/metro.pdf,VERIFIED
+Unemployment rate,5.5,percent,la-msa,2025-09,U.S. Bureau of Labor Statistics,https://www.bls.gov/news.release/pdf/metro.pdf,VERIFIED
+Unemployment rate,4.8,percent,la-msa,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED
+Unemployment rate,5.8,percent,la-msa,2025-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED
+Unemployment rate,4.9,percent,la-county,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED
+Unemployment rate,6.2,percent,la-county,2025-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED
+Unemployment rate,5.0,percent,la-city,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED
+Unemployment rate,6.2,percent,la-city,2025-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED
+Unemployment rate (benchmark),4.3,percent,united-states,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED
+Unemployment rate (benchmark),5.4,percent,california,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED
+In civilian labor force (age 16+),64.7,percent,la-county,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED
+In civilian labor force (age 16+),66.4,percent,la-city,2020-2024 ACS 5-year,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescitycalifornia,VERIFIED

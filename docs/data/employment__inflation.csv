@@ -1,0 +1,5 @@
+metric,value,unit,geography,as_of,source_org,source_url,verified,benchmark,note
+"CPI-U, all items, 12-month change",3.6,percent,la-msa,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,3.4 (U.S. city average),
+"CPI-U, food, 12-month change",2.8,percent,la-msa,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,2.7 (U.S. city average),Direct input to the tenant's food-cost pressure and therefore to its ability to absorb rent.
+"CPI-U, energy, 12-month change",17.6,percent,la-msa,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,16.3 (U.S. city average),
+"PPI, hotels (exc. casino hotels) and motels, 12-month change",3.0,percent,united-states,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,,
