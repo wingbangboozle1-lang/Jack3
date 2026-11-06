@@ -265,4 +265,11 @@ the precedent logged by `sess-8d650ba0`.
 ## PR / merge / deploy record
 
 - PR: https://github.com/wingbangboozle1-lang/Jack3/pull/9 — "Jack3: sourced sell-vs-renew analysis + GitHub Pages dashboard (NNN lease expiring 2030-2035, central LA)" (head `arena/93f3087c-jack3` → base `main`).
-- Merge result and Pages deploy confirmation recorded in the follow-up commit on this branch after merge.
+- **Merge result:** MERGED to `main` 2026-11-06 13:25:38 UTC, merge commit `642ebd0dfe99bee4c7cff96c459b52eeb50752bd`, method: merge commit, no approval wait (per instructions). PR #9 head `06c707a`, CI `Validate public research` PASS before merge (run 42225347091).
+- **Pages deploy:** build for `642ebd0dfe` status `built` (build id 1346390591, 2026-11-06 13:25:39 UTC, error: null; two intermediate builds for `a06b0a3`/`faef0f3` from other sessions' merges had errored with the legacy builder — final build on this merge succeeded). Pages config unchanged: `build_type: legacy`, source `main` `/`, public.
+- **Live URLs verified by direct fetch on 2026-11-06 (post-deploy):**
+  - https://wingbangboozle1-lang.github.io/Jack3/ — root dashboard (sessions 5cb84cd0/8d650ba0), now cross-linking `pages/`
+  - https://wingbangboozle1-lang.github.io/Jack3/pages/index.html — this session's dashboard (landing + KPIs + key findings table) ✅
+  - https://wingbangboozle1-lang.github.io/Jack3/pages/executive-summary.html, `market-research.html`, `lease-analysis.html`, `risk-analysis.html`, `projections.html`, `repo-review.html`, `sources.html`, `flagged.html` — all serve correctly ✅ (initial 404s on `pages/index.html` were CDN edge caching of a pre-deploy 404; cleared on re-request / cache-busted fetch)
+  - Companion layers from other sessions remain live: `/docs/` (ff406d61), `/analysis/` (8d650ba0), `/brief/` (796b983f)
+- Combined-tree verification before merge: `python3 scripts/validate.py` PASS (68 evidence rows, 9 root pages), `python3 tools/linkcheck.py` OK (0 broken internal links), own `pages/` internal-link check ALL OK, PII scan clean on all session files. Flagged items F1–F13 published on `pages/flagged.html` — non-blocking, as instructed.
