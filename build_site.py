@@ -2,8 +2,8 @@
 """Static site generator for the Jack3 decision dashboard.
 
 Reads the verified data snapshot in data/*.py and the model in
-model/projection.py, and writes plain HTML into docs/.  GitHub Pages serves
-docs/ directly with no build step, so the published site cannot fail to deploy
+model/projection.py, and writes plain HTML into decision-file/.  GitHub Pages serves
+the repository root directly with no build step, so the published site cannot fail to deploy
 because of a toolchain.
 
     python3 build_site.py
@@ -29,7 +29,13 @@ from data import demographics, employment, tenant, hazards, analysis, flags  # n
 from model import projection as M  # noqa: E402
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-DOCS = os.path.join(ROOT, "docs")
+# NOTE: this repository is shared by several parallel sessions and the
+# root docs/ directory already belongs to another session's site.  This
+# generator therefore writes to its OWN directory, decision-file/, and
+# never touches docs/, the root index.html, or any other session's files.
+# GitHub Pages serves the repository root, so the site is published at
+#   https://wingbangboozle1-lang.github.io/Jack3/decision-file/
+DOCS = os.path.join(ROOT, "decision-file")
 SITE = os.path.join(ROOT, "site")
 SNAPSHOT = "2026-11-06"
 REPO = "wingbangboozle1-lang/Jack3"

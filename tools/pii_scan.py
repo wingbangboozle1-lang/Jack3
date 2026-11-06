@@ -6,7 +6,7 @@ project.  This tool is the mechanical enforcement of that constraint: the
 guarantee is not a promise, it is a build check that fails.
 
 Scanned:
-    docs/**/*.html, docs/**/*.csv     (the published site)
+    decision-file/**/*.html, decision-file/**/*.csv   (the published site)
     data/*.py                         (the committed data snapshot)
     model/*.py                        (the model)
     *.md at the repository root       (the written deliverables)
@@ -59,7 +59,7 @@ PROPERTY_ID = re.compile(
 # Officer names of the tenant that must NOT be reproduced on the site.
 OFFICER_NAMES = ["Lance Tucker", "Mark King"]
 
-SCAN_DIRS = ["docs", "data", "model", "tools", "site", "research"]
+SCAN_DIRS = ["decision-file", "data", "model", "tools", "site", "research"]
 SCAN_ROOT_FILES = True
 
 

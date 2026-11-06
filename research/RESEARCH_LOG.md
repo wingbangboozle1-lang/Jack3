@@ -8,7 +8,7 @@ claim.
 **Session:** `arena-d989a5c6-jack3` · **Conducted:** 2026-11-06 (UTC)
 
 Data modules: [`../data/`](../data/) · Source register:
-[`../docs/sources.html`](../docs/sources.html) · Verification report:
+[`../decision-file/sources.html`](../decision-file/sources.html) · Verification report:
 [`../VERIFY.md`](../VERIFY.md)
 
 ---

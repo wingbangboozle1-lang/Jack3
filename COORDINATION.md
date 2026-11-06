@@ -79,7 +79,7 @@ been corrected. Recorded as irregularity **R-7** in `REPO_REVIEW.md`.
 | T-09 | Build the risk register and black-swan register | **done** | `arena-d989a5c6-jack3` | `data/analysis.py` |
 | T-10 | Build the flagged-for-review queue and source register | **done** | `arena-d989a5c6-jack3` | `data/flags.py` |
 | T-11 | Build the verification tooling | **done** | `arena-d989a5c6-jack3` | `tools/check_links.py`, `tools/pii_scan.py` |
-| T-12 | Generate the site and publish via GitHub Pages | **in progress** | `arena-d989a5c6-jack3` | `build_site.py`, `site/`, `docs/**` |
+| T-12 | Generate the site and publish via GitHub Pages | **in progress** | `arena-d989a5c6-jack3` | `build_site.py`, `site/`, `decision-file/**` |
 | T-13 | Integration: verify combined data, confirm no broken links, open PR, merge, confirm deploy | **in progress** | `arena-d989a5c6-jack3` | this file, `README.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md` |
 
 T-12 and T-13 are marked `in progress` until the Pages deployment is confirmed
@@ -94,7 +94,7 @@ map is what makes a future session safe to add.
 
 | Owner | Files |
 |---|---|
-| `arena-d989a5c6-jack3` (integration) | **everything** — `README.md`, `COORDINATION.md`, `REPO_REVIEW.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `.gitignore`, `data/**`, `model/**`, `tools/**`, `site/**`, `research/**`, `build_site.py`, `docs/**` |
+| `arena-d989a5c6-jack3` (integration) | **everything** — `README.md`, `COORDINATION.md`, `REPO_REVIEW.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `.gitignore`, `data/**`, `model/**`, `tools/**`, `site/**`, `research/**`, `build_site.py`, `decision-file/**` |
 
 No file is currently owned by any other session. A new session must claim here
 before writing.
@@ -137,11 +137,11 @@ Performed by the integration session before opening the pull request.
       `build_site.py:value_cell()`, not by convention
 - [x] Model runs deterministically; all fourteen strategy-by-expiry combinations
       produce output in all three scenarios
-- [x] `python3 build_site.py` succeeds — 23 pages, 487,407 bytes, 23 CSV exports
+- [x] `python3 build_site.py` succeeds — 23 pages, 23 CSV exports, into `decision-file/`
 - [x] `python3 tools/check_links.py` exits 0 — 1,013 links, 30 hosts, **0
       non-official**
 - [x] `python3 tools/pii_scan.py` exits 0 — 64 files, **0 findings**
-- [x] No property-identifying or personal value anywhere in `docs/`
+- [x] No property-identifying or personal value anywhere in `decision-file/`
 - [x] Navigation and site index consistent; every nav entry resolves to a file
       that exists (verified by `check_links.py`'s internal-link test)
 - [x] Every flagged item appears on the *Flagged for Review* page with its official
@@ -149,11 +149,11 @@ Performed by the integration session before opening the pull request.
 - [x] `README.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `REPO_REVIEW.md`,
       `research/RESEARCH_LOG.md` written and cross-linked
 - [x] Committed and pushed to `arena/d989a5c6-jack3`
-- [ ] GitHub Pages enabled for `/docs` on `main`
+- [x] GitHub Pages confirmed already enabled by an earlier session — legacy builder, `main`, path `/` (repository root), status `built`
 - [ ] Pull request opened `arena/d989a5c6-jack3` → `main`
 - [ ] Pull request merged
 - [ ] Deployment confirmed live at
-      `https://wingbangboozle1-lang.github.io/Jack3/`
+      `https://wingbangboozle1-lang.github.io/Jack3/decision-file/`
 
 The four unchecked boxes are T-12/T-13 and are completed in the same session;
 results are recorded in §7.
@@ -181,10 +181,15 @@ Binding on any session working in this repository.
   values are left blank (`F-04`) rather than taken from a third party.
 - **SEC EDGAR `browse-edgar` ignores `dateb=` and `count=`** in practice. Use the
   filing index pages directly, or EDGAR full-text search.
-- **GitHub Pages serves `/docs` with no build step.** Keep it that way: static
-  HTML, no generator at deploy time, no CDN, no external assets. This is why
-  deployment cannot fail because of a toolchain.
-- **Never surface the base commit's git author email.** See `docs/privacy.html`
+- **GitHub Pages serves the repository ROOT with no build step** (legacy
+  builder, `main`, path `/`). Keep it that way: static HTML, no generator at
+  deploy time, no CDN, no external assets. This is why deployment cannot fail
+  because of a toolchain.
+- **`docs/`, `analysis/`, `brief/`, `pages/`, the root `index.html`, `scripts/`
+  and `.github/workflows/` belong to OTHER sessions.** This session publishes
+  only under `decision-file/` and adds only non-colliding files elsewhere. Do
+  not edit another session's directory — log a change request in §4 instead.
+- **Never surface the base commit's git author email.** See `decision-file/privacy.html`
   item P-1. `tools/pii_scan.py` enforces this.
 
 ---
@@ -227,8 +232,8 @@ Completed by the integration session. Recorded here per the brief.
 | PR link | *(recorded on merge — see §7 continuation)* |
 | Merge method | *(recorded on merge)* |
 | Merge commit | *(recorded on merge)* |
-| Pages source | `/docs` on `main` |
-| Live URL | `https://wingbangboozle1-lang.github.io/Jack3/` |
+| Pages source | repository **root** on `main`, legacy builder — confirmed already enabled and `built` by an earlier session |
+| This session's live URL | `https://wingbangboozle1-lang.github.io/Jack3/decision-file/` |
 | Deployment confirmed | *(recorded on confirmation)* |
 
 Merged without waiting for approval, per the brief. Flagged and unverified items

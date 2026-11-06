@@ -6,8 +6,8 @@ term **expiring between 2030 and 2035**.
 
 The question answered: **sell before the lease expires, or renew?**
 
-> **Live site:** <https://wingbangboozle1-lang.github.io/Jack3/>
-> Served by GitHub Pages from `/docs`. Plain static HTML — no build step, no
+> **Live site:** <https://wingbangboozle1-lang.github.io/Jack3/decision-file/>
+> GitHub Pages serves this repository's **root** on `main`, so the site is published under its own directory and does not collide with the other sessions' sites in this shared repository. Plain static HTML — no build step, no
 > runtime API calls, no CDN, no framework.
 
 ---
@@ -34,10 +34,10 @@ dates in question.
 
 | Path | Contents |
 |---|---|
-| `docs/` | **The published site.** 23 pages + 23 CSV exports of the data snapshot. |
+| `decision-file/` | **The published site.** 23 pages + 23 CSV exports of the data snapshot. |
 | `data/` | The verified data snapshot. Six modules; every row carries value, unit, geography, as-of date, source organisation, source URL and a verification status. |
 | `model/projection.py` | The projection and decision model. Deterministic, no network, no randomness. |
-| `build_site.py` | Static site generator: `data/` + `model/` → `docs/`. |
+| `build_site.py` | Static site generator: `data/` + `model/` → `decision-file/`. |
 | `site/` | Stylesheet and client-side behaviour. |
 | `tools/check_links.py` | Validates every emitted URL; fails on a non-official domain in a verified column. |
 | `tools/pii_scan.py` | Fails the build if any personal or property-identifying value appears. |
@@ -61,7 +61,7 @@ Landing dashboard, then six categories:
 
 Every table row carries a link to the official source it came from. Rows that
 could not be confirmed from an official source are **published blank** and
-appear on the [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/flagged-for-review.html) page.
+appear on the [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/decision-file/flagged-for-review.html) page.
 
 ---
 
@@ -98,7 +98,7 @@ with the placeholders `PROPERTY-01` and `OWNER-01`.
 This is enforced mechanically by `tools/pii_scan.py`, which fails the build.
 Every page also carries `<meta name="robots" content="noindex,nofollow">`.
 
-See [`docs/privacy.html`](docs/privacy.html) for the full disposition of what was
+See [`decision-file/privacy.html`](decision-file/privacy.html) for the full disposition of what was
 found during research and how each item was handled.
 
 ---
@@ -123,7 +123,7 @@ private figure has to be published for the analysis to work.
 
 ```bash
 python3 -m model.projection      # every strategy, every scenario, ranked
-python3 build_site.py            # regenerate docs/ from data/ and model/
+python3 build_site.py            # regenerate decision-file/ from data/ and model/
 python3 tools/check_links.py     # validate all 1,013 emitted links
 python3 tools/pii_scan.py        # enforce the privacy guarantee
 ```

@@ -4,7 +4,7 @@
 **Session:** `arena-d989a5c6-jack3`
 **Data snapshot:** 2026-11-06 (UTC)
 **Repository:** `wingbangboozle1-lang/Jack3`
-**Live site:** <https://wingbangboozle1-lang.github.io/Jack3/>
+**Live site:** <https://wingbangboozle1-lang.github.io/Jack3/decision-file/>
 
 This document records how every figure in the deliverable was obtained, what was
 accepted as evidence, what was rejected, what could not be verified, and how any
@@ -26,8 +26,8 @@ reviewer can reproduce or check the result.
 | `tools/pii_scan.py` — files scanned | **64** |
 | `tools/pii_scan.py` — findings | **0** |
 | `tools/pii_scan.py` | **PASS** (exit 0) |
-| Data rows carrying an official source link | see `docs/index.html` (computed at build time) |
-| Data rows published blank because unconfirmable | see `docs/index.html` (computed at build time) |
+| Data rows carrying an official source link | see `decision-file/index.html` (computed at build time) |
+| Data rows published blank because unconfirmable | see `decision-file/index.html` (computed at build time) |
 | Items on the Flagged for Review page | **15** |
 | Items blocking publication | **0** |
 | Site builds without network access | **YES** — no runtime fetches of any kind |
@@ -36,7 +36,7 @@ reviewer can reproduce or check the result.
 
 ```bash
 python3 -m model.projection      # deterministic; no network, no randomness
-python3 build_site.py            # data/ + model/ -> docs/
+python3 build_site.py            # data/ + model/ -> decision-file/
 python3 tools/check_links.py     # must exit 0
 python3 tools/pii_scan.py        # must exit 0
 ```
@@ -107,7 +107,7 @@ Risk Index values (`F-03`), CA DOF county projections (`F-04`), tax rates
 
 The complete register — 27 entries with publisher, filing date, accession number,
 evidence tier and exactly what was taken from each — is on
-[`docs/sources.html`](docs/sources.html). Principal sources:
+[`decision-file/sources.html`](decision-file/sources.html). Principal sources:
 
 | Publisher | Document | Used for |
 |---|---|---|
@@ -205,7 +205,7 @@ date-filtered query succeeded.
 
 ## 6. What could not be verified
 
-Fifteen items are on the [Flagged for Review](docs/flagged-for-review.html) page.
+Fifteen items are on the [Flagged for Review](decision-file/flagged-for-review.html) page.
 The four that materially limit the decision:
 
 | # | Item | Root cause | Route to resolve |
@@ -261,7 +261,7 @@ Every page carries `<meta name="robots" content="noindex,nofollow">`.
 `tools/check_links.py` performs three checks on all 1,013 emitted links:
 
 1. **Well formed** — the URL parses, uses HTTPS, and has a host. Internal links
-   must resolve to a file that exists in `docs/`.
+   must resolve to a file that exists in `decision-file/`.
 2. **Official** — any URL in a column that claims to be a verified source must sit
    on an official or primary domain. A broker or aggregator URL in a verified
    column is a **hard failure**.
@@ -329,15 +329,16 @@ differently in the output.
 
 ## 10. Publication integrity
 
-- The site is **static HTML served by GitHub Pages from `/docs`** with no build
-  step, so deployment cannot fail because of a toolchain.
+- The site is **static HTML served by GitHub Pages from the repository root**
+  (legacy builder, `main`, path `/`), published under `decision-file/` with no
+  build step, so deployment cannot fail because of a toolchain.
 - **No runtime API calls.** The published figures cannot change silently after
   generation; what a reviewer reads is what was verified.
 - No CDN, no framework, no external stylesheet or script. The only two assets are
   `assets/style.css` and `assets/app.js`, both committed.
 - Client-side JavaScript does three things only: filter table rows, export a
   table to CSV, and mark the active navigation entry. It fetches nothing.
-- The build regenerates `docs/` from scratch on every run (`shutil.rmtree`), so no
+- The build regenerates `decision-file/` from scratch on every run (`shutil.rmtree`), so no
   stale page can survive a data change.
 
 ---

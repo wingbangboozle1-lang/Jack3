@@ -6,7 +6,7 @@ property in Central Los Angeles, primary term expiring between 2030 and 2035.
 **Objective stated by the owner:** preservation of wealth *and* opportunity for
 growth, at a manageable level of risk.
 **Data snapshot:** 2026-11-06.
-**Live site:** <https://wingbangboozle1-lang.github.io/Jack3/>
+**Live site:** <https://wingbangboozle1-lang.github.io/Jack3/decision-file/>
 
 ---
 
@@ -265,8 +265,8 @@ Five highest-scoring of seventeen on the register (score = likelihood × impact,
 | **R-02** | System same-store sales have declined in every recent reporting period | **20** |
 | **R-13** | No official source exists for cap rates, so exit value cannot be verified | **20** |
 
-Full register: [`docs/risk-register.html`](docs/risk-register.html).
-Tail events, including two already realised: [`docs/black-swan.html`](docs/black-swan.html).
+Full register: [`decision-file/risk-register.html`](decision-file/risk-register.html).
+Tail events, including two already realised: [`decision-file/black-swan.html`](decision-file/black-swan.html).
 
 One tail deserves separate emphasis because it requires **no physical damage at
 all**: if commercial property insurance becomes unavailable or unaffordable for
@@ -281,7 +281,7 @@ Insurance before any hold strategy is relied upon.
 ## Next steps
 
 Nine sequenced actions, ordered so the cheapest and most decision-critical come
-first, are on the [Decision Framework](https://wingbangboozle1-lang.github.io/Jack3/decision.html) page.
+first, are on the [Decision Framework](https://wingbangboozle1-lang.github.io/Jack3/decision-file/decision.html) page.
 The first costs nothing:
 
 > **Establish whether PROPERTY-01 is inside the tenant's closure programme.**
@@ -304,8 +304,8 @@ official route to resolve it:
 
 Fifteen flagged items in total, including three data irregularities found in
 official sources themselves. None blocks publication or the decision. All are on
-the [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/flagged-for-review.html) page.
+the [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/decision-file/flagged-for-review.html) page.
 
 ---
 
-*Full reasoning, every table and every source link: <https://wingbangboozle1-lang.github.io/Jack3/>*
+*Full reasoning, every table and every source link: <https://wingbangboozle1-lang.github.io/Jack3/decision-file/>*

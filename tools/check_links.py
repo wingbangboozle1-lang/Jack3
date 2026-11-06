@@ -29,7 +29,9 @@ from collections import Counter, defaultdict
 from urllib.parse import urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCS = os.path.join(ROOT, "docs")
+# Scans THIS session's published site only.  docs/ belongs to another
+# session and is deliberately not touched.
+DOCS = os.path.join(ROOT, "decision-file")
 
 # Domains accepted as official or primary.  Anything else appearing in the
 # generated site is reported -- and if it appears inside a verified source cell
@@ -97,7 +99,7 @@ def scan(path):
 
 def main() -> int:
     if not os.path.isdir(DOCS):
-        print("docs/ does not exist -- run `python3 build_site.py` first.")
+        print("decision-file/ does not exist -- run `python3 build_site.py` first.")
         return 2
 
     pages = sorted(f for f in os.listdir(DOCS) if f.endswith(".html"))
