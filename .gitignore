@@ -1,0 +1,6 @@
+# Scratch / local tooling
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+research/raw/

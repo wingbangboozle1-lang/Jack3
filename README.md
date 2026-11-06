@@ -17,3 +17,37 @@ python -m http.server 8000 --bind 0.0.0.0
 ```
 
 `data/evidence.json` is the public source of truth. Rebuild HTML after edits. Validation checks internal links and row provenance, not live external availability or semantic truth. Source checks are manual and the site is a dated snapshot, not an automatic data feed. GitHub Pages serves the repository root on main; PR validation checks deterministic output before integration.
+
+---
+
+## Deep-dive evidence dashboard (`analysis/`)
+
+A third, additive layer produced by session `sess-8d650ba0` sits in **`analysis/`** — 11 pages generated from JSON, with
+113 sourced indicators, a 22-row risk register, a deterministic scenario model and a decision framework.
+
+**Open it at:** `/analysis/index.html` (or the "Deep-dive evidence dashboard" link on the two landing pages).
+
+| Page | What it answers |
+|---|---|
+| `analysis/index.html` | Dashboard: recommendation, executive summary, top risks, verification counts |
+| `analysis/economy.html` | Population, income, housing, employment by sector, prices and rates |
+| `analysis/tenant.html` | Jack in the Box Inc. unit counts, closures, same-store sales, guidance, Del Taco divestiture |
+| `analysis/property.html` | Proposition 13, 2026 roll, transfer taxes, Measure ULA, value matrix, §1031 |
+| `analysis/risk.html` | 22 risks: 13 business-as-usual and 9 black swan, with mitigations |
+| `analysis/scenarios.html` | Hold-versus-sell model, sensitivity grids, after-tax illustration |
+| `analysis/decision.html` | Five options scored, recommendation, sell triggers, dated action plan |
+| `analysis/data.html` | 113-row master table, each row with a source link and status |
+| `analysis/flagged.html` | 13 items that could not be verified, and what closes each one |
+| `analysis/sources.html` | 28 sources with tier, publisher, URL and access date |
+| `analysis/methodology.html` | Verification standard, anonymisation, model method, limitations |
+
+Rebuild just this layer:
+
+```
+python3 tools/model.py       # recompute analysis/data/scenarios.json
+python3 tools/build.py       # regenerate the 11 pages in analysis/
+python3 tools/linkcheck.py   # fail on any broken internal link or anchor
+```
+
+The two earlier dashboards (root, `docs/`) are unchanged apart from one additive link to the deep dive. Line-by-line check
+record: `research/verification-log.md`.
