@@ -2082,6 +2082,6 @@ def build():
 if __name__ == "__main__":
     written, ncsv = build()
     total = sum(n for _, n in written)
-    print(f"built {len(written)} pages, {total:,} bytes, plus {ncsv} CSV exports into docs/")
+    print(f"built {len(written)} pages, {total:,} bytes, plus {ncsv} CSV exports into decision-file/")
     for f, n in written:
         print(f"  {f:<28} {n:>9,} bytes")

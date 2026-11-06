@@ -1,0 +1,106 @@
+[
+  {
+    "id": "F-01",
+    "topic": "Measure ULA rate table",
+    "detail": "Measure ULA rates of 4% (sales above $5,400,000 and below $10,900,000) and 5.5% ($10,900,000 and above) for closings after 30 June 2026 are carried as FLAGGED, not verified. The City of Los Angeles Office of Finance page could not be loaded during this session (HTTP 404 on the deep link that was tried). The rates were corroborated by three independent secondary sources that each cite the Office of Finance, and by the County Recorder's published figures, but no official page was read directly.",
+    "needed": "Read the current rate table on finance.lacity.gov (Measure ULA page) or obtain a written rate confirmation from the Office of Finance for the closing date.",
+    "sources": ["S28", "S14", "S27"],
+    "severity": "Medium — affects sale proceeds and the timing of any exit"
+  },
+  {
+    "id": "F-02",
+    "topic": "Repeal / reform status of Measure ULA",
+    "detail": "Secondary reports conflict. Some state the statewide transfer-tax-cap initiative was withdrawn from the November 2026 ballot and that no repeal path exists in 2026; others still describe it as a live ballot measure. What IS verified from the Secretary of State's certified list is that no transfer-tax-cap measure appears among the 15 propositions on the November 3, 2026 ballot. The verified conclusion is therefore limited to: no relief is on the 2026 ballot. Future repeal or reform is unverified.",
+    "needed": "Re-check the Secretary of State certified list and the City of Los Angeles after the November 3, 2026 election; monitor any 2027–2028 initiatives.",
+    "sources": ["S17", "S27"],
+    "severity": "Medium — a repeal would remove a 4–5.5% exit cost"
+  },
+  {
+    "id": "F-03",
+    "topic": "Parcel-level seismic classification",
+    "detail": "No parcel-level Alquist-Priolo fault-zone or liquefaction-zone determination is made anywhere in this report. The property address is withheld for privacy, and the California Geological Survey regulatory maps must be queried by parcel (CGS EQ Zapp / City of Los Angeles ZIMAS). Central Los Angeles contains mapped fault and liquefaction zones, but asserting a specific classification for [PROPERTY-A] would be an inference, not a verified fact.",
+    "needed": "Parcel-level CGS seismic-hazard report and ZIMAS printout, obtained under NDA by the owner or counsel.",
+    "sources": ["S07"],
+    "severity": "High — drives retrofit cost and insurability"
+  },
+  {
+    "id": "F-04",
+    "topic": "Parcel-level fire hazard severity zone",
+    "detail": "CAL FIRE states that Fire Hazard Severity Zones in Local Responsibility Areas are determined with the local jurisdiction, and that parcel-level confirmation comes from that jurisdiction. Central Los Angeles is inside the City of Los Angeles (an LRA), so no FHSZ class is asserted for [PROPERTY-A].",
+    "needed": "City of Los Angeles FHSZ lookup for the parcel, plus the insurer's own wildfire scoring.",
+    "sources": ["S08"],
+    "severity": "Medium — affects insurance availability and pricing"
+  },
+  {
+    "id": "F-05",
+    "topic": "Parcel-level flood zone",
+    "detail": "No FEMA flood-zone determination is asserted. FEMA map service queries require the address or coordinates, both withheld here. Portions of central Los Angeles near the Los Angeles River are mapped; that is area context, not a parcel finding.",
+    "needed": "FEMA Map Service Center flood-zone determination for the parcel; obtain an elevation certificate if in or near a Special Flood Hazard Area.",
+    "sources": [],
+    "severity": "Medium — affects insurance and lender requirements"
+  },
+  {
+    "id": "F-06",
+    "topic": "Actual rent, NOI and rent coverage",
+    "detail": "The lease rent, escalation schedule, CAM/tax/insurance pass-throughs, percentage-rent clause, renewal options, tenant improvement obligations and the franchisee's unit-level EBITDA are all private. Every financial output on this site is therefore a model driven by disclosed assumptions, not a valuation of [PROPERTY-A]. No NOI figure is asserted as fact.",
+    "needed": "Lease abstract, rent roll, three years of CAM reconciliations, franchisee unit P&L and the franchisor's unit-level AUV for the trade area.",
+    "sources": [],
+    "severity": "High — the single largest driver of the decision"
+  },
+  {
+    "id": "F-07",
+    "topic": "Owner's adjusted basis and holding period",
+    "detail": "Adjusted basis, accumulated depreciation, entity structure and residency determine the after-tax outcome of any sale. None is known. After-tax figures on this site use a stated illustrative basis and are labelled as such.",
+    "needed": "Depreciation schedules and closing statement for the original acquisition; CPA review of basis and of any 1031 history.",
+    "sources": ["S16", "S15"],
+    "severity": "High — after-tax proceeds can differ by 15–25% of price"
+  },
+  {
+    "id": "F-08",
+    "topic": "Tenant identity and franchisee credit",
+    "detail": "Whether the lease is with Jack in the Box Inc. (corporate guarantee) or with a franchisee entity determines credit quality and the applicable cap rate. Franchisee financial statements are not public. The corporate parent's own unit count is declining and same-store sales are negative, which is disclosed; the franchisee's condition is unknown.",
+    "needed": "Lease guarantor pages, franchisee financial statements, and the franchisor's most recent Franchise Disclosure Document (Item 19 and Item 20 tables).",
+    "sources": ["S21", "S22"],
+    "severity": "High — corporate vs franchisee paper can move cap rate by 50–100 bp"
+  },
+  {
+    "id": "F-09",
+    "topic": "Zoning, drive-through entitlement and redevelopment capacity",
+    "detail": "Height limits, floor-area ratio, drive-through permissions (non-conforming status if the zoning changed), Transit Oriented Communities eligibility and any specific-plan overlays for [PROPERTY-A] were not verified. Any redevelopment value discussed on this site is therefore a sensitivity, not a finding.",
+    "needed": "ZIMAS zoning printout, the applicable community plan land-use designation, and a preliminary entitlement opinion from a Los Angeles land-use attorney.",
+    "sources": [],
+    "severity": "High — redevelopment optionality is a core part of the hold case"
+  },
+  {
+    "id": "F-10",
+    "topic": "Fatality counts for the January 2025 fires",
+    "detail": "The County of Los Angeles anniversary fact sheet lists 19 confirmed fatalities for the Eaton Fire and 12 for the Palisades Fire. Contemporaneous reporting from February 2025 reported 17 Eaton fatalities as of that date. Counts were revised during recovery. Both numbers are recorded here; the County fact sheet figure is used in the dataset and the discrepancy is disclosed rather than resolved.",
+    "needed": "Final LA County Medical Examiner determination.",
+    "sources": ["S19"],
+    "severity": "Low — no effect on the property decision; disclosed for completeness"
+  },
+  {
+    "id": "F-11",
+    "topic": "Jack in the Box specific cap rate",
+    "detail": "No published, index-level Jack in the Box cap rate was verified. The closest verified industry figures are the Boulder Group's corporate QSR (5.90%) and franchisee QSR (6.87%) averages. Individual asking cap rates seen in listings for Jack in the Box assets (roughly 5.0%–5.8% for new 15-year absolute-net deals) are broker marketing material, not verified transactions or appraisals, and are not used as inputs.",
+    "needed": "Closed-sale comparables for Jack in the Box assets in Los Angeles County from a paid data service (CoStar, RCA) or an appraiser's comp set.",
+    "sources": ["S24", "S25"],
+    "severity": "Medium — cap rate is the second-largest driver after NOI"
+  },
+  {
+    "id": "F-12",
+    "topic": "Assessed value and property tax bill for the parcel",
+    "detail": "The parcel's assessed value, base-year value, millage rate and any Mello-Roos or assessment-district charges are not asserted. County-wide roll growth (4.42% for 2026) and the 2% Proposition 13 cap are verified; the parcel's own bill is not.",
+    "needed": "Current secured property tax bill and the Assessor's parcel profile for [PROPERTY-A].",
+    "sources": ["S05", "S06"],
+    "severity": "Medium — buyer underwriting and net cash flow depend on it"
+  },
+  {
+    "id": "F-13",
+    "topic": "Neighbourhood-level (submarket) statistics",
+    "detail": "Verified data in this report is at county, city or metro level. Census ZIP-code (ZCTA) tables could not be pulled in this session because the Census API now requires a registered key, and the interactive table tool is script-driven. Submarket claims are therefore restricted to qualitative description plus county/city anchors.",
+    "needed": "Register a Census API key and pull ACS 5-year tables for the ZCTAs that overlap the trade area; or download the ACS summary file directly.",
+    "sources": ["S02", "S03"],
+    "severity": "Medium — submarket granularity would sharpen the trade-area read"
+  }
+]

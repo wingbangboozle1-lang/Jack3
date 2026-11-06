@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "note": "Two kinds of content are kept strictly separate. COLUMNS 'evidence' and 'fact' carry only verified, sourced facts. COLUMNS 'likelihood', 'impact' are the analyst's judgement and are labelled as such throughout the site. Nothing in this file is a prediction of a specific outcome for [PROPERTY-A]."
+  },
+  "risks": [
+    {
+      "id": "R-01", "type": "Business as usual", "cat": "Tenant credit",
+      "risk": "Tenant does not renew and vacates at expiry, leaving the site dark",
+      "fact": "Brand is contracting: 86 closures vs 31 openings in FY2025; guidance is 2,050–2,100 restaurants by FY2026 year end versus 2,136 at FY2025; same-store sales -4.2% for FY2025, -7.4% in Q4.",
+      "evidence": ["S21", "S22"],
+      "likelihood": "Medium-high", "impact": "High",
+      "mitigation": "Obtain the franchisee's unit-level P&L and the franchisor's renewal intent in writing before expiry; negotiate an early extension with a rent reset while the site is still trading; keep 12–18 months of carry reserve to fund downtime.",
+      "options": ["Hold", "Renew"]
+    },
+    {
+      "id": "R-02", "type": "Business as usual", "cat": "Tenant credit",
+      "risk": "Franchisee insolvency before expiry (lease rejection in bankruptcy)",
+      "fact": "The lease counterparty may be a franchisee entity rather than the corporate parent; franchisee financial statements are not public.",
+      "evidence": ["S21"],
+      "likelihood": "Low-medium", "impact": "High",
+      "mitigation": "Confirm guarantor structure and any corporate guarantee; require personal or entity guaranty on renewal; monitor franchisee unit count and payment record.",
+      "options": ["Hold", "Renew"]
+    },
+    {
+      "id": "R-03", "type": "Business as usual", "cat": "Cost",
+      "risk": "Rent escalation clauses lag inflation, eroding real income",
+      "fact": "Los Angeles CPI-U is running at 3.7% year over year (September 2026). Many legacy QSR leases escalate at 1.5–2% or 10% every five years.",
+      "evidence": ["S01"],
+      "likelihood": "High", "impact": "Medium",
+      "mitigation": "At renewal, index escalations to CPI or set 3% fixed; model the real (inflation-adjusted) rent, not the nominal rent.",
+      "options": ["Hold", "Renew", "Sell"]
+    },
+    {
+      "id": "R-04", "type": "Business as usual", "cat": "Regulation",
+      "risk": "Fast-food labour cost keeps rising, squeezing tenant rent coverage",
+      "fact": "California fast food minimum wage is $20.00/hour (from April 1, 2024); state minimum wage is $16.90 (2026); City of Los Angeles minimum wage is $18.42 (from July 1, 2026). The Fast Food Council can adjust the $20.00 rate.",
+      "evidence": ["S11", "S12", "S13"],
+      "likelihood": "Medium", "impact": "Medium-high",
+      "mitigation": "Underwrite rent coverage at a stressed unit-level margin; require the tenant to disclose unit EBITDA at renewal; avoid percentage-rent-only structures.",
+      "options": ["Hold", "Renew", "Sell"]
+    },
+    {
+      "id": "R-05", "type": "Business as usual", "cat": "Capital markets",
+      "risk": "Cap rates widen as financing costs exceed net lease yields",
+      "fact": "Overall single-tenant net lease cap rates rose 10 bp to 6.92% in Q3 2026, the highest in over a decade; the Boulder Group reports permanent financing costs now generally exceed net lease cap rates. The 10-year Treasury was 4.90% on 4 November 2026; the Fed raised its target range to 3.75%–4.00% in September 2026.",
+      "evidence": ["S24", "S04"],
+      "likelihood": "Medium-high", "impact": "High",
+      "mitigation": "If selling, sell into a tight market rather than a widening one; keep the option to hold, which is not marked to market; avoid short-fuse financing on a hold.",
+      "options": ["Sell", "Hold"]
+    },
+    {
+      "id": "R-06", "type": "Business as usual", "cat": "Transaction cost",
+      "risk": "Exit taxes and fees consume 4–10% of price",
+      "fact": "Base transfer tax in the City of Los Angeles is $5.60 per $1,000 (0.56%). Measure ULA adds 4% on sales above $5,400,000 and 5.5% above $10,900,000 (flagged, see F-01). Brokerage and closing costs are additional.",
+      "evidence": ["S14", "S28"],
+      "likelihood": "Certain on sale", "impact": "High",
+      "mitigation": "Price the all-in exit cost into the sell/hold comparison (see Scenarios); consider timing sales just after the 1 July ULA threshold indexation; confirm whether the value sits below the $5.4M cliff.",
+      "options": ["Sell"]
+    },
+    {
+      "id": "R-07", "type": "Business as usual", "cat": "Tax",
+      "risk": "Sale triggers depreciation recapture and capital gains tax",
+      "fact": "Unrecaptured Section 1250 gain is taxed at up to 25%; long-term capital gain on real property at up to 20%; net investment income tax may also apply. Section 1031 allows deferral only if a replacement is identified within 45 days and closed within 180 days.",
+      "evidence": ["S16", "S15"],
+      "likelihood": "Certain on sale", "impact": "High",
+      "mitigation": "If selling, run a 1031 exchange with a qualified intermediary lined up before listing; otherwise assume a 15–25% haircut to net proceeds. Confirm basis with a CPA first (F-07).",
+      "options": ["Sell"]
+    },
+    {
+      "id": "R-08", "type": "Business as usual", "cat": "Property tax",
+      "risk": "Buyer discounts price for reassessment on sale",
+      "fact": "Proposition 13 limits annual assessed-value growth to 2% for a held property, but a sale reassesses to market. County-wide roll value rose 4.42% in 2026 while most parcels were capped at 2%.",
+      "evidence": ["S05"],
+      "likelihood": "High", "impact": "Medium",
+      "mitigation": "Recognise that holding preserves a low tax basis — a real, quantifiable advantage that is lost on sale and only partly recovered by a buyer's price adjustment.",
+      "options": ["Sell", "Hold"]
+    },
+    {
+      "id": "R-09", "type": "Business as usual", "cat": "Insurance",
+      "risk": "Insurance cost and availability deteriorate after the 2025 fires",
+      "fact": "The January 2025 Eaton and Palisades fires destroyed 9,414 and 6,837 structures respectively and caused an estimated $5.2–10.1 billion of lost economic output; the Insurance Commissioner imposed a one-year moratorium on non-renewals and cancellations in affected areas.",
+      "evidence": ["S19", "S20"],
+      "likelihood": "Medium", "impact": "Medium",
+      "mitigation": "Confirm the premium pass-through mechanics in the lease; obtain a current quote before any renewal term is agreed; retain a structural reserve for premium spikes.",
+      "options": ["Hold", "Renew", "Sell"]
+    },
+    {
+      "id": "R-10", "type": "Business as usual", "cat": "Operations",
+      "risk": "Roof, parking lot, HVAC and signage capital calls fall due before 2030",
+      "fact": "Under a triple-net lease these are tenant obligations only while the tenant occupies; at expiry they revert to the owner.",
+      "evidence": [],
+      "likelihood": "High", "impact": "Low-medium",
+      "mitigation": "Commission a property condition assessment now; budget 2% of NOI annually (used in the model) rather than assuming zero.",
+      "options": ["Hold", "Renew", "Sell"]
+    },
+    {
+      "id": "R-11", "type": "Business as usual", "cat": "Demand",
+      "risk": "Population decline and weak office-adjacent daytime demand",
+      "fact": "Los Angeles County's population fell 3.2% between April 2020 and July 2025 (10,014,009 to 9,694,934). Metro information-sector employment is down 5.7% year over year and professional/business services down 0.5%.",
+      "evidence": ["S02", "S01"],
+      "likelihood": "Medium", "impact": "Medium",
+      "mitigation": "Weight the trade area toward residential and institutional anchors (health, education, tourism) rather than office; education and health employment is the strongest sector at +3.8%.",
+      "options": ["Hold", "Renew", "Sell"]
+    },
+    {
+      "id": "R-12", "type": "Business as usual", "cat": "Zoning",
+      "risk": "Drive-through use becomes non-conforming or expansion is blocked",
+      "fact": "Not verified for the parcel (see F-09). Zoning and community-plan rules govern drive-through permissions.",
+      "evidence": [],
+      "likelihood": "Unknown", "impact": "Medium",
+      "mitigation": "Pull the ZIMAS printout and confirm legal-conforming status before paying for any redevelopment design work.",
+      "options": ["Renew", "Redevelop"]
+    },
+    {
+      "id": "R-13", "type": "Business as usual", "cat": "Market timing",
+      "risk": "Selling into a thin bid market for short-lease QSR paper",
+      "fact": "Net lease supply was 5,754 properties in Q3 2026 and bid-ask spreads widened to 25 bp, with the widest pricing uncertainty in shorter-term and unrated-operator assets.",
+      "evidence": ["S24"],
+      "likelihood": "Medium", "impact": "Medium",
+      "mitigation": "If selling, either extend the lease first (longer term prices tighter) or market the real estate/redevelopment angle, not the income stream.",
+      "options": ["Sell"]
+    },
+    {
+      "id": "B-01", "type": "Black swan", "cat": "Seismic",
+      "risk": "Major southern San Andreas or blind-thrust earthquake",
+      "fact": "USGS models a M7.8 southern San Andreas event at about 1,800 deaths and $213 billion of economic losses (2008 dollars), of which $112.7 billion is property damage and $96.2 billion business interruption.",
+      "evidence": ["S07"],
+      "likelihood": "Low in any year", "impact": "Severe",
+      "mitigation": "Commission a seismic evaluation and retrofit estimate now; carry earthquake cover or accept and document the uninsured exposure; keep the building's non-structural elements braced. Insurance and lender terms change materially post-event.",
+      "options": ["Hold", "Renew", "Redevelop", "Sell"]
+    },
+    {
+      "id": "B-02", "type": "Black swan", "cat": "Wildfire",
+      "risk": "Urban conflagration or smoke/evacuation event",
+      "fact": "January 2025 showed that wildfire is no longer a wildland-only risk in Los Angeles County: 9,414 structures were destroyed in the Eaton Fire and 6,837 in the Palisades Fire, with roughly 6,800 businesses and 47,000 workers affected.",
+      "evidence": ["S19"],
+      "likelihood": "Low-medium", "impact": "High",
+      "mitigation": "Confirm the parcel's FHSZ class with the City (F-04); verify the policy covers smoke, evacuation and business interruption; keep defensible-space and vegetation management on the site plan.",
+      "options": ["Hold", "Renew", "Sell"]
+    },
+    {
+      "id": "B-03", "type": "Black swan", "cat": "Insurance market",
+      "risk": "Insurer withdrawal makes the asset uninsurable or unmarketable",
+      "fact": "The post-fire environment produced a one-year moratorium on non-renewals and cancellations in affected areas; the CRS reports heavy reliance on the FAIR Plan in the Palisades before the fires.",
+      "evidence": ["S20"],
+      "likelihood": "Low-medium", "impact": "High",
+      "mitigation": "Know the insurer's exposure and the FAIR Plan fallback; a buyer will price uninsurability as a discount, so verify coverage before going to market.",
+      "options": ["Hold", "Sell"]
+    },
+    {
+      "id": "B-04", "type": "Black swan", "cat": "Public health",
+      "risk": "Pandemic-style closure of dine-in and reduced foot traffic",
+      "fact": "No current public-health emergency is in force; this is a structural tail risk illustrated by 2020–21, not a sourced current condition.",
+      "evidence": [],
+      "likelihood": "Low in any year", "impact": "High (temporary)",
+      "mitigation": "Prefer leases with percentage-rent floors and long remaining term; maintain liquidity to service fixed costs for 12 months.",
+      "options": ["Hold", "Renew", "Sell"]
+    },
+    {
+      "id": "B-05", "type": "Black swan", "cat": "Rates",
+      "risk": "Disorderly jump in long rates repricing all net lease paper",
+      "fact": "The 10-year Treasury was 4.90% on 4 November 2026 and net lease cap rates are at a decade high; the relationship is not mechanical but directional.",
+      "evidence": ["S04", "S24"],
+      "likelihood": "Low-medium", "impact": "High",
+      "mitigation": "Avoid forced-sale timing; if liquidity is needed, use a partial recapitalisation (ground lease or preferred equity) rather than a distressed sale.",
+      "options": ["Sell", "Hold"]
+    },
+    {
+      "id": "B-06", "type": "Black swan", "cat": "Policy",
+      "risk": "New local or state transfer/wealth taxes",
+      "fact": "Measure ULA is set to remain in force per industry reporting, and the November 3, 2026 ballot includes Proposition 40, a one-time 5% tax on taxpayers with assets over $1 billion. No transfer-tax cap measure is on that ballot.",
+      "evidence": ["S17", "S18", "S27"],
+      "likelihood": "Medium", "impact": "Medium",
+      "mitigation": "Model the ULA tiers in the exit plan; keep the option to hold (no realisation event, no transfer tax); monitor 2027–2028 initiatives.",
+      "options": ["Sell", "Hold"]
+    },
+    {
+      "id": "B-07", "type": "Black swan", "cat": "Water / infrastructure",
+      "risk": "Regional water-supply or lifeline failure",
+      "fact": "The USGS ShakeOut scenario attributes a large share of business-interruption loss to water-system outage; that is a modelled scenario, not a current condition.",
+      "evidence": ["S07"],
+      "likelihood": "Low", "impact": "Medium-high",
+      "mitigation": "Landlord-level business-interruption cover; confirm the tenant's own BI cover; hold cash reserves.",
+      "options": ["Hold", "Renew"]
+    },
+    {
+      "id": "B-08", "type": "Black swan", "cat": "Civil / social",
+      "risk": "Civil unrest, curfew or prolonged street closure",
+      "fact": "No current event is asserted; treated as a tail risk for a dense urban site.",
+      "evidence": [],
+      "likelihood": "Low", "impact": "Medium (temporary)",
+      "mitigation": "Insurance review; avoid single-access sites where possible (not applicable if already owned); maintain reserves.",
+      "options": ["Hold", "Renew", "Sell"]
+    },
+    {
+      "id": "B-09", "type": "Black swan", "cat": "Tenant corporate",
+      "risk": "Brand-level restructuring or bankruptcy of Jack in the Box Inc.",
+      "fact": "Corporate is actively reshaping: Del Taco is being sold for $115 million and the Jack brand is closing more units than it opens. Unit-level same-store sales are negative.",
+      "evidence": ["S21", "S22"],
+      "likelihood": "Low-medium", "impact": "High",
+      "mitigation": "Do not underwrite a corporate guarantee as if it were investment grade; price the credit accordingly and preserve alternative-use optionality (drive-through sites re-let well to other QSR, coffee and EV-charging users).",
+      "options": ["Hold", "Renew", "Sell"]
+    }
+  ]
+}

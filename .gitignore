@@ -25,3 +25,8 @@ scratch/
 *.local.*
 private/
 pii/
+
+# --- from origin/main (other sessions) ---
+# Scratch / local tooling
+*.pyc
+research/raw/
