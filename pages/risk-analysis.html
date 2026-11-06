@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risk Analysis &amp; Decision Framework — Jack3</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <span class="brand"><span class="dot"></span>Jack3 · Property Decision Research</span>
+  <nav class="main">
+    <a href="../index.html">Dashboard</a>
+    <a href="executive-summary.html">Executive Summary</a>
+    <a href="market-research.html">Market Research</a>
+    <a href="lease-analysis.html">Lease &amp; Tenant</a>
+    <a href="risk-analysis.html">Risk Analysis</a>
+    <a href="projections.html">Projections</a>
+    <a href="repo-review.html">Repo Review</a>
+    <a href="sources.html">Sources</a>
+    <a class="flag" href="flagged.html">⚑ Flagged for Review</a>
+  </nav>
+</div></header>
+<div class="privacy"><div class="wrap">🔒 All personal information anonymized; placeholders only. No personal information appears on this site.</div></div>
+
+<div class="wrap" style="margin-top:22px">
+  <section class="card">
+    <h2>Risk Analysis &amp; Decision Framework</h2>
+    <p class="sub">Every decision option, every risk (business-as-usual + black swans), likelihood/impact (qualitative [MODEL] judgments anchored to the cited data), mitigations, and the recommendation. Sources link per row.</p>
+    <div class="searchbar">
+      <input id="global-filter" type="search" placeholder="Filter rows… (e.g. “black swan”, “renewal”, “1031”)">
+      <span class="count" id="filter-count"></span>
+    </div>
+
+    <h3>1 · Decision options</h3>
+    <table class="data">
+      <thead><tr><th>Option</th><th>Description</th><th>Core economics</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td><b>A — Sell before expiry</b></td><td>List 2027–2029; sell with 2–8 yrs of term left; §1031 reinvestment</td><td><span class="badge b-model">MODEL</span> Captures 6.87–7.55% franchisee-QSR cap band (Boulder Q3 2026) with max remaining term; eliminates expiry cliff; §1031 defers gain (IRS/FTB rules)</td><td><b>✅ Recommended base case</b></td></tr>
+        <tr><td><b>B — Hold to expiry, attempt renewal</b></td><td>Keep NNN income to 2030–2035, then negotiate</td><td><span class="badge b-model">MODEL</span> FDD Item 17: no renewal right — renewal discretionary; income ends at expiry if no new agreement</td><td>❌ High cliff risk</td></tr>
+        <tr><td><b>C — Sell at/near expiry</b></td><td>Wait until 2030–2035 to sell</td><td><span class="badge b-model">MODEL</span> ~0 yrs term left → distressed cap band (&gt;7.55%) and possibly vacant; LA retail vacancy 5.7–6.15%</td><td>❌ Worst of both</td></tr>
+        <tr><td><b>D — Early extension + hold</b></td><td>Sign a new ≥10-yr lease/extension now, then hold</td><td><span class="badge b-model">MODEL</span> Converts cliff into term; typical QSR escalation 10%/5yr; only works if franchisor/franchisee signs at acceptable rent</td><td>✅ Acceptable <i>only if signed now</i> — otherwise A</td></tr>
+      </tbody>
+    </table>
+
+    <h3>2 · Risk matrix (12 risks)</h3>
+    <table class="data">
+      <thead><tr><th>#</th><th>Risk</th><th>Type</th><th>Likelihood</th><th>Impact</th><th>Affects</th><th>Mitigation</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>R1</td><td>Lease not renewed at 2030–2035 expiry (no contractual renewal right)</td><td>Structural / BAU</td><td>High</td><td>Severe — income ends; value → land/vacant</td><td>B, C</td><td>Sell before expiry (A) or lock extension now (D)</td><td class="src"><a href="https://www.jackintheboxfranchising.com/">JACK 2026 FDD Item 17</a></td></tr>
+        <tr><td>R2</td><td>Tenant (franchisee) default / closure before expiry — system shrinking (2,136 → guided 2,050–2,100 end-2026); SSS −1% to +1%</td><td>BAU</td><td>Medium</td><td>Severe</td><td>A, B</td><td>Verify corporate guarantee &amp; unit AUV (<span class="blank">blank — anonymized</span>); diversify via §1031</td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm">SEC 10-K FY2025</a> · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K">EDGAR 8-Ks</a></td></tr>
+        <tr><td>R3</td><td>Cap-rate expansion / further rate hikes (fed funds 3.75–4.00%; 10Y 4.90%; Dec-2026 hike risk flagged)</td><td>Macro BAU</td><td>Medium–High</td><td>High — lower exit price each year held</td><td>A timing, B, C</td><td>Sell sooner; &lt;10-yr band already 7.55%</td><td class="src"><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm">federalreserve.gov</a> · <a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=202611">home.treasury.gov</a> · <a href="https://bouldergroup.com/media/pdf/2026-Q3-Net-Lease-Research-Report.pdf">bouldergroup.com</a></td></tr>
+        <tr><td>R4</td><td>Tax hit on sale (fed LTCG + CA up to 13.3% + depreciation recapture; CA 3⅓% withholding)</td><td>BAU</td><td>Certain if sold</td><td>Medium</td><td>A, C</td><td>§1031 exchange; 45/180-day rules; FTB Form 593; mind CA clawback (Form 3840)</td><td class="src"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges">irs.gov</a> · <a href="https://www.ftb.ca.gov/">ftb.ca.gov</a></td></tr>
+        <tr><td>R5</td><td><b>BLACK SWAN — major earthquake:</b> USGS UCERF3 60% M6.7+ / 30 yrs (46% M7.0+); FEMA NRI earthquake EAL $4.57B/yr; county composite 100.0 (#1 in US)</td><td>Black swan</td><td>Medium (60%/30yr)</td><td>Severe — structure damage; owner retains structural risk under NNN</td><td>All</td><td>CEA earthquake insurance; retrofit; reserves; diversify geography via §1031</td><td class="src"><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area">usgs.gov</a> · <a href="https://hazards.fema.gov/nri/">hazards.fema.gov</a> · <a href="https://www.insurance.ca.gov/">insurance.ca.gov (CEA info)</a></td></tr>
+        <tr><td>R6</td><td><b>BLACK SWAN — wildfire:</b> Jan-2025 Eaton + Palisades: 37,469 ac, 16,256 structures destroyed, 31 deaths, $5.2–10.1B output loss; 2025 FHSZ maps +440k ac LA County (~30% more very-high)</td><td>Black swan</td><td>Low–Med (urban core &lt; foothills; Santa Ana events can reach central LA)</td><td>Severe</td><td>All</td><td>Verify parcel FHSZ class (<span class="blank">blank — anonymized</span>); insurance availability/cost; defensible space</td><td class="src"><a href="https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire">fire.ca.gov Eaton</a> · <a href="https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire">Palisades</a> · <a href="https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf">file.lacounty.gov</a> · <a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones">osfm.fire.ca.gov</a></td></tr>
+        <tr><td>R7</td><td><b>BLACK SWAN — flood:</b> FEMA riverine flood EAL $2.81B/yr (Very High) for LA County</td><td>Black swan</td><td>Low–Med per year</td><td>Medium–High</td><td>All</td><td>Check parcel FEMA flood zone (<span class="blank">blank — anonymized</span>); NFIP / excess flood</td><td class="src"><a href="https://hazards.fema.gov/nri/">hazards.fema.gov</a> · <a href="https://msc.fema.gov/portal/home">msc.fema.gov</a></td></tr>
+        <tr><td>R8</td><td>CA insurance-market stress: FAIR Plan 696,562 policies (Jun 2026, +8% YoY; $768B exposure); +29.1% dwelling rate eff. 10/15/2026; nonrenewal moratorium expired 1/7/2026</td><td>Market BAU</td><td>High</td><td>Medium (tenant pays under NNN during term; owner exposed at expiry/re-tenanting + own cover)</td><td>B, C, D</td><td>Verify tenant insurance covenants in lease; owner keeps property/liability/loss-of-rent cover</td><td class="src"><a href="https://www.insurance.ca.gov/">insurance.ca.gov</a> · <a href="https://www.fairplan.org/">fairplan.org</a></td></tr>
+        <tr><td>R9</td><td>Area population decline (DOF P-2A: county −1.3% by 2030, −4.7% by 2050) vs SCAG +7% — divergence flagged</td><td>BAU</td><td>Medium</td><td>Medium — softer long-run trade-area growth</td><td>B, D</td><td>Plan on conservative case; site traffic/AUV (<span class="blank">blank</span>) is the real driver</td><td class="src"><a href="https://dof.ca.gov/media/docs/forecasting/Demographics/projections/P2A_County_Total.xlsx">dof.ca.gov P-2A</a> · <a href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf">scag.ca.gov</a></td></tr>
+        <tr><td>R10</td><td>Recession / consumer pullback — city poverty 16.5%</td><td>BAU</td><td>Medium</td><td>Medium</td><td>All</td><td>NNN income is the cushion; keep liquidity; avoid leverage</td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225">census.gov</a> · <a href="https://www.bls.gov/news.release/pdf/metro.pdf">bls.gov</a></td></tr>
+        <tr><td>R11</td><td>§1031 execution risk — 45-day ID / 180-day close are hard deadlines; CA 3⅓% withholding if Form 593 missed</td><td>Process BAU</td><td>Low if planned</td><td>High (full gain taxable)</td><td>A</td><td>Engage qualified intermediary <b>before listing</b>; pre-identify replacements</td><td class="src"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges">irs.gov</a> · <a href="https://www.ftb.ca.gov/">ftb.ca.gov</a></td></tr>
+        <tr><td>R12</td><td>Prop 13 reassessment on sale raises buyer's tax load → caps bid; seller's locked-in basis disappears at sale</td><td>BAU</td><td>Certain if sold</td><td>Medium (in price)</td><td>A, C</td><td>Factor into pricing expectation</td><td class="src"><a href="https://boe.ca.gov/proptaxes/pdf/lta25023.pdf">boe.ca.gov</a> · <a href="https://assessor.lacounty.gov/news-information/assessmentroll">assessor.lacounty.gov</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3>3 · Scenario analysis</h3>
+    <table class="data">
+      <thead><tr><th>Scenario</th><th>Assumptions (sourced inputs)</th><th>Outcome for owner</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td>S1 — Base: sell 2027–2029 via §1031</td><td><span class="badge b-model">MODEL</span> cap 6.87–7.55% with 2–8 yrs term left (Boulder); fed funds 3.75–4.00% (Fed)</td><td>Full value capture before cliff; taxes deferred; capital redeployed to lower-hazard assets</td><td><b>Recommended</b></td></tr>
+        <tr><td>S2 — Hold to expiry; renewal granted</td><td><span class="badge b-model">MODEL</span> new 10–20 yr agreement at market rent + 10%/5yr escalations; renewal discretionary (FDD)</td><td>Continued NNN income at ~6.9% cap-equivalent yield</td><td>Only if extension signed now (D)</td></tr>
+        <tr><td>S3 — Hold to expiry; no renewal</td><td><span class="badge b-model">MODEL</span> income stops 2030–2035; re-tenant at LA retail market (vacancy 5.7–6.15%; $2.40–2.75/SF/mo) or sell vacant</td><td>Value cliff + downtime + re-tenanting cost</td><td>Avoid</td></tr>
+        <tr><td>S4 — Black swan: M7+ earthquake before sale</td><td>USGS 46% M7.0+/30yr; FEMA EAL $4.57B/yr</td><td>Structural damage; claim process; possible total loss if uninsured</td><td>Mitigate: CEA policy, retrofit, reserves</td></tr>
+        <tr><td>S5 — Black swan: wildfire reaches site</td><td>Jan-2025 precedent: 16,256 structures destroyed county-wide; FHSZ expansion</td><td>Smoke/structure damage; business interruption; insurance hardening</td><td>Lower for urban core; verify FHSZ class</td></tr>
+        <tr><td>S6 — Macro: further hikes (Dec-2026 ~76% odds, flagged)</td><td>10Y &gt; 5% (Treasury 4.90% now)</td><td>Cap rates expand → each year held worth less at exit</td><td>Reinforces selling sooner</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout good">
+      <h4>Recommendation — balanced, risk-managed</h4>
+      <p><b>Option A: sell before expiry (2027–2029 window), §1031 exchange into lower-hazard, higher-growth replacement assets.</b> Flips to Option D (hold) only if a ≥10-year extension at/above current rent with escalations is signed now by a creditworthy tenant (ideally corporate-guaranteed). Hard decision deadline: ≥24 months before exact expiry (≈ end-2031 on the 2033 midpoint). Residual risk of path A is manageable: process risks (1031 deadlines, replacement selection) are controllable; black-swan casualty risk is carried via insurance + reserves + geographic diversification.</p>
+    </div>
+  </section>
+</div>
+
+<footer><div class="wrap">Jack3 · Risk Analysis · <a href="sources.html">Source register</a> · <a href="flagged.html">Flagged for Review</a> · No personal information published</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

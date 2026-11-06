@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projections &amp; Valuation Model — Jack3</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <span class="brand"><span class="dot"></span>Jack3 · Property Decision Research</span>
+  <nav class="main">
+    <a href="../index.html">Dashboard</a>
+    <a href="executive-summary.html">Executive Summary</a>
+    <a href="market-research.html">Market Research</a>
+    <a href="lease-analysis.html">Lease &amp; Tenant</a>
+    <a href="risk-analysis.html">Risk Analysis</a>
+    <a href="projections.html">Projections</a>
+    <a href="repo-review.html">Repo Review</a>
+    <a href="sources.html">Sources</a>
+    <a class="flag" href="flagged.html">⚑ Flagged for Review</a>
+  </nav>
+</div></header>
+<div class="privacy"><div class="wrap">🔒 All personal information anonymized; placeholders only. No personal information appears on this site.</div></div>
+
+<div class="wrap" style="margin-top:22px">
+  <section class="card">
+    <h2>Projections &amp; Reliable Projection System</h2>
+    <p class="sub">How the area outlook is built: official projection sources side by side (divergences flagged, never averaged silently), then a transparent valuation model. [MODEL] rows are computed in this session from the cited inputs — they are <b>not</b> official data. Property NOI is <span class="blank">blank — anonymized</span>, so the model is shown per $100K of NOI as a clearly-labeled illustration.</p>
+    <div class="searchbar">
+      <input id="global-filter" type="search" placeholder="Filter rows… (e.g. “2030”, “cap”, “DOF”)">
+      <span class="count" id="filter-count"></span>
+    </div>
+
+    <h3>1 · Population outlook — official sources side by side</h3>
+    <table class="data">
+      <thead><tr><th>Source</th><th>2025</th><th>2030</th><th>2035</th><th>2040</th><th>2050</th><th>Class</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td>U.S. Census Bureau estimate, LA County (V2025, July 1, 2025) — actual</td><td class="num">9,694,934</td><td class="num blank">—</td><td class="num blank">—</td><td class="num blank">—</td><td class="num blank">—</td><td><span class="badge b-gov">OFFICIAL</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225">census.gov QuickFacts</a></td></tr>
+        <tr><td>CA Dept. of Finance P-2A, Vintage 2026 (2024 baseline) — read directly from the official XLSX this session</td><td class="num">9,853,435</td><td class="num">9,727,305</td><td class="num">9,708,647</td><td class="num">9,637,524</td><td class="num">9,390,823 (−4.7% vs 2025)</td><td><span class="badge b-gov">OFFICIAL</span></td><td class="src"><a href="https://dof.ca.gov/media/docs/forecasting/Demographics/projections/P2A_County_Total.xlsx">dof.ca.gov — P2A_County_Total.xlsx (FIPS 6037 row)</a></td></tr>
+        <tr><td>SCAG Connect SoCal 2024 (adopted 4/4/2024) — LA County to 2050</td><td class="num blank">—</td><td class="num blank">—</td><td class="num blank">—</td><td class="num blank">—</td><td class="num">10.77M (+7%, +720,000 vs 2019)</td><td><span class="badge b-flag">OFFICIAL MPO — diverges from DOF → flagged</span></td><td class="src"><a href="https://scag.ca.gov/sites/default/files/2024-05/231220_scag_subregional-press-release_los-angeles.pdf">scag.ca.gov press release</a> · <a href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf">growth-forecast technical report</a></td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn"><h4>⚑ Divergence flagged</h4><p>DOF (state, Vintage 2026, verified in the official file) projects LA County population to <b>decline</b> through the 2030–2035 lease window; SCAG's adopted plan projects <b>+7% growth</b> to 10.77M by 2050. Decision planning uses the conservative DOF path; both links above are official.</p></div>
+
+    <h3>2 · Jobs outlook — official sources</h3>
+    <table class="data">
+      <thead><tr><th>Source</th><th>Metric</th><th>Value</th><th>Class</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td>CA EDD occupational projections, LA County</td><td>Total employment 2022 → 2032</td><td class="num">4,853,080 → 5,277,200 (+424,120; +8.7%; ~0.8%/yr)</td><td><span class="badge b-gov">OFFICIAL</span></td><td class="src"><a href="https://labormarketinfo.edd.ca.gov/cgi/dataBrowsing/localAreaProfileQSResults.asp?geogArea=0604000037&selectedarea=Los+Angeles+County&state=true">labormarketinfo.edd.ca.gov</a></td></tr>
+        <tr><td>SCAG Connect SoCal 2024</td><td>LA County employment 2019 → 2050</td><td class="num">5,031,000 → 5,461,000 (+8.6%)</td><td><span class="badge b-gov">OFFICIAL MPO</span></td><td class="src"><a href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf">scag.ca.gov technical report, Table 12</a></td></tr>
+        <tr><td>BLS (current)</td><td>LA–Long Beach–Anaheim MSA unemployment, Aug 2026 (NSA)</td><td class="num">4.4%</td><td><span class="badge b-gov">OFFICIAL</span></td><td class="src"><a href="https://www.bls.gov/news.release/pdf/metro.pdf">bls.gov metro release</a> · <a href="https://fred.stlouisfed.org/series/LOSA106URN">FRED LOSA106URN</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3>3 · Valuation model — transparent scenario grid [MODEL]</h3>
+    <p class="sub">Formula: <b>Indicated value = NOI ÷ cap rate</b>. NOI for the subject property is <span class="blank">blank (anonymized)</span>, so values are shown <b>per $100,000 of NOI — illustrative only, not property data</b>. Cap-rate inputs are the sourced Q3 2026 bands; remaining-term input is the 2030–2035 expiry window.</p>
+    <table class="data">
+      <thead><tr><th>Scenario</th><th>Cap rate input</th><th>Cap-rate source</th><th>Value per $100K NOI [MODEL]</th><th>Reading</th></tr></thead>
+      <tbody>
+        <tr><td>Sell now–2029 with lease in place (franchisee QSR, 2–8 yrs remaining)</td><td class="num">6.87% – 7.55%</td><td class="src"><a href="https://bouldergroup.com/media/pdf/2026-Q3-Net-Lease-Research-Report.pdf">Boulder Group Q3 2026</a> [INDUSTRY]</td><td class="num">$1.46M – $1.32M</td><td>Best available band today; shrinks each year held</td></tr>
+        <tr><td>Hypothetical corporate-credit pricing (not applicable — 93% franchised)</td><td class="num">5.90%</td><td class="src"><a href="https://bouldergroup.com/media/pdf/2026-Q3-Net-Lease-Research-Report.pdf">Boulder Group Q3 2026</a> [INDUSTRY]</td><td class="num">$1.69M</td><td>Shown only to quantify the franchisee discount</td></tr>
+        <tr><td>Sell at expiry 2030–2035 with renewal secured (new 10+ yr term)</td><td class="num">~6.87% (reset to full-term band)</td><td class="src"><a href="https://bouldergroup.com/media/pdf/2026-Q3-Net-Lease-Research-Report.pdf">Boulder Group Q3 2026</a> [INDUSTRY] + renewal assumption [MODEL]</td><td class="num">$1.46M (plus NOI growth from escalations)</td><td>Requires signed extension — discretionary per FDD</td></tr>
+        <tr><td>Sell at expiry 2030–2035 with NO renewal (vacant / re-tenant)</td><td class="num">distressed &gt;7.55%; re-tenant at LA retail market</td><td class="src"><a href="https://bouldergroup.com/media/pdf/2026-Q3-Net-Lease-Research-Report.pdf">Boulder</a> · <a href="https://kidder.com/market-reports/los-angeles-retail-market-report/">Kidder Q3 2026</a> (vacancy 5.7%, $2.75/SF/mo) [INDUSTRY]</td><td class="num">&lt; $1.32M before downtime &amp; re-tenanting cost; vacant value = land/building only</td><td>The cliff scenario — avoided by selling early</td></tr>
+        <tr><td>Rate-shock overlay (Dec-2026 hike risk, flagged) on any hold</td><td class="num">+25–50 bps cap expansion [MODEL]</td><td class="src">rate inputs: <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm">Fed 10/28/26</a>, <a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=202611">Treasury 11/4/26</a></td><td class="num">e.g. 6.87% → 7.12–7.37%: $1.46M → $1.41M–$1.36M per $100K NOI</td><td>Time decay against the holder</td></tr>
+      </tbody>
+    </table>
+
+    <h3>4 · Projection system rules (how to keep this reliable)</h3>
+    <ul class="tight">
+      <li><b>Inputs only from linked sources;</b> each input row on this site names its source and class (OFFICIAL / SEC / INDUSTRY / MODEL / FLAGGED).</li>
+      <li><b>Unverifiable values stay blank</b> and are listed on <a href="flagged.html">Flagged for Review</a> — never inferred.</li>
+      <li><b>Official sources take precedence</b> over industry sources; where two official sources diverge (DOF vs SCAG), both are shown and the conservative one drives planning.</li>
+      <li><b>Model outputs are labeled [MODEL]</b> and recomputed from the cited inputs; property NOI must be supplied privately (never published) to produce actual dollar values.</li>
+      <li>Refresh cadence: re-pull Fed/Treasury monthly, Census/EDD on release, Boulder Group quarterly, CAL FIRE/FEMA on map updates.</li>
+    </ul>
+  </section>
+</div>
+
+<footer><div class="wrap">Jack3 · Projections &amp; Model · <a href="sources.html">Source register</a> · <a href="flagged.html">Flagged for Review</a> · No personal information published</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>
