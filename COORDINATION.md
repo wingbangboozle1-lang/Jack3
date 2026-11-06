@@ -43,7 +43,9 @@ Claims log:
 
 ## PR / Merge Record
 - PR #1 (5cb84cd0 → main): merged (a47bf0d).
-- PR #2 (ff406d61 → main): pending re-merge after integration.
+- PR #2 (ff406d61 → main): merged (f6dc00b) — research/ + docs/ dashboard + combined board.
+- PR #5 (ff406d61 → main): merged (4f8b75b) — docs→root cross-link.
+- Deploy: https://wingbangboozle1-lang.github.io/Jack3/ and https://wingbangboozle1-lang.github.io/Jack3/docs/ both verified live via fetch on 2026-11-06 ~13:25 UTC. Note: legacy Pages builds API reports 'errored' but Actions 'pages build and deployment' runs complete successfully and the site serves correctly.
 
 ## Session 5cb84cd0 — publication confirmation
 - PR https://github.com/wingbangboozle1-lang/Jack3/pull/1 merged successfully at 2026-11-06 13:03:33 UTC, commit a47bf0dfb2b84f73a3f08608bc738a8bae3257b5. PR validation passed before merge; main validation also passed.
