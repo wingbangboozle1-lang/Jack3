@@ -154,6 +154,36 @@ Group Q3 2026 net-lease research (tier 3, labelled).
 
 ---
 
+## Session `sess-8d650ba0` — PR, merge and deployment record
+
+- **PR:** https://github.com/wingangboozle1-lang/Jack3/pull/7 — "Jack in the Box NNN (Central LA): verified research, risk
+  register, scenario model and decision dashboard".
+- **Merge:** merged to `main` 2026-11-06 13:10:58 UTC, merge commit `00709bc584928d4629459be7f78b4dc298d6aea9`.
+  Merge method: merge commit. No approval wait, as instructed.
+- **Pre-merge checks:** the repository's own workflow (`Validate public research`) passed on the PR head
+  (run 42223322444). Locally: `tools/model.py`, `tools/build.py` and `tools/linkcheck.py` all clean
+  (11 pages, 234 internal links and anchors, 0 broken); `scripts/validate.py` PASS with 68 evidence rows and 9 root pages.
+- **Repair made to pass CI:** the first CI run failed on `git diff --exit-code -- '*.html'` because the root `index.html`
+  had been hand-edited to add the cross-link. Fixed by folding the link into the root page generator (`scripts/build.py`)
+  so regeneration is byte-identical. Re-run passed. No other session's content was altered by that change.
+- **Deployment:** GitHub Pages built successfully for commit `00709bc` (build status `built`, duration 166 s,
+  no error). Early 404s were CDN propagation and cleared on re-request.
+- **Live URLs verified after deploy:**
+  - `https://wingbangboozle1-lang.github.io/Jack3/` — root dashboard (session 5cb84cd0), now carrying the cross-link
+  - `https://wingbangboozle1-lang.github.io/Jack3/docs/` — docs dashboard (session ff406d61), cross-link present
+  - `https://wingbangboozle1-lang.github.io/Jack3/analysis/` — this session's deep-dive dashboard
+  - `https://wingbangboozle1-lang.github.io/Jack3/analysis/decision.html` — decision page
+
+### Conflict resolution log
+- `git merge origin/main` produced **add/add on `COORDINATION.md`** and **content conflict on `README.md`** only. Both
+  resolved by keeping the upstream text **verbatim** and appending this session's section; nothing was removed.
+- Root-level `index.html`, `economy.html`, `tenant.html`, `risk.html`, `sources.html` in this branch were **relocated to
+  `analysis/`** rather than merged over the other sessions' pages, so both earlier dashboards remain intact and unchanged
+  apart from one additive link each.
+- No other session's files were edited. No cross-session request was needed.
+
+---
+
 # Session `arena-796b983f-jack3` — deep-dive decision brief (`brief/`)
 
 Branch: `arena/796b983f-jack3` (platform-assigned; no other branch used). Four parallel sessions existed by the time of this merge; this session's scope and files are non-overlapping with the other three. Work on this branch was partially duplicated in spirit by `sess-8d650ba0`'s `analysis/` layer — both are preserved; nothing was reverted.
@@ -169,7 +199,7 @@ Branch: `arena/796b983f-jack3` (platform-assigned; no other branch used). Four p
 | 4 | Research: Jack in the Box tenant credit (IR fetched live 2026-11-06) | done | arena-796b983f | brief/decision.html |
 | 5 | Site build: dashboard + 8 subpages (under /brief/) | done | arena-796b983f | brief/* |
 | 6 | Verification (tools/check_site.py; source typing; PII grep) | done | arena-796b983f | tools/check_site.py |
-| 7 | Integration: merge main (twice), /brief/ restructure, PR #3 | in progress | arena-796b983f | brief/, README.md, COORDINATION.md, scripts/build.py (one additive line), index.html (regenerated) |
+| 7 | Integration: merge main (3x), /brief/ restructure, PR #3 | in progress | arena-796b983f | brief/, README.md, COORDINATION.md, scripts/build.py (one additive line), index.html (regenerated) |
 | 8 | Flagged for Review page | done | arena-796b983f | brief/flagged.html |
 
 ## Log
@@ -179,6 +209,7 @@ Branch: `arena/796b983f-jack3` (platform-assigned; no other branch used). Four p
 - 2026-11-06: `.github/workflows/deploy-pages.yml` (Actions deploy) was added then deliberately dropped: legacy Pages builds recovered (run 42222599679 succeeded per 5cb84cd0's deploy record above); two competing deployers avoided. If Pages errors again, re-add an Actions workflow and set Pages `build_type=workflow`.
 - 2026-11-06: PR #3 opened from `arena/796b983f-jack3`. CI (Validate public research) PASS. Merge blocked by concurrent PR #7 — main merged into this branch, conflicts in README.md / COORDINATION.md / index.html / scripts/build.py resolved without discarding any session's work. `check_site.py` and `scripts/validate.py` re-run after resolution.
 - PRs still open by others: PR #4 (`arena/28eacae6-jack3`) — not touched by this session.
+- 2026-11-06 (later): PR #8 (`arena/8d650ba0-jack3`) merged; conflicted on COORDINATION.md only; resolved by keeping both sessions verbatim (theirs first, this session appended). Their cross-dashboard navigation commits carry links to this `/brief/` site.
 
 ## PR / Merge Record (this session)
 - PR #3 `arena/796b983f-jack3 → main`: https://github.com/wingbangboozle1-lang/Jack3/pull/3 — merge pending at time of writing; result recorded in the follow-up note below.
