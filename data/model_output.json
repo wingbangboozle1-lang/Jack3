@@ -1,0 +1,2199 @@
+{
+ "meta": {
+  "compiled": "2026-11-06",
+  "engine": "tools/model.py",
+  "horizon_start": 2026,
+  "horizon_end": 2052,
+  "paths": 6000,
+  "seed": 20261106,
+  "reinvestment_rate": 0.065,
+  "reinvestment_note": "Interim cash is reinvested at 6.5% nominal and taxed at A11 on liquidation at the horizon.",
+  "sale_costs_definition": "Brokerage, title, escrow and legal (A09) plus county documentary transfer tax (S16), City of Los Angeles base transfer tax (S17) and Measure ULA where applicable (S17)."
+ },
+ "observed_inputs": [
+  {
+   "name": "cpi_us_yoy",
+   "value": 0.0374,
+   "as_of": "2026-09",
+   "source": "S03",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "cpi_la_yoy",
+   "value": 0.0372,
+   "as_of": "2026-09",
+   "source": "S04",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "treasury_10y",
+   "value": 0.0484,
+   "as_of": "2026-11-05",
+   "source": "S02",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "treasury_5y",
+   "value": 0.0459,
+   "as_of": "2026-11-05",
+   "source": "S02",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "fed_funds_mid",
+   "value": 0.03875,
+   "as_of": "2026-10-28",
+   "source": "S01",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "la_county_unemployment",
+   "value": 0.048,
+   "as_of": "2026-09",
+   "source": "S05",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "la_county_emp_growth_yoy",
+   "value": 0.004,
+   "as_of": "2026-09",
+   "source": "S05",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "la_county_pop_change_2020_2025",
+   "value": -0.032,
+   "as_of": "2025-07",
+   "source": "S06",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "la_city_pop_change_2020_2025",
+   "value": -0.008,
+   "as_of": "2025-07",
+   "source": "S07",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "la_k12_enrollment_change_10y",
+   "value": -240800,
+   "as_of": "2035-36 projection",
+   "source": "S09",
+   "label": "OBSERVED (official projection)"
+  },
+  {
+   "name": "prop13_rate",
+   "value": 0.01,
+   "as_of": "current",
+   "source": "S15",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "prop13_annual_cap",
+   "value": 0.02,
+   "as_of": "current",
+   "source": "S15",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "county_transfer_tax_rate",
+   "value": 0.0011,
+   "as_of": "current",
+   "source": "S16",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "city_transfer_tax_rate",
+   "value": 0.0045,
+   "as_of": "current",
+   "source": "S17",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "ula_lower_threshold",
+   "value": 5400000,
+   "as_of": "2026-07-01",
+   "source": "S17",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "ula_upper_threshold",
+   "value": 10900000,
+   "as_of": "2026-07-01",
+   "source": "S17",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "ula_rate_lower",
+   "value": 0.04,
+   "as_of": "2026-07-01",
+   "source": "S17",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "ula_rate_upper",
+   "value": 0.055,
+   "as_of": "2026-07-01",
+   "source": "S17",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "jib_same_store_q3_2026",
+   "value": -0.011,
+   "as_of": "Q3 FY2026",
+   "source": "S13",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "jib_same_store_fy2025",
+   "value": -0.042,
+   "as_of": "FY2025",
+   "source": "S12",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "jib_securitization_coupon",
+   "value": 0.07624,
+   "as_of": "2026-06-23",
+   "source": "S14",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "fast_food_min_wage",
+   "value": 20.0,
+   "as_of": "2024-04-01",
+   "source": "S20",
+   "label": "OBSERVED"
+  }
+ ],
+ "assumptions": [
+  {
+   "id": "A01",
+   "name": "Going-in cap rate for a central-LA single-tenant QSR",
+   "value": 0.0575,
+   "range": [
+    0.05,
+    0.065
+   ],
+   "label": "ASSUMPTION",
+   "basis": "No official series publishes net-lease cap rates for this asset class (flagged F-05). The value is set by building up from the verified 10-year Treasury (4.84%, S02) plus a net-lease retail risk spread of roughly 90bp. A 90bp spread is at the tight end of what single-tenant quick-service trades have historically commanded, which is appropriate for a dense urban Southern California infill site with a national brand.",
+   "materiality": "HIGH \u2014 every downstream return is an inverse function of this number.",
+   "how_to_replace": "Substitute the broker's opinion of value or an actual appraisal; the model recomputes automatically."
+  },
+  {
+   "id": "A02",
+   "name": "Long-run cap-rate risk spread over the 10-year Treasury",
+   "value": 0.009,
+   "range": [
+    0.006,
+    0.015
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Net-lease spreads have historically compressed in strong markets and widened sharply in stress. 90bp is a central estimate for an infill QSR in a supply-constrained metro.",
+   "materiality": "HIGH"
+  },
+  {
+   "id": "A03",
+   "name": "Rent growth while the existing lease runs",
+   "value": 0.02,
+   "range": [
+    0.01,
+    0.03
+   ],
+   "label": "ASSUMPTION",
+   "basis": "NNN leases commonly escalate at a flat 2% or at CPI with a collar. 2% is the modal contract structure. Note that this is BELOW observed LA CPI of 3.72% (S04), so in real terms the existing lease is designed to lose purchasing power \u2014 a point that favours the exit.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A04",
+   "name": "Market rent growth at renewal",
+   "value": 0.0275,
+   "range": [
+    0.015,
+    0.04
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Market rent at renewal should track the LA CPI observation (3.16% 2025 annual, S04) less a small structural drag for the county's declining population (S06, S09). Set at 2.75%, i.e. CPI minus roughly 40bp.",
+   "materiality": "HIGH"
+  },
+  {
+   "id": "A05",
+   "name": "Probability the tenant renews at SP-01",
+   "value": 0.62,
+   "range": [
+    0.4,
+    0.8
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Built from three verified signals, not intuition: (i) the tenant is closing 50\u2013100 units in FY2026 by its own guidance (S12), which is an explicit negative; (ii) same-store sales improved from \u22127.1% to \u22121.1% (S13), which is an explicit positive; (iii) a unit-level urban LA location in a 4.8%-unemployment metro with a positive restaurant sub-sector (+7,300 jobs, S05) should sit in the stronger half of the portfolio. Net 62%, and the model reports 40% and 80% as bounds because this is the single most consequential unknown.",
+   "materiality": "VERY HIGH"
+  },
+  {
+   "id": "A06",
+   "name": "Downtime if the tenant does NOT renew",
+   "value": 18,
+   "range": [
+    9,
+    36
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Months of vacancy plus rent abatement to re-tenant a 2,500\u20133,500 sq ft drive-through box in central LA.",
+   "materiality": "HIGH"
+  },
+  {
+   "id": "A07",
+   "name": "Re-tenanting cost if the tenant does not renew (TI plus leasing commission)",
+   "value": 0.075,
+   "range": [
+    0.05,
+    0.12
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Expressed as a percentage of property value, applied on rollover. Tenant improvements plus leasing commissions for a QSR box.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A08",
+   "name": "Landlord retained capital reserve (roof, structure, parking, ADA)",
+   "value": 0.0035,
+   "range": [
+    0.002,
+    0.007
+   ],
+   "label": "ASSUMPTION",
+   "basis": "A true triple-net lease pushes most costs to the tenant, but landlords routinely retain roof and structure. 35bp of value per year is a conservative reserve. If the lease is not genuinely NNN, this must rise (see flag F-01).",
+   "materiality": "LOW-MEDIUM"
+  },
+  {
+   "id": "A09",
+   "name": "Selling costs (brokerage, title, escrow, legal)",
+   "value": 0.04,
+   "range": [
+    0.03,
+    0.06
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Standard commercial transaction cost as a percentage of gross price. Excludes transfer tax, which is computed from S16 and S17.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A10",
+   "name": "Owner's adjusted basis as a percentage of current value",
+   "value": 0.4,
+   "range": [
+    0.15,
+    0.8
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Unknown and unknowable without the owner's records (F-06). 40% represents a long-held asset. This drives the entire tax cost of selling, so the model reports the full range.",
+   "materiality": "VERY HIGH",
+   "privacy_note": "Deliberately parameterised so that no actual basis figure is ever requested or stored."
+  },
+  {
+   "id": "A11",
+   "name": "Blended tax rate on capital gain (federal + NIIT + California)",
+   "value": 0.334,
+   "range": [
+    0.238,
+    0.371
+   ],
+   "label": "ASSUMPTION",
+   "basis": "20% federal long-term capital gains + 3.8% net investment income tax + 9.3% California \u2248 33.1%. Set at 33.4%. The top California bracket of 13.3% pushes the upper bound to 37.1%. Unrecaptured \u00a71250 gain on depreciation is taxed at up to 25% and is NOT separately modelled \u2014 a known conservative simplification that if anything favours holding.",
+   "materiality": "VERY HIGH"
+  },
+  {
+   "id": "A12",
+   "name": "Tenant's pricing power offset (mitigates rent-default risk)",
+   "value": 0.1,
+   "label": "ASSUMPTION",
+   "basis": "Applied as a haircut to the modelled probability of severe rent stress, reflecting that the franchisee can pass some cost inflation to menu price (S11 records 5.5% menu pricing in FY2025).",
+   "materiality": "LOW"
+  },
+  {
+   "id": "A13",
+   "name": "Annualised probability of a regional black-swan event affecting the parcel",
+   "value": 0.02,
+   "range": [
+    0.01,
+    0.04
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Calibrated from verified history: two catastrophic urban wildfires hit Los Angeles County in the same week of January 2025, destroying 16,263 structures combined (S21 + S22). Over a 10-year hold a 2%/yr event probability implies a ~18% chance of at least one event. This is intentionally pessimistic relative to a calm-decade base rate, because the last decade produced two such events in one week.",
+   "materiality": "HIGH",
+   "note": "Deliberately NOT calibrated to a specific parcel, because the parcel is private (F-03)."
+  },
+  {
+   "id": "A14",
+   "name": "Severity of a black-swan event to the parcel (if it occurs)",
+   "value": 0.35,
+   "range": [
+    0.1,
+    0.9
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Loss of value as a fraction of gross value, after insurance recovery and before business interruption. A central-LA infill site is far less exposed than the wildland-urban interface that burned in 2025, so the base case is a partial impairment (shutdown, smoke and ash remediation, utility outage, six-to-eighteen months of zero rent) rather than total loss.",
+   "materiality": "HIGH"
+  },
+  {
+   "id": "A15",
+   "name": "Insurance recovery offset for a black-swan event",
+   "value": 0.55,
+   "range": [
+    0.3,
+    0.8
+   ],
+   "label": "ASSUMPTION",
+   "basis": "In a true NNN the tenant insures the building, so the landlord's direct property loss is partly covered. The landlord still absorbs rent interruption, deductible, and the post-event cap-rate widening that follows a regional catastrophe.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A16",
+   "name": "Cap-rate penalty for short remaining lease term",
+   "value": 0.0075,
+   "label": "ASSUMPTION",
+   "basis": "Buyers of single-tenant assets price renewal risk. Below roughly five years of remaining term, quoted cap rates widen materially and the asset becomes a re-leasing story rather than a bond. Modelled as +75bp at zero remaining term, scaled linearly.",
+   "materiality": "HIGH",
+   "note": "This single assumption is why 'sell before expiry' can beat 'hold to expiry' even when rents are rising."
+  },
+  {
+   "id": "A17",
+   "name": "Secular demand drag from county population decline",
+   "value": -0.0025,
+   "range": [
+    -0.005,
+    0.0
+   ],
+   "label": "ASSUMPTION",
+   "basis": "The verified fact is that LA County lost 3.2% of its population in five years (S06) and is projected to lose a further 240,800 K-12 students in ten (S09). The modelled mechanism is a 25bp annual drag on real rent growth. This is a disclosed judgement, not an observation.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A18",
+   "name": "Property value scenario bands used for reporting",
+   "value": 6500000,
+   "range": [
+    4000000,
+    12000000
+   ],
+   "label": "ASSUMPTION",
+   "basis": "The property's actual value is private. Three bands are run because they straddle the two Measure ULA thresholds ($5.4M and $10.9M), so the tax cliff is visible rather than averaged away. The $6.5M band is the reporting base case. The ranking of strategies is stable across all three bands.",
+   "materiality": "N/A (reporting parameter, not a market input)"
+  },
+  {
+   "id": "A19",
+   "name": "Reinvestment rate on interim after-tax cash",
+   "value": 0.065,
+   "range": [
+    0.045,
+    0.08
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Interim cash must be put somewhere or the comparison between a 2026 exit and a 2052 exit is meaningless. 6.5% is set above the verified 10-year Treasury of 4.84% (S02) to reflect a diversified income portfolio with some equity risk, and below a fair-return assumption for direct real estate. Reinvestment growth is taxed at A11 on liquidation.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A20",
+   "name": "Blended tax rate applied to growth of the reinvestment portfolio",
+   "value": 0.28,
+   "range": [
+    0.2,
+    0.33
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Lower than A11 because a diversified portfolio turns over partially, realising some long-term gains at preferential rates and deferring the rest. Used only for the reinvestment sleeve, never for the property itself.",
+   "materiality": "LOW-MEDIUM"
+  }
+ ],
+ "value_bands": [
+  {
+   "id": "V1",
+   "label": "Below the Measure ULA threshold",
+   "value": 4000000
+  },
+  {
+   "id": "V2",
+   "label": "Between ULA thresholds (4% cliff applies)",
+   "value": 6500000
+  },
+  {
+   "id": "V3",
+   "label": "Above the upper ULA threshold (5.5% applies)",
+   "value": 12000000
+  }
+ ],
+ "strategies": [
+  {
+   "value_band": "V1",
+   "value_label": "Below the Measure ULA threshold",
+   "value_assumed": 4000000,
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "exit_year": 2026,
+   "renew": false,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.04167523300467657,
+    "p25": 0.04167523300467657,
+    "p50": 0.04167523300467657,
+    "p75": 0.04167523300467657,
+    "p95": 0.04167523300467657,
+    "mean": 0.04167523300467326,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 11563805.8352471,
+    "p25": 11563805.8352471,
+    "p50": 11563805.8352471,
+    "p75": 11563805.8352471,
+    "p95": 11563805.8352471,
+    "mean": 11563805.835248966,
+    "cvar5": 11563805.83524705,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 3076921.6,
+    "p50": 3076921.6,
+    "p95": 3076921.6
+   },
+   "certainty_equivalent": {
+    "gamma_2": 11563805.835247826,
+    "gamma_4": 11563805.835247565,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.0,
+    "avg_swan_hits_per_path": 0.0
+   }
+  },
+  {
+   "value_band": "V1",
+   "value_label": "Below the Measure ULA threshold",
+   "value_assumed": 4000000,
+   "strategy": "S2",
+   "name": "Sell before expiry (2030)",
+   "exit_year": 2030,
+   "renew": false,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.03296302864198573,
+    "p25": 0.04586300246295527,
+    "p50": 0.047130209678955426,
+    "p75": 0.04828240084906932,
+    "p95": 0.05012176694748608,
+    "mean": 0.0459054878667924,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 9295317.16131634,
+    "p25": 12835263.608162621,
+    "p50": 13245791.355419183,
+    "p75": 13629993.633832116,
+    "p95": 14265636.976147577,
+    "mean": 12930630.88641823,
+    "cvar5": 8661490.28125366,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 2517070.2965248334,
+    "p50": 3086479.5477821548,
+    "p95": 3429310.7977175936
+   },
+   "certainty_equivalent": {
+    "gamma_2": 12738964.000165189,
+    "gamma_4": 12428654.320303343,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.07763184000000012,
+    "avg_swan_hits_per_path": 0.07716666666666666
+   }
+  },
+  {
+   "value_band": "V1",
+   "value_label": "Below the Measure ULA threshold",
+   "value_assumed": 4000000,
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "exit_year": 2032,
+   "renew": false,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.033574752914337036,
+    "p25": 0.045985359137420745,
+    "p50": 0.047421482584481645,
+    "p75": 0.04849301637139625,
+    "p95": 0.050105920243919425,
+    "mean": 0.04567419487982685,
+    "prob_below_zero": 0.00016666666666666666
+   },
+   "terminal_wealth": {
+    "p05": 9439504.352541057,
+    "p25": 12874362.66517479,
+    "p50": 13341921.896221802,
+    "p75": 13701372.914757034,
+    "p95": 14260040.940588102,
+    "mean": 12874662.446268324,
+    "cvar5": 8616654.355288403,
+    "prob_below_start": 0.00016666666666666666
+   },
+   "exit_proceeds": {
+    "p05": 2463165.7416481175,
+    "p50": 3047247.611491323,
+    "p95": 3390605.1670358945
+   },
+   "certainty_equivalent": {
+    "gamma_2": 12642875.050090924,
+    "gamma_4": 12278045.922805995,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.11415761913600009,
+    "avg_swan_hits_per_path": 0.12133333333333333
+   }
+  },
+  {
+   "value_band": "V1",
+   "value_label": "Below the Measure ULA threshold",
+   "value_assumed": 4000000,
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "exit_year": 2042,
+   "renew": true,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.03832664740551196,
+    "p25": 0.04808261972484179,
+    "p50": 0.053886314337914576,
+    "p75": 0.05599725120323956,
+    "p95": 0.0586525275407499,
+    "mean": 0.05144357204139061,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 10412038.206131883,
+    "p25": 13305127.48445294,
+    "p50": 15327135.996797208,
+    "p75": 16272873.467794092,
+    "p95": 17425707.611533165,
+    "mean": 14681249.933791062,
+    "cvar5": 9035233.700266408,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 2510292.306620212,
+    "p50": 3611621.485006755,
+    "p95": 4539360.293447523
+   },
+   "certainty_equivalent": {
+    "gamma_2": 14251026.80988003,
+    "gamma_4": 13603973.223339252,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.2762022794075044,
+    "avg_swan_hits_per_path": 0.3258333333333333
+   }
+  },
+  {
+   "value_band": "V1",
+   "value_label": "Below the Measure ULA threshold",
+   "value_assumed": 4000000,
+   "strategy": "S5",
+   "name": "Renew, hold 20 years (exit 2052)",
+   "exit_year": 2052,
+   "renew": true,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.04022064397793971,
+    "p25": 0.05024237225058237,
+    "p50": 0.055558088146925866,
+    "p75": 0.0594426947213999,
+    "p95": 0.06365866391532572,
+    "mean": 0.05416357532209391,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 10884130.498877866,
+    "p25": 14060759.854307437,
+    "p50": 16079570.990857102,
+    "p75": 17709846.939458746,
+    "p95": 19685787.24203024,
+    "mean": 15765562.232290719,
+    "cvar5": 9506981.725898867,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 2864051.2136411667,
+    "p50": 4199447.697422804,
+    "p95": 5869462.891176784
+   },
+   "certainty_equivalent": {
+    "gamma_2": 15209996.36179326,
+    "gamma_4": 14453169.091003584,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.4086045648166813,
+    "avg_swan_hits_per_path": 0.5145
+   }
+  },
+  {
+   "value_band": "V1",
+   "value_label": "Below the Measure ULA threshold",
+   "value_assumed": 4000000,
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "exit_year": 2026,
+   "renew": false,
+   "exchange": true,
+   "cagr": {
+    "p05": 0.05035276798958854,
+    "p25": 0.05035276798958854,
+    "p50": 0.05035276798958854,
+    "p75": 0.05035276798958854,
+    "p95": 0.05035276798958854,
+    "mean": 0.050352767989584275,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 14347452.062684773,
+    "p25": 14347452.062684773,
+    "p50": 14347452.062684773,
+    "p75": 14347452.062684773,
+    "p95": 14347452.062684773,
+    "mean": 14347452.062683469,
+    "cvar5": 14347452.062684653,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 3817600.0,
+    "p50": 3817600.0,
+    "p95": 3817600.0
+   },
+   "certainty_equivalent": {
+    "gamma_2": 14347452.062685626,
+    "gamma_4": 14347452.06268435,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.0,
+    "avg_swan_hits_per_path": 0.0
+   }
+  },
+  {
+   "value_band": "V1",
+   "value_label": "Below the Measure ULA threshold",
+   "value_assumed": 4000000,
+   "strategy": "S7",
+   "name": "Renew, \u00a71031 exchange at 2032",
+   "exit_year": 2032,
+   "renew": true,
+   "exchange": true,
+   "cagr": {
+    "p05": 0.042229683182474734,
+    "p25": 0.05392636970471448,
+    "p50": 0.056157660056816994,
+    "p75": 0.057819575753614794,
+    "p95": 0.060332378294723474,
+    "mean": 0.054483470015359,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 11464897.51875732,
+    "p25": 15360025.543538209,
+    "p50": 16322259.18975548,
+    "p75": 17048360.774695136,
+    "p95": 18129589.90581753,
+    "mean": 15787308.931865405,
+    "cvar5": 10393421.893579265,
+    "prob_below_start": 0.00016666666666666666
+   },
+   "exit_proceeds": {
+    "p05": 2884210.1519597503,
+    "p50": 4011710.701594129,
+    "p95": 4805653.240286814
+   },
+   "certainty_equivalent": {
+    "gamma_2": 15453936.309928885,
+    "gamma_4": 14947269.284051904,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.11415761913600009,
+    "avg_swan_hits_per_path": 0.12133333333333333
+   }
+  },
+  {
+   "value_band": "V2",
+   "value_label": "Between ULA thresholds (4% cliff applies)",
+   "value_assumed": 6500000,
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "exit_year": 2026,
+   "renew": false,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.040264081924893835,
+    "p25": 0.040264081924893835,
+    "p50": 0.040264081924893835,
+    "p75": 0.040264081924893835,
+    "p95": 0.040264081924893835,
+    "mean": 0.04026408192489694,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 18140407.86891356,
+    "p25": 18140407.86891356,
+    "p50": 18140407.86891356,
+    "p75": 18140407.86891356,
+    "p95": 18140407.86891356,
+    "mean": 18140407.868912045,
+    "cvar5": 18140407.86891363,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 4826837.6,
+    "p50": 4826837.6,
+    "p95": 4826837.6
+   },
+   "certainty_equivalent": {
+    "gamma_2": 18140407.86891235,
+    "gamma_4": 18140407.86891288,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.0,
+    "avg_swan_hits_per_path": 0.0
+   }
+  },
+  {
+   "value_band": "V2",
+   "value_label": "Between ULA thresholds (4% cliff applies)",
+   "value_assumed": 6500000,
+   "strategy": "S2",
+   "name": "Sell before expiry (2030)",
+   "exit_year": 2030,
+   "renew": false,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.0321675097513074,
+    "p25": 0.044901557024949246,
+    "p50": 0.04614252578759537,
+    "p75": 0.0472751716654255,
+    "p95": 0.049080435526964075,
+    "mean": 0.04498625345655224,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 14805331.989707077,
+    "p25": 20364471.393108517,
+    "p50": 21002724.098261237,
+    "p75": 21602019.517027386,
+    "p95": 22591332.193416785,
+    "mean": 20529496.569252186,
+    "cvar5": 13912314.033625213,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 4090239.2318528555,
+    "p50": 4841718.315223704,
+    "p95": 5375470.362875704
+   },
+   "certainty_equivalent": {
+    "gamma_2": 20244156.03654233,
+    "gamma_4": 19786749.625285998,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.07763184000000012,
+    "avg_swan_hits_per_path": 0.07716666666666666
+   }
+  },
+  {
+   "value_band": "V2",
+   "value_label": "Between ULA thresholds (4% cliff applies)",
+   "value_assumed": 6500000,
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "exit_year": 2032,
+   "renew": false,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.032931750330956175,
+    "p25": 0.04515075940643243,
+    "p50": 0.046563529095957734,
+    "p75": 0.04761172799502644,
+    "p95": 0.04918825652623761,
+    "mean": 0.044896723350903396,
+    "prob_below_zero": 0.00016666666666666666
+   },
+   "terminal_wealth": {
+    "p05": 15093003.021466585,
+    "p25": 20491125.27372497,
+    "p50": 21223590.599304907,
+    "p75": 21783241.225160167,
+    "p95": 22651778.226730727,
+    "mean": 20511420.813176908,
+    "cvar5": 13846103.134161744,
+    "prob_below_start": 0.00016666666666666666
+   },
+   "exit_proceeds": {
+    "p05": 4002644.330178192,
+    "p50": 4780638.333942745,
+    "p95": 5315209.783841822
+   },
+   "certainty_equivalent": {
+    "gamma_2": 20163963.247461405,
+    "gamma_4": 19620492.32910474,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.11415761913600009,
+    "avg_swan_hits_per_path": 0.12133333333333333
+   }
+  },
+  {
+   "value_band": "V2",
+   "value_label": "Between ULA thresholds (4% cliff applies)",
+   "value_assumed": 6500000,
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "exit_year": 2042,
+   "renew": true,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.03782050434386577,
+    "p25": 0.04760835828870508,
+    "p50": 0.05345542614622967,
+    "p75": 0.05599646196463015,
+    "p95": 0.058555633511630525,
+    "mean": 0.051128921504444674,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 16695359.166822914,
+    "p25": 21337442.483663462,
+    "p50": 24682296.062888794,
+    "p75": 26425073.73818599,
+    "p95": 28245511.013799414,
+    "mean": 23684216.609095536,
+    "cvar5": 14467825.361598596,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 3938957.61329801,
+    "p50": 5729286.954923738,
+    "p95": 7364514.339885162
+   },
+   "certainty_equivalent": {
+    "gamma_2": 22957058.339606084,
+    "gamma_4": 21879252.12555676,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.2762022794075044,
+    "avg_swan_hits_per_path": 0.3258333333333333
+   }
+  },
+  {
+   "value_band": "V2",
+   "value_label": "Between ULA thresholds (4% cliff applies)",
+   "value_assumed": 6500000,
+   "strategy": "S5",
+   "name": "Renew, hold 20 years (exit 2052)",
+   "exit_year": 2052,
+   "renew": true,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.039850170479965585,
+    "p25": 0.05008835199110895,
+    "p50": 0.055503706976287925,
+    "p75": 0.05927619149001179,
+    "p95": 0.0634741500162831,
+    "mean": 0.05399331189790779,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 17509811.623563543,
+    "p25": 22721457.75508146,
+    "p50": 26075789.88413772,
+    "p75": 28662306.878832392,
+    "p95": 31842912.396492023,
+    "mean": 25515748.777396344,
+    "cvar5": 15291699.806673476,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 4462162.037454094,
+    "p50": 6790872.483763283,
+    "p95": 9394276.273500288
+   },
+   "certainty_equivalent": {
+    "gamma_2": 24601934.42065838,
+    "gamma_4": 23350392.365828324,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.4086045648166813,
+    "avg_swan_hits_per_path": 0.5145
+   }
+  },
+  {
+   "value_band": "V2",
+   "value_label": "Between ULA thresholds (4% cliff applies)",
+   "value_assumed": 6500000,
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "exit_year": 2026,
+   "renew": false,
+   "exchange": true,
+   "cagr": {
+    "p05": 0.0486245528671172,
+    "p25": 0.0486245528671172,
+    "p50": 0.0486245528671172,
+    "p75": 0.0486245528671172,
+    "p95": 0.0486245528671172,
+    "mean": 0.04862455286712006,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 22337467.539756186,
+    "p25": 22337467.539756186,
+    "p50": 22337467.539756186,
+    "p75": 22337467.539756186,
+    "p95": 22337467.539756186,
+    "mean": 22337467.539753012,
+    "cvar5": 22337467.539756108,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 5943600.0,
+    "p50": 5943600.0,
+    "p95": 5943600.0
+   },
+   "certainty_equivalent": {
+    "gamma_2": 22337467.53975512,
+    "gamma_4": 22337467.53975572,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.0,
+    "avg_swan_hits_per_path": 0.0
+   }
+  },
+  {
+   "value_band": "V2",
+   "value_label": "Between ULA thresholds (4% cliff applies)",
+   "value_assumed": 6500000,
+   "strategy": "S7",
+   "name": "Renew, \u00a71031 exchange at 2032",
+   "exit_year": 2032,
+   "renew": true,
+   "exchange": true,
+   "cagr": {
+    "p05": 0.04098444376724342,
+    "p25": 0.052766929723764566,
+    "p50": 0.05497167569355488,
+    "p75": 0.05660792243789964,
+    "p95": 0.05908828038462016,
+    "mean": 0.05334250746175116,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 18075440.19380857,
+    "p25": 24243251.920345858,
+    "p50": 25751473.50447838,
+    "p75": 26885210.103827488,
+    "p95": 28641328.74970998,
+    "mean": 24927357.35798644,
+    "cvar5": 16488113.938722786,
+    "prob_below_start": 0.00016666666666666666
+   },
+   "exit_proceeds": {
+    "p05": 4519141.699682705,
+    "p50": 6228827.6591389105,
+    "p95": 7488434.939572018
+   },
+   "certainty_equivalent": {
+    "gamma_2": 24411482.907834213,
+    "gamma_4": 23643067.61897837,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.11415761913600009,
+    "avg_swan_hits_per_path": 0.12133333333333333
+   }
+  },
+  {
+   "value_band": "V3",
+   "value_label": "Above the upper ULA threshold (5.5% applies)",
+   "value_assumed": 12000000,
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "exit_year": 2026,
+   "renew": false,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.03972231676932103,
+    "p25": 0.03972231676932103,
+    "p50": 0.03972231676932103,
+    "p75": 0.03972231676932103,
+    "p95": 0.03972231676932103,
+    "mean": 0.039722316769316056,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 33039446.10258913,
+    "p25": 33039446.10258913,
+    "p50": 33039446.10258913,
+    "p75": 33039446.10258913,
+    "p95": 33039446.10258913,
+    "mean": 33039446.10259151,
+    "cvar5": 33039446.102588862,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 8791204.8,
+    "p50": 8791204.8,
+    "p95": 8791204.8
+   },
+   "certainty_equivalent": {
+    "gamma_2": 33039446.1025875,
+    "gamma_4": 33039446.10258851,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.0,
+    "avg_swan_hits_per_path": 0.0
+   }
+  },
+  {
+   "value_band": "V3",
+   "value_label": "Above the upper ULA threshold (5.5% applies)",
+   "value_assumed": 12000000,
+   "strategy": "S2",
+   "name": "Sell before expiry (2030)",
+   "exit_year": 2030,
+   "renew": false,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.03170196219811398,
+    "p25": 0.04453575403504306,
+    "p50": 0.04576695475200965,
+    "p75": 0.046890657465029795,
+    "p95": 0.0486831776638283,
+    "mean": 0.04458065521621732,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 27014187.87454797,
+    "p25": 37255235.57018311,
+    "p50": 38413954.78762756,
+    "p75": 39501689.75924667,
+    "p95": 41298386.27743044,
+    "mean": 37528588.25514268,
+    "cvar5": 25213100.18892388,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 7301922.92270214,
+    "p50": 8818226.23200525,
+    "p95": 9787450.11986757
+   },
+   "certainty_equivalent": {
+    "gamma_2": 36983410.33016399,
+    "gamma_4": 36079449.65407325,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.07763184000000012,
+    "avg_swan_hits_per_path": 0.07716666666666666
+   }
+  },
+  {
+   "value_band": "V3",
+   "value_label": "Above the upper ULA threshold (5.5% applies)",
+   "value_assumed": 12000000,
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "exit_year": 2032,
+   "renew": false,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.032467288947483054,
+    "p25": 0.044872105153252906,
+    "p50": 0.04623513482152064,
+    "p75": 0.04727491208189655,
+    "p95": 0.048842807831834846,
+    "mean": 0.0445301679727727,
+    "prob_below_zero": 0.00016666666666666666
+   },
+   "terminal_wealth": {
+    "p05": 27540072.168296028,
+    "p25": 37568404.98323494,
+    "p50": 38863602.76636736,
+    "p75": 39880394.405740015,
+    "p95": 41462144.6807796,
+    "mean": 37533800.32118142,
+    "cvar5": 25157054.22155217,
+    "prob_below_start": 0.00016666666666666666
+   },
+   "exit_proceeds": {
+    "p05": 7146986.863463031,
+    "p50": 8707312.97708077,
+    "p95": 9678024.792221552
+   },
+   "certainty_equivalent": {
+    "gamma_2": 36870511.45566585,
+    "gamma_4": 35809243.38164744,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.11415761913600009,
+    "avg_swan_hits_per_path": 0.12133333333333333
+   }
+  },
+  {
+   "value_band": "V3",
+   "value_label": "Above the upper ULA threshold (5.5% applies)",
+   "value_assumed": 12000000,
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "exit_year": 2042,
+   "renew": true,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.03745498139063614,
+    "p25": 0.04738518464728819,
+    "p50": 0.053240305336622384,
+    "p75": 0.05576190355368199,
+    "p95": 0.058403452294474766,
+    "mean": 0.05091346726441448,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 30639387.212566286,
+    "p25": 39171404.187453024,
+    "p50": 45326276.27566231,
+    "p75": 48508062.94336552,
+    "p95": 51962027.81423953,
+    "mean": 43493661.27926471,
+    "cvar5": 26510421.49392048,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 7115727.489403635,
+    "p50": 10422368.154898867,
+    "p95": 13418548.213608988
+   },
+   "certainty_equivalent": {
+    "gamma_2": 42144538.61701216,
+    "gamma_4": 40128994.95578319,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.2762022794075044,
+    "avg_swan_hits_per_path": 0.3258333333333333
+   }
+  },
+  {
+   "value_band": "V3",
+   "value_label": "Above the upper ULA threshold (5.5% applies)",
+   "value_assumed": 12000000,
+   "strategy": "S5",
+   "name": "Renew, hold 20 years (exit 2052)",
+   "exit_year": 2052,
+   "renew": true,
+   "exchange": false,
+   "cagr": {
+    "p05": 0.03967628187381685,
+    "p25": 0.049954319844692896,
+    "p50": 0.05538659881936514,
+    "p75": 0.05927557311481041,
+    "p95": 0.0634741500162831,
+    "mean": 0.05390345179107456,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 32229208.66890751,
+    "p25": 41791274.877572164,
+    "p50": 48002516.47843416,
+    "p75": 52904357.73557255,
+    "p95": 58786915.19352372,
+    "mean": 47011168.95927916,
+    "cvar5": 28098821.449959233,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 8130275.596001528,
+    "p50": 12408614.174960999,
+    "p95": 17343279.274154387
+   },
+   "certainty_equivalent": {
+    "gamma_2": 45303265.322538935,
+    "gamma_4": 42967062.95786344,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.4086045648166813,
+    "avg_swan_hits_per_path": 0.5145
+   }
+  },
+  {
+   "value_band": "V3",
+   "value_label": "Above the upper ULA threshold (5.5% applies)",
+   "value_assumed": 12000000,
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "exit_year": 2026,
+   "renew": false,
+   "exchange": true,
+   "cagr": {
+    "p05": 0.0479576688658403,
+    "p25": 0.0479576688658403,
+    "p50": 0.0479576688658403,
+    "p75": 0.0479576688658403,
+    "p95": 0.0479576688658403,
+    "mean": 0.04795766886584039,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 40561918.6457838,
+    "p25": 40561918.6457838,
+    "p50": 40561918.6457838,
+    "p75": 40561918.6457838,
+    "p95": 40561918.6457838,
+    "mean": 40561918.64578258,
+    "cvar5": 40561918.645783864,
+    "prob_below_start": 0.0
+   },
+   "exit_proceeds": {
+    "p05": 10792800.0,
+    "p50": 10792800.0,
+    "p95": 10792800.0
+   },
+   "certainty_equivalent": {
+    "gamma_2": 40561918.64578036,
+    "gamma_4": 40561918.645784445,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.0,
+    "avg_swan_hits_per_path": 0.0
+   }
+  },
+  {
+   "value_band": "V3",
+   "value_label": "Above the upper ULA threshold (5.5% applies)",
+   "value_assumed": 12000000,
+   "strategy": "S7",
+   "name": "Renew, \u00a71031 exchange at 2032",
+   "exit_year": 2032,
+   "renew": true,
+   "exchange": true,
+   "cagr": {
+    "p05": 0.04066559496655476,
+    "p25": 0.05232471821302448,
+    "p50": 0.05451780534162309,
+    "p75": 0.05614554809546429,
+    "p95": 0.058613691868238664,
+    "mean": 0.052871008419235796,
+    "prob_below_zero": 0.0
+   },
+   "terminal_wealth": {
+    "p05": 32954568.265642643,
+    "p25": 44264456.115499124,
+    "p50": 46999469.62426519,
+    "p75": 49069901.75531994,
+    "p95": 52266050.52253673,
+    "mean": 45484852.05283754,
+    "cvar5": 29958946.113942165,
+    "prob_below_start": 0.00016666666666666666
+   },
+   "exit_proceeds": {
+    "p05": 8114982.491990958,
+    "p50": 11302292.02017317,
+    "p95": 13595112.508734506
+   },
+   "certainty_equivalent": {
+    "gamma_2": 44524316.45847755,
+    "gamma_4": 43050986.68988356,
+    "note": "CRRA utility on terminal after-tax wealth. gamma=1 is the geometric mean; higher gamma penalises downside dispersion more heavily. These are the numbers used to rank strategies for a risk-averse owner."
+   },
+   "swan_exposure": {
+    "expected_single_year_risk": 0.02,
+    "cumulative_prob_to_exit": 0.11415761913600009,
+    "avg_swan_hits_per_path": 0.12133333333333333
+   }
+  }
+ ],
+ "deterministic_calm": [
+  {
+   "value_band": "V1",
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "exit_year": 2026,
+   "terminal_wealth": 11563805.8352471,
+   "cagr": 0.04167523300467657,
+   "exit_proceeds": 3076921.6,
+   "exit_gross": 4000000,
+   "sale_costs": 182400.0,
+   "tax_at_exit": 740678.4,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V1",
+   "strategy": "S2",
+   "name": "Sell before expiry (2030)",
+   "exit_year": 2030,
+   "terminal_wealth": 13341097.742224947,
+   "cagr": 0.0474189940082137,
+   "exit_proceeds": 3118010.791375391,
+   "exit_gross": 4064643.213061224,
+   "sale_costs": 185347.73051559183,
+   "tax_at_exit": 761284.6911702412,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V1",
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "exit_year": 2032,
+   "terminal_wealth": 13476019.907481307,
+   "cagr": 0.04782444279470921,
+   "exit_proceeds": 3096879.468871613,
+   "exit_gross": 4031398.5436687935,
+   "sale_costs": 183831.77359129698,
+   "tax_at_exit": 750687.301205884,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V1",
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "exit_year": 2042,
+   "terminal_wealth": 16345723.708576683,
+   "cagr": 0.0556336777628097,
+   "exit_proceeds": 4080553.3280775314,
+   "exit_gross": 5823003.659955119,
+   "sale_costs": 498449.11329215823,
+   "tax_at_exit": 1244001.2185854288,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V1",
+   "strategy": "S5",
+   "name": "Renew, hold 20 years (exit 2052)",
+   "exit_year": 2052,
+   "terminal_wealth": 18164254.58647354,
+   "cagr": 0.05992538094165911,
+   "exit_proceeds": 5073776.066622521,
+   "exit_gross": 7453936.985907366,
+   "sale_costs": 638057.0059936706,
+   "tax_at_exit": 1742103.9132911742,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V1",
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "exit_year": 2026,
+   "terminal_wealth": 14347452.062684773,
+   "cagr": 0.05035276798958854,
+   "exit_proceeds": 3817600.0,
+   "exit_gross": 4000000,
+   "sale_costs": 182400.0,
+   "tax_at_exit": 0.0,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V1",
+   "strategy": "S7",
+   "name": "Renew, \u00a71031 exchange at 2032",
+   "exit_year": 2032,
+   "terminal_wealth": 16814040.25269258,
+   "cagr": 0.0567812043984548,
+   "exit_proceeds": 4341490.347850559,
+   "exit_gross": 4548921.152399999,
+   "sale_costs": 207430.80454943996,
+   "tax_at_exit": 0.0,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V2",
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "exit_year": 2026,
+   "terminal_wealth": 18140407.86891356,
+   "cagr": 0.040264081924893835,
+   "exit_proceeds": 4826837.6,
+   "exit_gross": 6500000,
+   "sale_costs": 556400.0,
+   "tax_at_exit": 1116762.4000000001,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V2",
+   "strategy": "S2",
+   "name": "Sell before expiry (2030)",
+   "exit_year": 2030,
+   "terminal_wealth": 21152158.23317208,
+   "cagr": 0.046427831501721695,
+   "exit_proceeds": 4890809.131291591,
+   "exit_gross": 6605045.22122449,
+   "sale_costs": 565391.8709368163,
+   "tax_at_exit": 1148844.218996083,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V2",
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "exit_year": 2032,
+   "terminal_wealth": 21430690.30580347,
+   "cagr": 0.046954481258704606,
+   "exit_proceeds": 4857909.893960949,
+   "exit_gross": 6551022.63346179,
+   "sale_costs": 560767.5374243292,
+   "tax_at_exit": 1132345.202076512,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V2",
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "exit_year": 2042,
+   "terminal_wealth": 26561801.02643711,
+   "cagr": 0.0556336777628097,
+   "exit_proceeds": 6630899.158125989,
+   "exit_gross": 9462380.947427068,
+   "sale_costs": 809979.809099757,
+   "tax_at_exit": 2021501.9802013221,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V2",
+   "strategy": "S5",
+   "name": "Renew, hold 20 years (exit 2052)",
+   "exit_year": 2052,
+   "terminal_wealth": 29395908.353474535,
+   "cagr": 0.05975792792123036,
+   "exit_proceeds": 8123880.758716622,
+   "exit_gross": 12112647.602099469,
+   "sale_costs": 1218532.3487712066,
+   "tax_at_exit": 2770234.4946116395,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V2",
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "exit_year": 2026,
+   "terminal_wealth": 22337467.539756186,
+   "cagr": 0.0486245528671172,
+   "exit_proceeds": 5943600.0,
+   "exit_gross": 6500000,
+   "sale_costs": 556400.0,
+   "tax_at_exit": 0.0,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V2",
+   "strategy": "S7",
+   "name": "Renew, \u00a71031 exchange at 2032",
+   "exit_year": 2032,
+   "terminal_wealth": 26530172.291965157,
+   "cagr": 0.05558530365891645,
+   "exit_proceeds": 6759241.940351158,
+   "exit_gross": 7391996.872649998,
+   "sale_costs": 632754.9322988398,
+   "tax_at_exit": 0.0,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V3",
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "exit_year": 2026,
+   "terminal_wealth": 33039446.10258913,
+   "cagr": 0.03972231676932103,
+   "exit_proceeds": 8791204.8,
+   "exit_gross": 12000000,
+   "sale_costs": 1207200.0,
+   "tax_at_exit": 2001595.2000000002,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V3",
+   "strategy": "S2",
+   "name": "Sell before expiry (2030)",
+   "exit_year": 2030,
+   "terminal_wealth": 38685205.17035684,
+   "cagr": 0.046050011063149654,
+   "exit_proceeds": 8907368.731442876,
+   "exit_gross": 12193929.639183676,
+   "sale_costs": 1226709.3217018778,
+   "tax_at_exit": 2059851.5860389203,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V3",
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "exit_year": 2032,
+   "terminal_wealth": 39240460.68804617,
+   "cagr": 0.046623530096830956,
+   "exit_proceeds": 8847628.020651076,
+   "exit_gross": 12094195.631006384,
+   "sale_costs": 1216676.0804792421,
+   "tax_at_exit": 2029891.5298760657,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V3",
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "exit_year": 2042,
+   "terminal_wealth": 48760708.4134656,
+   "cagr": 0.05540415225914885,
+   "exit_proceeds": 12067144.56454374,
+   "exit_gross": 17469010.979865357,
+   "sale_costs": 1757382.504574455,
+   "tax_at_exit": 3644483.9107471616,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V3",
+   "strategy": "S5",
+   "name": "Renew, hold 20 years (exit 2052)",
+   "exit_year": 2052,
+   "terminal_wealth": 54269369.267953,
+   "cagr": 0.05975792792123036,
+   "exit_proceeds": 14997933.708399922,
+   "exit_gross": 22361810.9577221,
+   "sale_costs": 2249598.1823468436,
+   "tax_at_exit": 5114279.0669753365,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V3",
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "exit_year": 2026,
+   "terminal_wealth": 40561918.6457838,
+   "cagr": 0.0479576688658403,
+   "exit_proceeds": 10792800.0,
+   "exit_gross": 12000000,
+   "sale_costs": 1207200.0,
+   "tax_at_exit": 0.0,
+   "hold_to_horizon": false
+  },
+  {
+   "value_band": "V3",
+   "strategy": "S7",
+   "name": "Renew, \u00a71031 exchange at 2032",
+   "exit_year": 2032,
+   "terminal_wealth": 48430026.687632404,
+   "cagr": 0.05512796374142148,
+   "exit_proceeds": 12273899.05340568,
+   "exit_gross": 13646763.4572,
+   "sale_costs": 1372864.40379432,
+   "tax_at_exit": 0.0,
+   "hold_to_horizon": false
+  }
+ ],
+ "ula_cliff": [
+  {
+   "price": 5000000,
+   "county": 5500.0,
+   "city": 22500.0,
+   "ula": 0.0,
+   "total": 28000.0,
+   "effective_rate": 0.0056
+  },
+  {
+   "price": 5300000,
+   "county": 5830.0,
+   "city": 23850.0,
+   "ula": 0.0,
+   "total": 29680.0,
+   "effective_rate": 0.0056
+  },
+  {
+   "price": 5399999,
+   "county": 5939.9989000000005,
+   "city": 24299.995499999997,
+   "ula": 0.0,
+   "total": 30239.994399999996,
+   "effective_rate": 0.005599999999999999
+  },
+  {
+   "price": 5400001,
+   "county": 5940.0011,
+   "city": 24300.0045,
+   "ula": 216000.04,
+   "total": 246240.0456,
+   "effective_rate": 0.0456
+  },
+  {
+   "price": 5500000,
+   "county": 6050.0,
+   "city": 24749.999999999996,
+   "ula": 220000.0,
+   "total": 250800.0,
+   "effective_rate": 0.0456
+  },
+  {
+   "price": 6500000,
+   "county": 7150.0,
+   "city": 29249.999999999996,
+   "ula": 260000.0,
+   "total": 296400.0,
+   "effective_rate": 0.0456
+  },
+  {
+   "price": 10899999,
+   "county": 11989.9989,
+   "city": 49049.9955,
+   "ula": 435999.96,
+   "total": 497039.95440000005,
+   "effective_rate": 0.0456
+  },
+  {
+   "price": 10900001,
+   "county": 11990.001100000001,
+   "city": 49050.004499999995,
+   "ula": 599500.055,
+   "total": 660540.0606000001,
+   "effective_rate": 0.06060000000000001
+  },
+  {
+   "price": 12000000,
+   "county": 13200.0,
+   "city": 53999.99999999999,
+   "ula": 660000.0,
+   "total": 727200.0,
+   "effective_rate": 0.0606
+  }
+ ],
+ "sensitivity": [
+  {
+   "assumption_id": "A01",
+   "label": "Going-in cap rate (current rent as a yield on value)",
+   "base_value": 0.0575,
+   "low_value": 0.05,
+   "high_value": 0.065,
+   "S4_median": 24838177.150002368,
+   "S6_median": 22337467.539756186,
+   "S4_median_low": 22969913.126411017,
+   "S4_median_high": 26725810.172866546,
+   "swing": 3755897.0464555286
+  },
+  {
+   "assumption_id": "A11",
+   "label": "Blended tax rate on gain",
+   "base_value": 0.334,
+   "low_value": 0.238,
+   "high_value": 0.371,
+   "S4_median": 24838177.150002368,
+   "S6_median": 22337467.539756186,
+   "S4_median_low": 27504097.383388657,
+   "S4_median_high": 23848027.69492507,
+   "swing": 3656069.6884635873
+  },
+  {
+   "assumption_id": "A04",
+   "label": "Market rent growth at renewal",
+   "base_value": 0.0275,
+   "low_value": 0.015,
+   "high_value": 0.04,
+   "S4_median": 24838177.150002368,
+   "S6_median": 22337467.539756186,
+   "S4_median_low": 23129064.8809585,
+   "S4_median_high": 26779231.62861005,
+   "swing": 3650166.747651547
+  },
+  {
+   "assumption_id": "A13",
+   "label": "Annual black-swan probability",
+   "base_value": 0.02,
+   "low_value": 0.01,
+   "high_value": 0.04,
+   "S4_median": 24838177.150002368,
+   "S6_median": 22337467.539756186,
+   "S4_median_low": 25396399.403302714,
+   "S4_median_high": 22375393.2369718,
+   "swing": 3021006.166330915
+  },
+  {
+   "assumption_id": "A10",
+   "label": "Owner's adjusted basis as a share of value",
+   "base_value": 0.4,
+   "low_value": 0.15,
+   "high_value": 0.8,
+   "S4_median": 24838177.150002368,
+   "S6_median": 22337467.539756186,
+   "S4_median_low": 23978366.954725247,
+   "S4_median_high": 26213873.462445747,
+   "swing": 2235506.5077205
+  },
+  {
+   "assumption_id": "A03",
+   "label": "Rent growth in the existing lease",
+   "base_value": 0.02,
+   "low_value": 0.01,
+   "high_value": 0.03,
+   "S4_median": 24838177.150002368,
+   "S6_median": 22337467.539756186,
+   "S4_median_low": 24065384.850945342,
+   "S4_median_high": 25636439.944066644,
+   "swing": 1571055.0931213014
+  },
+  {
+   "assumption_id": "A05",
+   "label": "Probability the tenant renews",
+   "base_value": 0.62,
+   "low_value": 0.4,
+   "high_value": 0.8,
+   "S4_median": 24838177.150002368,
+   "S6_median": 22337467.539756186,
+   "S4_median_low": 24642430.78031152,
+   "S4_median_high": 25044757.99608521,
+   "swing": 402327.2157736905
+  },
+  {
+   "assumption_id": "A14",
+   "label": "Black-swan severity",
+   "base_value": 0.35,
+   "low_value": 0.1,
+   "high_value": 0.9,
+   "S4_median": 24838177.150002368,
+   "S6_median": 22337467.539756186,
+   "S4_median_low": 25139088.168109372,
+   "S4_median_high": 24838177.150002368,
+   "swing": 300911.01810700446
+  },
+  {
+   "assumption_id": "A09",
+   "label": "Selling costs",
+   "base_value": 0.04,
+   "low_value": 0.03,
+   "high_value": 0.06,
+   "S4_median": 24838177.150002368,
+   "S6_median": 22337467.539756186,
+   "S4_median_low": 24925255.845304303,
+   "S4_median_high": 24658597.719850607,
+   "swing": 266658.12545369565
+  },
+  {
+   "assumption_id": "A02",
+   "label": "Cap-rate risk spread",
+   "base_value": 0.009,
+   "low_value": 0.006,
+   "high_value": 0.015,
+   "S4_median": 24838177.150002368,
+   "S6_median": 22337467.539756186,
+   "S4_median_low": 24838177.150002368,
+   "S4_median_high": 24838177.150002368,
+   "swing": 0.0
+  }
+ ],
+ "exit_year_scan": [
+  {
+   "exit_year": 2026,
+   "years_held": 0,
+   "terminal_wealth": 18140407.86891356,
+   "cagr": 0.040264081924893835,
+   "exit_proceeds": 4826837.6,
+   "exit_gross": 6500000,
+   "cumulative_shock_exposure": 0.0
+  },
+  {
+   "exit_year": 2027,
+   "years_held": 1,
+   "terminal_wealth": 19082702.03026034,
+   "cagr": 0.04229218442662064,
+   "exit_proceeds": 4440128.696,
+   "exit_gross": 5865000.0,
+   "cumulative_shock_exposure": 0.020000000000000018
+  },
+  {
+   "exit_year": 2028,
+   "years_held": 2,
+   "terminal_wealth": 19562879.40904106,
+   "cagr": 0.0432889152827165,
+   "exit_proceeds": 4511563.26992,
+   "exit_gross": 5982300.0,
+   "cumulative_shock_exposure": 0.03960000000000008
+  },
+  {
+   "exit_year": 2029,
+   "years_held": 3,
+   "terminal_wealth": 20027453.127999507,
+   "cagr": 0.044231114409371,
+   "exit_proceeds": 4584426.5353184,
+   "exit_gross": 6101946.0,
+   "cumulative_shock_exposure": 0.05880800000000008
+  },
+  {
+   "exit_year": 2030,
+   "years_held": 4,
+   "terminal_wealth": 20476916.885089777,
+   "cagr": 0.045122877052871546,
+   "exit_proceeds": 4658747.066024767,
+   "exit_gross": 6223984.92,
+   "cumulative_shock_exposure": 0.07763184000000012
+  },
+  {
+   "exit_year": 2031,
+   "years_held": 5,
+   "terminal_wealth": 20911756.032728374,
+   "cagr": 0.04596788856746015,
+   "exit_proceeds": 4734554.007345263,
+   "exit_gross": 6348464.6184,
+   "cumulative_shock_exposure": 0.09607920320000007
+  },
+  {
+   "exit_year": 2032,
+   "years_held": 6,
+   "terminal_wealth": 21332447.214743644,
+   "cagr": 0.046769478035709966,
+   "exit_proceeds": 4811877.087492168,
+   "exit_gross": 6475433.9107679995,
+   "cumulative_shock_exposure": 0.11415761913600009
+  },
+  {
+   "exit_year": 2033,
+   "years_held": 7,
+   "terminal_wealth": 21739458.0633084,
+   "cagr": 0.047530663320910715,
+   "exit_proceeds": 4890746.629242012,
+   "exit_gross": 6604942.58898336,
+   "cumulative_shock_exposure": 0.13187446675328007
+  },
+  {
+   "exit_year": 2034,
+   "years_held": 8,
+   "terminal_wealth": 22133246.950615324,
+   "cagr": 0.04825418914937196,
+   "exit_proceeds": 4971193.561826852,
+   "exit_gross": 6737041.440763027,
+   "cumulative_shock_exposure": 0.1492369774182145
+  },
+  {
+   "exit_year": 2035,
+   "years_held": 9,
+   "terminal_wealth": 22514262.79044266,
+   "cagr": 0.04894255948285986,
+   "exit_proceeds": 5053249.43306339,
+   "exit_gross": 6871782.269578288,
+   "cumulative_shock_exposure": 0.16625223786985022
+  }
+ ],
+ "exit_year_scan_summary": {
+  "best_terminal_wealth_year": 2035,
+  "best_terminal_wealth": 22514262.79044266,
+  "best_exit_proceeds_year": 2035,
+  "best_exit_proceeds": 5053249.43306339
+ },
+ "stress_grid": [
+  {
+   "case": "B0",
+   "case_name": "Business as usual (calm, no shocks)",
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "terminal_wealth": 18140407.86891356,
+   "exit_proceeds": 4826837.6,
+   "cagr": 0.040264081924893835
+  },
+  {
+   "case": "B0",
+   "case_name": "Business as usual (calm, no shocks)",
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "terminal_wealth": 21430690.30580347,
+   "exit_proceeds": 4857909.893960949,
+   "cagr": 0.046954481258704606
+  },
+  {
+   "case": "B0",
+   "case_name": "Business as usual (calm, no shocks)",
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "terminal_wealth": 26561801.02643711,
+   "exit_proceeds": 6630899.158125989,
+   "cagr": 0.0556336777628097
+  },
+  {
+   "case": "B0",
+   "case_name": "Business as usual (calm, no shocks)",
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "terminal_wealth": 22337467.539756186,
+   "exit_proceeds": 5943600.0,
+   "cagr": 0.0486245528671172
+  },
+  {
+   "case": "B1",
+   "case_name": "One recession during the hold",
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "terminal_wealth": 18140407.86891356,
+   "exit_proceeds": 4826837.6,
+   "cagr": 0.040264081924893835
+  },
+  {
+   "case": "B1",
+   "case_name": "One recession during the hold",
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "terminal_wealth": 19168279.820704117,
+   "exit_proceeds": 4194480.302394473,
+   "cagr": 0.042471576275720846
+  },
+  {
+   "case": "B1",
+   "case_name": "One recession during the hold",
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "terminal_wealth": 23213509.14852393,
+   "exit_proceeds": 5649197.681158048,
+   "cagr": 0.05017722082043474
+  },
+  {
+   "case": "B1",
+   "case_name": "One recession during the hold",
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "terminal_wealth": 22337467.539756186,
+   "exit_proceeds": 5943600.0,
+   "cagr": 0.0486245528671172
+  },
+  {
+   "case": "B2",
+   "case_name": "Tenant vacates at lease expiry",
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "terminal_wealth": 18140407.86891356,
+   "exit_proceeds": 4826837.6,
+   "cagr": 0.040264081924893835
+  },
+  {
+   "case": "B2",
+   "case_name": "Tenant vacates at lease expiry",
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "terminal_wealth": 21430690.30580347,
+   "exit_proceeds": 4857909.893960949,
+   "cagr": 0.046954481258704606
+  },
+  {
+   "case": "B2",
+   "case_name": "Tenant vacates at lease expiry",
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "terminal_wealth": 25513676.02643711,
+   "exit_proceeds": 6630899.158125989,
+   "cagr": 0.054000354434364795
+  },
+  {
+   "case": "B2",
+   "case_name": "Tenant vacates at lease expiry",
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "terminal_wealth": 22337467.539756186,
+   "exit_proceeds": 5943600.0,
+   "cagr": 0.0486245528671172
+  },
+  {
+   "case": "B3",
+   "case_name": "Wildfire-scale shock in 2031",
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "terminal_wealth": 18140407.86891356,
+   "exit_proceeds": 4826837.6,
+   "cagr": 0.040264081924893835
+  },
+  {
+   "case": "B3",
+   "case_name": "Wildfire-scale shock in 2031",
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "terminal_wealth": 15802218.206170114,
+   "exit_proceeds": 4229562.0856620995,
+   "cagr": 0.03475764138866366
+  },
+  {
+   "case": "B3",
+   "case_name": "Wildfire-scale shock in 2031",
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "terminal_wealth": 19789874.734364636,
+   "exit_proceeds": 5723305.540721147,
+   "cagr": 0.04375194001963245
+  },
+  {
+   "case": "B3",
+   "case_name": "Wildfire-scale shock in 2031",
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "terminal_wealth": 22337467.539756186,
+   "exit_proceeds": 5943600.0,
+   "cagr": 0.0486245528671172
+  },
+  {
+   "case": "B4",
+   "case_name": "Cap-rate dislocation of +175bp",
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "terminal_wealth": 18140407.86891356,
+   "exit_proceeds": 4826837.6,
+   "cagr": 0.040264081924893835
+  },
+  {
+   "case": "B4",
+   "case_name": "Cap-rate dislocation of +175bp",
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "terminal_wealth": 19219073.81408641,
+   "exit_proceeds": 4045964.342383983,
+   "cagr": 0.04257768898680081
+  },
+  {
+   "case": "B4",
+   "case_name": "Cap-rate dislocation of +175bp",
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "terminal_wealth": 22932906.2164949,
+   "exit_proceeds": 4719520.081029695,
+   "cagr": 0.04968611253524635
+  },
+  {
+   "case": "B4",
+   "case_name": "Cap-rate dislocation of +175bp",
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "terminal_wealth": 22337467.539756186,
+   "exit_proceeds": 5943600.0,
+   "cagr": 0.0486245528671172
+  },
+  {
+   "case": "B5",
+   "case_name": "Stagflation: zero rent growth, cap rates +100bp",
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "terminal_wealth": 18140407.86891356,
+   "exit_proceeds": 4826837.6,
+   "cagr": 0.040264081924893835
+  },
+  {
+   "case": "B5",
+   "case_name": "Stagflation: zero rent growth, cap rates +100bp",
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "terminal_wealth": 19399693.052378353,
+   "exit_proceeds": 4189827.39533641,
+   "cagr": 0.042952845050906685
+  },
+  {
+   "case": "B5",
+   "case_name": "Stagflation: zero rent growth, cap rates +100bp",
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "terminal_wealth": 20848391.9134245,
+   "exit_proceeds": 4223197.423984703,
+   "cagr": 0.045845812266166686
+  },
+  {
+   "case": "B5",
+   "case_name": "Stagflation: zero rent growth, cap rates +100bp",
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "terminal_wealth": 22337467.539756186,
+   "exit_proceeds": 5943600.0,
+   "cagr": 0.0486245528671172
+  },
+  {
+   "case": "B6",
+   "case_name": "Sustained negative rent drift",
+   "strategy": "S1",
+   "name": "Sell now (2026)",
+   "terminal_wealth": 18140407.86891356,
+   "exit_proceeds": 4826837.6,
+   "cagr": 0.040264081924893835
+  },
+  {
+   "case": "B6",
+   "case_name": "Sustained negative rent drift",
+   "strategy": "S3",
+   "name": "Sell at mid-expiry (2032)",
+   "terminal_wealth": 19075399.716926448,
+   "exit_proceeds": 4203659.911672307,
+   "cagr": 0.042276841202105286
+  },
+  {
+   "case": "B6",
+   "case_name": "Sustained negative rent drift",
+   "strategy": "S4",
+   "name": "Renew, hold 10 years (exit 2042)",
+   "terminal_wealth": 17656595.84680889,
+   "exit_proceeds": 3456532.789781142,
+   "cagr": 0.03918306890424117
+  },
+  {
+   "case": "B6",
+   "case_name": "Sustained negative rent drift",
+   "strategy": "S6",
+   "name": "Sell now, \u00a71031 exchange",
+   "terminal_wealth": 22337467.539756186,
+   "exit_proceeds": 5943600.0,
+   "cagr": 0.0486245528671172
+  }
+ ],
+ "breakeven_cap_rate": [
+  {
+   "value": 4000000,
+   "cap_rate_where_indifferent": null,
+   "min_cap_tested": 0.035,
+   "max_cap_tested": 0.115,
+   "diff_at_min_cap": -1643227.8183347043,
+   "diff_at_max_cap": -5027329.9275028
+  },
+  {
+   "value": 6500000,
+   "cap_rate_where_indifferent": null,
+   "min_cap_tested": 0.035,
+   "max_cap_tested": 0.115,
+   "diff_at_min_cap": -3117528.7398616,
+   "diff_at_max_cap": -8653714.387634944
+  },
+  {
+   "value": 12000000,
+   "cap_rate_where_indifferent": null,
+   "min_cap_tested": 0.035,
+   "max_cap_tested": 0.115,
+   "diff_at_min_cap": -5788632.793296151,
+   "diff_at_max_cap": -16034912.257137388
+  }
+ ]
+}

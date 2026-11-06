@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method &amp;amp; privacy · SP-01</title>
+<meta name="description" content="Decision support for SP-01, a single-tenant Jack in the Box net-lease asset in central Los Angeles. Official sources only.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SP<span>&#8209;01</span></span>
+      <span class="brand-txt">Decision file<small>Jack in the Box · NNN · central Los Angeles</small></span>
+    </a>
+    <nav class="nav" aria-label="Sections"><a href="index.html" class="active">Overview</a><a href="decision.html">Decision</a><a href="economy.html">Economy</a><a href="demographics.html">Demographics</a><a href="schools.html">Schools</a><a href="housing.html">Housing</a><a href="tenant.html">Tenant credit</a><a href="macro.html">Macro & tax</a><a href="risk.html">Risk & black swans</a><a href="projection.html">Projection model</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <div class="page-head">
+    <h1>Method &amp; privacy</h1>
+    <p class="sub"></p>
+  </div>
+  
+    <section>
+      <h2>Method</h2>
+      <p class="lede">How the verification standard works, why the model is built the way it is, and what
+      the numbers actually mean.</p>
+      <article class="method"><h3>What 'verified' means here</h3><p>A value is marked <strong>verified</strong> only if it was read on the publishing agency's own domain &#8212; federalreserve.gov, home.treasury.gov, sec.gov, bls.gov, edd.ca.gov, census.gov, dof.ca.gov, dir.ca.gov, leginfo.legislature.ca.gov, fire.ca.gov or irs.gov. Values that come from a government body but were read through a reproduction are marked <strong>verified (secondary)</strong> and carry the caveat on the source record. Values that only appear in commercial or media sources are marked <strong>unverified</strong>, are blanked out of the tables, and are published on the Flagged for Review page with their links.</p></article><article class="method"><h3>Why the model is scale-invariant</h3><p>The property's price, rent, basis and lease terms are private and were never supplied. Rather than invent them, the engine expresses current rent as a going-in cap rate on value and reports every result as a return on the capital employed. Three property-value bands are run ($4.0M, $6.5M, $12.0M) specifically because they straddle the two Measure ULA thresholds, so the tax cliff is visible rather than averaged away. The ranking of strategies is stable across all three bands, which is the point: the conclusion does not depend on knowing the property's price.</p></article><article class="method"><h3>Why terminal wealth rather than IRR</h3><p>A raw IRR cannot compare a 2026 exit with a 2052 exit &#8212; it ignores what happens to the cash in between. The primary metric is therefore the compound annual return on deployed capital measured at a common horizon, with all interim cash reinvested, the property eventually liquidated, and all taxes paid including tax on reinvestment growth. A secondary metric reports net after-tax sale proceeds in the exit year, because that is the figure that determines whether a replacement asset can be bought.</p></article><article class="method"><h3>Risk adjustment</h3><p>Outcomes are ranked on three measures: the 5th-percentile terminal wealth, the mean of the worst 5% of outcomes (conditional value at risk), and a CRRA certainty equivalent at risk aversion 2 and 4. The certainty equivalent is the guaranteed amount a risk-averse owner would accept instead of the gamble, so it answers the user's actual brief &#8212; a manageable level of risk in exchange for growth &#8212; rather than simply maximising the median.</p></article><article class="method"><h3>Reproducibility</h3><p>The Monte Carlo is seeded (seed 20261106) and drawn entirely from the Python standard library. Re-running <code>python3 tools/model.py</code> reproduces every figure on the Projection page exactly. That is deliberate: the model's job is to be checkable, not impressive.</p></article>
+    </section>
+    <section>
+      <h2>Privacy protocol</h2>
+      <p class="lede">Personal information is the highest-priority constraint in this file. Here is exactly
+      how it was handled.</p>
+      <article class="method"><h3>Placeholders only</h3><p>The property is referred to as <strong>SP-01</strong> throughout. No street address, parcel number (AIN), owner name, tenant-unit identity, rent figure, lease date beyond the supplied window, or contact detail appears anywhere in this repository, its data files, its build scripts, its commit history, or this site.</p></article><article class="method"><h3>Analysis at submarket granularity</h3><p>Every dataset is county, city or metro level. The decision was deliberately built at that granularity so that the analysis carries no parcel-level information that could be used to re-identify the asset. The trade-off is real and is disclosed: trade-area demand, traffic counts, school catchment and zoning cannot be evaluated without the address, and those rows are blank and flagged rather than guessed.</p></article><article class="method"><h3>Personal financial data was never requested</h3><p>The owner's basis, capital gains bracket, ownership structure and debt position are unknown. Rather than ask for them, the model exposes each as a stated scenario parameter with a range, and reports results across that range. The sensitivity table shows which of these actually change the answer.</p></article><article class="method"><h3>What would change if the address were supplied</h3><p>Parcel size and zoning would fix redevelopment yield; the fire hazard severity zone and FEMA flood zone would fix hazard exposure; traffic counts and trade-area population would fix demand; the school catchment would fix the family-formation signal. Each of these is listed in the Site-Specific Variables table with a blank value and a review flag. None of them changes the ranking of the seven strategies, because that ranking is driven by tax and lease term rather than by site characteristics.</p></article>
+    </section>
+    <section>
+      <h2>Data inventory</h2>
+      <p class="lede">Every section of the stored dataset, with how many rows are verified, verified
+      secondary and unverified.</p>
+      <div class="tablewrap"><table class="data"><thead><tr><th>Section</th><th>Verified</th><th>Verified (secondary)</th><th>Unverified</th><th>Total</th></tr></thead><tbody><tr><td>Macro &amp; Capital Markets</td><td class="c-val">14</td><td class="c-val">0</td><td class="c-val">0</td><td class="c-val">14</td></tr><tr><td>Labour Market &amp; Industry Mix</td><td class="c-val">22</td><td class="c-val">0</td><td class="c-val">0</td><td class="c-val">22</td></tr><tr><td>Population, Income &amp; Education</td><td class="c-val">22</td><td class="c-val">2</td><td class="c-val">2</td><td class="c-val">26</td></tr><tr><td>School System</td><td class="c-val">5</td><td class="c-val">0</td><td class="c-val">1</td><td class="c-val">6</td></tr><tr><td>Housing &amp; Property Market</td><td class="c-val">5</td><td class="c-val">9</td><td class="c-val">2</td><td class="c-val">16</td></tr><tr><td>Business Base &amp; Consumer Spending</td><td class="c-val">8</td><td class="c-val">0</td><td class="c-val">0</td><td class="c-val">8</td></tr><tr><td>Tenant Credit — Jack in the Box Inc.</td><td class="c-val">28</td><td class="c-val">0</td><td class="c-val">1</td><td class="c-val">29</td></tr><tr><td>Tax, Transfer Cost &amp; Regulatory Load</td><td class="c-val">22</td><td class="c-val">0</td><td class="c-val">4</td><td class="c-val">26</td></tr><tr><td>Hazard &amp; Black-Swan Exposure</td><td class="c-val">11</td><td class="c-val">1</td><td class="c-val">6</td><td class="c-val">18</td></tr><tr><td>Site-Specific Variables That Cannot Be Verified Without PII</td><td class="c-val">0</td><td class="c-val">0</td><td class="c-val">13</td><td class="c-val">13</td></tr></tbody></table></div>
+    </section>
+    
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p><strong>Privacy notice.</strong> This site contains no street address, parcel number, owner name,
+    tenant-unit identity, rent figure, lease date or personal financial data. The asset is referred to as
+    SP-01 throughout. All analysis is at county, city or metro granularity.</p>
+    <p><strong>Not advice.</strong> This is an analytical file prepared from public sources, not an appraisal,
+    a legal opinion or a tax opinion. Values marked <em>assumption</em> are modelling choices, not observations.
+    Verify every figure at the source link before acting.</p>
+    <p class="tiny">Compiled 2026-11-06 · 30 source records ·
+    10 data sections · <a href="flagged.html">13 items flagged for review</a></p>
+  </div>
+</footer>
+</body>
+</html>

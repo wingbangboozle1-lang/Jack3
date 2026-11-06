@@ -1,0 +1,450 @@
+{
+ "meta": {
+  "title": "Model Assumptions — explicit separation of observation from judgement",
+  "compiled": "2026-11-06",
+  "principle": "Every number that is NOT traceable to an official source is labelled ASSUMPTION here and is rendered visibly on the site. Nothing is presented as a market fact when it is a modelling choice.",
+  "scale_invariance": "The property's dollar value, rent and basis are unknown (and must remain private). The model is therefore built on ratios: current rent is expressed as the going-in cap rate, so every result is reported as a return on the capital employed. The conclusions do not depend on knowing the property's price."
+ },
+ "verified_anchor_inputs": [
+  {
+   "name": "cpi_us_yoy",
+   "value": 0.0374,
+   "as_of": "2026-09",
+   "source": "S03",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "cpi_la_yoy",
+   "value": 0.0372,
+   "as_of": "2026-09",
+   "source": "S04",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "treasury_10y",
+   "value": 0.0484,
+   "as_of": "2026-11-05",
+   "source": "S02",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "treasury_5y",
+   "value": 0.0459,
+   "as_of": "2026-11-05",
+   "source": "S02",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "fed_funds_mid",
+   "value": 0.03875,
+   "as_of": "2026-10-28",
+   "source": "S01",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "la_county_unemployment",
+   "value": 0.048,
+   "as_of": "2026-09",
+   "source": "S05",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "la_county_emp_growth_yoy",
+   "value": 0.004,
+   "as_of": "2026-09",
+   "source": "S05",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "la_county_pop_change_2020_2025",
+   "value": -0.032,
+   "as_of": "2025-07",
+   "source": "S06",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "la_city_pop_change_2020_2025",
+   "value": -0.008,
+   "as_of": "2025-07",
+   "source": "S07",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "la_k12_enrollment_change_10y",
+   "value": -240800,
+   "as_of": "2035-36 projection",
+   "source": "S09",
+   "label": "OBSERVED (official projection)"
+  },
+  {
+   "name": "prop13_rate",
+   "value": 0.01,
+   "as_of": "current",
+   "source": "S15",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "prop13_annual_cap",
+   "value": 0.02,
+   "as_of": "current",
+   "source": "S15",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "county_transfer_tax_rate",
+   "value": 0.0011,
+   "as_of": "current",
+   "source": "S16",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "city_transfer_tax_rate",
+   "value": 0.0045,
+   "as_of": "current",
+   "source": "S17",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "ula_lower_threshold",
+   "value": 5400000,
+   "as_of": "2026-07-01",
+   "source": "S17",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "ula_upper_threshold",
+   "value": 10900000,
+   "as_of": "2026-07-01",
+   "source": "S17",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "ula_rate_lower",
+   "value": 0.04,
+   "as_of": "2026-07-01",
+   "source": "S17",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "ula_rate_upper",
+   "value": 0.055,
+   "as_of": "2026-07-01",
+   "source": "S17",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "jib_same_store_q3_2026",
+   "value": -0.011,
+   "as_of": "Q3 FY2026",
+   "source": "S13",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "jib_same_store_fy2025",
+   "value": -0.042,
+   "as_of": "FY2025",
+   "source": "S12",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "jib_securitization_coupon",
+   "value": 0.07624,
+   "as_of": "2026-06-23",
+   "source": "S14",
+   "label": "OBSERVED"
+  },
+  {
+   "name": "fast_food_min_wage",
+   "value": 20.0,
+   "as_of": "2024-04-01",
+   "source": "S20",
+   "label": "OBSERVED"
+  }
+ ],
+ "assumptions": [
+  {
+   "id": "A01",
+   "name": "Going-in cap rate for a central-LA single-tenant QSR",
+   "value": 0.0575,
+   "range": [
+    0.05,
+    0.065
+   ],
+   "label": "ASSUMPTION",
+   "basis": "No official series publishes net-lease cap rates for this asset class (flagged F-05). The value is set by building up from the verified 10-year Treasury (4.84%, S02) plus a net-lease retail risk spread of roughly 90bp. A 90bp spread is at the tight end of what single-tenant quick-service trades have historically commanded, which is appropriate for a dense urban Southern California infill site with a national brand.",
+   "materiality": "HIGH — every downstream return is an inverse function of this number.",
+   "how_to_replace": "Substitute the broker's opinion of value or an actual appraisal; the model recomputes automatically."
+  },
+  {
+   "id": "A02",
+   "name": "Long-run cap-rate risk spread over the 10-year Treasury",
+   "value": 0.009,
+   "range": [
+    0.006,
+    0.015
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Net-lease spreads have historically compressed in strong markets and widened sharply in stress. 90bp is a central estimate for an infill QSR in a supply-constrained metro.",
+   "materiality": "HIGH"
+  },
+  {
+   "id": "A03",
+   "name": "Rent growth while the existing lease runs",
+   "value": 0.02,
+   "range": [
+    0.01,
+    0.03
+   ],
+   "label": "ASSUMPTION",
+   "basis": "NNN leases commonly escalate at a flat 2% or at CPI with a collar. 2% is the modal contract structure. Note that this is BELOW observed LA CPI of 3.72% (S04), so in real terms the existing lease is designed to lose purchasing power — a point that favours the exit.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A04",
+   "name": "Market rent growth at renewal",
+   "value": 0.0275,
+   "range": [
+    0.015,
+    0.04
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Market rent at renewal should track the LA CPI observation (3.16% 2025 annual, S04) less a small structural drag for the county's declining population (S06, S09). Set at 2.75%, i.e. CPI minus roughly 40bp.",
+   "materiality": "HIGH"
+  },
+  {
+   "id": "A05",
+   "name": "Probability the tenant renews at SP-01",
+   "value": 0.62,
+   "range": [
+    0.4,
+    0.8
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Built from three verified signals, not intuition: (i) the tenant is closing 50–100 units in FY2026 by its own guidance (S12), which is an explicit negative; (ii) same-store sales improved from −7.1% to −1.1% (S13), which is an explicit positive; (iii) a unit-level urban LA location in a 4.8%-unemployment metro with a positive restaurant sub-sector (+7,300 jobs, S05) should sit in the stronger half of the portfolio. Net 62%, and the model reports 40% and 80% as bounds because this is the single most consequential unknown.",
+   "materiality": "VERY HIGH"
+  },
+  {
+   "id": "A06",
+   "name": "Downtime if the tenant does NOT renew",
+   "value": 18,
+   "range": [
+    9,
+    36
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Months of vacancy plus rent abatement to re-tenant a 2,500–3,500 sq ft drive-through box in central LA.",
+   "materiality": "HIGH"
+  },
+  {
+   "id": "A07",
+   "name": "Re-tenanting cost if the tenant does not renew (TI plus leasing commission)",
+   "value": 0.075,
+   "range": [
+    0.05,
+    0.12
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Expressed as a percentage of property value, applied on rollover. Tenant improvements plus leasing commissions for a QSR box.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A08",
+   "name": "Landlord retained capital reserve (roof, structure, parking, ADA)",
+   "value": 0.0035,
+   "range": [
+    0.002,
+    0.007
+   ],
+   "label": "ASSUMPTION",
+   "basis": "A true triple-net lease pushes most costs to the tenant, but landlords routinely retain roof and structure. 35bp of value per year is a conservative reserve. If the lease is not genuinely NNN, this must rise (see flag F-01).",
+   "materiality": "LOW-MEDIUM"
+  },
+  {
+   "id": "A09",
+   "name": "Selling costs (brokerage, title, escrow, legal)",
+   "value": 0.04,
+   "range": [
+    0.03,
+    0.06
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Standard commercial transaction cost as a percentage of gross price. Excludes transfer tax, which is computed from S16 and S17.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A10",
+   "name": "Owner's adjusted basis as a percentage of current value",
+   "value": 0.4,
+   "range": [
+    0.15,
+    0.8
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Unknown and unknowable without the owner's records (F-06). 40% represents a long-held asset. This drives the entire tax cost of selling, so the model reports the full range.",
+   "materiality": "VERY HIGH",
+   "privacy_note": "Deliberately parameterised so that no actual basis figure is ever requested or stored."
+  },
+  {
+   "id": "A11",
+   "name": "Blended tax rate on capital gain (federal + NIIT + California)",
+   "value": 0.334,
+   "range": [
+    0.238,
+    0.371
+   ],
+   "label": "ASSUMPTION",
+   "basis": "20% federal long-term capital gains + 3.8% net investment income tax + 9.3% California ≈ 33.1%. Set at 33.4%. The top California bracket of 13.3% pushes the upper bound to 37.1%. Unrecaptured §1250 gain on depreciation is taxed at up to 25% and is NOT separately modelled — a known conservative simplification that if anything favours holding.",
+   "materiality": "VERY HIGH"
+  },
+  {
+   "id": "A12",
+   "name": "Tenant's pricing power offset (mitigates rent-default risk)",
+   "value": 0.1,
+   "label": "ASSUMPTION",
+   "basis": "Applied as a haircut to the modelled probability of severe rent stress, reflecting that the franchisee can pass some cost inflation to menu price (S11 records 5.5% menu pricing in FY2025).",
+   "materiality": "LOW"
+  },
+  {
+   "id": "A13",
+   "name": "Annualised probability of a regional black-swan event affecting the parcel",
+   "value": 0.02,
+   "range": [
+    0.01,
+    0.04
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Calibrated from verified history: two catastrophic urban wildfires hit Los Angeles County in the same week of January 2025, destroying 16,263 structures combined (S21 + S22). Over a 10-year hold a 2%/yr event probability implies a ~18% chance of at least one event. This is intentionally pessimistic relative to a calm-decade base rate, because the last decade produced two such events in one week.",
+   "materiality": "HIGH",
+   "note": "Deliberately NOT calibrated to a specific parcel, because the parcel is private (F-03)."
+  },
+  {
+   "id": "A14",
+   "name": "Severity of a black-swan event to the parcel (if it occurs)",
+   "value": 0.35,
+   "range": [
+    0.1,
+    0.9
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Loss of value as a fraction of gross value, after insurance recovery and before business interruption. A central-LA infill site is far less exposed than the wildland-urban interface that burned in 2025, so the base case is a partial impairment (shutdown, smoke and ash remediation, utility outage, six-to-eighteen months of zero rent) rather than total loss.",
+   "materiality": "HIGH"
+  },
+  {
+   "id": "A15",
+   "name": "Insurance recovery offset for a black-swan event",
+   "value": 0.55,
+   "range": [
+    0.3,
+    0.8
+   ],
+   "label": "ASSUMPTION",
+   "basis": "In a true NNN the tenant insures the building, so the landlord's direct property loss is partly covered. The landlord still absorbs rent interruption, deductible, and the post-event cap-rate widening that follows a regional catastrophe.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A16",
+   "name": "Cap-rate penalty for short remaining lease term",
+   "value": 0.0075,
+   "label": "ASSUMPTION",
+   "basis": "Buyers of single-tenant assets price renewal risk. Below roughly five years of remaining term, quoted cap rates widen materially and the asset becomes a re-leasing story rather than a bond. Modelled as +75bp at zero remaining term, scaled linearly.",
+   "materiality": "HIGH",
+   "note": "This single assumption is why 'sell before expiry' can beat 'hold to expiry' even when rents are rising."
+  },
+  {
+   "id": "A17",
+   "name": "Secular demand drag from county population decline",
+   "value": -0.0025,
+   "range": [
+    -0.005,
+    0.0
+   ],
+   "label": "ASSUMPTION",
+   "basis": "The verified fact is that LA County lost 3.2% of its population in five years (S06) and is projected to lose a further 240,800 K-12 students in ten (S09). The modelled mechanism is a 25bp annual drag on real rent growth. This is a disclosed judgement, not an observation.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A18",
+   "name": "Property value scenario bands used for reporting",
+   "value": 6500000,
+   "range": [
+    4000000,
+    12000000
+   ],
+   "label": "ASSUMPTION",
+   "basis": "The property's actual value is private. Three bands are run because they straddle the two Measure ULA thresholds ($5.4M and $10.9M), so the tax cliff is visible rather than averaged away. The $6.5M band is the reporting base case. The ranking of strategies is stable across all three bands.",
+   "materiality": "N/A (reporting parameter, not a market input)"
+  },
+  {
+   "id": "A19",
+   "name": "Reinvestment rate on interim after-tax cash",
+   "value": 0.065,
+   "range": [
+    0.045,
+    0.08
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Interim cash must be put somewhere or the comparison between a 2026 exit and a 2052 exit is meaningless. 6.5% is set above the verified 10-year Treasury of 4.84% (S02) to reflect a diversified income portfolio with some equity risk, and below a fair-return assumption for direct real estate. Reinvestment growth is taxed at A11 on liquidation.",
+   "materiality": "MEDIUM"
+  },
+  {
+   "id": "A20",
+   "name": "Blended tax rate applied to growth of the reinvestment portfolio",
+   "value": 0.28,
+   "range": [
+    0.2,
+    0.33
+   ],
+   "label": "ASSUMPTION",
+   "basis": "Lower than A11 because a diversified portfolio turns over partially, realising some long-term gains at preferential rates and deferring the rest. Used only for the reinvestment sleeve, never for the property itself.",
+   "materiality": "LOW-MEDIUM"
+  }
+ ],
+ "scenario_parameters": {
+  "strategies": [
+   {
+    "id": "S1",
+    "name": "Sell now (2026)",
+    "exit_year": 2026
+   },
+   {
+    "id": "S2",
+    "name": "Sell before expiry (2030)",
+    "exit_year": 2030
+   },
+   {
+    "id": "S3",
+    "name": "Sell at mid-expiry (2032)",
+    "exit_year": 2032
+   },
+   {
+    "id": "S4",
+    "name": "Renew, hold 10 years (exit 2042)",
+    "exit_year": 2042,
+    "renew": true
+   },
+   {
+    "id": "S5",
+    "name": "Renew, hold 20 years (exit 2052)",
+    "exit_year": 2052,
+    "renew": true
+   },
+   {
+    "id": "S6",
+    "name": "Sell now, §1031 exchange",
+    "exit_year": 2026,
+    "exchange": true
+   },
+   {
+    "id": "S7",
+    "name": "Renew, §1031 exchange at 2032",
+    "exit_year": 2032,
+    "renew": true,
+    "exchange": true
+   }
+  ],
+  "horizon_start": 2026,
+  "horizon_end": 2052,
+  "monte_carlo_paths": 6000,
+  "random_seed": 20261106
+ }
+}

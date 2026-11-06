@@ -1,0 +1,1648 @@
+{
+ "meta": {
+  "title": "Verified Dataset — Subject Property SP-01 decision support",
+  "compiled": "2026-11-06",
+  "subject": "SP-01 — single-tenant Jack in the Box quick-service restaurant, NNN lease, central Los Angeles submarket, lease expiry window 2030–2035",
+  "privacy": "No address, parcel number, owner identity, tenant-unit identity, rent, or lease terms are recorded anywhere in this dataset. All parcel-specific values that would be required for a formal appraisal are deliberately absent and are listed as UNVERIFIED in the Assumptions section.",
+  "status_values": {
+   "verified": "Read directly from an official-primary source (see sources.json tier).",
+   "verified-secondary": "Official statement read through a reproduction; caveat recorded on the source.",
+   "unverified": "Could not be confirmed from an official source. Value is null and the row appears on the Flagged for Review page."
+  }
+ },
+ "sections": [
+  {
+   "id": "macro",
+   "title": "Macro & Capital Markets",
+   "why": "Cap rates for single-tenant net-lease retail are priced off the long end of the Treasury curve plus a risk spread. This section fixes the discount rate the projection engine uses.",
+   "rows": [
+    {
+     "metric": "Federal funds target range",
+     "value": "3.75% – 4.00%",
+     "unit": "range",
+     "period": "2026-10-28",
+     "source": "S01",
+     "status": "verified",
+     "note": "Held at the October 2026 FOMC meeting on a 10–2 vote."
+    },
+    {
+     "metric": "FOMC characterisation of activity",
+     "value": "Expanding at a strong pace; inflation remains elevated",
+     "unit": "text",
+     "period": "2026-10-28",
+     "source": "S01",
+     "status": "verified",
+     "note": "Two dissents preferred a 25bp increase — policy risk is skewed to tightening, not easing."
+    },
+    {
+     "metric": "10-year Treasury par yield",
+     "value": "4.84",
+     "unit": "%",
+     "period": "2026-11-05",
+     "source": "S02",
+     "status": "verified"
+    },
+    {
+     "metric": "7-year Treasury par yield",
+     "value": "4.70",
+     "unit": "%",
+     "period": "2026-11-05",
+     "source": "S02",
+     "status": "verified"
+    },
+    {
+     "metric": "5-year Treasury par yield",
+     "value": "4.59",
+     "unit": "%",
+     "period": "2026-11-05",
+     "source": "S02",
+     "status": "verified"
+    },
+    {
+     "metric": "3-year Treasury par yield",
+     "value": "4.53",
+     "unit": "%",
+     "period": "2026-11-05",
+     "source": "S02",
+     "status": "verified"
+    },
+    {
+     "metric": "2-year Treasury par yield",
+     "value": "4.46",
+     "unit": "%",
+     "period": "2026-11-05",
+     "source": "S02",
+     "status": "verified"
+    },
+    {
+     "metric": "30-year Treasury par yield",
+     "value": "5.25",
+     "unit": "%",
+     "period": "2026-11-05",
+     "source": "S02",
+     "status": "verified"
+    },
+    {
+     "metric": "Term spread (10Y minus fed funds midpoint)",
+     "value": "0.97",
+     "unit": "pp",
+     "period": "2026-11-05",
+     "source": "S02",
+     "status": "verified",
+     "note": "Computed from S02 and S01 midpoint of 3.875%. Positive and steepening at the long end."
+    },
+    {
+     "metric": "U.S. CPI-U, all items, year over year",
+     "value": "3.74",
+     "unit": "%",
+     "period": "2026-09 vs 2025-09",
+     "source": "S03",
+     "status": "verified",
+     "note": "336.940 vs 324.800. Above the Federal Reserve's 2% objective."
+    },
+    {
+     "metric": "U.S. CPI-U, annual average change",
+     "value": "2.63",
+     "unit": "%",
+     "period": "2025 vs 2024",
+     "source": "S03",
+     "status": "verified",
+     "note": "321.943 vs 313.689."
+    },
+    {
+     "metric": "Los Angeles CPI-U, year over year",
+     "value": "3.72",
+     "unit": "%",
+     "period": "2026-09 vs 2025-09",
+     "source": "S04",
+     "status": "verified",
+     "note": "358.725 vs 345.865. Local inflation tracks the national rate almost exactly."
+    },
+    {
+     "metric": "Los Angeles CPI-U, annual average change",
+     "value": "3.16",
+     "unit": "%",
+     "period": "2025 vs 2024",
+     "source": "S04",
+     "status": "verified",
+     "note": "342.676 vs 332.194."
+    },
+    {
+     "metric": "CPI observation gap",
+     "value": "October 2025 unavailable",
+     "unit": "text",
+     "period": "2025-10",
+     "source": "S03",
+     "status": "verified",
+     "note": "BLS footnote X: data unavailable due to the 2025 lapse in appropriations. Any model that interpolates across Oct-2025 is interpolating, not observing."
+    }
+   ]
+  },
+  {
+   "id": "labor",
+   "title": "Labour Market & Industry Mix",
+   "why": "A quick-service restaurant's sales are a function of household cash flow within roughly a 3-mile trade area. County and metro employment trends are the best official proxy available without disclosing the parcel.",
+   "rows": [
+    {
+     "metric": "LA County unemployment rate (seasonally adjusted)",
+     "value": "4.8",
+     "unit": "%",
+     "period": "2026-09",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County unemployment rate",
+     "value": "5.0",
+     "unit": "%",
+     "period": "2026-08 revised",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County unemployment rate",
+     "value": "5.6",
+     "unit": "%",
+     "period": "2025-09",
+     "source": "S05",
+     "status": "verified",
+     "note": "Year-over-year improvement of 0.8pp."
+    },
+    {
+     "metric": "LA County unemployment rate (not seasonally adjusted)",
+     "value": "4.5",
+     "unit": "%",
+     "period": "2026-09",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "California unemployment rate (seasonally adjusted)",
+     "value": "5.1",
+     "unit": "%",
+     "period": "2026-09",
+     "source": "S05",
+     "status": "verified",
+     "note": "LA County is running below the state rate."
+    },
+    {
+     "metric": "U.S. unemployment rate",
+     "value": "4.2",
+     "unit": "%",
+     "period": "2026-09",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County civilian labour force",
+     "value": "4,990,000",
+     "unit": "persons",
+     "period": "2026-09 (SA)",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County civilian employment",
+     "value": "4,751,000",
+     "unit": "persons",
+     "period": "2026-09 (SA)",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County unemployed",
+     "value": "239,000",
+     "unit": "persons",
+     "period": "2026-09 (SA)",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County total nonfarm employment",
+     "value": "4,539,800",
+     "unit": "jobs",
+     "period": "2026-09 (SA)",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County nonfarm employment, year over year",
+     "value": "20,300",
+     "unit": "jobs",
+     "period": "2025-09 to 2026-09",
+     "source": "S05",
+     "status": "verified",
+     "note": "+0.4%. Very slow growth for a metro of this size."
+    },
+    {
+     "metric": "LA County nonfarm employment, year over year",
+     "value": "0.4",
+     "unit": "%",
+     "period": "2025-09 to 2026-09",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "Education & health services, year over year",
+     "value": "+37,500",
+     "unit": "jobs",
+     "period": "2025-09 to 2026-09",
+     "source": "S05",
+     "status": "verified",
+     "note": "The single growth engine. Health care and social assistance alone accounted for 83% of growth."
+    },
+    {
+     "metric": "Leisure & hospitality, year over year",
+     "value": "+8,900",
+     "unit": "jobs",
+     "period": "2025-09 to 2026-09",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "Restaurants and other eating places, year over year",
+     "value": "+7,300",
+     "unit": "jobs",
+     "period": "2025-09 to 2026-09",
+     "source": "S05",
+     "status": "verified",
+     "note": "Directly relevant: the restaurant sub-sector is still adding jobs even as the tenant closes units."
+    },
+    {
+     "metric": "Information sector, year over year",
+     "value": "−10,200",
+     "unit": "jobs",
+     "period": "2025-09 to 2026-09",
+     "source": "S05",
+     "status": "verified",
+     "note": "Declines in 20 of the last 22 months. Motion picture and sound recording −7,300."
+    },
+    {
+     "metric": "Government, year over year",
+     "value": "−7,800",
+     "unit": "jobs",
+     "period": "2025-09 to 2026-09",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "Manufacturing, year over year",
+     "value": "−4,100",
+     "unit": "jobs",
+     "period": "2025-09 to 2026-09",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "Financial activities, year over year",
+     "value": "−4,000",
+     "unit": "jobs",
+     "period": "2025-09 to 2026-09",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "Professional & business services, year over year",
+     "value": "−3,500",
+     "unit": "jobs",
+     "period": "2025-09 to 2026-09",
+     "source": "S05",
+     "status": "verified"
+    },
+    {
+     "metric": "Leisure & hospitality, month over month",
+     "value": "−6,800",
+     "unit": "jobs",
+     "period": "2026-08 to 2026-09",
+     "source": "S05",
+     "status": "verified",
+     "note": "Food services and drinking places −4,500 within that."
+    },
+    {
+     "metric": "Total nonfarm, share of sectors declining year over year",
+     "value": "5 of 11",
+     "unit": "count",
+     "period": "2026-09",
+     "source": "S05",
+     "status": "verified",
+     "note": "Derived from the industry detail in S05: information, government, manufacturing, financial activities, professional/business services."
+    }
+   ]
+  },
+  {
+   "id": "demographics",
+   "title": "Population, Income & Education",
+   "why": "Demand for a quick-service restaurant is a function of resident count and resident income. Both official series point the same direction for Los Angeles County, and it is not growth.",
+   "rows": [
+    {
+     "metric": "LA County population",
+     "value": "9,694,934",
+     "unit": "persons",
+     "period": "2025-07-01 (V2025)",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County population",
+     "value": "10,014,009",
+     "unit": "persons",
+     "period": "2020-04-01 Census",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County population change since 2020",
+     "value": "−3.2",
+     "unit": "%",
+     "period": "2020-04 to 2025-07",
+     "source": "S06",
+     "status": "verified",
+     "note": "The county has shed roughly 319,000 residents on the official estimates base."
+    },
+    {
+     "metric": "City of Los Angeles population",
+     "value": "3,869,089",
+     "unit": "persons",
+     "period": "2025-07-01 (V2025)",
+     "source": "S07",
+     "status": "verified"
+    },
+    {
+     "metric": "City of Los Angeles population change since 2020",
+     "value": "−0.8",
+     "unit": "%",
+     "period": "2020-04 to 2025-07",
+     "source": "S07",
+     "status": "verified",
+     "note": "The city is declining more slowly than the county — a favourable relative signal for a central-LA location."
+    },
+    {
+     "metric": "LA County median household income (2024 dollars)",
+     "value": "90,112",
+     "unit": "USD",
+     "period": "2020–2024 ACS 5-year",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "City of Los Angeles median household income (2024 dollars)",
+     "value": "81,939",
+     "unit": "USD",
+     "period": "2020–2024 ACS 5-year",
+     "source": "S07",
+     "status": "verified",
+     "note": "City median income is about 9% below the county median."
+    },
+    {
+     "metric": "LA County per capita income (2024 dollars)",
+     "value": "45,792",
+     "unit": "USD",
+     "period": "2020–2024 ACS 5-year",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "City of Los Angeles per capita income (2024 dollars)",
+     "value": "47,685",
+     "unit": "USD",
+     "period": "2020–2024 ACS 5-year",
+     "source": "S07",
+     "status": "verified",
+     "note": "City per capita income is above the county — larger households, lower household median."
+    },
+    {
+     "metric": "LA County poverty rate",
+     "value": "13.3",
+     "unit": "%",
+     "period": "2025 estimate",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "City of Los Angeles poverty rate",
+     "value": "16.5",
+     "unit": "%",
+     "period": "2025 estimate",
+     "source": "S07",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County bachelor's degree or higher",
+     "value": "36.0",
+     "unit": "%",
+     "period": "2020–2024",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County high school graduate or higher",
+     "value": "80.9",
+     "unit": "%",
+     "period": "2020–2024",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County foreign-born",
+     "value": "33.4",
+     "unit": "%",
+     "period": "2020–2024",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "Language other than English spoken at home",
+     "value": "55.1",
+     "unit": "%",
+     "period": "2020–2024",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County persons aged 65 and over",
+     "value": "17.1",
+     "unit": "%",
+     "period": "2025",
+     "source": "S06",
+     "status": "verified",
+     "note": "Explains the health-services employment engine; an older population is a weaker fast-food transaction base."
+    },
+    {
+     "metric": "City of Los Angeles persons aged 65 and over",
+     "value": "14.2",
+     "unit": "%",
+     "period": "2025",
+     "source": "S07",
+     "status": "verified",
+     "note": "Younger than the county — mildly favourable for QSR."
+    },
+    {
+     "metric": "LA County households",
+     "value": "3,416,449",
+     "unit": "households",
+     "period": "2020–2024",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "Persons per household",
+     "value": "2.81",
+     "unit": "persons",
+     "period": "2020–2024",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County population per square mile",
+     "value": "2,466.9",
+     "unit": "persons/sq mi",
+     "period": "2020",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "City of Los Angeles population per square mile",
+     "value": "8,304.2",
+     "unit": "persons/sq mi",
+     "period": "2020",
+     "source": "S07",
+     "status": "verified",
+     "note": "3.4x the county density — high trade-area density is the core asset of an urban QSR site."
+    },
+    {
+     "metric": "Mean travel time to work",
+     "value": "30.4",
+     "unit": "minutes",
+     "period": "2020–2024",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County population projection 2030",
+     "value": null,
+     "unit": "persons",
+     "period": "DOF Vintage 2026",
+     "source": "S08",
+     "status": "unverified",
+     "flag": "F-02",
+     "note": "P-2A workbook not parsed this session. Two secondary sources conflict: 9,727,305 vs 9,867,515. See F-02."
+    },
+    {
+     "metric": "LA County population projection 2035",
+     "value": null,
+     "unit": "persons",
+     "period": "DOF Vintage 2026",
+     "source": "S08",
+     "status": "unverified",
+     "flag": "F-02",
+     "note": "Same cause as the 2030 row. Only the direction is official: continued decline."
+    },
+    {
+     "metric": "LA County population 2040",
+     "value": "9.3",
+     "unit": "millions",
+     "period": "DOF forecast cited in an official City report",
+     "source": "S10",
+     "status": "verified-secondary",
+     "note": "Director direction and endpoint only; single-year values not published in the cited report."
+    },
+    {
+     "metric": "LA County population 2060",
+     "value": "8.3",
+     "unit": "millions",
+     "period": "DOF forecast cited in an official City report",
+     "source": "S10",
+     "status": "verified-secondary"
+    }
+   ]
+  },
+  {
+   "id": "education",
+   "title": "School System",
+   "why": "School quality drives family formation, which drives household count in the trade area. The official projection series is unambiguous and negative for Los Angeles County.",
+   "rows": [
+    {
+     "metric": "California public K-12 enrollment",
+     "value": "5,731,300",
+     "unit": "students",
+     "period": "2025-26",
+     "source": "S09",
+     "status": "verified",
+     "note": "Ninth consecutive annual decline, down 75,000 in the year."
+    },
+    {
+     "metric": "California public K-12 enrollment projection",
+     "value": "5,020,800",
+     "unit": "students",
+     "period": "2035-36",
+     "source": "S09",
+     "status": "verified",
+     "note": "A further projected decline of 710,500 students."
+    },
+    {
+     "metric": "Los Angeles County public K-12 enrollment change",
+     "value": "−240,800",
+     "unit": "students",
+     "period": "2025-26 to 2035-36",
+     "source": "S09",
+     "status": "verified",
+     "note": "The largest projected county decline in California. Roughly a 9% reduction from a base near 1.3 million."
+    },
+    {
+     "metric": "California high school graduates",
+     "value": "453,600",
+     "unit": "graduates",
+     "period": "2024-25",
+     "source": "S09",
+     "status": "verified"
+    },
+    {
+     "metric": "California high school graduates projection",
+     "value": "381,300",
+     "unit": "graduates",
+     "period": "2035-36",
+     "source": "S09",
+     "status": "verified"
+    },
+    {
+     "metric": "School-level academic performance for the trade area",
+     "value": null,
+     "unit": "index",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-07",
+     "note": "Requires a school catchment, which requires the address. Cannot be resolved without disclosing PII, so it is deliberately unresolved."
+    }
+   ]
+  },
+  {
+   "id": "housing",
+   "title": "Housing & Property Market",
+   "why": "Land value is the residual that protects the downside: if the tenant leaves, the site still has dirt value. These are the official anchors for that floor.",
+   "rows": [
+    {
+     "metric": "LA County median value of owner-occupied units",
+     "value": "834,200",
+     "unit": "USD",
+     "period": "2020–2024",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County median gross rent",
+     "value": "1,954",
+     "unit": "USD/month",
+     "period": "2020–2024",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County owner-occupied housing unit rate",
+     "value": "45.9",
+     "unit": "%",
+     "period": "2020–2024",
+     "source": "S06",
+     "status": "verified",
+     "note": "A majority-renter county. Renters are more mobile and more price-sensitive."
+    },
+    {
+     "metric": "LA County housing units",
+     "value": "3,726,923",
+     "unit": "units",
+     "period": "2025-07-01",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County building permits",
+     "value": "22,250",
+     "unit": "permits",
+     "period": "2025",
+     "source": "S06",
+     "status": "verified",
+     "note": "Against 3.73 million existing units — roughly 0.6% gross addition, before demolition."
+    },
+    {
+     "metric": "LA County median home sales price",
+     "value": "982,000",
+     "unit": "USD",
+     "period": "2026 roll year",
+     "source": "S25",
+     "status": "verified-secondary"
+    },
+    {
+     "metric": "2026 LA County assessment roll, net taxable value",
+     "value": "2.272",
+     "unit": "USD trillion",
+     "period": "2026 lien date",
+     "source": "S25",
+     "status": "verified-secondary",
+     "note": "Roll memoranda are published by the Assessor at S24 (official page); the totals below are read from S25, a reproduction, hence the secondary tier."
+    },
+    {
+     "metric": "2026 LA County assessment roll, gross assessed value",
+     "value": "2.367",
+     "unit": "USD trillion",
+     "period": "2026 lien date",
+     "source": "S25",
+     "status": "verified-secondary",
+     "note": "Roll memoranda are published by the Assessor at S24 (official page); the totals below are read from S25, a reproduction, hence the secondary tier."
+    },
+    {
+     "metric": "Assessment roll growth",
+     "value": "4.42",
+     "unit": "%",
+     "period": "2026 vs 2025",
+     "source": "S25",
+     "status": "verified-secondary",
+     "note": "16th consecutive year of growth, but the composition is important — see next rows. Roll memoranda are published by the Assessor at S24 (official page); the totals below are read from S25, a reproduction, hence the secondary tier."
+    },
+    {
+     "metric": "Of which: Proposition 13 inflation adjustment",
+     "value": "43",
+     "unit": "USD billion",
+     "period": "2026 roll",
+     "source": "S25",
+     "status": "verified-secondary",
+     "note": "The CCPI exceeded the 2% cap, so the maximum 2% factor was applied. This is a mechanical increase, not market appreciation."
+    },
+    {
+     "metric": "Of which: property transfers",
+     "value": "49",
+     "unit": "USD billion",
+     "period": "2026 roll",
+     "source": "S25",
+     "status": "verified-secondary"
+    },
+    {
+     "metric": "Of which: new construction",
+     "value": "12",
+     "unit": "USD billion",
+     "period": "2026 roll",
+     "source": "S25",
+     "status": "verified-secondary"
+    },
+    {
+     "metric": "Of which: wildfire assessment relief (subtracted)",
+     "value": "−9",
+     "unit": "USD billion",
+     "period": "2026 roll",
+     "source": "S25",
+     "status": "verified-secondary",
+     "note": "The 2025 fires removed more value from the roll than new construction added."
+    },
+    {
+     "metric": "City of Los Angeles assessed value",
+     "value": "926.1",
+     "unit": "USD billion",
+     "period": "2026 roll",
+     "source": "S25",
+     "status": "verified-secondary"
+    },
+    {
+     "metric": "Commercial property price index for Los Angeles",
+     "value": null,
+     "unit": "index",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-05",
+     "note": "No official Los Angeles-specific commercial (non-residential) repeat-sales index was retrieved. NCREIF and CoStar are subscription products and are excluded by the source rules. Do not substitute a residential index."
+    },
+    {
+     "metric": "Net-lease cap rate for central LA single-tenant QSR",
+     "value": null,
+     "unit": "%",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-05",
+     "note": "No official series publishes this. The model therefore takes a base rate as an explicit, disclosed ASSUMPTION rather than presenting it as a market observation."
+    },
+    {
+     "metric": "Assessment Roll primary publication (official memorandum and forecast)",
+     "value": null,
+     "unit": "document",
+     "period": "2026-07-13 release",
+     "source": "S24",
+     "status": "verified",
+     "note": "The Assessor publishes the 2026 Roll memorandum dated 13 July 2026 and the 2026 Roll Forecast dated 15 May 2026, plus forecasts for every year 2012-2025. The totals in the rows above are quoted from S25 because the PDF was not parsed in this session; S24 is the authoritative document to check them against."
+    }
+   ]
+  },
+  {
+   "id": "business",
+   "title": "Business Base & Consumer Spending",
+   "why": "Establishment counts and retail sales measure the commercial vitality of the catchment in a way that does not identify any individual operator.",
+   "rows": [
+    {
+     "metric": "LA County total employer establishments",
+     "value": "304,988",
+     "unit": "establishments",
+     "period": "2023",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County total employment",
+     "value": "3,987,736",
+     "unit": "persons",
+     "period": "2023",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County total annual payroll",
+     "value": "299,616,607",
+     "unit": "USD thousand",
+     "period": "2023",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County total employment change",
+     "value": "2.3",
+     "unit": "%",
+     "period": "2022 to 2023",
+     "source": "S06",
+     "status": "verified",
+     "note": "Compare with the +0.4% payroll growth recorded for 2025-09 to 2026-09 in S05 — a sharp deceleration."
+    },
+    {
+     "metric": "LA County total retail sales",
+     "value": "213,932,785",
+     "unit": "USD thousand",
+     "period": "2022 (Economic Census)",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "LA County retail sales per capita",
+     "value": "22,010",
+     "unit": "USD",
+     "period": "2022",
+     "source": "S06",
+     "status": "verified"
+    },
+    {
+     "metric": "City of Los Angeles retail sales per capita",
+     "value": "21,281",
+     "unit": "USD",
+     "period": "2022",
+     "source": "S07",
+     "status": "verified",
+     "note": "Slightly below the county — the city exports retail sales to neighbouring jurisdictions."
+    },
+    {
+     "metric": "LA County accommodation & food services sales",
+     "value": "44,000,801",
+     "unit": "USD thousand",
+     "period": "2022 (Economic Census)",
+     "source": "S06",
+     "status": "verified"
+    }
+   ]
+  },
+  {
+   "id": "tenant",
+   "title": "Tenant Credit — Jack in the Box Inc.",
+   "why": "In a net-lease structure the landlord is, for the lease term, an unsecured creditor of the tenant. Tenant credit quality is therefore a direct determinant of lease-renewal probability and of the cap rate a buyer will accept.",
+   "rows": [
+    {
+     "metric": "Jack in the Box restaurants in system",
+     "value": "2,136",
+     "unit": "restaurants",
+     "period": "2025-09-28",
+     "source": "S11",
+     "status": "verified",
+     "note": "150 company-operated, 1,986 franchised at FY2025 year end."
+    },
+    {
+     "metric": "Jack in the Box restaurants in system",
+     "value": "2,115",
+     "unit": "restaurants",
+     "period": "2026-07-05",
+     "source": "S13",
+     "status": "verified",
+     "note": "149 company, 1,966 franchise. Net −13 in the quarter."
+    },
+    {
+     "metric": "Same-store sales, fiscal 2025",
+     "value": "−4.2",
+     "unit": "%",
+     "period": "FY2025",
+     "source": "S12",
+     "status": "verified"
+    },
+    {
+     "metric": "Same-store sales, Q4 fiscal 2025",
+     "value": "−7.4",
+     "unit": "%",
+     "period": "Q4 FY2025",
+     "source": "S12",
+     "status": "verified",
+     "note": "The trough of the cycle."
+    },
+    {
+     "metric": "Same-store sales, Q3 fiscal 2026",
+     "value": "−1.1",
+     "unit": "%",
+     "period": "Q3 FY2026",
+     "source": "S13",
+     "status": "verified",
+     "note": "Compared with −7.1% a year earlier. A 6.0pp improvement — the strongest single positive datapoint in this entire study."
+    },
+    {
+     "metric": "Restaurant closures, fiscal 2025",
+     "value": "86",
+     "unit": "restaurants",
+     "period": "FY2025",
+     "source": "S12",
+     "status": "verified",
+     "note": "Against 31 openings. 38 of the 47 Q4 closures were the 'JACK on Track' block closure program."
+    },
+    {
+     "metric": "FY2026 guided restaurant count",
+     "value": "2,050 – 2,100",
+     "unit": "restaurants",
+     "period": "FY2026 guidance",
+     "source": "S12",
+     "status": "verified",
+     "note": "Implies approximately 20 openings and 50 to 100 closures — further net contraction is the company's own plan."
+    },
+    {
+     "metric": "Q4 fiscal 2025 total revenues",
+     "value": "326.2",
+     "unit": "USD million",
+     "period": "Q4 FY2025",
+     "source": "S12",
+     "status": "verified",
+     "note": "Down 6.6% from $349.3M."
+    },
+    {
+     "metric": "Q3 fiscal 2026 total revenues",
+     "value": "257.7",
+     "unit": "USD million",
+     "period": "Q3 FY2026",
+     "source": "S13",
+     "status": "verified",
+     "note": "Down 1.8% from $262.4M. Continuing operations only after the Del Taco sale."
+    },
+    {
+     "metric": "Q4 fiscal 2025 net earnings",
+     "value": "5.8",
+     "unit": "USD million",
+     "period": "Q4 FY2025",
+     "source": "S12",
+     "status": "verified"
+    },
+    {
+     "metric": "Q3 fiscal 2026 net earnings from continuing operations",
+     "value": "21.0",
+     "unit": "USD million",
+     "period": "Q3 FY2026",
+     "source": "S13",
+     "status": "verified"
+    },
+    {
+     "metric": "Q4 fiscal 2025 Adjusted EBITDA",
+     "value": "45.6",
+     "unit": "USD million",
+     "period": "Q4 FY2025",
+     "source": "S12",
+     "status": "verified",
+     "note": "Down from $65.5M."
+    },
+    {
+     "metric": "Q3 fiscal 2026 Adjusted EBITDA",
+     "value": "61.2",
+     "unit": "USD million",
+     "period": "Q3 FY2026",
+     "source": "S13",
+     "status": "verified",
+     "note": "Up from $57.1M."
+    },
+    {
+     "metric": "FY2026 guided Adjusted EBITDA",
+     "value": "225 – 240",
+     "unit": "USD million",
+     "period": "FY2026 guidance",
+     "source": "S12",
+     "status": "verified"
+    },
+    {
+     "metric": "Franchise-Level Margin",
+     "value": "37.4",
+     "unit": "%",
+     "period": "Q3 FY2026",
+     "source": "S13",
+     "status": "verified",
+     "note": "Down from 39.3%. The release attributes part of the decline to 'lower rent and royalty revenue' and to 'higher bad debt expense'."
+    },
+    {
+     "metric": "Occupancy and other costs as a share of company restaurant sales",
+     "value": "18.7",
+     "unit": "%",
+     "period": "FY2025",
+     "source": "S11",
+     "status": "verified",
+     "note": "Up from 17.3%, attributed to sales deleverage and 'higher costs for rent, utilities'."
+    },
+    {
+     "metric": "Menu price increases",
+     "value": "5.5",
+     "unit": "%",
+     "period": "FY2025",
+     "source": "S11",
+     "status": "verified",
+     "note": "Price is being used to offset transaction decline — a strategy with a finite runway."
+    },
+    {
+     "metric": "Securitized notes issued",
+     "value": "500",
+     "unit": "USD million",
+     "period": "2026-06-23",
+     "source": "S14",
+     "status": "verified",
+     "note": "Series 2026-1 Class A-2 at 7.624% fixed."
+    },
+    {
+     "metric": "Cost of securitized debt",
+     "value": "7.624",
+     "unit": "%",
+     "period": "2026-06-23",
+     "source": "S14",
+     "status": "verified",
+     "note": "Replacing 4.476% and 3.445% legacy coupons. The market is charging the tenant over 400bp more than four years ago."
+    },
+    {
+     "metric": "Next anticipated repayment date",
+     "value": "2029",
+     "unit": "year",
+     "period": "2026-06-23",
+     "source": "S14",
+     "status": "verified",
+     "note": "Earlier than the 2030–2035 lease expiry window. Refinancing risk is therefore a pre-lease-expiry event."
+    },
+    {
+     "metric": "Revolving VFN capacity",
+     "value": "150",
+     "unit": "USD million",
+     "period": "2026-06-23",
+     "source": "S14",
+     "status": "verified"
+    },
+    {
+     "metric": "Dividend",
+     "value": "Discontinued",
+     "unit": "text",
+     "period": "FY2025",
+     "source": "S12",
+     "status": "verified"
+    },
+    {
+     "metric": "Del Taco disposition",
+     "value": "Completed 2025-12-22",
+     "unit": "text",
+     "period": "Q2 FY2026",
+     "source": "S13",
+     "status": "verified",
+     "note": "Reported in discontinued operations. Strategic simplification raises proceeds but removes a second brand."
+    },
+    {
+     "metric": "Chief executive",
+     "value": "Interim CEO Mark King",
+     "unit": "text",
+     "period": "Q3 FY2026",
+     "source": "S13",
+     "status": "verified",
+     "note": "Leadership instability concurrent with a lease-renewal decision is a governance flag."
+    },
+    {
+     "metric": "Effective tax rate",
+     "value": "36.9",
+     "unit": "%",
+     "period": "Q3 FY2026",
+     "source": "S13",
+     "status": "verified",
+     "note": "Versus 20.9% a year earlier."
+    },
+    {
+     "metric": "SEC reporting status",
+     "value": "Current",
+     "unit": "text",
+     "period": "through 2026-09-21",
+     "source": "S30",
+     "status": "verified",
+     "note": "Ten consecutive annual reports and eight 8-K filings in the last seven months. No missing-report or delinquency risk identified."
+    },
+    {
+     "metric": "Tenant's own stated intent on real estate",
+     "value": "Selling real estate is part of the plan",
+     "unit": "text",
+     "period": "FY2026 guidance",
+     "source": "S12",
+     "status": "verified",
+     "note": "The FY2026 release states 'JACK on Track ... includes a block closure program and selling real estate'. The tenant is a potential SELLER of a fee interest, not only a buyer of lease term."
+    },
+    {
+     "metric": "Direct confirmation that SP-01 is on any closure list",
+     "value": null,
+     "unit": "text",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "Closure lists are not published unit-by-unit. Cannot be confirmed without identifying the unit. This is the single largest unknown in the study."
+    },
+    {
+     "metric": "Jack in the Box restaurants in system, peak (FY2024 year end)",
+     "value": 2191,
+     "unit": "restaurants",
+     "period": "2024-09-29",
+     "source": "S12",
+     "status": "verified",
+     "note": "Stated in the Q4 FY2025 release as the FY2024 comparative. Gives the two-year contraction: 2,191 to 2,115."
+    }
+   ]
+  },
+  {
+   "id": "tax",
+   "title": "Tax, Transfer Cost & Regulatory Load",
+   "why": "These are the frictions that convert a headline sale price into net proceeds, and the recurring costs that determine what a buyer can pay.",
+   "rows": [
+    {
+     "metric": "Proposition 13 ad valorem rate",
+     "value": "1.0",
+     "unit": "%",
+     "period": "current",
+     "source": "S15",
+     "status": "verified",
+     "note": "Plus incremental rates for locally voter-approved bonded indebtedness."
+    },
+    {
+     "metric": "Proposition 13 annual increase cap on base year value",
+     "value": "2.0",
+     "unit": "%",
+     "period": "current",
+     "source": "S15",
+     "status": "verified",
+     "note": "Or the change in California CPI, whichever is lower."
+    },
+    {
+     "metric": "Reassessment trigger",
+     "value": "Change in ownership or completion of new construction",
+     "unit": "text",
+     "period": "current",
+     "source": "S15",
+     "status": "verified",
+     "note": "A sale resets the base year to market value. This is the mechanism described in the tax-lock section."
+    },
+    {
+     "metric": "Decline-in-value relief available",
+     "value": "Proposition 8",
+     "unit": "text",
+     "period": "current",
+     "source": "S15",
+     "status": "verified",
+     "note": "Assessed value must be the lower of current market value or the adjusted base year value."
+    },
+    {
+     "metric": "County documentary transfer tax",
+     "value": "0.55 per 500",
+     "unit": "USD per USD",
+     "period": "current statute",
+     "source": "S16",
+     "status": "verified",
+     "note": "RTC §11911(a): $0.55 for each $500 or fractional part, on consideration or value exceeding $100. Effective rate $1.10 per $1,000."
+    },
+    {
+     "metric": "City of Los Angeles base real property transfer tax",
+     "value": "0.45",
+     "unit": "%",
+     "period": "current",
+     "source": "S17",
+     "status": "verified",
+     "note": "Computed at $2.25 per $500 or part thereof."
+    },
+    {
+     "metric": "Combined county and city transfer tax (below ULA threshold)",
+     "value": "0.56",
+     "unit": "%",
+     "period": "current",
+     "source": "S17",
+     "status": "verified",
+     "note": "Derived: 0.11% county plus 0.45% city. The two source rates are verified; the sum is arithmetic."
+    },
+    {
+     "metric": "Measure ULA rate, $5.4M to $10.9M",
+     "value": "4.0",
+     "unit": "%",
+     "period": "closings after 2026-06-30",
+     "source": "S17",
+     "status": "verified",
+     "note": "Applies to the whole consideration, not the marginal amount."
+    },
+    {
+     "metric": "Measure ULA rate, $10.9M and above",
+     "value": "5.5",
+     "unit": "%",
+     "period": "closings after 2026-06-30",
+     "source": "S17",
+     "status": "verified"
+    },
+    {
+     "metric": "Measure ULA lower threshold",
+     "value": "5,400,000",
+     "unit": "USD",
+     "period": "effective 2026-07-01",
+     "source": "S17",
+     "status": "verified",
+     "note": "Indexed annually to BLS Chained CPI. It was $5.0M at enactment — it will be higher again by 2030."
+    },
+    {
+     "metric": "Measure ULA upper threshold",
+     "value": "10,900,000",
+     "unit": "USD",
+     "period": "effective 2026-07-01",
+     "source": "S17",
+     "status": "verified"
+    },
+    {
+     "metric": "Effective total transfer tax at or above the upper threshold",
+     "value": "5.95",
+     "unit": "%",
+     "period": "current",
+     "source": "S17",
+     "status": "verified",
+     "note": "0.45% base plus 5.5% ULA. The city's own FAQ states the 5.95% figure."
+    },
+    {
+     "metric": "Measure ULA exemptions",
+     "value": "Limited to 501(c)(3), government, and constitutionally exempt transferees",
+     "unit": "text",
+     "period": "current",
+     "source": "S17",
+     "status": "verified",
+     "note": "A private owner has no exemption. This is a pure cost of exit."
+    },
+    {
+     "metric": "IRC §1031 like-kind exchange relief",
+     "value": "Available for real property held for investment or business use",
+     "unit": "text",
+     "period": "current",
+     "source": "S18",
+     "status": "verified",
+     "note": "Gain is recognised only to the extent of boot. Losses cannot be recognised. US real property is not like-kind to foreign real property."
+    },
+    {
+     "metric": "California minimum wage",
+     "value": "16.90",
+     "unit": "USD/hour",
+     "period": "2026-01-01",
+     "source": "S19",
+     "status": "verified",
+     "note": "Indexed to CPI-W, capped at 3.5% per year, and cannot be reduced."
+    },
+    {
+     "metric": "California fast food minimum wage",
+     "value": "20.00",
+     "unit": "USD/hour",
+     "period": "since 2024-04-01",
+     "source": "S20",
+     "status": "verified",
+     "note": "Applies to limited-service chains of 60+ establishments nationwide, including franchisees. Directly binds the tenant's P&L."
+    },
+    {
+     "metric": "Fast Food Council authority to raise the sector wage",
+     "value": "Yes",
+     "unit": "text",
+     "period": "current",
+     "source": "S20",
+     "status": "verified",
+     "note": "A standing body can raise the floor again. This is an unhedgeable operating-cost risk for the tenant and therefore a renewal risk for the landlord."
+    },
+    {
+     "metric": "Tip credit",
+     "value": "Not permitted",
+     "unit": "text",
+     "period": "current",
+     "source": "S19",
+     "status": "verified"
+    },
+    {
+     "metric": "Owner's actual property tax basis and base year value",
+     "value": null,
+     "unit": "USD",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-06",
+     "note": "Paramount to any hold-versus-sell decision and entirely unavailable without the parcel record. Do not model an assumed basis as fact; the model treats it as a stated scenario parameter."
+    },
+    {
+     "metric": "Owner's federal and California marginal capital gains rates",
+     "value": null,
+     "unit": "%",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-06",
+     "note": "Depends on the owner's personal return. The model exposes this as a user-set scenario parameter and reports results across a range."
+    },
+    {
+     "metric": "Remaining depreciable basis and accumulated depreciation",
+     "value": null,
+     "unit": "USD",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-06",
+     "note": "Drives unrecaptured §1250 recapture on sale. Unavailable without the owner's return."
+    },
+    {
+     "metric": "Effective total transfer tax just above the ULA lower threshold",
+     "value": 4.56,
+     "unit": "%",
+     "period": "current",
+     "source": "S17",
+     "status": "verified",
+     "note": "Computed on $6,500,000: county $7,150 + city $29,250 + ULA $260,000 = $296,400, which is 4.56% of price. Arithmetic on verified statutory rates. See the ULA table on the Projection page."
+    },
+    {
+     "metric": "Effective total transfer tax at or above the upper threshold, computed",
+     "value": 6.06,
+     "unit": "%",
+     "period": "current",
+     "source": "S17",
+     "status": "verified",
+     "note": "Computed on $12,000,000: $727,200 total, which is 6.06% of price. Differs from the City's stated 5.95% because the City quotes the rate components rather than the realised percentage including the $2.25/$500 rounding. Both derivations are shown."
+    },
+    {
+     "metric": "Measure ULA cliff cost of crossing the lower threshold",
+     "value": 216000,
+     "unit": "USD",
+     "period": "current",
+     "source": "S17",
+     "status": "verified",
+     "note": "Computed: 4% of $5,400,000 = $216,000, incurred in full on a $1 move across the threshold."
+    },
+    {
+     "metric": "Measure ULA cliff cost of crossing the upper threshold",
+     "value": 163500,
+     "unit": "USD",
+     "period": "current",
+     "source": "S17",
+     "status": "verified",
+     "note": "Computed: the step from 4% to 5.5% on $10,900,000 = $163,500."
+    }
+   ]
+  },
+  {
+   "id": "hazard",
+   "title": "Hazard & Black-Swan Exposure",
+   "why": "The user asked specifically for wildfire and natural-disaster scenarios. Los Angeles County has a documented, recent, very large loss event, and its regulatory response is measurable.",
+   "rows": [
+    {
+     "metric": "Palisades Fire, area burned",
+     "value": "23,448",
+     "unit": "acres",
+     "period": "2025-01-07 to 2025-01-31",
+     "source": "S21",
+     "status": "verified"
+    },
+    {
+     "metric": "Palisades Fire, structures destroyed",
+     "value": "6,845",
+     "unit": "structures",
+     "period": "2025",
+     "source": "S21",
+     "status": "verified",
+     "note": "100% of structures in the footprint were inspected."
+    },
+    {
+     "metric": "Palisades Fire, structures damaged",
+     "value": "975",
+     "unit": "structures",
+     "period": "2025",
+     "source": "S21",
+     "status": "verified"
+    },
+    {
+     "metric": "Palisades Fire, civilian fatalities",
+     "value": "12",
+     "unit": "persons",
+     "period": "2025",
+     "source": "S21",
+     "status": "verified"
+    },
+    {
+     "metric": "Palisades Fire, cause",
+     "value": "Arson",
+     "unit": "text",
+     "period": "2025",
+     "source": "S21",
+     "status": "verified",
+     "note": "Recorded as arson on the official incident page as updated 2026-04-09."
+    },
+    {
+     "metric": "Eaton Fire, area burned",
+     "value": "14,021",
+     "unit": "acres",
+     "period": "2025-01-07 to 2025-01-31",
+     "source": "S22",
+     "status": "verified"
+    },
+    {
+     "metric": "Eaton Fire, structures destroyed",
+     "value": "9,418",
+     "unit": "structures",
+     "period": "2025",
+     "source": "S22",
+     "status": "verified",
+     "note": "Altadena/Pasadena. The most destructive of the two events by structure count."
+    },
+    {
+     "metric": "Eaton Fire, structures damaged",
+     "value": "1,073",
+     "unit": "structures",
+     "period": "2025",
+     "source": "S22",
+     "status": "verified"
+    },
+    {
+     "metric": "Eaton Fire, civilian fatalities",
+     "value": "17",
+     "unit": "persons",
+     "period": "2025-01-27 update",
+     "source": "S22",
+     "status": "verified",
+     "note": "A later figure of 19 appears in secondary reporting; the official update read for this study states 17. Recorded as an irregularity, F-08."
+    },
+    {
+     "metric": "Combined structures destroyed, January 2025 firestorm",
+     "value": "16,263",
+     "unit": "structures",
+     "period": "2025",
+     "source": "S21",
+     "status": "verified",
+     "note": "Derived from S21 plus S22 (6,845 + 9,418). Arithmetic on two verified figures."
+    },
+    {
+     "metric": "Value removed from the 2026 assessment roll for wildfire relief",
+     "value": "−9",
+     "unit": "USD billion",
+     "period": "2026 roll",
+     "source": "S25",
+     "status": "verified-secondary",
+     "note": "The fiscal channel by which fire transmits into the tax base."
+    },
+    {
+     "metric": "FEMA NRI hazard count modelled",
+     "value": "18",
+     "unit": "hazard types",
+     "period": "v1.20",
+     "source": "S23",
+     "status": "verified"
+    },
+    {
+     "metric": "FEMA NRI County composite score",
+     "value": null,
+     "unit": "index",
+     "period": "v1.20",
+     "source": "S23",
+     "status": "unverified",
+     "flag": "F-03",
+     "note": "Third-party sources report 100.0/100 with earthquake as the dominant hazard. Not retrievable from fema.gov this session."
+    },
+    {
+     "metric": "FEMA disaster declaration count for LA County",
+     "value": null,
+     "unit": "declarations",
+     "period": "1969–2025",
+     "source": "S23",
+     "status": "unverified",
+     "flag": "F-03",
+     "note": "Third-party sources report 88 declarations including 61 fire and 10 flood. The OpenFEMA filter returned an empty set — a query problem, not evidence of zero."
+    },
+    {
+     "metric": "USGS probability of M6.7+ in the Los Angeles region, 2014–2043",
+     "value": null,
+     "unit": "%",
+     "period": "UCERF3",
+     "source": "S29",
+     "status": "unverified",
+     "flag": "F-04",
+     "note": "Widely quoted as 60%, and 93% for Southern California. The USGS page returned 404 this session."
+    },
+    {
+     "metric": "Wildfire risk at the parcel",
+     "value": null,
+     "unit": "rating",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-03",
+     "note": "Depends on the parcel's fire hazard severity zone and its brush-clearance obligations. Not resolvable without the parcel."
+    },
+    {
+     "metric": "Flood zone at the parcel",
+     "value": null,
+     "unit": "FEMA zone",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-03",
+     "note": "Requires the parcel. Note that a QSR with a drive-through has impervious coverage that is itself a stormwater exposure."
+    },
+    {
+     "metric": "Seismic retrofit status of the building",
+     "value": null,
+     "unit": "text",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-03",
+     "note": "Soft-story or non-ductile concrete construction would create a mandatory capital event. Unknown."
+    }
+   ]
+  },
+  {
+   "id": "site",
+   "title": "Site-Specific Variables That Cannot Be Verified Without PII",
+   "why": "This section exists to be honest about what a decision-grade appraisal needs and what this study can and cannot supply under the privacy constraint. Every row is intentionally blank.",
+   "rows": [
+    {
+     "metric": "Parcel size",
+     "value": null,
+     "unit": "sq ft",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "Determines drive-through feasibility, redevelopment yield and parking compliance."
+    },
+    {
+     "metric": "Building area",
+     "value": null,
+     "unit": "sq ft",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01"
+    },
+    {
+     "metric": "Year built and year of last remodel",
+     "value": null,
+     "unit": "year",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "Drives roof, HVAC and ADA capital reserve."
+    },
+    {
+     "metric": "Current contract rent",
+     "value": null,
+     "unit": "USD/year",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "The single most important input to a NOI-based valuation. Absent."
+    },
+    {
+     "metric": "Rent escalation structure",
+     "value": null,
+     "unit": "%/year",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "Flat, CPI-linked or fixed bumps change the hold value materially."
+    },
+    {
+     "metric": "Renewal option terms and notice deadlines",
+     "value": null,
+     "unit": "text",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "Determines the true decision date, which may be earlier than the stated expiry window."
+    },
+    {
+     "metric": "Lease expiry, exact date",
+     "value": null,
+     "unit": "date",
+     "period": "2030–2035 window only",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "The user supplied a 2030–2035 range. The model spans both endpoints rather than picking one."
+    },
+    {
+     "metric": "Whether the lease is truly triple-net",
+     "value": null,
+     "unit": "text",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "'NNN' is often used loosely. A roof-and-structure cap, or a base-year expense stop, moves a large cost to the landlord."
+    },
+    {
+     "metric": "Guarantor structure",
+     "value": null,
+     "unit": "text",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "Franchisee entity versus corporate guarantee is the difference between a national credit and a small-business credit."
+    },
+    {
+     "metric": "Zoning and permitted use",
+     "value": null,
+     "unit": "text",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "Determines whether a drive-through survives a change of use — the key to residual value."
+    },
+    {
+     "metric": "Trade-area population within 1, 3 and 5 miles",
+     "value": null,
+     "unit": "persons",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "The correct demand measure, and the one thing county-level data cannot substitute for."
+    },
+    {
+     "metric": "Trade-area daypart traffic counts",
+     "value": null,
+     "unit": "vehicles/day",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "Caltrans and LADOT publish counts by segment; the segment requires the address."
+    },
+    {
+     "metric": "Unit-level sales and average unit volume",
+     "value": null,
+     "unit": "USD/year",
+     "period": "—",
+     "source": null,
+     "status": "unverified",
+     "flag": "F-01",
+     "note": "The tenant does not publish unit-level AUV. Percentage-rent exposure therefore cannot be quantified."
+    }
+   ]
+  }
+ ]
+}

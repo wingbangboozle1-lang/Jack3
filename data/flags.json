@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "title": "Flagged for Review — Irregularities and Unverified Items",
+    "compiled": "2026-11-06",
+    "policy": "Nothing on this page blocks publication. Each item states what was expected, what was found, what was done about it, and the exact URL to check by hand. Where a figure could not be confirmed it is left blank in the data tables rather than estimated.",
+    "counts": {"unverified": 6, "deliberate_omission": 1, "irregularity": 5, "conflict": 1, "total": 13}
+  },
+  "items": [
+    {
+      "id": "F-01",
+      "severity": "high",
+      "category": "Unverified — site specific",
+      "title": "The subject property cannot be verified, by design",
+      "detail": "Sixteen decision-critical inputs are unknown because supplying them would disclose personal information: parcel size, building area, year built, contract rent, escalation structure, renewal option terms and deadlines, exact expiry date, whether the lease is genuinely triple-net, guarantor structure, zoning, trade-area population at 1/3/5 miles, daypart traffic counts, unit-level sales, the owner's basis, capital gains bracket and outstanding debt. The user supplied only a 2030–2035 expiry window.",
+      "impact": "These inputs determine the asset's income and residual value. Their absence is the largest limitation of the study.",
+      "action_taken": "Every one is listed as a blank row on the Site-Specific Variables page with a flag. The model was rebuilt to be scale-invariant so that the sell-versus-renew ranking does not depend on them.",
+      "affects_conclusion": "No. The ranking is driven by tax treatment and remaining lease term, neither of which depends on the parcel.",
+      "check": null
+    },
+    {
+      "id": "F-02",
+      "severity": "medium",
+      "category": "Unverified — conflicting sources",
+      "title": "Los Angeles County 2030 and 2035 population projections",
+      "detail": "The official series is the California Department of Finance P-2A county total population file, Vintage 2026, released 13 March 2026. The workbook was not parsed during this build, so single-year county values for 2030 and 2035 remain blank. Two secondary sources disagree: 9,727,305 (The Basin, Aug 2026) and 9,867,515 (LA Almanac, undated, earlier vintage).",
+      "impact": "Low. Both sources and the official narrative agree the direction is decline; only the magnitude differs, and the model uses the official K-12 enrollment projection and the official 2040/2060 endpoints as its population signal.",
+      "action_taken": "Blanked in the tables. Modelled population drag (A17) is set at −0.25%/yr, well inside the range implied by either source.",
+      "affects_conclusion": "No.",
+      "check": "https://dof.ca.gov/forecasting/demographics/projections/"
+    },
+    {
+      "id": "F-03",
+      "severity": "medium",
+      "category": "Unverified — retrieval failure",
+      "title": "FEMA National Risk Index county score and disaster-declaration count",
+      "detail": "Several secondary sources state Los Angeles County has an NRI composite of 100.0/100 ('Very High', ranked first of California's 58 counties), with earthquake as the dominant hazard, and 88 federal disaster declarations since 1969. The FEMA NRI API path returned HTTP 404, and FEMA's own page states the standalone NRI application has been retired in favour of RAPT. An OpenFEMA DisasterDeclarationsSummaries filter on designatedArea returned an empty result set, which is a query artefact rather than evidence of zero declarations.",
+      "impact": "Moderate. The hazard direction is not in doubt — CAL FIRE's incident records and the assessment-roll wildfire relief both corroborate severe hazard — but the precise ranking cannot be cited.",
+      "action_taken": "Recorded as unverified and excluded from the data tables. Hazard conclusions rest on the CAL FIRE incident records (S21, S22) and the assessment roll (S25), both verified.",
+      "affects_conclusion": "No.",
+      "check": "https://www.fema.gov/flood-maps/products-tools/national-risk-index"
+    },
+    {
+      "id": "F-04",
+      "severity": "medium",
+      "category": "Unverified — retrieval failure",
+      "title": "USGS 30-year earthquake probabilities for the Los Angeles region",
+      "detail": "The UCERF3 figures most often quoted are 60% for M6.7+ in the Los Angeles region over 2014–2043, and 93% for Southern California. Multiple secondary outlets repeat them consistently, but a usgs.gov page carrying the figures returned HTTP 404 during this session.",
+      "impact": "Low for the decision. Earthquake risk is real and unhedged, but its probability does not distinguish between the seven strategies — it applies identically to all of them.",
+      "action_taken": "Excluded from the tables and stated here. The seismic scenario is described qualitatively with an explicit note that its probability is unverified.",
+      "affects_conclusion": "No.",
+      "check": "https://www.usgs.gov/programs/earthquake-hazards"
+    },
+    {
+      "id": "F-05",
+      "severity": "high",
+      "category": "Unverified — no official source exists",
+      "title": "Capitalisation rates and commercial property price indices for Los Angeles",
+      "detail": "No official government series publishes net-lease cap rates for single-tenant quick-service retail, and no official Los Angeles commercial repeat-sales index was retrieved. NCREIF and CoStar publish credible data but are subscription products and are excluded by this study's source rules.",
+      "impact": "High. The going-in cap rate is the single largest driver of every result.",
+      "action_taken": "The cap rate is declared as an explicit ASSUMPTION (A01, 5.75%, range 5.00–6.50%) built up from the verified 10-year Treasury plus a stated risk spread, not presented as a market observation. The sensitivity table shows it is the largest single swing factor. The user can replace it with an appraisal or broker opinion and the model recomputes.",
+      "affects_conclusion": "No — but it changes the magnitude of every number. See the sensitivity table.",
+      "check": null
+    },
+    {
+      "id": "F-06",
+      "severity": "high",
+      "category": "Unverified — personal financial data",
+      "title": "Owner's tax basis, marginal rates and property tax base year value",
+      "detail": "Not available by design. The owner's adjusted basis, holding period, recapture position, applicable federal and California marginal rates, and assessed base year value determine the entire cost of selling.",
+      "impact": "Very high on the sell-versus-hold comparison, low on the ranking of structures.",
+      "action_taken": "Exposed as scenario parameters (A10 basis at 40% of value, A11 blended tax at 33.4%) with published ranges of 15–80% and 23.8–37.1%. Sensitivity analysis reports the swing.",
+      "affects_conclusion": "No. Even at the most favourable basis for selling, the exchange structures dominate.",
+      "check": null
+    },
+    {
+      "id": "F-07",
+      "severity": "low",
+      "category": "Deliberate omission",
+      "title": "School-level academic performance is not evaluated",
+      "detail": "School quality was requested as a factor. County-level attainment data is available and is published (36.0% of adults hold a bachelor's degree or higher, S06). School-level performance requires a school catchment, which requires the address.",
+      "impact": "Low. School quality affects family formation, which is already measured directly by the official K-12 enrollment projection (S09).",
+      "action_taken": "The enrollment and attainment series are published. The school-performance row is blank with a flag rather than filled with a district-level proxy that would not be a verification of the requested fact.",
+      "affects_conclusion": "No.",
+      "check": "https://www.cde.ca.gov/ds/"
+    },
+    {
+      "id": "I-01",
+      "severity": "low",
+      "category": "Irregularity — source",
+      "title": "BLS reports a missing CPI observation",
+      "detail": "The BLS Public Data API returns the October 2025 CPI-U value as '-' with footnote code X: 'Data unavailable due to the 2025 lapse in appropriations'. This affects both the national (CUUR0000SA0) and Los Angeles (CUURS49ASA0) series.",
+      "impact": "Minimal. The model uses year-over-year comparisons anchored on September, which is unaffected.",
+      "action_taken": "Disclosed on the Macro page. No interpolation was performed.",
+      "affects_conclusion": "No.",
+      "check": "https://api.bls.gov/publicAPI/v1/timeseries/data/CUUR0000SA0"
+    },
+    {
+      "id": "I-02",
+      "severity": "medium",
+      "category": "Irregularity — statutory",
+      "title": "The City of Los Angeles transfer tax exceeds the Revenue and Taxation Code ceiling",
+      "detail": "RTC §11911(b) allows a city within a taxing county to impose one-half the county amount — $0.275 per $500. The City of Los Angeles imposes $2.25 per $500 (0.45%), roughly eight times that figure. This is consistent with charter-city authority rather than §11911(b), but the statute alone does not explain the rate.",
+      "impact": "The city tax is a real cost and is used in the model. The statutory basis should be confirmed before relying on an arithmetic estimate in negotiation.",
+      "action_taken": "Both the statute (S16) and the City's own FAQ (S17) are cited. The model uses the City's published 0.45%.",
+      "affects_conclusion": "No.",
+      "check": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=11911"
+    },
+    {
+      "id": "I-03",
+      "severity": "low",
+      "category": "Irregularity — source",
+      "title": "Two CAL FIRE figures for Eaton Fire fatalities",
+      "detail": "The CAL FIRE incident update of 27 January 2025 records 17 confirmed civilian fatalities. Later secondary reporting states 19. The official record read for this study states 17.",
+      "impact": "None on the analysis; the structure count, not the fatality count, is what matters for loss modelling.",
+      "action_taken": "The verified official figure (17) is used in the tables and the discrepancy is disclosed here.",
+      "affects_conclusion": "No.",
+      "check": "https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire/updates/262ba0be-593a-463c-94b1-a15d1e7f2a1e"
+    },
+    {
+      "id": "I-04",
+      "severity": "low",
+      "category": "Irregularity — presentation",
+      "title": "The 2026 assessment roll summary contains an internal error",
+      "detail": "The Assessor's roll announcement, as reproduced, states both '4.42% increase' and '42% increase over 2025 or an increase of $96 billion'. The $96 billion and the 4.42% are mutually consistent with a $2.272 trillion roll; '42%' is a typographical error in the distributed text.",
+      "impact": "None. The model uses only the 4.42% and the dollar components.",
+      "action_taken": "Only internally consistent figures are used. The error is noted so the reader is not confused by the same discrepancy in the press.",
+      "affects_conclusion": "No.",
+      "check": "https://assessor.lacounty.gov/news-information/assessmentroll"
+    },
+    {
+      "id": "I-05",
+      "severity": "low",
+      "category": "Irregularity — data",
+      "title": "US Census QuickFacts reports an internally inconsistent rent figure",
+      "detail": "The City of Los Angeles QuickFacts table and the county table both report median gross rent of $1,954 for 2020–2024. That is plausible for both, but the identical value across a city with 8,304 persons per square mile and a county averaging 2,467 is unusual.",
+      "impact": "None. Rent is used only as context, never as a model input.",
+      "action_taken": "Retained with a note. Not used in any calculation.",
+      "affects_conclusion": "No.",
+      "check": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224"
+    },
+    {
+      "id": "C-01",
+      "severity": "informational",
+      "category": "Conflict — rejected source",
+      "title": "Population projection conflict, rejected in favour of official direction",
+      "detail": "Two third-party reproductions of Department of Finance projections give 2030 Los Angeles County population as 9,727,305 and 9,867,515 — a 140,210 difference. Neither could be reconciled to the P-2A workbook in this session.",
+      "impact": "None on the model, which relies on the official K-12 enrollment projection and the official 2040/2060 endpoints instead.",
+      "action_taken": "Both rejected. See F-02.",
+      "affects_conclusion": "No.",
+      "check": null
+    }
+  ]
+}

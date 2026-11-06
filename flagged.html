@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for review · SP-01</title>
+<meta name="description" content="Decision support for SP-01, a single-tenant Jack in the Box net-lease asset in central Los Angeles. Official sources only.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SP<span>&#8209;01</span></span>
+      <span class="brand-txt">Decision file<small>Jack in the Box · NNN · central Los Angeles</small></span>
+    </a>
+    <nav class="nav" aria-label="Sections"><a href="index.html">Overview</a><a href="decision.html">Decision</a><a href="economy.html">Economy</a><a href="demographics.html">Demographics</a><a href="schools.html">Schools</a><a href="housing.html">Housing</a><a href="tenant.html">Tenant credit</a><a href="macro.html">Macro & tax</a><a href="risk.html">Risk & black swans</a><a href="projection.html">Projection model</a><a href="sources.html">Sources</a><a href="flagged.html" class="active">Flagged for review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <div class="page-head">
+    <h1>Flagged for review</h1>
+    <p class="sub">Everything that could not be verified, every source irregularity, and every conflict — with the link to check each one by hand.</p>
+  </div>
+  
+    <section class="callout warn">
+      <h2>13 items are flagged</h2>
+      <p>Nothing on this page blocks publication. Each item states what was expected, what was found, what was done about it, and the exact URL to check by hand. Where a figure could not be confirmed it is left blank in the data tables rather than estimated.</p>
+      <div class="flagcounts">
+        <div><span class="big">6</span> unverified</div>
+        <div><span class="big">5</span> irregularities</div>
+        <div><span class="big">1</span> source conflict</div>
+        <div><span class="big">1</span> deliberate omission</div>
+      </div>
+      <p><strong>None of these blocks the recommendation.</strong> Every one is disclosed so that you can
+      review it and ask for a change. Where a figure could not be confirmed it is blank in the tables,
+      never estimated.</p>
+    </section>
+    <section><h2>Method and privacy protocol</h2><p class="lede">How the verification standard works and how personal information was handled: <a href="method.html">read the method and privacy protocol &rarr;</a></p></section><section>
+      <div class="flags">
+        <article class="flagcard sev-high" id="F-01">
+          <div class="flaghead">
+            <span class="flagid">F-01</span>
+            <span class="flagsev">high</span>
+            <span class="flagcat">Unverified — site specific</span>
+          </div>
+          <h3>The subject property cannot be verified, by design</h3>
+          <p><strong>What was found.</strong> Sixteen decision-critical inputs are unknown because supplying them would disclose personal information: parcel size, building area, year built, contract rent, escalation structure, renewal option terms and deadlines, exact expiry date, whether the lease is genuinely triple-net, guarantor structure, zoning, trade-area population at 1/3/5 miles, daypart traffic counts, unit-level sales, the owner&#x27;s basis, capital gains bracket and outstanding debt. The user supplied only a 2030–2035 expiry window.</p>
+          <p><strong>Impact.</strong> These inputs determine the asset&#x27;s income and residual value. Their absence is the largest limitation of the study.</p>
+          <p><strong>What was done.</strong> Every one is listed as a blank row on the Site-Specific Variables page with a flag. The model was rebuilt to be scale-invariant so that the sell-versus-renew ranking does not depend on them.</p>
+          <p><strong>Does this affect the recommendation?</strong> No. The ranking is driven by tax treatment and remaining lease term, neither of which depends on the parcel.</p>
+          <p class="check muted">No single source URL resolves this item; it requires information not in the public record.</p>
+        </article>
+        <article class="flagcard sev-med" id="F-02">
+          <div class="flaghead">
+            <span class="flagid">F-02</span>
+            <span class="flagsev">medium</span>
+            <span class="flagcat">Unverified — conflicting sources</span>
+          </div>
+          <h3>Los Angeles County 2030 and 2035 population projections</h3>
+          <p><strong>What was found.</strong> The official series is the California Department of Finance P-2A county total population file, Vintage 2026, released 13 March 2026. The workbook was not parsed during this build, so single-year county values for 2030 and 2035 remain blank. Two secondary sources disagree: 9,727,305 (The Basin, Aug 2026) and 9,867,515 (LA Almanac, undated, earlier vintage).</p>
+          <p><strong>Impact.</strong> Low. Both sources and the official narrative agree the direction is decline; only the magnitude differs, and the model uses the official K-12 enrollment projection and the official 2040/2060 endpoints as its population signal.</p>
+          <p><strong>What was done.</strong> Blanked in the tables. Modelled population drag (A17) is set at −0.25%/yr, well inside the range implied by either source.</p>
+          <p><strong>Does this affect the recommendation?</strong> No.</p>
+          <p class="check"><a class="btn ghost" href="https://dof.ca.gov/forecasting/demographics/projections/" target="_blank" rel="noopener">Check this at the source &rarr;</a></p>
+        </article>
+        <article class="flagcard sev-med" id="F-03">
+          <div class="flaghead">
+            <span class="flagid">F-03</span>
+            <span class="flagsev">medium</span>
+            <span class="flagcat">Unverified — retrieval failure</span>
+          </div>
+          <h3>FEMA National Risk Index county score and disaster-declaration count</h3>
+          <p><strong>What was found.</strong> Several secondary sources state Los Angeles County has an NRI composite of 100.0/100 (&#x27;Very High&#x27;, ranked first of California&#x27;s 58 counties), with earthquake as the dominant hazard, and 88 federal disaster declarations since 1969. The FEMA NRI API path returned HTTP 404, and FEMA&#x27;s own page states the standalone NRI application has been retired in favour of RAPT. An OpenFEMA DisasterDeclarationsSummaries filter on designatedArea returned an empty result set, which is a query artefact rather than evidence of zero declarations.</p>
+          <p><strong>Impact.</strong> Moderate. The hazard direction is not in doubt — CAL FIRE&#x27;s incident records and the assessment-roll wildfire relief both corroborate severe hazard — but the precise ranking cannot be cited.</p>
+          <p><strong>What was done.</strong> Recorded as unverified and excluded from the data tables. Hazard conclusions rest on the CAL FIRE incident records (S21, S22) and the assessment roll (S25), both verified.</p>
+          <p><strong>Does this affect the recommendation?</strong> No.</p>
+          <p class="check"><a class="btn ghost" href="https://www.fema.gov/flood-maps/products-tools/national-risk-index" target="_blank" rel="noopener">Check this at the source &rarr;</a></p>
+        </article>
+        <article class="flagcard sev-med" id="F-04">
+          <div class="flaghead">
+            <span class="flagid">F-04</span>
+            <span class="flagsev">medium</span>
+            <span class="flagcat">Unverified — retrieval failure</span>
+          </div>
+          <h3>USGS 30-year earthquake probabilities for the Los Angeles region</h3>
+          <p><strong>What was found.</strong> The UCERF3 figures most often quoted are 60% for M6.7+ in the Los Angeles region over 2014–2043, and 93% for Southern California. Multiple secondary outlets repeat them consistently, but a usgs.gov page carrying the figures returned HTTP 404 during this session.</p>
+          <p><strong>Impact.</strong> Low for the decision. Earthquake risk is real and unhedged, but its probability does not distinguish between the seven strategies — it applies identically to all of them.</p>
+          <p><strong>What was done.</strong> Excluded from the tables and stated here. The seismic scenario is described qualitatively with an explicit note that its probability is unverified.</p>
+          <p><strong>Does this affect the recommendation?</strong> No.</p>
+          <p class="check"><a class="btn ghost" href="https://www.usgs.gov/programs/earthquake-hazards" target="_blank" rel="noopener">Check this at the source &rarr;</a></p>
+        </article>
+        <article class="flagcard sev-high" id="F-05">
+          <div class="flaghead">
+            <span class="flagid">F-05</span>
+            <span class="flagsev">high</span>
+            <span class="flagcat">Unverified — no official source exists</span>
+          </div>
+          <h3>Capitalisation rates and commercial property price indices for Los Angeles</h3>
+          <p><strong>What was found.</strong> No official government series publishes net-lease cap rates for single-tenant quick-service retail, and no official Los Angeles commercial repeat-sales index was retrieved. NCREIF and CoStar publish credible data but are subscription products and are excluded by this study&#x27;s source rules.</p>
+          <p><strong>Impact.</strong> High. The going-in cap rate is the single largest driver of every result.</p>
+          <p><strong>What was done.</strong> The cap rate is declared as an explicit ASSUMPTION (A01, 5.75%, range 5.00–6.50%) built up from the verified 10-year Treasury plus a stated risk spread, not presented as a market observation. The sensitivity table shows it is the largest single swing factor. The user can replace it with an appraisal or broker opinion and the model recomputes.</p>
+          <p><strong>Does this affect the recommendation?</strong> No — but it changes the magnitude of every number. See the sensitivity table.</p>
+          <p class="check muted">No single source URL resolves this item; it requires information not in the public record.</p>
+        </article>
+        <article class="flagcard sev-high" id="F-06">
+          <div class="flaghead">
+            <span class="flagid">F-06</span>
+            <span class="flagsev">high</span>
+            <span class="flagcat">Unverified — personal financial data</span>
+          </div>
+          <h3>Owner&#x27;s tax basis, marginal rates and property tax base year value</h3>
+          <p><strong>What was found.</strong> Not available by design. The owner&#x27;s adjusted basis, holding period, recapture position, applicable federal and California marginal rates, and assessed base year value determine the entire cost of selling.</p>
+          <p><strong>Impact.</strong> Very high on the sell-versus-hold comparison, low on the ranking of structures.</p>
+          <p><strong>What was done.</strong> Exposed as scenario parameters (A10 basis at 40% of value, A11 blended tax at 33.4%) with published ranges of 15–80% and 23.8–37.1%. Sensitivity analysis reports the swing.</p>
+          <p><strong>Does this affect the recommendation?</strong> No. Even at the most favourable basis for selling, the exchange structures dominate.</p>
+          <p class="check muted">No single source URL resolves this item; it requires information not in the public record.</p>
+        </article>
+        <article class="flagcard sev-low" id="F-07">
+          <div class="flaghead">
+            <span class="flagid">F-07</span>
+            <span class="flagsev">low</span>
+            <span class="flagcat">Deliberate omission</span>
+          </div>
+          <h3>School-level academic performance is not evaluated</h3>
+          <p><strong>What was found.</strong> School quality was requested as a factor. County-level attainment data is available and is published (36.0% of adults hold a bachelor&#x27;s degree or higher, S06). School-level performance requires a school catchment, which requires the address.</p>
+          <p><strong>Impact.</strong> Low. School quality affects family formation, which is already measured directly by the official K-12 enrollment projection (S09).</p>
+          <p><strong>What was done.</strong> The enrollment and attainment series are published. The school-performance row is blank with a flag rather than filled with a district-level proxy that would not be a verification of the requested fact.</p>
+          <p><strong>Does this affect the recommendation?</strong> No.</p>
+          <p class="check"><a class="btn ghost" href="https://www.cde.ca.gov/ds/" target="_blank" rel="noopener">Check this at the source &rarr;</a></p>
+        </article>
+        <article class="flagcard sev-low" id="I-01">
+          <div class="flaghead">
+            <span class="flagid">I-01</span>
+            <span class="flagsev">low</span>
+            <span class="flagcat">Irregularity — source</span>
+          </div>
+          <h3>BLS reports a missing CPI observation</h3>
+          <p><strong>What was found.</strong> The BLS Public Data API returns the October 2025 CPI-U value as &#x27;-&#x27; with footnote code X: &#x27;Data unavailable due to the 2025 lapse in appropriations&#x27;. This affects both the national (CUUR0000SA0) and Los Angeles (CUURS49ASA0) series.</p>
+          <p><strong>Impact.</strong> Minimal. The model uses year-over-year comparisons anchored on September, which is unaffected.</p>
+          <p><strong>What was done.</strong> Disclosed on the Macro page. No interpolation was performed.</p>
+          <p><strong>Does this affect the recommendation?</strong> No.</p>
+          <p class="check"><a class="btn ghost" href="https://api.bls.gov/publicAPI/v1/timeseries/data/CUUR0000SA0" target="_blank" rel="noopener">Check this at the source &rarr;</a></p>
+        </article>
+        <article class="flagcard sev-med" id="I-02">
+          <div class="flaghead">
+            <span class="flagid">I-02</span>
+            <span class="flagsev">medium</span>
+            <span class="flagcat">Irregularity — statutory</span>
+          </div>
+          <h3>The City of Los Angeles transfer tax exceeds the Revenue and Taxation Code ceiling</h3>
+          <p><strong>What was found.</strong> RTC §11911(b) allows a city within a taxing county to impose one-half the county amount — $0.275 per $500. The City of Los Angeles imposes $2.25 per $500 (0.45%), roughly eight times that figure. This is consistent with charter-city authority rather than §11911(b), but the statute alone does not explain the rate.</p>
+          <p><strong>Impact.</strong> The city tax is a real cost and is used in the model. The statutory basis should be confirmed before relying on an arithmetic estimate in negotiation.</p>
+          <p><strong>What was done.</strong> Both the statute (S16) and the City&#x27;s own FAQ (S17) are cited. The model uses the City&#x27;s published 0.45%.</p>
+          <p><strong>Does this affect the recommendation?</strong> No.</p>
+          <p class="check"><a class="btn ghost" href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&amp;sectionNum=11911" target="_blank" rel="noopener">Check this at the source &rarr;</a></p>
+        </article>
+        <article class="flagcard sev-low" id="I-03">
+          <div class="flaghead">
+            <span class="flagid">I-03</span>
+            <span class="flagsev">low</span>
+            <span class="flagcat">Irregularity — source</span>
+          </div>
+          <h3>Two CAL FIRE figures for Eaton Fire fatalities</h3>
+          <p><strong>What was found.</strong> The CAL FIRE incident update of 27 January 2025 records 17 confirmed civilian fatalities. Later secondary reporting states 19. The official record read for this study states 17.</p>
+          <p><strong>Impact.</strong> None on the analysis; the structure count, not the fatality count, is what matters for loss modelling.</p>
+          <p><strong>What was done.</strong> The verified official figure (17) is used in the tables and the discrepancy is disclosed here.</p>
+          <p><strong>Does this affect the recommendation?</strong> No.</p>
+          <p class="check"><a class="btn ghost" href="https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire/updates/262ba0be-593a-463c-94b1-a15d1e7f2a1e" target="_blank" rel="noopener">Check this at the source &rarr;</a></p>
+        </article>
+        <article class="flagcard sev-low" id="I-04">
+          <div class="flaghead">
+            <span class="flagid">I-04</span>
+            <span class="flagsev">low</span>
+            <span class="flagcat">Irregularity — presentation</span>
+          </div>
+          <h3>The 2026 assessment roll summary contains an internal error</h3>
+          <p><strong>What was found.</strong> The Assessor&#x27;s roll announcement, as reproduced, states both &#x27;4.42% increase&#x27; and &#x27;42% increase over 2025 or an increase of $96 billion&#x27;. The $96 billion and the 4.42% are mutually consistent with a $2.272 trillion roll; &#x27;42%&#x27; is a typographical error in the distributed text.</p>
+          <p><strong>Impact.</strong> None. The model uses only the 4.42% and the dollar components.</p>
+          <p><strong>What was done.</strong> Only internally consistent figures are used. The error is noted so the reader is not confused by the same discrepancy in the press.</p>
+          <p><strong>Does this affect the recommendation?</strong> No.</p>
+          <p class="check"><a class="btn ghost" href="https://assessor.lacounty.gov/news-information/assessmentroll" target="_blank" rel="noopener">Check this at the source &rarr;</a></p>
+        </article>
+        <article class="flagcard sev-low" id="I-05">
+          <div class="flaghead">
+            <span class="flagid">I-05</span>
+            <span class="flagsev">low</span>
+            <span class="flagcat">Irregularity — data</span>
+          </div>
+          <h3>US Census QuickFacts reports an internally inconsistent rent figure</h3>
+          <p><strong>What was found.</strong> The City of Los Angeles QuickFacts table and the county table both report median gross rent of $1,954 for 2020–2024. That is plausible for both, but the identical value across a city with 8,304 persons per square mile and a county averaging 2,467 is unusual.</p>
+          <p><strong>Impact.</strong> None. Rent is used only as context, never as a model input.</p>
+          <p><strong>What was done.</strong> Retained with a note. Not used in any calculation.</p>
+          <p><strong>Does this affect the recommendation?</strong> No.</p>
+          <p class="check"><a class="btn ghost" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" target="_blank" rel="noopener">Check this at the source &rarr;</a></p>
+        </article>
+        <article class="flagcard sev-info" id="C-01">
+          <div class="flaghead">
+            <span class="flagid">C-01</span>
+            <span class="flagsev">informational</span>
+            <span class="flagcat">Conflict — rejected source</span>
+          </div>
+          <h3>Population projection conflict, rejected in favour of official direction</h3>
+          <p><strong>What was found.</strong> Two third-party reproductions of Department of Finance projections give 2030 Los Angeles County population as 9,727,305 and 9,867,515 — a 140,210 difference. Neither could be reconciled to the P-2A workbook in this session.</p>
+          <p><strong>Impact.</strong> None on the model, which relies on the official K-12 enrollment projection and the official 2040/2060 endpoints instead.</p>
+          <p><strong>What was done.</strong> Both rejected. See F-02.</p>
+          <p><strong>Does this affect the recommendation?</strong> No.</p>
+          <p class="check muted">No single source URL resolves this item; it requires information not in the public record.</p>
+        </article></div>
+    </section>
+    
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p><strong>Privacy notice.</strong> This site contains no street address, parcel number, owner name,
+    tenant-unit identity, rent figure, lease date or personal financial data. The asset is referred to as
+    SP-01 throughout. All analysis is at county, city or metro granularity.</p>
+    <p><strong>Not advice.</strong> This is an analytical file prepared from public sources, not an appraisal,
+    a legal opinion or a tax opinion. Values marked <em>assumption</em> are modelling choices, not observations.
+    Verify every figure at the source link before acting.</p>
+    <p class="tiny">Compiled 2026-11-06 · 30 source records ·
+    10 data sections · <a href="flagged.html">13 items flagged for review</a></p>
+  </div>
+</footer>
+</body>
+</html>
