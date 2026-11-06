@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Property &amp; lease economics · Jack in the Box NNN · Central Los Angeles</title>
+<meta name="description" content="Proposition 13, 2026 assessment roll, transfer taxes, Measure ULA, value matrix and Section 1031 mechanics.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html"><span class="dot"></span>
+    <span>Jack in the Box NNN<small>Central Los Angeles · decision research</small></span></a>
+  <nav class="main">
+<a href="index.html">Dashboard</a>
+<a href="economy.html">Economy</a>
+<a href="tenant.html">Tenant</a>
+<a href="property.html" class="active">Property &amp; lease</a>
+<a href="risk.html">Risk</a>
+<a href="scenarios.html">Scenarios</a>
+<a href="decision.html">Decision</a>
+<a href="data.html">Master table</a>
+<a href="flagged.html">Flagged</a>
+<a href="sources.html">Sources</a>
+<a href="methodology.html">Method</a>
+  </nav>
+</div></header>
+<main><div class="wrap">
+
+<div class="page-head"><h1>Property, lease and transaction economics</h1><p class="lede">What the state and city charge on a sale, how Proposition 13 treats a held asset, and how value responds to net operating income and cap rate. No figure here is a valuation of [PROPERTY-A]: the rent and NOI are private and are listed as flags.</p><div class="toc"><a href="#tax">Property tax</a><a href="#transfer">Transfer taxes</a><a href="#ula">Measure ULA</a><a href="#value">Value matrix</a><a href="#lease">Lease economics</a><a href="#1031">Section 1031</a></div></div>
+
+<h2 id="tax">Property tax and Proposition 13</h2>
+<div class="tablewrap"><table class="">
+<thead><tr>
+<th>ID</th>
+<th>Indicator</th>
+<th class="num">Value</th>
+<th>Unit</th>
+<th>Period</th>
+<th>Geography</th>
+<th>Status</th>
+<th>Source</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><span class="mono">PROP-01</span></td>
+<td>2026 Assessment Roll, total net taxable value</td>
+<td class="num"><b class="mono">2.272</b></td>
+<td>USD trillion</td>
+<td>2026 roll (lien date 2026-01-01)</td>
+<td>Los Angeles County</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/" target="_blank" rel="noopener" title="Los Angeles County (Assessor) — LA County Property Values Surpass $2.2 Trillion — 2026 Assessment Roll (July 14, 2026)">S05</a></td>
+</tr>
+<tr>
+<td><span class="mono">PROP-02</span></td>
+<td>Assessment Roll change, year over year</td>
+<td class="num"><b class="mono">4.42</b></td>
+<td>%</td>
+<td>2025→2026</td>
+<td>Los Angeles County</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/" target="_blank" rel="noopener" title="Los Angeles County (Assessor) — LA County Property Values Surpass $2.2 Trillion — 2026 Assessment Roll (July 14, 2026)">S05</a></td>
+</tr>
+<tr>
+<td><span class="mono">PROP-03</span></td>
+<td>Assessment Roll increase, dollar</td>
+<td class="num"><b class="mono">96</b></td>
+<td>USD billion</td>
+<td>2026 roll</td>
+<td>Los Angeles County</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/" target="_blank" rel="noopener" title="Los Angeles County (Assessor) — LA County Property Values Surpass $2.2 Trillion — 2026 Assessment Roll (July 14, 2026)">S05</a></td>
+</tr>
+<tr>
+<td><span class="mono">PROP-04</span></td>
+<td>Taxable real property parcels</td>
+<td class="num"><b class="mono">2,399,978</b></td>
+<td>parcels</td>
+<td>2026 roll</td>
+<td>Los Angeles County</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/" target="_blank" rel="noopener" title="Los Angeles County (Assessor) — LA County Property Values Surpass $2.2 Trillion — 2026 Assessment Roll (July 14, 2026)">S05</a></td>
+</tr>
+<tr>
+<td><span class="mono">PROP-05</span></td>
+<td>Median single-family home sales price</td>
+<td class="num"><b class="mono">982,000</b></td>
+<td>USD</td>
+<td>2026 roll</td>
+<td>Los Angeles County</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/" target="_blank" rel="noopener" title="Los Angeles County (Assessor) — LA County Property Values Surpass $2.2 Trillion — 2026 Assessment Roll (July 14, 2026)">S05</a></td>
+</tr>
+<tr>
+<td><span class="mono">PROP-06</span></td>
+<td>Consecutive years of Assessment Roll growth</td>
+<td class="num"><b class="mono">16</b></td>
+<td>years</td>
+<td>through 2026</td>
+<td>Los Angeles County</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/" target="_blank" rel="noopener" title="Los Angeles County (Assessor) — LA County Property Values Surpass $2.2 Trillion — 2026 Assessment Roll (July 14, 2026)">S05</a></td>
+</tr>
+<tr>
+<td><span class="mono">PROP-07</span></td>
+<td>Property tax revenue generated</td>
+<td class="num"><b class="mono">27</b></td>
+<td>USD billion (more than)</td>
+<td>2026 roll</td>
+<td>Los Angeles County</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/" target="_blank" rel="noopener" title="Los Angeles County (Assessor) — LA County Property Values Surpass $2.2 Trillion — 2026 Assessment Roll (July 14, 2026)">S05</a></td>
+</tr>
+<tr>
+<td><span class="mono">PROP-08</span></td>
+<td>Proposition 13 maximum annual assessed-value inflation adjustment</td>
+<td class="num"><b class="mono">2</b></td>
+<td>%</td>
+<td>current law</td>
+<td>California</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/" target="_blank" rel="noopener" title="Los Angeles County (Assessor) — LA County Property Values Surpass $2.2 Trillion — 2026 Assessment Roll (July 14, 2026)">S05</a></td>
+</tr>
+<tr>
+<td><span class="mono">TAX-01</span></td>
+<td>County documentary transfer tax</td>
+<td class="num"><b class="mono">1.10</b></td>
+<td>USD per 1,000 of value</td>
+<td>current</td>
+<td>Los Angeles County</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info" target="_blank" rel="noopener" title="LA County Registrar-Recorder/County Clerk — Documentary Transfer Tax (county and city rates)">S14</a></td>
+</tr>
+<tr>
+<td><span class="mono">TAX-02</span></td>
+<td>Additional City of Los Angeles documentary transfer tax</td>
+<td class="num"><b class="mono">4.50</b></td>
+<td>USD per 1,000 of value</td>
+<td>current</td>
+<td>Los Angeles city</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info" target="_blank" rel="noopener" title="LA County Registrar-Recorder/County Clerk — Documentary Transfer Tax (county and city rates)">S14</a></td>
+</tr>
+<tr>
+<td><span class="mono">TAX-03</span></td>
+<td>Combined base transfer tax rate</td>
+<td class="num"><b class="mono">0.56</b></td>
+<td>% of price</td>
+<td>current</td>
+<td>Los Angeles city</td>
+<td><span class="badge c">Calculated</span></td>
+<td><a href="https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info" target="_blank" rel="noopener" title="LA County Registrar-Recorder/County Clerk — Documentary Transfer Tax (county and city rates)">S14</a></td>
+</tr>
+<tr>
+<td><span class="mono">TAX-04</span></td>
+<td>Measure ULA surtax — tier 1</td>
+<td class="num"><b class="mono">4</b></td>
+<td>% of full sale price</td>
+<td>closings after 2026-06-30</td>
+<td>Los Angeles city</td>
+<td><span class="badge f">Unverified</span></td>
+<td><a href="https://finance.lacity.gov/" target="_blank" rel="noopener" title="City of Los Angeles — Office of Finance (domain) — Office of Finance (Measure ULA rate table; landing domain)">S28</a></td>
+</tr>
+<tr>
+<td><span class="mono">TAX-05</span></td>
+<td>Measure ULA surtax — tier 2</td>
+<td class="num"><b class="mono">5.5</b></td>
+<td>% of full sale price</td>
+<td>closings after 2026-06-30</td>
+<td>Los Angeles city</td>
+<td><span class="badge f">Unverified</span></td>
+<td><a href="https://finance.lacity.gov/" target="_blank" rel="noopener" title="City of Los Angeles — Office of Finance (domain) — Office of Finance (Measure ULA rate table; landing domain)">S28</a></td>
+</tr>
+<tr>
+<td><span class="mono">TAX-06</span></td>
+<td>Section 1031 identification period</td>
+<td class="num"><b class="mono">45</b></td>
+<td>days</td>
+<td>current law</td>
+<td>United States</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://www.irs.gov/newsroom/like-kind-exchanges-under-irc-code-section-1031" target="_blank" rel="noopener" title="Internal Revenue Service — Like-Kind Exchanges Under IRC Section 1031 (FS-2008-18; archival, current guidance referenced)">S15</a></td>
+</tr>
+<tr>
+<td><span class="mono">TAX-07</span></td>
+<td>Section 1031 exchange completion period</td>
+<td class="num"><b class="mono">180</b></td>
+<td>days</td>
+<td>current law</td>
+<td>United States</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://www.irs.gov/newsroom/like-kind-exchanges-under-irc-code-section-1031" target="_blank" rel="noopener" title="Internal Revenue Service — Like-Kind Exchanges Under IRC Section 1031 (FS-2008-18; archival, current guidance referenced)">S15</a></td>
+</tr>
+<tr>
+<td><span class="mono">TAX-08</span></td>
+<td>Maximum rate on unrecaptured Section 1250 gain</td>
+<td class="num"><b class="mono">25</b></td>
+<td>%</td>
+<td>current law</td>
+<td>United States</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Internal Revenue Service — Topic No. 409 — Capital Gains and Losses (incl. 25% max on unrecaptured §1250 gain)">S16</a></td>
+</tr>
+<tr>
+<td><span class="mono">TAX-09</span></td>
+<td>Maximum long-term capital gains rate on real property gain</td>
+<td class="num"><b class="mono">20</b></td>
+<td>%</td>
+<td>current law</td>
+<td>United States</td>
+<td><span class="badge v">Verified</span></td>
+<td><a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Internal Revenue Service — Topic No. 409 — Capital Gains and Losses (incl. 25% max on unrecaptured §1250 gain)">S16</a></td>
+</tr>
+</tbody></table></div>
+
+<h2 id="transfer">Transfer taxes and the cost of a sale</h2>
+<p>In the City of Los Angeles the documentary transfer tax is the county rate of <b>$1.10 per $1,000</b> plus a city rate of
+<b>$4.50 per $1,000</b>, a combined <b>0.56%</b> of price (<a href="https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info" target="_blank" rel="noopener" title="LA County Registrar-Recorder/County Clerk — Documentary Transfer Tax (county and city rates)">S14</a>). Add roughly 3% brokerage and 1% legal and
+closing, and a sale costs about <b>4.5% of price</b> before any Measure ULA surtax and before tax on the gain.</p>
+
+<h2 id="ula">The Measure ULA cliff</h2>
+<p>Measure ULA applies only inside the City of Los Angeles and only above a price threshold. Because the threshold is indexed
+every 1 July, the rate table must be re-confirmed for the closing date — which is why the two ULA rows in the dataset are
+marked unverified (see <a href="flagged.html#F-01">flag F-01</a>).</p>
+<div class="tablewrap"><table class="">
+<thead><tr>
+<th>ID</th>
+<th>Indicator</th>
+<th class="num">Value</th>
+<th>Unit</th>
+<th>Period</th>
+<th>Geography</th>
+<th>Status</th>
+<th>Source</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><span class="mono">TAX-04</span></td>
+<td>Measure ULA surtax — tier 1</td>
+<td class="num"><b class="mono">4</b></td>
+<td>% of full sale price</td>
+<td>closings after 2026-06-30</td>
+<td>Los Angeles city</td>
+<td><span class="badge f">Unverified</span></td>
+<td><a href="https://finance.lacity.gov/" target="_blank" rel="noopener" title="City of Los Angeles — Office of Finance (domain) — Office of Finance (Measure ULA rate table; landing domain)">S28</a></td>
+</tr>
+<tr>
+<td><span class="mono">TAX-05</span></td>
+<td>Measure ULA surtax — tier 2</td>
+<td class="num"><b class="mono">5.5</b></td>
+<td>% of full sale price</td>
+<td>closings after 2026-06-30</td>
+<td>Los Angeles city</td>
+<td><span class="badge f">Unverified</span></td>
+<td><a href="https://finance.lacity.gov/" target="_blank" rel="noopener" title="City of Los Angeles — Office of Finance (domain) — Office of Finance (Measure ULA rate table; landing domain)">S28</a></td>
+</tr>
+</tbody></table></div>
+<p><b>Why it matters:</b> the tax applies to the <i>entire</i> price once the threshold is crossed, not to the excess. A sale at
+$5.40 million pays nothing; a sale at $5.41 million pays roughly $216,400. That is a genuine cliff, and it is worth
+engineering the price or the timing around it.</p>
+<div class="tablewrap"><table class="">
+<thead><tr>
+<th>Price</th>
+<th class="num">Base transfer tax (0.56%)</th>
+<th class="num">Measure ULA</th>
+<th class="num">Total transfer cost</th>
+<th class="num">% of price</th>
+<th class="num">Net before mortgage & other costs</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$4,000,000</td>
+<td class="num">$22,400</td>
+<td class="num">$0</td>
+<td class="num">$22,400</td>
+<td class="num">0.560%</td>
+<td class="num">$3,977,600</td>
+</tr>
+<tr>
+<td>$5,000,000</td>
+<td class="num">$28,000</td>
+<td class="num">$0</td>
+<td class="num">$28,000</td>
+<td class="num">0.560%</td>
+<td class="num">$4,972,000</td>
+</tr>
+<tr>
+<td>$5,200,000</td>
+<td class="num">$29,120</td>
+<td class="num">$0</td>
+<td class="num">$29,120</td>
+<td class="num">0.560%</td>
+<td class="num">$5,170,880</td>
+</tr>
+<tr>
+<td>$5,390,000</td>
+<td class="num">$30,184</td>
+<td class="num">$0</td>
+<td class="num">$30,184</td>
+<td class="num">0.560%</td>
+<td class="num">$5,359,816</td>
+</tr>
+<tr>
+<td>$5,400,000</td>
+<td class="num">$30,240</td>
+<td class="num">$0</td>
+<td class="num">$30,240</td>
+<td class="num">0.560%</td>
+<td class="num">$5,369,760</td>
+</tr>
+<tr>
+<td>$5,500,000</td>
+<td class="num">$30,800</td>
+<td class="num">$220,000</td>
+<td class="num">$250,800</td>
+<td class="num">4.560%</td>
+<td class="num">$5,249,200</td>
+</tr>
+<tr>
+<td>$6,000,000</td>
+<td class="num">$33,600</td>
+<td class="num">$240,000</td>
+<td class="num">$273,600</td>
+<td class="num">4.560%</td>
+<td class="num">$5,726,400</td>
+</tr>
+<tr>
+<td>$8,000,000</td>
+<td class="num">$44,800</td>
+<td class="num">$320,000</td>
+<td class="num">$364,800</td>
+<td class="num">4.560%</td>
+<td class="num">$7,635,200</td>
+</tr>
+<tr>
+<td>$10,500,000</td>
+<td class="num">$58,800</td>
+<td class="num">$420,000</td>
+<td class="num">$478,800</td>
+<td class="num">4.560%</td>
+<td class="num">$10,021,200</td>
+</tr>
+<tr>
+<td>$10,900,000</td>
+<td class="num">$61,040</td>
+<td class="num">$436,000</td>
+<td class="num">$497,040</td>
+<td class="num">4.560%</td>
+<td class="num">$10,402,960</td>
+</tr>
+<tr>
+<td>$11,000,000</td>
+<td class="num">$61,600</td>
+<td class="num">$605,000</td>
+<td class="num">$666,600</td>
+<td class="num">6.060%</td>
+<td class="num">$10,333,400</td>
+</tr>
+<tr>
+<td>$15,000,000</td>
+<td class="num">$84,000</td>
+<td class="num">$825,000</td>
+<td class="num">$909,000</td>
+<td class="num">6.060%</td>
+<td class="num">$14,091,000</td>
+</tr>
+</tbody></table></div>
+<p class="caption">Arithmetic on the disclosed rates in the dataset. ULA at 4% above $5.4m and 5.5% above $10.9m; shown as flagged because the City page could not be read directly (F-01).</p>
+
+<h2 id="value">Value matrix: what each dollar of NOI is worth</h2>
+<p>Value = NOI ÷ cap rate. The table is deliberately expressed so that it can be used the moment the real rent is known.
+Read down a column to see what happens if cap rates move; read across a row to compare income levels.</p>
+<div class="tablewrap"><table class="">
+<thead><tr>
+<th>Cap rate</th>
+<th class="num">Value per $100k NOI</th>
+<th class="num">NOI $120k</th>
+<th class="num">NOI $180k</th>
+<th class="num">NOI $240k</th>
+<th class="num">NOI $400k</th>
+<th class="num">NOI $700k</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>5.50%</td>
+<td class="num">$1,818,182</td>
+<td class="num">$2,181,818</td>
+<td class="num">$3,272,727</td>
+<td class="num">$4,363,636</td>
+<td class="num">$7,272,727</td>
+<td class="num">$12,727,273</td>
+</tr>
+<tr>
+<td>5.75%</td>
+<td class="num">$1,739,130</td>
+<td class="num">$2,086,957</td>
+<td class="num">$3,130,435</td>
+<td class="num">$4,173,913</td>
+<td class="num">$6,956,522</td>
+<td class="num">$12,173,913</td>
+</tr>
+<tr>
+<td>6.00%</td>
+<td class="num">$1,666,667</td>
+<td class="num">$2,000,000</td>
+<td class="num">$3,000,000</td>
+<td class="num">$4,000,000</td>
+<td class="num">$6,666,667</td>
+<td class="num">$11,666,667</td>
+</tr>
+<tr>
+<td>6.25%</td>
+<td class="num">$1,600,000</td>
+<td class="num">$1,920,000</td>
+<td class="num">$2,880,000</td>
+<td class="num">$3,840,000</td>
+<td class="num">$6,400,000</td>
+<td class="num">$11,200,000</td>
+</tr>
+<tr>
+<td>6.50%</td>
+<td class="num">$1,538,462</td>
+<td class="num">$1,846,154</td>
+<td class="num">$2,769,231</td>
+<td class="num">$3,692,308</td>
+<td class="num">$6,153,846</td>
+<td class="num">$10,769,231</td>
+</tr>
+<tr>
+<td>6.75%</td>
+<td class="num">$1,481,481</td>
+<td class="num">$1,777,778</td>
+<td class="num">$2,666,667</td>
+<td class="num">$3,555,556</td>
+<td class="num">$5,925,926</td>
+<td class="num">$10,370,370</td>
+</tr>
+<tr>
+<td>7.00%</td>
+<td class="num">$1,428,571</td>
+<td class="num">$1,714,286</td>
+<td class="num">$2,571,429</td>
+<td class="num">$3,428,571</td>
+<td class="num">$5,714,286</td>
+<td class="num">$10,000,000</td>
+</tr>
+<tr>
+<td>7.25%</td>
+<td class="num">$1,379,310</td>
+<td class="num">$1,655,172</td>
+<td class="num">$2,482,759</td>
+<td class="num">$3,310,345</td>
+<td class="num">$5,517,241</td>
+<td class="num">$9,655,172</td>
+</tr>
+<tr>
+<td>7.50%</td>
+<td class="num">$1,333,333</td>
+<td class="num">$1,600,000</td>
+<td class="num">$2,400,000</td>
+<td class="num">$3,200,000</td>
+<td class="num">$5,333,333</td>
+<td class="num">$9,333,333</td>
+</tr>
+<tr>
+<td>7.75%</td>
+<td class="num">$1,290,323</td>
+<td class="num">$1,548,387</td>
+<td class="num">$2,322,581</td>
+<td class="num">$3,096,774</td>
+<td class="num">$5,161,290</td>
+<td class="num">$9,032,258</td>
+</tr>
+<tr>
+<td>8.00%</td>
+<td class="num">$1,250,000</td>
+<td class="num">$1,500,000</td>
+<td class="num">$2,250,000</td>
+<td class="num">$3,000,000</td>
+<td class="num">$5,000,000</td>
+<td class="num">$8,750,000</td>
+</tr>
+<tr>
+<td>8.25%</td>
+<td class="num">$1,212,121</td>
+<td class="num">$1,454,545</td>
+<td class="num">$2,181,818</td>
+<td class="num">$2,909,091</td>
+<td class="num">$4,848,485</td>
+<td class="num">$8,484,848</td>
+</tr>
+<tr>
+<td>8.50%</td>
+<td class="num">$1,176,471</td>
+<td class="num">$1,411,765</td>
+<td class="num">$2,117,647</td>
+<td class="num">$2,823,529</td>
+<td class="num">$4,705,882</td>
+<td class="num">$8,235,294</td>
+</tr>
+</tbody></table></div>
+<p class="caption">Pure arithmetic. The NOI levels are illustrative bands, not estimates of [PROPERTY-A]'s income.</p>
+<div class="note warn">
+<b>Do not read any of these as a valuation.</b> The actual NOI, the actual rent and the actual lease terms are unknown
+(flag F-06). These numbers exist so that the owner can drop in the real figure and immediately see the consequence.
+</div>
+
+<h2 id="lease">Lease economics under a triple-net structure</h2>
+<div class="grid c2">
+<div class="card"><h3>What NNN does for the owner</h3>
+<ul>
+<li>The tenant pays property tax, insurance and maintenance, so the owner's cash flow is close to net.</li>
+<li>The owner is therefore exposed to <b>credit risk, not operating risk</b> — which is why the tenant's trajectory above
+matters more than the building's condition.</li>
+<li>At expiry all of that reverts to the owner. A roof, parking lot, HVAC and signage package can easily absorb 12–24 months
+of net income.</li>
+</ul></div>
+<div class="card"><h3>What the model assumes, and why</h3>
+<ul>
+<li><b>2% of NOI a year</b> held back as a structural reserve, even under NNN, because the reserve is needed the day the
+tenant leaves.</li>
+<li><b>4.5% sale cost</b>: 3.0% brokerage, 0.56% transfer, about 0.94% legal and closing. ULA is added only when the price
+crosses the threshold.</li>
+<li><b>2.5% rent growth</b>, between a 2% fixed bump and a 10%-every-five-years structure amortised.</li>
+</ul></div>
+</div>
+
+<h2 id="1031">Section 1031 and the tax deferral option</h2>
+<p>A like-kind exchange defers gain, it does not eliminate it: the taxpayer must identify replacement property in writing within
+<b>45 days</b> and close within <b>180 days</b> (<a href="https://www.irs.gov/newsroom/like-kind-exchanges-under-irc-code-section-1031" target="_blank" rel="noopener" title="Internal Revenue Service — Like-Kind Exchanges Under IRC Section 1031 (FS-2008-18; archival, current guidance referenced)">S15</a>). Unrecaptured Section 1250 gain is taxed at up to
+<b>25%</b> and long-term capital gain on real property at up to <b>20%</b>, before any state tax (<a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Internal Revenue Service — Topic No. 409 — Capital Gains and Losses (incl. 25% max on unrecaptured §1250 gain)">S16</a>). A 1031
+exchange preserves the deferred gain inside the replacement asset, so the comparison on the
+<a href="scenarios.html">Scenarios</a> page is run pre-tax, with the after-tax illustration shown separately and labelled.</p>
+<div class="note bad">
+<b>The binding constraint on selling is not the market — it is the tax and friction.</b> An owner with a low basis who sells
+without exchanging can lose 15–25% of the price to tax on top of 4.5% in fees. Any sell decision has to be made jointly
+with a CPA, not after the fact.
+</div>
+
+</div></main>
+<footer class="site"><div class="wrap">
+  <div><b>Privacy:</b> the parcel is anonymised as [PROPERTY-A]; owner, franchisee and all personal information are withheld.</div>
+  <div>Compiled 2026-11-06 · sources verified 2026-11-06 · <a href="methodology.html">method &amp; limitations</a></div>
+</div></footer>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

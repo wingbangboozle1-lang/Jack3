@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "project": "Jack in the Box NNN — Central Los Angeles — Lease Expiry 2030–2035",
+    "compiled": "2026-11-06",
+    "privacy": "Address, owner identity, parcel number, tenant franchisee identity and all personal information are withheld. Placeholders [PROPERTY-A], [OWNER-1], [FRANCHISEE-1] are used throughout.",
+    "tier_definitions": {
+      "1": "Official government / statutory source (federal, state, county, municipal) — highest reliability.",
+      "2": "Primary issuer or organizer disclosure (SEC filings, official games organizer) — legally accountable, audited or filed.",
+      "3": "Industry research or broker market data — not government; used only for market context and labels as indicative."
+    }
+  },
+  "sources": [
+    {"id": "S01", "tier": 1, "publisher": "U.S. Bureau of Labor Statistics", "name": "Economy at a Glance — Los Angeles-Long Beach-Anaheim, CA (data extracted 2026-11-05)", "url": "https://www.bls.gov/eag/eag.ca_losangeles_msa.htm", "accessed": "2026-11-06"},
+    {"id": "S02", "tier": 1, "publisher": "U.S. Census Bureau", "name": "QuickFacts — Los Angeles County, California (ACS 2020-2024; Population Estimates V2025)", "url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045224", "accessed": "2026-11-06"},
+    {"id": "S03", "tier": 1, "publisher": "U.S. Census Bureau", "name": "QuickFacts — Los Angeles city, California (ACS 2020-2024)", "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224", "accessed": "2026-11-06"},
+    {"id": "S04", "tier": 1, "publisher": "Federal Reserve Board via FRED (St. Louis Fed)", "name": "H.15 — 10-Year Treasury Constant Maturity (DGS10)", "url": "https://fred.stlouisfed.org/series/DGS10", "accessed": "2026-11-06"},
+    {"id": "S05", "tier": 1, "publisher": "Los Angeles County (Assessor)", "name": "LA County Property Values Surpass $2.2 Trillion — 2026 Assessment Roll (July 14, 2026)", "url": "https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/", "accessed": "2026-11-06"},
+    {"id": "S06", "tier": 1, "publisher": "Los Angeles County Assessor", "name": "Assessment Roll portal", "url": "https://assessor.lacounty.gov/news-information/assessmentroll", "accessed": "2026-11-06"},
+    {"id": "S07", "tier": 1, "publisher": "U.S. Geological Survey / California Geological Survey", "name": "The ShakeOut Scenario, USGS Open-File Report 2008-1150", "url": "https://pubs.usgs.gov/of/2008/1150/", "accessed": "2026-11-06"},
+    {"id": "S08", "tier": 1, "publisher": "CAL FIRE — Office of the State Fire Marshal", "name": "Fire Hazard Severity Zones (SRA and Local Responsibility Area)", "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones", "accessed": "2026-11-06"},
+    {"id": "S09", "tier": 1, "publisher": "California Department of Education", "name": "2024–25 End-of-Year Reports (graduation, absenteeism, suspension)", "url": "https://www.cde.ca.gov/ds/cm/dqeoy25.asp", "accessed": "2026-11-06"},
+    {"id": "S10", "tier": 1, "publisher": "California School Dashboard (CDE)", "name": "Los Angeles Unified — Academic Engagement / Graduation Rate 2025", "url": "https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement", "accessed": "2026-11-06"},
+    {"id": "S11", "tier": 1, "publisher": "California Department of Industrial Relations", "name": "Fast Food Minimum Wage FAQ (AB 1228)", "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm", "accessed": "2026-11-06"},
+    {"id": "S12", "tier": 1, "publisher": "California Department of Industrial Relations", "name": "Minimum Wage FAQ — state rate effective January 1, 2026", "url": "https://www.dir.ca.gov/dlse/faq_minimumwage.htm", "accessed": "2026-11-06"},
+    {"id": "S13", "tier": 1, "publisher": "City of Los Angeles — Office of Wage Standards", "name": "Minimum Wage & Paid Sick Leave — rate effective July 1, 2026", "url": "https://wagesla.lacity.gov/", "accessed": "2026-11-06"},
+    {"id": "S14", "tier": 1, "publisher": "LA County Registrar-Recorder/County Clerk", "name": "Documentary Transfer Tax (county and city rates)", "url": "https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info", "accessed": "2026-11-06"},
+    {"id": "S15", "tier": 1, "publisher": "Internal Revenue Service", "name": "Like-Kind Exchanges Under IRC Section 1031 (FS-2008-18; archival, current guidance referenced)", "url": "https://www.irs.gov/newsroom/like-kind-exchanges-under-irc-code-section-1031", "accessed": "2026-11-06"},
+    {"id": "S16", "tier": 1, "publisher": "Internal Revenue Service", "name": "Topic No. 409 — Capital Gains and Losses (incl. 25% max on unrecaptured §1250 gain)", "url": "https://www.irs.gov/taxtopics/tc409", "accessed": "2026-11-06"},
+    {"id": "S17", "tier": 1, "publisher": "California Secretary of State", "name": "Qualified Statewide Ballot Measures — November 3, 2026", "url": "https://www.sos.ca.gov/elections/ballot-measures/qualified-ballot-measures", "accessed": "2026-11-06"},
+    {"id": "S18", "tier": 1, "publisher": "California Secretary of State", "name": "Official Voter Information Guide — Proposition 40 (one-time wealth tax, assets over $1B)", "url": "https://voterguide.sos.ca.gov/propositions/40/index.htm", "accessed": "2026-11-06"},
+    {"id": "S19", "tier": 1, "publisher": "County of Los Angeles", "name": "Eaton and Palisades Fires — Anniversary Fact Sheet (PDF)", "url": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf", "accessed": "2026-11-06"},
+    {"id": "S20", "tier": 1, "publisher": "Congressional Research Service (via congress.gov)", "name": "January 2025 Los Angeles County Wildfires, IF12871", "url": "https://www.congress.gov/crs-product/IF12871", "accessed": "2026-11-06"},
+    {"id": "S21", "tier": 2, "publisher": "Jack in the Box Inc. (SEC EDGAR)", "name": "Form 10-K for fiscal year ended September 28, 2025", "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm", "accessed": "2026-11-06"},
+    {"id": "S22", "tier": 2, "publisher": "Jack in the Box Inc. (SEC EDGAR, Exhibit 99.1)", "name": "Q4 and Full-Year Fiscal 2025 Earnings Release (November 19, 2025)", "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm", "accessed": "2026-11-06"},
+    {"id": "S23", "tier": 2, "publisher": "LA28 Organizing Committee", "name": "Official LA28 Olympic and Paralympic Games ticket information (Games dates)", "url": "https://tickets.la28.org/", "accessed": "2026-11-06"},
+    {"id": "S24", "tier": 3, "publisher": "The Boulder Group", "name": "Q3 2026 Net Lease Research Report (PDF)", "url": "https://www.bouldergroup.com/media/pdf/2026-Q3-Net-Lease-Research-Report.pdf", "accessed": "2026-11-06"},
+    {"id": "S25", "tier": 3, "publisher": "The Boulder Group", "name": "Q3 2026 Net Lease Tenant Profiles (PDF)", "url": "https://www.bouldergroup.com/media/pdf/NetLeaseProfile26Q3.pdf", "accessed": "2026-11-06"},
+    {"id": "S26", "tier": 3, "publisher": "Boulder Group research library", "name": "Net Lease Research index (report landing page)", "url": "https://www.bouldergroup.com/research.html", "accessed": "2026-11-06"},
+    {"id": "S27", "tier": 3, "publisher": "Seyfarth Shaw LLP", "name": "Measure ULA Remains in Effect as Reform Efforts Shift (Oct 2, 2026)", "url": "https://www.seyfarth.com/news-insights/measure-ula-remains-in-effect-as-reform-efforts-shift.html", "accessed": "2026-11-06"},
+    {"id": "S28", "tier": 3, "publisher": "City of Los Angeles — Office of Finance (domain)", "name": "Office of Finance (Measure ULA rate table; landing domain)", "url": "https://finance.lacity.gov/", "accessed": "2026-11-06"}
+  ]
+}

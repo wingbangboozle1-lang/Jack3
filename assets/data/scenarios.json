@@ -1,0 +1,593 @@
+{
+  "assumptions": {
+    "noi_levels": [
+      120000,
+      180000,
+      240000,
+      400000,
+      700000
+    ],
+    "cap_entry": 0.065,
+    "rent_growth": 0.025,
+    "hold_years": 7,
+    "cap_exit": 0.0675,
+    "sale_cost": 0.045,
+    "reserve": 0.02,
+    "reinvest_cap": 0.0687,
+    "reinvest_growth": 0.02,
+    "reinvest_exit_cap": 0.07,
+    "ula_low_threshold": 5400000,
+    "ula_high_threshold": 10900000,
+    "ula_low_rate": 0.04,
+    "ula_high_rate": 0.055,
+    "transfer_tax_rate": 0.0056
+  },
+  "generated": "2026-11-06",
+  "value_matrix": {
+    "caps": [
+      0.055,
+      0.0575,
+      0.06,
+      0.0625,
+      0.065,
+      0.0675,
+      0.07,
+      0.0725,
+      0.075,
+      0.0775,
+      0.08,
+      0.0825,
+      0.085
+    ],
+    "noi_levels": [
+      120000,
+      180000,
+      240000,
+      400000,
+      700000
+    ],
+    "values": [
+      [
+        2181818,
+        2086957,
+        2000000,
+        1920000,
+        1846154,
+        1777778,
+        1714286,
+        1655172,
+        1600000,
+        1548387,
+        1500000,
+        1454545,
+        1411765
+      ],
+      [
+        3272727,
+        3130435,
+        3000000,
+        2880000,
+        2769231,
+        2666667,
+        2571429,
+        2482759,
+        2400000,
+        2322581,
+        2250000,
+        2181818,
+        2117647
+      ],
+      [
+        4363636,
+        4173913,
+        4000000,
+        3840000,
+        3692308,
+        3555556,
+        3428571,
+        3310345,
+        3200000,
+        3096774,
+        3000000,
+        2909091,
+        2823529
+      ],
+      [
+        7272727,
+        6956522,
+        6666667,
+        6400000,
+        6153846,
+        5925926,
+        5714286,
+        5517241,
+        5333333,
+        5161290,
+        5000000,
+        4848485,
+        4705882
+      ],
+      [
+        12727273,
+        12173913,
+        11666667,
+        11200000,
+        10769231,
+        10370370,
+        10000000,
+        9655172,
+        9333333,
+        9032258,
+        8750000,
+        8484848,
+        8235294
+      ]
+    ],
+    "per_100k": [
+      1818182,
+      1739130,
+      1666667,
+      1600000,
+      1538462,
+      1481481,
+      1428571,
+      1379310,
+      1333333,
+      1290323,
+      1250000,
+      1212121,
+      1176471
+    ]
+  },
+  "comparison": [
+    {
+      "noi": 120000,
+      "value_today": 1846154,
+      "hold": {
+        "irr": 0.08029547936483383,
+        "multiple": 1.5859412222471863,
+        "exit_value": 2113219,
+        "net_exit": 2018124,
+        "terminal_wealth": 2927891
+      },
+      "sell": {
+        "proceeds_after_costs": 1763077,
+        "irr": 0.07249780340300822,
+        "multiple": 1.5157311398944304,
+        "exit_value": 1987610,
+        "net_exit": 1898167,
+        "terminal_wealth": 2798273
+      },
+      "breakeven_exit_cap": 0.0721622608812828,
+      "irr_gap_pp": 0.779767596182561
+    },
+    {
+      "noi": 180000,
+      "value_today": 2769231,
+      "hold": {
+        "irr": 0.08029547936483383,
+        "multiple": 1.5859412222471867,
+        "exit_value": 3169829,
+        "net_exit": 3027186,
+        "terminal_wealth": 4391837
+      },
+      "sell": {
+        "proceeds_after_costs": 2644615,
+        "irr": 0.07249780340300822,
+        "multiple": 1.5157311398944306,
+        "exit_value": 2981415,
+        "net_exit": 2847251,
+        "terminal_wealth": 4197409
+      },
+      "breakeven_exit_cap": 0.07216226088128286,
+      "irr_gap_pp": 0.779767596182561
+    },
+    {
+      "noi": 240000,
+      "value_today": 3692308,
+      "hold": {
+        "irr": 0.08029547936483383,
+        "multiple": 1.5859412222471863,
+        "exit_value": 4226438,
+        "net_exit": 4036249,
+        "terminal_wealth": 5855783
+      },
+      "sell": {
+        "proceeds_after_costs": 3526154,
+        "irr": 0.07249780340300804,
+        "multiple": 1.5157311398944304,
+        "exit_value": 3975220,
+        "net_exit": 3796335,
+        "terminal_wealth": 5596546
+      },
+      "breakeven_exit_cap": 0.07216226088128291,
+      "irr_gap_pp": 0.779767596182579
+    },
+    {
+      "noi": 400000,
+      "value_today": 6153846,
+      "hold": {
+        "irr": 0.07528249890286298,
+        "multiple": 1.5401548080318181,
+        "exit_value": 7044064,
+        "net_exit": 6445318,
+        "terminal_wealth": 9477876
+      },
+      "sell": {
+        "proceeds_after_costs": 5630769,
+        "irr": 0.05973312372083506,
+        "multiple": 1.4109839014738645,
+        "exit_value": 6347864,
+        "net_exit": 5808296,
+        "terminal_wealth": 8682978
+      },
+      "breakeven_exit_cap": 0.07735615714721114,
+      "irr_gap_pp": 1.5549375182027925
+    },
+    {
+      "noi": 700000,
+      "value_today": 10769231,
+      "hold": {
+        "irr": 0.07336269074116475,
+        "multiple": 1.5229849027010554,
+        "exit_value": 12327112,
+        "net_exit": 11094400,
+        "terminal_wealth": 16401376
+      },
+      "sell": {
+        "proceeds_after_costs": 9853846,
+        "irr": 0.05784835904129493,
+        "multiple": 1.3955109824571648,
+        "exit_value": 11108762,
+        "net_exit": 9997886,
+        "terminal_wealth": 15028580
+      },
+      "breakeven_exit_cap": 0.07867550065481116,
+      "irr_gap_pp": 1.551433169986982
+    }
+  ],
+  "sensitivity": {
+    "exit_caps": [
+      0.055,
+      0.06,
+      0.065,
+      0.0675,
+      0.07,
+      0.075,
+      0.08
+    ],
+    "rows": [
+      {
+        "growth": 0.01,
+        "irr": [
+          0.088978,
+          0.078401,
+          0.068894,
+          0.064486,
+          0.060284,
+          0.052434,
+          0.045237
+        ]
+      },
+      {
+        "growth": 0.015,
+        "irr": [
+          0.094369,
+          0.08374,
+          0.074186,
+          0.069756,
+          0.065533,
+          0.057644,
+          0.050412
+        ]
+      },
+      {
+        "growth": 0.02,
+        "irr": [
+          0.09976,
+          0.089079,
+          0.079477,
+          0.075026,
+          0.070782,
+          0.062854,
+          0.055586
+        ]
+      },
+      {
+        "growth": 0.025,
+        "irr": [
+          0.105151,
+          0.094417,
+          0.084769,
+          0.080295,
+          0.076031,
+          0.068064,
+          0.06076
+        ]
+      },
+      {
+        "growth": 0.03,
+        "irr": [
+          0.110542,
+          0.099756,
+          0.090061,
+          0.085565,
+          0.08128,
+          0.073274,
+          0.065935
+        ]
+      },
+      {
+        "growth": 0.035,
+        "irr": [
+          0.115933,
+          0.105094,
+          0.095352,
+          0.090835,
+          0.086528,
+          0.078484,
+          0.071109
+        ]
+      }
+    ],
+    "noi": 180000
+  },
+  "horizons": [
+    {
+      "years": 3,
+      "hold_irr": 0.06384755031088343,
+      "sell_irr": 0.05097354358571761,
+      "hold_terminal": 3298585,
+      "sell_terminal": 3186227
+    },
+    {
+      "years": 5,
+      "hold_irr": 0.0753579206179606,
+      "sell_irr": 0.06602640917630509,
+      "hold_terminal": 3831716,
+      "sell_terminal": 3681807
+    },
+    {
+      "years": 7,
+      "hold_irr": 0.08029547936483383,
+      "sell_irr": 0.07249780340300822,
+      "hold_terminal": 4391837,
+      "sell_terminal": 4197409
+    },
+    {
+      "years": 9,
+      "hold_irr": 0.08302235647024292,
+      "sell_irr": 0.07607448809004788,
+      "hold_terminal": 4980314,
+      "sell_terminal": 4733842
+    }
+  ],
+  "tax_cliff": [
+    {
+      "price": 4000000,
+      "transfer_tax": 22400,
+      "ula": 0,
+      "total_transfer": 22400,
+      "pct_of_price": 0.56,
+      "net_before_mortgage": 3977600
+    },
+    {
+      "price": 5000000,
+      "transfer_tax": 28000,
+      "ula": 0,
+      "total_transfer": 28000,
+      "pct_of_price": 0.56,
+      "net_before_mortgage": 4972000
+    },
+    {
+      "price": 5200000,
+      "transfer_tax": 29120,
+      "ula": 0,
+      "total_transfer": 29120,
+      "pct_of_price": 0.56,
+      "net_before_mortgage": 5170880
+    },
+    {
+      "price": 5390000,
+      "transfer_tax": 30184,
+      "ula": 0,
+      "total_transfer": 30184,
+      "pct_of_price": 0.56,
+      "net_before_mortgage": 5359816
+    },
+    {
+      "price": 5400000,
+      "transfer_tax": 30240,
+      "ula": 0,
+      "total_transfer": 30240,
+      "pct_of_price": 0.56,
+      "net_before_mortgage": 5369760
+    },
+    {
+      "price": 5500000,
+      "transfer_tax": 30800,
+      "ula": 220000,
+      "total_transfer": 250800,
+      "pct_of_price": 4.56,
+      "net_before_mortgage": 5249200
+    },
+    {
+      "price": 6000000,
+      "transfer_tax": 33600,
+      "ula": 240000,
+      "total_transfer": 273600,
+      "pct_of_price": 4.56,
+      "net_before_mortgage": 5726400
+    },
+    {
+      "price": 8000000,
+      "transfer_tax": 44800,
+      "ula": 320000,
+      "total_transfer": 364800,
+      "pct_of_price": 4.56,
+      "net_before_mortgage": 7635200
+    },
+    {
+      "price": 10500000,
+      "transfer_tax": 58800,
+      "ula": 420000,
+      "total_transfer": 478800,
+      "pct_of_price": 4.56,
+      "net_before_mortgage": 10021200
+    },
+    {
+      "price": 10900000,
+      "transfer_tax": 61040,
+      "ula": 436000,
+      "total_transfer": 497040,
+      "pct_of_price": 4.56,
+      "net_before_mortgage": 10402960
+    },
+    {
+      "price": 11000000,
+      "transfer_tax": 61600,
+      "ula": 605000,
+      "total_transfer": 666600,
+      "pct_of_price": 6.06,
+      "net_before_mortgage": 10333400
+    },
+    {
+      "price": 15000000,
+      "transfer_tax": 84000,
+      "ula": 825000,
+      "total_transfer": 909000,
+      "pct_of_price": 6.06,
+      "net_before_mortgage": 14091000
+    }
+  ],
+  "all_in_exit_cost": {
+    "price": 2769231,
+    "brokerage_3pct": 83077,
+    "transfer_tax": 15508,
+    "ula": 0,
+    "legal_closing": 26031,
+    "total": 124615,
+    "pct": 4.5
+  },
+  "cap_spread": [
+    {
+      "entry_cap": 0.06,
+      "flat": 0.07966204629360488,
+      "widen_25": 0.07474916653511726,
+      "widen_75": 0.06563857945382756
+    },
+    {
+      "entry_cap": 0.0625,
+      "flat": 0.08221568977218664,
+      "widen_25": 0.07753120023863957,
+      "widen_75": 0.06882177676289555
+    },
+    {
+      "entry_cap": 0.065,
+      "flat": 0.08476903099765071,
+      "widen_25": 0.08029547936483383,
+      "widen_75": 0.07195837025206278
+    },
+    {
+      "entry_cap": 0.0675,
+      "flat": 0.08732207152574545,
+      "widen_25": 0.08304390665536335,
+      "widen_75": 0.07505322162247835
+    },
+    {
+      "entry_cap": 0.07,
+      "flat": 0.08987481291612037,
+      "widen_25": 0.08577811854619015,
+      "widen_75": 0.0781105353133823
+    },
+    {
+      "entry_cap": 0.0725,
+      "flat": 0.09242725673206781,
+      "widen_25": 0.08849953022338275,
+      "widen_75": 0.08113396606283166
+    }
+  ],
+  "after_tax": [
+    {
+      "price": 2700000,
+      "basis_pct": 0.35,
+      "basis": 945000,
+      "gain": 1755000,
+      "estimated_tax": 655074,
+      "effective_on_gain": 37.3,
+      "net_after_tax": 2044926
+    },
+    {
+      "price": 5400000,
+      "basis_pct": 0.35,
+      "basis": 1890000,
+      "gain": 3510000,
+      "estimated_tax": 1310148,
+      "effective_on_gain": 37.3,
+      "net_after_tax": 4089852
+    },
+    {
+      "price": 8000000,
+      "basis_pct": 0.35,
+      "basis": 2800000,
+      "gain": 5200000,
+      "estimated_tax": 1940960,
+      "effective_on_gain": 37.3,
+      "net_after_tax": 6059040
+    },
+    {
+      "price": 2700000,
+      "basis_pct": 0.5,
+      "basis": 1350000,
+      "gain": 1350000,
+      "estimated_tax": 506520,
+      "effective_on_gain": 37.5,
+      "net_after_tax": 2193480
+    },
+    {
+      "price": 5400000,
+      "basis_pct": 0.5,
+      "basis": 2700000,
+      "gain": 2700000,
+      "estimated_tax": 1013040,
+      "effective_on_gain": 37.5,
+      "net_after_tax": 4386960
+    },
+    {
+      "price": 8000000,
+      "basis_pct": 0.5,
+      "basis": 4000000,
+      "gain": 4000000,
+      "estimated_tax": 1500800,
+      "effective_on_gain": 37.5,
+      "net_after_tax": 6499200
+    },
+    {
+      "price": 2700000,
+      "basis_pct": 0.65,
+      "basis": 1755000,
+      "gain": 945000,
+      "estimated_tax": 357966,
+      "effective_on_gain": 37.9,
+      "net_after_tax": 2342034
+    },
+    {
+      "price": 5400000,
+      "basis_pct": 0.65,
+      "basis": 3510000,
+      "gain": 1890000,
+      "estimated_tax": 715932,
+      "effective_on_gain": 37.9,
+      "net_after_tax": 4684068
+    },
+    {
+      "price": 8000000,
+      "basis_pct": 0.65,
+      "basis": 5200000,
+      "gain": 2800000,
+      "estimated_tax": 1060640,
+      "effective_on_gain": 37.9,
+      "net_after_tax": 6939360
+    }
+  ]
+}
