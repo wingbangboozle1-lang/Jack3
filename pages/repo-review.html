@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repo Review — Line-by-Line Verification — Jack3</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <span class="brand"><span class="dot"></span>Jack3 · Property Decision Research</span>
+  <nav class="main">
+    <a href="index.html">Dashboard</a>
+    <a href="executive-summary.html">Executive Summary</a>
+    <a href="market-research.html">Market Research</a>
+    <a href="lease-analysis.html">Lease &amp; Tenant</a>
+    <a href="risk-analysis.html">Risk Analysis</a>
+    <a href="projections.html">Projections</a>
+    <a href="repo-review.html">Repo Review</a>
+    <a href="sources.html">Sources</a>
+    <a class="flag" href="flagged.html">⚑ Flagged for Review</a>
+  </nav>
+</div></header>
+<div class="privacy"><div class="wrap">🔒 Repo review reads only repo content and public metadata — never credentials. No personal information appears on this site.</div></div>
+
+<div class="wrap" style="margin-top:22px">
+  <section class="card">
+    <h2>Repo Review — line-by-line verification (Task T1)</h2>
+    <p class="sub">Session 93f3087c · 2026-11-06 · Base commit 0c9e609 “Initial commit” · Full detail in <code>docs/repo-review.md</code>.</p>
+    <div class="searchbar">
+      <input id="global-filter" type="search" placeholder="Filter rows…">
+      <span class="count" id="filter-count"></span>
+    </div>
+
+    <h3>1 · Tracked files at base commit</h3>
+    <table class="data">
+      <thead><tr><th>File</th><th>Lines</th><th>Line-by-line content</th><th>Status</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><code>README.md</code></td><td class="num">1</td><td>Line 1: <code># Jack3</code></td><td>✅ verified</td><td>Single markdown heading; no PII, no claims, no links — nothing to verify externally</td></tr>
+      </tbody>
+    </table>
+
+    <h3>2 · Repository metadata checks (git + GitHub API)</h3>
+    <table class="data">
+      <thead><tr><th>Check</th><th>Result</th><th>Status</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Remote</td><td><code>https://github.com/wingbangboozle1-lang/Jack3.git</code></td><td>✅ verified</td><td class="src"><a href="https://api.github.com/repos/wingbangboozle1-lang/Jack3">api.github.com — repo</a></td></tr>
+        <tr><td>Default branch / visibility</td><td><code>main</code> / <code>public</code></td><td>✅ verified</td><td class="src"><a href="https://api.github.com/repos/wingbangboozle1-lang/Jack3">api.github.com — repo</a></td></tr>
+        <tr><td>GitHub Pages config</td><td>status <code>built</code>, public, source = branch <code>main</code>, path <code>/</code>, build_type <code>legacy</code> → static files at repo root of main</td><td>✅ verified</td><td class="src"><a href="https://api.github.com/repos/wingbangboozle1-lang/Jack3/pages">api.github.com — pages</a> · live: <a href="https://wingbangboozle1-lang.github.io/Jack3/">wingbangboozle1-lang.github.io/Jack3/</a></td></tr>
+        <tr><td>Open PRs / branches at start</td><td>none / only <code>main</code></td><td>✅ verified</td><td class="src"><a href="https://github.com/wingbangboozle1-lang/Jack3/pulls">github.com — PRs</a> · <a href="https://github.com/wingbangboozle1-lang/Jack3/branches">branches</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3>3 · Irregularities flagged</h3>
+    <table class="data">
+      <thead><tr><th>#</th><th>Item</th><th>Severity</th><th>Detail / where to review</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>None found in base repo</td><td>info</td><td>Repo contained exactly one file (README.md, one line). No secrets, credentials, PII, or suspicious content. <code>.git/config</code> inspected only for remote URL; credentials never read or stored.</td></tr>
+        <tr><td>2</td><td>Pages build type is “legacy” (no Actions workflow)</td><td>info</td><td>Site must be plain static HTML at the root of <code>main</code> — that is how this site is built (no build step to break). Confirmed via Pages API.</td></tr>
+        <tr><td>3</td><td>Repo is public</td><td>info</td><td>Anything pushed to <code>main</code> is publicly visible → all personal information anonymized before commit (placeholders); see privacy banner on every page.</td></tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<footer><div class="wrap">Jack3 · Repo Review · <a href="sources.html">Source register</a> · <a href="flagged.html">Flagged for Review</a></div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

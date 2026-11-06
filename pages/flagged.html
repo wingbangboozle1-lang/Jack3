@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>⚑ Flagged for Review — Jack3</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <span class="brand"><span class="dot"></span>Jack3 · Property Decision Research</span>
+  <nav class="main">
+    <a href="index.html">Dashboard</a>
+    <a href="executive-summary.html">Executive Summary</a>
+    <a href="market-research.html">Market Research</a>
+    <a href="lease-analysis.html">Lease &amp; Tenant</a>
+    <a href="risk-analysis.html">Risk Analysis</a>
+    <a href="projections.html">Projections</a>
+    <a href="repo-review.html">Repo Review</a>
+    <a href="sources.html">Sources</a>
+    <a class="flag" href="flagged.html">⚑ Flagged for Review</a>
+  </nav>
+</div></header>
+<div class="privacy"><div class="wrap">🔒 All personal information anonymized; placeholders only. No personal information appears on this site.</div></div>
+
+<div class="wrap" style="margin-top:22px">
+  <section class="card">
+    <h2>⚑ Flagged for Review</h2>
+    <p class="sub">Everything below is either <b>unverified</b> (value left blank — never inferred), a <b>source divergence</b>, or <b>secondary-sourced</b>. None of these block the published analysis. Review after the site is live and request changes. Each row links to the official place to verify.</p>
+    <div class="searchbar">
+      <input id="global-filter" type="search" placeholder="Filter flags… (e.g. “NOI”, “DOF”, “FAIR”)">
+      <span class="count" id="filter-count"></span>
+    </div>
+    <table class="data">
+      <thead><tr><th>#</th><th>Item</th><th>Type</th><th>Why flagged</th><th>How to verify (official link)</th></tr></thead>
+      <tbody>
+        <tr><td>F1</td><td>Property address / APN — <span class="blank">BLANK</span></td><td>Privacy (anonymized)</td><td>Personal/property identifier withheld by policy; shown as <code>[PROPERTY ADDRESS REDACTED]</code></td><td class="src">Owner records (internal only — never published); parcel lookup at <a href="https://assessor.lacounty.gov/">assessor.lacounty.gov</a></td></tr>
+        <tr><td>F2</td><td>Owner name — <span class="blank">BLANK</span></td><td>Privacy (anonymized)</td><td>Personal information; placeholder <code>[OWNER NAME REDACTED]</code> used everywhere</td><td class="src">Internal records only</td></tr>
+        <tr><td>F3</td><td>Current rent, NOI, escalations, options, guarantees, owner basis, exact expiry year within 2030–2035 — <span class="blank">BLANK</span></td><td>Not provided</td><td>Lease document not supplied to this session; values never inferred. Valuation model therefore shown per $100K NOI [MODEL]</td><td class="src">Provide the lease privately; compute actual values offline; never publish</td></tr>
+        <tr><td>F4</td><td>Parcel-level FHSZ class &amp; FEMA flood zone — <span class="blank">BLANK</span></td><td>Needs parcel ID</td><td>Address anonymized, so parcel-specific hazard class can't be looked up here</td><td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones">osfm.fire.ca.gov FHSZ</a> · <a href="https://msc.fema.gov/portal/home">msc.fema.gov</a></td></tr>
+        <tr><td>F5</td><td>DOF (declining) vs SCAG (+7% by 2050) population forecasts for LA County</td><td>Source divergence</td><td>Two official sources disagree; conservative DOF path used for planning; both shown side by side</td><td class="src"><a href="https://dof.ca.gov/media/docs/forecasting/Demographics/projections/P2A_County_Total.xlsx">dof.ca.gov P-2A (verified in file)</a> · <a href="https://scag.ca.gov/sites/default/files/2024-05/231220_scag_subregional-press-release_los-angeles.pdf">scag.ca.gov</a></td></tr>
+        <tr><td>F6</td><td>FAIR Plan figures (696,562 policies Jun 2026; $768B exposure; +29.1% rate eff. 10/15/2026; $1B assessment)</td><td>Secondary-rendered official data</td><td>Figures widely reported from CDI/FAIR Plan releases; not re-read on the official page during this session</td><td class="src"><a href="https://www.fairplan.org/">fairplan.org key statistics</a> · <a href="https://www.insurance.ca.gov/">insurance.ca.gov</a></td></tr>
+        <tr><td>F7</td><td>CPI inflation ~3.7% YoY (Sept 2026) — <span class="blank">value left blank on data tables</span></td><td>Secondary only</td><td>Seen only in a secondary article; FOMC statement confirms only “inflation remains elevated”</td><td class="src"><a href="https://www.bls.gov/cpi/">bls.gov/cpi</a></td></tr>
+        <tr><td>F8</td><td>Dec-2026 FOMC hike odds ~76%</td><td>Secondary only</td><td>Futures-implied, from a news article; not an official figure</td><td class="src"><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">federalreserve.gov</a> · <a href="https://www.cmegroup.com/trading/interest-rates/countdown-to-fomc.html">CME FedWatch</a></td></tr>
+        <tr><td>F9</td><td>JACK FY2026 guidance (2,050–2,100 restaurants; SSS −1% to +1%), debt ≈$1.7B / ~6x, June-2026 $236.4M debt reduction</td><td>Partly secondary transcripts</td><td>10-K FY2025 figures (S26) are SEC-verified; guidance/refi specifics were read from earnings/press coverage of SEC filings</td><td class="src"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K">SEC EDGAR — JACK 8-Ks</a> · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=10-K">10-K</a></td></tr>
+        <tr><td>F10</td><td>Cap rates (6.92% / 5.90% / 6.87% / 7.55%) and LA retail stats (5.7% vacancy, $2.75/SF, $372/SF, 6.0% cap; Colliers 6.15% / $2.40 NNN)</td><td>Industry (non-governmental)</td><td>Brokerage/trade sources — labeled [INDUSTRY] everywhere they appear; never the sole basis for a “verified” claim</td><td class="src"><a href="https://bouldergroup.com/media/pdf/2026-Q3-Net-Lease-Research-Report.pdf">Boulder Group Q3 2026 PDF</a> · <a href="https://kidder.com/market-reports/los-angeles-retail-market-report/">Kidder Mathews</a> · <a href="https://www.colliers.com/en/research/los-angeles/greater-los-angeles-retail-market-report-q3-2026">Colliers</a></td></tr>
+        <tr><td>F11</td><td>H1-2026 LAPD property-crime decline (−25.9%) — <span class="blank">value left blank</span></td><td>Secondary analysis of official data</td><td>Number seen only in third-party analysis of LAPD open data; not confirmed on the official portal during this session</td><td class="src"><a href="https://data.lacity.org/">data.lacity.org — LAPD incidents</a></td></tr>
+        <tr><td>F12</td><td>CA top capital-gains rate 13.3%</td><td>Rate schedule to re-verify</td><td>FTB publishes current brackets; exact current-year top bracket not re-read line-by-line this session</td><td class="src"><a href="https://www.ftb.ca.gov/about-ftb/tax-rates.html">ftb.ca.gov tax rates</a></td></tr>
+        <tr><td>F13</td><td>Repo review — no irregularities found in base repo (single-line README.md)</td><td>Info</td><td>Nothing suspicious at base commit 0c9e609; Pages configured as legacy static from main root</td><td class="src"><a href="https://api.github.com/repos/wingbangboozle1-lang/Jack3/pages">GitHub API — pages config</a> · <a href="repo-review.html">Repo Review page</a></td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><h4>How to request changes</h4><p>These items are published here, not hidden. After reviewing, send corrections with the official source link and the affected table rows will be updated on the next commit.</p></div>
+  </section>
+</div>
+
+<footer><div class="wrap">Jack3 · Flagged for Review · <a href="sources.html">Source register</a> · No personal information published</div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

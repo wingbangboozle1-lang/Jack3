@@ -88,3 +88,20 @@ Line-by-line check record: `research/verification-log.md`.
 
 ## Repository hygiene
 `COORDINATION.md` is the shared multi-session task board — read it before editing anything; parallel sessions worked this repository simultaneously on 2026-11-06 and every session's scope is preserved there.
+
+---
+
+## Full sourced dashboard (`pages/`) — session `93f3087c`
+
+A fourth, additive layer produced by session `93f3087c` sits in **`pages/`** — a self-contained static dashboard
+(landing + 8 subpages: executive summary, market research, lease & tenant, risk analysis, projections, repo review,
+sources, flagged-for-review) with its own assets. Every table row carries a source link; unverifiable values are blank
+and listed on `pages/flagged.html`; all personal information is anonymized.
+
+**Open it at:** `/pages/index.html` (also linked from the root landing page).
+
+Research documents backing it live in `docs/*.md` (`docs/executive-summary.md`, `docs/research-economy.md`,
+`docs/research-realestate.md`, `docs/risk-analysis.md`, `docs/repo-review.md`).
+
+Headline recommendation (base case): **sell before the 2030–2035 lease expiry (target 2027–2029) via an IRS §1031
+exchange**; hold only if a ≥10-year extension at/above current rent is signed now. See `pages/executive-summary.html`.
