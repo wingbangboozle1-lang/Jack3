@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method &amp; limitations · Jack in the Box NNN · Central Los Angeles</title>
+<meta name="description" content="Verification protocol, anonymisation rules, model method and limitations.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html"><span class="dot"></span>
+    <span>Jack in the Box NNN<small>Central Los Angeles · decision research</small></span></a>
+  <nav class="main">
+<a href="index.html">Dashboard</a>
+<a href="economy.html">Economy</a>
+<a href="tenant.html">Tenant</a>
+<a href="property.html">Property &amp; lease</a>
+<a href="risk.html">Risk</a>
+<a href="scenarios.html">Scenarios</a>
+<a href="decision.html">Decision</a>
+<a href="data.html">Master table</a>
+<a href="flagged.html">Flagged</a>
+<a href="sources.html">Sources</a>
+<a href="methodology.html" class="active">Method</a>
+<a href="../index.html">All dashboards</a>
+  </nav>
+</div></header>
+<main><div class="wrap">
+
+<div class="page-head"><h1>Method, verification standard and limitations</h1><p class="lede">How the research was done, how each value was checked, what was excluded for privacy, and where the analysis stops.</p><div class="toc"><a href="#verify">Verification</a><a href="#privacy">Privacy</a><a href="#model">Model</a><a href="#limits">Limitations</a><a href="#repro">Reproduce</a></div></div>
+
+<h2 id="verify">Verification standard</h2>
+<ol>
+<li><b>One claim, one source.</b> Each row in the dataset names a single source page. If two sources disagree, both are recorded
+and the conflict is disclosed on the Flagged page rather than resolved silently.</li>
+<li><b>Read it, then cite it.</b> A value is marked <span class="badge v">Verified</span> only when it was read on the linked page
+during compilation on 2026-11-06. Where a number came from a search snippet and the page could not be read, it is marked
+<span class="badge f">Unverified</span>.</li>
+<li><b>No inference.</b> Nothing is filled in by calculation unless the row says <span class="badge c">Calculated</span> and shows
+the formula. Nothing is filled in from a secondary summary unless the source is itself named and tiered.</li>
+<li><b>Parcel-level claims are not made.</b> The address is withheld, so seismic, flood, fire-hazard and zoning determinations
+require a parcel lookup and are published as open items (F-03, F-04, F-05, F-09).</li>
+<li><b>Judgement is labelled.</b> Likelihood and impact scores in the risk register, the weights in the decision matrix and the
+model's assumptions are the analyst's judgement. They are shown in full so a reader can substitute their own.</li>
+</ol>
+
+<h2 id="privacy">Privacy and anonymisation</h2>
+<div class="note">
+<b>No personal information is published.</b> The following are withheld from the website: the street address and parcel number
+(<b>[PROPERTY-A]</b>), the owner's name and any individual's name (<b>[OWNER-1]</b>), the franchisee's identity and
+principals (<b>[FRANCHISEE-1]</b>), lease counterparties, and any contact, financial-account or tenancy information. No
+photograph, map pin, or data field on this site can be used to identify the parcel or a person. Everything published is
+area-level and available to any member of the public.
+</div>
+<p>This site is public. Any information that could identify the property or a person has been kept out of the repository
+itself, not merely hidden in the presentation, so that the published product cannot leak it through source files.</p>
+
+<h2 id="model">Model method</h2>
+<p>The scenario model is a deterministic annual cash-flow projection. It computes value as NOI ÷ cap rate, projects rent at a
+fixed growth rate, applies a structural reserve, exits at a stated cap rate with stated sale costs, and solves the
+internal rate of return by bisection. The sell-and-reinvest path applies the same machinery to net proceeds reinvested at
+the franchisee-QSR benchmark. The script is <code>tools/model.py</code> and its output is
+<code>assets/data/scenarios.json</code>, which is what the site renders. Nothing on the site is typed in by hand after the
+script runs.</p>
+
+<h2 id="limits">Limitations, stated plainly</h2>
+<ul>
+<li><b>The property is not valued.</b> Without rent and NOI there is no valuation, and none is asserted.</li>
+<li><b>Submarket data is coarse.</b> Verified figures are county, city or metro level; no ZIP-level table could be pulled (F-13).</li>
+<li><b>Industry data is industry data.</b> Cap rates come from a research firm, not a government body. They are labelled.</li>
+<li><b>Hazard figures are scenarios, not forecasts.</b> The USGS ShakeOut numbers describe a modelled event in 2008 dollars.</li>
+<li><b>No forecast of prices.</b> The model shows what happens under stated assumptions; it does not predict the market.</li>
+</ul>
+
+<h2 id="repro">Reproduce or challenge anything here</h2>
+<p>Every number is traceable. The dataset lives in <code>assets/data/dataset.json</code>, the sources in
+<code>assets/data/sources.json</code>, the risks in <code>assets/data/risks.json</code>, and the flags in
+<code>assets/data/flagged.json</code>. Rebuild the site with <code>python3 tools/build.py</code>; recompute the model with
+<code>python3 tools/model.py</code>; check every link with <code>python3 tools/linkcheck.py</code>. Task ownership and the
+verification log are in <code>COORDINATION.md</code>.</p>
+
+</div></main>
+<footer class="site"><div class="wrap">
+  <div><b>Privacy:</b> the parcel is anonymised as [PROPERTY-A]; owner, franchisee and all personal information are withheld.</div>
+  <div>Compiled 2026-11-06 · sources verified 2026-11-06 · <a href="methodology.html">method &amp; limitations</a></div>
+</div></footer>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
