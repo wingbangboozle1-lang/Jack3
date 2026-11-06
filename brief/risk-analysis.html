@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Scored risk register for the sell-vs-renew decision on a Central LA Jack in the Box NNN asset: tenant, market, tax, hazard and black-swan risks with mitigants and sources.">
+<title>Risk Register | Jack3 — Central LA NNN Decision Brief</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">J3</span><span class="brand-text"><strong>Jack3</strong><small>Central LA NNN Decision Brief</small></span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+  </div>
+  <nav class="mainnav" id="mainnav" aria-label="Site navigation"><div class="mainnav-inner">
+    <a href="index.html">Dashboard</a>
+    <a href="executive-summary.html">Executive Summary</a>
+    <a href="market-demographics.html">Market &amp; Demographics</a>
+    <a href="economic-outlook.html">Economic Outlook</a>
+    <a href="decision.html">Sell vs Renew</a>
+    <a href="risk-analysis.html" class="active">Risk Register</a>
+    <a href="projection-model.html">Projection Model</a>
+    <a href="sources.html">Sources</a>
+    <a href="flagged.html">Flagged for Review</a>
+  </div></nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html"><div class="breadcrumb">#8962; Main research workspace</a> &nbsp;·&nbsp; <a href="index.html">Dashboard</a> / Risk Register</div>
+    <div class="eyebrow">L×I scored · black swans included</div>
+    <h1>Risk Register — Every Path Out Is a Risk Portfolio</h1>
+    <p class="lede">Likelihood (1–5) × Impact (1–5) = Score. ≥15 Critical/High, 8–14 Elevated, ≤7 Managed. Risks span tenant credit, market, tax/legal, physical hazard, and black swans — each with a mitigant and a verifiable source where one exists.</p>
+    <div class="filterbar"><input type="text" data-filter-table="risk-table" placeholder="Filter risks (e.g. tenant, fire, ULA, 5.0)…" aria-label="Filter risk register"></div>
+  </div>
+</section>
+
+<main><div class="container">
+
+<div class="table-wrap"><table id="risk-table">
+<thead><tr><th>ID</th><th>Risk</th><th>Category</th><th>L</th><th>I</th><th>Score</th><th>Rating</th><th>Mitigant</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>R-01</td><td>Tenant (franchisee LLC) defaults or fails to pay rent</td><td>Tenant credit</td><td>2</td><td>5</td><td>10</td><td><span class="pill pill-med">Elevated</span></td><td>Corporate/personal guaranty; NNN security deposit or LC; monthly estoppels; trigger T-06</td><td class="src"><a href="https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Reports-Fourth-Quarter-and-Full-Year-2025-Earnings/default.aspx" target="_blank" rel="noopener">JIB IR (official)</a></td></tr>
+<tr><td>R-02</td><td>Tenant does not renew at 2030–2035 expiry — dark box, lost NOI, value repriced to land</td><td>Rollover / vacancy</td><td>3</td><td>5</td><td>15</td><td><span class="pill pill-high">High</span></td><td>Early term sheet (T-24 mo); pre-agreed trigger → sell ≥T-18; backup re-tenant plan</td><td class="src"><a href="decision.html#triggers">Trigger framework</a></td></tr>
+<tr><td>R-03</td><td>Unit is selected for “JACK on Track” closure program</td><td>Tenant credit</td><td>3</td><td>5</td><td>15</td><td><span class="pill pill-high">High</span></td><td>Confirm inclusion status in writing; T-03 emergency sale protocol; monitor JIB IR releases</td><td class="src"><a href="https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Reports-Fourth-Quarter-and-Full-Year-2025-Earnings/default.aspx" target="_blank" rel="noopener">JIB IR (official)</a></td></tr>
+<tr><td>R-04</td><td>Cap-rate expansion between now and sale/renewal (10Y 4.89%; STNL mean 6.5%)</td><td>Market / rates</td><td>4</td><td>3</td><td>12</td><td><span class="pill pill-med">Elevated</span></td><td>Sensitivity grid (projection model); don’t forced-sell into wide tape (T-07); NNN escalation keeps NOI rising</td><td class="src"><a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve_rate&amp;field_tdr_date_value=202611" target="_blank" rel="noopener">US Treasury (official)</a> · <a href="https://thesisdriven.com/guides/triple-net-lease" target="_blank" rel="noopener">M&amp;M (industry)</a></td></tr>
+<tr><td>R-05</td><td>Measure ULA surprise on exit (4–5.5% of FULL consideration incl. liens)</td><td>Tax / legal</td><td>4</td><td>4</td><td>16</td><td><span class="pill pill-crit">Critical</span></td><td>Pre-model every sale scenario; written confirmation from Office of Finance; 1031 does NOT cure it; hold instead of sale when price near cliff without real comps</td><td class="src"><a href="https://finance.lacity.gov/" target="_blank" rel="noopener">LA Office of Finance (official)</a></td></tr>
+<tr><td>R-06</td><td>Federal/state cap gains + depreciation recapture + NIIT on sale (basis unknown)</td><td>Tax / legal</td><td>4</td><td>3</td><td>12</td><td><span class="pill pill-med">Elevated</span></td><td>1031 exchange; CPA review pre-listing; consider held-over basis strategy</td><td class="src"><a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener">IRS Topic 409 (official)</a></td></tr>
+<tr><td>R-07</td><td>Prop 13 reset at sale (buyer re-assessed at market; ~1% + local add-ons) suppresses achievable price</td><td>Tax / legal</td><td>5</td><td>2</td><td>10</td><td><span class="pill pill-med">Elevated</span></td><td>Price into expectations; market the NNN income (buyers underwrite NOI, not AV)</td><td class="src"><a href="https://www.boe.ca.gov/prop13/background.htm" target="_blank" rel="noopener">CA BOE (official)</a></td></tr>
+<tr><td>R-08</td><td>Insurance unavailability / premium explosion (CA FAIR Plan migration, non-renewals)</td><td>Physical hazard</td><td>4</td><td>3</td><td>12</td><td><span class="pill pill-med">Elevated</span></td><td>Bind admitted-market policy NOW; request Tenant’s certificates annually; FAIR Plan fallback + DIC wrap</td><td class="src"><a href="https://insurance.ca.gov/" target="_blank" rel="noopener">CA Dept of Insurance (official)</a></td></tr>
+<tr><td>R-09</td><td>Escalation below inflation at renewal (&lt;1.5% offered; flat renewal)</td><td>Lease economics</td><td>3</td><td>3</td><td>9</td><td><span class="pill pill-med">Elevated</span></td><td>Counter CPI-linked 2–3.5%; T-05 trigger; walk to sale if rejected</td><td class="src"><a href="decision.html#triggers">Trigger framework</a></td></tr>
+<tr><td>R-10</td><td>Franchisee transfers lease/entity without consent; lost guaranty or credit control</td><td>Legal / counterparty</td><td>2</td><td>4</td><td>8</td><td><span class="pill pill-med">Elevated</span></td><td>Review assignment/change-of-control clauses; T-06; annual estoppel certificates</td><td class="src"><a href="https://www.irs.gov/" target="_blank" rel="noopener">— (lease-specific)</a></td></tr>
+<tr><td>R-11</td><td>Interest-rate shock (10Y &gt; 5.5%) freezes buyer demand; price discovery fails</td><td>Market / rates</td><td>3</td><td>3</td><td>9</td><td><span class="pill pill-med">Elevated</span></td><td>Hold (do not list) until tape clears; NNN income unaffected; T-07</td><td class="src"><a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve_rate&amp;field_tdr_date_value=202611" target="_blank" rel="noopener">US Treasury (official)</a></td></tr>
+<tr><td>R-12</td><td><strong>BLACK SWAN — Wildfire</strong> (Eaton/Palisades precedent: 14,021 + 23,448 acres, 16,251 structures destroyed, 31 fatalities, Jan 2025)</td><td>Black swan / physical</td><td>1</td><td>5</td><td>5</td><td><span class="pill pill-low">Managed (low prop., catastrophic)</span></td><td>Parcel FHSZ check (CAL FIRE viewer); smoke/HVAC retrofits; ordinance-or-law coverage; business-interruption via Tenant</td><td class="src"><a href="https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf" target="_blank" rel="noopener">LA County (official)</a> · <a href="https://egis.fire.ca.gov/FHSZ" target="_blank" rel="noopener">CAL FIRE FHSZ</a></td></tr>
+<tr><td>R-13</td><td><strong>BLACK SWAN — Major earthquake</strong> (M6.7+ Northridge precedent; LA, Hollywood, Newport–Inglewood, Puente Hills faults; AP zones)</td><td>Black swan / physical</td><td>2</td><td>5</td><td>10</td><td><span class="pill pill-med">Elevated</span></td><td>AP-zone parcel report; seismic retrofit (cripple wall/unreinforced masonry); earthquake insurance quote (DIC); tenant TI limits reviewed</td><td class="src"><a href="https://hub.arcgis.com/datasets/lahub::alquist-priolo-earthquake-fault-zones" target="_blank" rel="noopener">LA GeoHub AP zones (official)</a> · <a href="https://earthquake.usgs.gov/" target="_blank" rel="noopener">USGS</a></td></tr>
+<tr><td>R-14</td><td><strong>BLACK SWAN — Civil unrest / widespread looting</strong> (1992 precedent: South &amp; Central LA corridor damage)</td><td>Black swan / social</td><td>1</td><td>4</td><td>4</td><td><span class="pill pill-low">Managed</span></td><td>Storefront/roll-down shutters (franchise standard); insurance riot/civil commotion rider; lighting; alarm contracts</td><td class="src"><a href="https://www.fema.gov/" target="_blank" rel="noopener">FEMA</a> · <a href="https://hazards.fema.gov/nri/" target="_blank" rel="noopener">FEMA National Risk Index (official)</a></td></tr>
+<tr><td>R-15</td><td><strong>BLACK SWAN — Pandemic / prolonged government shutdown</strong> (COVID-19 precedent: dining room closures, QSR shift to drive-thru)</td><td>Black swan / macro</td><td>1</td><td>4</td><td>4</td><td><span class="pill pill-low">Managed</span></td><td>Drive-thru/QSR format is resilient; force-majeure review in lease; CARES/relief history; rent relief caps negotiated proactively</td><td class="src"><a href="https://www.cdc.gov/" target="_blank" rel="noopener">CDC (official)</a></td></tr>
+<tr><td>R-16</td><td>Regulatory: ULA expanded / rates raised by City Council; commercial rent control considered</td><td>Regulatory</td><td>2</td><td>3</td><td>6</td><td><span class="pill pill-low">Managed</span></td><td>Monitor CFO/Council files; CPA legislative watch; pre-accelerate 1031 if expansion threatens (T-10)</td><td class="src"><a href="https://finance.lacity.gov/" target="_blank" rel="noopener">LA Office of Finance (official)</a></td></tr>
+<tr><td>R-17</td><td>Federal: 1031 exchange repealed/capped (recurring proposals); cap-gains rate rise</td><td>Regulatory / tax</td><td>2</td><td>4</td><td>8</td><td><span class="pill pill-med">Elevated</span></td><td>If listing is triggered anyway, don’t wait for legislative clarity; complete exchange pre-change</td><td class="src"><a href="https://www.irs.gov/" target="_blank" rel="noopener">IRS (official)</a></td></tr>
+<tr><td>R-18</td><td>Environmental (dry-cleaning solvents, USTs, lead paint, asbestos in older QSR pad)</td><td>Environmental</td><td>2</td><td>3</td><td>6</td><td><span class="pill pill-low">Managed</span></td><td>Phase I ESA before any sale; Tenant indemnity; disclose per LA ordinance</td><td class="src"><a href="https://www.epa.gov/" target="_blank" rel="noopener">EPA (official)</a></td></tr>
+<tr><td>R-19</td><td>Eminent domain / public taking (Metro rail expansion, road widening on corridor)</td><td>Legal / sovereign</td><td>1</td><td>4</td><td>4</td><td><span class="pill pill-low">Managed</span></td><td>Track Metro/City ROW maps; if noticed, specialist eminent-domain counsel; NNN lease control of TI compensation</td><td class="src"><a href="https://www.lacounty.gov/" target="_blank" rel="noopener">LA County / Metro (official)</a></td></tr>
+<tr><td>R-20</td><td>Concentration: single-asset, single-tenant exposure; no diversification</td><td>Portfolio</td><td>5</td><td>2</td><td>10</td><td><span class="pill pill-med">Elevated</span></td><td>If trigger fires, 1031 into DST/net-lease portfolio; holds should pair with other income assets</td><td class="src">n/a</td></tr>
+<tr><td>R-21</td><td>Liquidity: NNN QSR exit can take 6–18 months in a wide-cap tape</td><td>Liquidity</td><td>3</td><td>2</td><td>6</td><td><span class="pill pill-low">Managed</span></td><td>Start broker OPVs 18 mo pre-exit; off-market canvass; price at market, not ego</td><td class="src">n/a</td></tr>
+<tr><td>R-22</td><td>Data risk: decision made on stale/mirror data (all ACS mirror values herein)</td><td>Data integrity</td><td>3</td><td>3</td><td>9</td><td><span class="pill pill-med">Elevated</span></td><td>Re-verify at census.gov/edd.ca.gov before signing; see <a href="flagged.html">Flagged for Review</a></td><td class="src"><a href="sources.html">Sources register</a></td></tr>
+</tbody></table></div>
+
+<h2 class="section-title">Score Summary <small>Filtered live from the table above</small></h2>
+<div class="grid kpi-grid">
+  <div class="card"><div class="kpi-label">Critical (≥15)</div><div class="kpi-value">3</div><div class="kpi-delta">R-02 rollover · R-03 closure · R-05 ULA — all mitigated by early renewal + trigger plan</div></div>
+  <div class="card"><div class="kpi-label">Elevated (8–14)</div><div class="kpi-value">11</div><div class="kpi-delta">Rates, insurance, guarantor, data — all have defined mitigants</div></div>
+  <div class="card"><div class="kpi-label">Managed (≤7)</div><div class="kpi-value">8</div><div class="kpi-delta">Black swans are low-likelihood; severity handled by insurance + retrofits</div></div>
+  <div class="card"><div class="kpi-label">Residual posture</div><div class="kpi-value" style="font-size:1rem">Acceptable</div><div class="kpi-delta">…IF the renewal trigger plan is executed; unacceptable if riding to expiry unsigned</div></div>
+</div>
+
+<div class="callout warn" style="margin-top:14px"><strong>Black-swan doctrine:</strong> you cannot buy your way out of a black swan after it starts. For fire/earthquake/unrest the only real mitigants are bought <em>before</em>: admitted insurance with ordinance-or-law coverage, seismic retrofit, and a lease that places repair/rebuild obligations on the Tenant to the maximum lawful extent. Get those three in place <em>this quarter</em>, not at renewal.</div>
+
+<p class="kpi-footnote">L and I are analyst judgment informed by sourced evidence; they are not probabilities measured from actuarial data. Where no official source exists, the risk is qualitative. See <a href="sources.html">Sources</a>.</p>
+</div></main>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><h4>Jack3 — Central LA NNN Decision Brief</h4><p>Confidential internal analysis. Anonymized. Not legal, tax, or investment advice.</p></div>
+    <div><h4>Quick links</h4><p><a href="decision.html">Sell vs Renew</a><br><a href="projection-model.html">Projection Model</a><br><a href="flagged.html">Flagged for Review</a><br><a href="sources.html">Sources</a></p></div>
+    <div><h4>Integrity notes</h4><p>Risk scores are decision-support judgments, not insurance quotes or actuarial models.</p></div>
+  </div>
+  <p class="kpi-footnote">© 2026 · Compiled 2026-11-06</p>
+</div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
