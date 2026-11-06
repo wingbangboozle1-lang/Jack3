@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scenarios &amp; projections · Jack in the Box NNN · Central Los Angeles</title>
+<meta name="description" content="Deterministic hold-versus-sell model with disclosed assumptions, sensitivity grids and an after-tax illustration.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html"><span class="dot"></span>
+    <span>Jack in the Box NNN<small>Central Los Angeles · decision research</small></span></a>
+  <nav class="main">
+<a href="index.html">Dashboard</a>
+<a href="economy.html">Economy</a>
+<a href="tenant.html">Tenant</a>
+<a href="property.html">Property &amp; lease</a>
+<a href="risk.html">Risk</a>
+<a href="scenarios.html" class="active">Scenarios</a>
+<a href="decision.html">Decision</a>
+<a href="data.html">Master table</a>
+<a href="flagged.html">Flagged</a>
+<a href="sources.html">Sources</a>
+<a href="methodology.html">Method</a>
+  </nav>
+</div></header>
+<main><div class="wrap">
+
+<div class="page-head"><h1>Projection and scenario model</h1><p class="lede">A deterministic, fully disclosed model. It does not know the rent or the NOI — so it is built to be scale-free in percentage terms and to accept the real number the moment the owner supplies it.</p><div class="toc"><a href="#assume">Assumptions</a><a href="#compare">Hold vs sell</a><a href="#sens">Sensitivity</a><a href="#spread">Cap-rate spread</a><a href="#tax">After tax</a><a href="#limits">Limits</a></div></div>
+
+<div class="note warn">
+<b>These are not projections of [PROPERTY-A].</b> Every input below is an assumption chosen for transparency, not a fact
+about the asset. The rent, NOI, basis and lease terms are private and are the subject of flags F-06 and F-07. What the
+model does provide is the <i>structure</i> of the decision: which variables dominate, and how far a variable has to move
+before the answer changes.
+</div>
+
+<h2 id="assume">Disclosed assumptions</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Input</th><th class="num">Value</th><th>Basis</th></tr></thead>
+<tbody>
+<tr><td>Entry cap rate</td><td class="num">6.50%</td><td>Between the franchisee QSR average (6.87%) and retail net lease (6.69%); a central-LA land component argues for the tighter side. Judgement.</td></tr>
+<tr><td>Rent growth</td><td class="num">2.5%</td><td>Between a 2% fixed bump and 10%-every-5-years amortised. Judgement.</td></tr>
+<tr><td>Hold period</td><td class="num">7 years</td><td>Mid-point of the 2030–2035 expiry band.</td></tr>
+<tr><td>Exit cap rate</td><td class="num">6.75%</td><td>+25 bp for shorter remaining term at exit. Judgement.</td></tr>
+<tr><td>Sale cost (below ULA threshold)</td><td class="num">4.5%</td><td>3.0% brokerage + 0.56% transfer tax + ~0.94% legal/closing. Transfer tax verified (<a href="https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info" target="_blank" rel="noopener" title="LA County Registrar-Recorder/County Clerk — Documentary Transfer Tax (county and city rates)">S14</a>); brokerage is market practice.</td></tr>
+<tr><td>Structural reserve</td><td class="num">2.0% of NOI</td><td>Capital that reverts to the owner when the tenant leaves.</td></tr>
+<tr><td>Reinvestment cap (1031)</td><td class="num">6.87%</td><td>Boulder Q3 2026 franchisee QSR average (<a href="https://www.bouldergroup.com/media/pdf/2026-Q3-Net-Lease-Research-Report.pdf" target="_blank" rel="noopener" title="The Boulder Group — Q3 2026 Net Lease Research Report (PDF)">S24</a>).</td></tr>
+<tr><td>Reinvestment growth / exit</td><td class="num">2.0% / 7.00%</td><td>Diversified net-lease assumptions. Judgement.</td></tr>
+<tr><td>Measure ULA</td><td class="num">4% / 5.5%</td><td>Above $5.4m / $10.9m, City of LA only. Flagged (F-01).</td></tr>
+</tbody></table></div>
+
+<h2 id="compare">Option A — hold to expiry versus Option B — sell now and exchange</h2>
+<p>Both options are run unlevered and pre-tax over the same 7-year horizon, so they are directly comparable.
+Option B assumes the proceeds are redeployed through a Section 1031 exchange into a diversified net-lease position at
+6.87% — which is the only way selling avoids an immediate tax bill.</p>
+<div class="tablewrap"><table class="">
+<thead><tr>
+<th>NOI</th>
+<th class="num">Value today</th>
+<th class="num">Hold IRR</th>
+<th class="num">Hold multiple</th>
+<th class="num">Hold terminal cash</th>
+<th class="num">Sell + 1031 IRR</th>
+<th class="num">Sell multiple</th>
+<th class="num">Sell terminal cash</th>
+<th class="num">Exit cap that ties the two</th>
+<th class="num">Hold advantage</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$120,000</td>
+<td class="num">$1,846,154</td>
+<td class="num">8.03%</td>
+<td class="num">1.59×</td>
+<td class="num">$2,927,891</td>
+<td class="num">7.25%</td>
+<td class="num">1.52×</td>
+<td class="num">$2,798,273</td>
+<td class="num">7.22%</td>
+<td class="num">+0.78 pp</td>
+</tr>
+<tr>
+<td>$180,000</td>
+<td class="num">$2,769,231</td>
+<td class="num">8.03%</td>
+<td class="num">1.59×</td>
+<td class="num">$4,391,837</td>
+<td class="num">7.25%</td>
+<td class="num">1.52×</td>
+<td class="num">$4,197,409</td>
+<td class="num">7.22%</td>
+<td class="num">+0.78 pp</td>
+</tr>
+<tr>
+<td>$240,000</td>
+<td class="num">$3,692,308</td>
+<td class="num">8.03%</td>
+<td class="num">1.59×</td>
+<td class="num">$5,855,783</td>
+<td class="num">7.25%</td>
+<td class="num">1.52×</td>
+<td class="num">$5,596,546</td>
+<td class="num">7.22%</td>
+<td class="num">+0.78 pp</td>
+</tr>
+<tr>
+<td>$400,000</td>
+<td class="num">$6,153,846</td>
+<td class="num">7.53%</td>
+<td class="num">1.54×</td>
+<td class="num">$9,477,876</td>
+<td class="num">5.97%</td>
+<td class="num">1.41×</td>
+<td class="num">$8,682,978</td>
+<td class="num">7.74%</td>
+<td class="num">+1.55 pp</td>
+</tr>
+<tr>
+<td>$700,000</td>
+<td class="num">$10,769,231</td>
+<td class="num">7.34%</td>
+<td class="num">1.52×</td>
+<td class="num">$16,401,376</td>
+<td class="num">5.78%</td>
+<td class="num">1.40×</td>
+<td class="num">$15,028,580</td>
+<td class="num">7.87%</td>
+<td class="num">+1.55 pp</td>
+</tr>
+</tbody></table></div>
+<p class="caption">Terminal cash = cumulative rent plus net sale proceeds, before tax. IRR is on the value today.</p>
+<div class="note">
+<b>The finding.</b> Holding wins in every income band. The margin is about <b>0.8 percentage points a year</b> below the ULA
+threshold and widens to about <b>1.6 points</b> above it, because a sale at those values pays the ULA surtax twice — once
+on the way out and again, economically, when the replacement asset is later sold. Holding only loses if the exit cap
+widens beyond roughly <b>7.2%–7.9%</b>, which would be a severe repricing from today's 6.5% entry level.
+</div>
+
+<h2 id="sens">Sensitivity: exit cap rate against rent growth</h2>
+<p>Rows are annual rent growth; columns are the cap rate at exit. Cells are the unlevered hold IRR at a $180,000 NOI.</p>
+<div class="tablewrap"><table class="">
+<thead><tr>
+<th>Rent growth</th>
+<th class="num">5.50% exit</th>
+<th class="num">6.00% exit</th>
+<th class="num">6.50% exit</th>
+<th class="num">6.75% exit</th>
+<th class="num">7.00% exit</th>
+<th class="num">7.50% exit</th>
+<th class="num">8.00% exit</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1.0%</td>
+<td class="num">8.90%</td>
+<td class="num">7.84%</td>
+<td class="num">6.89%</td>
+<td class="num">6.45%</td>
+<td class="num">6.03%</td>
+<td class="num">5.24%</td>
+<td class="num">4.52%</td>
+</tr>
+<tr>
+<td>1.5%</td>
+<td class="num">9.44%</td>
+<td class="num">8.37%</td>
+<td class="num">7.42%</td>
+<td class="num">6.98%</td>
+<td class="num">6.55%</td>
+<td class="num">5.76%</td>
+<td class="num">5.04%</td>
+</tr>
+<tr>
+<td>2.0%</td>
+<td class="num">9.98%</td>
+<td class="num">8.91%</td>
+<td class="num">7.95%</td>
+<td class="num">7.50%</td>
+<td class="num">7.08%</td>
+<td class="num">6.29%</td>
+<td class="num">5.56%</td>
+</tr>
+<tr>
+<td>2.5%</td>
+<td class="num">10.52%</td>
+<td class="num">9.44%</td>
+<td class="num">8.48%</td>
+<td class="num">8.03%</td>
+<td class="num">7.60%</td>
+<td class="num">6.81%</td>
+<td class="num">6.08%</td>
+</tr>
+<tr>
+<td>3.0%</td>
+<td class="num">11.05%</td>
+<td class="num">9.98%</td>
+<td class="num">9.01%</td>
+<td class="num">8.56%</td>
+<td class="num">8.13%</td>
+<td class="num">7.33%</td>
+<td class="num">6.59%</td>
+</tr>
+<tr>
+<td>3.5%</td>
+<td class="num">11.59%</td>
+<td class="num">10.51%</td>
+<td class="num">9.54%</td>
+<td class="num">9.08%</td>
+<td class="num">8.65%</td>
+<td class="num">7.85%</td>
+<td class="num">7.11%</td>
+</tr>
+</tbody></table></div>
+<p class="caption">Read the top-left corner: weak growth and a tight exit cap still produce a competitive return because the entry yield is high. Read the bottom-right: strong growth with cap compression is the best case.</p>
+
+<h2 id="spread">Cap-rate spread: what a widening costs</h2>
+<p>The single largest risk to a hold is not the tenant — it is the exit cap rate. This table isolates it.</p>
+<div class="tablewrap"><table class="">
+<thead><tr>
+<th>Entry cap</th>
+<th class="num">Exit flat</th>
+<th class="num">Exit +25 bp</th>
+<th class="num">Exit +75 bp</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>6.00%</td>
+<td class="num">7.97%</td>
+<td class="num">7.47%</td>
+<td class="num">6.56%</td>
+</tr>
+<tr>
+<td>6.25%</td>
+<td class="num">8.22%</td>
+<td class="num">7.75%</td>
+<td class="num">6.88%</td>
+</tr>
+<tr>
+<td>6.50%</td>
+<td class="num">8.48%</td>
+<td class="num">8.03%</td>
+<td class="num">7.20%</td>
+</tr>
+<tr>
+<td>6.75%</td>
+<td class="num">8.73%</td>
+<td class="num">8.30%</td>
+<td class="num">7.51%</td>
+</tr>
+<tr>
+<td>7.00%</td>
+<td class="num">8.99%</td>
+<td class="num">8.58%</td>
+<td class="num">7.81%</td>
+</tr>
+<tr>
+<td>7.25%</td>
+<td class="num">9.24%</td>
+<td class="num">8.85%</td>
+<td class="num">8.11%</td>
+</tr>
+</tbody></table></div>
+<p class="caption">At a 6.50% entry, a 75 bp widening at exit still leaves a 7.2% IRR — because the income return and rent growth carry it. That is why the hold case is robust to all but a severe repricing.</p>
+
+<h2 id="tax">After-tax illustration (flat arithmetic, not an IRR)</h2>
+<p>These rows show what a sale costs if it is <b>not</b> exchanged. They use IRS maxima: 25% on unrecaptured Section 1250
+gain, 20% on long-term capital gain, plus net investment income tax at 3.8% where applicable
+(<a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Internal Revenue Service — Topic No. 409 — Capital Gains and Losses (incl. 25% max on unrecaptured §1250 gain)">S16</a>), plus an assumed 13.3% California rate. The California rate and the NIIT application were
+<b>not</b> verified against a fetched official page in this session and are therefore labelled as assumptions.</p>
+<div class="tablewrap"><table class="">
+<thead><tr>
+<th>Price</th>
+<th>Basis as % of price</th>
+<th class="num">Basis</th>
+<th class="num">Gain</th>
+<th class="num">Estimated tax</th>
+<th class="num">Effective rate on gain</th>
+<th class="num">Net after tax</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$2,700,000</td>
+<td>35%</td>
+<td class="num">$945,000</td>
+<td class="num">$1,755,000</td>
+<td class="num">$655,074</td>
+<td class="num">37.3%</td>
+<td class="num">$2,044,926</td>
+</tr>
+<tr>
+<td>$5,400,000</td>
+<td>35%</td>
+<td class="num">$1,890,000</td>
+<td class="num">$3,510,000</td>
+<td class="num">$1,310,148</td>
+<td class="num">37.3%</td>
+<td class="num">$4,089,852</td>
+</tr>
+<tr>
+<td>$8,000,000</td>
+<td>35%</td>
+<td class="num">$2,800,000</td>
+<td class="num">$5,200,000</td>
+<td class="num">$1,940,960</td>
+<td class="num">37.3%</td>
+<td class="num">$6,059,040</td>
+</tr>
+<tr>
+<td>$2,700,000</td>
+<td>50%</td>
+<td class="num">$1,350,000</td>
+<td class="num">$1,350,000</td>
+<td class="num">$506,520</td>
+<td class="num">37.5%</td>
+<td class="num">$2,193,480</td>
+</tr>
+<tr>
+<td>$5,400,000</td>
+<td>50%</td>
+<td class="num">$2,700,000</td>
+<td class="num">$2,700,000</td>
+<td class="num">$1,013,040</td>
+<td class="num">37.5%</td>
+<td class="num">$4,386,960</td>
+</tr>
+<tr>
+<td>$8,000,000</td>
+<td>50%</td>
+<td class="num">$4,000,000</td>
+<td class="num">$4,000,000</td>
+<td class="num">$1,500,800</td>
+<td class="num">37.5%</td>
+<td class="num">$6,499,200</td>
+</tr>
+<tr>
+<td>$2,700,000</td>
+<td>65%</td>
+<td class="num">$1,755,000</td>
+<td class="num">$945,000</td>
+<td class="num">$357,966</td>
+<td class="num">37.9%</td>
+<td class="num">$2,342,034</td>
+</tr>
+<tr>
+<td>$5,400,000</td>
+<td>65%</td>
+<td class="num">$3,510,000</td>
+<td class="num">$1,890,000</td>
+<td class="num">$715,932</td>
+<td class="num">37.9%</td>
+<td class="num">$4,684,068</td>
+</tr>
+<tr>
+<td>$8,000,000</td>
+<td>65%</td>
+<td class="num">$5,200,000</td>
+<td class="num">$2,800,000</td>
+<td class="num">$1,060,640</td>
+<td class="num">37.9%</td>
+<td class="num">$6,939,360</td>
+</tr>
+</tbody></table></div>
+<p class="caption">Illustrative only. The owner's actual basis, depreciation history and residency are unknown (flag F-07).</p>
+<div class="note bad">
+<b>What this means in practice.</b> At a 35% basis, a sale at $5.4 million leaves roughly 24% of the gain with the tax
+authorities. A 1031 exchange defers that, but only if a replacement is identified within 45 days — so the exchange must be
+arranged before Listing, not after closing.
+</div>
+
+<h2 id="limits">Limits of the model</h2>
+<ul>
+<li><b>No leverage.</b> Debt would amplify both the income return and the cap-rate risk, and financing costs currently exceed
+net-lease cap rates (<a href="https://www.bouldergroup.com/media/pdf/2026-Q3-Net-Lease-Research-Report.pdf" target="_blank" rel="noopener" title="The Boulder Group — Q3 2026 Net Lease Research Report (PDF)">S24</a>), so negative leverage would lower returns.</li>
+<li><b>No vacancy scenario.</b> The model assumes the lease runs to expiry. The vacancy case is handled qualitatively on the
+<a href="risk.html">Risk</a> page because its cost depends on the tenant improvements a replacement user needs — unknown.</li>
+<li><b>No redevelopment value.</b> The land may be worth more as housing or mixed use than as a restaurant. That upside is
+described on the <a href="decision.html">Decision</a> page and excluded here because zoning capacity is unverified (F-09).</li>
+<li><b>Single path, no Monte Carlo.</b> A probability distribution over cap rates and rents would imply a precision the
+underlying inputs do not support.</li>
+</ul>
+<p class="small">Reproduce every number on this page with <code>python3 tools/model.py</code>. The script and its assumptions are in the repository.</p>
+
+</div></main>
+<footer class="site"><div class="wrap">
+  <div><b>Privacy:</b> the parcel is anonymised as [PROPERTY-A]; owner, franchisee and all personal information are withheld.</div>
+  <div>Compiled 2026-11-06 · sources verified 2026-11-06 · <a href="methodology.html">method &amp; limitations</a></div>
+</div></footer>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

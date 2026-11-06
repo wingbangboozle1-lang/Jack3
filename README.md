@@ -1,8 +1,18 @@
 # Jack / Property intelligence
 
-Privacy-safe, static research dashboard for an unidentified Los Angeles-area net lease asset, **plus** a deep-dive decision brief at `brief/` (see below).
+Privacy-safe, static research dashboard for an unidentified Los Angeles-area net lease asset.
+It is published in layers, all linked from the root landing page and from here.
 
 **Live site:** https://wingbangboozle1-lang.github.io/Jack3/
+
+## What is published
+
+| Layer | Path | Built by | What it is |
+|---|---|---|---|
+| Evidence workspace | `/` (root) | `scripts/build.py` + `data/evidence.json` | Evidence-gated brief: known vs not-verifiable, decision pathways, flagged review |
+| Research tables | `/docs/` | session `ff406d61` | Verified research dashboard, row-level official sources, flagged review |
+| Deep-dive evidence dashboard | `/analysis/` | session `8d650ba0` | 11 pages generated from JSON; 113 sourced indicators; 22-row risk register; scenario model; decision framework |
+| Deep-dive decision brief | `/brief/` | session `arena-796b983f-jack3` | 9 pages; interactive sell-vs-renew scenario model; scored risk register R-01…R-22; Measure ULA worked examples; flagged review |
 
 ## Evidence boundary
 Official observations were manually checked on 2026-11-06. Property identity, lease, rent, debt and owner financial circumstances are absent. Regional context is not a parcel forecast. Missing numerical values stay blank; conditional analyst rules are not official recommendations. See `review.html` for nonblocking review flags and `sources.html` for methodology.
@@ -14,21 +24,17 @@ No personal information, addresses, parcel identifiers, owner research, analytic
 python scripts/build.py
 python scripts/validate.py
 python tools/check_site.py   # checks the brief/ deep-dive site
+python3 tools/linkcheck.py   # checks the analysis/ deep-dive site anchors
 python -m http.server 8000 --bind 0.0.0.0
 ```
 
 `data/evidence.json` is the public source of truth. Rebuild HTML after edits. Validation checks internal links and row provenance, not live external availability or semantic truth. Source checks are manual and the site is a dated snapshot, not an automatic data feed. GitHub Pages serves the repository root on main; PR validation checks deterministic output before integration.
 
-## Companion sites
-
-- **`docs/`** — parallel session `ff406d61`'s verified research dashboard (10 pages; tables with row-level official sources; flagged-review page). Lives at `https://wingbangboozle1-lang.github.io/Jack3/docs/`.
-- **`brief/`** — session `arena-796b983f-jack3`'s deep-dive decision brief (see below). Lives at `https://wingbangboozle1-lang.github.io/Jack3/brief/`.
-
-The root workspace links to both; nothing was removed or overwritten.
+---
 
 ## Deep-dive decision brief (`brief/`)
 
-Added by session `arena-796b983f-jack3` as a companion to the main research workspace. Opens at **https://wingbangboozle1-lang.github.io/Jack3/brief/** and includes:
+Added by session `arena-796b983f-jack3` as a companion to the main research workspace. It complements the `analysis/` deep-dive (above): same anonymization boundary, more emphasis on interactive decision support and a plain-language sell-vs-renew playbook. Opens at **https://wingbangboozle1-lang.github.io/Jack3/brief/**.
 
 | Page | Content |
 |---|---|
@@ -42,6 +48,43 @@ Added by session `arena-796b983f-jack3` as a companion to the main research work
 | `brief/sources.html` | Master source register S-01…S-38 |
 | `brief/flagged.html` | All unverified values / owner-input blockers — nothing hidden |
 
-The brief layer adds decision analysis and an interactive model on top of the main workspace's evidence register. Recommendation content is **analysis**, labeled as such — not official data and not personalized legal, tax, or investment advice. Mirror-sourced Census values are labeled; anything unconfirmable is blank or on `brief/flagged.html`.
+Recommendation content in `brief/` is **analysis**, labeled as such — not official data and not personalized legal, tax, or investment advice. Mirror-sourced Census values are labeled; anything unconfirmable is blank or on `brief/flagged.html`.
 
-`research/RESEARCH.md` holds this session's raw evidence log alongside `research/VERIFICATION.md` (the main workspace record).
+`research/RESEARCH.md` holds this session's raw evidence log alongside `research/VERIFICATION.md` (root-workspace record), `research/demographics.md`, `research/economy.md` … (docs/ session) and `research/verification-log.md` (analysis/ session).
+
+---
+
+## Deep-dive evidence dashboard (`analysis/`)
+
+A third, additive layer produced by session `sess-8d650ba0` sits in **`analysis/`** — 11 pages generated from JSON, with
+113 sourced indicators, a 22-row risk register, a deterministic scenario model and a decision framework.
+
+**Open it at:** `/analysis/index.html` (or the "Deep-dive evidence dashboard" link on the root landing page).
+
+| Page | What it answers |
+|---|---|
+| `analysis/index.html` | Dashboard: recommendation, executive summary, top risks, verification counts |
+| `analysis/economy.html` | Population, income, housing, employment by sector, prices and rates |
+| `analysis/tenant.html` | Jack in the Box Inc. unit counts, closures, same-store sales, guidance, Del Taco divestiture |
+| `analysis/property.html` | Proposition 13, 2026 roll, transfer taxes, Measure ULA, value matrix, §1031 |
+| `analysis/risk.html` | 22 risks: 13 business-as-usual and 9 black swan, with mitigations |
+| `analysis/scenarios.html` | Hold-versus-sell model, sensitivity grids, after-tax illustration |
+| `analysis/decision.html` | Five options scored, recommendation, sell triggers, dated action plan |
+| `analysis/data.html` | 113-row master table, each row with a source link and status |
+| `analysis/flagged.html` | 13 items that could not be verified, and what closes each one |
+| `analysis/sources.html` | 28 sources with tier, publisher, URL and access date |
+| `analysis/methodology.html` | Verification standard, anonymisation, model method, limitations |
+
+Rebuild just this layer:
+
+```
+python3 tools/model.py       # recompute analysis/data/scenarios.json
+python3 tools/build.py       # regenerate the 11 pages in analysis/
+python3 tools/linkcheck.py   # fail on any broken internal link or anchor
+```
+
+The two earlier dashboards (root, `docs/`) are unchanged apart from additive links to the deep dives.
+Line-by-line check record: `research/verification-log.md`.
+
+## Repository hygiene
+`COORDINATION.md` is the shared multi-session task board — read it before editing anything; parallel sessions worked this repository simultaneously on 2026-11-06 and every session's scope is preserved there.
