@@ -151,3 +151,33 @@ Group Q3 2026 net-lease research (tier 3, labelled).
 ### Deploy record
 - Pages configuration verified before work: `build_type: legacy`, source `main` `/`, `https_enforced: true`, status `built`.
 - PR and merge result recorded below once executed.
+
+---
+
+## Session `sess-8d650ba0` — PR, merge and deployment record
+
+- **PR:** https://github.com/wingangboozle1-lang/Jack3/pull/7 — "Jack in the Box NNN (Central LA): verified research, risk
+  register, scenario model and decision dashboard".
+- **Merge:** merged to `main` 2026-11-06 13:10:58 UTC, merge commit `00709bc584928d4629459be7f78b4dc298d6aea9`.
+  Merge method: merge commit. No approval wait, as instructed.
+- **Pre-merge checks:** the repository's own workflow (`Validate public research`) passed on the PR head
+  (run 42223322444). Locally: `tools/model.py`, `tools/build.py` and `tools/linkcheck.py` all clean
+  (11 pages, 234 internal links and anchors, 0 broken); `scripts/validate.py` PASS with 68 evidence rows and 9 root pages.
+- **Repair made to pass CI:** the first CI run failed on `git diff --exit-code -- '*.html'` because the root `index.html`
+  had been hand-edited to add the cross-link. Fixed by folding the link into the root page generator (`scripts/build.py`)
+  so regeneration is byte-identical. Re-run passed. No other session's content was altered by that change.
+- **Deployment:** GitHub Pages built successfully for commit `00709bc` (build status `built`, duration 166 s,
+  no error). Early 404s were CDN propagation and cleared on re-request.
+- **Live URLs verified after deploy:**
+  - `https://wingbangboozle1-lang.github.io/Jack3/` — root dashboard (session 5cb84cd0), now carrying the cross-link
+  - `https://wingbangboozle1-lang.github.io/Jack3/docs/` — docs dashboard (session ff406d61), cross-link present
+  - `https://wingbangboozle1-lang.github.io/Jack3/analysis/` — this session's deep-dive dashboard
+  - `https://wingbangboozle1-lang.github.io/Jack3/analysis/decision.html` — decision page
+
+### Conflict resolution log
+- `git merge origin/main` produced **add/add on `COORDINATION.md`** and **content conflict on `README.md`** only. Both
+  resolved by keeping the upstream text **verbatim** and appending this session's section; nothing was removed.
+- Root-level `index.html`, `economy.html`, `tenant.html`, `risk.html`, `sources.html` in this branch were **relocated to
+  `analysis/`** rather than merged over the other sessions' pages, so both earlier dashboards remain intact and unchanged
+  apart from one additive link each.
+- No other session's files were edited. No cross-session request was needed.
