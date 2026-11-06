@@ -19,6 +19,13 @@ python -m http.server 8000 --bind 0.0.0.0
 
 `data/evidence.json` is the public source of truth. Rebuild HTML after edits. Validation checks internal links and row provenance, not live external availability or semantic truth. Source checks are manual and the site is a dated snapshot, not an automatic data feed. GitHub Pages serves the repository root on main; PR validation checks deterministic output before integration.
 
+## Companion sites
+
+- **`docs/`** — parallel session `ff406d61`'s verified research dashboard (10 pages; tables with row-level official sources; flagged-review page). Lives at `https://wingbangboozle1-lang.github.io/Jack3/docs/`.
+- **`brief/`** — session `arena-796b983f-jack3`'s deep-dive decision brief (see below). Lives at `https://wingbangboozle1-lang.github.io/Jack3/brief/`.
+
+The root workspace links to both; nothing was removed or overwritten.
+
 ## Deep-dive decision brief (`brief/`)
 
 Added by session `arena-796b983f-jack3` as a companion to the main research workspace. Opens at **https://wingbangboozle1-lang.github.io/Jack3/brief/** and includes:
