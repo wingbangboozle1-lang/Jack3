@@ -168,7 +168,9 @@ def build_index():
     rows_by_cat = {}
     for r in DATA:
         rows_by_cat.setdefault(r["cat"], []).append(r)
-    n_ver = sum(1 for r in DATA if r["status"].startswith("verified"))
+    n_ver = sum(1 for r in DATA if r["status"] == "verified")
+    n_ind = sum(1 for r in DATA if r["status"] == "verified-industry")
+    n_calc = sum(1 for r in DATA if r["status"] == "calculated")
     n_flag = sum(1 for r in DATA if r["status"] == "flagged")
 
     kpis = "".join([
@@ -270,7 +272,7 @@ and pricing is soft. The 10-year Treasury sits at <b>4.90%</b>.</li>
 <h2 id="audit">What is verified, and what is not</h2>
 <div class="grid c3">
 <div class="kpi"><div class="label">Dataset rows</div><div class="value">{len(DATA)}</div><div class="sub">across {len(rows_by_cat)} categories</div></div>
-<div class="kpi"><div class="label">Rows with a verified official source</div><div class="value">{n_ver}</div><div class="sub">{pct(n_ver/len(DATA))} of the dataset</div></div>
+<div class="kpi"><div class="label">Rows verified on an official or filed source</div><div class="value">{n_ver}</div><div class="sub">{pct(n_ver/len(DATA))} of the dataset · plus {n_ind} industry and {n_calc} calculated</div></div>
 <div class="kpi"><div class="label">Rows flagged unverified</div><div class="value">{n_flag}</div><div class="sub">left in the table, marked, not deleted</div></div>
 </div>
 <div class="note warn" style="margin-top:16px">
