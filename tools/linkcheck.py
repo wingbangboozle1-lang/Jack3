@@ -9,7 +9,7 @@ import re
 import sys
 from collections import Counter
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "analysis"))
 ATTR = re.compile(r'(?:href|src)\s*=\s*"([^"]*)"')
 ID = re.compile(r'id\s*=\s*"([^"]*)"')
 

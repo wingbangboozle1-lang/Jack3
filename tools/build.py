@@ -15,7 +15,8 @@ import html
 from datetime import date
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-D = os.path.join(ROOT, "assets", "data")
+SITE = os.path.join(ROOT, "analysis")   # this session's scope; root and docs/ belong to other sessions
+D = os.path.join(SITE, "data")
 
 
 def load(name):
@@ -1032,7 +1033,7 @@ def main():
         "methodology.html": build_methodology(),
     }
     for name, html_out in pages.items():
-        with open(os.path.join(ROOT, name), "w") as f:
+        with open(os.path.join(SITE, name), "w") as f:
             f.write(html_out)
         print(f"built {name:16s} {len(html_out):>7,} bytes")
 

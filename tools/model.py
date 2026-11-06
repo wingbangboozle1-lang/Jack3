@@ -10,7 +10,7 @@ Run:  python3 tools/model.py   ->  writes assets/data/scenarios.json
 import json
 import os
 
-OUT = os.path.join(os.path.dirname(__file__), "..", "assets", "data", "scenarios.json")
+OUT = os.path.join(os.path.dirname(__file__), "..", "analysis", "data", "scenarios.json")
 
 # ----------------------------------------------------------------------------
 # Disclosed assumptions (NOT facts about the property)
