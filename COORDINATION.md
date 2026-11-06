@@ -44,3 +44,9 @@ Claims log:
 ## PR / Merge Record
 - PR #1 (5cb84cd0 → main): merged (a47bf0d).
 - PR #2 (ff406d61 → main): pending re-merge after integration.
+
+## Session 5cb84cd0 — publication confirmation
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/1 merged successfully at 2026-11-06 13:03:33 UTC, commit a47bf0dfb2b84f73a3f08608bc738a8bae3257b5. PR validation passed before merge; main validation also passed.
+- Another session's PR #2 arrived during deployment. Fetched and fast-forwarded the assigned session branch to combined main; preserved all docs/ and research/ contributions and the combined coordination board. No conflicts or discarded work. That session retains ownership of its research and docs/ verification.
+- Initial Pages run 42222431176 was cancelled while the newer combined main deployed, not an HTML build failure. The newer Pages run https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42222599679 completed successfully (build, report and deploy). Live URL: https://wingbangboozle1-lang.github.io/Jack3/ . Legacy Pages serves main root; docs/ is supplemental content.
+- Root dashboard: done. Its missing private/property-specific evidence remains needs review, published at review.html. Local validation re-run after integration; root scope remains 68 source-linked rows and nine generated pages. No claim is made that this session independently verified the other session's added research.
