@@ -1,0 +1,796 @@
+{
+  "reviewed": "2026-11-06",
+  "sources": {
+    "city": {
+      "label": "U.S. Census · LA city",
+      "url": "https://www.census.gov/quickfacts/losangelescitycalifornia",
+      "checked": "2026-11-06",
+      "type": "Government"
+    },
+    "county": {
+      "label": "U.S. Census · LA County",
+      "url": "https://www.census.gov/quickfacts/losangelescountycalifornia",
+      "checked": "2026-11-06",
+      "type": "Government"
+    },
+    "bls": {
+      "label": "BLS · LA economic summary",
+      "url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+      "checked": "2026-11-06",
+      "type": "Government"
+    },
+    "jack": {
+      "label": "Issuer · Q3 FY2026 results",
+      "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx",
+      "checked": "2026-11-06",
+      "type": "Issuer"
+    },
+    "fire": {
+      "label": "CAL FIRE · hazard zones",
+      "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
+      "checked": "2026-11-06",
+      "type": "Government"
+    },
+    "quake": {
+      "label": "CGS · EQ Zapp",
+      "url": "https://www.conservation.ca.gov/cgs/geohazards/eq-zapp",
+      "checked": "2026-11-06",
+      "type": "Government"
+    },
+    "flood": {
+      "label": "FEMA · flood maps",
+      "url": "https://msc.fema.gov/portal/home",
+      "checked": "2026-11-06",
+      "type": "Government"
+    },
+    "school": {
+      "label": "CA Education · Dashboard",
+      "url": "https://www.cde.ca.gov/ta/ac/cm/",
+      "checked": "2026-11-06",
+      "type": "Government"
+    },
+    "wage": {
+      "label": "CA DIR · minimum wage",
+      "url": "https://www.dir.ca.gov/dlse/Minimum_Wage.htm",
+      "checked": "2026-11-06",
+      "type": "Government"
+    },
+    "zoning": {
+      "label": "LA City Planning · ZIMAS",
+      "url": "https://zimas.lacity.org/",
+      "checked": "2026-11-06",
+      "type": "Government"
+    },
+    "irs": {
+      "label": "IRS · like-kind exchanges",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
+      "checked": "2026-11-06",
+      "type": "Government"
+    }
+  },
+  "pages": [
+    {
+      "id": "economy",
+      "title": "Area fundamentals",
+      "kicker": "01 / Regional evidence",
+      "description": "Verified regional context, not a trade-area study. Different periods and geographic boundaries must not be combined as though they describe the same market.",
+      "columns": [
+        "Indicator",
+        "Value",
+        "Geography · period",
+        "Decision relevance"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Population",
+            "3,869,089",
+            "LA city · July 1, 2025 · V2025",
+            "Large city population is not proof of store demand."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Population change",
+            "−0.8%",
+            "LA city · April 2020 estimates base to July 2025",
+            "Potential demand headwind; not a forecast."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Population",
+            "9,694,934",
+            "LA County · July 1, 2025 · V2025",
+            "County includes many dissimilar neighborhoods."
+          ],
+          "status": "Verified",
+          "source": "county"
+        },
+        {
+          "cells": [
+            "Population change",
+            "−3.2%",
+            "LA County · April 2020 estimates base to July 2025",
+            "Do not substitute county change for this location."
+          ],
+          "status": "Verified",
+          "source": "county"
+        },
+        {
+          "cells": [
+            "Median household income",
+            "$81,939",
+            "LA city · 2020–2024 · 2024 dollars",
+            "Purchasing-power context; not local customer income."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Per capita income",
+            "$47,685",
+            "LA city · 2020–2024 · 2024 dollars",
+            "City aggregate; not store sales or owner income."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Median gross residential rent",
+            "$1,933 / month",
+            "LA city · 2020–2024",
+            "Household cost context; not commercial rent comparable."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Bachelor’s degree or higher",
+            "38.5%",
+            "LA city · age 25+ · 2020–2024",
+            "Workforce context; not school performance."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "High school graduate or higher",
+            "79.6%",
+            "LA city · age 25+ · 2020–2024",
+            "Educational attainment, not a district score."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Population density",
+            "8,304.2 / sq mi",
+            "LA city · 2020",
+            "Not site access, footfall, or catchment density."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Mean commute",
+            "30.7 minutes",
+            "LA city · workers age 16+ · 2020–2024",
+            "Not traffic volume past the restaurant."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Unemployment",
+            "5.0%",
+            "LA city · August 2026 · not seasonally adjusted",
+            "Regional labor-market context."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Unemployment",
+            "4.9%",
+            "LA County · August 2026 · not seasonally adjusted",
+            "Distinct from city and metro measures."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Total nonfarm employment",
+            "6,289.1 thousand",
+            "LA metro · August 2026 · not seasonally adjusted",
+            "Broad employment base, not central LA jobs."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Nonfarm employment change",
+            "+0.6% year over year",
+            "LA metro · August 2026 · not seasonally adjusted",
+            "Modest growth; not a 2030–2035 trajectory."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Education & health employment change",
+            "+3.3% year over year",
+            "LA metro · August 2026",
+            "Sector support does not establish nearby demand."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Information employment change",
+            "−6.1% year over year",
+            "LA metro · August 2026",
+            "Sector-specific weakness; no parcel inference."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "All-items CPI-U change",
+            "+3.6% year over year",
+            "LA metro · August 2026",
+            "Inflation can affect costs; lease escalators unknown."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Average weekly wage",
+            "$1,704",
+            "LA County · all industries · Q1 2026",
+            "Not household income; different population and period."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        }
+      ]
+    },
+    {
+      "id": "tenant",
+      "title": "Tenant & lease",
+      "kicker": "02 / Income durability",
+      "description": "The restaurant brand is not necessarily the legal tenant or guarantor. Corporate disclosures are primary issuer reports, not an independent assessment of this store.",
+      "columns": [
+        "Item",
+        "Value / finding",
+        "Scope or required evidence"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "System same-store sales",
+            "−1.1%",
+            "12 weeks ended July 5, 2026; not this location."
+          ],
+          "status": "Verified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Systemwide sales change",
+            "−1.4%",
+            "Third quarter FY2026; not rent collection."
+          ],
+          "status": "Verified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Restaurant closures",
+            "17",
+            "Third quarter FY2026, systemwide; does not identify this site."
+          ],
+          "status": "Verified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Restaurant openings",
+            "4",
+            "Third quarter FY2026, systemwide."
+          ],
+          "status": "Verified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Restaurant count",
+            "2,115",
+            "End of Q3 FY2026; 149 company / 1,966 franchise."
+          ],
+          "status": "Verified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Covered fast-food minimum wage",
+            "$20.00 / hour",
+            "Effective April 1, 2024 as stated by DIR; coverage and local requirements require review."
+          ],
+          "status": "Verified",
+          "source": "wage"
+        },
+        {
+          "cells": [
+            "Exact expiration / notice deadlines",
+            "",
+            "Unverified. The reported 2030–2035 range is user context only; executed lease and amendments absent. Source is issuer context, not this lease."
+          ],
+          "status": "Unverified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Legal tenant / guarantor / financial coverage",
+            "",
+            "Unverified. Do not assume a corporate guarantee from signage; private lease unavailable."
+          ],
+          "status": "Unverified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Rent / escalations / options / landlord obligations",
+            "",
+            "Unverified. NNN label alone does not establish expense allocation, roof, structure or casualty duties."
+          ],
+          "status": "Unverified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Store profitability / arrears / renewal intention",
+            "",
+            "Unverified. Chain results cannot supply store-level operating statements or estoppel."
+          ],
+          "status": "Unverified",
+          "source": "jack"
+        }
+      ]
+    },
+    {
+      "id": "risk",
+      "title": "Risk & resilience",
+      "kicker": "03 / Downside first",
+      "description": "Known natural hazards are stress cases, not inherently unpredictable black swans. No parcel exposure, probability, insurance recovery or loss estimate has been assigned.",
+      "columns": [
+        "Risk",
+        "Verified context / analysis",
+        "Mitigation or decision test"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Earthquake / liquefaction / fault rupture",
+            "CGS maps ground-failure zones; maps do not replace site investigations or measure all shaking risk.",
+            "Parcel overlay, structural evaluation, deductible and rent-loss review required."
+          ],
+          "status": "Verified",
+          "source": "quake"
+        },
+        {
+          "cells": [
+            "Wildfire / smoke / access disruption",
+            "CAL FIRE distinguishes physical hazard from mitigated risk.",
+            "Verify local adopted map, construction, evacuation access and insurance exclusions. No claim that central LA is safe."
+          ],
+          "status": "Verified",
+          "source": "fire"
+        },
+        {
+          "cells": [
+            "Flood / severe storm",
+            "FEMA MSC is the official NFIP flood-hazard information source; maps can change.",
+            "Check current effective map, drainage and flood coverage; no parcel zone assigned."
+          ],
+          "status": "Verified",
+          "source": "flood"
+        },
+        {
+          "cells": [
+            "Closure / default / franchise stress",
+            "Issuer reports negative same-store sales and restaurant closures.",
+            "Analysis: verify legal obligor and guaranty; plan re-leasing, carrying costs and collection downside."
+          ],
+          "status": "Analysis",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Inflation / labor pressure",
+            "DIR lists a higher wage floor for covered fast-food workers.",
+            "Analysis: examine store rent coverage; do not infer failure from wage regulation."
+          ],
+          "status": "Analysis",
+          "source": "wage"
+        },
+        {
+          "cells": [
+            "Interest rates / refinancing / cap rates",
+            "No property borrowing terms or verified sale comparables available.",
+            "Analysis: stress debt maturity and higher exit yields; do not assign a market cap rate. BLS is macro context only."
+          ],
+          "status": "Analysis",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Permitting / loss of drive-through use",
+            "ZIMAS is the City Planning public information system; parcel not identified.",
+            "Analysis: verify jurisdiction, entitlement, nonconforming rights, access and alternate uses before redevelopment."
+          ],
+          "status": "Analysis",
+          "source": "zoning"
+        },
+        {
+          "cells": [
+            "Pandemic / civil disruption / utility outage / correlated catastrophe",
+            "No verified probability or site loss estimate.",
+            "Analysis: model interrupted rent, uninsured costs and impaired exit liquidity together. FEMA supports flood context only, not these event probabilities."
+          ],
+          "status": "Analysis",
+          "source": "flood"
+        },
+        {
+          "cells": [
+            "Concentration / liquidity / reinvestment",
+            "Owner portfolio and liquidity needs are deliberately unavailable.",
+            "Analysis: compare diversified after-tax alternatives; no personal allocation or risk score can be justified. IRS supports exchange context only."
+          ],
+          "status": "Analysis",
+          "source": "irs"
+        }
+      ]
+    },
+    {
+      "id": "place",
+      "title": "Neighborhood & land",
+      "kicker": "04 / Location matters",
+      "description": "“Around central Los Angeles” does not define a parcel, jurisdiction, census tract or customer catchment. No candidate property or owner was searched for or identified.",
+      "columns": [
+        "Research dimension",
+        "Confirmed local value",
+        "Unresolved / next evidence"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Geography / access / visibility",
+            "",
+            "Unverified. Parcel, intersection, drive-through circulation, parking and traffic counts absent. City planning portal is a research route only."
+          ],
+          "status": "Unverified",
+          "source": "zoning"
+        },
+        {
+          "cells": [
+            "School system performance",
+            "",
+            "Unverified. CDE reports multiple measures; no school boundary or school selection confirmed. Do not rank schools using city attainment."
+          ],
+          "status": "Unverified",
+          "source": "school"
+        },
+        {
+          "cells": [
+            "Trade-area population / income / daytime workers",
+            "",
+            "Unverified. Census city totals are not a radius or drive-time catchment. ACS sampling error and geography must be retained."
+          ],
+          "status": "Unverified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Zoning / redevelopment / permits / title constraints",
+            "",
+            "Unverified. Jurisdiction, zoning, entitlements, easements and redevelopment costs absent."
+          ],
+          "status": "Unverified",
+          "source": "zoning"
+        },
+        {
+          "cells": [
+            "Competition / traffic / transit / crime / development pipeline",
+            "",
+            "Unverified. No authenticated site-specific dataset or match; no numerical value assigned. ZIMAS is location context, not proof of these measures."
+          ],
+          "status": "Unverified",
+          "source": "zoning"
+        },
+        {
+          "cells": [
+            "Heat / air quality / contamination / insurability",
+            "",
+            "Unverified. No site study, environmental assessment or insurance quote; CAL FIRE confirms wildfire methodology only."
+          ],
+          "status": "Unverified",
+          "source": "fire"
+        }
+      ]
+    },
+    {
+      "id": "decisions",
+      "title": "Decision pathways",
+      "kicker": "05 / Conditional strategy",
+      "description": "Recommendation: retain optionality now. Evaluate renewal and a pre-expiry sale concurrently, but authorize neither solely on regional data. These are analyst decision rules, not official investment recommendations.",
+      "columns": [
+        "Pathway",
+        "When it may be preferable",
+        "Main risks / gate"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Sell before expiration",
+            "A verified after-tax offer beats the risk-adjusted value of continued income and alternatives.",
+            "Transaction tax and costs, reinvestment risk, lost rent upside. Obtain actual pricing; no sale value or optimal year established."
+          ],
+          "status": "Analysis",
+          "source": "irs"
+        },
+        {
+          "cells": [
+            "Negotiate early renewal / extension",
+            "Documented tenant credit, enforceable obligations, acceptable rent and expense allocation support holding.",
+            "Weak guarantees, below-market locked rent, concessions and continuing concentration. Confirm options and tenant consent first."
+          ],
+          "status": "Analysis",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Hold under existing lease",
+            "Contractual income, liquidity and insured downside are independently established and attractive relative to sale.",
+            "Shortening remaining term, default, residual costs and expiry vacancy; do not wait blindly for expiration."
+          ],
+          "status": "Analysis",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Renew then sell",
+            "A signed creditworthy extension improves actual bids enough to offset concessions and costs.",
+            "No guaranteed cap-rate compression; extension may reduce flexibility or lock poor economics. Compare actual bids."
+          ],
+          "status": "Analysis",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Re-tenant / reposition",
+            "Documented alternate demand and permitted use justify vacancy and capital spending.",
+            "Downtime, incentives, commissions, buildout and use restrictions; entitlement and budget gate required."
+          ],
+          "status": "Analysis",
+          "source": "zoning"
+        },
+        {
+          "cells": [
+            "Redevelop / ground-lease alternative",
+            "Verified legal feasibility and independently costed residual land value exceed existing-use value.",
+            "Construction, environmental, financing and permitting risk; not the default wealth-preservation route."
+          ],
+          "status": "Analysis",
+          "source": "zoning"
+        },
+        {
+          "cells": [
+            "Sell with potential §1031 exchange",
+            "Qualified business/investment real-property exchange is suitable after tax/legal review.",
+            "Deferral is not tax elimination; eligibility and execution constraints, replacement concentration and price risk remain."
+          ],
+          "status": "Analysis",
+          "source": "irs"
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "title": "Projection framework",
+      "kicker": "06 / No invented forecasts",
+      "description": "An evidence-gated framework, not a calibrated forecasting system. No property valuation, probability of renewal, forecast return or optimal decision can be computed from the available evidence. Numerical outputs are intentionally blank.",
+      "columns": [
+        "Scenario / output",
+        "Projected value",
+        "Method or release gate"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Business as usual · 2030–2035",
+            "",
+            "Unverified. Use only executed contractual rent through the verified term, confirmed unreimbursed expenses and debt; no extrapolated local growth. Issuer is tenant context only."
+          ],
+          "status": "Unverified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Renewal case · 2030–2035",
+            "",
+            "Unverified. Requires signed extension or separately labeled assumption, concessions, credit review and verified notice rights."
+          ],
+          "status": "Unverified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Vacancy / re-tenant case",
+            "",
+            "Unverified. Requires supported downtime, market rent, leasing costs, carrying costs, capital work and approved use."
+          ],
+          "status": "Unverified",
+          "source": "zoning"
+        },
+        {
+          "cells": [
+            "Catastrophe / interrupted income",
+            "",
+            "Unverified. Requires parcel hazard checks, engineering, policy limits, deductible, exclusions, restoration time and debt obligations. No fabricated event probability."
+          ],
+          "status": "Unverified",
+          "source": "quake"
+        },
+        {
+          "cells": [
+            "Sale net proceeds / after-tax NPV",
+            "",
+            "Unverified. Sale price less verified debt payoff, costs and tax; compare to discounted holding cash flows and net terminal proceeds. Tax basis and discount rate unavailable."
+          ],
+          "status": "Unverified",
+          "source": "irs"
+        },
+        {
+          "cells": [
+            "Robust decision rule",
+            "",
+            "Analysis. Reject alternatives that cannot meet verified liquidity needs in adverse cases; compare after-tax values only after evidence gates pass. No arbitrary weights, annual growth rates or risk scores."
+          ],
+          "status": "Analysis",
+          "source": "irs"
+        },
+        {
+          "cells": [
+            "Validation and monitoring",
+            "",
+            "Analysis. Retain vintages, geography and source definitions; back-test only with matched historical observations, holdout periods and error reporting. Recheck BLS on release; no automatic refresh is claimed."
+          ],
+          "status": "Analysis",
+          "source": "bls"
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Flagged for Review",
+      "kicker": "07 / Transparent limitations",
+      "description": "Published review items do not block the site. They do block unsupported financial claims. Source links below are context or verification routes, not evidence of missing private values.",
+      "columns": [
+        "Priority",
+        "Item",
+        "Finding"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Critical",
+            "Property identity and lease",
+            "No parcel or executed lease; exact expiration, NNN obligations, options and notice dates not verified."
+          ],
+          "status": "Unverified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Critical",
+            "Value, debt and owner suitability",
+            "Rent, NOI, basis, debt, liquidity and concentration unavailable. No defensible personal buy/sell determination."
+          ],
+          "status": "Unverified",
+          "source": "irs"
+        },
+        {
+          "cells": [
+            "High",
+            "Geographic mismatch",
+            "City, county and metro observations are context only; cannot support a central LA parcel forecast."
+          ],
+          "status": "Unverified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "High",
+            "Tenant and guarantee mismatch",
+            "Chain performance is not this store or legal obligor. No site closure or renewal probability asserted."
+          ],
+          "status": "Unverified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "High",
+            "Unquantified hazards and insurance",
+            "No parcel overlay, engineering report, effective coverage or replacement-cost evidence."
+          ],
+          "status": "Unverified",
+          "source": "quake"
+        },
+        {
+          "cells": [
+            "High",
+            "Missing neighborhood evidence",
+            "School performance, crime, traffic, competitive supply and local development not established."
+          ],
+          "status": "Unverified",
+          "source": "school"
+        },
+        {
+          "cells": [
+            "High",
+            "Projection not calibrated",
+            "No official source supplies this property’s 2030–2035 sale price, cap rate, rent or renewal chance. Numerical forecasts withheld."
+          ],
+          "status": "Unverified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Review",
+            "Source revisions and sampling",
+            "QuickFacts spans different vintages; ACS estimates have sampling error; BLS summary is not seasonally adjusted and may be revised."
+          ],
+          "status": "Needs review",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Review",
+            "Source URL repairs",
+            "Initial CAL FIRE and USGS paths returned not-found pages. Replaced with inspected OSFM and CGS sources; no facts taken from failed pages."
+          ],
+          "status": "Needs review",
+          "source": "fire"
+        },
+        {
+          "cells": [
+            "Review",
+            "Jurisdiction and entitlements",
+            "Los Angeles vicinity does not confirm City of Los Angeles jurisdiction; ZIMAS may not be the competent authority."
+          ],
+          "status": "Needs review",
+          "source": "zoning"
+        }
+      ]
+    }
+  ]
+}
