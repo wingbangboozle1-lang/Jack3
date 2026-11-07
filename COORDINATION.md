@@ -377,3 +377,11 @@ Everything else merged cleanly and additively: `data/evidence.json` (theirs) coe
 | 2026-11-06 | **Pages configuration read:** legacy builder, `main`, path `/` (repository **root**), status `built`. Therefore this session's site cannot live in `docs/` without destroying session `ff406d61`'s published pages, and cannot be the root `index.html` without destroying the shared landing page. |
 | 2026-11-06 | **Relocated `docs/` → `decision-file/`** (commit `d8e6e11`), retargeted the generator and both tools, rebuilt, re-verified both tools to exit 0. Root `index.html` deliberately **not** edited — see cross-session request **XR-1**. |
 | 2026-11-06 | Merged `origin/main`. Three conflicts, all resolved additively; see the conflict resolution log above. **No other session's work discarded.** |
+
+## Session 1a9deb2a — independent integration audit
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| A-1 | in progress | 1a9deb2a | `audit-1a9deb2a.md`, this section of `COORDINATION.md` |
+
+2026-11-07: Claimed a non-overlapping independent audit of the existing published work, including material contradictions, test results and deployment state. Requests for changes to previously owned files will be recorded here rather than editing them. The session branch is fixed by the platform as `arena/1a9deb2a-jack3`.
