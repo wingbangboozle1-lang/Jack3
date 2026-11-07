@@ -1,71 +1,77 @@
 {
-  "reviewed": "2026-11-06",
+  "reviewed": "2026-11-07",
   "sources": {
     "city": {
       "label": "U.S. Census · LA city",
       "url": "https://www.census.gov/quickfacts/losangelescitycalifornia",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "county": {
       "label": "U.S. Census · LA County",
       "url": "https://www.census.gov/quickfacts/losangelescountycalifornia",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "bls": {
       "label": "BLS · LA economic summary",
       "url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "jack": {
       "label": "Issuer · Q3 FY2026 results",
       "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Issuer"
     },
     "fire": {
       "label": "CAL FIRE · hazard zones",
       "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "quake": {
       "label": "CGS · EQ Zapp",
       "url": "https://www.conservation.ca.gov/cgs/geohazards/eq-zapp",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "flood": {
       "label": "FEMA · flood maps",
       "url": "https://msc.fema.gov/portal/home",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "school": {
       "label": "CA Education · Dashboard",
       "url": "https://www.cde.ca.gov/ta/ac/cm/",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "wage": {
-      "label": "CA DIR · minimum wage",
-      "url": "https://www.dir.ca.gov/dlse/Minimum_Wage.htm",
-      "checked": "2026-11-06",
+      "label": "CA DIR · fast-food minimum wage FAQ",
+      "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "zoning": {
       "label": "LA City Planning · ZIMAS",
       "url": "https://zimas.lacity.org/",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "irs": {
       "label": "IRS · like-kind exchanges",
       "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
+    },
+    "closure": {
+      "label": "Jack in the Box · 2025 closure plan",
+      "url": "https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx",
+      "checked": "2026-11-07",
+      "type": "Issuer"
     }
   },
   "pages": [
@@ -194,8 +200,8 @@
         {
           "cells": [
             "Unemployment",
-            "5.0%",
-            "LA city · August 2026 · not seasonally adjusted",
+            "4.5%",
+            "LA city · September 2026 · not seasonally adjusted",
             "Regional labor-market context."
           ],
           "status": "Verified",
@@ -204,8 +210,8 @@
         {
           "cells": [
             "Unemployment",
-            "4.9%",
-            "LA County · August 2026 · not seasonally adjusted",
+            "4.5%",
+            "LA County · September 2026 · not seasonally adjusted",
             "Distinct from city and metro measures."
           ],
           "status": "Verified",
@@ -214,8 +220,8 @@
         {
           "cells": [
             "Total nonfarm employment",
-            "6,289.1 thousand",
-            "LA metro · August 2026 · not seasonally adjusted",
+            "6,282.1 thousand",
+            "LA metro · September 2026 · not seasonally adjusted",
             "Broad employment base, not central LA jobs."
           ],
           "status": "Verified",
@@ -224,8 +230,8 @@
         {
           "cells": [
             "Nonfarm employment change",
-            "+0.6% year over year",
-            "LA metro · August 2026 · not seasonally adjusted",
+            "+0.5% year over year",
+            "LA metro · September 2026 · not seasonally adjusted",
             "Modest growth; not a 2030–2035 trajectory."
           ],
           "status": "Verified",
@@ -234,8 +240,8 @@
         {
           "cells": [
             "Education & health employment change",
-            "+3.3% year over year",
-            "LA metro · August 2026",
+            "+3.8% year over year",
+            "LA metro · September 2026 · not seasonally adjusted",
             "Sector support does not establish nearby demand."
           ],
           "status": "Verified",
@@ -244,8 +250,8 @@
         {
           "cells": [
             "Information employment change",
-            "−6.1% year over year",
-            "LA metro · August 2026",
+            "−5.7% year over year",
+            "LA metro · September 2026 · not seasonally adjusted",
             "Sector-specific weakness; no parcel inference."
           ],
           "status": "Verified",
@@ -254,8 +260,8 @@
         {
           "cells": [
             "All-items CPI-U change",
-            "+3.6% year over year",
-            "LA metro · August 2026",
+            "+3.7% year over year",
+            "LA metro · September 2026",
             "Inflation can affect costs; lease escalators unknown."
           ],
           "status": "Verified",
@@ -328,6 +334,15 @@
           ],
           "status": "Verified",
           "source": "jack"
+        },
+        {
+          "cells": [
+            "2025 announced closure program",
+            "Approximately 150–200 restaurants",
+            "Issuer plan for underperforming restaurants; later closures tied to franchise agreement termination dates, not necessarily real-estate lease expiry. No subject-site inclusion established."
+          ],
+          "status": "Verified",
+          "source": "closure"
         },
         {
           "cells": [
@@ -789,6 +804,96 @@
           ],
           "status": "Needs review",
           "source": "zoning"
+        },
+        {
+          "cells": [
+            "Review",
+            "Conflicting inherited strategy rankings",
+            "Companion model rankings and risk scores depend on assumed inputs, not official property evidence; not a personalized recommendation."
+          ],
+          "status": "Needs review",
+          "source": "irs"
+        },
+        {
+          "cells": [
+            "Review",
+            "Rolling BLS source updated",
+            "November 4, 2026 summary now reports September data. Root tables refreshed; historical companion snapshots have not all been reverified."
+          ],
+          "status": "Needs review",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Review",
+            "CDE source unavailable during audit",
+            "Previous audit could not fetch CDE; the official page was inspected on November 7. The relevant school boundary and local performance remain unverified."
+          ],
+          "status": "Needs review",
+          "source": "school"
+        },
+        {
+          "cells": [
+            "Review",
+            "Franchise date is not lease expiration",
+            "Do not equate a franchise agreement termination date with the reported property lease expiry; neither agreement supplied."
+          ],
+          "status": "Needs review",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Critical",
+            "Franchise agreement ≠ property lease",
+            "An earlier companion report equated the franchise termination date with the reported lease expiry. The issuer does not establish this property’s franchise date or closure status."
+          ],
+          "status": "Needs review",
+          "source": "closure"
+        },
+        {
+          "cells": [
+            "Critical",
+            "Prior model and recommendations",
+            "Earlier companion models used unsupported cap rates, probabilities and asymmetric cash-flow adjustments. Their rankings are not a reliable property valuation or personalized recommendation; withheld from this publication."
+          ],
+          "status": "Needs review",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "High",
+            "Companion report publication",
+            "Earlier companion pages include third-party figures, unsourced rows and differing recommendations. Preserved in the repository but excluded from the Pages artifact until reverified."
+          ],
+          "status": "Needs review",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Review",
+            "Live source updates",
+            "The BLS summary is a rolling document. September 2026 observations were checked November 7; figures can later be revised or replaced."
+          ],
+          "status": "Needs review",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "High",
+            "Employment and CPI as-of corrections (F-16)",
+            "Rows previously labelled August 2026 cited a BLS summary that reports September 2026. Re-pointed to September values from that document (payrolls 6,282.1k, +0.5%; CPI +3.7%; energy +20.3%; ECI CSA +3.9%). Figures not in the cited document (U.S. August rate, LA County and LA City August rates) are blank and unverified. Older research layers still carry August figures."
+          ],
+          "status": "Needs review",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Medium",
+            "California minimum wage from 2027-01-01 (F-17)",
+            "Secondary sources report $17.40 per hour, certified 2026-07-31. The DIR primary page could not be re-fetched this session, so the figure is not published as a value. Confirm on the DIR minimum-wage page before use."
+          ],
+          "status": "Needs review",
+          "source": "wage"
         }
       ]
     }

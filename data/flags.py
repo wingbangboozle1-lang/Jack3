@@ -138,6 +138,22 @@ FLAGGED = [
         action_for_owner="Read the Assumptions table on the Projection Model page. Change any value you disagree with and re-run: python3 -m model.projection",
         official_check="",
     ),
+    dict(
+        id="F-16", severity="HIGH", status="CORRECTED 2026-11-07 - RE-VERIFIED",
+        item="Employment, employment-trend and CPI rows labelled August 2026 were not in the cited document",
+        detail="Re-verification on 2026-11-07 against BLS (Los Angeles Area Economic Summary updated 2026-11-04; Metropolitan Area Employment and Unemployment, Table 1) found that the cited summary reports SEPTEMBER 2026 payrolls, 12-month employment changes and CPI, not August. Corrections: (a) payroll rows re-pointed to September 2026 values (total nonfarm 6,282.1k, +0.5%); (b) 12-month employment trend re-pointed to September (+0.5% in Sep-26); (c) CPI re-pointed to September (all items +3.7%, food +2.8%, energy +20.3%); (d) ECI re-pointed to September 2026 (3.9%, CSA); (e) LA metro August unemployment (4.8%) and California August (5.4%) now cite BLS Table 1 (metro.t01.htm), which contains them; (f) the U.S. 'August 2026' unemployment of 4.3% was the September 2025 value and is blanked; (g) LA County and LA City August 2026 and 2025 rates (4.9/6.2 and 5.0/6.2) are not in the cited document and are blanked.",
+        why_blank="Blanked where the cited document does not contain the stated figure. Nothing was inferred or interpolated.",
+        action_for_owner="Confirm the blanked county and city August rates and the U.S. August 2026 rate from the BLS LAUS database (https://www.bls.gov/lau/) or the California EDD LMID publication, then re-insert them with that exact source. Historic research pages (research/*.md, analysis/, brief/, docs/, pages/) still quote the earlier August figures; they were NOT changed in this pass and are open for correction.",
+        official_check="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+    ),
+    dict(
+        id="F-17", severity="MEDIUM", status="UNVERIFIED - NOT PUBLISHED",
+        item="California minimum wage effective 2027-01-01",
+        detail="Secondary sources reported that the Director of Finance certified $17.40 per hour effective 2027-01-01 (a 2.99% CPI-W increase under Labor Code 1182.12(c)). The primary DIR minimum-wage page could not be fetched during re-verification, so the figure is NOT added to the dataset or to any page.",
+        why_blank="Not published. Secondary-source only.",
+        action_for_owner="Confirm on the DIR minimum-wage FAQ (https://www.dir.ca.gov/dlse/faq_minimumwage.htm) or the Department of Finance certification before adding it to the minimum-wage tables.",
+        official_check="https://www.dir.ca.gov/dlse/faq_minimumwage.htm",
+    ),
 ]
 
 # --------------------------------------------------------------------------

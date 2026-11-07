@@ -378,27 +378,170 @@ Everything else merged cleanly and additively: `data/evidence.json` (theirs) coe
 | 2026-11-06 | **Relocated `docs/` → `decision-file/`** (commit `d8e6e11`), retargeted the generator and both tools, rebuilt, re-verified both tools to exit 0. Root `index.html` deliberately **not** edited — see cross-session request **XR-1**. |
 | 2026-11-06 | Merged `origin/main`. Three conflicts, all resolved additively; see the conflict resolution log above. **No other session's work discarded.** |
 
+## Session 7d4577fd — final evidence-boundary audit (2026-11-07)
+
+Assigned branch `arena/7d4577fd-jack3` is fixed by the hosting environment; no alternate session branch will be created. Prior contributions are preserved. Previous claims are dated 2026-11-06 (over 60 minutes old) and integrated via PR #13; this is an integration takeover, not concurrent editing of an active claim.
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Publication/evidence-boundary audit | in progress | 7d4577fd | `audit/**`, `scripts/audit_publication.py`, `scripts/build.py`, `.github/workflows/validate.yml`, generated HTML warning inserts, `COORDINATION.md` appended section |
+
+Plan: inspect inherited conflicting recommendations, recheck selected primary sources, publish explicit unresolved verification gaps, add site-wide model limitations without erasing previous work, run combined integrity checks, PR/merge and confirm Pages. No claim of independent verification of inherited source rows until actually checked. Unknown property inputs remain unavailable; no personal identity research.
+- Scope extension: reclaim completed/stale `data/evidence.json` root snapshot to refresh BLS observations inspected on 2026-11-07 and flag CDE fetch failure. All 11 root source URLs attempted; 10 returned inspectable official content, CDE failed. No independent verification claimed for companion-layer rows. Found November 4 BLS release replacing the linked October summary; root will use September observations. Prior model ranks use hypothetical assumptions, not official property predictions.
+
+### Audit completion and verification — 7d4577fd
+- Published `audit/index.html` and `audit/EXECUTIVE_SUMMARY.md`; added evidence-boundary notices to all 72 public HTML pages without removing inherited findings. Root review page has four new review flags; CDE source register entry is needs review.
+- Root 19 economic rows checked against retrieved Census city chunks 0–2, county chunk 0 and BLS November 4 summary. Updated eight labor/price rows to September 2026. Issuer Q3 performance/counts, DIR wage, CGS caveats, FEMA map status, CAL FIRE hazard/risk distinction, ZIMAS publisher and IRS exchange scope inspected directly. Exact URLs remain in `data/evidence.json` and audit summary. CDE fetch failed: not verified.
+- Important unresolved findings: inherited hypothetical strategy rankings conflict; franchise term cannot establish real estate lease term; companion verification is incomplete; analysis/ contains commercial broker/law-firm source links and therefore does not meet the all-official-row standard. All disclosed on the audit Flagged for Review page; no claim of universal line-by-line verification.
+- Checks passed: root 72 row schema/provenance checks; all 72 pages' local references and anchors; brief 9 pages; analysis 11 pages; decision-file 23 pages official-domain check. Existing PII scanner: 81 files, zero findings (heuristic, not proof of universal privacy). No new identifying information collected. Combined checks added to CI. Source links inspected manually do not guarantee every inherited external link is live.
+- Root source values use retrieved official content, not invented property inputs. Numerical parcel forecasts and personal suitability remain unavailable. No fabricated annual hazard probabilities. Prior outputs preserved and explicitly qualified.
+- Audit task: done; unresolved evidence items: needs review (nonblocking). Publication integration remains in progress pending PR/Pages checks.
+
+### Publication record — 7d4577fd
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/15 merged without waiting for approval on 2026-11-07 at 20:13:32 UTC; merge commit `de683bb2c2a24f57fb750f21794af2fc16490a17`.
+- PR validation run 42409997490 and merged-main validation 42410022934: success.
+- Pages build, report and deploy run https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42410022288 : success. Platform-owned Pages action emitted Node20/runner migration notices, not failures.
+- Live https://wingbangboozle1-lang.github.io/Jack3/audit/index.html fetched successfully after deployment; returned updated executive audit, 19 regional observations and seven review flags. Main landing remains https://wingbangboozle1-lang.github.io/Jack3/ .
+- Integration: done. Evidence gaps remain needs review, nonblocking and published. Full independent re-verification of inherited companion rows and a reliable property-specific forecast are NOT complete; source/lease limitations prevent those claims.
+
 ---
 
-# Session `e04af39b` (`arena/e04af39b-jack3`) — line-by-line repo verification, primary-source reconciliation & `/advisory/` decision dashboard
+## Session `arena-770f50c1-jack3` — audit handoff / closure
 
-- **Session ID:** `e04af39b`
-- **Branch:** `arena/e04af39b-jack3` (platform-pinned single session branch; noted per rule 3 just as earlier Arena sessions recorded)
-- **Claimed:** 2026-11-07 UTC (starting from `main` at `7a44043`)
-- **Non-overlapping file scope:** `advisory/**` (self-contained dashboard site, JSON datasets, deterministic projection engine, automated validator, `EXECUTIVE_SUMMARY.md`, `REPO_REVIEW.md`, `VERIFICATION_LOG.md`) plus this appended section of `COORDINATION.md` (and at final integration, an additive cross-link in `README.md` / root nav only if conflict-free after pulling `origin/main`).
-- **Parallel-session scan performed before claiming:** Inspected `origin/main` (6 merged sessions from 2026-11-06: `5cb84cd0` root, `ff406d61` `docs/`, `8d650ba0` `analysis/`, `796b983f` `brief/`, `93f3087c` `pages/`, `d989a5c6` `decision-file/`) AND 5 active remote branches created 2026-11-07 (`9fa62774`, `1a9deb2a`, `0ed6d83e`, `7d4577fd`, `3644edd8`, which claim `integration/**`, `audit/**`, `audit-1a9deb2a.*`, `INTEGRATION_REPORT.md`, `decision-file/`, `scripts/`). `advisory/**` collides with **none** of them. Prior and sibling files are treated as read-only during audit.
+At start, this session found the merged dashboard layers and claimed an integrated-tree QA pass. While running the existing checks, shared `main` advanced to PR #15 from session `7d4577fd`, whose integration/audit scope covers the same decision reconciliation, public-page disclosures, root data, site-wide verification, and CI work. To avoid duplicate/conflicting edits, this session relinquished those scopes and did not edit its research or site outputs.
 
-## Task board (`e04af39b`)
+Before detecting that parallel integration, these repository checks passed on the then-current tree: `scripts/validate.py` (68 rows, 9 root pages); `tools/check_site.py` (9 brief pages, 204 internal refs); `tools/linkcheck.py` (11 analysis pages, 245 internal links); `tools/check_links.py` (23 decision-file pages, 1,013 links, zero non-official domains); `tools/pii_scan.py` (81 files, zero heuristic findings). These checks do not verify external URL availability or prove absence of all personal information.
 
-| ID | Task | Status | Owner | File scope | Notes |
-|---|---|---|---|---|---|
-| E-01 | Line-by-line review of existing repository across all 6 merged layers, PII/privacy check, cross-layer discrepancy & link audit | **in progress** | `e04af39b` | `advisory/REPO_REVIEW.md`, `advisory/data/repo_audit.json` | Read-only audit of all existing repo files; log cross-session requests rather than editing others' scopes |
-| E-02 | Official-source verification: Geography, Demographics, Income & Population (Census, CA DOF, SCAG, LA City Planning/EWDD) | claimed | `e04af39b` | `advisory/data/evidence.json` | Live verification against official `.gov` / `.ca.gov` primary sources; unconfirmed fields left blank & flagged |
-| E-03 | Official-source verification: School Systems, Labor Market, Job Growth & Macro Economy (CDE/Dashboard, BLS, CA EDD, BEA/FRED, Treasury, Fed, CA DIR, LA OWS) | claimed | `e04af39b` | `advisory/data/evidence.json` | Every row linked to exact official source URL + reference period + geographic boundary |
-| E-04 | Official-source verification: Jack in the Box Inc. SEC Filings (10-K/10-Q/8-K), NNN Lease Mechanics, Prop 13, Measure ULA, IRC §1031 | claimed | `e04af39b` | `advisory/data/evidence.json` | SEC EDGAR primary filings, IRS, CA BOE, LA County Assessor/RRCC, LA Office of Finance |
-| E-05 | Risk Register: Business-as-Usual + Rare Black-Swan Disasters (USGS seismic, CAL FIRE FHSZ, Jan 2025 LA wildfires, FEMA/NOAA, CDI insurance, AB 1228, store closures) | claimed | `e04af39b` | `advisory/data/risks.json` | Separates verified hazard/event facts from clearly labeled scenario impact modeling |
-| E-06 | Reliable Area & Property Projection System + Individual Wealth-Preservation / Growth Decision Matrix (Sell vs. Renew vs. Early Extend-and-Sell vs. §1031) | claimed | `e04af39b` | `advisory/scripts/model.py`, `advisory/data/projections.json`, `advisory/EXECUTIVE_SUMMARY.md` | Normalized to contractual base rent `1.00 R` (no invented rent/parcel values) + sensitivity tables |
-| E-07 | Clean Dashboard Site Creation (`/advisory/`): Landing Page + Category Subpages + Flagged for Review + Repo Audit + Sources | claimed | `e04af39b` | `advisory/scripts/build_advisory.py`, `advisory/*.html`, `advisory/assets/*` | Clean dashboard UI, filterable sourced tables, blank unverified cells, zero external scripts |
-| E-08 | Line-by-line Verification, Zero-PII Gate & Automated Link/Schema Validation | claimed | `e04af39b` | `advisory/scripts/verify_advisory.py`, `advisory/VERIFICATION_LOG.md` | Programmatic check of every row, link, blank cell, and PII pattern + existing repo CI (`scripts/validate.py`) |
-| E-09 | Final Integration: rebase/merge `origin/main` preserving all sessions, open PR → `main`, merge PR, verify GitHub Pages live deployment | claimed | `e04af39b` | `COORDINATION.md`, additive `README.md` / root cross-link | Record PR URL, merge commit, and live GitHub Pages check |
+Independent publication check: PR #15 merged to `main` at `de683bb2c2a24f57fb750f21794af2fc16490a17` on 2026-11-07; the later coordination-only PR #17 merged at `ebe960f316c927d408571f92bb938a5fa33455ae`. GitHub Actions `pages build and deployment` succeeded for both merge commits (runs 42410022288 and 42410176165), and `Validate public research` passed for PR #17. At an interim check after PR #17, the GitHub Pages API returned `status=errored` despite successful workflow and live-page fetches. The PR #19 Pages run (42410290121) was then cancelled when concurrent PR #14 deployed; it was not a build failure. PR #14 merged at `5ff6ed8f7867c00a949c4741f85fd94fec229032`; its `pages build and deployment` run (42410314732) succeeded, the API subsequently returned `status=built`, and root and audit URLs were fetched successfully. The transient status mismatch is resolved; PR #19's cancellation was due to superseding concurrent deployment.
 
+Status: **closed / superseded by merged PR #15**. No QA report or site-page changes from this session are being published. The assigned Arena branch remains fixed; no alternate branch was created.
+---
+
+## Session `arena-9fa62774-jack3` — integration audit and remediation
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit prior integrated outputs, verify critical claims and repair decision-safety/privacy defects; validate and publish integration | in progress | `9fa62774` | `COORDINATION.md` (this section), root generator/data and generated root pages, `decision-file/`, `build_site.py`, related model/data if remediation requires; audit notes in `research/integration-audit-9fa62774.md` |
+
+Claimed 2026-11-07 UTC. The previous integration claims shown as in progress are over 60 minutes old; PR #13 was merged and main's latest commit is from 2026-11-06. This session takes over integration and will preserve prior contributions, recording any handoff and verified findings here. The environment fixes the branch name to `arena/9fa62774-jack3`, overriding the requested session-branch naming. Other sessions: please log conflicts or requests here before editing these scoped files.
+
+### Integration scope update and handoff — 2026-11-07
+
+The prior multi-session integration is over 60 minutes old and PR #13 is merged. This session takes over the publication configuration (`.github/workflows/pages.yml`, `scripts/stage_pages.py`) in addition to its existing root-site scope. The repository's prior companion analyses will be preserved in Git but excluded from the Pages artifact pending row-level re-verification: some contain third-party values contrary to the official-source rule, uncited table rows, incompatible recommendations, and a materially unsound numerical model. See the public Flagged for Review page and audit log. No other session's source files are overwritten.
+
+- 2026-11-07 `9fa62774`: Checked Census, BLS, issuer Q3, issuer closure disclosure, DIR wage FAQ, CGS, CAL FIRE, FEMA, CDE, City Planning and IRS directly; evidence and limits recorded in `research/integration-audit-9fa62774.md`. BLS rolling summary had advanced to September: updated root rows. Flagged incorrect franchise/lease equivalence, asymmetric model risk adjustment, unsupported assumptions and unsourced/nonofficial legacy rows. Prior files preserved in Git; curated Pages publication excludes unverified companion reports. Scope also includes `README.md` additive publication clarification.
+- 2026-11-07: Added `.github/workflows/validate.yml` to integration scope for the staging gate. Validation passed: 73 root evidence rows, nine pages; artifact checker resolves every local link inside the artifact and checks each table body row has a registered primary source; existing privacy scanner passed. These automated checks do not prove semantic truth or live external availability. No personalized property recommendation or back-tested forecast can be established without private facts.
+- 2026-11-07: GitHub API rejected changing Pages from legacy to workflow (`403 Resource not accessible by integration`), despite repository push access. Integration therefore preserves the current branch-based Pages setting and uses a Jekyll exclusion list instead; CI will build and validate the actual Jekyll artifact before merge. Added `_config.yml` and `.nojekyll` to integration scope; no legacy source files removed. If the alternative fails, stop rather than merge a broken or uncurated site.
+- Jekyll comparison CI initially failed after the build; GitHub job logs are inaccessible from this sandbox, so the validator was amended to emit actionable annotations before retrying. No merge attempted.
+- CI diagnostics identified Jekyll's `model` exclusion also matched the required `model.html`; narrowed the exclusion to the `model/` directory and retried.
+- 2026-11-07: PR #14 could not merge because concurrent session `7d4577fd` had merged PRs #15 and #16 while this session's claim was on its branch. Rebased onto `origin/main`; resolved shared board, data, builder, workflow and generated HTML conflicts additively. Preserved the other session's audit files, companion notices, checks and review flags; integrated its source snapshot and replaced its previously unavailable CDE check after successfully inspecting the CDE page. Root notices now link to the published review page, while historical audit/companion pages remain in Git and are excluded from the curated artifact until their links and rows meet publication requirements. No contribution was discarded. Re-ran root, companion, PII and staged-link checks locally; 77 root rows pass. Jekyll CI will be rerun on the combined tree before merge.
+
+### Final publication record — `9fa62774`
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/14 merged on 2026-11-07 as `5ff6ed8f7867c00a949c4741f85fd94fec229032` after combined-tree source, local-link, heuristic privacy and Jekyll output checks passed.
+- GitHub Pages build and deployment https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42410314732 succeeded; main validation https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42410314969 succeeded. The Pages API reported built at the merge commit; the updated landing and review page were fetched with a cache-busting URL. Prior companion pages are excluded from the Pages output, not deleted from the repository.
+- Status: **done** for curated publication/integration; limitations and unresolved evidence are **needs review** on https://wingbangboozle1-lang.github.io/Jack3/review.html. An independently calibrated parcel forecast and personalized sale/renew decision cannot be verified without the private inputs. Live sources and GitHub caching can change after verification.
+
+---
+
+# Session `64d0ce02` — re-verification pass, corrections and integration (`arena/64d0ce02-jack3`)
+
+**Claim (recorded in this commit):** session `64d0ce02`, branch `arena/64d0ce02-jack3` (the only branch this session may use).
+Late claim, disclosed: work began before this board entry was committed because no other session held an open
+claim on the files below (checked: board lines for `ff406d61`, `d989a5c6`, `8d650ba0`, `796b983f`, `93f3087c`, `28eacae6`).
+Open PRs #4 (`28eacae6`) and #12 (`93f3087c`) were not touched.
+
+**File scope claimed:** `data/employment.py`, `data/tenant.py`, `data/analysis.py` (R-08, R-10 text only), `data/flags.py`
+(F-16, F-17 added), `data/evidence.json` (root workspace, seven unemployment/employment/CPI rows), `scripts/build.py`
+(root landing: one card, one methodology date, one companion link), `build_site.py` (headline stats and one sentence),
+`model/projection.py` (labelled BLS constants only), and this section of `COORDINATION.md`.
+Generated output rebuilt: `index.html`, `economy.html`, `sources.html`, `decision-file/**`.
+
+| ID | Task | Status | Owner | Verification performed (2026-11-07) | Irregularities |
+|----|------|--------|-------|-------------------------------------|----------------|
+| V-01 | Re-verify BLS labour-force and unemployment rows | **done** | `64d0ce02` | BLS Table 1, https://www.bls.gov/news.release/metro.t01.htm (Sep 2026 results): LA–Long Beach–Anaheim labour force Aug-26 6,589,304 / Sep-26 6,646,903 / Sep-25 6,768,502; unemployed Sep-26 294,000, Sep-25 372,871; rate Aug-26 4.8, Sep-26 4.4, Aug-25 5.8, Sep-25 5.5; California Aug-26 5.4. All confirmed. | R-2, R-3 |
+| V-02 | Re-verify employment payrolls, 12-month trend, ECI, CPI | **done (corrected)** | `64d0ce02` | BLS Los Angeles Area Economic Summary, updated 2026-11-04, https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf. Cited document contains **September 2026** values only. Rows re-pointed to Sep-26 (total nonfarm 6,282.1k, +0.5%; education & health +3.8%; leisure & hospitality 782.0k, +1.5%; information −5.7%; CPI all items +3.7%, food +2.8%, energy +20.3%; ECI CSA +3.9%). | R-1, R-4 |
+| V-03 | Re-verify Jack in the Box Q3 FY2026 restaurant split | **done** | `64d0ce02` | Issuer release, https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx (2026-08-12): end of Q3 company 149, franchise 1,966, total 2,115. Previously blank; now filled from the issuer release. | — |
+| V-04 | Re-verify Census LA city population | **done (spot check)** | `64d0ce02` | https://www.census.gov/quickfacts/losangelescitycalifornia (V2025): 3,869,089; base 3,899,342; change −0.8%. Matches data. Other Census rows not re-fetched in this pass. | — |
+| V-05 | Re-verify CA minimum wage | **partial** | `64d0ce02` | https://www.dir.ca.gov/dlse/faq_minimumwage.htm could not be fetched (fetch error / 404 on alternate URL). The $16.90 (2026) figure was retained from the earlier session's DIR verification and was **not re-confirmed this session**. Secondary sources report $17.40 effective 2027-01-01 — not published, see F-17. | R-5 |
+| V-06 | Stale August figures in root and decision-file layers | **done** | `64d0ce02` | Root `index.html` front card corrected (+0.5%, Sep 2026); decision-file headline stats, R-08/R-10 evidence, `model/projection.py` constants corrected. Remaining August-2026 mentions in `decision-file/` are genuine August labour-force rows confirmed by V-01. | R-6 |
+| V-07 | Add root-to-decision-file link | **superseded** | `64d0ce02` | First applied to the companion line in `scripts/build.py`. After `main` advanced (PR #14 / `df3ee1d` audit hub), that line no longer exists, and `audit/index.html` on `main` already links `../decision-file/index.html`. Verified by grep; no further edit made. XR-1 is therefore closed by the audit hub. | — |
+
+**Sources used in this pass:** BLS Los Angeles Area Economic Summary (2026-11-04); BLS Metropolitan Area Employment and
+Unemployment, news release USDL-26-1618 (https://www.bls.gov/news.release/metro.nr0.htm) and Table 1
+(https://www.bls.gov/news.release/metro.t01.htm); Jack in the Box Inc. Q3 FY2026 earnings release (2026-08-12); U.S. Census
+Bureau QuickFacts, Los Angeles city (V2025).
+
+### Irregularities found (for owner review — published on the Flagged page as F-16 / F-17)
+
+| ID | Irregularity | Action taken |
+|----|--------------|--------------|
+| R-1 | Employment, trend and CPI rows labelled **August 2026** cited a BLS document that reports **September 2026** only. | Re-pointed to September values from the cited document (F-16). |
+| R-2 | U.S. "August 2026" unemployment **4.3%** equals the **September 2025** value in the cited document. | Blanked, UNVERIFIED (F-16). |
+| R-3 | LA County (4.9% / 6.2%) and LA City (5.0% / 6.2%) August 2026 and 2025 rates are **not in** the cited document. | Blanked, UNVERIFIED (F-16). |
+| R-4 | ECI "2.8% (Jun-2026)" is **not in** the cited document. | Replaced by Sep-2026 CSA value 3.9% from that document (F-16). |
+| R-5 | DIR minimum-wage page could not be re-fetched this session; $17.40 (2027) found only in secondary sources. | Not published; flagged F-17. |
+| R-6 | **Other layers still quote the superseded August figures** (`research/*.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `analysis/`, `brief/`, `docs/`, `pages/`). These belong to other sessions' scopes and were **not edited**. | Logged for owner. Open request **XR-4** below. |
+| R-7 | Board statuses are stale: `ff406d61` T9 and `d989a5c6` D-13 still say "in progress" though PRs #2/#13 are merged. | Logged, not edited (other sessions' sections). |
+| R-8 | Earlier entry gave PR #7 as `github.com/wingangboozle1-lang/Jack3/pull/7`; the repo owner is `wingbangboozle1-lang`. | Logged; correct URL is `https://github.com/wingbangboozle1-lang/Jack3/pull/7`. |
+| R-9 | Site sprawl: at least seven overlapping public layers (`/`, `/docs/`, `/analysis/`, `/brief/`, `/pages/`, `/decision-file/`, plus `/`-root pages), each with its own numbers and status. This is contrary to the user's "one clean dashboard" brief. | Not consolidated in this pass (destructive to other sessions' published output). Recommended as the next integration task. |
+| R-10 | Open PRs #4 (`28eacae6`) and #12 (`93f3087c`) were open at session start. | Not touched. |
+
+### Cross-session requests (this session)
+
+| ID | To | Request | Status |
+|----|----|---------|--------|
+| XR-4 | owners of `research/`, `analysis/`, `brief/`, `docs/`, `pages/`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md` | Replace August-2026 employment and CPI figures with the September-2026 values listed in `data/employment.py` (F-16), and blank the U.S. 4.3%, LA County and LA City rates. | **open** |
+| XR-1 (closed) | owner of `scripts/build.py` | Root/audit hub links `decision-file/index.html` (`audit/index.html`, present on `main`). | closed |
+
+### Not verified in this pass
+Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetched line by line in this session. They keep their earlier sources and flags. Only the rows named above were re-verified.
+
+### Log — `64d0ce02`
+- 2026-11-07: Board read; no overlapping open claim. Re-verification of the employment block began against BLS. Found R-1 to R-4.
+- 2026-11-07: Confirmed Jack in the Box Q3 FY2026 split from the issuer release (V-03). Filled previously blank cell.
+- 2026-11-07: A patch to `data/employment.py` was lost in a first attempt and redone from `/tmp/employment.orig.py`; `git diff` confirmed the final file. No other file affected.
+- 2026-11-07: All validators PASS on the corrected tree: `build_site.py`, `scripts/build.py`, `scripts/validate.py`, `tools/check_links.py` (0 non-official), `tools/pii_scan.py` (0 findings), `tools/check_site.py`, `tools/linkcheck.py`, `tools/build.py`, `tools/model.py`, `python3 -m model.projection`.
+
+- 2026-11-07 (integration): `git pull --rebase` stopped on a conflict because `origin/main` had advanced to `ebe960f` (PRs #16 and #17 from sessions `7d4577fd` and `770f50c1`). The pre-rebase commit was pushed and PR #18 opened from it, then the rebase was completed. Conflicts in `COORDINATION.md`, `data/evidence.json`, `scripts/build.py`, `index.html`, `economy.html`, `sources.html` were resolved **additively**: their content kept; my COORDINATION section appended; my decision-file link reapplied to `scripts/build.py`. Session `770f50c1` had already corrected the same LA city and county rows to September, so `data/evidence.json` was taken from `main`. Regenerated pages were rebuilt in the order generator, then `scripts/audit_publication.py`. Running generators without the audit step had stripped other sessions' evidence-boundary banners; this was caught and corrected before the push. The branch was then force-pushed with `--force-with-lease` to `arena/64d0ce02-jack3` only (my own pre-rebase commit). No other session's work was discarded.
+- 2026-11-07: Diff against `origin/main` now touches only: `COORDINATION.md` (appended), `build_site.py`, `data/analysis.py`, `data/employment.py`, `data/flags.py`, `data/tenant.py`, `model/projection.py`, `scripts/build.py` (one link), `index.html` (regenerated), and the regenerated `decision-file/**`. Footer counts changed as expected: 223 verified, 16 unconfirmed, 17 flags.
+
+- 2026-11-07 (Pages gate): `main` now publishes only the nine curated root pages (`scripts/stage_pages.py`, `_config.yml` excludes). The root `audit/` hub is excluded from that artifact, so the banners that `scripts/audit_publication.py` injects into root pages would have broken the artifact link check. Those banners were **removed from the nine root pages and all other pages were restored to `main` where unchanged**; only the decision-file content updates, `data/evidence.json` and the root Flagged page remain changed. Because the live Pages site does not include `decision-file/`, F-16 and F-17 were **also published on the root Flagged for Review page** (`review.html`, two new rows with official source links), so they are visible on the live site.
+- 2026-11-07: Local CI replica in a fresh clone of the branch: `scripts/build.py`, `scripts/validate.py`, `scripts/stage_pages.py`, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py` all exit 0; `git diff --exit-code -- '*.html'` clean. The Jekyll step (`gem install github-pages` + `jekyll build`) cannot run in this sandbox (RubyGems host is not on the allowed list) and is verified only by GitHub Actions.
+
+### PR and deploy record
+- **PR #18** — https://github.com/wingbangboozle1-lang/Jack3/pull/18 — `arena/64d0ce02-jack3` → `main` — **merged** 2026-11-07 20:23:02 UTC, merge commit `6f8625a941b0d55a13aa66557bd5997326a4fb32` (merge commit method, no approval wait, as instructed).
+- **Pre-merge checks:** `Validate public research` passed on the PR head (run 42410690301 and later 42410578088); local replica in a fresh clone (`scripts/build.py`, `scripts/validate.py`, `scripts/stage_pages.py`, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py`, HTML determinism) all exit 0. The Jekyll step was verified by GitHub Actions only.
+- **Post-merge:** `Validate public research` on `main` succeeded (run 42410798288). `pages build and deployment` for commit `6f8625a` reports `built` (created 20:23:03 UTC, updated 20:23:33 UTC; `GET /repos/.../pages/builds/latest`).
+- **Live verification:** https://wingbangboozle1-lang.github.io/Jack3/ shows Sept 2026 jobs +0.5%. https://wingbangboozle1-lang.github.io/Jack3/review.html shows the F-16 and F-17 rows. Note: an un-busted fetch of the root returned a stale CDN copy for a short period; a cache-busted fetch matched `main`.
+- **Not on the live site, by design of `main`:** `decision-file/`, `analysis/`, `brief/`, `docs/`, `pages/`, `research/`, `audit/` (excluded by `_config.yml` / `scripts/stage_pages.py`). Their stale August figures (XR-4) therefore affect the repository only, not the published Pages site.
+
+---
+
+# Session `arena/e04af39b-jack3` — Primary-Source Re-Verification, Symmetric R-Model & `/advisory/` Dashboard
+
+**Session ID:** `e04af39b` · **Branch:** `arena/e04af39b-jack3` (platform-fixed) · **Date:** `2026-11-07` (UTC)
+
+## Task Table & Scope Claim
+
+| ID | Task | Status | Owner | File Scope |
+|---|---|---|---|---|
+| E-01 | Line-by-line repo review across all 6 inherited layers & irregularity log (`IR-01`–`IR-10`) | **done** | `e04af39b` | `_advisory_src/REPO_REVIEW.md`, `advisory/repo-review.html` |
+| E-02 | Primary-source verification: geography, transit, Census V2025/ACS, CDE 2025–26 LAUSD, Sept 2026 BLS, Nov 2026 UST, FOMC | **done** | `e04af39b` | `_advisory_src/dataset.py`, `_advisory_src/advisory_dataset.json` |
+| E-03 | Primary-source verification: SEC FY2025 10-K (Items 1, 2 & 7), Q3 FY2026 10-Q/IR, June 2026 7.624% refi, Measure ULA (eff. 7/1/2026), Prop 13 35-yr rule, §1031 | **done** | `e04af39b` | `_advisory_src/dataset.py`, `advisory/tenant-lease.html` |
+| E-04 | Business-as-usual (12) & black-swan (8) risk register (USGS UCERF3, Jan 2025 Palisades/Eaton fires, Dec 2028 FAIR Plan sunset) | **done** | `e04af39b` | `advisory/risks.html` |
+| E-05 | Deterministic 2026–2035 area projection system & symmetric `R`-normalized 5-pathway decision matrix (`2030` vs `2035`) | **done** | `e04af39b` | `_advisory_src/model.py`, `advisory/projections.html` |
+| E-06 | Executive Summary & conditional Two-Step Blend-or-1031 owner playbook | **done** | `e04af39b` | `_advisory_src/EXECUTIVE_SUMMARY.md`, `advisory/executive-summary.html` |
+| E-07 | Clean 12-page static `/advisory/` dashboard + Flagged for Review (`F-01`–`F-14`, `IR-01`–`IR-10`) + 37 official sources | **done** | `e04af39b` | `advisory/**`, `_advisory_src/build_advisory.py` |
+| E-08 | Automated PII/link/row-provenance verification & curated GitHub Pages artifact staging | **done** | `e04af39b` | `_advisory_src/verify_advisory.py`, `scripts/stage_pages.py` (additive `advisory/` staging) |
+| E-09 | PR to `main`, CI green (`Validate public research` + Jekyll), merge & live GitHub Pages check | **in progress** | `e04af39b` | `COORDINATION.md` (this section) |
+
+## Non-Overlapping Scope & Concurrency Notes
+- Generator, model, dataset, and Markdown reports live inside `_advisory_src/` (leading underscore ensures native Jekyll exclusion without colliding on `_config.yml`).
+- Public static HTML/CSS outputs live inside `advisory/` (12 HTML pages + `advisory/assets/style.css`; zero YAML front matter, zero `<script>`, zero PII/account handles, 227 table rows with 100% official `https://` source links, 32 unconfirmed cells left strictly blank).
+- Preserved 100% of `origin/main` (PRs #1–#23) verbatim during merge; zero edits to root `*.html`, `scripts/build.py`, `data/*`, or any sibling session's directories (`docs/`, `analysis/`, `brief/`, `pages/`, `decision-file/`, `audit/`, `report/`, `verification-3644edd8/`).
+- Only shared-file touch is a minimal additive block in `scripts/stage_pages.py` (staging `advisory/` into `_pages_artifact` and enforcing official source links + relative link resolution across all staged pages) plus `python _advisory_src/verify_advisory.py` in `.github/workflows/validate.yml`.
+
+## Cross-Session Requests Logged (Read-Only Respect for Other Scopes)
+- **XR-E1 (to root `scripts/build.py` / `index.html` owner):** Consider adding an optional navigation link to `advisory/index.html` from the root landing page so visitors can browse `/advisory/` alongside the root workspace.
+- **XR-E2 (to `decision-file/` & `pages/` owners):** Redact the repository owner's GitHub handle rendered in HTML footers/tables (`IR-01`), update `data/tenant.py` p. 29 Jack in the Box franchise AUV (`$1,874k` vs Del Taco `$1,549k`, `IR-10`), and note 10-K Item 2's `1,585` corporate-leased vs `387` franchise-direct split (`IR-04`).
+- **XR-E3 (to `brief/` owner):** Update Measure ULA thresholds from expired `$5.3M/$10.6M` to effective July 1, 2026 `$5,400,000` (4%) and `$10,900,000` (5.5%) (`IR-03`).

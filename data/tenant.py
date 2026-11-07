@@ -165,9 +165,9 @@ RESTAURANT_COUNTS = [
          total="2,183", source_key="10K_FY2025", verified="VERIFIED"),
     dict(as_of="2025-09-28 (FY2025 year end)", company="150", franchise="1,986",
          total="2,136", source_key="10K_FY2025", verified="VERIFIED"),
-    dict(as_of="2026-07-05 (Q3 FY2026)", company=None, franchise=None,
-         total="2,115", source_key="10Q_Q3FY2026", verified="VERIFIED",
-         note="Company/franchise split at this date to be read from the 10-Q restaurant-count table; total confirmed. 40 restaurants closed in the first three quarters of FY2026; FY2025 openings 31, closures 86."),
+    dict(as_of="2026-07-05 (Q3 FY2026)", company="149", franchise="1,966",
+         total="2,115", source_key="IR_Q3FY2026", verified="VERIFIED",
+         note="Split and total from the issuer's Q3 FY2026 earnings release (Business Wire, 2026-08-12), restaurant count table. Q2 FY2026 count 2,128 (149 company, 1,979 franchise). 40 restaurants closed in the first three quarters of FY2026; FY2025 openings 31, closures 86."),
 ]
 
 Q3_FY2026 = [
