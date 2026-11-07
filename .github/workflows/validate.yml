@@ -14,9 +14,15 @@ jobs:
           python-version: '3.12'
       - run: python scripts/build.py
       - run: python scripts/validate.py
-      - run: python scripts/audit_publication.py
+      - run: python scripts/stage_pages.py
       - run: python tools/check_site.py
       - run: python tools/linkcheck.py
       - run: python tools/check_links.py
       - run: python tools/pii_scan.py
       - run: git diff --exit-code -- '*.html'
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - run: gem install github-pages --no-document
+      - run: jekyll build --destination _jekyll_test
+      - run: python scripts/stage_pages.py _jekyll_test
