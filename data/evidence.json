@@ -876,6 +876,24 @@
           ],
           "status": "Needs review",
           "source": "bls"
+        },
+        {
+          "cells": [
+            "High",
+            "Employment and CPI as-of corrections (F-16)",
+            "Rows previously labelled August 2026 cited a BLS summary that reports September 2026. Re-pointed to September values from that document (payrolls 6,282.1k, +0.5%; CPI +3.7%; energy +20.3%; ECI CSA +3.9%). Figures not in the cited document (U.S. August rate, LA County and LA City August rates) are blank and unverified. Older research layers still carry August figures."
+          ],
+          "status": "Needs review",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Medium",
+            "California minimum wage from 2027-01-01 (F-17)",
+            "Secondary sources report $17.40 per hour, certified 2026-07-31. The DIR primary page could not be re-fetched this session, so the figure is not published as a value. Confirm on the DIR minimum-wage page before use."
+          ],
+          "status": "Needs review",
+          "source": "wage"
         }
       ]
     }
