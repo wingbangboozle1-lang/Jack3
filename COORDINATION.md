@@ -377,3 +377,22 @@ Everything else merged cleanly and additively: `data/evidence.json` (theirs) coe
 | 2026-11-06 | **Pages configuration read:** legacy builder, `main`, path `/` (repository **root**), status `built`. Therefore this session's site cannot live in `docs/` without destroying session `ff406d61`'s published pages, and cannot be the root `index.html` without destroying the shared landing page. |
 | 2026-11-06 | **Relocated `docs/` → `decision-file/`** (commit `d8e6e11`), retargeted the generator and both tools, rebuilt, re-verified both tools to exit 0. Root `index.html` deliberately **not** edited — see cross-session request **XR-1**. |
 | 2026-11-06 | Merged `origin/main`. Three conflicts, all resolved additively; see the conflict resolution log above. **No other session's work discarded.** |
+
+## Session 7d4577fd — final evidence-boundary audit (2026-11-07)
+
+Assigned branch `arena/7d4577fd-jack3` is fixed by the hosting environment; no alternate session branch will be created. Prior contributions are preserved. Previous claims are dated 2026-11-06 (over 60 minutes old) and integrated via PR #13; this is an integration takeover, not concurrent editing of an active claim.
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Publication/evidence-boundary audit | in progress | 7d4577fd | `audit/**`, `scripts/audit_publication.py`, `scripts/build.py`, `.github/workflows/validate.yml`, generated HTML warning inserts, `COORDINATION.md` appended section |
+
+Plan: inspect inherited conflicting recommendations, recheck selected primary sources, publish explicit unresolved verification gaps, add site-wide model limitations without erasing previous work, run combined integrity checks, PR/merge and confirm Pages. No claim of independent verification of inherited source rows until actually checked. Unknown property inputs remain unavailable; no personal identity research.
+- Scope extension: reclaim completed/stale `data/evidence.json` root snapshot to refresh BLS observations inspected on 2026-11-07 and flag CDE fetch failure. All 11 root source URLs attempted; 10 returned inspectable official content, CDE failed. No independent verification claimed for companion-layer rows. Found November 4 BLS release replacing the linked October summary; root will use September observations. Prior model ranks use hypothetical assumptions, not official property predictions.
+
+### Audit completion and verification — 7d4577fd
+- Published `audit/index.html` and `audit/EXECUTIVE_SUMMARY.md`; added evidence-boundary notices to all 72 public HTML pages without removing inherited findings. Root review page has four new review flags; CDE source register entry is needs review.
+- Root 19 economic rows checked against retrieved Census city chunks 0–2, county chunk 0 and BLS November 4 summary. Updated eight labor/price rows to September 2026. Issuer Q3 performance/counts, DIR wage, CGS caveats, FEMA map status, CAL FIRE hazard/risk distinction, ZIMAS publisher and IRS exchange scope inspected directly. Exact URLs remain in `data/evidence.json` and audit summary. CDE fetch failed: not verified.
+- Important unresolved findings: inherited hypothetical strategy rankings conflict; franchise term cannot establish real estate lease term; companion verification is incomplete; analysis/ contains commercial broker/law-firm source links and therefore does not meet the all-official-row standard. All disclosed on the audit Flagged for Review page; no claim of universal line-by-line verification.
+- Checks passed: root 72 row schema/provenance checks; all 72 pages' local references and anchors; brief 9 pages; analysis 11 pages; decision-file 23 pages official-domain check. Existing PII scanner: 81 files, zero findings (heuristic, not proof of universal privacy). No new identifying information collected. Combined checks added to CI. Source links inspected manually do not guarantee every inherited external link is live.
+- Root source values use retrieved official content, not invented property inputs. Numerical parcel forecasts and personal suitability remain unavailable. No fabricated annual hazard probabilities. Prior outputs preserved and explicitly qualified.
+- Audit task: done; unresolved evidence items: needs review (nonblocking). Publication integration remains in progress pending PR/Pages checks.
