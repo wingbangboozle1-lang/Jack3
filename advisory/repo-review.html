@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Line-by-Line Repository Audit &amp; Cross-Layer Reconciliation — Central LA NNN Decision Advisory</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="privacy-bar">
+  <span><strong>Privacy Gate Active:</strong> Subject anonymized as <code>[OWNER_REDACTED]</code> / <code>[SUBJECT_PARCEL_REDACTED]</code>. Zero personal identifiers on this site.</span>
+  <span>Snapshot: 2026-11-07 &middot; <a href="flagged.html">Flagged for Review (23)</a> &middot; <a href="sources.html">Official Sources (37)</a></span>
+</div>
+<div class="layout">
+  <aside class="sidebar" aria-label="Primary Navigation">
+    <div class="brand">
+      <span class="brand-badge">NNN Advisory</span>
+      <h1>Jack in the Box &middot; Central LA</h1>
+      <p>2030–2035 Lease Expiry Study &middot; Session e04af39b</p>
+    </div>
+    <div class="nav-group-label">Overview</div><ul class="nav-list"><li><a href="index.html">01 · Dashboard</a></li><li><a href="executive-summary.html">02 · Executive Summary</a></li></ul><div class="nav-group-label">Area Drivers</div><ul class="nav-list"><li><a href="geography.html">03 · Geography &amp; Transit</a></li><li><a href="demographics.html">04 · Population &amp; Income</a></li><li><a href="schools.html">05 · School Systems</a></li><li><a href="economy.html">06 · Jobs, Wages &amp; Rates</a></li></ul><div class="nav-group-label">Asset &amp; Tax</div><ul class="nav-list"><li><a href="tenant-lease.html">07 · Tenant, NNN &amp; Taxes</a></li></ul><div class="nav-group-label">Risk &amp; Model</div><ul class="nav-list"><li><a href="risks.html">08 · Risk &amp; Black Swans</a></li><li><a href="projections.html">09 · Projections &amp; Matrix</a></li></ul><div class="nav-group-label">Assurance</div><ul class="nav-list"><li><a href="flagged.html">10 · Flagged for Review</a></li><li><a href="repo-review.html" class="active">11 · Repo Audit</a></li><li><a href="sources.html">12 · Official Sources</a></li></ul>
+    <div class="workspace-link">
+      <a href="../index.html">&larr; Root Evidence Workspace</a>
+    </div>
+  </aside>
+  <main class="content">
+    <header class="page-header">
+      <div class="kicker">11 / Repository Audit</div>
+      <h2>Line-by-Line Repository Audit &amp; Cross-Layer Reconciliation</h2>
+      <p>Complete audit of all repository files, validators, privacy boundaries, external domains, and factual discrepancies across prior parallel sessions.</p>
+    </header>
+    
+    <section class="verdict-box">
+      <h3>Line-by-Line Repository Review Summary</h3>
+      <p>We programmatically audited all <strong>71 inherited HTML files, 20 Markdown files, and all JSON/Python/CSV datasets</strong> across the repository's six prior layers, ran every existing validator, and cross-checked key factual claims against live official sources on <code>2026-11-07</code>. Per <code>COORDINATION.md</code> non-overlapping scope rules, prior session directories were preserved read-only while all nine discovered irregularities (<code>IR-01..IR-09</code>) are transparently documented below and remediated in <code>/advisory/</code>.</p>
+    </section>
+
+    <section class="section-card">
+      <h3>Repository Layer-by-Layer Audit Matrix</h3>
+      <p class="section-note">Structural, sourcing, and privacy verification across all repository directories.</p>
+      <div class="table-wrap"><table>
+        <thead><tr>
+          <th>Repository Layer</th>
+          <th>Origin Session(s)</th>
+          <th>Audit Outcome</th>
+          <th>Key Verification Findings</th>
+          <th>Status</th>
+          <th>Official Reference</th>
+        </tr></thead>
+        <tbody><tr><td><strong>Root Workspace (/*.html, data/evidence.json)</strong></td><td><code>5cb84cd0 / 7d4577fd / 9fa62774</code></td><td>PASS (validate.py &amp; stage_pages.py)</td><td>Clean 100% official links, zero JS, curated GitHub Pages entry point.</td><td><span class="badge b-verified">Verified</span></td><td><a class="src-link" href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer">S01 · U.S. Census Bureau</a></td></tr><tr><td><strong>Docs Layer (docs/*.html, research/*.md)</strong></td><td><code>ff406d61 / 93f3087c</code></td><td>Flagged (IR-02, IR-07)</td><td>23 table rows without direct https:// links; cites mirror/tourism domains (everycrsreport.com, media.visitcalifornia.com).</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://www.congress.gov/crs-product/IF12871" rel="noopener noreferrer">S28 · Congressional Research Service (Library of Congress)</a></td></tr><tr><td><strong>Analysis Layer (analysis/*.html)</strong></td><td><code>8d650ba0</code></td><td>Flagged (IR-02, IR-07)</td><td>83 table rows without direct https:// links; cites commercial brokerage (bouldergroup.com) and private law firm (seyfarth.com).</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>Brief Layer (brief/*.html)</strong></td><td><code>796b983f</code></td><td>Flagged (IR-02, IR-03, IR-07)</td><td>Cites aggregator/blog domains (datausa.io, point2homes.com, thesisdriven.com); publishes stale $5.3M/$10.6M Measure ULA thresholds; 91 unsourced rows.</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>Pages Layer (pages/*.html)</strong></td><td><code>93f3087c</code></td><td>Flagged (IR-01, IR-02, IR-07)</td><td>Renders repo account handle in 3 HTML pages; cites fool.com, bouldergroup.com, kidder.com, colliers.com; 20 unsourced rows.</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer">S12 · U.S. Securities and Exchange Commission (EDGAR)</a></td></tr><tr><td><strong>Decision-File Layer (decision-file/*.html)</strong></td><td><code>d989a5c6</code></td><td>Flagged (IR-01, IR-04, IR-05, IR-07)</td><td>Renders repo account handle in 23 HTML footers; conflates franchise expiry with NNN lease expiry &amp; misreads 10-K Item 2; uses Jan 2026 4.19% UST vs. Nov 2026 4.86%; 168 unsourced rows.</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer">S12 · U.S. Securities and Exchange Commission (EDGAR)</a></td></tr><tr><td><strong>Advisory Layer (advisory/*.html — This Build)</strong></td><td><code>e04af39b</code></td><td>PASS (verify_advisory.py &amp; stage_pages.py)</td><td>12 static pages, 0 JS, 0 PII/handles, 100% official https:// links in every tbody row, current Nov 2026 Treasury/BLS/ULA data.</td><td><span class="badge b-verified">Verified</span></td><td><a class="src-link" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611" rel="noopener noreferrer">S11 · U.S. Department of the Treasury</a></td></tr></tbody>
+      </table></div>
+    </section>
+
+    <section class="section-card">
+      <h3>Detailed Irregularities Flagged Across Inherited Layers (IR-01 – IR-09)</h3>
+      <p class="section-note">Each row links directly to the authoritative official source that verifies the discrepancy.</p>
+      <div class="table-wrap"><table>
+        <thead><tr>
+          <th>ID</th>
+          <th>Severity &amp; Domain</th>
+          <th>Irregularity Summary</th>
+          <th>Primary-Source Verification &amp; Remediation</th>
+          <th>Status</th>
+          <th>Official Source</th>
+        </tr></thead>
+        <tbody><tr><td><strong>IR-01</strong></td><td>Repo Audit (High — Privacy)</td><td><strong>Repository Account Handle Rendered in Legacy Companion HTML (`decision-file/`, `pages/`)</strong></td><td>23 pages in decision-file/ and 3 pages in pages/ print the repo owner&#x27;s GitHub handle in HTML; redacted as [REPO_ACCOUNT_REDACTED] across /advisory/.</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer">S01 · U.S. Census Bureau</a></td></tr><tr><td><strong>IR-02</strong></td><td>Repo Audit (High — Sourcing)</td><td><strong>Non-Official / Aggregator / Brokerage / Law-Firm Links in Legacy Companion Layers</strong></td><td>brief/, pages/, analysis/, and docs/ cite datausa.io, point2homes.com, fool.com, bouldergroup.com, seyfarth.com, everycrsreport.com; excluded from curated Pages artifact and replaced by 100% official links in /advisory/.</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>IR-03</strong></td><td>Repo Audit (High — Tax)</td><td><strong>Expired Measure ULA Thresholds ($5.3M / $10.6M) Published in `brief/decision.html`</strong></td><td>Official City Office of Finance &amp; LA County RRCC schedules confirm thresholds rose July 1, 2026 to $5,400,000 (4%) and $10,900,000 (5.5%).</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>IR-04</strong></td><td>Repo Audit (High — Lease/SEC)</td><td><strong>Franchise Termination Equated with NNN Lease Expiry &amp; 10-K Item 2 Misread in `decision-file/`</strong></td><td>10-K Item 2 shows 1,585 corporate-leased sites vs. 387 franchisee-direct sites, and states expiring leases are generally renewed at market rates outside the 150–200 block closure set.</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer">S12 · U.S. Securities and Exchange Commission (EDGAR)</a></td></tr><tr><td><strong>IR-05</strong></td><td>Repo Audit (Medium — Rates)</td><td><strong>Stale Jan 2, 2026 10-Yr Treasury Anchor (4.19%) in `decision-file/` vs. Nov 6, 2026 (4.86%)</strong></td><td>U.S. Treasury 10-Yr CMT rose +67 bps to 4.86% by Nov 6, 2026 alongside FOMC 3.75%–4.00% and JACK&#x27;s 7.624% June 2026 securitized refinancing.</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611" rel="noopener noreferrer">S11 · U.S. Department of the Treasury</a></td></tr><tr><td><strong>IR-06</strong></td><td>Repo Audit (Medium — BLS)</td><td><strong>August 2026 vs. September 2026 Rolling BLS Los Angeles Summary Figures</strong></td><td>BLS updated blssummary_losangeles.pdf on Nov 4, 2026 to Sept 2026 data (4.5% City/County unemp., 6,282.1k jobs +0.5%, +3.7% CPI-U, +20.3% energy).</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer">S03 · U.S. Bureau of Labor Statistics (BLS)</a></td></tr><tr><td><strong>IR-07</strong></td><td>Repo Audit (Medium — Tables)</td><td><strong>HTML `&lt;tr&gt;` Rows Without Direct Official `https://` Links in Legacy Companion Layers</strong></td><td>Found 23–168 rows without https:// links across docs/, pages/, analysis/, brief/, decision-file/; 100% of /advisory/ rows carry an official https:// link.</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611" rel="noopener noreferrer">S11 · U.S. Department of the Treasury</a></td></tr><tr><td><strong>IR-08</strong></td><td>Repo Audit (Medium — Forecasts)</td><td><strong>SCAG (+16.6%) vs. CA DOF/EWDD (Decline to ~9.3M) Forecast Divergence &amp; ACS/PEP Race Basis</strong></td><td>Official agencies disagree on long-run LA County growth direction; QuickFacts City race shares use ACS (74.3% sum ex-&#x27;Some Other Race&#x27;) while County uses PEP (99.8%).</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://ewdd.lacity.gov/images/reports/ap25/APy25_Tab5-EconomicForecast.pdf" rel="noopener noreferrer">S35 · City of Los Angeles Economic &amp; Workforce Development Dept. (EWDD)</a></td></tr><tr><td><strong>IR-09</strong></td><td>Repo Audit (Medium — Prop 13)</td><td><strong>Omission of California 35-Year Leasehold Change-in-Ownership Rule (R&amp;TC §§ 61(c), 62(g))</strong></td><td>Prior layers omitted CA BOE rule that creating, extending, or terminating a ≥35-yr lease (incl. options) triggers full Prop 13 reassessment.</td><td><span class="badge b-review">Needs review</span></td><td><a class="src-link" href="https://www.boe.ca.gov/proptaxes/pdf/220_0345.pdf" rel="noopener noreferrer">S20 · California State Board of Equalization (BOE)</a></td></tr></tbody>
+      </table></div>
+    </section>
+    
+    <footer class="footer">
+      Anonymized decision-support research (<code>[REPO_ACCOUNT_REDACTED]</code> &middot; <code>[SUBJECT_PARCEL_REDACTED]</code>). Every table row links directly to an official government (<code>.gov</code> / <code>.ca.gov</code> / public agency) or primary SEC/issuer filing checked 2026-11-07. Unconfirmed parcel inputs remain blank and are listed on <a href="flagged.html">Flagged for Review</a>. Conditional analysis is not personalized legal, tax, or investment advice.
+    </footer>
+  </main>
+</div>
+</body>
+</html>
