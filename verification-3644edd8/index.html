@@ -68,7 +68,7 @@
 <article class="scenario"><h4>Today cap: 8.00%</h4><div class="big">S1 11.9375 R</div><p>S5 extend-then-sell: 12.1970 R. Higher mechanical PV: S5. Model-derived.</p></article>
 </div>
 <details class="checks"><summary>Open all nine model observations</summary><div class="details-body check-list">
-<article class="check"><h4><span class="check-id">M-01 · confirmed</span><br>Inherited arithmetic reproduces</h4><p>S1 is 15.28 R in base and 11.62 R in pessimistic; S3 2030 is 1.18 R in pessimistic. Reproduction is not appraisal validation.</p></article>
+<article class="check"><h4><span class="check-id">M-01 · confirmed</span><br>Inherited arithmetic reproduces</h4><p>S1 is 15.2800 R in base and 11.6250 R in pessimistic; S3 2030 is 1.1821 R in pessimistic. Reproduction is not appraisal validation.</p></article>
 <article class="check"><h4><span class="check-id">M-02 · issue</span><br>R-05 mixes different expiry cases</h4><p>The inherited 12.30 R to 2.51 R comparison pairs S4 base 2035 with S4 pessimistic 2030. Same-case pairs are 10.6433 to 2.5074 R (2030) and 12.3042 to 4.8219 R (2035).</p></article>
 <article class="check"><h4><span class="check-id">M-03 · issue</span><br>Tenant-risk treatment is asymmetric</h4><p>Only the three S3 results receive p_tenant_survives. The multiplier covers the whole PV, including pre-expiry rent also received by S2/S4/S6 and the terminal value.</p></article>
 <article class="check"><h4><span class="check-id">M-04 · issue</span><br>The incumbent ranking is sensitive to that treatment</h4><p>Removing only S3&#x27;s extra tenant-survival multiplier changes S3 2035 ranks from 3/12/12 to 1/4/9 across optimistic/base/pessimistic. This isolates model dependence; it is not a corrected valuation.</p></article>

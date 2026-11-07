@@ -156,7 +156,7 @@ checks = [
         "id": "M-01",
         "status": "confirmed",
         "title": "Inherited arithmetic reproduces",
-        "finding": "S1 is 15.28 R in base and 11.62 R in pessimistic; S3 2030 is 1.18 R in pessimistic. Reproduction is not appraisal validation.",
+        "finding": "S1 is 15.2800 R in base and 11.6250 R in pessimistic; S3 2030 is 1.1821 R in pessimistic. Reproduction is not appraisal validation.",
     },
     {
         "id": "M-02",

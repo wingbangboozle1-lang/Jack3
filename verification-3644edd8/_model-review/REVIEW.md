@@ -8,7 +8,7 @@ Reviewed 2026-11-07. Read-only against `model/projection.py`; SHA-256 `e98d9575c
 
 Status: **confirmed**
 
-S1 is 15.28 R in base and 11.62 R in pessimistic; S3 2030 is 1.18 R in pessimistic. Reproduction is not appraisal validation.
+S1 is 15.2800 R in base and 11.6250 R in pessimistic; S3 2030 is 1.1821 R in pessimistic. Reproduction is not appraisal validation.
 
 ## M-02 — R-05 mixes different expiry cases
 
