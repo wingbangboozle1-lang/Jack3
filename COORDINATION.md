@@ -396,3 +396,10 @@ Plan: inspect inherited conflicting recommendations, recheck selected primary so
 - Checks passed: root 72 row schema/provenance checks; all 72 pages' local references and anchors; brief 9 pages; analysis 11 pages; decision-file 23 pages official-domain check. Existing PII scanner: 81 files, zero findings (heuristic, not proof of universal privacy). No new identifying information collected. Combined checks added to CI. Source links inspected manually do not guarantee every inherited external link is live.
 - Root source values use retrieved official content, not invented property inputs. Numerical parcel forecasts and personal suitability remain unavailable. No fabricated annual hazard probabilities. Prior outputs preserved and explicitly qualified.
 - Audit task: done; unresolved evidence items: needs review (nonblocking). Publication integration remains in progress pending PR/Pages checks.
+
+### Publication record — 7d4577fd
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/15 merged without waiting for approval on 2026-11-07 at 20:13:32 UTC; merge commit `de683bb2c2a24f57fb750f21794af2fc16490a17`.
+- PR validation run 42409997490 and merged-main validation 42410022934: success.
+- Pages build, report and deploy run https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42410022288 : success. Platform-owned Pages action emitted Node20/runner migration notices, not failures.
+- Live https://wingbangboozle1-lang.github.io/Jack3/audit/index.html fetched successfully after deployment; returned updated executive audit, 19 regional observations and seven review flags. Main landing remains https://wingbangboozle1-lang.github.io/Jack3/ .
+- Integration: done. Evidence gaps remain needs review, nonblocking and published. Full independent re-verification of inherited companion rows and a reliable property-specific forecast are NOT complete; source/lease limitations prevent those claims.
