@@ -515,3 +515,33 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
 - **Live verification:** https://wingbangboozle1-lang.github.io/Jack3/ shows Sept 2026 jobs +0.5%. https://wingbangboozle1-lang.github.io/Jack3/review.html shows the F-16 and F-17 rows. Note: an un-busted fetch of the root returned a stale CDN copy for a short period; a cache-busted fetch matched `main`.
 - **Not on the live site, by design of `main`:** `decision-file/`, `analysis/`, `brief/`, `docs/`, `pages/`, `research/`, `audit/` (excluded by `_config.yml` / `scripts/stage_pages.py`). Their stale August figures (XR-4) therefore affect the repository only, not the published Pages site.
 
+---
+
+# Session `arena/e04af39b-jack3` — Primary-Source Re-Verification, Symmetric R-Model & `/advisory/` Dashboard
+
+**Session ID:** `e04af39b` · **Branch:** `arena/e04af39b-jack3` (platform-fixed) · **Date:** `2026-11-07` (UTC)
+
+## Task Table & Scope Claim
+
+| ID | Task | Status | Owner | File Scope |
+|---|---|---|---|---|
+| E-01 | Line-by-line repo review across all 6 inherited layers & irregularity log (`IR-01`–`IR-10`) | **done** | `e04af39b` | `_advisory_src/REPO_REVIEW.md`, `advisory/repo-review.html` |
+| E-02 | Primary-source verification: geography, transit, Census V2025/ACS, CDE 2025–26 LAUSD, Sept 2026 BLS, Nov 2026 UST, FOMC | **done** | `e04af39b` | `_advisory_src/dataset.py`, `_advisory_src/advisory_dataset.json` |
+| E-03 | Primary-source verification: SEC FY2025 10-K (Items 1, 2 & 7), Q3 FY2026 10-Q/IR, June 2026 7.624% refi, Measure ULA (eff. 7/1/2026), Prop 13 35-yr rule, §1031 | **done** | `e04af39b` | `_advisory_src/dataset.py`, `advisory/tenant-lease.html` |
+| E-04 | Business-as-usual (12) & black-swan (8) risk register (USGS UCERF3, Jan 2025 Palisades/Eaton fires, Dec 2028 FAIR Plan sunset) | **done** | `e04af39b` | `advisory/risks.html` |
+| E-05 | Deterministic 2026–2035 area projection system & symmetric `R`-normalized 5-pathway decision matrix (`2030` vs `2035`) | **done** | `e04af39b` | `_advisory_src/model.py`, `advisory/projections.html` |
+| E-06 | Executive Summary & conditional Two-Step Blend-or-1031 owner playbook | **done** | `e04af39b` | `_advisory_src/EXECUTIVE_SUMMARY.md`, `advisory/executive-summary.html` |
+| E-07 | Clean 12-page static `/advisory/` dashboard + Flagged for Review (`F-01`–`F-14`, `IR-01`–`IR-10`) + 37 official sources | **done** | `e04af39b` | `advisory/**`, `_advisory_src/build_advisory.py` |
+| E-08 | Automated PII/link/row-provenance verification & curated GitHub Pages artifact staging | **done** | `e04af39b` | `_advisory_src/verify_advisory.py`, `scripts/stage_pages.py` (additive `advisory/` staging) |
+| E-09 | PR to `main`, CI green (`Validate public research` + Jekyll), merge & live GitHub Pages check | **in progress** | `e04af39b` | `COORDINATION.md` (this section) |
+
+## Non-Overlapping Scope & Concurrency Notes
+- Generator, model, dataset, and Markdown reports live inside `_advisory_src/` (leading underscore ensures native Jekyll exclusion without colliding on `_config.yml`).
+- Public static HTML/CSS outputs live inside `advisory/` (12 HTML pages + `advisory/assets/style.css`; zero YAML front matter, zero `<script>`, zero PII/account handles, 227 table rows with 100% official `https://` source links, 32 unconfirmed cells left strictly blank).
+- Preserved 100% of `origin/main` (PRs #1–#23) verbatim during merge; zero edits to root `*.html`, `scripts/build.py`, `data/*`, or any sibling session's directories (`docs/`, `analysis/`, `brief/`, `pages/`, `decision-file/`, `audit/`, `report/`, `verification-3644edd8/`).
+- Only shared-file touch is a minimal additive block in `scripts/stage_pages.py` (staging `advisory/` into `_pages_artifact` and enforcing official source links + relative link resolution across all staged pages) plus `python _advisory_src/verify_advisory.py` in `.github/workflows/validate.yml`.
+
+## Cross-Session Requests Logged (Read-Only Respect for Other Scopes)
+- **XR-E1 (to root `scripts/build.py` / `index.html` owner):** Consider adding an optional navigation link to `advisory/index.html` from the root landing page so visitors can browse `/advisory/` alongside the root workspace.
+- **XR-E2 (to `decision-file/` & `pages/` owners):** Redact the repository owner's GitHub handle rendered in HTML footers/tables (`IR-01`), update `data/tenant.py` p. 29 Jack in the Box franchise AUV (`$1,874k` vs Del Taco `$1,549k`, `IR-10`), and note 10-K Item 2's `1,585` corporate-leased vs `387` franchise-direct split (`IR-04`).
+- **XR-E3 (to `brief/` owner):** Update Measure ULA thresholds from expired `$5.3M/$10.6M` to effective July 1, 2026 `$5,400,000` (4%) and `$10,900,000` (5.5%) (`IR-03`).
