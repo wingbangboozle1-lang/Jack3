@@ -415,6 +415,26 @@ Before detecting that parallel integration, these repository checks passed on th
 Independent publication check: PR #15 merged to `main` at `de683bb2c2a24f57fb750f21794af2fc16490a17` on 2026-11-07; the later coordination-only PR #17 merged at `ebe960f316c927d408571f92bb938a5fa33455ae`. GitHub Actions `pages build and deployment` succeeded for both merge commits (runs 42410022288 and 42410176165), and `Validate public research` passed for PR #17. GitHub Pages API currently reports `status=errored`, so the API status is not described as built; nevertheless the live audit page at `https://wingbangboozle1-lang.github.io/Jack3/audit/` and root at `https://wingbangboozle1-lang.github.io/Jack3/` were fetched successfully after PR #17. This legacy API / workflow / served-site status mismatch is an operational irregularity to monitor, not evidence that the static pages are unavailable.
 
 Status: **closed / superseded by merged PR #15**. No QA report or site-page changes from this session are being published. The assigned Arena branch remains fixed; no alternate branch was created.
+---
+
+## Session `arena-9fa62774-jack3` — integration audit and remediation
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit prior integrated outputs, verify critical claims and repair decision-safety/privacy defects; validate and publish integration | in progress | `9fa62774` | `COORDINATION.md` (this section), root generator/data and generated root pages, `decision-file/`, `build_site.py`, related model/data if remediation requires; audit notes in `research/integration-audit-9fa62774.md` |
+
+Claimed 2026-11-07 UTC. The previous integration claims shown as in progress are over 60 minutes old; PR #13 was merged and main's latest commit is from 2026-11-06. This session takes over integration and will preserve prior contributions, recording any handoff and verified findings here. The environment fixes the branch name to `arena/9fa62774-jack3`, overriding the requested session-branch naming. Other sessions: please log conflicts or requests here before editing these scoped files.
+
+### Integration scope update and handoff — 2026-11-07
+
+The prior multi-session integration is over 60 minutes old and PR #13 is merged. This session takes over the publication configuration (`.github/workflows/pages.yml`, `scripts/stage_pages.py`) in addition to its existing root-site scope. The repository's prior companion analyses will be preserved in Git but excluded from the Pages artifact pending row-level re-verification: some contain third-party values contrary to the official-source rule, uncited table rows, incompatible recommendations, and a materially unsound numerical model. See the public Flagged for Review page and audit log. No other session's source files are overwritten.
+
+- 2026-11-07 `9fa62774`: Checked Census, BLS, issuer Q3, issuer closure disclosure, DIR wage FAQ, CGS, CAL FIRE, FEMA, CDE, City Planning and IRS directly; evidence and limits recorded in `research/integration-audit-9fa62774.md`. BLS rolling summary had advanced to September: updated root rows. Flagged incorrect franchise/lease equivalence, asymmetric model risk adjustment, unsupported assumptions and unsourced/nonofficial legacy rows. Prior files preserved in Git; curated Pages publication excludes unverified companion reports. Scope also includes `README.md` additive publication clarification.
+- 2026-11-07: Added `.github/workflows/validate.yml` to integration scope for the staging gate. Validation passed: 73 root evidence rows, nine pages; artifact checker resolves every local link inside the artifact and checks each table body row has a registered primary source; existing privacy scanner passed. These automated checks do not prove semantic truth or live external availability. No personalized property recommendation or back-tested forecast can be established without private facts.
+- 2026-11-07: GitHub API rejected changing Pages from legacy to workflow (`403 Resource not accessible by integration`), despite repository push access. Integration therefore preserves the current branch-based Pages setting and uses a Jekyll exclusion list instead; CI will build and validate the actual Jekyll artifact before merge. Added `_config.yml` and `.nojekyll` to integration scope; no legacy source files removed. If the alternative fails, stop rather than merge a broken or uncurated site.
+- Jekyll comparison CI initially failed after the build; GitHub job logs are inaccessible from this sandbox, so the validator was amended to emit actionable annotations before retrying. No merge attempted.
+- CI diagnostics identified Jekyll's `model` exclusion also matched the required `model.html`; narrowed the exclusion to the `model/` directory and retried.
+- 2026-11-07: PR #14 could not merge because concurrent session `7d4577fd` had merged PRs #15 and #16 while this session's claim was on its branch. Rebased onto `origin/main`; resolved shared board, data, builder, workflow and generated HTML conflicts additively. Preserved the other session's audit files, companion notices, checks and review flags; integrated its source snapshot and replaced its previously unavailable CDE check after successfully inspecting the CDE page. Root notices now link to the published review page, while historical audit/companion pages remain in Git and are excluded from the curated artifact until their links and rows meet publication requirements. No contribution was discarded. Re-ran root, companion, PII and staged-link checks locally; 77 root rows pass. Jekyll CI will be rerun on the combined tree before merge.
 
 ---
 
@@ -439,7 +459,7 @@ Generated output rebuilt: `index.html`, `economy.html`, `sources.html`, `decisio
 | V-04 | Re-verify Census LA city population | **done (spot check)** | `64d0ce02` | https://www.census.gov/quickfacts/losangelescitycalifornia (V2025): 3,869,089; base 3,899,342; change −0.8%. Matches data. Other Census rows not re-fetched in this pass. | — |
 | V-05 | Re-verify CA minimum wage | **partial** | `64d0ce02` | https://www.dir.ca.gov/dlse/faq_minimumwage.htm could not be fetched (fetch error / 404 on alternate URL). The $16.90 (2026) figure was retained from the earlier session's DIR verification and was **not re-confirmed this session**. Secondary sources report $17.40 effective 2027-01-01 — not published, see F-17. | R-5 |
 | V-06 | Stale August figures in root and decision-file layers | **done** | `64d0ce02` | Root `index.html` front card corrected (+0.5%, Sep 2026); decision-file headline stats, R-08/R-10 evidence, `model/projection.py` constants corrected. Remaining August-2026 mentions in `decision-file/` are genuine August labour-force rows confirmed by V-01. | R-6 |
-| V-07 | Add root-to-decision-file link | **done** | `64d0ce02` | `scripts/build.py` companion line now links `decision-file/index.html` (closes the open request XR-1 from `d989a5c6` **for the root page only**). | — |
+| V-07 | Add root-to-decision-file link | **superseded** | `64d0ce02` | First applied to the companion line in `scripts/build.py`. After `main` advanced (PR #14 / `df3ee1d` audit hub), that line no longer exists, and `audit/index.html` on `main` already links `../decision-file/index.html`. Verified by grep; no further edit made. XR-1 is therefore closed by the audit hub. | — |
 
 **Sources used in this pass:** BLS Los Angeles Area Economic Summary (2026-11-04); BLS Metropolitan Area Employment and
 Unemployment, news release USDL-26-1618 (https://www.bls.gov/news.release/metro.nr0.htm) and Table 1
@@ -466,7 +486,7 @@ Bureau QuickFacts, Los Angeles city (V2025).
 | ID | To | Request | Status |
 |----|----|---------|--------|
 | XR-4 | owners of `research/`, `analysis/`, `brief/`, `docs/`, `pages/`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md` | Replace August-2026 employment and CPI figures with the September-2026 values listed in `data/employment.py` (F-16), and blank the U.S. 4.3%, LA County and LA City rates. | **open** |
-| XR-1 (closed for root) | owner of `scripts/build.py` | Root now links `decision-file/index.html`. | closed |
+| XR-1 (closed) | owner of `scripts/build.py` | Root/audit hub links `decision-file/index.html` (`audit/index.html`, present on `main`). | closed |
 
 ### Not verified in this pass
 Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetched line by line in this session. They keep their earlier sources and flags. Only the rows named above were re-verified.
