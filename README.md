@@ -1,5 +1,7 @@
 # Jack / Property intelligence
 
+> **Publication update (2026-11-07):** The public Pages artifact is restricted to the root evidence-gated dashboard. The companion reports listed below remain in this repository for audit, but are not published until reverified. Earlier model rankings and the asserted equivalence of franchise and real-estate lease expiration are not reliable; see `research/integration-audit-9fa62774.md` and the public Flagged for Review page. Historical companion links below may no longer resolve on Pages.
+
 Privacy-safe, static research dashboard for an unidentified Los Angeles-area net lease asset.
 It is published in layers, all linked from the root landing page and from here.
 

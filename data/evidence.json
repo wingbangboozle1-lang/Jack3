@@ -46,12 +46,12 @@
     "school": {
       "label": "CA Education · Dashboard",
       "url": "https://www.cde.ca.gov/ta/ac/cm/",
-      "checked": "2026-11-07 · fetch failed; not reverified",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "wage": {
-      "label": "CA DIR · minimum wage",
-      "url": "https://www.dir.ca.gov/dlse/Minimum_Wage.htm",
+      "label": "CA DIR · fast-food minimum wage FAQ",
+      "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
       "checked": "2026-11-07",
       "type": "Government"
     },
@@ -66,6 +66,12 @@
       "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
       "checked": "2026-11-07",
       "type": "Government"
+    },
+    "closure": {
+      "label": "Jack in the Box · 2025 closure plan",
+      "url": "https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx",
+      "checked": "2026-11-07",
+      "type": "Issuer"
     }
   },
   "pages": [
@@ -328,6 +334,15 @@
           ],
           "status": "Verified",
           "source": "jack"
+        },
+        {
+          "cells": [
+            "2025 announced closure program",
+            "Approximately 150–200 restaurants",
+            "Issuer plan for underperforming restaurants; later closures tied to franchise agreement termination dates, not necessarily real-estate lease expiry. No subject-site inclusion established."
+          ],
+          "status": "Verified",
+          "source": "closure"
         },
         {
           "cells": [
@@ -812,7 +827,7 @@
           "cells": [
             "Review",
             "CDE source unavailable during audit",
-            "Official CDE URL could not be fetched on November 7. School performance remains blank; link is a research route only."
+            "Previous audit could not fetch CDE; the official page was inspected on November 7. The relevant school boundary and local performance remain unverified."
           ],
           "status": "Needs review",
           "source": "school"
@@ -825,6 +840,42 @@
           ],
           "status": "Needs review",
           "source": "jack"
+        },
+        {
+          "cells": [
+            "Critical",
+            "Franchise agreement ≠ property lease",
+            "An earlier companion report equated the franchise termination date with the reported lease expiry. The issuer does not establish this property’s franchise date or closure status."
+          ],
+          "status": "Needs review",
+          "source": "closure"
+        },
+        {
+          "cells": [
+            "Critical",
+            "Prior model and recommendations",
+            "Earlier companion models used unsupported cap rates, probabilities and asymmetric cash-flow adjustments. Their rankings are not a reliable property valuation or personalized recommendation; withheld from this publication."
+          ],
+          "status": "Needs review",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "High",
+            "Companion report publication",
+            "Earlier companion pages include third-party figures, unsourced rows and differing recommendations. Preserved in the repository but excluded from the Pages artifact until reverified."
+          ],
+          "status": "Needs review",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Review",
+            "Live source updates",
+            "The BLS summary is a rolling document. September 2026 observations were checked November 7; figures can later be revised or replaced."
+          ],
+          "status": "Needs review",
+          "source": "bls"
         }
       ]
     }
