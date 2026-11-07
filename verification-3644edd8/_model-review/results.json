@@ -1,0 +1,621 @@
+{
+  "baseline": {
+    "base": [
+      {
+        "black_swan_probability": null,
+        "expiry": "-",
+        "published_adjusted_R": 15.28,
+        "rank": 2,
+        "raw_pv_R": 15.28,
+        "strategy": "S1 - Sell now, lease in place",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": null,
+        "expiry": "-",
+        "published_adjusted_R": 15.6122,
+        "rank": 1,
+        "raw_pv_R": 15.6122,
+        "strategy": "S5 - Extend early, then sell the lengthened lease",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.024446,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 6.4521,
+        "rank": 14,
+        "raw_pv_R": 11.847,
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+4y)",
+        "tenant_survival_factor": 0.55
+      },
+      {
+        "black_swan_probability": 0.036445,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 6.78,
+        "rank": 13,
+        "raw_pv_R": 12.5097,
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+6y)",
+        "tenant_survival_factor": 0.55
+      },
+      {
+        "black_swan_probability": 0.054166,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 7.1888,
+        "rank": 12,
+        "raw_pv_R": 13.36,
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+9y)",
+        "tenant_survival_factor": 0.55
+      },
+      {
+        "black_swan_probability": 0.024446,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 12.5373,
+        "rank": 8,
+        "raw_pv_R": 12.6611,
+        "strategy": "S2 - Hold to expiry (+4y), then sell vacant",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.036445,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 12.6578,
+        "rank": 7,
+        "raw_pv_R": 12.8451,
+        "strategy": "S2 - Hold to expiry (+6y), then sell vacant",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.054166,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 12.8805,
+        "rank": 6,
+        "raw_pv_R": 13.1658,
+        "strategy": "S2 - Hold to expiry (+9y), then sell vacant",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.024446,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 10.6433,
+        "rank": 11,
+        "raw_pv_R": 10.7484,
+        "strategy": "S4 - Hold to expiry, re-let to another operator (+4y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.036445,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 11.382,
+        "rank": 10,
+        "raw_pv_R": 11.5504,
+        "strategy": "S4 - Hold to expiry, re-let to another operator (+6y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.054166,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 12.3042,
+        "rank": 9,
+        "raw_pv_R": 12.5767,
+        "strategy": "S4 - Hold to expiry, re-let to another operator (+9y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.024446,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 12.968,
+        "rank": 5,
+        "raw_pv_R": 13.0961,
+        "strategy": "S6 - Hold to expiry, then redevelop the site (+4y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.036445,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 13.0274,
+        "rank": 4,
+        "raw_pv_R": 13.2201,
+        "strategy": "S6 - Hold to expiry, then redevelop the site (+6y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.054166,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 13.1743,
+        "rank": 3,
+        "raw_pv_R": 13.4661,
+        "strategy": "S6 - Hold to expiry, then redevelop the site (+9y)",
+        "tenant_survival_factor": null
+      }
+    ],
+    "optimistic": [
+      {
+        "black_swan_probability": null,
+        "expiry": "-",
+        "published_adjusted_R": 19.6,
+        "rank": 13,
+        "raw_pv_R": 19.6,
+        "strategy": "S1 - Sell now, lease in place",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": null,
+        "expiry": "-",
+        "published_adjusted_R": 23.0588,
+        "rank": 6,
+        "raw_pv_R": 23.0588,
+        "strategy": "S5 - Extend early, then sell the lengthened lease",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.008049,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 21.6027,
+        "rank": 7,
+        "raw_pv_R": 28.8384,
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+4y)",
+        "tenant_survival_factor": 0.75
+      },
+      {
+        "black_swan_probability": 0.012048,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 24.7185,
+        "rank": 5,
+        "raw_pv_R": 33.0177,
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+6y)",
+        "tenant_survival_factor": 0.75
+      },
+      {
+        "black_swan_probability": 0.018018,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 29.7942,
+        "rank": 3,
+        "raw_pv_R": 39.8332,
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+9y)",
+        "tenant_survival_factor": 0.75
+      },
+      {
+        "black_swan_probability": 0.008049,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 19.3653,
+        "rank": 14,
+        "raw_pv_R": 19.3887,
+        "strategy": "S2 - Hold to expiry (+4y), then sell vacant",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.012048,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 19.8156,
+        "rank": 11,
+        "raw_pv_R": 19.8515,
+        "strategy": "S2 - Hold to expiry (+6y), then sell vacant",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.018018,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 21.1576,
+        "rank": 9,
+        "raw_pv_R": 21.215,
+        "strategy": "S2 - Hold to expiry (+9y), then sell vacant",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.008049,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 28.2004,
+        "rank": 4,
+        "raw_pv_R": 28.2345,
+        "strategy": "S4 - Hold to expiry, re-let to another operator (+4y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.012048,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 32.3806,
+        "rank": 2,
+        "raw_pv_R": 32.4393,
+        "strategy": "S4 - Hold to expiry, re-let to another operator (+6y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.018018,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 39.1756,
+        "rank": 1,
+        "raw_pv_R": 39.2817,
+        "strategy": "S4 - Hold to expiry, re-let to another operator (+9y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.008049,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 19.6795,
+        "rank": 12,
+        "raw_pv_R": 19.7032,
+        "strategy": "S6 - Hold to expiry, then redevelop the site (+4y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.012048,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 20.0941,
+        "rank": 10,
+        "raw_pv_R": 20.1305,
+        "strategy": "S6 - Hold to expiry, then redevelop the site (+6y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.018018,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 21.39,
+        "rank": 8,
+        "raw_pv_R": 21.4479,
+        "strategy": "S6 - Hold to expiry, then redevelop the site (+9y)",
+        "tenant_survival_factor": null
+      }
+    ],
+    "pessimistic": [
+      {
+        "black_swan_probability": null,
+        "expiry": "-",
+        "published_adjusted_R": 11.625,
+        "rank": 1,
+        "raw_pv_R": 11.625,
+        "strategy": "S1 - Sell now, lease in place",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": null,
+        "expiry": "-",
+        "published_adjusted_R": 9.8812,
+        "rank": 2,
+        "raw_pv_R": 9.8812,
+        "strategy": "S5 - Extend early, then sell the lengthened lease",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.06294,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 1.1821,
+        "rank": 14,
+        "raw_pv_R": 4.1771,
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+4y)",
+        "tenant_survival_factor": 0.3
+      },
+      {
+        "black_swan_probability": 0.092908,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 1.4335,
+        "rank": 13,
+        "raw_pv_R": 5.2145,
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+6y)",
+        "tenant_survival_factor": 0.3
+      },
+      {
+        "black_swan_probability": 0.136073,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 1.6984,
+        "rank": 12,
+        "raw_pv_R": 6.4515,
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+9y)",
+        "tenant_survival_factor": 0.3
+      },
+      {
+        "black_swan_probability": 0.06294,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 7.8587,
+        "rank": 8,
+        "raw_pv_R": 8.3306,
+        "strategy": "S2 - Hold to expiry (+4y), then sell vacant",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.092908,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 7.9418,
+        "rank": 7,
+        "raw_pv_R": 8.6665,
+        "strategy": "S2 - Hold to expiry (+6y), then sell vacant",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.136073,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 7.9567,
+        "rank": 6,
+        "raw_pv_R": 9.0671,
+        "strategy": "S2 - Hold to expiry (+9y), then sell vacant",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.06294,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 2.5074,
+        "rank": 11,
+        "raw_pv_R": 2.658,
+        "strategy": "S4 - Hold to expiry, re-let to another operator (+4y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.092908,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 3.6215,
+        "rank": 10,
+        "raw_pv_R": 3.9519,
+        "strategy": "S4 - Hold to expiry, re-let to another operator (+6y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.136073,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 4.8219,
+        "rank": 9,
+        "raw_pv_R": 5.4949,
+        "strategy": "S4 - Hold to expiry, re-let to another operator (+9y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.06294,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 8.2236,
+        "rank": 4,
+        "raw_pv_R": 8.7174,
+        "strategy": "S6 - Hold to expiry, then redevelop the site (+4y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.092908,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 8.2365,
+        "rank": 3,
+        "raw_pv_R": 8.988,
+        "strategy": "S6 - Hold to expiry, then redevelop the site (+6y)",
+        "tenant_survival_factor": null
+      },
+      {
+        "black_swan_probability": 0.136073,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 8.1705,
+        "rank": 5,
+        "raw_pv_R": 9.3107,
+        "strategy": "S6 - Hold to expiry, then redevelop the site (+9y)",
+        "tenant_survival_factor": null
+      }
+    ]
+  },
+  "cap_sensitivity": [
+    {
+      "declared_today_cap_case": "low",
+      "extend_then_sell_R": 19.5152,
+      "higher_mechanical_pv": "S5",
+      "sell_now_R": 19.1,
+      "today_cap_rate_pct": 5.0
+    },
+    {
+      "declared_today_cap_case": "base",
+      "extend_then_sell_R": 15.6122,
+      "higher_mechanical_pv": "S5",
+      "sell_now_R": 15.28,
+      "today_cap_rate_pct": 6.25
+    },
+    {
+      "declared_today_cap_case": "high",
+      "extend_then_sell_R": 12.197,
+      "higher_mechanical_pv": "S5",
+      "sell_now_R": 11.9375,
+      "today_cap_rate_pct": 8.0
+    }
+  ],
+  "checks": [
+    {
+      "finding": "S1 is 15.2800 R in base and 11.6250 R in pessimistic; S3 2030 is 1.1821 R in pessimistic. Reproduction is not appraisal validation.",
+      "id": "M-01",
+      "status": "confirmed",
+      "title": "Inherited arithmetic reproduces"
+    },
+    {
+      "finding": "The inherited 12.30 R to 2.51 R comparison pairs S4 base 2035 with S4 pessimistic 2030. Same-case pairs are 10.6433 to 2.5074 R (2030) and 12.3042 to 4.8219 R (2035).",
+      "id": "M-02",
+      "status": "issue",
+      "title": "R-05 mixes different expiry cases"
+    },
+    {
+      "finding": "Only the three S3 results receive p_tenant_survives. The multiplier covers the whole PV, including pre-expiry rent also received by S2/S4/S6 and the terminal value.",
+      "id": "M-03",
+      "status": "issue",
+      "title": "Tenant-risk treatment is asymmetric"
+    },
+    {
+      "finding": "Removing only S3's extra tenant-survival multiplier changes S3 2035 ranks from 3/12/12 to 1/4/9 across optimistic/base/pessimistic. This isolates model dependence; it is not a corrected valuation.",
+      "id": "M-04",
+      "status": "issue",
+      "title": "The incumbent ranking is sensitive to that treatment"
+    },
+    {
+      "finding": "The inherited expected-value leader is S4 - Hold to expiry, re-let to another operator (+9y) at 2035 (17.15 R), while immediate sale leads only the selected pessimistic/maximin comparison.",
+      "id": "M-05",
+      "status": "context",
+      "title": "The decision criterion changes the winner"
+    },
+    {
+      "finding": "Within the declared today-cap range and all other inputs at base, S5 extend-then-sell exceeds S1 at 5%, 6.25% and 8%. Immediate sale leads the selected pessimistic/maximin comparison, not every decision criterion inside the model.",
+      "id": "M-06",
+      "status": "issue",
+      "title": "Immediate sale is not preferred under base assumptions"
+    },
+    {
+      "finding": "strategy_renew charges re-let downtime and capital at expiry. It may describe expiry/re-letting risk, but it is not a clean signed early extension with uninterrupted rent.",
+      "id": "M-07",
+      "status": "issue",
+      "title": "S3 is not an early-renewal comparator"
+    },
+    {
+      "finding": "Immediate sale returns cap-rated proceeds less assumed friction. The code has no owner tax basis, debt payoff, income-tax calculation, replacement-asset return, or reinvestment-risk stream. R multiples cannot be presented as personal wealth outcomes.",
+      "id": "M-08",
+      "status": "limitation",
+      "title": "This is not an after-tax wealth model"
+    },
+    {
+      "finding": "Tenant non-renewal, catastrophe probability and loss share, scenario weights, cap rates, downtime, capital costs and alternative-use value are declared assumptions. Regional hazard data do not calibrate parcel damage or closure probabilities.",
+      "id": "M-09",
+      "status": "limitation",
+      "title": "Probability inputs are assumptions"
+    }
+  ],
+  "counterfactual": {
+    "method": "For S3 only, use raw strategy PV followed by the existing catastrophe adjustment; omit tenant_survival_adjust. Leave every other strategy and every other input unchanged.",
+    "rows": [
+      {
+        "change": "Only S3 tenant-survival multiplier removed; catastrophe adjustment retained",
+        "counterfactual_R": 28.8036,
+        "counterfactual_rank": 5,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 21.6027,
+        "published_rank": 7,
+        "scenario": "optimistic",
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+4y)"
+      },
+      {
+        "change": "Only S3 tenant-survival multiplier removed; catastrophe adjustment retained",
+        "counterfactual_R": 32.9581,
+        "counterfactual_rank": 3,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 24.7185,
+        "published_rank": 5,
+        "scenario": "optimistic",
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+6y)"
+      },
+      {
+        "change": "Only S3 tenant-survival multiplier removed; catastrophe adjustment retained",
+        "counterfactual_R": 39.7255,
+        "counterfactual_rank": 1,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 29.7942,
+        "published_rank": 3,
+        "scenario": "optimistic",
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+9y)"
+      },
+      {
+        "change": "Only S3 tenant-survival multiplier removed; catastrophe adjustment retained",
+        "counterfactual_R": 11.7311,
+        "counterfactual_rank": 12,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 6.4521,
+        "published_rank": 14,
+        "scenario": "base",
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+4y)"
+      },
+      {
+        "change": "Only S3 tenant-survival multiplier removed; catastrophe adjustment retained",
+        "counterfactual_R": 12.3274,
+        "counterfactual_rank": 10,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 6.78,
+        "published_rank": 13,
+        "scenario": "base",
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+6y)"
+      },
+      {
+        "change": "Only S3 tenant-survival multiplier removed; catastrophe adjustment retained",
+        "counterfactual_R": 13.0706,
+        "counterfactual_rank": 4,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 7.1888,
+        "published_rank": 12,
+        "scenario": "base",
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+9y)"
+      },
+      {
+        "change": "Only S3 tenant-survival multiplier removed; catastrophe adjustment retained",
+        "counterfactual_R": 3.9405,
+        "counterfactual_rank": 12,
+        "expiry": "2030 (4 years out)",
+        "published_adjusted_R": 1.1821,
+        "published_rank": 14,
+        "scenario": "pessimistic",
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+4y)"
+      },
+      {
+        "change": "Only S3 tenant-survival multiplier removed; catastrophe adjustment retained",
+        "counterfactual_R": 4.7785,
+        "counterfactual_rank": 11,
+        "expiry": "2032 (mid-window)",
+        "published_adjusted_R": 1.4335,
+        "published_rank": 13,
+        "scenario": "pessimistic",
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+6y)"
+      },
+      {
+        "change": "Only S3 tenant-survival multiplier removed; catastrophe adjustment retained",
+        "counterfactual_R": 5.6614,
+        "counterfactual_rank": 9,
+        "expiry": "2035 (9 years out)",
+        "published_adjusted_R": 1.6984,
+        "published_rank": 12,
+        "scenario": "pessimistic",
+        "strategy": "S3 - Renew / re-let to Jack in the Box (+9y)"
+      }
+    ],
+    "warning": "Mechanical sensitivity only; not a corrected model or recommendation."
+  },
+  "expected_value_leaders": [
+    {
+      "expected_pv_R": 17.15,
+      "expiry": "2035 (9 years out)",
+      "spread_R": 34.36,
+      "strategy": "S4 - Hold to expiry, re-let to another operator (+9y)",
+      "worst_pv_R": 4.82
+    },
+    {
+      "expected_pv_R": 16.04,
+      "expiry": "-",
+      "spread_R": 13.18,
+      "strategy": "S5 - Extend early, then sell the lengthened lease",
+      "worst_pv_R": 9.88
+    },
+    {
+      "expected_pv_R": 15.44,
+      "expiry": "-",
+      "spread_R": 7.98,
+      "strategy": "S1 - Sell now, lease in place",
+      "worst_pv_R": 11.62
+    }
+  ],
+  "interpretation": "PASS means this audit reproduced its observations, not that the inherited model is suitable for a property decision.",
+  "model_file": "model/projection.py",
+  "model_sha256": "e98d9575c6965e5f03fa00100c083731448b0a5d1d01d67c78117a14450f8924",
+  "reviewed": "2026-11-07",
+  "same_horizon_comparisons": [
+    {
+      "base_R": 10.6433,
+      "expiry": "2030 (4 years out)",
+      "pessimistic_R": 2.5074,
+      "strategy": "S4 - Hold to expiry, re-let to another operator (+4y)"
+    },
+    {
+      "base_R": 12.3042,
+      "expiry": "2035 (9 years out)",
+      "pessimistic_R": 4.8219,
+      "strategy": "S4 - Hold to expiry, re-let to another operator (+9y)"
+    }
+  ],
+  "tenant_survival_recipients": {
+    "base": [
+      "S3 - Renew / re-let to Jack in the Box (+4y)",
+      "S3 - Renew / re-let to Jack in the Box (+6y)",
+      "S3 - Renew / re-let to Jack in the Box (+9y)"
+    ],
+    "optimistic": [
+      "S3 - Renew / re-let to Jack in the Box (+4y)",
+      "S3 - Renew / re-let to Jack in the Box (+6y)",
+      "S3 - Renew / re-let to Jack in the Box (+9y)"
+    ],
+    "pessimistic": [
+      "S3 - Renew / re-let to Jack in the Box (+4y)",
+      "S3 - Renew / re-let to Jack in the Box (+6y)",
+      "S3 - Renew / re-let to Jack in the Box (+9y)"
+    ]
+  }
+}

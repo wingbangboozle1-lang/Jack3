@@ -1,0 +1,260 @@
+{
+  "decision": {
+    "headline": "Do not rely on the inherited categorical sale ranking. Evaluate an enforceable early extension and a real sale process in parallel.",
+    "status": "Conditional analyst framework — not an appraisal, legal opinion, tax opinion, or personal financial advice",
+    "why": "The public evidence establishes regional context and issuer-system trends, but not Asset A's lease, guaranty, rent, tax basis, debt, operating status, alternative uses, insurance, or market value. Independent model tests also show that the inherited incumbent ranking is sensitive to asymmetric risk treatment.",
+    "paths": [
+      {
+        "name": "Sell or qualifying exchange",
+        "condition": "Prefer only when verified net after-tax proceeds, debt payoff, transaction friction and replacement-asset risk compare favourably with the best enforceable hold/renewal alternative. Section 1031 is a possible mechanism for qualifying property, not an automatic benefit.",
+        "sources": ["irs_1031", "irs_8824"]
+      },
+      {
+        "name": "Renew / extend early",
+        "condition": "Prefer only when a signed term, actual rent payer and guaranty, net rent after concessions, expense obligations, exit rights and downside reserves produce a better risk-adjusted after-tax outcome than verified net sale proceeds. Do not use the inherited S3 downtime/capex case as a clean early-renewal proxy.",
+        "sources": ["sec_10k", "ir_closure"]
+      },
+      {
+        "name": "Extend, then sell",
+        "condition": "Use only if an enforceable extension creates bid improvement that exceeds rent concessions and transaction costs. Compare actual bids; the inherited cap-compression assumption is not evidence of uplift.",
+        "sources": ["sec_10k"]
+      },
+      {
+        "name": "Wealth-preservation default",
+        "condition": "Until private diligence is complete, avoid irreversible capital commitments and preserve both options. Obtain the lease and guaranty, store-level rent coverage, insurance terms, title/zoning review, independent valuation and after-tax sale/hold comparisons privately. Do not publish those records.",
+        "sources": []
+      }
+    ]
+  },
+  "source_findings": [
+    {
+      "id": "S-01",
+      "severity": "critical",
+      "title": "Del Taco metrics were attributed to the Jack in the Box analysis",
+      "body": "The FY2025 10-K's Jack in the Box franchise table reports AUV of $1,874 thousand versus $1,949 thousand and royalties of 5.1% versus 5.0%. The inherited $1,549/$1,573 and 4.6%/4.7% values occur in the separate Del Taco table. This is a material brand-mapping error in rows marked VERIFIED.",
+      "sources": ["sec_10k"]
+    },
+    {
+      "id": "S-02",
+      "severity": "critical",
+      "title": "Franchise termination is not real-estate lease expiry",
+      "body": "The issuer's closure announcement uses respective franchise agreement termination dates. It does not identify Asset A, establish the same date in its real-estate lease, or prove closure. Separately, the 10-K says the issuer has generally been able to renew restaurant leases at then-current market rates. Both facts belong in a balanced decision.",
+      "sources": ["ir_closure", "sec_10k"]
+    },
+    {
+      "id": "S-03",
+      "severity": "high",
+      "title": "The linked BLS summary has rolled forward",
+      "body": "The November 4 release reports September payrolls of 6,282.1 thousand / +0.5%, local and U.S. all-items CPI of +3.7% each, energy +20.3% local / +20.4% U.S., and September ECI wages/salaries +3.9% local. Earlier August/June values must be labelled as historical snapshots rather than current observations.",
+      "sources": ["bls_summary"]
+    },
+    {
+      "id": "S-04",
+      "severity": "high",
+      "title": "R-05 compares different model horizons",
+      "body": "The inherited 12.30 R base value is S4 at 2035, while 2.51 R pessimistic is S4 at 2030. Same-horizon comparisons are 10.6433 to 2.5074 R for 2030 and 12.3042 to 4.8219 R for 2035. The reproducible model review isolates this mismatch.",
+      "sources": []
+    },
+    {
+      "id": "S-05",
+      "severity": "resolved",
+      "title": "The DOF projection workbook is readable",
+      "body": "P-2A Vintage 2026 / Baseline 2024 directly supplies LA County values for 2030, 2035 and 2040. The old unreadable-XLSX flag can be closed, but the figures must remain labelled projections and must not be mixed with Census observations or a different vintage.",
+      "sources": ["dof_p2a", "dof_series"]
+    },
+    {
+      "id": "S-06",
+      "severity": "medium",
+      "title": "Labour-force counts do not establish migration or causation",
+      "body": "BLS shows both the metro labour force and unemployment count falling while the rate declined. It does not show why participation changed, establish out-migration, or prove that people leaving the labour force caused the improvement. Publish the components without the unsupported causal story.",
+      "sources": ["bls_metro"]
+    },
+    {
+      "id": "S-07",
+      "severity": "medium",
+      "title": "No single wage rate can be called binding for Asset A",
+      "body": "State general, city general and covered fast-food schedules have different dates and coverage rules. City jurisdiction, fast-food criteria, exemptions and any later industry adjustment are not established from the anonymous scope. The verified rates are context, not a site-specific payroll finding.",
+      "sources": ["dir_general", "la_wages", "dir_fast"]
+    },
+    {
+      "id": "S-08",
+      "severity": "medium",
+      "title": "Official Palisades structure counts differ by snapshot",
+      "body": "The county fact sheet reports 6,837 destroyed and 973 damaged; CAL FIRE's incident page reports 6,845 and 975. Preserve each source's values and date. Neither incident count establishes Asset A's wildfire exposure.",
+      "sources": ["county_fire", "calfire_palisades"]
+    },
+    {
+      "id": "S-09",
+      "severity": "high",
+      "title": "Regional observations cannot prove site-level causation",
+      "body": "County population change, regional earthquake occurrence, metro employment, city/county income and issuer-system same-store sales do not establish Asset A traffic, rent coverage, closure status, damage, school assignment, or value. This audit deliberately leaves those fields blank.",
+      "sources": ["census_county", "bls_summary", "usgs_quake", "ir_q3"]
+    },
+    {
+      "id": "S-10",
+      "severity": "high",
+      "title": "Commercial cap rates and private comparables are not official observations",
+      "body": "No official cap rate, sale comparable, appraisal or replacement-asset bid was verified. This audit does not republish commercial net-lease estimates as official data. A valuation requires private, property-specific market evidence and cannot be inferred from Treasury yields.",
+      "sources": ["treasury_2026"]
+    }
+  ],
+  "ordinary_risks": [
+    {
+      "title": "Counterparty and contract",
+      "evidence": "The issuer is largely franchised and system counts/sales changed, but Asset A's rent payer, guaranty and closure status are unknown.",
+      "interpretation": "Corporate brand metrics cannot substitute for the actual obligor's credit or the written lease. Confirm both privately before renewal or marketing.",
+      "sources": ["sec_10q", "ir_closure"]
+    },
+    {
+      "title": "Expiry, vacancy and re-tenanting",
+      "evidence": "The issuer discusses both closures and general lease renewals; no subject outcome is disclosed.",
+      "interpretation": "Downtime, concessions, capital expenditure and second-generation demand may dominate hold value. Obtain actual proposals rather than assigning unsupported probabilities.",
+      "sources": ["sec_10k", "ir_closure"]
+    },
+    {
+      "title": "Valuation and execution",
+      "evidence": "No official Asset A cap rate, sale price or alternative-use value exists in the reviewed evidence.",
+      "interpretation": "A sale can reduce asset-specific exposure but introduces pricing, tax, financing, timing and reinvestment risk. Compare written bids with after-tax hold cash flows.",
+      "sources": ["treasury_2026", "irs_1031"]
+    },
+    {
+      "title": "Regional demand and employment",
+      "evidence": "County population estimates declined while metro payrolls increased modestly year over year; sector results varied.",
+      "interpretation": "The regional picture is mixed, not a one-direction site forecast. Trade-area population, traffic, competition and store sales remain required.",
+      "sources": ["census_county", "bls_summary"]
+    },
+    {
+      "title": "Inflation and wages",
+      "evidence": "Local CPI components and statutory wage floors are documented, but Asset A's cost coverage is not.",
+      "interpretation": "Tenant cost pressure can affect renewal capacity even under NNN. Do not assume expense pass-throughs eliminate counterparty risk or that a particular wage schedule applies.",
+      "sources": ["bls_summary", "dir_fast", "la_wages"]
+    },
+    {
+      "title": "Schools and household context",
+      "evidence": "CDE provides campus/district measures, while Census supplies municipal educational attainment and income aggregates.",
+      "interpretation": "Neither substitutes for the actual catchment or a commercial trade-area study. No school-quality or value premium is scored.",
+      "sources": ["cde_dashboard", "census_city"]
+    }
+  ],
+  "tail_risks": [
+    {
+      "title": "Major earthquake",
+      "evidence": "USGS supplies regional 30-year occurrence probabilities; CGS supplies hazard-zone lookup and caveats.",
+      "interpretation": "Potential severity is high, but Asset A occurrence, ground failure, structural damage, downtime and insurance recovery are unquantified. Do not convert the regional percentages into a parcel loss rate.",
+      "sources": ["usgs_quake", "cgs_eq"]
+    },
+    {
+      "title": "Wind-driven wildfire and insurance disruption",
+      "evidence": "The 2025 Eaton and Palisades incidents are official county catastrophe precedents; CAL FIRE distinguishes hazard from mitigated risk.",
+      "interpretation": "Direct damage, access interruption, smoke, tenant closure, deductibles, exclusions and insurance repricing can compound. Asset A zone and policy terms remain blank.",
+      "sources": ["county_fire", "calfire_palisades", "calfire_fhsz"]
+    },
+    {
+      "title": "Flood, debris flow and access interruption",
+      "evidence": "FEMA provides the official flood-map route and warns that effective products can change.",
+      "interpretation": "A rare compound fire–rain–debris/access event could damage the site or interrupt rent even without total destruction. No zone, probability, or loss amount is assigned without parcel and policy evidence.",
+      "sources": ["fema_msc", "calfire_fhsz"]
+    },
+    {
+      "title": "Compound tenant / market / catastrophe failure",
+      "evidence": "The closure programme, regional hazards and unknown single-tenant lease terms are separate verified or unresolved inputs.",
+      "interpretation": "A correlated tenant exit, physical event, insurance gap and weak re-letting market is a stress scenario, not a calibrated forecast. Test liquidity reserves and contractual rent-interruption provisions privately.",
+      "sources": ["ir_closure", "usgs_quake", "county_fire"]
+    }
+  ],
+  "flags": [
+    {
+      "id": "F-01",
+      "field": "Executed real-estate lease, actual expiry, options, rent payer and guaranty",
+      "value": "",
+      "why": "Owner-private legal records are required; the franchise announcement is not a substitute.",
+      "sources": ["ir_closure"]
+    },
+    {
+      "id": "F-02",
+      "field": "Contract rent, escalation, NNN obligations, concessions, arrears and store-level rent coverage",
+      "value": "",
+      "why": "No rent roll, estoppel or store P&L was supplied; system AUV cannot fill these fields.",
+      "sources": ["sec_10k"]
+    },
+    {
+      "id": "F-03",
+      "field": "Independent valuation, actual cap rate, comparable bids and alternative-use value",
+      "value": "",
+      "why": "No property-specific appraisal or bid evidence is available; commercial estimates are not promoted to official facts.",
+      "sources": []
+    },
+    {
+      "id": "F-04",
+      "field": "Tax basis, depreciation, debt payoff, transaction costs, owner liquidity needs and risk capacity",
+      "value": "",
+      "why": "Private owner records and preferences are required for an after-tax wealth decision.",
+      "sources": ["irs_1031"]
+    },
+    {
+      "id": "F-05",
+      "field": "Exact municipal jurisdiction, trade area, traffic, competition and catchments",
+      "value": "",
+      "why": "The address remains private and unidentified; regional aggregates cannot be downscaled by assumption.",
+      "sources": ["census_city", "census_county"]
+    },
+    {
+      "id": "F-06",
+      "field": "Subject operating status, store sales and closure-list membership",
+      "value": "",
+      "why": "Issuer-system disclosures do not identify Asset A.",
+      "sources": ["ir_q3", "ir_closure"]
+    },
+    {
+      "id": "F-07",
+      "field": "Title, zoning, building condition, entitlements and redevelopment feasibility",
+      "value": "",
+      "why": "Parcel and document review is required; no alternative-use value is inferred.",
+      "sources": []
+    },
+    {
+      "id": "F-08",
+      "field": "School attendance boundary and campus-level performance",
+      "value": "",
+      "why": "CDE provides the official measures, but no campus can be selected from the anonymous scope.",
+      "sources": ["cde_dashboard"]
+    },
+    {
+      "id": "F-09",
+      "field": "Parcel earthquake/wildfire/flood zones, structural condition, deductibles, exclusions and rent-interruption cover",
+      "value": "",
+      "why": "Official lookup routes exist, but entering an address or asserting coverage would require private property and policy records.",
+      "sources": ["cgs_eq", "calfire_fhsz", "fema_msc"]
+    },
+    {
+      "id": "F-10",
+      "field": "Current site-applicable wage schedule and any post-2024 fast-food adjustment",
+      "value": "",
+      "why": "Jurisdiction, coverage, exemptions and a current industry-rate determination were not established.",
+      "sources": ["dir_fast", "la_wages"]
+    },
+    {
+      "id": "F-11",
+      "field": "Reliable Asset A population, rent, value and catastrophe-loss forecast",
+      "value": "",
+      "why": "County projections and regional hazard occurrence rates are not parcel forecasts. No numerical property prediction is published.",
+      "sources": ["dof_p2a", "usgs_quake"]
+    },
+    {
+      "id": "F-12",
+      "field": "Personal suitability and a single wealth-maximizing choice",
+      "value": "",
+      "why": "A personalized decision requires private after-tax, debt, diversification, income and risk-capacity inputs; no manual input is requested by this public page.",
+      "sources": []
+    }
+  ],
+  "methodology": [
+    "Read official pages, filings and the DOF workbook directly; record document period, geography, vintage and access date for each value.",
+    "Use issuer-primary SEC filings and investor releases for tenant observations; never equate system metrics with Asset A performance.",
+    "Keep observations, official projections, analyst interpretation and model-derived sensitivity outputs visibly separate.",
+    "Leave unconfirmed property values blank. A blank is an evidence result, not zero, not not applicable, and not permission to infer.",
+    "Run the inherited projection read-only, reproduce its arithmetic, then test strategy semantics and one-factor sensitivities. A passing audit test does not validate an appraisal.",
+    "Generate this page from JSON and model results; verify source links on every table row, all internal anchors, deterministic output and prohibited personal/property identifiers.",
+    "No trackers, cookies, external scripts, web fonts, maps, forms, address lookup or personal-information collection."
+  ]
+}
