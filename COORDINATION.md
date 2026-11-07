@@ -403,3 +403,15 @@ Plan: inspect inherited conflicting recommendations, recheck selected primary so
 - Pages build, report and deploy run https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42410022288 : success. Platform-owned Pages action emitted Node20/runner migration notices, not failures.
 - Live https://wingbangboozle1-lang.github.io/Jack3/audit/index.html fetched successfully after deployment; returned updated executive audit, 19 regional observations and seven review flags. Main landing remains https://wingbangboozle1-lang.github.io/Jack3/ .
 - Integration: done. Evidence gaps remain needs review, nonblocking and published. Full independent re-verification of inherited companion rows and a reliable property-specific forecast are NOT complete; source/lease limitations prevent those claims.
+
+---
+
+## Session `arena-770f50c1-jack3` — audit handoff / closure
+
+At start, this session found the merged dashboard layers and claimed an integrated-tree QA pass. While running the existing checks, shared `main` advanced to PR #15 from session `7d4577fd`, whose integration/audit scope covers the same decision reconciliation, public-page disclosures, root data, site-wide verification, and CI work. To avoid duplicate/conflicting edits, this session relinquished those scopes and did not edit its research or site outputs.
+
+Before detecting that parallel integration, these repository checks passed on the then-current tree: `scripts/validate.py` (68 rows, 9 root pages); `tools/check_site.py` (9 brief pages, 204 internal refs); `tools/linkcheck.py` (11 analysis pages, 245 internal links); `tools/check_links.py` (23 decision-file pages, 1,013 links, zero non-official domains); `tools/pii_scan.py` (81 files, zero heuristic findings). These checks do not verify external URL availability or prove absence of all personal information.
+
+Independent publication check: PR #15 was merged to `main` at `de683bb2c2a24f57fb750f21794af2fc16490a17` on 2026-11-07. GitHub Actions `Validate public research` and `pages build and deployment` both succeeded for that merge. GitHub Pages API reports `built` at `https://wingbangboozle1-lang.github.io/Jack3/`; the live audit page at `https://wingbangboozle1-lang.github.io/Jack3/audit/` was fetched and displays the evidence boundary, executive conclusion, source-linked observations, and Flagged for Review section.
+
+Status: **closed / superseded by merged PR #15**. No QA report or site-page changes from this session are being published. The assigned Arena branch remains fixed; no alternate branch was created.
