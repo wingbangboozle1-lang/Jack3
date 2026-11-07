@@ -11,7 +11,7 @@ exclude:
   - data
   - decision-file
   - docs
-  - model
+  - model/
   - pages
   - research
   - scripts
