@@ -1,70 +1,70 @@
 {
-  "reviewed": "2026-11-06",
+  "reviewed": "2026-11-07",
   "sources": {
     "city": {
       "label": "U.S. Census · LA city",
       "url": "https://www.census.gov/quickfacts/losangelescitycalifornia",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "county": {
       "label": "U.S. Census · LA County",
       "url": "https://www.census.gov/quickfacts/losangelescountycalifornia",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "bls": {
       "label": "BLS · LA economic summary",
       "url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "jack": {
       "label": "Issuer · Q3 FY2026 results",
       "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Issuer"
     },
     "fire": {
       "label": "CAL FIRE · hazard zones",
       "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "quake": {
       "label": "CGS · EQ Zapp",
       "url": "https://www.conservation.ca.gov/cgs/geohazards/eq-zapp",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "flood": {
       "label": "FEMA · flood maps",
       "url": "https://msc.fema.gov/portal/home",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "school": {
       "label": "CA Education · Dashboard",
       "url": "https://www.cde.ca.gov/ta/ac/cm/",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07 · fetch failed; not reverified",
       "type": "Government"
     },
     "wage": {
       "label": "CA DIR · minimum wage",
       "url": "https://www.dir.ca.gov/dlse/Minimum_Wage.htm",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "zoning": {
       "label": "LA City Planning · ZIMAS",
       "url": "https://zimas.lacity.org/",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "irs": {
       "label": "IRS · like-kind exchanges",
       "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
-      "checked": "2026-11-06",
+      "checked": "2026-11-07",
       "type": "Government"
     }
   },
@@ -194,8 +194,8 @@
         {
           "cells": [
             "Unemployment",
-            "5.0%",
-            "LA city · August 2026 · not seasonally adjusted",
+            "4.5%",
+            "LA city · September 2026 · not seasonally adjusted",
             "Regional labor-market context."
           ],
           "status": "Verified",
@@ -204,8 +204,8 @@
         {
           "cells": [
             "Unemployment",
-            "4.9%",
-            "LA County · August 2026 · not seasonally adjusted",
+            "4.5%",
+            "LA County · September 2026 · not seasonally adjusted",
             "Distinct from city and metro measures."
           ],
           "status": "Verified",
@@ -214,8 +214,8 @@
         {
           "cells": [
             "Total nonfarm employment",
-            "6,289.1 thousand",
-            "LA metro · August 2026 · not seasonally adjusted",
+            "6,282.1 thousand",
+            "LA metro · September 2026 · not seasonally adjusted",
             "Broad employment base, not central LA jobs."
           ],
           "status": "Verified",
@@ -224,8 +224,8 @@
         {
           "cells": [
             "Nonfarm employment change",
-            "+0.6% year over year",
-            "LA metro · August 2026 · not seasonally adjusted",
+            "+0.5% year over year",
+            "LA metro · September 2026 · not seasonally adjusted",
             "Modest growth; not a 2030–2035 trajectory."
           ],
           "status": "Verified",
@@ -234,8 +234,8 @@
         {
           "cells": [
             "Education & health employment change",
-            "+3.3% year over year",
-            "LA metro · August 2026",
+            "+3.8% year over year",
+            "LA metro · September 2026 · not seasonally adjusted",
             "Sector support does not establish nearby demand."
           ],
           "status": "Verified",
@@ -244,8 +244,8 @@
         {
           "cells": [
             "Information employment change",
-            "−6.1% year over year",
-            "LA metro · August 2026",
+            "−5.7% year over year",
+            "LA metro · September 2026 · not seasonally adjusted",
             "Sector-specific weakness; no parcel inference."
           ],
           "status": "Verified",
@@ -254,8 +254,8 @@
         {
           "cells": [
             "All-items CPI-U change",
-            "+3.6% year over year",
-            "LA metro · August 2026",
+            "+3.7% year over year",
+            "LA metro · September 2026",
             "Inflation can affect costs; lease escalators unknown."
           ],
           "status": "Verified",
@@ -789,6 +789,42 @@
           ],
           "status": "Needs review",
           "source": "zoning"
+        },
+        {
+          "cells": [
+            "Review",
+            "Conflicting inherited strategy rankings",
+            "Companion model rankings and risk scores depend on assumed inputs, not official property evidence; not a personalized recommendation."
+          ],
+          "status": "Needs review",
+          "source": "irs"
+        },
+        {
+          "cells": [
+            "Review",
+            "Rolling BLS source updated",
+            "November 4, 2026 summary now reports September data. Root tables refreshed; historical companion snapshots have not all been reverified."
+          ],
+          "status": "Needs review",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Review",
+            "CDE source unavailable during audit",
+            "Official CDE URL could not be fetched on November 7. School performance remains blank; link is a research route only."
+          ],
+          "status": "Needs review",
+          "source": "school"
+        },
+        {
+          "cells": [
+            "Review",
+            "Franchise date is not lease expiration",
+            "Do not equate a franchise agreement termination date with the reported property lease expiry; neither agreement supplied."
+          ],
+          "status": "Needs review",
+          "source": "jack"
         }
       ]
     }
