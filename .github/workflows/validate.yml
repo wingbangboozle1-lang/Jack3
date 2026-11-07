@@ -12,6 +12,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python scripts/build.py
-      - run: python scripts/validate.py
-      - run: git diff --exit-code -- '*.html'
+      - name: Root evidence workspace (deterministic build + provenance)
+        run: |
+          python scripts/build.py
+          python scripts/validate.py
+      - name: Canonical decision file (build, link/source/privacy/determinism gate)
+        run: |
+          python3 tools/build_report.py
+          python3 tools/check_report.py
+      - name: No generator output is stale
+        run: git diff --exit-code -- '*.html' 'report/assets/*.css'

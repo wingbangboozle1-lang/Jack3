@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Anonymised, source-linked decision file for a single-tenant Jack in the Box net-lease property in Central Los Angeles.">
+<meta name="robots" content="index, follow">
+<title>Method &amp; privacy &middot; Jack in the Box NNN decision file</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<aside class="side">
+  <a class="brand" href="index.html"><span class="mark">J</span><span>JACK<br><small>NNN DECISION FILE</small></span></a>
+  <nav><div class="nav-group"><div class="nav-title">Overview</div><a href="index.html">Dashboard</a><a href="executive-summary.html">Executive summary</a></div><div class="nav-group"><div class="nav-title">The asset</div><a href="property.html">Property &amp; lease</a><a href="location.html">Location &amp; site</a></div><div class="nav-group"><div class="nav-title">The market</div><a href="market.html">Market evidence</a><a href="tenant.html">Tenant credit</a></div><div class="nav-group"><div class="nav-title">The decision</div><a href="projections.html">Projections 2030-2035</a><a href="decision.html">Decision &amp; actions</a></div><div class="nav-group"><div class="nav-title">Risk</div><a href="risk.html">Risk register</a></div><div class="nav-group"><div class="nav-title">Assurance</div><a href="evidence.html">Evidence table</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for review</a><a aria-current="page" href="methodology.html">Method &amp; privacy</a></div></nav>
+  <div class="privacy-box">
+    <strong>Privacy by design</strong>
+    <p>Asset&nbsp;A / Owner&nbsp;1. No address, parcel, owner, tenant officer or contact detail is
+    collected or published. No analytics, forms, cookies or third-party assets.</p>
+    <a href="methodology.html#privacy">How this is enforced &rarr;</a>
+  </div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <span>Anonymised decision file &middot; Central Los Angeles</span>
+    <span class="dot">&bull;</span>
+    <span>Evidence snapshot 2026-11-07</span>
+  </header>
+  <main id="main">
+    <div class="page-head">
+      <div class="kicker">Assurance</div>
+      <h1>How this file was built, and the limits built into it</h1>
+      <p class="lede">The privacy boundary, the verification vocabulary, the model's construction and what is deliberately missing.</p>
+      
+    </div>
+    
+<h2 id="privacy">Privacy</h2>
+<p>Personal information privacy is the primary constraint on this project, and it is enforced mechanically
+rather than promised.</p>
+<div class="table-wrap"><table class="data"><thead><tr><th scope="col">Rule</th>
+<th scope="col">Implementation</th></tr></thead><tbody>
+<tr><td>No identifier of the property or its owner</td><td>The asset is "Asset A". No address, parcel number, owner name, officer name, email, phone or taxpayer identifier appears in any page, table or data file.</td></tr>
+<tr><td>No personal information is collected</td><td>There are no forms, no accounts, no cookies, no analytics, no third-party scripts and no external fonts or images. Everything is static HTML, CSS and a few lines of local JavaScript.</td></tr>
+<tr><td>No owner research</td><td>No attempt was made to identify the owner, the franchisee or any individual. Private lease and financial documents were not sought and are not published.</td></tr>
+<tr><td>Build-time gate</td><td><code>tools/check_report.py</code> scans every published file for email addresses, phone numbers, street addresses, parcel numbers, taxpayer identifiers and tenant officer names. The build fails on any match.</td></tr>
+<tr><td>Repository metadata</td><td>Commit metadata is infrastructure, not project data. It is not reproduced on the site. Flagged as F-20 so it can be neutralised if the repository is shared.</td></tr>
+</tbody></table></div>
+
+<h2>Verification standard</h2>
+<p>Three things are kept strictly apart and labelled everywhere:</p>
+<ol class="tight">
+<li><strong>Observations.</strong> Published by a government body or filed with the SEC. Re-read on the
+publisher's page on 2026-11-07 where marked verified, otherwise linked and read on capture.</li>
+<li><strong>Analysis.</strong> Our arithmetic, scenarios, rankings and scores. Conditional by construction.</li>
+<li><strong>Industry data.</strong> Private research. Never scored as verified, never used as a model input.</li>
+</ol>
+<p>A value that could not be confirmed from an official source is blank. The blanking is enforced in the
+generator: <code>cell()</code> cannot render a value for a row whose status is unverified.</p>
+
+<h2>The model</h2>
+<p>The projection model is deterministic and committted to the repository. It uses one official anchor
+&mdash; the U.S. Treasury 10-year par yield of 4.19% at 2026-01-02,
+plus a declared risk premium &mdash; and otherwise sweeps stated assumption ranges. All fourteen
+strategy-by-expiry combinations are computed. No randomness, no network calls, no fitted parameters:
+running it twice produces identical output.</p>
+<p>Assumption classes are shown on <a href="projections.html">Projections</a>. The cap-rate range is the
+dominant uncertainty and is deliberately wide.</p>
+
+<h2>Reproducibility</h2>
+<pre><code>python3 tools/build_report.py    # data/report_data.py + model -> report/
+python3 tools/check_report.py    # links, sources, blanks, privacy, determinism</code></pre>
+<p>The build writes only to <code>report/</code>. It does not touch the root pages, <code>docs/</code>,
+<code>analysis/</code>, <code>brief/</code>, <code>pages/</code> or <code>decision-file/</code>, all of
+which remain published as archive.</p>
+
+<h2>What is deliberately absent</h2>
+<ul class="tight">
+<li>Any dollar valuation of the property. No rent, basis or building size was supplied.</li>
+<li>Any cap rate presented as fact. None is officially published.</li>
+<li>Any school rating or traffic count for the parcel. Both require the address.</li>
+<li>Any claim about the owner's circumstances, net worth or tax position.</li>
+<li>Any prediction of what this specific restaurant will do. Only the counterparty's disclosed behaviour is reported.</li>
+</ul>
+
+<h2>Change log for this integration</h2>
+<div class="table-wrap"><table class="data"><thead><tr><th scope="col">Date</th>
+<th scope="col">Change</th></tr></thead><tbody>
+<tr><td>2026-11-07</td><td>Canonical dashboard built from the six parallel layers; 132 evidence rows reconciled; 20 flags published; 12 cross-layer conflicts resolved; four prior values corrected or re-sourced; Measure ULA upgraded from flagged to verified; industry cap rates separated from official evidence.</td></tr>
+<tr><td>2026-11-06</td><td>Parallel research and dashboards produced by six sessions (see archive).</td></tr>
+</tbody></table></div>
+
+  </main>
+  <footer>
+    <p><strong>Not an appraisal, legal opinion, tax return or personalised investment advice.</strong>
+    Analysis is conditional on an anonymised subject and on evidence published up to 2026-11-07.
+    Missing values are withheld, never estimated.</p>
+    <p>Every table row links to its publisher. Verify status is defined on
+    <a href="methodology.html">Method &amp; privacy</a>. Flagged items:
+    <a href="flagged.html">Flagged for review</a>.</p>
+  </footer>
+</div>
+</body>
+</html>
