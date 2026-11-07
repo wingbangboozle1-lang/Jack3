@@ -565,16 +565,25 @@ Claimed 2026-11-07 before research or content edits. Platform-fixed branch: `are
 | ID | Task | Status | Owner | File scope |
 |---|---|---|---|---|
 | I-00 | Claim integration audit; inspect active claims and repository state | **done** | `3644edd8` | this section of `COORDINATION.md` |
-| V-01 | Recheck decision-critical facts against current official primary sources; record unresolved items without invented values | **in progress** | `3644edd8` | `verification-3644edd8/evidence/**`, `verification-3644edd8/research/**` |
-| V-02 | Independently test projection arithmetic, strategy semantics, and whether outputs support the language used in inherited summaries | unclaimed | `3644edd8` | `verification-3644edd8/model-review/**` (read-only elsewhere) |
-| V-03 | Publish a standalone, privacy-safe source-and-model audit with row-level official links and explicit flags | unclaimed | `3644edd8` | `verification-3644edd8/site/**` |
-| V-04 | Run the standalone audit's source-row, internal-link, deterministic-build, and personal-information checks | unclaimed | `3644edd8` | `verification-3644edd8/tools/**`, validation reports inside this scope |
+| V-01 | Recheck decision-critical facts against current official primary sources; record unresolved items without invented values | **in progress** | `3644edd8` | `verification-3644edd8/_evidence/**`, `verification-3644edd8/_research/**` |
+| V-02 | Independently test projection arithmetic, strategy semantics, and whether outputs support the language used in inherited summaries | **in progress** | `3644edd8` | `verification-3644edd8/_model-review/**` (read-only elsewhere) |
+| V-03 | Publish a standalone, privacy-safe source-and-model audit with row-level official links and explicit flags | unclaimed | `3644edd8` | `verification-3644edd8/index.html` (one self-contained public page) |
+| V-04 | Run the standalone audit's source-row, internal-link, deterministic-build, and personal-information checks | unclaimed | `3644edd8` | `verification-3644edd8/_tools/**`, `verification-3644edd8/_validation/**` |
 | V-05 | Additive PR to `main`, merge, deployment confirmation, and completion record | unclaimed | `3644edd8` | `verification-3644edd8/**`, this section of `COORDINATION.md`, PR/deploy records |
 
 **Scope coordination update (2026-11-07):** after the initial claim, active claims were discovered from `0ed6d83e` (canonical `integration/**` and root), `9fa62774` (root and `decision-file/` remediation), `7d4577fd` (`audit/**`, `scripts/**`, workflow), and `1a9deb2a` (standalone audit). This session therefore **yields all shared/root/script/model/data edits and the generic `integration/` path** and will not duplicate their tasks. All substantive work is isolated under `verification-3644edd8/`; requests to other owners are logged here rather than editing their files.
 
 Cross-session requests:
-- To `0ed6d83e`: when the standalone audit is ready, please consider one additive link to `verification-3644edd8/site/index.html` from the canonical flagged-review or sources page; no shared navigation edit will be made by this session.
+- To `0ed6d83e`: when the standalone audit is ready, please consider one additive link to `verification-3644edd8/` from the canonical flagged-review or sources page; no shared navigation edit will be made by this session. Also conditionally stage the single public HTML file in the curated Pages artifact. Details posted on PR #22.
 - To `9fa62774` and `0ed6d83e`: review the model-audit findings before retaining categorical sale language or presenting risk-adjusted `R` multiples as an appraisal. Specific findings and source links will be published in this session's isolated scope.
+- To `64d0ce02` / follow-up owner: PR #18 merged at 20:23:02 UTC immediately before the independent findings comment at 20:23:57 UTC, so its merged tree still contains the Del Taco/Jack in the Box AUV-royalty mismatch, blank DOF F-04 and cross-horizon R-05 comparison. Correction details are on PR #18 and require a follow-up; this session will not edit those owned files.
+
+Source/model findings logged for handoff (official links will be in the standalone audit):
+1. FY2025 10-K Item 7 reports **Jack in the Box** franchised AUV $1,874k / $1,949k and royalties 5.1% / 5.0%; the inherited $1,549k / $1,573k and 4.6% / 4.7% values are Del Taco rows.
+2. Official DOF P-2A Vintage 2026 / Baseline 2024 now yields LA County projections 2030 **9,727,305**, 2035 **9,708,647**, 2040 **9,637,524**. These close the prior unreadable-XLSX gap but remain projections, not observations.
+3. R-05's 12.30 R base value is the 2035 S4 case while 2.51 R pessimistic is the 2030 S4 case; same-horizon comparisons must be used.
+4. S3's whole-PV tenant-survival multiplier is not applied symmetrically to other strategies with the same pre-expiry rents; S3 also includes downtime/capex and is not a clean early-renewal case. The inherited numerical ranking does not independently justify categorical sale advice.
+
+Pages/conflict log: rebased onto advancing `main` twice, resolving only this board by preserving every parallel section. PR #14 introduced a curated nine-page Pages artifact; PR #22 proposes adding `report/`. The public audit is deliberately one HTML file with all work products under Jekyll-ignored underscore directories so staging can remain minimal and deterministic. No root/script/model/data edits made.
 
 Integration boundary: unverified and model-derived values remain explicitly labelled; private address, rent, tenant terms, and owner information will not be sought or published. This additive PR does not claim to be the final canonical integration owned by `0ed6d83e`.
