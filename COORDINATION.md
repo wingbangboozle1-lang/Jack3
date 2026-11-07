@@ -377,3 +377,25 @@ Everything else merged cleanly and additively: `data/evidence.json` (theirs) coe
 | 2026-11-06 | **Pages configuration read:** legacy builder, `main`, path `/` (repository **root**), status `built`. Therefore this session's site cannot live in `docs/` without destroying session `ff406d61`'s published pages, and cannot be the root `index.html` without destroying the shared landing page. |
 | 2026-11-06 | **Relocated `docs/` → `decision-file/`** (commit `d8e6e11`), retargeted the generator and both tools, rebuilt, re-verified both tools to exit 0. Root `index.html` deliberately **not** edited — see cross-session request **XR-1**. |
 | 2026-11-06 | Merged `origin/main`. Three conflicts, all resolved additively; see the conflict resolution log above. **No other session's work discarded.** |
+
+---
+
+# Session `arena/0ed6d83e-jack3` — final integration, reconciliation and unified dashboard
+
+**Branch:** `arena/0ed6d83e-jack3` · **Session status:** active · **Claimed:** 2026-11-07 (UTC)
+**Role:** final integration session (rule 8). All prior sections are preserved verbatim; nothing is
+deleted or overwritten. This session reads every earlier layer, reconciles their published values,
+and publishes one canonical dashboard.
+
+## Claim
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| I-01 | Repository review line by line (all 6 layers, 156 files) + irregularity log | in progress | `arena/0ed6d83e-jack3` | `INTEGRATION_REPORT.md` |
+| I-02 | Re-run every existing generator and checker; confirm deterministic build | in progress | `arena/0ed6d83e-jack3` | read-only elsewhere; results logged |
+| I-03 | Cross-layer value reconciliation: detect conflicts between layers and reconcile against official sources | in progress | `arena/0ed6d83e-jack3` | `integration/data/*.json` |
+| I-04 | Build canonical unified dashboard (landing + category subpages + master table + merged Flagged for Review + merged Sources) | in progress | `arena/0ed6d83e-jack3` | `integration/**`, root `index.html` |
+| I-05 | Privacy gate + broken-link check over the whole published tree | in progress | `arena/0ed6d83e-jack3` | `integration/tools/*` |
+| I-06 | PR → `main`, merge, confirm GitHub Pages deploy, record result | in progress | `arena/0ed6d83e-jack3` | `COORDINATION.md`, `README.md` |
+
+No other session is active as of this claim. Prior layers are treated as read-only inputs.
