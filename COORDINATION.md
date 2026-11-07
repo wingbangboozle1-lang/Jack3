@@ -377,3 +377,13 @@ Everything else merged cleanly and additively: `data/evidence.json` (theirs) coe
 | 2026-11-06 | **Pages configuration read:** legacy builder, `main`, path `/` (repository **root**), status `built`. Therefore this session's site cannot live in `docs/` without destroying session `ff406d61`'s published pages, and cannot be the root `index.html` without destroying the shared landing page. |
 | 2026-11-06 | **Relocated `docs/` → `decision-file/`** (commit `d8e6e11`), retargeted the generator and both tools, rebuilt, re-verified both tools to exit 0. Root `index.html` deliberately **not** edited — see cross-session request **XR-1**. |
 | 2026-11-06 | Merged `origin/main`. Three conflicts, all resolved additively; see the conflict resolution log above. **No other session's work discarded.** |
+
+## Session 7d4577fd — final evidence-boundary audit (2026-11-07)
+
+Assigned branch `arena/7d4577fd-jack3` is fixed by the hosting environment; no alternate session branch will be created. Prior contributions are preserved. Previous claims are dated 2026-11-06 (over 60 minutes old) and integrated via PR #13; this is an integration takeover, not concurrent editing of an active claim.
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Publication/evidence-boundary audit | in progress | 7d4577fd | `audit/**`, `scripts/audit_publication.py`, `scripts/build.py`, `.github/workflows/validate.yml`, generated HTML warning inserts, `COORDINATION.md` appended section |
+
+Plan: inspect inherited conflicting recommendations, recheck selected primary sources, publish explicit unresolved verification gaps, add site-wide model limitations without erasing previous work, run combined integrity checks, PR/merge and confirm Pages. No claim of independent verification of inherited source rows until actually checked. Unknown property inputs remain unavailable; no personal identity research.
