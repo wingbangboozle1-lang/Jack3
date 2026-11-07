@@ -754,6 +754,14 @@ TENANT_LEASE_ROWS = [
         "source": "S14",
     },
     {
+        "indicator": "FY2025 Franchise AUV, Rental Spread & AB 1228 Labor Impact (10-K Item 7)",
+        "value": "Fran. AUV $1,874k (vs $1,949k FY24) · Rent Rev $332.7M vs Occup. Cost $219.2M",
+        "scope_period": "FY2025 Form 10-K pp. 28–29 (Royalties 5.1%; Co. labor 33.8% of sales on +7.6% AB 1228 wage inflation)",
+        "relevance": "Corporate earns a +$113.5M positive sublease spread ($332.7M collected vs $219.2M master-lease cost), incentivizing Corporate to keep profitable master leases — though percentage rent fell $16.5M in FY25.",
+        "status": "Verified",
+        "source": "S12",
+    },
+    {
         "indicator": "Corporate Debt Load & June 2026 Securitized Refinancing",
         "value": "~$1.7B Master Issuer debt (FY25) · $500M Series 2026-1 priced at 7.624%",
         "scope_period": "Closed June 23, 2026 (+$150M Class A-1 VFN; repaid 4.476% & partial 3.445% notes; next maturity 2029)",
@@ -1260,5 +1268,14 @@ FLAGGED_ROWS = [
         "reason": "Prior layers omitted CA BOE rule that creating, extending, or terminating a ≥35-yr lease (incl. options) triggers full Prop 13 reassessment.",
         "status": "Needs review",
         "source": "S20",
+    },
+    {
+        "flag_id": "IR-10",
+        "category": "Repo Audit (High — SEC Table Mix-Up)",
+        "item": "Del Taco Franchise AUV ($1,549k/$1,573k) & Royalty (4.6%/4.7%) Attributed to Jack in the Box in `data/tenant.py`",
+        "value": "",
+        "reason": "FY2025 Form 10-K Item 7 p. 29 reports Jack in the Box franchise AUV of $1,874k (FY25) / $1,949k (FY24) and royalties of 5.1% / 5.0%; the $1,549k / 4.6% figures in data/tenant.py come from the divested Del Taco table on p. 31.",
+        "status": "Needs review",
+        "source": "S12",
     },
 ]

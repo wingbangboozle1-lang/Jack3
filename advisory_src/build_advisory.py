@@ -469,7 +469,7 @@ def page_shell(filename: str, kicker: str, title: str, subtitle: str, inner_html
 <body>
 <div class="privacy-bar">
   <span><strong>Privacy Gate Active:</strong> Subject anonymized as <code>[OWNER_REDACTED]</code> / <code>[SUBJECT_PARCEL_REDACTED]</code>. Zero personal identifiers on this site.</span>
-  <span>Snapshot: {esc(SNAPSHOT_DATE)} &middot; <a href="flagged.html">Flagged for Review (23)</a> &middot; <a href="sources.html">Official Sources (37)</a></span>
+  <span>Snapshot: {esc(SNAPSHOT_DATE)} &middot; <a href="flagged.html">Flagged for Review ({len(FLAGGED_ROWS)})</a> &middot; <a href="sources.html">Official Sources ({len(SOURCES)})</a></span>
 </div>
 <div class="layout">
   <aside class="sidebar" aria-label="Primary Navigation">
@@ -587,7 +587,7 @@ def build_index_page() -> str:
       <a class="nav-card" href="tenant-lease.html"><strong>Tenant Credit, NNN &amp; Tax Rules</strong><span>SEC 10-K/10-Q audit, 1,585 vs. 387 lease split, Prop 13 35-yr rule, ULA &amp; &sect;1031.</span></a>
       <a class="nav-card" href="risks.html"><strong>Risk Register &amp; Black Swans</strong><span>12 Business-as-Usual risks + 8 Black-Swan events (USGS UCERF3, Jan 2025 fires, FAIR Plan).</span></a>
       <a class="nav-card" href="projections.html"><strong>Projection System &amp; Decision Matrix</strong><span>2026–2035 Central LA regimes, R-normalized PV matrix, cap-rate &amp; Measure ULA grids.</span></a>
-      <a class="nav-card" href="flagged.html"><strong>Flagged for Review (23 Items)</strong><span>14 blank owner/official inputs (F-01..F-14) + 9 repo audit irregularities (IR-01..IR-09).</span></a>
+      <a class="nav-card" href="flagged.html"><strong>Flagged for Review ({len(FLAGGED_ROWS)} Items)</strong><span>14 blank owner/official inputs (F-01..F-14) + 10 repo audit irregularities (IR-01..IR-10).</span></a>
     </div>
 
     <section class="section-card">
@@ -940,7 +940,7 @@ def build_flagged_page() -> str:
       <p>Every item below either requires private owner/parcel documentation that was intentionally withheld/unsupplied (<code>F-01..F-10</code>), falls outside official government/SEC publication scope (<code>F-11..F-14</code>), or documents a concrete irregularity identified during our line-by-line audit of inherited repository layers (<code>IR-01..IR-09</code>). <strong>Unconfirmed values are strictly left blank</strong> and never inferred or fabricated. None of these items block publication; all include official source links for manual review.</p>
     </section>
     <section class="section-card">
-      <h3>Flagged Items &amp; Unverified Inputs Queue (23 Total: F-01–F-14 &amp; IR-01–IR-09)</h3>
+      <h3>Flagged Items &amp; Unverified Inputs Queue ({len(FLAGGED_ROWS)} Total: F-01–F-14 &amp; IR-01–IR-10)</h3>
       <p class="section-note">Use the linked official portals (ZIMAS, CGS EQ Zapp, CAL FIRE FHSZ, FEMA MSC, Caltrans, SEC EDGAR, CA BOE, LA Office of Finance) once parcel/lease documents are in hand.</p>
       <div class="table-wrap"><table>
         <thead><tr>
@@ -1023,7 +1023,7 @@ def build_repo_review_page() -> str:
     </section>
 
     <section class="section-card">
-      <h3>Detailed Irregularities Flagged Across Inherited Layers (IR-01 – IR-09)</h3>
+      <h3>Detailed Irregularities Flagged Across Inherited Layers (IR-01 – IR-10)</h3>
       <p class="section-note">Each row links directly to the authoritative official source that verifies the discrepancy.</p>
       <div class="table-wrap"><table>
         <thead><tr>
