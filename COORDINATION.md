@@ -378,6 +378,48 @@ Everything else merged cleanly and additively: `data/evidence.json` (theirs) coe
 | 2026-11-06 | **Relocated `docs/` → `decision-file/`** (commit `d8e6e11`), retargeted the generator and both tools, rebuilt, re-verified both tools to exit 0. Root `index.html` deliberately **not** edited — see cross-session request **XR-1**. |
 | 2026-11-06 | Merged `origin/main`. Three conflicts, all resolved additively; see the conflict resolution log above. **No other session's work discarded.** |
 
+---
+
+# Session `arena/0ed6d83e-jack3` — final integration, reconciliation and unified dashboard
+
+**Branch:** `arena/0ed6d83e-jack3` · **Session status:** active · **Claimed:** 2026-11-07 (UTC)
+**Role:** final integration session (rule 8). All prior sections are preserved verbatim; nothing is
+deleted or overwritten. This session reads every earlier layer, reconciles their published values,
+and publishes one canonical dashboard.
+
+## Claim
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| I-01 | Repository review line by line (all layers, 156+ files) + irregularity log | **done** | `arena/0ed6d83e-jack3` | `INTEGRATION_REPORT.md` |
+| I-02 | Re-run every existing generator and checker; confirm deterministic build | **done** | `arena/0ed6d83e-jack3` | 6 generators, 6 checkers, all exit 0 |
+| I-03 | Cross-layer value reconciliation (13 conflicts) against official sources | **done** | `arena/0ed6d83e-jack3` | `data/report_data.py` |
+| I-04 | Canonical dashboard: landing + 13 category subpages + master table + merged Flagged for Review + merged Sources | **done** | `arena/0ed6d83e-jack3` | `report/**`, `tools/build_report.py`, root `index.html` |
+| I-05 | Privacy gate + broken-link check over the whole published tree | **done** | `arena/0ed6d83e-jack3` | `tools/check_report.py`, `scripts/stage_pages.py` |
+| I-06 | PR → `main`, merge, confirm GitHub Pages deploy, record result | in progress | `arena/0ed6d83e-jack3` | `COORDINATION.md`, `README.md` |
+
+Final scope as delivered: `report/**` (13 pages), `data/report_data.py`, `tools/build_report.py`,
+`tools/check_report.py`, `scripts/build.py` (landing page only), `scripts/stage_pages.py`,
+`.github/workflows/validate.yml`, `README.md`, `INTEGRATION_REPORT.md`, this section.
+
+### Concurrency: three other sessions were active today
+
+While this session was working, `main` advanced by six PRs (#14–#20) from sessions `7d4577fd`,
+`770f50c1` and `9fa62774`. They changed the same files. Nothing from those sessions was discarded:
+
+| Conflict | Resolution |
+|---|---|
+| `COORDINATION.md` (add/add) | Both sections kept verbatim; this section appended. |
+| `.github/workflows/validate.yml` | Union: their staging + Jekyll verification steps preserved, this session's canonical build/check gate added ahead of them. |
+| `scripts/build.py` and the nine generated root pages | Their evidence-boundary callout, September 2026 observations and removal of companion links kept; this session's portal and canonical link layered on top, then the generator re-run so the committed HTML is exactly what CI produces. |
+| `scripts/stage_pages.py` / `_config.yml` | Their curated-artifact decision preserved. The canonical `report/` layer added to the artifact so it actually publishes, plus a relative-link check over every published page (not only top level). |
+| Publishing of legacy companion layers | **Their decision upheld.** `docs/`, `analysis/`, `brief/`, `pages/`, `decision-file/` stay in the repository but off the live site pending row-level re-verification. This session links to them on GitHub instead of the live site, so no dead link is created. |
+| Whether to publish a recommendation at all | Published as a **conditional, model-based analysis**, explicitly not an official finding; their root evidence-boundary notice retained on every root page. Recorded as flag F-21 and reconciliation X-13. |
+
+No force-push, no branch rewrite, and no other session's file removed.
+
+No other session is active as of this claim. Prior layers are treated as read-only inputs.
+
 ## Session 7d4577fd — final evidence-boundary audit (2026-11-07)
 
 Assigned branch `arena/7d4577fd-jack3` is fixed by the hosting environment; no alternate session branch will be created. Prior contributions are preserved. Previous claims are dated 2026-11-06 (over 60 minutes old) and integrated via PR #13; this is an integration takeover, not concurrent editing of an active claim.

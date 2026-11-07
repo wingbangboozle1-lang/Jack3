@@ -12,14 +12,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python scripts/build.py
-      - run: python scripts/validate.py
-      - run: python scripts/stage_pages.py
-      - run: python tools/check_site.py
-      - run: python tools/linkcheck.py
-      - run: python tools/check_links.py
-      - run: python tools/pii_scan.py
-      - run: git diff --exit-code -- '*.html'
+      - name: Build root evidence workspace
+        run: python scripts/build.py
+      - name: Validate root evidence workspace
+        run: python scripts/validate.py
+      - name: Build canonical decision file
+        run: python3 tools/build_report.py
+      - name: Verify canonical decision file (links, sources, blanks, privacy, determinism)
+        run: python3 tools/check_report.py
+      - name: Stage the curated Pages artifact
+        run: python scripts/stage_pages.py
+      - name: Check companion layers
+        run: |
+          python tools/check_site.py
+          python tools/linkcheck.py
+          python tools/check_links.py
+          python tools/pii_scan.py
+      - name: No generator output is stale
+        run: git diff --exit-code -- '*.html' 'report/assets/*.css'
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'

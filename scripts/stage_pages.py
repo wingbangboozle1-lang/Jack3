@@ -12,6 +12,12 @@ for name in ('index.html', 'economy.html', 'tenant.html', 'risk.html', 'place.ht
     shutil.copy2(root / name, out / name)
 (out / 'assets').mkdir()
 shutil.copy2(root / 'assets/style.css', out / 'assets/style.css')
+# Canonical decision file (report/): the authoritative, reconciled layer.
+for src in sorted((root / 'report').rglob('*')):
+    if src.is_file():
+        dest = out / src.relative_to(root)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dest)
 print('Staged', len(list(out.rglob('*'))), 'entries in', out)
 
 # Validate the actual artifact, not just the repository checkout. Relative links
@@ -42,6 +48,26 @@ class Check(HTMLParser):
         if tag == 'tbody': self.body = False
 for page in out.glob('*.html'):
     Check(page).feed(page.read_text())
+# Every relative link in every published page, including the canonical report/,
+# must resolve to a file that is actually inside the artifact.
+for page in out.rglob('*.html'):
+    class LinkOnly(HTMLParser):
+        def __init__(self, page):
+            super().__init__(); self.page = page; self.links = []
+        def handle_starttag(self, tag, attrs):
+            a = dict(attrs)
+            if tag in ('a', 'link') and a.get('href'):
+                self.links.append(a['href'])
+    lo = LinkOnly(page)
+    lo.feed(page.read_text())
+    for href in lo.links:
+        if href.startswith(('https://', '#', 'mailto:')):
+            continue
+        assert not urlparse(href).scheme, (page, href)
+        target = (page.parent / unquote(urlparse(href).path)).resolve()
+        assert target.is_relative_to(out.resolve()) and target.is_file(), (page, href)
+print('PASS: every relative link in the artifact resolves inside the artifact')
+
 print('PASS: staged HTML links and source-linked table rows')
 
 # CI also supplies GitHub Pages' own Jekyll output. Reject unexpected or

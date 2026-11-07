@@ -3,14 +3,48 @@
 > **Publication update (2026-11-07):** The public Pages artifact is restricted to the root evidence-gated dashboard. The companion reports listed below remain in this repository for audit, but are not published until reverified. Earlier model rankings and the asserted equivalence of franchise and real-estate lease expiration are not reliable; see `research/integration-audit-9fa62774.md` and the public Flagged for Review page. Historical companion links below may no longer resolve on Pages.
 
 Privacy-safe, static research dashboard for an unidentified Los Angeles-area net lease asset.
-It is published in layers, all linked from the root landing page and from here.
 
-**Live site:** https://wingbangboozle1-lang.github.io/Jack3/
+**Live site:** <https://wingbangboozle1-lang.github.io/Jack3/>  
+**Canonical decision file:** <https://wingbangboozle1-lang.github.io/Jack3/report/>
+
+## Canonical layer: `report/` (final integration, 2026-11-07)
+
+Six sessions researched this repository in parallel on 2026-11-06 and published six layers that
+occasionally contradicted each other. On 2026-11-07 a final integration session merged them into one
+canonical, source-linked decision file:
+
+| Page group | Pages |
+|---|---|
+| Overview | `report/index.html` dashboard, `report/executive-summary.html` |
+| The asset | `report/property.html` (incl. the 15-field Input Register), `report/location.html` |
+| The market | `report/market.html` (132 sourced rows), `report/tenant.html` |
+| The decision | `report/projections.html` (R-normalised model), `report/decision.html` |
+| Risk | `report/risk.html` (15 business-as-usual + 7 black-swan events) |
+| Assurance | `report/evidence.html`, `report/sources.html` (31 publishers), `report/flagged.html` (21 flags + 13 cross-layer conflicts), `report/methodology.html` |
+
+**Headline recommendation: sell before expiry; extend first only if the tenant commits in writing.**
+
+What the integration changed, and why, is recorded in `INTEGRATION_REPORT.md`. In summary: 132 evidence
+rows reconciled; four prior values corrected or re-sourced; Measure ULA upgraded from flagged to
+verified; private-research cap rates separated from official evidence; two unreproducible narrative
+figures withdrawn; the county ballot-proposition count corrected from 15 to 14.
+
+```
+python3 tools/build_report.py    # data/report_data.py + model -> report/
+python3 tools/check_report.py    # links, sources, blanking, privacy, determinism
+```
+
+`tools/check_report.py` fails the build on a broken internal link, an unlisted external host, an
+evidence row without a source, a rendered value on an unverified row, any personal-information pattern,
+or any non-deterministic output. CI runs it on every push.
+
+---
 
 ## What is published
 
 | Layer | Path | Built by | What it is |
 |---|---|---|---|
+| **Canonical decision file** | **`/report/`** | **session `arena/0ed6d83e-jack3`** | **Reconciled 13-page decision file; the authoritative layer. Supersedes the six parallel layers below where they conflict.** |
 | Evidence workspace | `/` (root) | `scripts/build.py` + `data/evidence.json` | Evidence-gated brief: known vs not-verifiable, decision pathways, flagged review |
 | Research tables | `/docs/` | session `ff406d61` | Verified research dashboard, row-level official sources, flagged review |
 | Deep-dive evidence dashboard | `/analysis/` | session `8d650ba0` | 11 pages generated from JSON; 113 sourced indicators; 22-row risk register; scenario model; decision framework |
@@ -31,6 +65,8 @@ python3 tools/linkcheck.py   # checks the analysis/ deep-dive site anchors
 python3 build_site.py        # regenerates the decision-file/ layer
 python3 tools/check_links.py # decision-file/: 1,013 links, official domains only
 python3 tools/pii_scan.py    # decision-file/ + data/ + model/: privacy gate
+python3 tools/build_report.py  # canonical report/ layer
+python3 tools/check_report.py  # canonical layer: links, sources, blanks, privacy, determinism
 python -m http.server 8000 --bind 0.0.0.0
 ```
 
