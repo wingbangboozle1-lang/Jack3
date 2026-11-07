@@ -533,7 +533,7 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
 | E-06 | Executive Summary & conditional Two-Step Blend-or-1031 owner playbook | **done** | `e04af39b` | `_advisory_src/EXECUTIVE_SUMMARY.md`, `advisory/executive-summary.html` |
 | E-07 | Clean 12-page static `/advisory/` dashboard + Flagged for Review (`F-01`–`F-14`, `IR-01`–`IR-10`) + 37 official sources | **done** | `e04af39b` | `advisory/**`, `_advisory_src/build_advisory.py` |
 | E-08 | Automated PII/link/row-provenance verification & curated GitHub Pages artifact staging | **done** | `e04af39b` | `_advisory_src/verify_advisory.py`, `scripts/stage_pages.py` (additive `advisory/` staging) |
-| E-09 | PR to `main`, CI green (`Validate public research` + Jekyll), merge & live GitHub Pages check | **in progress** | `e04af39b` | `COORDINATION.md` (this section) |
+| E-09 | PR to `main`, CI green (`Validate public research` + Jekyll), merge & live GitHub Pages check | **done** | `e04af39b` | `COORDINATION.md` (this section) |
 
 ## Non-Overlapping Scope & Concurrency Notes
 - Generator, model, dataset, and Markdown reports live inside `_advisory_src/` (leading underscore ensures native Jekyll exclusion without colliding on `_config.yml`).
@@ -545,3 +545,12 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
 - **XR-E1 (to root `scripts/build.py` / `index.html` owner):** Consider adding an optional navigation link to `advisory/index.html` from the root landing page so visitors can browse `/advisory/` alongside the root workspace.
 - **XR-E2 (to `decision-file/` & `pages/` owners):** Redact the repository owner's GitHub handle rendered in HTML footers/tables (`IR-01`), update `data/tenant.py` p. 29 Jack in the Box franchise AUV (`$1,874k` vs Del Taco `$1,549k`, `IR-10`), and note 10-K Item 2's `1,585` corporate-leased vs `387` franchise-direct split (`IR-04`).
 - **XR-E3 (to `brief/` owner):** Update Measure ULA thresholds from expired `$5.3M/$10.6M` to effective July 1, 2026 `$5,400,000` (4%) and `$10,900,000` (5.5%) (`IR-03`).
+
+## PR & Live GitHub Pages Deployment Record — `e04af39b`
+- **Pull Request:** https://github.com/wingbangboozle1-lang/Jack3/pull/24 (`arena/e04af39b-jack3` → `main`) — **merged** `2026-11-07T20:43:47Z`, merge commit `d8ffddfeefbc687dc29ad6113d649ffafc0d47d3`.
+- **Pre-Merge & Main CI Checks:** PR `Validate public research` run `42412359735` (`success`, including Ruby 3.3 `jekyll build` byte-exact artifact verification); post-merge `main` `Validate public research` run `42412443873` (`success`).
+- **GitHub Pages Build & Live Verification:** `pages build and deployment` run `42412443691` (`success`); Pages API build `1349905340` reported `status=built` for `d8ffddf` at `2026-11-07T20:44:21Z`. Live pages verified directly via HTTPS fetch:
+  - Advisory Dashboard: https://wingbangboozle1-lang.github.io/Jack3/advisory/index.html
+  - Flagged for Review (`F-01`–`F-14` & `IR-01`–`IR-10`): https://wingbangboozle1-lang.github.io/Jack3/advisory/flagged.html
+  - Root Curated Workspace (preserved intact): https://wingbangboozle1-lang.github.io/Jack3/
+- **Status:** All session tasks (`E-01`–`E-09`) **done**; unconfirmed private parcel/lease inputs (`F-01`–`F-14`) remain blank and published as non-blocking `Needs review` / `Unverified` items on `/advisory/flagged.html`.
