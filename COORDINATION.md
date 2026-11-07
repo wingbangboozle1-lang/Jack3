@@ -554,3 +554,21 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
   - Flagged for Review (`F-01`–`F-14` & `IR-01`–`IR-10`): https://wingbangboozle1-lang.github.io/Jack3/advisory/flagged.html
   - Root Curated Workspace (preserved intact): https://wingbangboozle1-lang.github.io/Jack3/
 - **Status:** All session tasks (`E-01`–`E-09`) **done**; unconfirmed private parcel/lease inputs (`F-01`–`F-14`) remain blank and published as non-blocking `Needs review` / `Unverified` items on `/advisory/flagged.html`.
+Pending — recorded below after merge.
+
+---
+
+# Session `arena-3644edd8-jack3` — final integration and publication audit
+
+Claimed 2026-11-07 before research or content edits. Platform-fixed branch: `arena/3644edd8-jack3` (the requested `session-<id>/<task>` branch naming is unavailable because this environment forbids switching branches). No other session's work will be discarded.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| I-00 | Claim final integration; inspect active claims and repository state | **in progress** | `3644edd8` | this section of `COORDINATION.md` |
+| I-01 | Audit the combined repository, privacy, evidence schema, and existing validators | unclaimed | `3644edd8` | `integration/audit/**`, `integration/tools/**` |
+| I-02 | Recheck decision-critical facts against current official primary sources; record unresolved items without invented values | unclaimed | `3644edd8` | `integration/evidence/**`, `integration/research/**` |
+| I-03 | Build one canonical, privacy-safe executive dashboard and category pages; preserve prior work without presenting it as independently reverified | unclaimed | `3644edd8` | `integration/site/**` initially; shared generated outputs only during final integration |
+| I-04 | Validate every published data row, source URL, internal link, deterministic build, and personal-information scan | unclaimed | `3644edd8` | `integration/**`, validation reports |
+| I-05 | Final integration PR to `main`, merge, GitHub Pages deployment, and completion record | unclaimed | `3644edd8` | `COORDINATION.md`, shared outputs required for integration, PR/deploy records |
+
+Integration rule: I-03/I-05 may modify shared outputs only after confirming earlier tasks are merged or inactive and after preserving their substantive research. Unverified and model-derived values will remain explicitly labelled; private address, rent, tenant terms, and owner information will not be sought or published.
