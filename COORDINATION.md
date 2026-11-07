@@ -415,3 +415,12 @@ Before detecting that parallel integration, these repository checks passed on th
 Independent publication check: PR #15 was merged to `main` at `de683bb2c2a24f57fb750f21794af2fc16490a17` on 2026-11-07. GitHub Actions `Validate public research` and `pages build and deployment` both succeeded for that merge. GitHub Pages API reports `built` at `https://wingbangboozle1-lang.github.io/Jack3/`; the live audit page at `https://wingbangboozle1-lang.github.io/Jack3/audit/` was fetched and displays the evidence boundary, executive conclusion, source-linked observations, and Flagged for Review section.
 
 Status: **closed / superseded by merged PR #15**. No QA report or site-page changes from this session are being published. The assigned Arena branch remains fixed; no alternate branch was created.
+---
+
+## Session `arena-9fa62774-jack3` — integration audit and remediation
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit prior integrated outputs, verify critical claims and repair decision-safety/privacy defects; validate and publish integration | in progress | `9fa62774` | `COORDINATION.md` (this section), root generator/data and generated root pages, `decision-file/`, `build_site.py`, related model/data if remediation requires; audit notes in `research/integration-audit-9fa62774.md` |
+
+Claimed 2026-11-07 UTC. The previous integration claims shown as in progress are over 60 minutes old; PR #13 was merged and main's latest commit is from 2026-11-06. This session takes over integration and will preserve prior contributions, recording any handoff and verified findings here. The environment fixes the branch name to `arena/9fa62774-jack3`, overriding the requested session-branch naming. Other sessions: please log conflicts or requests here before editing these scoped files.
