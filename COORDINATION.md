@@ -377,3 +377,28 @@ Everything else merged cleanly and additively: `data/evidence.json` (theirs) coe
 | 2026-11-06 | **Pages configuration read:** legacy builder, `main`, path `/` (repository **root**), status `built`. Therefore this session's site cannot live in `docs/` without destroying session `ff406d61`'s published pages, and cannot be the root `index.html` without destroying the shared landing page. |
 | 2026-11-06 | **Relocated `docs/` → `decision-file/`** (commit `d8e6e11`), retargeted the generator and both tools, rebuilt, re-verified both tools to exit 0. Root `index.html` deliberately **not** edited — see cross-session request **XR-1**. |
 | 2026-11-06 | Merged `origin/main`. Three conflicts, all resolved additively; see the conflict resolution log above. **No other session's work discarded.** |
+
+---
+
+# Session `e04af39b` (`arena/e04af39b-jack3`) — line-by-line repo verification, primary-source reconciliation & `/advisory/` decision dashboard
+
+- **Session ID:** `e04af39b`
+- **Branch:** `arena/e04af39b-jack3` (platform-pinned single session branch; noted per rule 3 just as earlier Arena sessions recorded)
+- **Claimed:** 2026-11-07 UTC (starting from `main` at `7a44043`)
+- **Non-overlapping file scope:** `advisory/**` (self-contained dashboard site, JSON datasets, deterministic projection engine, automated validator, `EXECUTIVE_SUMMARY.md`, `REPO_REVIEW.md`, `VERIFICATION_LOG.md`) plus this appended section of `COORDINATION.md` (and at final integration, an additive cross-link in `README.md` / root nav only if conflict-free after pulling `origin/main`).
+- **Parallel-session scan performed before claiming:** Inspected `origin/main` (6 merged sessions from 2026-11-06: `5cb84cd0` root, `ff406d61` `docs/`, `8d650ba0` `analysis/`, `796b983f` `brief/`, `93f3087c` `pages/`, `d989a5c6` `decision-file/`) AND 5 active remote branches created 2026-11-07 (`9fa62774`, `1a9deb2a`, `0ed6d83e`, `7d4577fd`, `3644edd8`, which claim `integration/**`, `audit/**`, `audit-1a9deb2a.*`, `INTEGRATION_REPORT.md`, `decision-file/`, `scripts/`). `advisory/**` collides with **none** of them. Prior and sibling files are treated as read-only during audit.
+
+## Task board (`e04af39b`)
+
+| ID | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| E-01 | Line-by-line review of existing repository across all 6 merged layers, PII/privacy check, cross-layer discrepancy & link audit | **in progress** | `e04af39b` | `advisory/REPO_REVIEW.md`, `advisory/data/repo_audit.json` | Read-only audit of all existing repo files; log cross-session requests rather than editing others' scopes |
+| E-02 | Official-source verification: Geography, Demographics, Income & Population (Census, CA DOF, SCAG, LA City Planning/EWDD) | claimed | `e04af39b` | `advisory/data/evidence.json` | Live verification against official `.gov` / `.ca.gov` primary sources; unconfirmed fields left blank & flagged |
+| E-03 | Official-source verification: School Systems, Labor Market, Job Growth & Macro Economy (CDE/Dashboard, BLS, CA EDD, BEA/FRED, Treasury, Fed, CA DIR, LA OWS) | claimed | `e04af39b` | `advisory/data/evidence.json` | Every row linked to exact official source URL + reference period + geographic boundary |
+| E-04 | Official-source verification: Jack in the Box Inc. SEC Filings (10-K/10-Q/8-K), NNN Lease Mechanics, Prop 13, Measure ULA, IRC §1031 | claimed | `e04af39b` | `advisory/data/evidence.json` | SEC EDGAR primary filings, IRS, CA BOE, LA County Assessor/RRCC, LA Office of Finance |
+| E-05 | Risk Register: Business-as-Usual + Rare Black-Swan Disasters (USGS seismic, CAL FIRE FHSZ, Jan 2025 LA wildfires, FEMA/NOAA, CDI insurance, AB 1228, store closures) | claimed | `e04af39b` | `advisory/data/risks.json` | Separates verified hazard/event facts from clearly labeled scenario impact modeling |
+| E-06 | Reliable Area & Property Projection System + Individual Wealth-Preservation / Growth Decision Matrix (Sell vs. Renew vs. Early Extend-and-Sell vs. §1031) | claimed | `e04af39b` | `advisory/scripts/model.py`, `advisory/data/projections.json`, `advisory/EXECUTIVE_SUMMARY.md` | Normalized to contractual base rent `1.00 R` (no invented rent/parcel values) + sensitivity tables |
+| E-07 | Clean Dashboard Site Creation (`/advisory/`): Landing Page + Category Subpages + Flagged for Review + Repo Audit + Sources | claimed | `e04af39b` | `advisory/scripts/build_advisory.py`, `advisory/*.html`, `advisory/assets/*` | Clean dashboard UI, filterable sourced tables, blank unverified cells, zero external scripts |
+| E-08 | Line-by-line Verification, Zero-PII Gate & Automated Link/Schema Validation | claimed | `e04af39b` | `advisory/scripts/verify_advisory.py`, `advisory/VERIFICATION_LOG.md` | Programmatic check of every row, link, blank cell, and PII pattern + existing repo CI (`scripts/validate.py`) |
+| E-09 | Final Integration: rebase/merge `origin/main` preserving all sessions, open PR → `main`, merge PR, verify GitHub Pages live deployment | claimed | `e04af39b` | `COORDINATION.md`, additive `README.md` / root cross-link | Record PR URL, merge commit, and live GitHub Pages check |
+
