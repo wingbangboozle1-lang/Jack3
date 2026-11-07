@@ -856,6 +856,15 @@ FLAGS = [
                 "is deliberately not reproduced on the site, in any table, or in this file.",
          action="If the repository will be shared, rewrite history or set a neutral author identity. "
                 "No personal data was collected about any owner, tenant officer or third party."),
+    dict(id="F-21", sev="High", status="Judgement boundary",
+         item="Whether a recommendation should be published at all",
+         detail="One parallel audit layer concluded that no verified sell/renew ranking is available and "
+                "withheld one; this file publishes a conditional, model-based recommendation labelled as "
+                "analysis. Both positions are defensible: the ranking rests on declared assumptions, not on "
+                "official data about this parcel.",
+         action="Read the recommendation as conditional and replace every assumption with the lease, "
+                "guaranty, zoning and appraisal facts before acting. If the assumptions cannot be "
+                "populated, treat the ranking as illustrative only."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -933,6 +942,15 @@ RECONCILIATIONS = [
          resolution="Recorded as F-18 and F-19 so they are not mistaken for our errors. Values "
                     "taken from the internally consistent figures.",
          verdict="Recorded"),
+    dict(id="X-13", topic="What is published on the Pages site",
+         conflict="A parallel audit session moved Pages to a curated artifact with Jekyll exclusions, "
+                  "withholding the five legacy companion layers pending row-level re-verification. This "
+                  "integration adds a new canonical layer.",
+         resolution="The curated artifact now publishes the nine root pages plus the canonical report/ "
+                    "layer. The legacy layers remain in the repository and are linked to GitHub rather "
+                    "than published, so no dead links exist on the live site. The curation decision is "
+                    "preserved, not overridden.",
+         verdict="Resolved - merged"),
 ]
 
 # ---------------------------------------------------------------------------

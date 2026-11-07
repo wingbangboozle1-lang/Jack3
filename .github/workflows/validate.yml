@@ -12,13 +12,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Root evidence workspace (deterministic build + provenance)
+      - name: Build root evidence workspace
+        run: python scripts/build.py
+      - name: Validate root evidence workspace
+        run: python scripts/validate.py
+      - name: Build canonical decision file
+        run: python3 tools/build_report.py
+      - name: Verify canonical decision file (links, sources, blanks, privacy, determinism)
+        run: python3 tools/check_report.py
+      - name: Stage the curated Pages artifact
+        run: python scripts/stage_pages.py
+      - name: Check companion layers
         run: |
-          python scripts/build.py
-          python scripts/validate.py
-      - name: Canonical decision file (build, link/source/privacy/determinism gate)
-        run: |
-          python3 tools/build_report.py
-          python3 tools/check_report.py
+          python tools/check_site.py
+          python tools/linkcheck.py
+          python tools/check_links.py
+          python tools/pii_scan.py
       - name: No generator output is stale
         run: git diff --exit-code -- '*.html' 'report/assets/*.css'
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - run: gem install github-pages --no-document
+      - run: jekyll build --destination _jekyll_test
+      - run: python scripts/stage_pages.py _jekyll_test

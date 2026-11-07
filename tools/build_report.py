@@ -249,7 +249,7 @@ def page_index():
         ("Assurance", [("evidence", "Evidence table",
                         "Every row with its period, geography, status and official link."),
                        ("flagged", "Flagged for review",
-                        "20 items that could not be verified, plus cross-layer conflicts.")]),
+                        f"{len(D.FLAGS)} items that could not be verified, plus cross-layer conflicts.")]),
     ]
     card_html = []
     for group, items in cards:
@@ -311,12 +311,12 @@ def page_index():
   remain reachable, but where they disagree with this file, <strong>this file is canonical</strong>.
   The reconciliation log lists every conflict found and how it was resolved.</p>
   <ul>
-    <li><a href="../index.html">Root evidence workspace</a> &mdash; superseded headline framing</li>
-    <li><a href="../docs/index.html">docs/ research dashboard</a></li>
-    <li><a href="../analysis/index.html">analysis/ deep-dive dashboard</a></li>
-    <li><a href="../brief/index.html">brief/ decision brief</a></li>
-    <li><a href="../pages/index.html">pages/ sourced dashboard</a></li>
-    <li><a href="../decision-file/index.html">decision-file/ verified decision file</a></li>
+    <li><a href="../index.html">Root evidence workspace</a> &mdash; published, with the evidence-boundary notice</li>
+    <li><a href="https://github.com/wingbangboozle1-lang/Jack3/tree/main/docs">docs/ research dashboard</a> &mdash; repository only, withheld from publication pending re-verification</li>
+    <li><a href="https://github.com/wingbangboozle1-lang/Jack3/tree/main/analysis">analysis/ deep-dive dashboard</a> &mdash; repository only</li>
+    <li><a href="https://github.com/wingbangboozle1-lang/Jack3/tree/main/brief">brief/ decision brief</a> &mdash; repository only</li>
+    <li><a href="https://github.com/wingbangboozle1-lang/Jack3/tree/main/pages">pages/ sourced dashboard</a> &mdash; repository only</li>
+    <li><a href="https://github.com/wingbangboozle1-lang/Jack3/tree/main/decision-file">decision-file/ verified decision file</a> &mdash; repository only</li>
     <li><a href="flagged.html#reconciliation">Cross-layer reconciliation log &rarr;</a></li>
   </ul>
 </section>
@@ -1132,7 +1132,7 @@ session's work was overwritten; the earlier layers remain published and are list
 """
     return shell("flagged", "Flagged for review", "Assurance",
                  "What could not be verified, and what would close it",
-                 "Twenty flagged items, the fifteen fields only the owner can supply, and the full log of "
+                 f"{len(D.FLAGS)} flagged items, the fifteen fields only the owner can supply, and the full log of "
                  "conflicts found between the parallel layers.", body)
 
 
@@ -1189,7 +1189,7 @@ which remain published as archive.</p>
 <h2>Change log for this integration</h2>
 <div class="table-wrap"><table class="data"><thead><tr><th scope="col">Date</th>
 <th scope="col">Change</th></tr></thead><tbody>
-<tr><td>2026-11-07</td><td>Canonical dashboard built from the six parallel layers; 132 evidence rows reconciled; 20 flags published; 12 cross-layer conflicts resolved; four prior values corrected or re-sourced; Measure ULA upgraded from flagged to verified; industry cap rates separated from official evidence.</td></tr>
+<tr><td>2026-11-07</td><td>Canonical dashboard built from the six parallel layers; 132 evidence rows reconciled; {len(D.FLAGS)} flags published; 13 cross-layer conflicts resolved; four prior values corrected or re-sourced; Measure ULA upgraded from flagged to verified; industry cap rates separated from official evidence.</td></tr>
 <tr><td>2026-11-06</td><td>Parallel research and dashboards produced by six sessions (see archive).</td></tr>
 </tbody></table></div>
 """

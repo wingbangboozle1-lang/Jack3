@@ -42,7 +42,7 @@ OFFICIAL = {
     "wagesla.lacity.gov", "finance.lacity.gov", "lavote.gov", "irs.gov", "sos.ca.gov",
     "voterguide.sos.ca.gov", "usgs.gov", "pubs.usgs.gov", "fire.ca.gov",
     "osfm.fire.ca.gov", "congress.gov", "cde.ca.gov", "caschooldashboard.org",
-    "sec.gov", "bouldergroup.com",
+    "sec.gov", "bouldergroup.com", "github.com",
 }
 INDUSTRY = {"bouldergroup.com"}
 

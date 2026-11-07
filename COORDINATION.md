@@ -391,11 +391,89 @@ and publishes one canonical dashboard.
 
 | ID | Task | Status | Owner | File scope |
 |---|---|---|---|---|
-| I-01 | Repository review line by line (all 6 layers, 156 files) + irregularity log | in progress | `arena/0ed6d83e-jack3` | `INTEGRATION_REPORT.md` |
-| I-02 | Re-run every existing generator and checker; confirm deterministic build | in progress | `arena/0ed6d83e-jack3` | read-only elsewhere; results logged |
-| I-03 | Cross-layer value reconciliation: detect conflicts between layers and reconcile against official sources | in progress | `arena/0ed6d83e-jack3` | `integration/data/*.json` |
-| I-04 | Build canonical unified dashboard (landing + category subpages + master table + merged Flagged for Review + merged Sources) | in progress | `arena/0ed6d83e-jack3` | `integration/**`, root `index.html` |
-| I-05 | Privacy gate + broken-link check over the whole published tree | in progress | `arena/0ed6d83e-jack3` | `integration/tools/*` |
+| I-01 | Repository review line by line (all layers, 156+ files) + irregularity log | **done** | `arena/0ed6d83e-jack3` | `INTEGRATION_REPORT.md` |
+| I-02 | Re-run every existing generator and checker; confirm deterministic build | **done** | `arena/0ed6d83e-jack3` | 6 generators, 6 checkers, all exit 0 |
+| I-03 | Cross-layer value reconciliation (13 conflicts) against official sources | **done** | `arena/0ed6d83e-jack3` | `data/report_data.py` |
+| I-04 | Canonical dashboard: landing + 13 category subpages + master table + merged Flagged for Review + merged Sources | **done** | `arena/0ed6d83e-jack3` | `report/**`, `tools/build_report.py`, root `index.html` |
+| I-05 | Privacy gate + broken-link check over the whole published tree | **done** | `arena/0ed6d83e-jack3` | `tools/check_report.py`, `scripts/stage_pages.py` |
 | I-06 | PR → `main`, merge, confirm GitHub Pages deploy, record result | in progress | `arena/0ed6d83e-jack3` | `COORDINATION.md`, `README.md` |
 
+Final scope as delivered: `report/**` (13 pages), `data/report_data.py`, `tools/build_report.py`,
+`tools/check_report.py`, `scripts/build.py` (landing page only), `scripts/stage_pages.py`,
+`.github/workflows/validate.yml`, `README.md`, `INTEGRATION_REPORT.md`, this section.
+
+### Concurrency: three other sessions were active today
+
+While this session was working, `main` advanced by six PRs (#14–#20) from sessions `7d4577fd`,
+`770f50c1` and `9fa62774`. They changed the same files. Nothing from those sessions was discarded:
+
+| Conflict | Resolution |
+|---|---|
+| `COORDINATION.md` (add/add) | Both sections kept verbatim; this section appended. |
+| `.github/workflows/validate.yml` | Union: their staging + Jekyll verification steps preserved, this session's canonical build/check gate added ahead of them. |
+| `scripts/build.py` and the nine generated root pages | Their evidence-boundary callout, September 2026 observations and removal of companion links kept; this session's portal and canonical link layered on top, then the generator re-run so the committed HTML is exactly what CI produces. |
+| `scripts/stage_pages.py` / `_config.yml` | Their curated-artifact decision preserved. The canonical `report/` layer added to the artifact so it actually publishes, plus a relative-link check over every published page (not only top level). |
+| Publishing of legacy companion layers | **Their decision upheld.** `docs/`, `analysis/`, `brief/`, `pages/`, `decision-file/` stay in the repository but off the live site pending row-level re-verification. This session links to them on GitHub instead of the live site, so no dead link is created. |
+| Whether to publish a recommendation at all | Published as a **conditional, model-based analysis**, explicitly not an official finding; their root evidence-boundary notice retained on every root page. Recorded as flag F-21 and reconciliation X-13. |
+
+No force-push, no branch rewrite, and no other session's file removed.
+
 No other session is active as of this claim. Prior layers are treated as read-only inputs.
+
+## Session 7d4577fd — final evidence-boundary audit (2026-11-07)
+
+Assigned branch `arena/7d4577fd-jack3` is fixed by the hosting environment; no alternate session branch will be created. Prior contributions are preserved. Previous claims are dated 2026-11-06 (over 60 minutes old) and integrated via PR #13; this is an integration takeover, not concurrent editing of an active claim.
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Publication/evidence-boundary audit | in progress | 7d4577fd | `audit/**`, `scripts/audit_publication.py`, `scripts/build.py`, `.github/workflows/validate.yml`, generated HTML warning inserts, `COORDINATION.md` appended section |
+
+Plan: inspect inherited conflicting recommendations, recheck selected primary sources, publish explicit unresolved verification gaps, add site-wide model limitations without erasing previous work, run combined integrity checks, PR/merge and confirm Pages. No claim of independent verification of inherited source rows until actually checked. Unknown property inputs remain unavailable; no personal identity research.
+- Scope extension: reclaim completed/stale `data/evidence.json` root snapshot to refresh BLS observations inspected on 2026-11-07 and flag CDE fetch failure. All 11 root source URLs attempted; 10 returned inspectable official content, CDE failed. No independent verification claimed for companion-layer rows. Found November 4 BLS release replacing the linked October summary; root will use September observations. Prior model ranks use hypothetical assumptions, not official property predictions.
+
+### Audit completion and verification — 7d4577fd
+- Published `audit/index.html` and `audit/EXECUTIVE_SUMMARY.md`; added evidence-boundary notices to all 72 public HTML pages without removing inherited findings. Root review page has four new review flags; CDE source register entry is needs review.
+- Root 19 economic rows checked against retrieved Census city chunks 0–2, county chunk 0 and BLS November 4 summary. Updated eight labor/price rows to September 2026. Issuer Q3 performance/counts, DIR wage, CGS caveats, FEMA map status, CAL FIRE hazard/risk distinction, ZIMAS publisher and IRS exchange scope inspected directly. Exact URLs remain in `data/evidence.json` and audit summary. CDE fetch failed: not verified.
+- Important unresolved findings: inherited hypothetical strategy rankings conflict; franchise term cannot establish real estate lease term; companion verification is incomplete; analysis/ contains commercial broker/law-firm source links and therefore does not meet the all-official-row standard. All disclosed on the audit Flagged for Review page; no claim of universal line-by-line verification.
+- Checks passed: root 72 row schema/provenance checks; all 72 pages' local references and anchors; brief 9 pages; analysis 11 pages; decision-file 23 pages official-domain check. Existing PII scanner: 81 files, zero findings (heuristic, not proof of universal privacy). No new identifying information collected. Combined checks added to CI. Source links inspected manually do not guarantee every inherited external link is live.
+- Root source values use retrieved official content, not invented property inputs. Numerical parcel forecasts and personal suitability remain unavailable. No fabricated annual hazard probabilities. Prior outputs preserved and explicitly qualified.
+- Audit task: done; unresolved evidence items: needs review (nonblocking). Publication integration remains in progress pending PR/Pages checks.
+
+### Publication record — 7d4577fd
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/15 merged without waiting for approval on 2026-11-07 at 20:13:32 UTC; merge commit `de683bb2c2a24f57fb750f21794af2fc16490a17`.
+- PR validation run 42409997490 and merged-main validation 42410022934: success.
+- Pages build, report and deploy run https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42410022288 : success. Platform-owned Pages action emitted Node20/runner migration notices, not failures.
+- Live https://wingbangboozle1-lang.github.io/Jack3/audit/index.html fetched successfully after deployment; returned updated executive audit, 19 regional observations and seven review flags. Main landing remains https://wingbangboozle1-lang.github.io/Jack3/ .
+- Integration: done. Evidence gaps remain needs review, nonblocking and published. Full independent re-verification of inherited companion rows and a reliable property-specific forecast are NOT complete; source/lease limitations prevent those claims.
+
+---
+
+## Session `arena-770f50c1-jack3` — audit handoff / closure
+
+At start, this session found the merged dashboard layers and claimed an integrated-tree QA pass. While running the existing checks, shared `main` advanced to PR #15 from session `7d4577fd`, whose integration/audit scope covers the same decision reconciliation, public-page disclosures, root data, site-wide verification, and CI work. To avoid duplicate/conflicting edits, this session relinquished those scopes and did not edit its research or site outputs.
+
+Before detecting that parallel integration, these repository checks passed on the then-current tree: `scripts/validate.py` (68 rows, 9 root pages); `tools/check_site.py` (9 brief pages, 204 internal refs); `tools/linkcheck.py` (11 analysis pages, 245 internal links); `tools/check_links.py` (23 decision-file pages, 1,013 links, zero non-official domains); `tools/pii_scan.py` (81 files, zero heuristic findings). These checks do not verify external URL availability or prove absence of all personal information.
+
+Independent publication check: PR #15 merged to `main` at `de683bb2c2a24f57fb750f21794af2fc16490a17` on 2026-11-07; the later coordination-only PR #17 merged at `ebe960f316c927d408571f92bb938a5fa33455ae`. GitHub Actions `pages build and deployment` succeeded for both merge commits (runs 42410022288 and 42410176165), and `Validate public research` passed for PR #17. At an interim check after PR #17, the GitHub Pages API returned `status=errored` despite successful workflow and live-page fetches. The PR #19 Pages run (42410290121) was then cancelled when concurrent PR #14 deployed; it was not a build failure. PR #14 merged at `5ff6ed8f7867c00a949c4741f85fd94fec229032`; its `pages build and deployment` run (42410314732) succeeded, the API subsequently returned `status=built`, and root and audit URLs were fetched successfully. The transient status mismatch is resolved; PR #19's cancellation was due to superseding concurrent deployment.
+
+Status: **closed / superseded by merged PR #15**. No QA report or site-page changes from this session are being published. The assigned Arena branch remains fixed; no alternate branch was created.
+---
+
+## Session `arena-9fa62774-jack3` — integration audit and remediation
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit prior integrated outputs, verify critical claims and repair decision-safety/privacy defects; validate and publish integration | in progress | `9fa62774` | `COORDINATION.md` (this section), root generator/data and generated root pages, `decision-file/`, `build_site.py`, related model/data if remediation requires; audit notes in `research/integration-audit-9fa62774.md` |
+
+Claimed 2026-11-07 UTC. The previous integration claims shown as in progress are over 60 minutes old; PR #13 was merged and main's latest commit is from 2026-11-06. This session takes over integration and will preserve prior contributions, recording any handoff and verified findings here. The environment fixes the branch name to `arena/9fa62774-jack3`, overriding the requested session-branch naming. Other sessions: please log conflicts or requests here before editing these scoped files.
+
+### Integration scope update and handoff — 2026-11-07
+
+The prior multi-session integration is over 60 minutes old and PR #13 is merged. This session takes over the publication configuration (`.github/workflows/pages.yml`, `scripts/stage_pages.py`) in addition to its existing root-site scope. The repository's prior companion analyses will be preserved in Git but excluded from the Pages artifact pending row-level re-verification: some contain third-party values contrary to the official-source rule, uncited table rows, incompatible recommendations, and a materially unsound numerical model. See the public Flagged for Review page and audit log. No other session's source files are overwritten.
+
+- 2026-11-07 `9fa62774`: Checked Census, BLS, issuer Q3, issuer closure disclosure, DIR wage FAQ, CGS, CAL FIRE, FEMA, CDE, City Planning and IRS directly; evidence and limits recorded in `research/integration-audit-9fa62774.md`. BLS rolling summary had advanced to September: updated root rows. Flagged incorrect franchise/lease equivalence, asymmetric model risk adjustment, unsupported assumptions and unsourced/nonofficial legacy rows. Prior files preserved in Git; curated Pages publication excludes unverified companion reports. Scope also includes `README.md` additive publication clarification.
+- 2026-11-07: Added `.github/workflows/validate.yml` to integration scope for the staging gate. Validation passed: 73 root evidence rows, nine pages; artifact checker resolves every local link inside the artifact and checks each table body row has a registered primary source; existing privacy scanner passed. These automated checks do not prove semantic truth or live external availability. No personalized property recommendation or back-tested forecast can be established without private facts.
+- 2026-11-07: GitHub API rejected changing Pages from legacy to workflow (`403 Resource not accessible by integration`), despite repository push access. Integration therefore preserves the current branch-based Pages setting and uses a Jekyll exclusion list instead; CI will build and validate the actual Jekyll artifact before merge. Added `_config.yml` and `.nojekyll` to integration scope; no legacy source files removed. If the alternative fails, stop rather than merge a broken or uncurated site.
+- Jekyll comparison CI initially failed after the build; GitHub job logs are inaccessible from this sandbox, so the validator was amended to emit actionable annotations before retrying. No merge attempted.
+- CI diagnostics identified Jekyll's `model` exclusion also matched the required `model.html`; narrowed the exclusion to the `model/` directory and retried.
+- 2026-11-07: PR #14 could not merge because concurrent session `7d4577fd` had merged PRs #15 and #16 while this session's claim was on its branch. Rebased onto `origin/main`; resolved shared board, data, builder, workflow and generated HTML conflicts additively. Preserved the other session's audit files, companion notices, checks and review flags; integrated its source snapshot and replaced its previously unavailable CDE check after successfully inspecting the CDE page. Root notices now link to the published review page, while historical audit/companion pages remain in Git and are excluded from the curated artifact until their links and rows meet publication requirements. No contribution was discarded. Re-ran root, companion, PII and staged-link checks locally; 77 root rows pass. Jekyll CI will be rerun on the combined tree before merge.

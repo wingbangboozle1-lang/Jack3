@@ -1,5 +1,7 @@
 # Jack / Property intelligence
 
+> **Publication update (2026-11-07):** The public Pages artifact is restricted to the root evidence-gated dashboard. The companion reports listed below remain in this repository for audit, but are not published until reverified. Earlier model rankings and the asserted equivalence of franchise and real-estate lease expiration are not reliable; see `research/integration-audit-9fa62774.md` and the public Flagged for Review page. Historical companion links below may no longer resolve on Pages.
+
 Privacy-safe, static research dashboard for an unidentified Los Angeles-area net lease asset.
 
 **Live site:** <https://wingbangboozle1-lang.github.io/Jack3/>  
@@ -18,7 +20,7 @@ canonical, source-linked decision file:
 | The market | `report/market.html` (132 sourced rows), `report/tenant.html` |
 | The decision | `report/projections.html` (R-normalised model), `report/decision.html` |
 | Risk | `report/risk.html` (15 business-as-usual + 7 black-swan events) |
-| Assurance | `report/evidence.html`, `report/sources.html` (31 publishers), `report/flagged.html` (20 flags + 12 cross-layer conflicts), `report/methodology.html` |
+| Assurance | `report/evidence.html`, `report/sources.html` (31 publishers), `report/flagged.html` (21 flags + 13 cross-layer conflicts), `report/methodology.html` |
 
 **Headline recommendation: sell before expiry; extend first only if the tenant commits in writing.**
 
