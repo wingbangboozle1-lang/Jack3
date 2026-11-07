@@ -396,3 +396,50 @@ Plan: inspect inherited conflicting recommendations, recheck selected primary so
 - Checks passed: root 72 row schema/provenance checks; all 72 pages' local references and anchors; brief 9 pages; analysis 11 pages; decision-file 23 pages official-domain check. Existing PII scanner: 81 files, zero findings (heuristic, not proof of universal privacy). No new identifying information collected. Combined checks added to CI. Source links inspected manually do not guarantee every inherited external link is live.
 - Root source values use retrieved official content, not invented property inputs. Numerical parcel forecasts and personal suitability remain unavailable. No fabricated annual hazard probabilities. Prior outputs preserved and explicitly qualified.
 - Audit task: done; unresolved evidence items: needs review (nonblocking). Publication integration remains in progress pending PR/Pages checks.
+
+---
+
+# Session `36266058` — final integration & unified dashboard (claim recorded before work)
+
+| Field | Value |
+|---|---|
+| Session ID | `36266058` |
+| Branch | `arena/36266058-jack3` (platform-assigned; branch renaming prohibited by the environment) |
+| Role | Final integration session: single consolidated public dashboard at the repository root, line-by-line re-verification of every published row against official sources, PR → `main`, merge, Pages deploy confirmation |
+| Claimed at | 2026-11-07, before any content work (this commit contains only this claim) |
+
+## Task claim
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| I-01 | Re-verify consolidated dataset against official sources (Census, BLS/FRED, SEC/issuer IR, LA County, LA Registrar-Recorder, IRS, DIR, USGS, CAL FIRE, CDE) | in progress | `36266058` | `data/dashboard.json` |
+| I-02 | Unified generator + dashboard landing page and category subpages | in progress | `36266058` | `build_dashboard.py`, `assets/dashboard.css`, root `index.html`, new root pages listed below |
+| I-03 | Verification tooling (row provenance, official-domain, link, blank-value and PII checks) | in progress | `36266058` | `scripts/validate_dashboard.py` |
+| I-04 | Keep the legacy root dashboard published but out of the primary navigation | in progress | `36266058` | `scripts/build.py` (one output-path change only — generated landing written to `home.html` instead of `index.html`; all inherited content preserved verbatim), `.github/workflows/validate.yml` (add the new build + check steps) |
+| I-05 | Flagged for Review page for every unverifiable item; repo review of inherited irregularities | in progress | `36266058` | `flagged.html`, `repo-review.html` |
+| I-06 | PR → `main`, merge, confirm Pages deploy, record result here | in progress | `36266058` | `COORDINATION.md`, `README.md` (additive only) |
+
+**New root pages owned by this session** (no filename collides with any earlier session):
+`index.html` (replaces the generated landing), `executive-summary.html`, `property-lease.html`,
+`area-demographics.html`, `area-employment.html`, `area-schools.html`, `area-geography.html`,
+`tenant-credit.html`, `lease-economics.html`, `valuation.html`, `projection-model.html`,
+`projections.html`, `risk-register.html`, `black-swans.html`, `decision.html`,
+`flagged.html`, `sources-methodology.html`, `privacy.html`, `repo-review.html`, `archive.html`.
+
+**Explicitly not touched:** every legacy page directory (`docs/`, `analysis/`, `brief/`, `pages/`,
+`decision-file/`, `audit/`, `site/`, `model/`, `research/`, `tools/`), other sessions' data files
+(`data/evidence.json`, `data/*.py`, `data/flags.py` …), and `EXECUTIVE_SUMMARY.md`, `VERIFY.md`,
+`REPO_REVIEW.md`. Legacy dashboards stay live and receive no content edits from this session.
+
+**Cross-session request (logged, not edited):** none open. Requests `XR-1` and `XR-3` are superseded
+by this integration: the root navigation now links every published dashboard (see `archive.html`), so
+each earlier session's layer is reachable from the primary landing page.
+
+**Justification for editing two shared files:** the board's rule 8 reserves shared outputs — the
+landing page, the navigation and the table data — to a final integration session. `index.html` and
+`scripts/build.py` are exactly those outputs. The edit to `scripts/build.py` changes one output
+filename only (`index.html` → `home.html`); the inherited landing markup, the evidence register and
+the legacy pages are preserved verbatim, so no earlier session's work is removed or rewritten.
+
+Status of this claim: **active**. Work proceeds serially in this session; commits are pushed to
+`arena/36266058-jack3` as each task completes.
