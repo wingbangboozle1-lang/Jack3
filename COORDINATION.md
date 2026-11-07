@@ -377,3 +377,54 @@ Everything else merged cleanly and additively: `data/evidence.json` (theirs) coe
 | 2026-11-06 | **Pages configuration read:** legacy builder, `main`, path `/` (repository **root**), status `built`. Therefore this session's site cannot live in `docs/` without destroying session `ff406d61`'s published pages, and cannot be the root `index.html` without destroying the shared landing page. |
 | 2026-11-06 | **Relocated `docs/` → `decision-file/`** (commit `d8e6e11`), retargeted the generator and both tools, rebuilt, re-verified both tools to exit 0. Root `index.html` deliberately **not** edited — see cross-session request **XR-1**. |
 | 2026-11-06 | Merged `origin/main`. Three conflicts, all resolved additively; see the conflict resolution log above. **No other session's work discarded.** |
+
+---
+
+# Session `15aa03f6` — final integration: one verified dashboard (`dashboard/`)
+
+Branch: `arena/15aa03f6-jack3` (Arena-assigned; no other branch used). Session ID `15aa03f6`.
+Started from `main` @ `7a44043` (PR #13 merged). **This is the final integration session**: all
+six earlier sessions are `done`/merged, so no other session is active.
+
+## Why this session exists
+
+The repository reached `main` with **six independent, overlapping site layers** (`/` root,
+`/docs/`, `/analysis/`, `/brief/`, `/pages/`, `/decision-file/`) built by six sessions that could
+not see each other's work. Findings are duplicated, three layers cite **third-party data mirrors**
+(`uscivicdata.com`, `datausa.io`, `point2homes.com`) inside table rows, and no single page gives the
+owner a decision. This session consolidates: one landing page, category subpages, one canonical
+row-level dataset, and a re-verification pass against official sources.
+
+## Task board (all claimed by `15aa03f6` before work started)
+
+| ID | Task | Status | File scope | Note |
+|---|---|---|---|---|
+| I-01 | Coordination claim (this section) | in progress | `COORDINATION.md` (append only) | Written before any content work |
+| I-02 | Repo review line by line; inventory all six layers; flag irregularities | in progress | `dashboard/repo-review.html`, `dashboard/data.json` | Read-only over other sessions' files |
+| I-03 | Canonical dataset: one row = one official source value | in progress | `dashboard/data.json` | Status vocabulary: verified / carried / derived / flagged |
+| I-04 | Re-fetch and re-verify every headline figure on official domains | in progress | `dashboard/data.json`, `dashboard/sources.html` | Mirrors replaced by official URLs or blanked + flagged |
+| I-05 | Projection system (deterministic, assumption-disclosed) | in progress | `dashboard/model.py`, `dashboard/data.json` | No invented inputs; rent normalised to R |
+| I-06 | Risk register: business-as-usual + black swans | in progress | `dashboard/data.json` | Likelihood/impact labelled analyst judgement |
+| I-07 | Decision page: sell vs renew vs extend-then-sell | in progress | `dashboard/decision.html` | Recommendation + triggers + action plan |
+| I-08 | Site build: landing + 15 category subpages, no JS, no CDN | in progress | `index.html` (shared nav), `dashboard/**` | Replaces root landing; legacy pages preserved |
+| I-09 | Verification tooling: link check, row-provenance check, PII gate | in progress | `dashboard/check.py` | Fails build on any row without an official source |
+| I-10 | PR → `main`, merge, confirm Pages deploy, record here | in progress | `COORDINATION.md`, PR | Blocks on I-01…I-09 |
+
+## Scope rules applied to earlier sessions
+
+- **No earlier session's page was edited or deleted.** `docs/`, `analysis/`, `brief/`, `pages/`,
+  `decision-file/` and the eight root evidence pages are untouched and remain published.
+- The **only** shared files this session changes are the two the procedure reserves for the final
+  integration session: the root `index.html` / site navigation (and the generator line that writes
+  it) and this board. Changes are recorded below.
+- Cross-session request **XR-1** (root `index.html` card linking `decision-file/`) is **closed** by
+  this session: the new landing page lists every earlier layer, including `decision-file/`.
+
+## Log — `15aa03f6`
+
+| When | Entry |
+|---|---|
+| 2026-11-07 | Claimed I-01…I-10. Read `COORDINATION.md` in full: six sessions, all merged, none active. |
+| 2026-11-07 | **Repo review finding R-1 (irregularity):** `brief/` rows cite `uscivicdata.com`, `datausa.io` and `point2homes.com` — third-party ACS mirrors, not official sites. Fails the "every row → official source" rule; values re-sourced or blanked this session. |
+| 2026-11-07 | **R-2:** six layers publish conflicting headline numbers for the same metric (e.g. LA County population 9,694,934 / 9,808,667 / 9.81M / 9,848,406). Cause is mixed vintages (V2025 estimate vs 2019–2023 ACS vs 2024 ACS). Canonical dataset records the vintage on every row. |
+| 2026-11-07 | **R-3:** `tools/check_links.py` explicitly makes **no network requests**, and its docstring says the build environment "has no route to census.gov". This session's environment does have outbound access, so live fetches are used and recorded. |
