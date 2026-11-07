@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "detail": "Model review and public page produced identical SHA-256 hashes on two consecutive runs.",
+      "name": "Deterministic build"
+    },
+    {
+      "detail": "model/projection.py SHA-256 e98d9575c6965e5f03fa00100c083731448b0a5d1d01d67c78117a14450f8924",
+      "name": "Reviewed model identity"
+    },
+    {
+      "detail": "45 unique rows; verified/projection/conflict rows nonblank; unconfirmed school row and all 12 private/property flags blank.",
+      "name": "Evidence schema and statuses"
+    },
+    {
+      "detail": "23 unique HTTPS government or issuer-primary sources; no commercial market-data host in the evidence register.",
+      "name": "Official-source allowlist"
+    },
+    {
+      "detail": "One H1/main/title, unique IDs, all internal anchors resolve, all 68 table body rows carry an official source link, external links use safe HTTPS.",
+      "name": "HTML structure and links"
+    },
+    {
+      "detail": "No script, form, image, iframe, stylesheet link, external asset, tracker or manual-input feature.",
+      "name": "Self-contained public page"
+    },
+    {
+      "detail": "No email, telephone, street-address or coordinate pattern in visible public text; property remains Asset A.",
+      "name": "Privacy scan"
+    },
+    {
+      "detail": "All 12 unconfirmed fields are named; their JSON values remain empty and render as em dashes.",
+      "name": "Unconfirmed-input rendering"
+    },
+    {
+      "detail": "Exactly index.html is outside ignored underscore/dot directories. Jekyll is unavailable in this sandbox, so executable artifact validation is explicitly deferred to CI.",
+      "name": "Public-file layout; Jekyll deferred"
+    },
+    {
+      "detail": "Root scripts/stage_pages.py does not yet stage this audit. Owner-side conditional staging remains required; this isolated session does not edit that shared script.",
+      "name": "Root integration boundary recorded"
+    }
+  ],
+  "isolated_jekyll_status": "DEFERRED_EXECUTABLE_UNAVAILABLE",
+  "model_sha256": "e98d9575c6965e5f03fa00100c083731448b0a5d1d01d67c78117a14450f8924",
+  "page_sha256": "4adc9486bf2d583064f5553872a335fb05e3589edc3a9bf1f1f9e241e5c641d5",
+  "public_files": [
+    "verification-3644edd8/index.html"
+  ],
+  "reviewed": "2026-11-07",
+  "root_staging_integrated": false,
+  "status": "PASS"
+}

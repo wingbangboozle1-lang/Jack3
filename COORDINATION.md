@@ -565,11 +565,11 @@ Claimed 2026-11-07 before research or content edits. Platform-fixed branch: `are
 | ID | Task | Status | Owner | File scope |
 |---|---|---|---|---|
 | I-00 | Claim integration audit; inspect active claims and repository state | **done** | `3644edd8` | this section of `COORDINATION.md` |
-| V-01 | Recheck decision-critical facts against current official primary sources; record unresolved items without invented values | **in progress** | `3644edd8` | `verification-3644edd8/_evidence/**`, `verification-3644edd8/_research/**` |
-| V-02 | Independently test projection arithmetic, strategy semantics, and whether outputs support the language used in inherited summaries | **in progress** | `3644edd8` | `verification-3644edd8/_model-review/**` (read-only elsewhere) |
-| V-03 | Publish a standalone, privacy-safe source-and-model audit with row-level official links and explicit flags | unclaimed | `3644edd8` | `verification-3644edd8/index.html` (one self-contained public page) |
-| V-04 | Run the standalone audit's source-row, internal-link, deterministic-build, and personal-information checks | unclaimed | `3644edd8` | `verification-3644edd8/_tools/**`, `verification-3644edd8/_validation/**` |
-| V-05 | Additive PR to `main`, merge, deployment confirmation, and completion record | unclaimed | `3644edd8` | `verification-3644edd8/**`, this section of `COORDINATION.md`, PR/deploy records |
+| V-01 | Recheck decision-critical facts against current official primary sources; record unresolved items without invented values | **completed** | `3644edd8` | `verification-3644edd8/_evidence/**`, `verification-3644edd8/_research/**` |
+| V-02 | Independently test projection arithmetic, strategy semantics, and whether outputs support the language used in inherited summaries | **completed** | `3644edd8` | `verification-3644edd8/_model-review/**` (read-only elsewhere) |
+| V-03 | Publish a standalone, privacy-safe source-and-model audit with row-level official links and explicit flags | **completed** | `3644edd8` | `verification-3644edd8/index.html` (one self-contained public page) |
+| V-04 | Run the standalone audit's source-row, internal-link, deterministic-build, and personal-information checks | **completed** | `3644edd8` | `verification-3644edd8/_tools/**`, `verification-3644edd8/_validation/**` |
+| V-05 | Additive PR to `main`, merge, deployment confirmation, and completion record | **in progress — blocked on curated staging support** | `3644edd8` | `verification-3644edd8/**`, this section of `COORDINATION.md`, PR/deploy records |
 
 **Scope coordination update (2026-11-07):** after the initial claim, active claims were discovered from `0ed6d83e` (canonical `integration/**` and root), `9fa62774` (root and `decision-file/` remediation), `7d4577fd` (`audit/**`, `scripts/**`, workflow), and `1a9deb2a` (standalone audit). This session therefore **yields all shared/root/script/model/data edits and the generic `integration/` path** and will not duplicate their tasks. All substantive work is isolated under `verification-3644edd8/`; requests to other owners are logged here rather than editing their files.
 
@@ -585,5 +585,7 @@ Source/model findings logged for handoff (official links will be in the standalo
 4. S3's whole-PV tenant-survival multiplier is not applied symmetrically to other strategies with the same pre-expiry rents; S3 also includes downtime/capex and is not a clean early-renewal case. The inherited numerical ranking does not independently justify categorical sale advice.
 
 Pages/conflict log: rebased onto advancing `main` twice, resolving only this board by preserving every parallel section. PR #14 introduced a curated nine-page Pages artifact; PR #22 proposes adding `report/`. The public audit is deliberately one HTML file with all work products under Jekyll-ignored underscore directories so staging can remain minimal and deterministic. No root/script/model/data edits made.
+
+Delivery/validation log: standalone page now contains 45 source-linked evidence rows from 23 official/issuer-primary sources, 10 material findings and 12 deliberately blank private/property inputs. Nine model-review assertions reproduce arithmetic and isolate semantic defects. Ten local validation groups pass, including deterministic hashes, all 68 table body rows source-linked, anchors and privacy. Root build/schema/site/link/PII checks also pass. Jekyll is unavailable in this sandbox, so the actual isolated build is explicitly deferred to CI; structural layout confirms one public HTML file. **Do not merge the additive audit until the curated `scripts/stage_pages.py` owner conditionally stages that file and the real Jekyll/artifact comparison passes.**
 
 Integration boundary: unverified and model-derived values remain explicitly labelled; private address, rent, tenant terms, and owner information will not be sought or published. This additive PR does not claim to be the final canonical integration owned by `0ed6d83e`.
