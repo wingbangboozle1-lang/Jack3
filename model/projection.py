@@ -50,16 +50,19 @@ TREASURY_PAR_YIELD_JAN_2026 = {
 TREASURY_10Y_JAN_2026 = TREASURY_PAR_YIELD_JAN_2026["10 Yr"]
 TREASURY_20Y_JAN_2026 = TREASURY_PAR_YIELD_JAN_2026["20 Yr"]
 
-# U.S. BLS, Los Angeles Area Economic Summary, updated 2026-10-05.
+# U.S. BLS, Los Angeles Area Economic Summary, updated 2026-11-04 (September 2026 values).
 # https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf
-BLS_LA_CPI_ALL_ITEMS_AUG2026 = 3.6      # 12-month % change, LA metro
-BLS_LA_CPI_FOOD_AUG2026 = 2.8           # 12-month % change, LA metro
-BLS_LA_ECI_JUN2026 = 2.8                # 12-month % change, LA-Long Beach CSA
-BLS_LA_NONFARM_YOY_AUG2026 = 0.6        # %
-BLS_LA_LEISURE_HOSP_YOY_AUG2026 = 2.2   # %
-BLS_LA_UNEMPLOY_AUG2026 = 4.8           # LA metro, %
-BLS_LA_COUNTY_UNEMPLOY_AUG2026 = 4.9    # LA County, %
-BLS_LA_CITY_UNEMPLOY_AUG2026 = 5.0      # LA City, %
+# Re-pointed from August to September 2026 by session 64d0ce02 (arena/64d0ce02-jack3) (F-16).
+BLS_LA_CPI_ALL_ITEMS_SEP2026 = 3.7      # 12-month % change, LA metro
+BLS_LA_CPI_FOOD_SEP2026 = 2.8           # 12-month % change, LA metro
+BLS_LA_ECI_SEP2026 = 3.9                # 12-month % change, LA-Long Beach CSA
+BLS_LA_NONFARM_YOY_SEP2026 = 0.5        # %
+BLS_LA_LEISURE_HOSP_YOY_SEP2026 = 1.5   # %
+BLS_LA_UNEMPLOY_AUG2026 = 4.8           # LA metro, % (August 2026; BLS Table 1, metro.t01.htm)
+# LA County / LA City August 2026 rates were NOT found in the cited document and are
+# therefore not carried as values (F-16).  Kept as None so nothing can consume them silently.
+BLS_LA_COUNTY_UNEMPLOY_AUG2026 = None  # LA County, % - UNVERIFIED (F-16)
+BLS_LA_CITY_UNEMPLOY_AUG2026 = None    # LA City, % - UNVERIFIED (F-16)
 
 # U.S. Census Bureau QuickFacts (V2025 population estimates; ACS 2020-2024).
 CENSUS_LA_COUNTY_POP_2025 = 9_694_934

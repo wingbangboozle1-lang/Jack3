@@ -1,8 +1,8 @@
 metric,value,unit,geography,as_of,source_org,source_url,verified,benchmark
-"12-month change in employment, Aug-23",-0.1,percent,la-msa,2023-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,1.9 (United States)
-"12-month change in employment, Aug-24",1.0,percent,la-msa,2024-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,1.0 (United States)
-"12-month change in employment, Aug-25",0.1,percent,la-msa,2025-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,0.5 (United States)
-"12-month change in employment, Aug-26",0.6,percent,la-msa,2026-08,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,0.3 (United States)
+"12-month change in employment, Sep-23",-0.1,percent,la-msa,2023-09,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,1.8 (United States)
+"12-month change in employment, Sep-24",1.0,percent,la-msa,2024-09,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,0.95 (United States)
+"12-month change in employment, Sep-25",-0.2,percent,la-msa,2025-09,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,0.4 (United States)
+"12-month change in employment, Sep-26",0.5,percent,la-msa,2026-09,U.S. Bureau of Labor Statistics,https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf,VERIFIED,0.3 (United States)
 Total employment (County Business Patterns),"3,987,736",persons,la-county,2023,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED,
 "Total employment, percent change 2022-2023",2.3,percent,la-county,2023,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED,
 Total employer establishments,"304,988",establishments,la-county,2023,"U.S. Census Bureau, QuickFacts",https://www.census.gov/quickfacts/losangelescountycalifornia,VERIFIED,
