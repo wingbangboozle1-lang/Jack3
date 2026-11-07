@@ -8,7 +8,7 @@ if out.exists():
     shutil.rmtree(out)
 out.mkdir()
 for name in ('index.html', 'economy.html', 'tenant.html', 'risk.html', 'place.html',
-             'decisions.html', 'model.html', 'review.html', 'sources.html', '.nojekyll'):
+             'decisions.html', 'model.html', 'review.html', 'sources.html'):
     shutil.copy2(root / name, out / name)
 (out / 'assets').mkdir()
 shutil.copy2(root / 'assets/style.css', out / 'assets/style.css')
@@ -43,3 +43,15 @@ class Check(HTMLParser):
 for page in out.glob('*.html'):
     Check(page).feed(page.read_text())
 print('PASS: staged HTML links and source-linked table rows')
+
+# CI also supplies GitHub Pages' own Jekyll output. Reject unexpected or
+# missing public files and ensure Jekyll preserved the curated contents.
+import sys
+if len(sys.argv) > 1:
+    actual = Path(sys.argv[1]).resolve()
+    expected = {p.relative_to(out) for p in out.rglob('*') if p.is_file()}
+    found = {p.relative_to(actual) for p in actual.rglob('*') if p.is_file()}
+    assert found == expected, f"unexpected Jekyll files: {found-expected}; missing: {expected-found}"
+    for rel in expected:
+        assert (out / rel).read_bytes() == (actual / rel).read_bytes(), f"content changed by Jekyll: {rel}"
+    print('PASS: actual Jekyll output matches curated artifact')

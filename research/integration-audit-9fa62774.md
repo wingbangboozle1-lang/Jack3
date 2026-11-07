@@ -3,7 +3,7 @@
 ## Boundary and method
 The property, lease, financial statements and personal circumstances are not available. The reported NNN and 2030–2035 expiration are user-supplied, not verified. No lookup to identify an owner or parcel was attempted. This report is not an appraisal or personalized recommendation. A calibrated 2030–2035 parcel forecast cannot be established from regional aggregates. The public site deliberately leaves missing numbers blank.
 
-The earlier sessions' files and model remain in the Git repository for audit. A curated Pages artifact publishes the evidence-gated root dashboard only. Other earlier dashboards contain data or decisions requiring further checking and are not part of that artifact; their old URLs may no longer work. The source-row test proves a link is present, not that a claim follows from its source. Automated checks are not a substitute for human verification.
+The earlier sessions' files and model remain in the Git repository for audit. A Jekyll exclusion list curates the Pages artifact to the evidence-gated root dashboard only; CI compares actual Jekyll output with the curated file list. Other earlier dashboards contain data or decisions requiring further checking and are not part of that artifact; their old URLs may no longer work. The source-row test proves a link is present, not that a claim follows from its source. Automated checks are not a substitute for human verification.
 
 ## Findings and source checks
 
