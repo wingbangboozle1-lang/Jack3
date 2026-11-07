@@ -561,11 +561,11 @@ def p_employment():
               "Unemployment release USDL-26-1618, and County Business Patterns from the "
               "U.S. Census Bureau.")]
     b.append('<div class="grid g4">')
-    b.append(stat("LA metro nonfarm payrolls", "6,289.1k", "Aug 2026, +0.6% year on year",
+    b.append(stat("LA metro nonfarm payrolls", "6,282.1k", "Sep 2026, +0.5% year on year",
                   "BLS, Los Angeles Area Economic Summary"))
-    b.append(stat("Leisure & hospitality", "+2.2%", "795.8k jobs — the tenant's own sector is growing",
+    b.append(stat("Leisure & hospitality", "+1.5%", "782.0k jobs — the tenant's own sector is growing",
                   "BLS", "pos"))
-    b.append(stat("Information sector", "&minus;6.1%", "190.4k jobs — the sharpest contraction",
+    b.append(stat("Information sector", "&minus;5.7%", "187.0k jobs — the sharpest contraction",
                   "BLS", "neg"))
     b.append(stat("LA metro unemployment", "4.4%", "Sept 2026 preliminary, from 5.5% a year earlier",
                   "BLS USDL-26-1618", "pos"))
@@ -893,11 +893,11 @@ def p_projection_model():
                   "U.S. Department of the Treasury"))
     b.append(stat("Long anchor", f"{y['20 Yr']}% / {y['30 Yr']}%",
                   "20-year and 30-year par yields, same date", "U.S. Department of the Treasury"))
-    b.append(stat("Local inflation", f"{M.BLS_LA_CPI_ALL_ITEMS_AUG2026}%",
-                  "CPI-U all items, Los Angeles metro, 12 months to Aug 2026",
+    b.append(stat("Local inflation", f"{M.BLS_LA_CPI_ALL_ITEMS_SEP2026}%",
+                  "CPI-U all items, Los Angeles metro, 12 months to Sep 2026",
                   "U.S. Bureau of Labor Statistics"))
-    b.append(stat("Local wage growth", f"{M.BLS_LA_ECI_JUN2026}%",
-                  "Employment Cost Index, LA–Long Beach CSA, 12 months to Jun 2026",
+    b.append(stat("Local wage growth", f"{M.BLS_LA_ECI_SEP2026}%",
+                  "Employment Cost Index, LA–Long Beach CSA, 12 months to Sep 2026",
                   "U.S. Bureau of Labor Statistics"))
     b.append('</div>')
     b.append(table([
@@ -1194,7 +1194,7 @@ the dates in question. <a href="decision.html">Read the full decision framework 
                   "U.S. Geological Survey, UCERF3", "neg"))
     b.append(stat("Fast-food wage floor", "$20.00/hr", "statutory, AB 1228, applies to franchisees",
                   "California DIR", "neg"))
-    b.append(stat("LA metro CPI-U", "+3.6%", "12 months to Aug 2026; energy +17.6%",
+    b.append(stat("LA metro CPI-U", "+3.7%", "12 months to Sep 2026; energy +20.3%",
                   "U.S. BLS", "neg"))
     b.append(stat("Jan 2025 wildfire losses", "$5.2&ndash;10.1B", "economic output lost, Eaton and Palisades Fires",
                   "County of Los Angeles", "neg"))
@@ -1212,7 +1212,7 @@ the dates in question. <a href="decision.html">Read the full decision framework 
              d="Unemployment fell from 5.5% to 4.4% year on year, but the civilian labour force also fell by about 121,600 over the same period. A falling rate driven by people leaving the labour force is not an expanding economy.",
              s="VERIFIED", u="https://www.bls.gov/news.release/pdf/metro.pdf"),
         dict(f="The tenant’s sector is one of the few growing ones.",
-             d="Leisure and hospitality added 16.8 thousand jobs (+2.2%) in the Los Angeles metro area in the year to August 2026, while information fell 6.1% and manufacturing 1.1%. Total nonfarm rose only 0.6%.",
+             d="Leisure and hospitality added 11.5 thousand jobs (+1.5%) in the Los Angeles metro area in the year to September 2026, while information fell 5.7% and manufacturing 1.2%. Total nonfarm rose only 0.5%.",
              s="VERIFIED", u="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf"),
         dict(f="A statutory wage ratchet compresses the tenant’s margin.",
              d="California’s $20.00 fast-food floor applies to franchisee employers and cannot be avoided by restructuring. A council exists with authority to raise it further through 2029.",
