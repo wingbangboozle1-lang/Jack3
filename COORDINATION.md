@@ -564,11 +564,17 @@ Claimed 2026-11-07 before research or content edits. Platform-fixed branch: `are
 
 | ID | Task | Status | Owner | File scope |
 |---|---|---|---|---|
-| I-00 | Claim final integration; inspect active claims and repository state | **in progress** | `3644edd8` | this section of `COORDINATION.md` |
-| I-01 | Audit the combined repository, privacy, evidence schema, and existing validators | unclaimed | `3644edd8` | `integration/audit/**`, `integration/tools/**` |
-| I-02 | Recheck decision-critical facts against current official primary sources; record unresolved items without invented values | unclaimed | `3644edd8` | `integration/evidence/**`, `integration/research/**` |
-| I-03 | Build one canonical, privacy-safe executive dashboard and category pages; preserve prior work without presenting it as independently reverified | unclaimed | `3644edd8` | `integration/site/**` initially; shared generated outputs only during final integration |
-| I-04 | Validate every published data row, source URL, internal link, deterministic build, and personal-information scan | unclaimed | `3644edd8` | `integration/**`, validation reports |
-| I-05 | Final integration PR to `main`, merge, GitHub Pages deployment, and completion record | unclaimed | `3644edd8` | `COORDINATION.md`, shared outputs required for integration, PR/deploy records |
+| I-00 | Claim integration audit; inspect active claims and repository state | **done** | `3644edd8` | this section of `COORDINATION.md` |
+| V-01 | Recheck decision-critical facts against current official primary sources; record unresolved items without invented values | **in progress** | `3644edd8` | `verification-3644edd8/evidence/**`, `verification-3644edd8/research/**` |
+| V-02 | Independently test projection arithmetic, strategy semantics, and whether outputs support the language used in inherited summaries | unclaimed | `3644edd8` | `verification-3644edd8/model-review/**` (read-only elsewhere) |
+| V-03 | Publish a standalone, privacy-safe source-and-model audit with row-level official links and explicit flags | unclaimed | `3644edd8` | `verification-3644edd8/site/**` |
+| V-04 | Run the standalone audit's source-row, internal-link, deterministic-build, and personal-information checks | unclaimed | `3644edd8` | `verification-3644edd8/tools/**`, validation reports inside this scope |
+| V-05 | Additive PR to `main`, merge, deployment confirmation, and completion record | unclaimed | `3644edd8` | `verification-3644edd8/**`, this section of `COORDINATION.md`, PR/deploy records |
 
-Integration rule: I-03/I-05 may modify shared outputs only after confirming earlier tasks are merged or inactive and after preserving their substantive research. Unverified and model-derived values will remain explicitly labelled; private address, rent, tenant terms, and owner information will not be sought or published.
+**Scope coordination update (2026-11-07):** after the initial claim, active claims were discovered from `0ed6d83e` (canonical `integration/**` and root), `9fa62774` (root and `decision-file/` remediation), `7d4577fd` (`audit/**`, `scripts/**`, workflow), and `1a9deb2a` (standalone audit). This session therefore **yields all shared/root/script/model/data edits and the generic `integration/` path** and will not duplicate their tasks. All substantive work is isolated under `verification-3644edd8/`; requests to other owners are logged here rather than editing their files.
+
+Cross-session requests:
+- To `0ed6d83e`: when the standalone audit is ready, please consider one additive link to `verification-3644edd8/site/index.html` from the canonical flagged-review or sources page; no shared navigation edit will be made by this session.
+- To `9fa62774` and `0ed6d83e`: review the model-audit findings before retaining categorical sale language or presenting risk-adjusted `R` multiples as an appraisal. Specific findings and source links will be published in this session's isolated scope.
+
+Integration boundary: unverified and model-derived values remain explicitly labelled; private address, rent, tenant terms, and owner information will not be sought or published. This additive PR does not claim to be the final canonical integration owned by `0ed6d83e`.
