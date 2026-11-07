@@ -509,4 +509,9 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
 - 2026-11-07: Local CI replica in a fresh clone of the branch: `scripts/build.py`, `scripts/validate.py`, `scripts/stage_pages.py`, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py` all exit 0; `git diff --exit-code -- '*.html'` clean. The Jekyll step (`gem install github-pages` + `jekyll build`) cannot run in this sandbox (RubyGems host is not on the allowed list) and is verified only by GitHub Actions.
 
 ### PR and deploy record
-Pending — recorded below after merge.
+- **PR #18** — https://github.com/wingbangboozle1-lang/Jack3/pull/18 — `arena/64d0ce02-jack3` → `main` — **merged** 2026-11-07 20:23:02 UTC, merge commit `6f8625a941b0d55a13aa66557bd5997326a4fb32` (merge commit method, no approval wait, as instructed).
+- **Pre-merge checks:** `Validate public research` passed on the PR head (run 42410690301 and later 42410578088); local replica in a fresh clone (`scripts/build.py`, `scripts/validate.py`, `scripts/stage_pages.py`, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py`, HTML determinism) all exit 0. The Jekyll step was verified by GitHub Actions only.
+- **Post-merge:** `Validate public research` on `main` succeeded (run 42410798288). `pages build and deployment` for commit `6f8625a` reports `built` (created 20:23:03 UTC, updated 20:23:33 UTC; `GET /repos/.../pages/builds/latest`).
+- **Live verification:** https://wingbangboozle1-lang.github.io/Jack3/ shows Sept 2026 jobs +0.5%. https://wingbangboozle1-lang.github.io/Jack3/review.html shows the F-16 and F-17 rows. Note: an un-busted fetch of the root returned a stale CDN copy for a short period; a cache-busted fetch matched `main`.
+- **Not on the live site, by design of `main`:** `decision-file/`, `analysis/`, `brief/`, `docs/`, `pages/`, `research/`, `audit/` (excluded by `_config.yml` / `scripts/stage_pages.py`). Their stale August figures (XR-4) therefore affect the repository only, not the published Pages site.
+
