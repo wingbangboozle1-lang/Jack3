@@ -51,7 +51,12 @@ if len(sys.argv) > 1:
     actual = Path(sys.argv[1]).resolve()
     expected = {p.relative_to(out) for p in out.rglob('*') if p.is_file()}
     found = {p.relative_to(actual) for p in actual.rglob('*') if p.is_file()}
-    assert found == expected, f"unexpected Jekyll files: {found-expected}; missing: {expected-found}"
+    if found != expected:
+        message = f"unexpected Jekyll files: {sorted(map(str, found-expected))}; missing: {sorted(map(str, expected-found))}"
+        print("::error title=Jekyll artifact mismatch::" + message)
+        raise SystemExit(message)
     for rel in expected:
-        assert (out / rel).read_bytes() == (actual / rel).read_bytes(), f"content changed by Jekyll: {rel}"
+        if (out / rel).read_bytes() != (actual / rel).read_bytes():
+            print(f"::error title=Jekyll content mismatch::content changed: {rel}")
+            raise SystemExit(1)
     print('PASS: actual Jekyll output matches curated artifact')
