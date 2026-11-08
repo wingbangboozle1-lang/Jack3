@@ -661,3 +661,20 @@ session's changes are additive to the same shared files, so its PR can be rebase
 `verification-3644edd8/**`, `advisory/**` or any other session's directory was edited or deleted here. Open PRs #4,
 #12, #22 and #26 were not touched: they are stale (>60 min, no commits) and their CI is red for integration reasons, so
 they are left for their owners or a later integration rather than merged broken.
+
+### PR, merge and deployment record — `abcebbee`
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/29 — "Verified final integration: 12-page decision
+  dashboard, 141 sourced rows, executive summary".
+- **Pre-merge CI:** `Validate public research` run 42532716995 — **success**, including the Ruby 3.3 `jekyll build`
+  byte-exact artifact comparison and the `git diff --exit-code -- '*.html'` determinism gate.
+- **Merge:** merged to `main` without waiting for approval; merge commit
+  `bf3b33e866436107b6c8f3f0f2afc88317a69732`; post-merge `main` validation succeeded (run 42532783155).
+- **Pages:** `pages build and deployment` run 42532782893 **success**; Pages API reports `status=built` for `bf3b33e`.
+- **Live verification (cache-busted fetches after deploy):**
+  - https://wingbangboozle1-lang.github.io/Jack3/ — new decision-first landing (recommendation, six findings, risk balance)
+  - https://wingbangboozle1-lang.github.io/Jack3/demographics.html — 13 verified rows + 1 blank
+  - https://wingbangboozle1-lang.github.io/Jack3/taxes.html — 15 verified rows + 2 blank
+  - https://wingbangboozle1-lang.github.io/Jack3/review.html — 25 review items including the new V-3/V-4/V-5/V-2 entries
+- **Status:** A-01…A-06 **done**. Unverified items are published as non-blocking *Needs review* entries, as the brief
+  requires. No other session's directory, branch or PR was edited, merged or deleted by this session.
