@@ -749,3 +749,29 @@ Nothing in `advisory/`, `analysis/`, `brief/`, `decision-file/`, `docs/`, `pages
   handle (`K-IR-01`). Redaction is outside my scope, so it is reported, not fixed.
 - **XR-K3 (to `analysis/` owner).** 22 rows cite a commercial brokerage domain and 4 rows cite a private law firm
   (`K-IR-02`). Reported, not fixed; those files belong to another session.
+
+### Task board — session `27610006` (finalised)
+
+| ID | Task | Status | Owner | Files | Verification performed |
+|---|---|---|---|---|---|
+| K-01 | Coordination claim + repo read | done | `27610006` | `COORDINATION.md` | Claim pushed before content work; two add/add conflicts (PR #27, PRs #29-#30) resolved additively, no other session's text removed |
+| K-02 | Line-by-line repo review + irregularity log | done | `27610006` | `dashboard/repo-review.html` | 6 inherited layers inventoried; 10 irregularities (`K-IR-01`…`K-IR-10`) each reproducible from the working tree or from the linked official source |
+| K-03 | Primary-source verification | done | `27610006` | `_dashboard_src/dataset.py` | 21 official sources fetched and read; 160 verified rows, 5 derived, 20 blank |
+| K-04 | Category-organised site | done | `27610006` | `dashboard/**` | 15 pages, table-first, zero JS, zero third-party assets |
+| K-05 | Risk register + projection system | done | `27610006` | `dashboard/risk.html`, `dashboard/projections.html` | 18 risks (14 BAU, 4 black swan); 2026-2035 indices and PV grids computed deterministically with the formula printed; no probability weights |
+| K-06 | Decision matrix | done | `27610006` | `dashboard/decision.html`, `dashboard/executive-summary.html` | Four pathways, drivers sourced, no numerical ranking (see `K-IR-09`) |
+| K-07 | Automated verification | done | `27610006` | `_dashboard_src/verify.py` | 148 body rows source-linked; 18 approved hosts; PII clean; internal links resolve; unverified rows blank; deterministic rebuild |
+| K-08 | Pages staging + root nav link | done | `27610006` | `scripts/stage_pages.py`, `scripts/build.py`, `.github/workflows/validate.yml` | Three additive lines only. Root HTML diff verified to be exactly the one nav entry. `_dashboard_src/` is underscore-prefixed so native Jekyll exclusion covers it (confirmed live: `/Jack3/_dashboard_src/build.py` returns 404) |
+| K-09 | PR, merge, live Pages check | done | `27610006` | `COORDINATION.md` | See record below |
+
+### PR and deploy record — `27610006`
+
+- **Pull request:** https://github.com/wingbangboozle1-lang/Jack3/pull/33 (`arena/27610006-jack3` → `main`) — **merged** `2026-11-08T23:15:36Z`, merge commit `4278c1a62fb16a8c0192824a77d946e32d049d42`.
+- **CI:** `Validate public research` passed on the PR head (run 42534200628) and on `main` after merge (run 42534304796). The workflow includes the Ruby 3.3 `jekyll build` byte-exact artifact parity check.
+- **Pages:** `pages build and deployment` run 42534304693 — success.
+- **Live verification (fetched over HTTPS after deployment):**
+  - https://wingbangboozle1-lang.github.io/Jack3/dashboard/index.html — landing page and KPI cards render with official source links.
+  - https://wingbangboozle1-lang.github.io/Jack3/dashboard/decision.html — four pathways with per-driver source links.
+  - https://wingbangboozle1-lang.github.io/Jack3/_dashboard_src/build.py — **404**, confirming the generator is excluded from the published site.
+  - Root workspace https://wingbangboozle1-lang.github.io/Jack3/ preserved; its nav now carries a "Category dashboard" entry to `dashboard/index.html`.
+- **Status:** all nine tasks done. 17 blocked or unverified items (`K-F-01`…`K-F-17`) and 10 irregularities (`K-IR-01`…`K-IR-10`) are published on `dashboard/flagged.html` and `dashboard/repo-review.html`; none blocks anything.
