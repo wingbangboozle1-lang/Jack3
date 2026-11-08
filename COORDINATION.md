@@ -678,3 +678,34 @@ they are left for their owners or a later integration rather than merged broken.
   - https://wingbangboozle1-lang.github.io/Jack3/review.html — 25 review items including the new V-3/V-4/V-5/V-2 entries
 - **Status:** A-01…A-06 **done**. Unverified items are published as non-blocking *Needs review* entries, as the brief
   requires. No other session's directory, branch or PR was edited, merged or deleted by this session.
+
+---
+
+# Session `arena/27610006-jack3` — Consolidated Category Dashboard (`dashboard/`)
+
+**Session ID:** `27610006` · **Branch:** `arena/27610006-jack3` · **Date:** `2026-11-08` (UTC)
+
+## Scope claim (non-overlapping)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| K-01 | Coordination board claim + repo read | **claimed** | `27610006` | `COORDINATION.md` (this section, append-only) |
+| K-02 | Line-by-line repo review of inherited layers; irregularity log `K-IR-01`+ | **claimed** | `27610006` | `dashboard_src/REPO_REVIEW.md`, `dashboard/repo-review.html` |
+| K-03 | Fresh primary-source verification (Census, BLS, EDD, CDE, SEC, DIR, LA City/County, USGS, CAL FIRE, FEMA, UST, IRS, Metro, SCAG) | **claimed** | `27610006` | `dashboard_src/dataset.py`, `dashboard_src/dataset.json` |
+| K-04 | Category-organised site: landing + subpages, table-first, every row source-linked | **claimed** | `27610006` | `dashboard/**`, `dashboard_src/build.py` |
+| K-05 | Risk register (business-as-usual + black swan) and 2026–2035 projection system | **claimed** | `27610006` | `dashboard/risks.html`, `dashboard/projections.html` |
+| K-06 | Decision matrix (sell / renew / extend-then-sell / re-tenant) with risk balance | **claimed** | `27610006` | `dashboard/decision.html`, `dashboard/executive-summary.html` |
+| K-07 | Automated verification (row provenance, PII, internal links) | **claimed** | `27610006` | `dashboard_src/verify.py` |
+| K-08 | Stage into Pages artifact + cross-link from root landing page (additive only) — **deferred to the end of the session** | unclaimed | `27610006` | `scripts/stage_pages.py`, `_config.yml`, `scripts/build.py` (additive edits only; logged as XR-K1) |
+| K-09 | PR to `main`, CI green, merge, live Pages verification | unclaimed | `27610006` | `COORDINATION.md` (this section) |
+
+Rules observed: only `dashboard/`, `dashboard_src/` and this appended section are written before K-08.
+Nothing in `advisory/`, `analysis/`, `brief/`, `decision-file/`, `docs/`, `pages/`, `report/`, `audit/`,
+`research/`, `verification-3644edd8/`, `data/`, root `*.html`, `scripts/`, `tools/`, `model/` or
+`build_site.py` is edited except the additive K-08 changes logged below.
+
+## Notes for other sessions
+- `dashboard_src/` uses a leading underscore so native Jekyll excludes it without touching `_config.yml`.
+- K-08 shared-file edits will be additive (append to the staging list, append an exclude entry, append
+  one nav link) and will be rebased onto the newest `origin/main` immediately before opening the PR.
+- Cross-session requests: see **XR-K1** at the end of this section (to be filled when K-08 runs).
