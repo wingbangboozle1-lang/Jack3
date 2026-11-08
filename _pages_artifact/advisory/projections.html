@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026–2035 Area Projection System &amp; Valuation Sensitivity Grids — Central LA NNN Decision Advisory</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="privacy-bar">
+  <span><strong>Privacy Gate Active:</strong> Subject anonymized as <code>[OWNER_REDACTED]</code> / <code>[SUBJECT_PARCEL_REDACTED]</code>. Zero personal identifiers on this site.</span>
+  <span>Snapshot: 2026-11-07 &middot; <a href="flagged.html">Flagged for Review (24)</a> &middot; <a href="sources.html">Official Sources (37)</a></span>
+</div>
+<div class="layout">
+  <aside class="sidebar" aria-label="Primary Navigation">
+    <div class="brand">
+      <span class="brand-badge">NNN Advisory</span>
+      <h1>Jack in the Box &middot; Central LA</h1>
+      <p>2030–2035 Lease Expiry Study &middot; Session e04af39b</p>
+    </div>
+    <div class="nav-group-label">Overview</div><ul class="nav-list"><li><a href="index.html">01 · Dashboard</a></li><li><a href="executive-summary.html">02 · Executive Summary</a></li></ul><div class="nav-group-label">Area Drivers</div><ul class="nav-list"><li><a href="geography.html">03 · Geography &amp; Transit</a></li><li><a href="demographics.html">04 · Population &amp; Income</a></li><li><a href="schools.html">05 · School Systems</a></li><li><a href="economy.html">06 · Jobs, Wages &amp; Rates</a></li></ul><div class="nav-group-label">Asset &amp; Tax</div><ul class="nav-list"><li><a href="tenant-lease.html">07 · Tenant, NNN &amp; Taxes</a></li></ul><div class="nav-group-label">Risk &amp; Model</div><ul class="nav-list"><li><a href="risks.html">08 · Risk &amp; Black Swans</a></li><li><a href="projections.html" class="active">09 · Projections &amp; Matrix</a></li></ul><div class="nav-group-label">Assurance</div><ul class="nav-list"><li><a href="flagged.html">10 · Flagged for Review</a></li><li><a href="repo-review.html">11 · Repo Audit</a></li><li><a href="sources.html">12 · Official Sources</a></li></ul>
+    <div class="workspace-link">
+      <a href="../index.html">&larr; Root Evidence Workspace</a>
+    </div>
+  </aside>
+  <main class="content">
+    <header class="page-header">
+      <div class="kicker">09 / Projection System &amp; Decision Matrix</div>
+      <h2>2026–2035 Area Projection System &amp; Valuation Sensitivity Grids</h2>
+      <p>Deterministic macroeconomic regime modeling, symmetric R-normalized pathway present values across 2030 and 2035 expiries, cap-rate sensitivity, and post-July-2026 Measure ULA cliff math.</p>
+    </header>
+    
+    <section class="verdict-box">
+      <h3>Methodology Disclosure: Transparent R-Normalized Projection System</h3>
+      <p>Because the subject property's street address, contractual rent, exact expiry year within <code>2030–2035</code>, and tax basis are private/unsupplied, <strong>no parcel dollar figures are invented</strong>. Instead, our projection engine (<code>advisory_src/model.py</code>) anchors regional trajectories to verified Census V2025, Sept 2026 BLS, and Nov 6, 2026 U.S. Treasury (<code>4.86%</code> 10-Yr CMT) data, and evaluates all 5 owner pathways symmetrically in multiples of <strong><code>1.00 R</code> (= 1 year of current contractual base rent)</strong>. Multiply any <code>R</code> figure by your actual annual base rent to convert immediately to dollars.</p>
+    </section>
+
+    <section class="section-card">
+      <h3>1. Central Los Angeles Economic Regime Projections (2026–2035)</h3>
+      <p class="section-note">Three macro regimes spanning CA DOF demographic contraction, measured Census V2025 / BLS Sept 2026 trends, and Metro D Line / LA28 / DTLA 2040 corridor densification.</p>
+      <div class="table-wrap"><table>
+        <thead><tr>
+          <th>Macro Regime (2026–2035)</th>
+          <th>Population Trajectory</th>
+          <th>Payroll Job Trajectory</th>
+          <th>QSR Operating Cost Inflation</th>
+          <th>10-Yr UST Range</th>
+          <th>Property &amp; Tenant Implication</th>
+          <th>Status</th>
+          <th>Official Anchor</th>
+        </tr></thead>
+        <tbody><tr><td><strong>Downside / Out-Migration &amp; Margin Stress</strong></td><td>-0.45%/yr (-4.0% cum.)</td><td>-0.10%/yr (-0.9% cum.)</td><td>+4.20%/yr (+44.8% cum.)</td><td>5.25% – 5.75%</td><td>shrinking local headcount + 4.2%/yr cost inflation squeezes unit EBITDAR; high non-renewal risk at 2030–2035 expiry.</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://ewdd.lacity.gov/images/reports/ap25/APy25_Tab5-EconomicForecast.pdf" rel="noopener noreferrer">S35 · City of Los Angeles Economic &amp; Workforce Development Dept. (EWDD)</a></td></tr><tr><td><strong>Measured-Trend Base Case (Anchored to V2025 &amp; Sept 2026 BLS)</strong></td><td>-0.16%/yr (-1.4% cum.)</td><td>+0.50%/yr (+4.6% cum.)</td><td>+3.50%/yr (+36.3% cum.)</td><td>4.50% – 5.00%</td><td>Flat-to-slightly-lower resident count (-1.4% by 2035) offset by +4.6% cumulative payrolls; real QSR rent growth capped near 0%–1.5%/yr.</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer">S03 · U.S. Bureau of Labor Statistics (BLS)</a></td></tr><tr><td><strong>Transit / LA28 Olympic &amp; DTLA 2040 Infill Upside</strong></td><td>+0.35%/yr (+3.2% cum.)</td><td>+1.20%/yr (+11.3% cum.)</td><td>+2.80%/yr (+28.2% cum.)</td><td>3.75% – 4.25%</td><td>Corridor densification (+3.2% pop, +11.3% jobs by 2035) lifts underlying mixed-use land value even more than drive-thru rent.</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://www.metro.net/projects/westside/" rel="noopener noreferrer">S32 · Los Angeles County Metropolitan Transportation Authority (LA Metro)</a></td></tr></tbody>
+      </table></div>
+    </section>
+
+    <section class="section-card">
+      <h3>2. Symmetric Decision Pathway Present-Value Matrix (in Multiples of Annual Rent R)</h3>
+      <p class="section-note">Evaluated across both bookends of the 2030–2035 window (4 yrs vs. 9 yrs remaining). Expected PV weights: 20% Optimistic, 50% Base, 20% Downside, 10% Black-Swan Stress.</p>
+      <div class="table-wrap"><table>
+        <thead><tr>
+          <th>Expiry Window</th>
+          <th>Decision Pathway</th>
+          <th>Optimistic</th>
+          <th>Base Case</th>
+          <th>Downside</th>
+          <th>Black Swan</th>
+          <th>Expected PV</th>
+          <th>Worst-Case Floor</th>
+          <th>Status</th>
+          <th>Official Anchor</th>
+        </tr></thead>
+        <tbody><tr><td>2030 (4 yrs rem.)</td><td><strong>P1</strong> &middot; Early Blend-and-Extend + Sell via §1031 (2027–2028)</td><td>16.53 R</td><td>14.79 R</td><td>13.02 R</td><td>11.92 R</td><td><strong>14.50 R</strong></td><td><strong>11.92 R</strong></td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" rel="noopener noreferrer">S21 · Internal Revenue Service (IRS)</a></td></tr><tr><td>2030 (4 yrs rem.)</td><td><strong>P2</strong> &middot; Sell As-Is Before Expiry via §1031 Exchange (2027–2028)</td><td>14.20 R</td><td>12.68 R</td><td>10.88 R</td><td>9.83 R</td><td><strong>12.34 R</strong></td><td><strong>9.83 R</strong></td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" rel="noopener noreferrer">S21 · Internal Revenue Service (IRS)</a></td></tr><tr><td>2030 (4 yrs rem.)</td><td><strong>P3</strong> &middot; Sell As-Is Outright — Taxable Cash Exit (2027–2028)</td><td>10.84 R</td><td>9.31 R</td><td>7.78 R</td><td>6.98 R</td><td><strong>9.08 R</strong></td><td><strong>6.98 R</strong></td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://www.irs.gov/taxtopics/tc409" rel="noopener noreferrer">S22 · Internal Revenue Service (IRS)</a></td></tr><tr><td>2030 (4 yrs rem.)</td><td><strong>P4</strong> &middot; Passive Hold to Expiry &amp; Attempt Incumbent Renewal</td><td>19.41 R</td><td>15.00 R</td><td>9.64 R</td><td>5.64 R</td><td><strong>13.87 R</strong></td><td><strong>5.64 R</strong></td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer">S12 · U.S. Securities and Exchange Commission (EDGAR)</a></td></tr><tr><td>2030 (4 yrs rem.)</td><td><strong>P5</strong> &middot; Hold to Expiry &amp; Reposition / Transit Re-Tenant</td><td>20.18 R</td><td>14.47 R</td><td>7.61 R</td><td>4.03 R</td><td><strong>13.20 R</strong></td><td><strong>4.03 R</strong></td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://planning.lacity.gov/odocument/52782cbf-cd07-41b5-b371-75e0b53d8f31/Planning_Liaison_Updates_-_Februray_2025.pdf" rel="noopener noreferrer">S31 · City of Los Angeles Department of City Planning</a></td></tr><tr><td>2035 (9 yrs rem.)</td><td><strong>P1</strong> &middot; Early Blend-and-Extend + Sell via §1031 (2027–2028)</td><td>16.53 R</td><td>14.79 R</td><td>13.02 R</td><td>11.92 R</td><td><strong>14.50 R</strong></td><td><strong>11.92 R</strong></td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" rel="noopener noreferrer">S21 · Internal Revenue Service (IRS)</a></td></tr><tr><td>2035 (9 yrs rem.)</td><td><strong>P2</strong> &middot; Sell As-Is Before Expiry via §1031 Exchange (2027–2028)</td><td>16.08 R</td><td>14.36 R</td><td>12.56 R</td><td>11.54 R</td><td><strong>14.06 R</strong></td><td><strong>11.54 R</strong></td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" rel="noopener noreferrer">S21 · Internal Revenue Service (IRS)</a></td></tr><tr><td>2035 (9 yrs rem.)</td><td><strong>P3</strong> &middot; Sell As-Is Outright — Taxable Cash Exit (2027–2028)</td><td>12.24 R</td><td>10.51 R</td><td>8.94 R</td><td>8.17 R</td><td><strong>10.31 R</strong></td><td><strong>8.17 R</strong></td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://www.irs.gov/taxtopics/tc409" rel="noopener noreferrer">S22 · Internal Revenue Service (IRS)</a></td></tr><tr><td>2035 (9 yrs rem.)</td><td><strong>P4</strong> &middot; Passive Hold to Expiry &amp; Attempt Incumbent Renewal</td><td>19.89 R</td><td>15.58 R</td><td>10.67 R</td><td>6.98 R</td><td><strong>14.60 R</strong></td><td><strong>6.98 R</strong></td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer">S12 · U.S. Securities and Exchange Commission (EDGAR)</a></td></tr><tr><td>2035 (9 yrs rem.)</td><td><strong>P5</strong> &middot; Hold to Expiry &amp; Reposition / Transit Re-Tenant</td><td>20.58 R</td><td>15.24 R</td><td>9.25 R</td><td>5.89 R</td><td><strong>14.18 R</strong></td><td><strong>5.89 R</strong></td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://planning.lacity.gov/odocument/52782cbf-cd07-41b5-b371-75e0b53d8f31/Planning_Liaison_Updates_-_Februray_2025.pdf" rel="noopener noreferrer">S31 · City of Los Angeles Department of City Planning</a></td></tr></tbody>
+      </table></div>
+    </section>
+
+    <section class="section-card">
+      <h3>3. Buyer Cap-Rate Sensitivity &amp; Measure ULA Threshold Scaling</h3>
+      <p class="section-note">No government agency publishes private QSR cap rates (Flag F-11); this mathematical grid shows gross valuation multiples (1 / Cap Rate) and illustrative scaling at $250k and $350k annual NNN rent.</p>
+      <div class="table-wrap"><table>
+        <thead><tr>
+          <th>Exit Cap Rate</th>
+          <th>Spread Over 4.86% 10-Yr UST</th>
+          <th>Gross Value Multiple</th>
+          <th>Illustrative @ $250k Rent</th>
+          <th>Illustrative @ $350k Rent</th>
+          <th>Typical Lease Term / Credit Profile</th>
+          <th>Status</th>
+          <th>Official Anchor</th>
+        </tr></thead>
+        <tbody><tr><td><strong>5.50%</strong></td><td>+64 bps vs. 4.86% 10-Yr UST</td><td><strong>18.18 × R</strong></td><td>$4,545,455 (0.56% (Below $5.4M ULA))</td><td>$6,363,636 (4.56% (Triggers 4% ULA!))</td><td>12–15 yr corporate extension</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>6.00%</strong></td><td>+114 bps vs. 4.86% 10-Yr UST</td><td><strong>16.67 × R</strong></td><td>$4,166,667 (0.56% (Below $5.4M ULA))</td><td>$5,833,333 (4.56% (Triggers 4% ULA!))</td><td>12–15 yr corporate extension</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>6.50%</strong></td><td>+164 bps vs. 4.86% 10-Yr UST</td><td><strong>15.38 × R</strong></td><td>$3,846,154 (0.56% (Below $5.4M ULA))</td><td>$5,384,615 (0.56% (Below $5.4M ULA))</td><td>7–9 yr corporate NNN (2035)</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>7.00%</strong></td><td>+214 bps vs. 4.86% 10-Yr UST</td><td><strong>14.29 × R</strong></td><td>$3,571,429 (0.56% (Below $5.4M ULA))</td><td>$5,000,000 (0.56% (Below $5.4M ULA))</td><td>7–9 yr corporate NNN (2035)</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>7.50%</strong></td><td>+264 bps vs. 4.86% 10-Yr UST</td><td><strong>13.33 × R</strong></td><td>$3,333,333 (0.56% (Below $5.4M ULA))</td><td>$4,666,667 (0.56% (Below $5.4M ULA))</td><td>3–5 yr short-fuse (2030) or franchisee-only</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>8.00%</strong></td><td>+314 bps vs. 4.86% 10-Yr UST</td><td><strong>12.50 × R</strong></td><td>$3,125,000 (0.56% (Below $5.4M ULA))</td><td>$4,375,000 (0.56% (Below $5.4M ULA))</td><td>3–5 yr short-fuse (2030) or franchisee-only</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>8.50%</strong></td><td>+364 bps vs. 4.86% 10-Yr UST</td><td><strong>11.76 × R</strong></td><td>$2,941,176 (0.56% (Below $5.4M ULA))</td><td>$4,117,647 (0.56% (Below $5.4M ULA))</td><td>3–5 yr short-fuse (2030) or franchisee-only</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr></tbody>
+      </table></div>
+    </section>
+
+    <section class="section-card">
+      <h3>4. City of Los Angeles Measure ULA Transfer-Tax Cliff Schedule (Effective July 1, 2026)</h3>
+      <p class="section-note">Verified from City of LA Office of Finance &amp; LA County Registrar-Recorder: 0.45% City Base + 0.11% County = 0.56% up to $5,400,000; +4.0% ULA above $5,400,000; +5.5% ULA at/above $10,900,000.</p>
+      <div class="table-wrap"><table>
+        <thead><tr>
+          <th>Gross Sale Price</th>
+          <th>Statutory Tax Bracket (Post-6/30/2026)</th>
+          <th>Combined Rate</th>
+          <th>Transfer Tax ($)</th>
+          <th>Net After Transfer Tax</th>
+          <th>Pricing Discipline Note</th>
+          <th>Status</th>
+          <th>Official Source</th>
+        </tr></thead>
+        <tbody><tr><td><strong>$5,000,000</strong></td><td>≤ $5,400,000 (Exempt from ULA)</td><td>0.56%</td><td>$28,000</td><td><strong>$4,972,000</strong></td><td>Standard post-7/1/2026 statutory transfer tax calculation</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>$5,399,500</strong></td><td>≤ $5,400,000 (Exempt from ULA)</td><td>0.56%</td><td>$30,237</td><td><strong>$5,369,263</strong></td><td>Optimal pre-cliff ceiling (saves ~$216k vs. $5.4005M)</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>$5,400,500</strong></td><td>&gt; $5,400,000 to &lt; $10,900,000 (4.0% ULA)</td><td>4.56%</td><td>$246,263</td><td><strong>$5,154,237</strong></td><td>TRAP ZONE: seller nets LESS than selling at $5,400,000 until ~$5,625,000!</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>$5,650,000</strong></td><td>&gt; $5,400,000 to &lt; $10,900,000 (4.0% ULA)</td><td>4.56%</td><td>$257,640</td><td><strong>$5,392,360</strong></td><td>Standard post-7/1/2026 statutory transfer tax calculation</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>$7,500,000</strong></td><td>&gt; $5,400,000 to &lt; $10,900,000 (4.0% ULA)</td><td>4.56%</td><td>$342,000</td><td><strong>$7,158,000</strong></td><td>Standard post-7/1/2026 statutory transfer tax calculation</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>$10,899,500</strong></td><td>&gt; $5,400,000 to &lt; $10,900,000 (4.0% ULA)</td><td>4.56%</td><td>$497,017</td><td><strong>$10,402,483</strong></td><td>Standard post-7/1/2026 statutory transfer tax calculation</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr><tr><td><strong>$10,900,000</strong></td><td>≥ $10,900,000 (5.5% ULA)</td><td>6.06%</td><td>$660,540</td><td><strong>$10,239,460</strong></td><td>Second cliff: +1.5% jump ($163.5k instant step) at $10,900,000</td><td><span class="badge b-analysis">Analysis</span></td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" rel="noopener noreferrer">S17 · City of Los Angeles Office of Finance</a></td></tr></tbody>
+      </table></div>
+    </section>
+    
+    <footer class="footer">
+      Anonymized decision-support research (<code>[REPO_ACCOUNT_REDACTED]</code> &middot; <code>[SUBJECT_PARCEL_REDACTED]</code>). Every table row links directly to an official government (<code>.gov</code> / <code>.ca.gov</code> / public agency) or primary SEC/issuer filing checked 2026-11-07. Unconfirmed parcel inputs remain blank and are listed on <a href="flagged.html">Flagged for Review</a>. Conditional analysis is not personalized legal, tax, or investment advice.
+    </footer>
+  </main>
+</div>
+</body>
+</html>

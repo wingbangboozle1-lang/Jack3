@@ -33,12 +33,14 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 # root docs/ directory already belongs to another session's site.  This
 # generator therefore writes to its OWN directory, decision-file/, and
 # never touches docs/, the root index.html, or any other session's files.
-# GitHub Pages serves the repository root, so the site is published at
-#   https://wingbangboozle1-lang.github.io/Jack3/decision-file/
+# The decision-file layer is a repository deliverable for audit; the public
+# Pages artifact is the curated root dashboard (see scripts/stage_pages.py).
+# The repository account handle is redacted here per the privacy directive
+# (IR-01); the repository name alone is shown in the page footer.
 DOCS = os.path.join(ROOT, "decision-file")
 SITE = os.path.join(ROOT, "site")
 SNAPSHOT = "2026-11-06"
-REPO = "wingbangboozle1-lang/Jack3"
+REPO = "Jack3"
 
 
 # ==========================================================================
@@ -261,9 +263,9 @@ contact detail or transaction price appears on this site. See
 <a href="privacy.html">Privacy &amp; Anonymisation</a>.</div>
 </div>
 <p style="margin:14px 0 0">Built from a committed, reviewed data snapshot.
-The site is static HTML served by GitHub Pages from <code>/docs</code>; it makes
-no runtime calls to any API, so published figures cannot change silently.
-Repository <code>{REPO}</code> &middot; generated {SNAPSHOT}.</p></div>'''
+The site is static HTML with no runtime calls to any API, so published figures
+cannot change silently. Repository <code>{REPO}</code> &middot; generated
+{SNAPSHOT}.</p></div>'''
 
 
 def page(fname, title, body, head_extra=""):

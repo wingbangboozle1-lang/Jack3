@@ -4,5 +4,5 @@ Company-owned restaurant buildings - on leased land,55,510,565,Jack in the Box,1
 "Subtotal, company-owned restaurant buildings",63,666,729,Jack in the Box,10K_FY2025,VERIFIED,
 Company-leased restaurant buildings on leased land,87,933,"1,020",Jack in the Box,10K_FY2025,VERIFIED,
 Franchise directly-owned or directly-leased restaurant buildings,0,387,387,Jack in the Box,10K_FY2025,VERIFIED,This is the ownership pattern that matches an independent third-party NNN landlord.
-Total restaurant buildings,150,"1,986","2,136",Jack in the Box,10K_FY2025,VERIFIED,
+Total restaurant buildings,150,"1,986","2,136",Jack in the Box,10K_FY2025,VERIFIED,"IR-04 split, derived from the Item 2 table: of the 2,136 Jack in the Box buildings, 1,585 are leased by the company from third-party landlords (565 company-owned buildings on leased land + 1,020 company-leased buildings) and 387 are owned or leased directly by franchisees. No single quoted count in the filing; arithmetic shown."
 Total restaurant buildings,132,444,576,Del Taco,10K_FY2025,VERIFIED,Del Taco divestiture announced October 2025.

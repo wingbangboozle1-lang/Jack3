@@ -94,7 +94,11 @@ PROPERTIES_FY2025 = [
          note="This is the ownership pattern that matches an independent third-party NNN landlord."),
     dict(category="Total restaurant buildings", company_operated="150",
          franchise="1,986", total="2,136", brand="Jack in the Box",
-         source_key="10K_FY2025", verified="VERIFIED"),
+         source_key="10K_FY2025", verified="VERIFIED",
+         note="IR-04 split, derived from the Item 2 table: of the 2,136 Jack in the Box buildings, "
+              "1,585 are leased by the company from third-party landlords (565 company-owned buildings "
+              "on leased land + 1,020 company-leased buildings) and 387 are owned or leased directly "
+              "by franchisees. No single quoted count in the filing; arithmetic shown."),
     dict(category="Total restaurant buildings", company_operated="132",
          franchise="444", total="576", brand="Del Taco",
          source_key="10K_FY2025", verified="VERIFIED",
@@ -257,11 +261,17 @@ COST_PRESSURE = [
     dict(metric="Restaurant-level margin", value="17.6%", prior_year="17.9%",
          source_key="IR_Q3FY2026", verified="VERIFIED"),
     dict(metric="Franchised restaurant average unit volume, FY2025",
-         value="$1,549 thousand", prior_year="$1,573 thousand",
-         source_key="10K_FY2025", verified="VERIFIED"),
+         value="$1,874 thousand", prior_year="$1,949 thousand",
+         source_key="10K_FY2025", verified="VERIFIED",
+         note="JACK franchise AUV (10-K Item 7 p. 29). The divested Del Taco brand's franchise AUV "
+              "was $1,549k (FY25) vs $1,573k (FY24) - an earlier draft of this row quoted Del Taco's "
+              "figures under the Jack in the Box label (IR-10, corrected 2026-11-08)."),
     dict(metric="Royalties as % of franchised restaurant sales, FY2025",
-         value="4.6%", prior_year="4.7%", source_key="10K_FY2025",
-         verified="VERIFIED"),
+         value="5.1%", prior_year="5.0%", source_key="10K_FY2025",
+         verified="VERIFIED",
+         note="JACK royalties as a percentage of franchise restaurant sales (10-K Item 7 p. 29). "
+              "Del Taco's rate was 4.6% (FY25) vs 4.7% (FY24) - an earlier draft quoted Del Taco's "
+              "figures under the Jack in the Box label (IR-10, corrected 2026-11-08)."),
     dict(metric="Employees, system-wide", value="5,046 (both brands)",
          prior_year="", source_key="10K_FY2025", verified="VERIFIED"),
     dict(metric="Geographic concentration",

@@ -78,10 +78,12 @@ committing capital to either a renewal negotiation or a marketing process.
 | Q3 FY2026 | (0.9)% | (1.2)% | **(1.1)%** |
 
 Declines were driven by **lower transactions**, only partially offset by menu
-price increases. Franchised average unit volume fell from $1,573K to $1,549K.
-Franchise-level margin fell to $60.3M (37.4% of franchise revenues) from $66.2M
-(39.3%). Food and packaging costs rose to 29.3% of company restaurant sales from
-28.6%.
+price increases. Franchised restaurant average unit volume fell from $1,949K to
+$1,874K. (The divested Del Taco brand's franchise AUV fell from $1,573K to
+$1,549K; an earlier draft quoted Del Taco's figures under the Jack in the Box
+label — IR-10, corrected 2026-11-08.) Franchise-level margin fell to $60.3M
+(37.4% of franchise revenues) from $66.2M (39.3%). Food and packaging costs rose
+to 29.3% of company restaurant sales from 28.6%.
 
 Store-level sales drive a franchisee's ability to pay rent and its willingness to
 renew. Sustained negative comps convert into rent concessions, closures, or
@@ -114,19 +116,20 @@ preliminary). But the civilian labour force **also fell**, from 6,768,502 to
 6,646,903 — about **121,600 fewer people**. A falling unemployment rate caused by
 people leaving the labour force is not an expanding economy.
 
-Total nonfarm payrolls rose only **+0.6%** to 6,289.1 thousand in August 2026, in
+Total nonfarm payrolls rose only **+0.5%** to 6,282.1 thousand in September 2026, in
 a distinctly two-speed pattern:
 
 | Growing | | Contracting | |
 |---|---|---|---|
-| Education and health services | +3.3% | **Information** | **−6.1%** |
-| **Leisure and hospitality** | **+2.2%** | Financial activities | −1.5% |
-| Government | +1.4% | Manufacturing | −1.1% |
-| Trade, transportation and utilities | +0.8% | Professional and business services | −0.9% |
-| | | Construction | −0.7% |
+| Education and health services | +3.8% | **Information** | **−5.7%** |
+| **Leisure and hospitality** | **+1.5%** | Financial activities | −1.7% |
+| Trade, transportation and utilities | +0.3% | Manufacturing | −1.2% |
+| | | Professional and business services | −0.5% |
+| | | Government | −1.1% |
+| | | Construction | 0.0% |
 
 The tenant's own sector — leisure and hospitality — is one of the few growing
-ones (+16.8 thousand jobs). That is a genuine positive, and it is outweighed by
+ones (+11.5 thousand jobs). That is a genuine positive, and it is outweighed by
 the brand-specific evidence in findings 1 and 2.
 
 *Source: [BLS Metropolitan Area Employment and Unemployment USDL-26-1618](https://www.bls.gov/news.release/pdf/metro.pdf); [BLS Los Angeles Area Economic Summary](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) — VERIFIED*
@@ -144,8 +147,8 @@ The City of Los Angeles general minimum wage reached **$18.42/hour** on
 Box inside the city. California's general minimum wage is **$16.90/hour** from
 2026-01-01.
 
-Meanwhile LA metro CPI-U rose **+3.6%** in the 12 months to August 2026, with
-**energy +17.6%** — a direct hit on a drive-thru operation. Under NNN these costs
+Meanwhile LA metro CPI-U rose **+3.7%** in the 12 months to September 2026, with
+**energy +20.3%** — a direct hit on a drive-thru operation. Under NNN these costs
 land on the tenant, which is good for the landlord **until it breaks the
 tenant**.
 
