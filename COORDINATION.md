@@ -554,3 +554,11 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
   - Flagged for Review (`F-01`–`F-14` & `IR-01`–`IR-10`): https://wingbangboozle1-lang.github.io/Jack3/advisory/flagged.html
   - Root Curated Workspace (preserved intact): https://wingbangboozle1-lang.github.io/Jack3/
 - **Status:** All session tasks (`E-01`–`E-09`) **done**; unconfirmed private parcel/lease inputs (`F-01`–`F-14`) remain blank and published as non-blocking `Needs review` / `Unverified` items on `/advisory/flagged.html`.
+
+## Session e1bfd73b — independent publication safety review
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Review existing published dashboard, verification gates and critical decision/privacy caveats; correct substantiated issues and integrate | in progress | e1bfd73b | `COORDINATION.md`, `data/evidence.json`, `scripts/validate.py`, generated root HTML if needed |
+
+2026-11-08: Claim made on platform-assigned branch. Previous sessions' completed scopes are preserved; this is a final integration review of shared published outputs. No private-property research will be undertaken.
