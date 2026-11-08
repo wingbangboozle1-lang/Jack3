@@ -894,6 +894,15 @@
           ],
           "status": "Needs review",
           "source": "wage"
+        },
+        {
+          "cells": [
+            "Critical",
+            "Advisory scenario rankings withheld",
+            "The previously published advisory companion used assumed scenario weights and numerical pathway rankings; cited official sources do not verify those forecasts. It is excluded pending independent validation; do not use it to choose a transaction."
+          ],
+          "status": "Needs review",
+          "source": "irs"
         }
       ]
     }
