@@ -574,3 +574,58 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
 ### PR and deployment record
 - PR #27 https://github.com/wingbangboozle1-lang/Jack3/pull/27 merged 2026-11-08 at 22:50 UTC (merge commit `83537e46f9f9a37ae07045520749e37288a0cc0d`). PR validation passed including Jekyll artifact parity.
 - Pages deployment https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42532190121 succeeded. Cache-busted live `review.html` was fetched and contains the advisory withholding flag. The previously published advisory contents remain in the public repository, not the Pages artifact; repository access is not confidential storage.
+
+---
+
+# Session `arena/f7e46f4e-jack3` — FINAL INTEGRATION (line-by-line re-verification, unified live site, PR + deploy)
+
+**Session ID:** `f7e46f4e` · **Branch:** `arena/f7e46f4e-jack3` (Arena platform-fixed; the
+environment forbids creating/switching to any other branch, so `session-<id>/<task>` branches
+cannot be used here — all work stays on this one tracked branch, and sibling branches are merged
+*into* it rather than checked out). **Date:** 2026-11-08 (UTC). **Status:** active.
+
+## Board state read at start
+- `COORDINATION.md` read in full (556 lines at first read). Prior sessions 5cb84cd0, ff406d61,
+  8d650ba0, 796b983f, 93f3087c, d989a5c6, 7d4577fd, 770f50c1, 9fa62774, 64d0ce02,
+  0ed6d83e, 3644edd8, e04af39b, e1bfd73b all recorded. Main had advanced to
+  `febe6ea` (PRs #27 and #28 merged: `/advisory/` withheld from Pages) before this claim.
+- Open PRs at start: **#22** `arena/0ed6d83e-jack3` (canonical `report/` decision file,
+  CI step "No generator output is stale" FAIL), **#26** `arena/3644edd8-jack3`
+  (independent audit, CI Jekyll-artifact comparison FAIL because its one public HTML file is not
+  staged), **#27** `arena/e1bfd73b-jack3` (merged into main by its owner during this session).
+  PR #22 last pushed 2026-11-07T20:53Z and PR #26 2026-11-07T20:58Z — both **>60 minutes old
+  with no commits**, so under board rule 7 their integration is taken over here with a handoff
+  note. Their files are preserved, not overwritten; neither session's content is discarded.
+- No other session has claimed the tasks below with a live commit. `scripts/stage_pages.py`,
+  `_config.yml`, `data/evidence.json` and `review.html` were claimed by `e1bfd73b`, but that
+  session's work is **done and merged to main**; this integration only extends it additively.
+
+## Task board (all claimed by `f7e46f4e` before work started)
+
+| ID | Task | Status | Owner | File scope (non-overlapping with live sessions) |
+|---|---|---|---|---|
+| F-01 | Board claim, branch sync, repo inventory | in progress | `f7e46f4e` | `COORDINATION.md` (append-only section) |
+| F-02 | Merge sibling branches #22 and #26 into this integration branch; resolve conflicts additively | unclaimed→in progress | `f7e46f4e` | merged `report/**`, `verification-3644edd8/**`, `data/report_data.py`, `tools/build_report.py`, `tools/check_report.py`, `README.md`, `INTEGRATION_REPORT.md`, `.github/workflows/validate.yml` |
+| F-03 | Line-by-line repo review + independent official-source re-verification; irregularity register | pending | `f7e46f4e` | `INTEGRATION_F7E46F4E.md` (new), `data/` + `scripts/` only where a correction is required |
+| F-04 | Unified live site: clean dashboard landing + category subpages, all findings in sourced tables, Flagged for Review page | pending | `f7e46f4e` | `report/**` (integrated canonical layer), `scripts/build.py` (landing link), `scripts/stage_pages.py`, `_config.yml` |
+| F-05 | Fix CI failures (deterministic generated HTML, stage the audit page, byte-exact Jekyll artifact), link + PII + row-provenance gates | pending | `f7e46f4e` | `scripts/stage_pages.py`, `.github/workflows/validate.yml`, generated HTML |
+| F-06 | PR to `main` with sources + flagged irregularities, merge without approval wait, confirm Pages deploy, record PR link/result | pending | `f7e46f4e` | `COORDINATION.md` (this section), PR via `gh` |
+| F-07 | Executive summary refresh (privacy-safe, source-linked) | pending | `f7e46f4e` | `EXECUTIVE_SUMMARY.md` (additive section only) |
+
+## Coordination rules observed
+1. This claim is committed and pushed immediately, before any other edit.
+2. `git pull --rebase` before every push; every commit is small and scoped.
+3. On conflict: stop, resolve **additively**, log the conflict and resolution here; never
+   discard another session's content.
+4. Shared outputs (master table data, root `index.html`, nav, staging script) are edited only
+   by this final integration session, after sibling tasks are done/merged.
+5. Every published value is checked against an official publisher page with a link; unconfirmed
+   values stay **blank** and are flagged; nothing is inferred. No PII on the site.
+6. Flagged irregularities are published on a clearly labelled **Flagged for Review** page with
+   source links and do not block the merge.
+
+## Handoff log
+- 2026-11-08: Took over integration of PR #22 (`0ed6d83e`) and PR #26 (`3644edd8`) outputs.
+  Both are stale (>60 min, no commits) and their CI is red for integration reasons only. Their
+  branches are merged into `arena/f7e46f4e-jack3`, not checked out or rewritten. Logged as a
+  handoff, not as new authorship of their research.
