@@ -20,6 +20,7 @@ jobs:
       - run: python tools/check_links.py
       - run: python tools/pii_scan.py
       - run: python _advisory_src/verify_advisory.py
+      - run: python _dashboard_src/verify.py
       - run: git diff --exit-code -- '*.html'
       - uses: ruby/setup-ruby@v1
         with:
