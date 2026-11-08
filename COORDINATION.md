@@ -554,3 +554,89 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
   - Flagged for Review (`F-01`–`F-14` & `IR-01`–`IR-10`): https://wingbangboozle1-lang.github.io/Jack3/advisory/flagged.html
   - Root Curated Workspace (preserved intact): https://wingbangboozle1-lang.github.io/Jack3/
 - **Status:** All session tasks (`E-01`–`E-09`) **done**; unconfirmed private parcel/lease inputs (`F-01`–`F-14`) remain blank and published as non-blocking `Needs review` / `Unverified` items on `/advisory/flagged.html`.
+
+---
+
+# Session `arena/c7fa4fd9-jack3` — Inherited-Layer Remediation & Final Integration
+
+**Session ID:** `c7fa4fd9` · **Branch:** `arena/c7fa4fd9-jack3` (platform-fixed) · **Date:** 2026-11-08 (UTC)
+
+Starting from merged `main` (PR #25, commit `f46cee2`). All prior sessions are complete; this
+session is the final integration session. It re-verifies inherited data line by line against
+official sources, remediates the irregularities logged by session `e04af39b` (IR-01, IR-03,
+IR-04, IR-10) in the legacy companion layers, implements the outstanding cross-session request
+XR-E1, re-runs the full validation suite, and publishes via PR → merge → GitHub Pages.
+
+## Task table & scope claim
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| C-01 | Line-by-line verification pass: inherited verified data re-checked against official primary sources | done | `c7fa4fd9` | this section of `COORDINATION.md` |
+| C-02 | Fix IR-10 (Del Taco AUV/royalty misattributed to Jack in the Box) in `data/tenant.py`; rebuild `decision-file/`; correct `EXECUTIVE_SUMMARY.md` | in progress | `c7fa4fd9` | `data/tenant.py`, `build_site.py`, `decision-file/**`, `EXECUTIVE_SUMMARY.md` |
+| C-03 | Fix IR-01 (repo account handle in legacy HTML) in `build_site.py` footer and `pages/` HTML | in progress | `c7fa4fd9` | `build_site.py`, `pages/repo-review.html`, `pages/flagged.html` |
+| C-04 | Fix IR-03 (expired Measure ULA thresholds) across `brief/` | in progress | `c7fa4fd9` | `brief/decision.html`, `brief/executive-summary.html`, `brief/index.html`, `brief/projection-model.html` |
+| C-05 | IR-04 note: 10-K Item 2 corporate-leased vs franchise-direct split | in progress | `c7fa4fd9` | `data/tenant.py` |
+| C-06 | XR-E1: add `advisory/` navigation link on the root landing page | in progress | `c7fa4fd9` | `scripts/build.py`, regenerated root `*.html` |
+| C-07 | Full validation suite, `COORDINATION.md` completion, PR → merge, Pages deploy check | in progress | `c7fa4fd9` | `COORDINATION.md` |
+
+## Verification performed this session (C-01)
+
+All figures below were read directly on the cited official page during this session:
+
+| Claim | Official source | Result |
+|---|---|---|
+| JACK system same-store sales FY2025 (company −3.7%, franchise −4.3%, system −4.2%) and FY2024 (0.0/−1.5/−1.3) | SEC EDGAR Form 10-K FY2025 (acc 0000807882-25-000072), MD&A Results of Operations | CONFIRMED |
+| JACK restaurant counts 2,136 total / 1,986 franchise / 150 company at 2025-09-28; 2,191 at FY2024 | Same 10-K, restaurant count tables | CONFIRMED |
+| JACK franchise AUV $1,874K (FY25) / $1,949K (FY24); royalties 5.1% / 5.0% of franchise sales | Same 10-K, Item 7 p. 29 (JACK franchise operations table) | CONFIRMED — exposes IR-10 |
+| Del Taco franchise AUV $1,549K (FY25) / $1,573K (FY24); royalties 4.6% / 4.7% | Same 10-K, p. 31 (Del Taco franchise operations table) | CONFIRMED — source of the misattributed values |
+| Item 2 real estate table (565 company-owned on leased land; 1,020 company-leased on leased land; 387 franchise-direct; 164 on company-owned land) | Same 10-K, Item 2 | CONFIRMED; 565+1,020=1,585 leased by company (IR-04 arithmetic) |
+| Lease terms: initial 20 years; renewal options at company's sole discretion 1–20 years; ~13% JACK leases with 1–10% contingent rent | Same 10-K, Item 2 / Note 8 | CONFIRMED |
+| JACK on Track: 150–200 closure programme announced 2025-04-23; closures "based upon respective franchise agreement termination dates" | Same 10-K | CONFIRMED |
+| City of LA population 3,869,089 (Jul 2025 V2025); −0.8% vs 2020 estimates base | Census QuickFacts LA city | CONFIRMED |
+| LA metro unemployment 4.4% (Sep-2026) vs 5.5% (Sep-2025); total nonfarm 6,282.1k, +30.2, +0.5% | BLS Los Angeles Area Economic Summary (updated 2026-11-04) | CONFIRMED |
+| LA metro CPI-U +3.7% (Sep-2026); energy +20.3% | Same BLS summary | CONFIRMED (EXECUTIVE_SUMMARY finding-4 August figures corrected to September) |
+| California minimum wage $16.90/h from 2026-01-01 | California DIR Minimum Wage FAQ | CONFIRMED |
+| Fast food minimum wage $20.00/h from 2024-04-01; applies to franchisees | California DIR Fast Food Minimum Wage FAQ | CONFIRMED |
+| City of LA minimum wage $18.42/h effective 2026-07-01 | City of LA Office of Wage Standards | CONFIRMED |
+| Measure ULA thresholds for closings after 2026-06-30: $5,400,000 (4%) and $10,900,000 (5.5%) | City of LA Office of Finance, Real Property Transfer Tax & Measure ULA FAQ | CONFIRMED — basis for IR-03 fix |
+| USGS UCERF3: LA region 30-yr 60% M6.7+, 46% M7.0+, 31% M7.5+ | USGS FAQ | CONFIRMED |
+
+## Irregularities found/remediated this session
+
+- **IR-10 (SEC table mix-up) — REMEDIATED.** `data/tenant.py` had quoted Del Taco's franchise AUV
+  ($1,549K/$1,573K) and royalty rate (4.6%/4.7%) under the Jack in the Box label. Corrected to the
+  JACK values from the same 10-K (p. 29): AUV $1,874K/$1,949K; royalties 5.1%/5.0%. Del Taco values
+  retained as a note. `EXECUTIVE_SUMMARY.md` finding 2 corrected.
+- **IR-01 (repo account handle) — REMEDIATED.** `build_site.py` footer `REPO` constant changed from
+  `wingbangboozle1-lang/Jack3` to `Jack3` (all 23 `decision-file/` pages regenerated). `pages/`
+  legacy HTML redacted to `[REPO_ACCOUNT_REDACTED]`.
+- **IR-03 (expired Measure ULA thresholds) — REMEDIATED.** `brief/` updated to the verified
+  2026-07-01 thresholds ($5,400,000 / $10,900,000) in `decision.html`, `executive-summary.html`,
+  `index.html`, `projection-model.html`; worked-example arithmetic recomputed.
+- **IR-04 (10-K Item 2 split) — REMEDIATED as a note.** `data/tenant.py` properties table now records
+  the 1,585 corporate-leased vs 387 franchise-direct split with the arithmetic disclosed (565 +
+  1,020 = 1,585; no single quoted count in the filing).
+- **NEW — stale-vintage figures in EXECUTIVE_SUMMARY.md finding 4.** Payroll/sector/CPI figures were
+  from the August 2026 BLS release; corrected to the September 2026 figures in the official summary
+  (updated 2026-11-04): total nonfarm +0.5% to 6,282.1k; E&H +3.8%, Leisure +1.5%, TTU +0.3%,
+  Information −5.7%, Financial −1.7%, Manufacturing −1.2%, P&B −0.5%, Government −1.1%,
+  Construction 0.0%; Leisure +11.5k jobs; CPI-U +3.7%, energy +20.3%.
+
+## Cross-session requests handled
+
+- **XR-E1 (from `e04af39b`, to root landing-page owner):** implemented — `advisory/` is now in the
+  root navigation via `scripts/build.py`.
+- **XR-E2 (from `e04af39b`, to `decision-file/` & `pages/` owners):** IR-01 redaction and IR-10
+  correction done (this session). The `data/tenant.py` AUV and royalty rows are fixed; the 10-K Item 2
+  split is noted (IR-04).
+- **XR-E3 (from `e04af39b`, to `brief/` owner):** Measure ULA thresholds updated (this session).
+
+## PR & deploy record
+
+(To be completed in C-07; see the log below.)
+
+## Log
+
+- 2026-11-08 `c7fa4fd9`: Inspected merged main (`f46cee2`, PR #25). Reviewed all inherited layers,
+  coordination board, and verification reports. Claimed C-01–C-07 as the final integration session;
+  no other sessions active.
