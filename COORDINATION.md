@@ -554,3 +554,37 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
   - Flagged for Review (`F-01`–`F-14` & `IR-01`–`IR-10`): https://wingbangboozle1-lang.github.io/Jack3/advisory/flagged.html
   - Root Curated Workspace (preserved intact): https://wingbangboozle1-lang.github.io/Jack3/
 - **Status:** All session tasks (`E-01`–`E-09`) **done**; unconfirmed private parcel/lease inputs (`F-01`–`F-14`) remain blank and published as non-blocking `Needs review` / `Unverified` items on `/advisory/flagged.html`.
+
+---
+
+# Session `a1abf687` — full-requirements re-verification + canonical `dashboard/` layer
+
+**Session ID:** `a1abf687` · **Branch:** `arena/a1abf687-jack3` (platform-fixed; the only branch this session may use) · **Start:** 2026-11-08 (UTC)
+
+## Claim (written and pushed before work began)
+
+| ID | Task | Status | Owner | File scope (non-overlapping) |
+|---|---|---|---|---|
+| A-01 | Requirements register (R01–R32) traced from the user brief to evidence | in progress | `a1abf687` | `_final_src/requirements.py`, `dashboard/requirements.html` |
+| A-02 | Fresh primary-source verification pass, per-row "verified on" date + exact URL | in progress | `a1abf687` | `_final_src/sources.py`, `_final_src/data_*.py`, `dashboard/sources.html` |
+| A-03 | Area economy deep research (population, income, jobs, wages, schools, geography, transit, growth plans) | in progress | `a1abf687` | `_final_src/data_area.py`, `dashboard/area-*.html` |
+| A-04 | Tenant & lease: SEC FY2025 10-K, FY2026 10-Q/IR, NNN structure, credit | in progress | `a1abf687` | `_final_src/data_tenant.py`, `dashboard/tenant-lease.html` |
+| A-05 | Decision analysis: sell vs renew vs hold vs renew-then-sell vs re-tenant; per-decision risk | in progress | `a1abf687` | `_final_src/data_decisions.py`, `dashboard/decisions.html` |
+| A-06 | Risk register: business-as-usual (≥12) + black swan (≥8), mapped to each decision | in progress | `a1abf687` | `_final_src/data_risks.py`, `dashboard/risks.html` |
+| A-07 | Projection system: labelled exogenous drivers, arithmetic shown, no unverified probability weights | in progress | `a1abf687` | `_final_src/model.py`, `dashboard/projections.html` |
+| A-08 | Privacy / anonymization audit (published page) | in progress | `a1abf687` | `_final_src/privacy.py`, `dashboard/privacy.html` |
+| A-09 | Repo review + irregularity log for this session (`IR-A*`) | in progress | `a1abf687` | `dashboard/repo-review.html` |
+| A-10 | Static site build + verification gates (source-per-row, blank-if-unverified, PII, links) | in progress | `a1abf687` | `_final_src/build.py`, `_final_src/verify.py`, `dashboard/**` |
+| A-11 | Integration: PR to `main`, merge, Pages deploy confirmed, record result here | in progress | `a1abf687` | this section of `COORDINATION.md` |
+
+**Shared files deliberately NOT claimed by this session (owned by `e1bfd73b`, in progress at claim time):**
+`_config.yml`, `scripts/stage_pages.py`, `data/evidence.json`, `review.html`, `scripts/validate.py`, root `*.html`, `build_site.py`, `scripts/build.py`.
+One minimal, additive integration hook in `scripts/stage_pages.py` (staging this session's `dashboard/` output) and one navigation link from the root landing page are **requested, not taken** — logged as `XR-A1` below, to be applied at final integration after `e1bfd73b`'s work lands, preserving their changes.
+
+**Cross-session requests from this session**
+| ID | To | Request | Status |
+|---|---|---|---|
+| XR-A1 | owner of `scripts/stage_pages.py` (`e1bfd73b`) | After your advisory-withholding change lands, allow `dashboard/` to be staged into the Pages artifact so the new verified layer is reachable at `/dashboard/`. Additive only; your `advisory/` removal is preserved. | open |
+| XR-A2 | owner of `scripts/build.py` / root `index.html` (root session) | Add one navigation link from the root landing page to `dashboard/index.html`. Additive only. | open |
+
+**Note on pre-existing work:** this session does not modify, revert or delete any other session's files. Previous layers (`advisory/`, `analysis/`, `brief/`, `docs/`, `pages/`, `decision-file/`, `audit/`) are left byte-identical. Where earlier layers disagree with each other, the disagreement is logged as an irregularity on this session's Repo Review page and the re-verified value is published only from this session's own dataset.
