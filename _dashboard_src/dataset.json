@@ -1,0 +1,2938 @@
+{
+ "snapshot": "2026-11-08",
+ "session": "27610006",
+ "sources": {
+  "S-01": {
+   "name": "Census Bureau QuickFacts \u2014 Los Angeles city, California (V2025)",
+   "publisher": "U.S. Census Bureau (census.gov)",
+   "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225",
+   "accessed": "2026-11-08"
+  },
+  "S-02": {
+   "name": "Census Bureau QuickFacts \u2014 Los Angeles County, California (V2025)",
+   "publisher": "U.S. Census Bureau (census.gov)",
+   "url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225",
+   "accessed": "2026-11-08"
+  },
+  "S-03": {
+   "name": "Los Angeles Area Economic Summary (updated November 04, 2026)",
+   "publisher": "U.S. Bureau of Labor Statistics (bls.gov)",
+   "url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+   "accessed": "2026-11-08"
+  },
+  "S-04": {
+   "name": "Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (DGS10)",
+   "publisher": "Federal Reserve Bank of St. Louis, FRED (fred.stlouisfed.org); underlying data: U.S. Department of the Treasury",
+   "url": "https://fred.stlouisfed.org/series/DGS10",
+   "accessed": "2026-11-08"
+  },
+  "S-05": {
+   "name": "Daily Treasury Par Yield Curve Rates, 2026",
+   "publisher": "U.S. Department of the Treasury (home.treasury.gov)",
+   "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+   "accessed": "2026-11-08"
+  },
+  "S-06": {
+   "name": "Jack in the Box Inc. \u2014 Form 10-K, fiscal year ended September 28, 2025",
+   "publisher": "U.S. Securities and Exchange Commission, EDGAR (sec.gov)",
+   "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+   "accessed": "2026-11-08 (filing index verified; Item-level figures inherited \u2014 see flag K-F-16)"
+  },
+  "S-07": {
+   "name": "Jack in the Box Inc. \u2014 Form 8-K Exhibit 99.1, Q3 FY2026 earnings release",
+   "publisher": "U.S. Securities and Exchange Commission, EDGAR (sec.gov)",
+   "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+   "accessed": "2026-11-08"
+  },
+  "S-08": {
+   "name": "Minimum Wage Frequently Asked Questions",
+   "publisher": "California Department of Industrial Relations (dir.ca.gov)",
+   "url": "https://www.dir.ca.gov/dlse/faq_minimumwage.htm",
+   "accessed": "2026-11-08"
+  },
+  "S-09": {
+   "name": "Fast Food Minimum Wage Frequently Asked Questions (AB 1228)",
+   "publisher": "California Department of Industrial Relations (dir.ca.gov)",
+   "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
+   "accessed": "2026-11-08"
+  },
+  "S-10": {
+   "name": "UCERF3: A New Earthquake Forecast for California's Complex Fault System (Fact Sheet 2015-3009)",
+   "publisher": "U.S. Geological Survey (usgs.gov)",
+   "url": "https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf",
+   "accessed": "2026-11-08"
+  },
+  "S-11": {
+   "name": "Fire Hazard Severity Zones",
+   "publisher": "CAL FIRE \u2014 Office of the State Fire Marshal (osfm.fire.ca.gov)",
+   "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
+   "accessed": "2026-11-08"
+  },
+  "S-12": {
+   "name": "FEMA Flood Map Service Center",
+   "publisher": "Federal Emergency Management Agency (msc.fema.gov)",
+   "url": "https://msc.fema.gov/portal/home",
+   "accessed": "2026-11-08 (portal reached; parcel-level values require the address \u2014 see flag K-F-13)"
+  },
+  "S-13": {
+   "name": "2024\u201325 End-of-Year Reports (four-year adjusted cohort graduation rate)",
+   "publisher": "California Department of Education (cde.ca.gov)",
+   "url": "https://www.cde.ca.gov/ds/cm/dqeoy25.asp",
+   "accessed": "2026-11-08"
+  },
+  "S-14": {
+   "name": "California School Dashboard \u2014 Los Angeles Unified, Graduation Rate (2025)",
+   "publisher": "California Department of Education (caschooldashboard.org)",
+   "url": "https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement",
+   "accessed": "2026-11-08"
+  },
+  "S-15": {
+   "name": "Real Property Transfer Tax and Measure ULA FAQ",
+   "publisher": "City of Los Angeles, Office of Finance (finance.lacity.gov)",
+   "url": "https://finance.lacity.gov/faq/measure-ula",
+   "accessed": "2026-11-08"
+  },
+  "S-16": {
+   "name": "Documentary Transfer Tax \u2014 General Information",
+   "publisher": "Los Angeles County Registrar-Recorder/County Clerk (lavote.gov)",
+   "url": "https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info",
+   "accessed": "2026-11-08"
+  },
+  "S-17": {
+   "name": "Like-kind exchanges \u2014 Real estate tax tips (IRC \u00a71031)",
+   "publisher": "Internal Revenue Service (irs.gov)",
+   "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
+   "accessed": "2026-11-08"
+  },
+  "S-18": {
+   "name": "Publication 800-10 \u2014 How Property Is Assessed (Proposition 13)",
+   "publisher": "California State Board of Equalization (boe.ca.gov)",
+   "url": "https://boe.ca.gov/pdf/pub800-10.pdf",
+   "accessed": "2026-11-08"
+  },
+  "S-19": {
+   "name": "Property Tax Annotation 220.0345 \u2014 Leases (35-year leasehold change-in-ownership rule)",
+   "publisher": "California State Board of Equalization (boe.ca.gov)",
+   "url": "https://www.boe.ca.gov/proptaxes/pdf/220_0345.pdf",
+   "accessed": "2026-11-08"
+  },
+  "S-20": {
+   "name": "ZIMAS \u2014 Los Angeles City parcel and zoning lookup",
+   "publisher": "City of Los Angeles (zimas.lacity.gov)",
+   "url": "https://zimas.lacity.org/",
+   "accessed": "2026-11-08 (lookup tool; requires the address \u2014 see flags K-F-01, K-F-02)"
+  },
+  "S-21": {
+   "name": "FEMA National Risk Index",
+   "publisher": "Federal Emergency Management Agency (hazards.fema.gov)",
+   "url": "https://hazards.fema.gov/nri/",
+   "accessed": "2026-11-08 (index reached; county score values were not readable this session \u2014 see flag K-F-13)"
+  }
+ },
+ "facts": [
+  {
+   "id": "G-01",
+   "category": "geography",
+   "indicator": "Land area in square miles, 2020",
+   "geography": "Los Angeles city",
+   "value": "469.49",
+   "period": "Census 2020",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "G-02",
+   "category": "geography",
+   "indicator": "Population per square mile, 2020",
+   "geography": "Los Angeles city",
+   "value": "8,304.2",
+   "period": "Census 2020",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "G-03",
+   "category": "geography",
+   "indicator": "Population per square mile, 2010",
+   "geography": "Los Angeles city",
+   "value": "8,092.3",
+   "period": "Census 2010",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "G-04",
+   "category": "geography",
+   "indicator": "Land area in square miles, 2020",
+   "geography": "Los Angeles County",
+   "value": "4,059.28",
+   "period": "Census 2020",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "G-05",
+   "category": "geography",
+   "indicator": "Population per square mile, 2020",
+   "geography": "Los Angeles County",
+   "value": "2,466.9",
+   "period": "Census 2020",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "G-06",
+   "category": "geography",
+   "indicator": "Mean travel time to work, workers 16+ (minutes)",
+   "geography": "Los Angeles city",
+   "value": "30.7",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "G-07",
+   "category": "geography",
+   "indicator": "Mean travel time to work, workers 16+ (minutes)",
+   "geography": "Los Angeles County",
+   "value": "30.4",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "G-08",
+   "category": "geography",
+   "indicator": "Building permits",
+   "geography": "Los Angeles County",
+   "value": "22,250",
+   "period": "2025",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "G-09",
+   "category": "geography",
+   "indicator": "Building permits",
+   "geography": "Los Angeles city",
+   "value": "(not published)",
+   "period": "2025",
+   "source": "S-01",
+   "status": "unverified",
+   "note": "QuickFacts reports this cell as not available for the city; left blank rather than substituted."
+  },
+  {
+   "id": "G-10",
+   "category": "geography",
+   "indicator": "Subject parcel address, APN and census tract",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-20",
+   "status": "unverified",
+   "note": "No address or parcel identifier was provided. Every parcel-level determination (jurisdiction, flood zone, fire zone) is therefore blocked."
+  },
+  {
+   "id": "G-11",
+   "category": "geography",
+   "indicator": "Whether the site is inside the incorporated City of Los Angeles",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-15",
+   "status": "unverified",
+   "note": "Decides whether Measure ULA applies on a sale. 'Central Los Angeles' is a planning colloquialism, not a legal boundary."
+  },
+  {
+   "id": "D-01",
+   "category": "demographics",
+   "indicator": "Population",
+   "geography": "Los Angeles city",
+   "value": "3,869,089",
+   "period": "July 1, 2025 (V2025)",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-02",
+   "category": "demographics",
+   "indicator": "Population estimates base",
+   "geography": "Los Angeles city",
+   "value": "3,899,342",
+   "period": "April 1, 2020 (V2025)",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-03",
+   "category": "demographics",
+   "indicator": "Population change, April 1 2020 base to July 1 2025",
+   "geography": "Los Angeles city",
+   "value": "-0.8%",
+   "period": "2020-2025 (V2025)",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-04",
+   "category": "demographics",
+   "indicator": "Population",
+   "geography": "Los Angeles city",
+   "value": "3,898,747",
+   "period": "Census April 1, 2020",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-05",
+   "category": "demographics",
+   "indicator": "Population",
+   "geography": "Los Angeles city",
+   "value": "3,792,621",
+   "period": "Census April 1, 2010",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-06",
+   "category": "demographics",
+   "indicator": "Population",
+   "geography": "Los Angeles County",
+   "value": "9,694,934",
+   "period": "July 1, 2025 (V2025)",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-07",
+   "category": "demographics",
+   "indicator": "Population estimates base",
+   "geography": "Los Angeles County",
+   "value": "10,017,414",
+   "period": "April 1, 2020 (V2025)",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-08",
+   "category": "demographics",
+   "indicator": "Population change, April 1 2020 base to July 1 2025",
+   "geography": "Los Angeles County",
+   "value": "-3.2%",
+   "period": "2020-2025 (V2025)",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-09",
+   "category": "demographics",
+   "indicator": "Population",
+   "geography": "Los Angeles County",
+   "value": "10,014,009",
+   "period": "Census April 1, 2020",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-10",
+   "category": "demographics",
+   "indicator": "Population",
+   "geography": "Los Angeles County",
+   "value": "9,818,605",
+   "period": "Census April 1, 2010",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-11",
+   "category": "demographics",
+   "indicator": "Median household income (in 2024 dollars)",
+   "geography": "Los Angeles city",
+   "value": "$81,939",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-12",
+   "category": "demographics",
+   "indicator": "Median household income (in 2024 dollars)",
+   "geography": "Los Angeles County",
+   "value": "$90,112",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-13",
+   "category": "demographics",
+   "indicator": "Per capita income (in 2024 dollars)",
+   "geography": "Los Angeles city",
+   "value": "$47,685",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-14",
+   "category": "demographics",
+   "indicator": "Per capita income (in 2024 dollars)",
+   "geography": "Los Angeles County",
+   "value": "$45,792",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-15",
+   "category": "demographics",
+   "indicator": "Persons in poverty, percent",
+   "geography": "Los Angeles city",
+   "value": "16.5%",
+   "period": "2020-2024 (SAIPE)",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-16",
+   "category": "demographics",
+   "indicator": "Persons in poverty, percent",
+   "geography": "Los Angeles County",
+   "value": "13.3%",
+   "period": "2020-2024 (SAIPE)",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-17",
+   "category": "demographics",
+   "indicator": "Households",
+   "geography": "Los Angeles city",
+   "value": "1,439,097",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-18",
+   "category": "demographics",
+   "indicator": "Households",
+   "geography": "Los Angeles County",
+   "value": "3,416,449",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-19",
+   "category": "demographics",
+   "indicator": "Persons per household",
+   "geography": "Los Angeles city",
+   "value": "2.61",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-20",
+   "category": "demographics",
+   "indicator": "Persons per household",
+   "geography": "Los Angeles County",
+   "value": "2.81",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-21",
+   "category": "demographics",
+   "indicator": "Owner-occupied housing unit rate",
+   "geography": "Los Angeles city",
+   "value": "36.0%",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-22",
+   "category": "demographics",
+   "indicator": "Owner-occupied housing unit rate",
+   "geography": "Los Angeles County",
+   "value": "45.9%",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-23",
+   "category": "demographics",
+   "indicator": "Median value of owner-occupied housing units",
+   "geography": "Los Angeles city",
+   "value": "$921,200",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-24",
+   "category": "demographics",
+   "indicator": "Median value of owner-occupied housing units",
+   "geography": "Los Angeles County",
+   "value": "$834,200",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-25",
+   "category": "demographics",
+   "indicator": "Median gross rent",
+   "geography": "Los Angeles city",
+   "value": "$1,933",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-26",
+   "category": "demographics",
+   "indicator": "Median gross rent",
+   "geography": "Los Angeles County",
+   "value": "$1,954",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-27",
+   "category": "demographics",
+   "indicator": "Foreign-born persons, percent",
+   "geography": "Los Angeles city",
+   "value": "35.7%",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-28",
+   "category": "demographics",
+   "indicator": "Foreign-born persons, percent",
+   "geography": "Los Angeles County",
+   "value": "33.4%",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-29",
+   "category": "demographics",
+   "indicator": "Persons under 18 years, percent",
+   "geography": "Los Angeles city",
+   "value": "19.2%",
+   "period": "V2025",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-30",
+   "category": "demographics",
+   "indicator": "Persons 65 years and over, percent",
+   "geography": "Los Angeles city",
+   "value": "14.2%",
+   "period": "V2025",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-31",
+   "category": "demographics",
+   "indicator": "Persons under 18 years, percent",
+   "geography": "Los Angeles County",
+   "value": "19.2%",
+   "period": "V2025",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-32",
+   "category": "demographics",
+   "indicator": "Persons 65 years and over, percent",
+   "geography": "Los Angeles County",
+   "value": "17.1%",
+   "period": "V2025",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-33",
+   "category": "demographics",
+   "indicator": "High school graduate or higher, percent of persons 25+",
+   "geography": "Los Angeles city",
+   "value": "79.6%",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-34",
+   "category": "demographics",
+   "indicator": "Bachelor's degree or higher, percent of persons 25+",
+   "geography": "Los Angeles city",
+   "value": "38.5%",
+   "period": "ACS 2020-2024",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-35",
+   "category": "demographics",
+   "indicator": "High school graduate or higher, percent of persons 25+",
+   "geography": "Los Angeles County",
+   "value": "80.9%",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-36",
+   "category": "demographics",
+   "indicator": "Bachelor's degree or higher, percent of persons 25+",
+   "geography": "Los Angeles County",
+   "value": "36.0%",
+   "period": "ACS 2020-2024",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-37",
+   "category": "demographics",
+   "indicator": "White alone, percent",
+   "geography": "Los Angeles County",
+   "value": "62.9%",
+   "period": "V2025",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-38",
+   "category": "demographics",
+   "indicator": "Black alone, percent",
+   "geography": "Los Angeles County",
+   "value": "8.9%",
+   "period": "V2025",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-39",
+   "category": "demographics",
+   "indicator": "Asian alone, percent",
+   "geography": "Los Angeles County",
+   "value": "16.6%",
+   "period": "V2025",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-40",
+   "category": "demographics",
+   "indicator": "Two or More Races, percent",
+   "geography": "Los Angeles County",
+   "value": "5.8%",
+   "period": "V2025",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-41",
+   "category": "demographics",
+   "indicator": "Hispanic or Latino, percent",
+   "geography": "Los Angeles County",
+   "value": "49.3%",
+   "period": "V2025",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-42",
+   "category": "demographics",
+   "indicator": "White alone, not Hispanic or Latino, percent",
+   "geography": "Los Angeles County",
+   "value": "24.6%",
+   "period": "V2025",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "D-43",
+   "category": "demographics",
+   "indicator": "Race-alone shares \u2014 city-level breakdown",
+   "geography": "Los Angeles city",
+   "value": "(withheld \u2014 internally inconsistent)",
+   "period": "V2025",
+   "source": "S-01",
+   "status": "unverified",
+   "note": "The city page's race-alone percentages sum to 74.3% while the county page's sum to 99.8%. Until reconciled the city rows are not published."
+  },
+  {
+   "id": "E-01",
+   "category": "economy",
+   "indicator": "Unemployment rate",
+   "geography": "Los Angeles metro area",
+   "value": "4.4%",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-02",
+   "category": "economy",
+   "indicator": "Unemployment rate",
+   "geography": "Los Angeles County",
+   "value": "4.5%",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-03",
+   "category": "economy",
+   "indicator": "Unemployment rate",
+   "geography": "Los Angeles city",
+   "value": "4.5%",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-04",
+   "category": "economy",
+   "indicator": "Unemployment rate",
+   "geography": "California",
+   "value": "5.1%",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-05",
+   "category": "economy",
+   "indicator": "Unemployment rate",
+   "geography": "United States",
+   "value": "4.0%",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-06",
+   "category": "economy",
+   "indicator": "Unemployment rate, one year earlier",
+   "geography": "Los Angeles metro area",
+   "value": "5.5%",
+   "period": "September 2025",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-07",
+   "category": "economy",
+   "indicator": "Unemployment rate, one year earlier",
+   "geography": "Los Angeles County",
+   "value": "5.9%",
+   "period": "September 2025",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-08",
+   "category": "economy",
+   "indicator": "Unemployment rate, one year earlier",
+   "geography": "Los Angeles city",
+   "value": "5.9%",
+   "period": "September 2025",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-09",
+   "category": "economy",
+   "indicator": "Total nonfarm employment (thousands)",
+   "geography": "Los Angeles metro area",
+   "value": "6,282.1",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-10",
+   "category": "economy",
+   "indicator": "Total nonfarm employment, 12-month change (thousands)",
+   "geography": "Los Angeles metro area",
+   "value": "+30.2",
+   "period": "Sep 2025 \u2192 Sep 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-11",
+   "category": "economy",
+   "indicator": "Total nonfarm employment, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "+0.5%",
+   "period": "Sep 2025 \u2192 Sep 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-12",
+   "category": "economy",
+   "indicator": "Leisure and hospitality employment (thousands)",
+   "geography": "Los Angeles metro area",
+   "value": "782.0",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-13",
+   "category": "economy",
+   "indicator": "Leisure and hospitality employment, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "+1.5%",
+   "period": "Sep 2025 \u2192 Sep 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-14",
+   "category": "economy",
+   "indicator": "Education and health services employment (thousands)",
+   "geography": "Los Angeles metro area",
+   "value": "1,340.7",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-15",
+   "category": "economy",
+   "indicator": "Education and health services, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "+3.8%",
+   "period": "Sep 2025 \u2192 Sep 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-16",
+   "category": "economy",
+   "indicator": "Information employment, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "-5.7%",
+   "period": "Sep 2025 \u2192 Sep 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-17",
+   "category": "economy",
+   "indicator": "Manufacturing employment, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "-1.2%",
+   "period": "Sep 2025 \u2192 Sep 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-18",
+   "category": "economy",
+   "indicator": "Financial activities employment, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "-1.7%",
+   "period": "Sep 2025 \u2192 Sep 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-19",
+   "category": "economy",
+   "indicator": "Professional and business services, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "-0.5%",
+   "period": "Sep 2025 \u2192 Sep 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-20",
+   "category": "economy",
+   "indicator": "Government employment, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "-1.1%",
+   "period": "Sep 2025 \u2192 Sep 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-21",
+   "category": "economy",
+   "indicator": "Average weekly wages, all industries",
+   "geography": "Los Angeles County",
+   "value": "$1,704",
+   "period": "Q1 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-22",
+   "category": "economy",
+   "indicator": "Average hourly wage, all occupations (OES)",
+   "geography": "Los Angeles metro area",
+   "value": "$37.15",
+   "period": "May 2025",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-23",
+   "category": "economy",
+   "indicator": "Employment Cost Index, 12-month percent change",
+   "geography": "Los Angeles-Long Beach, CA CSA",
+   "value": "+3.9%",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-24",
+   "category": "economy",
+   "indicator": "CPI-U, all items, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "+3.7%",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-25",
+   "category": "economy",
+   "indicator": "CPI-U, food, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "+2.8%",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-26",
+   "category": "economy",
+   "indicator": "CPI-U, energy, 12-month percent change",
+   "geography": "Los Angeles metro area",
+   "value": "+20.3%",
+   "period": "September 2026",
+   "source": "S-03",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-27",
+   "category": "economy",
+   "indicator": "10-Year U.S. Treasury constant maturity yield",
+   "geography": "United States",
+   "value": "4.84%",
+   "period": "2026-11-05",
+   "source": "S-04",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-28",
+   "category": "economy",
+   "indicator": "10-Year U.S. Treasury constant maturity yield",
+   "geography": "United States",
+   "value": "4.90%",
+   "period": "2026-11-04",
+   "source": "S-04",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-29",
+   "category": "economy",
+   "indicator": "10-Year U.S. Treasury yield, observed range",
+   "geography": "United States",
+   "value": "4.77% \u2013 5.31%",
+   "period": "2026-09-01 to 2026-11-05",
+   "source": "S-04",
+   "status": "derived",
+   "note": "Minimum 4.77% (2026-09-03) and maximum 5.31% (2026-10-05) read from the daily DGS10 series."
+  },
+  {
+   "id": "E-30",
+   "category": "economy",
+   "indicator": "Total accommodation and food services sales ($1,000)",
+   "geography": "Los Angeles city",
+   "value": "17,366,966",
+   "period": "2022 Economic Census",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-31",
+   "category": "economy",
+   "indicator": "Total accommodation and food services sales ($1,000)",
+   "geography": "Los Angeles County",
+   "value": "44,000,801",
+   "period": "2022 Economic Census",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-32",
+   "category": "economy",
+   "indicator": "Total retail sales ($1,000)",
+   "geography": "Los Angeles city",
+   "value": "81,351,523",
+   "period": "2022 Economic Census",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-33",
+   "category": "economy",
+   "indicator": "Total retail sales per capita",
+   "geography": "Los Angeles city",
+   "value": "$21,281",
+   "period": "2022 Economic Census",
+   "source": "S-01",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-34",
+   "category": "economy",
+   "indicator": "Total employer establishments",
+   "geography": "Los Angeles County",
+   "value": "304,988",
+   "period": "2023",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-35",
+   "category": "economy",
+   "indicator": "Total employment",
+   "geography": "Los Angeles County",
+   "value": "3,987,736",
+   "period": "2023",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-36",
+   "category": "economy",
+   "indicator": "Total employment, percent change 2022-2023",
+   "geography": "Los Angeles County",
+   "value": "+2.3%",
+   "period": "2022-2023",
+   "source": "S-02",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-37",
+   "category": "economy",
+   "indicator": "State minimum wage",
+   "geography": "California",
+   "value": "$16.90 per hour",
+   "period": "From January 1, 2026",
+   "source": "S-08",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-38",
+   "category": "economy",
+   "indicator": "Fast-food minimum wage (AB 1228)",
+   "geography": "California",
+   "value": "$20.00 per hour",
+   "period": "From April 1, 2024",
+   "source": "S-09",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-39",
+   "category": "economy",
+   "indicator": "AB 1228 applies to franchisees as well as the brand owner",
+   "geography": "California",
+   "value": "Yes",
+   "period": "Per DIR FAQ",
+   "source": "S-09",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "E-40",
+   "category": "economy",
+   "indicator": "City of Los Angeles general minimum wage",
+   "geography": "Los Angeles city",
+   "value": "(not verified this session)",
+   "period": "2026",
+   "source": "S-08",
+   "status": "unverified",
+   "note": "The state fast-food floor of $20.00/hour governs covered limited-service chains of 60+ establishments unless a local general rate exceeds it. The city rate was not independently confirmed here."
+  },
+  {
+   "id": "E-41",
+   "category": "economy",
+   "indicator": "Market cap rate for single-tenant net-leased restaurants",
+   "geography": "Asset A (subject property)",
+   "value": "(no official source)",
+   "period": "\u2014",
+   "source": "S-05",
+   "status": "unverified",
+   "note": "No U.S. government agency publishes commercial cap rates or comparable-sale prices. This cell is left blank; it must come from private-market evidence that this project cannot verify."
+  },
+  {
+   "id": "SC-01",
+   "category": "schools",
+   "indicator": "Four-year adjusted cohort graduation rate",
+   "geography": "California (statewide)",
+   "value": "87.5%",
+   "period": "2024-25",
+   "source": "S-13",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "SC-02",
+   "category": "schools",
+   "indicator": "Four-year adjusted cohort graduation rate, prior year",
+   "geography": "California (statewide)",
+   "value": "86.4%",
+   "period": "2023-24",
+   "source": "S-13",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "SC-03",
+   "category": "schools",
+   "indicator": "Graduation rate",
+   "geography": "Los Angeles Unified",
+   "value": "86.5%",
+   "period": "2025",
+   "source": "S-14",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "SC-04",
+   "category": "schools",
+   "indicator": "Graduation rate",
+   "geography": "Los Angeles Unified",
+   "value": "86.7%",
+   "period": "2024",
+   "source": "S-14",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "SC-05",
+   "category": "schools",
+   "indicator": "Graduation rate",
+   "geography": "Los Angeles Unified",
+   "value": "83.6%",
+   "period": "2023",
+   "source": "S-14",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "SC-06",
+   "category": "schools",
+   "indicator": "Graduation rate",
+   "geography": "Los Angeles Unified",
+   "value": "86.0%",
+   "period": "2022",
+   "source": "S-14",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "SC-07",
+   "category": "schools",
+   "indicator": "Graduation rate",
+   "geography": "Los Angeles Unified",
+   "value": "82.1%",
+   "period": "2019",
+   "source": "S-14",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "SC-08",
+   "category": "schools",
+   "indicator": "Five-year graduation rate",
+   "geography": "Los Angeles Unified",
+   "value": "86.5%",
+   "period": "2025",
+   "source": "S-14",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "SC-09",
+   "category": "schools",
+   "indicator": "Graduation rate, English Learners",
+   "geography": "Los Angeles Unified",
+   "value": "64.1% (four-year)",
+   "period": "2025",
+   "source": "S-14",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "SC-10",
+   "category": "schools",
+   "indicator": "Graduation rate, socioeconomically disadvantaged",
+   "geography": "Los Angeles Unified",
+   "value": "(not published as a single figure)",
+   "period": "2025",
+   "source": "S-14",
+   "status": "unverified",
+   "note": "The Dashboard reports subgroup outcomes but the single composite figure was not captured this session; left blank."
+  },
+  {
+   "id": "SC-11",
+   "category": "schools",
+   "indicator": "Assigned public schools for the subject parcel",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-14",
+   "status": "unverified",
+   "note": "School assignment is address-specific and the address was not provided."
+  },
+  {
+   "id": "T-01",
+   "category": "tenant",
+   "indicator": "System same-store sales",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "-1.1%",
+   "period": "Q3 FY2026 (12 weeks ended 2026-07-05)",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-02",
+   "category": "tenant",
+   "indicator": "Franchise same-store sales",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "-1.2%",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-03",
+   "category": "tenant",
+   "indicator": "Company-operated same-store sales",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "-0.9%",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-04",
+   "category": "tenant",
+   "indicator": "System same-store sales, prior-year quarter",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "-7.1%",
+   "period": "Q3 FY2025",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-05",
+   "category": "tenant",
+   "indicator": "Systemwide sales",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "$944.110 million",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-06",
+   "category": "tenant",
+   "indicator": "Systemwide sales",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "$3,137.303 million",
+   "period": "40 weeks ended 2026-07-05",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-07",
+   "category": "tenant",
+   "indicator": "Systemwide sales, prior-year period",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "$3,284.624 million",
+   "period": "40 weeks ended 2025-07-06",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-08",
+   "category": "tenant",
+   "indicator": "Systemwide sales, year-over-year change",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "-4.5%",
+   "period": "40 weeks, FY2026 vs FY2025",
+   "source": "S-07",
+   "status": "derived",
+   "note": "3,137.303 / 3,284.624 - 1 = -4.48%, rounded to -4.5%."
+  },
+  {
+   "id": "T-09",
+   "category": "tenant",
+   "indicator": "Total revenues",
+   "geography": "Jack in the Box Inc.",
+   "value": "$257.657 million",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-10",
+   "category": "tenant",
+   "indicator": "Total revenues, prior-year quarter",
+   "geography": "Jack in the Box Inc.",
+   "value": "$262.401 million",
+   "period": "Q3 FY2025",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-11",
+   "category": "tenant",
+   "indicator": "Franchise rental revenues",
+   "geography": "Jack in the Box Inc.",
+   "value": "$242.526 million",
+   "period": "40 weeks ended 2026-07-05",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-12",
+   "category": "tenant",
+   "indicator": "Franchise rental revenues, prior-year period",
+   "geography": "Jack in the Box Inc.",
+   "value": "$260.254 million",
+   "period": "40 weeks ended 2025-07-06",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-13",
+   "category": "tenant",
+   "indicator": "Franchise rental revenues, year-over-year change",
+   "geography": "Jack in the Box Inc.",
+   "value": "-6.8%",
+   "period": "40 weeks, FY2026 vs FY2025",
+   "source": "S-07",
+   "status": "derived",
+   "note": "242.526 / 260.254 - 1 = -6.81%, rounded to -6.8%. This is rent the company collects as intermediate lessor, and it is falling faster than revenue overall."
+  },
+  {
+   "id": "T-14",
+   "category": "tenant",
+   "indicator": "Franchise occupancy expenses (rent the company pays to landlords)",
+   "geography": "Jack in the Box Inc.",
+   "value": "$166.043 million",
+   "period": "40 weeks ended 2026-07-05",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-15",
+   "category": "tenant",
+   "indicator": "Total restaurants at end of quarter",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "2,115",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-16",
+   "category": "tenant",
+   "indicator": "Company-operated restaurants at end of quarter",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "149",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-17",
+   "category": "tenant",
+   "indicator": "Franchised restaurants at end of quarter",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "1,966",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-18",
+   "category": "tenant",
+   "indicator": "Restaurant openings in the quarter",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "4",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-19",
+   "category": "tenant",
+   "indicator": "Restaurant closures in the quarter",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "17",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-20",
+   "category": "tenant",
+   "indicator": "Net restaurant change in the quarter",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "-13",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-21",
+   "category": "tenant",
+   "indicator": "Guidance: restaurant count",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "~2,100",
+   "period": "Fiscal year ending 2026-09-27",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-22",
+   "category": "tenant",
+   "indicator": "Guidance: restaurant closures",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "~50 to 60, most of them franchised",
+   "period": "Fiscal year 2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-23",
+   "category": "tenant",
+   "indicator": "Guidance: restaurant openings",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "~25",
+   "period": "Fiscal year 2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-24",
+   "category": "tenant",
+   "indicator": "Guidance: same-store sales",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "Low single-digit decline vs. FY2025",
+   "period": "Fiscal year 2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-25",
+   "category": "tenant",
+   "indicator": "Guidance: Adjusted EBITDA",
+   "geography": "Jack in the Box Inc.",
+   "value": "$225 - $230 million",
+   "period": "Fiscal year 2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-26",
+   "category": "tenant",
+   "indicator": "Guidance: SG&A",
+   "geography": "Jack in the Box Inc.",
+   "value": "$112 - $115 million",
+   "period": "Fiscal year 2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-27",
+   "category": "tenant",
+   "indicator": "Shareholder returns: dividend and repurchase programme",
+   "geography": "Jack in the Box Inc.",
+   "value": "Discontinued",
+   "period": "Fiscal year 2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-28",
+   "category": "tenant",
+   "indicator": "'JACK on Track' plan components",
+   "geography": "Jack in the Box Inc.",
+   "value": "Block closure programme and sale of real estate",
+   "period": "FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-29",
+   "category": "tenant",
+   "indicator": "Securitised refinancing completed",
+   "geography": "Jack in the Box Inc.",
+   "value": "$500 million, Series 2026-1 Class A-2 Notes, anticipated repayment May 2031",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-30",
+   "category": "tenant",
+   "indicator": "Prepayment of existing securitised notes",
+   "geography": "Jack in the Box Inc.",
+   "value": "$110.0 million, Series 2019-1 Class A-2-II",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-31",
+   "category": "tenant",
+   "indicator": "Del Taco divestiture",
+   "geography": "Jack in the Box Inc.",
+   "value": "Completed December 22, 2025; reported as discontinued operations",
+   "period": "Q1 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-32",
+   "category": "tenant",
+   "indicator": "Net earnings from continuing operations",
+   "geography": "Jack in the Box Inc.",
+   "value": "$21.0 million",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-33",
+   "category": "tenant",
+   "indicator": "Adjusted EBITDA (non-GAAP)",
+   "geography": "Jack in the Box Inc.",
+   "value": "$61.2 million",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-34",
+   "category": "tenant",
+   "indicator": "Cash and restricted cash at end of period",
+   "geography": "Jack in the Box Inc.",
+   "value": "$71.771 million",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-35",
+   "category": "tenant",
+   "indicator": "Geographic footprint",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "25 states, Mexico and Guam",
+   "period": "Q3 FY2026",
+   "source": "S-07",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "T-36",
+   "category": "tenant",
+   "indicator": "Units leased by the company from third-party landlords versus franchisee-direct sites",
+   "geography": "Jack in the Box (systemwide)",
+   "value": "(inherited, not re-verified this session)",
+   "period": "FY2025 10-K Item 2",
+   "source": "S-06",
+   "status": "unverified",
+   "note": "An earlier session reported 1,585 company-leased units versus 387 franchisee-direct units from Item 2. The 10-K document is 2.66 MB and was not re-read line by line here, so the figures are not republished."
+  },
+  {
+   "id": "T-37",
+   "category": "tenant",
+   "indicator": "Jack in the Box franchise average unit volume",
+   "geography": "Jack in the Box (franchise)",
+   "value": "(inherited, not re-verified this session)",
+   "period": "FY2025 10-K",
+   "source": "S-06",
+   "status": "unverified",
+   "note": "An earlier session reported $1,874k (FY25) and $1,949k (FY24). Not re-read here; not republished."
+  },
+  {
+   "id": "T-38",
+   "category": "tenant",
+   "indicator": "Lease commencement date, primary term and expiry date",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-07",
+   "status": "unverified",
+   "note": "The brief states an expiry window of 2030-2035. That is a five-year range, not a date, and lease economics differ materially across it."
+  },
+  {
+   "id": "T-39",
+   "category": "tenant",
+   "indicator": "Contract rent, escalation and percentage-rent terms",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-07",
+   "status": "unverified",
+   "note": ""
+  },
+  {
+   "id": "T-40",
+   "category": "tenant",
+   "indicator": "Whether the net lease is absolute (tenant bears roof, structure, insurance and tax) or modified",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-07",
+   "status": "unverified",
+   "note": ""
+  },
+  {
+   "id": "T-41",
+   "category": "tenant",
+   "indicator": "Lease obligor: Jack in the Box Inc. corporate, or an individual franchisee",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-07",
+   "status": "unverified",
+   "note": "This is the single most important unknown. Corporate credit and a single-unit franchisee's credit are different risks, and the issuer's closure programme acts through franchise agreements, not through your real-estate lease."
+  },
+  {
+   "id": "T-42",
+   "category": "tenant",
+   "indicator": "Renewal options, notice deadlines and remaining term including options",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-19",
+   "status": "unverified",
+   "note": "Needed to test the California 35-year leasehold reassessment rule."
+  },
+  {
+   "id": "T-43",
+   "category": "tenant",
+   "indicator": "Subject restaurant's own unit-level sales versus the system average",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-07",
+   "status": "unverified",
+   "note": "System same-store sales are not the subject restaurant's performance."
+  },
+  {
+   "id": "X-01",
+   "category": "tax",
+   "indicator": "Proposition 13 general levy ceiling",
+   "geography": "California",
+   "value": "1% of assessed value, plus rates for voter-approved bonded indebtedness",
+   "period": "Current law",
+   "source": "S-18",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-02",
+   "category": "tax",
+   "indicator": "Proposition 13 annual assessment growth limit",
+   "geography": "California",
+   "value": "Lower of the California CPI change or 2% per year, applied to factored base year value",
+   "period": "Current law",
+   "source": "S-18",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-03",
+   "category": "tax",
+   "indicator": "Event that resets base year value to market",
+   "geography": "California",
+   "value": "Change in ownership or completion of new construction",
+   "period": "Current law",
+   "source": "S-18",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-04",
+   "category": "tax",
+   "indicator": "Proposition 8 decline-in-value",
+   "geography": "California",
+   "value": "Assessed value is temporarily reduced when market value falls below factored base year value",
+   "period": "Current law",
+   "source": "S-18",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-05",
+   "category": "tax",
+   "indicator": "35-year leasehold change-in-ownership rule",
+   "geography": "California",
+   "value": "Creating, terminating, or transferring a leasehold with a term of 35 years or more (including renewal options) is a change in ownership",
+   "period": "Revenue and Taxation Code \u00a7 61(c)(1)",
+   "source": "S-19",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-06",
+   "category": "tax",
+   "indicator": "Transfer of a lessor's interest where the lease has 35+ years remaining",
+   "geography": "California",
+   "value": "Not a change in ownership",
+   "period": "Revenue and Taxation Code \u00a7 62(g); BOE Rule 462(f)(2)(B)",
+   "source": "S-19",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-07",
+   "category": "tax",
+   "indicator": "City of Los Angeles base documentary transfer tax",
+   "geography": "City of Los Angeles",
+   "value": "$2.25 per $500 (0.45%)",
+   "period": "Current",
+   "source": "S-15",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-08",
+   "category": "tax",
+   "indicator": "Measure ULA rate, tier 1",
+   "geography": "City of Los Angeles",
+   "value": "4% of total transaction value above $5,400,000 and below $10,900,000",
+   "period": "Closings after 2026-06-30",
+   "source": "S-15",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-09",
+   "category": "tax",
+   "indicator": "Measure ULA rate, tier 2",
+   "geography": "City of Los Angeles",
+   "value": "5.5% of total transaction value at or above $10,900,000",
+   "period": "Closings after 2026-06-30",
+   "source": "S-15",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-10",
+   "category": "tax",
+   "indicator": "Measure ULA effective date",
+   "geography": "City of Los Angeles",
+   "value": "Conveyances on or after April 1, 2023",
+   "period": "Ordinance",
+   "source": "S-15",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-11",
+   "category": "tax",
+   "indicator": "Measure ULA threshold indexation",
+   "geography": "City of Los Angeles",
+   "value": "Thresholds are adjusted annually to the BLS Chained Consumer Price Index",
+   "period": "Ordinance",
+   "source": "S-15",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-12",
+   "category": "tax",
+   "indicator": "Total City of Los Angeles transfer tax rate above the tier-1 threshold",
+   "geography": "City of Los Angeles",
+   "value": "4.45% (0.45% base + 4.00% ULA)",
+   "period": "Closings after 2026-06-30",
+   "source": "S-15",
+   "status": "derived",
+   "note": "Sum of the two published City rates."
+  },
+  {
+   "id": "X-13",
+   "category": "tax",
+   "indicator": "Total City of Los Angeles transfer tax rate at or above the tier-2 threshold",
+   "geography": "City of Los Angeles",
+   "value": "5.95% (0.45% base + 5.50% ULA)",
+   "period": "Closings after 2026-06-30",
+   "source": "S-15",
+   "status": "derived",
+   "note": "Sum of the two published City rates."
+  },
+  {
+   "id": "X-14",
+   "category": "tax",
+   "indicator": "Los Angeles County documentary transfer tax",
+   "geography": "Los Angeles County",
+   "value": "$0.55 per $500 (0.11%)",
+   "period": "Current",
+   "source": "S-16",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-15",
+   "category": "tax",
+   "indicator": "Measure ULA applies to the full consideration, not the excess over the threshold",
+   "geography": "City of Los Angeles",
+   "value": "Yes \u2014 4% or 5.5% of the total transaction value",
+   "period": "Per the published rate table",
+   "source": "S-15",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-16",
+   "category": "tax",
+   "indicator": "Measure ULA exemptions",
+   "geography": "City of Los Angeles",
+   "value": "Qualifying 501(c)(3) entities; the United States, states and their agencies; entities exempt from city taxation",
+   "period": "Ordinance",
+   "source": "S-15",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-17",
+   "category": "tax",
+   "indicator": "Like-kind exchange (IRC \u00a7 1031) scope after the Tax Cuts and Jobs Act",
+   "geography": "United States",
+   "value": "Real property only; personal and intangible property no longer qualify",
+   "period": "From January 1, 2018",
+   "source": "S-17",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-18",
+   "category": "tax",
+   "indicator": "Like-kind test for real property",
+   "geography": "United States",
+   "value": "Real properties are generally like-kind regardless of whether improved or unimproved; U.S. real property is not like-kind to foreign real property",
+   "period": "Current",
+   "source": "S-17",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-19",
+   "category": "tax",
+   "indicator": "Form used to report a like-kind exchange",
+   "geography": "United States",
+   "value": "Form 8824",
+   "period": "Current",
+   "source": "S-17",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "X-20",
+   "category": "tax",
+   "indicator": "Owner's adjusted cost basis, depreciation taken and depreciation recapture exposure",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-17",
+   "status": "unverified",
+   "note": "Determines the taxable gain on a sale and therefore whether a \u00a7 1031 exchange is worth pursuing."
+  },
+  {
+   "id": "H-01",
+   "category": "hazards",
+   "indicator": "30-year likelihood of one or more M\u22656.7 earthquakes",
+   "geography": "Los Angeles region",
+   "value": "60%",
+   "period": "UCERF3, 30 years from 2014",
+   "source": "S-10",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-02",
+   "category": "hazards",
+   "indicator": "30-year likelihood of one or more M\u22657.0 earthquakes",
+   "geography": "Los Angeles region",
+   "value": "46%",
+   "period": "UCERF3, 30 years from 2014",
+   "source": "S-10",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-03",
+   "category": "hazards",
+   "indicator": "30-year likelihood of one or more M\u22657.5 earthquakes",
+   "geography": "Los Angeles region",
+   "value": "31%",
+   "period": "UCERF3, 30 years from 2014",
+   "source": "S-10",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-04",
+   "category": "hazards",
+   "indicator": "30-year likelihood of one or more M\u22656.0 earthquakes",
+   "geography": "Los Angeles region",
+   "value": "96%",
+   "period": "UCERF3, 30 years from 2014",
+   "source": "S-10",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-05",
+   "category": "hazards",
+   "indicator": "30-year likelihood of one or more M\u22658.0 earthquakes",
+   "geography": "Los Angeles region",
+   "value": "7%",
+   "period": "UCERF3, 30 years from 2014",
+   "source": "S-10",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-06",
+   "category": "hazards",
+   "indicator": "Average repeat time for M\u22656.7 earthquakes",
+   "geography": "Los Angeles region",
+   "value": "40 years",
+   "period": "UCERF3",
+   "source": "S-10",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-07",
+   "category": "hazards",
+   "indicator": "30-year likelihood of one or more M\u22656.7 earthquakes",
+   "geography": "Southern California region",
+   "value": "93%",
+   "period": "UCERF3, 30 years from 2014",
+   "source": "S-10",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-08",
+   "category": "hazards",
+   "indicator": "30-year likelihood of one or more M\u22657.5 earthquakes",
+   "geography": "Southern California region",
+   "value": "36%",
+   "period": "UCERF3, 30 years from 2014",
+   "source": "S-10",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-09",
+   "category": "hazards",
+   "indicator": "Fire Hazard Severity Zone classifications",
+   "geography": "California",
+   "value": "Moderate, High, Very High",
+   "period": "Current",
+   "source": "S-11",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-10",
+   "category": "hazards",
+   "indicator": "State Responsibility Area FHSZ maps in effect",
+   "geography": "California",
+   "value": "Effective April 1, 2024",
+   "period": "Current",
+   "source": "S-11",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-11",
+   "category": "hazards",
+   "indicator": "Local Responsibility Area FHSZ maps released to jurisdictions",
+   "geography": "California",
+   "value": "Phases 1-4: February 10, February 24, March 10 and March 24, 2025",
+   "period": "2025",
+   "source": "S-11",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-12",
+   "category": "hazards",
+   "indicator": "FHSZ maps measure hazard, not risk",
+   "geography": "California",
+   "value": "Hazard is the physical likelihood and expected fire behaviour over 30 to 50 years, before mitigation",
+   "period": "Per CAL FIRE",
+   "source": "S-11",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-13",
+   "category": "hazards",
+   "indicator": "2026 State Responsibility Area FHSZ update",
+   "geography": "California",
+   "value": "Public comment period open at the time of this snapshot",
+   "period": "2026",
+   "source": "S-11",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "H-14",
+   "category": "hazards",
+   "indicator": "FEMA flood zone for the subject parcel",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-12",
+   "status": "unverified",
+   "note": "Requires the address or parcel identifier in the FEMA Map Service Center."
+  },
+  {
+   "id": "H-15",
+   "category": "hazards",
+   "indicator": "FEMA National Risk Index scores for Los Angeles County",
+   "geography": "Los Angeles County",
+   "value": "(not readable this session)",
+   "period": "\u2014",
+   "source": "S-21",
+   "status": "unverified",
+   "note": "The index portal was reached but county-level score values could not be read from the official page during this session. Third-party mirrors were rejected under the no-aggregator rule."
+  },
+  {
+   "id": "H-16",
+   "category": "hazards",
+   "indicator": "CAL FIRE Fire Hazard Severity Zone for the subject parcel",
+   "geography": "Asset A (subject property)",
+   "value": "(not supplied)",
+   "period": "\u2014",
+   "source": "S-11",
+   "status": "unverified",
+   "note": "Requires the address in the CAL FIRE viewer."
+  }
+ ],
+ "projection_inputs": [
+  {
+   "label": "Los Angeles County population, measured change, April 2020 base to July 2025",
+   "value": "-3.2%",
+   "source": "S-02",
+   "span_years": 5.25
+  },
+  {
+   "label": "Los Angeles city population, measured change, April 2020 base to July 2025",
+   "value": "-0.8%",
+   "source": "S-01",
+   "span_years": 5.25
+  },
+  {
+   "label": "Los Angeles metro nonfarm employment, 12-month change to September 2026",
+   "value": "+0.5%",
+   "source": "S-03",
+   "span_years": 1.0
+  },
+  {
+   "label": "Los Angeles metro CPI-U, all items, 12-month change to September 2026",
+   "value": "+3.7%",
+   "source": "S-03",
+   "span_years": 1.0
+  },
+  {
+   "label": "Los Angeles-Long Beach CSA Employment Cost Index, 12-month change to September 2026",
+   "value": "+3.9%",
+   "source": "S-03",
+   "span_years": 1.0
+  },
+  {
+   "label": "10-Year U.S. Treasury constant maturity yield, 2026-11-05",
+   "value": "4.84%",
+   "source": "S-04",
+   "span_years": null
+  }
+ ],
+ "scenarios": [
+  {
+   "key": "low",
+   "name": "Measured trend continues",
+   "basis": "Applies the published Census population trend and the published BLS employment trend unchanged to 2030 and 2035.",
+   "pop_annual": -0.0062,
+   "emp_annual": 0.005,
+   "rent_annual": 0.037
+  },
+  {
+   "key": "base",
+   "name": "Trend flattens",
+   "basis": "Population stops declining and employment growth continues at the measured rate; rent is indexed at the published Los Angeles CPI-U rate of +3.7%.",
+   "pop_annual": 0.0,
+   "emp_annual": 0.005,
+   "rent_annual": 0.037
+  },
+  {
+   "key": "high",
+   "name": "Partial recovery",
+   "basis": "Population returns to its 2020 estimates base by 2035 and employment growth runs at twice the measured rate; rent is indexed at the published Los Angeles CPI-U rate of +3.7%.",
+   "pop_annual": 0.0035,
+   "emp_annual": 0.01,
+   "rent_annual": 0.037
+  }
+ ],
+ "horizons": [
+  4,
+  5,
+  6,
+  7,
+  8,
+  9
+ ],
+ "risk_free": 0.0484,
+ "premia": [
+  0.01,
+  0.02,
+  0.03,
+  0.04,
+  0.05
+ ],
+ "grids": {
+  "level": [
+   {
+    "rate": 0.0584,
+    "premium": 0.01,
+    "cells": [
+     3.680944530101378,
+     4.477838747261317,
+     5.230762232862166,
+     5.942141187511495,
+     6.614267939825675,
+     7.249308333168627
+    ]
+   },
+   {
+    "rate": 0.0684,
+    "premium": 0.02,
+    "cells": [
+     3.632006539018689,
+     4.399481972125317,
+     5.117822886676635,
+     5.790174922011077,
+     6.4194823305981625,
+     7.0085008710203685
+    ]
+   },
+   {
+    "rate": 0.0784,
+    "premium": 0.03,
+    "cells": [
+     3.584555306878499,
+     4.323957072402169,
+     5.009604110165216,
+     5.645404404826795,
+     6.234981829401701,
+     6.781696800261222
+    ]
+   },
+   {
+    "rate": 0.0884,
+    "premium": 0.04,
+    "cells": [
+     3.5385302206191533,
+     4.25113030192866,
+     4.905852905116372,
+     5.507398847038196,
+     6.060087143548508,
+     6.567886019430824
+    ]
+   },
+   {
+    "rate": 0.0984,
+    "premium": 0.05,
+    "cells": [
+     3.493873719407999,
+     4.180875563918426,
+     4.806332450763316,
+     5.375757875785975,
+     5.8941714091278,
+     6.366142943488528
+    ]
+   }
+  ],
+  "growth": [
+   {
+    "rate": 0.0584,
+    "premium": 0.01,
+    "cells": [
+     3.880311805323208,
+     4.80185500956176,
+     5.704765348559661,
+     6.589419563923251,
+     7.456186779845437,
+     8.305428657123693
+    ]
+   },
+   {
+    "rate": 0.0684,
+    "premium": 0.02,
+    "cells": [
+     3.8270911920503377,
+     4.714613970569262,
+     5.576052683901464,
+     6.412173935984479,
+     7.223721800464157,
+     8.011418482854108
+    ]
+   },
+   {
+    "rate": 0.0784,
+    "premium": 0.03,
+    "cells": [
+     3.775497406105732,
+     4.630555276457384,
+     5.452787297557777,
+     6.243453660578092,
+     7.003766177688688,
+     7.734890139338993
+    ]
+   },
+   {
+    "rate": 0.0884,
+    "premium": 0.04,
+    "cells": [
+     3.725463878045287,
+     4.549527785311431,
+     5.334675039845602,
+     6.082743491657377,
+     6.79548419776617,
+     7.474565521024915
+    ]
+   },
+   {
+    "rate": 0.0984,
+    "premium": 0.05,
+    "cells": [
+     3.6769273988991995,
+     4.471389031917762,
+     5.221440664692934,
+     5.92956479359666,
+     6.5981051447193515,
+     7.229274431057872
+    ]
+   }
+  ]
+ },
+ "projections": [
+  {
+   "key": "low",
+   "years": {
+    "2030": {
+     "population_index": 0.9754296881656337,
+     "employment_index": 1.0201505006249996,
+     "rent_index": 1.1564184861609996
+    },
+    "2035": {
+     "population_index": 0.945564005480265,
+     "employment_index": 1.0459105791450642,
+     "rent_index": 1.3867839525948893
+    }
+   }
+  },
+  {
+   "key": "base",
+   "years": {
+    "2030": {
+     "population_index": 1.0,
+     "employment_index": 1.0201505006249996,
+     "rent_index": 1.1564184861609996
+    },
+    "2035": {
+     "population_index": 1.0,
+     "employment_index": 1.0459105791450642,
+     "rent_index": 1.3867839525948893
+    }
+   }
+  },
+  {
+   "key": "high",
+   "years": {
+    "2030": {
+     "population_index": 1.0140736716500627,
+     "employment_index": 1.04060401,
+     "rent_index": 1.1564184861609996
+    },
+    "2035": {
+     "population_index": 1.0319446204742078,
+     "employment_index": 1.0936852726843609,
+     "rent_index": 1.3867839525948893
+    }
+   }
+  }
+ ],
+ "flags": [
+  [
+   "K-F-01",
+   "Blocker",
+   "Subject parcel address, APN and census tract were never supplied",
+   "Every parcel-level determination \u2014 jurisdiction, flood zone, fire zone, school assignment, assessed value \u2014 is blocked.",
+   "Owner-supplied deed, lease and tax bill",
+   "S-20"
+  ],
+  [
+   "K-F-02",
+   "Blocker",
+   "Whether the site lies inside the incorporated City of Los Angeles is unknown",
+   "Measure ULA adds 4.00% or 5.50% of gross consideration on a City of Los Angeles sale and 0% outside it. On a $6,000,000 sale that is the difference between roughly $0 and $240,000 of transfer tax.",
+   "Owner confirmation of the taxing jurisdiction",
+   "S-15"
+  ],
+  [
+   "K-F-03",
+   "Blocker",
+   "Lease commencement date, primary term and exact expiry date are unknown; '2030-2035' is a five-year range",
+   "Remaining term drives value, financing and the Proposition 13 leasehold test. The two ends of the range produce materially different answers.",
+   "Executed lease and all amendments",
+   "S-07"
+  ],
+  [
+   "K-F-04",
+   "Blocker",
+   "Contract rent, escalations, percentage rent and option rents are unknown",
+   "No income figure for this asset can be verified. All cash-flow work below is expressed in multiples of one year of base rent (R) instead.",
+   "Executed lease and rent ledger",
+   "S-07"
+  ],
+  [
+   "K-F-05",
+   "High",
+   "Whether the net lease is absolute or modified is unknown",
+   "Under a modified gross or modified net lease the owner may carry roof, structure or insurance \u2014 a direct, unbudgeted capital call.",
+   "Executed lease",
+   "S-07"
+  ],
+  [
+   "K-F-06",
+   "High",
+   "The lease obligor is unknown: Jack in the Box Inc. corporate, or an individual franchisee",
+   "The issuer's own filings describe shrinking franchise rental revenue and 50 to 60 closures in fiscal 2026, most of them franchised. Corporate credit and single-unit franchisee credit are not the same risk.",
+   "Lease, estoppel certificate and guaranty",
+   "S-07"
+  ],
+  [
+   "K-F-07",
+   "High",
+   "Existence and scope of a guaranty is unknown",
+   "Determines whether a closure leaves the owner with a claim against a balance sheet or against a shell entity.",
+   "Guaranty and estoppel certificate",
+   "S-07"
+  ],
+  [
+   "K-F-08",
+   "High",
+   "Renewal options and total remaining term including options are unknown",
+   "California reassesses a property when a leasehold of 35 years or more, counting options, is created or terminated. A renewal negotiated without checking this can trigger a reassessment.",
+   "Executed lease and all amendments",
+   "S-19"
+  ],
+  [
+   "K-F-09",
+   "High",
+   "Existing debt: balance, rate, maturity and recourse are unknown",
+   "A refinance at today's 4.84% ten-year Treasury plus a spread may be materially above an expiring legacy rate, and a maturity inside the lease term is a hard constraint.",
+   "Loan documents",
+   "S-04"
+  ],
+  [
+   "K-F-10",
+   "Medium",
+   "Owner's adjusted cost basis, accumulated depreciation and other tax attributes are unknown",
+   "Determines federal and California tax on a sale and whether a \u00a7 1031 exchange defers enough tax to justify its cost and timeline.",
+   "Owner tax records",
+   "S-17"
+  ],
+  [
+   "K-F-11",
+   "Medium",
+   "Market cap rate and comparable sales for single-tenant net-leased restaurants",
+   "No U.S. government agency publishes commercial cap rates or private sale prices. The cell is left blank rather than filled from broker marketing material.",
+   "Private market evidence (outside the official-source rule)",
+   "S-05"
+  ],
+  [
+   "K-F-12",
+   "Medium",
+   "The subject restaurant's own unit-level sales versus the system average",
+   "System same-store sales of -1.1% describe 2,115 restaurants, not this one. A site can outperform or underperform its system by a wide margin.",
+   "Operator unit P&L",
+   "S-07"
+  ],
+  [
+   "K-F-13",
+   "Medium",
+   "FEMA flood zone and National Risk Index values for the parcel and county",
+   "The FEMA portal and index were reached, but parcel values need the address and county score values could not be read from the official page in this session. Third-party mirrors were rejected.",
+   "FEMA Map Service Center lookup with the address",
+   "S-21"
+  ],
+  [
+   "K-F-14",
+   "Medium",
+   "CAL FIRE Fire Hazard Severity Zone for the parcel",
+   "Local Responsibility Area maps were issued to jurisdictions in early 2025 and the 2026 State Responsibility Area update is in public comment, so any pre-2025 determination is stale.",
+   "CAL FIRE FHSZ viewer lookup with the address",
+   "S-11"
+  ],
+  [
+   "K-F-15",
+   "Low",
+   "City of Los Angeles general minimum wage",
+   "The state fast-food floor of $20.00 per hour governs covered limited-service chains of 60 or more establishments unless a local general rate exceeds it. The city rate was not independently confirmed in this session.",
+   "City of Los Angeles Office of Wage Standards",
+   "S-08"
+  ],
+  [
+   "K-F-16",
+   "Medium",
+   "FY2025 Form 10-K Item 2 lease structure (1,585 company-leased versus 387 franchisee-direct units)",
+   "Reported by an earlier session. The filing is 2.66 MB and was not re-read line by line in this session, so the figures are not republished.",
+   "Direct re-read of 10-K Item 2",
+   "S-06"
+  ],
+  [
+   "K-F-17",
+   "Low",
+   "Jack in the Box franchise average unit volume ($1,874k FY25 / $1,949k FY24)",
+   "Reported by an earlier session from 10-K pages 28-29. Not re-read in this session; not republished.",
+   "Direct re-read of the FY2025 10-K",
+   "S-06"
+  ]
+ ],
+ "irregularities": [
+  [
+   "K-IR-01",
+   "High \u2014 privacy",
+   "26 inherited HTML files render the repository account handle directly in footers or source tables.",
+   "Internal scan of this working tree on 2026-11-08 (`grep -rl` across all tracked HTML).",
+   "Out of scope for this layer and therefore not remediated here. The /dashboard/ layer reproduces no account handle, name, address or parcel identifier. Raised as cross-session request XR-K1.",
+   "S-01"
+  ],
+  [
+   "K-IR-02",
+   "High \u2014 sourcing",
+   "Inherited layers cite non-official domains inside published table rows: bouldergroup.com (22 occurrences) and seyfarth.com (4) in analysis/, and datausa.io, point2homes.com, fool.com and similar in brief/ and pages/.",
+   "Internal scan of `analysis/*.html` external hosts on 2026-11-08.",
+   "Not republished here. Every external link in this layer resolves to a .gov, .ca.gov, municipal, Federal Reserve or SEC domain.",
+   "S-01"
+  ],
+  [
+   "K-IR-03",
+   "High \u2014 tax accuracy",
+   "The inherited brief/ layer published expired Measure ULA thresholds of $5,300,000 and $10,600,000.",
+   "Re-checked against the City of Los Angeles Office of Finance and the Los Angeles County Registrar-Recorder on 2026-11-08: for closings after 2026-06-30 the thresholds are $5,400,000 (4.00% ULA) and $10,900,000 (5.50% ULA).",
+   "This layer publishes only the post-June-30-2026 thresholds.",
+   "S-15"
+  ],
+  [
+   "K-IR-04",
+   "Medium \u2014 stale input",
+   "The inherited decision-file model anchors its discount rate to the 10-year Treasury yield of 4.19% observed on 2026-01-02.",
+   "The same series now stands at 4.84% on 2026-11-05, a rise of about 65 basis points over the year.",
+   "This layer anchors to 4.84% and sweeps a declared premium of 1.0% to 5.0% rather than a single point.",
+   "S-04"
+  ],
+  [
+   "K-IR-05",
+   "Medium \u2014 statistics",
+   "Census QuickFacts race-alone percentages for Los Angeles city sum to 74.3% while the county equivalents sum to 99.8%. The two geographies are not internally consistent.",
+   "Read directly from both QuickFacts tables on 2026-11-08.",
+   "City-level race rows are withheld rather than published possibly wrong; county rows are published with the inconsistency disclosed.",
+   "S-01"
+  ],
+  [
+   "K-IR-06",
+   "Medium \u2014 row provenance",
+   "Hundreds of inherited table rows carry no direct https source link (reported counts: decision-file 168, brief 91, analysis 83, docs 23, pages 20).",
+   "Reported by earlier sessions and corroborated by this session's scan of `analysis/*.html`.",
+   "This layer enforces in code that every body row carries a link from the source register.",
+   "S-01"
+  ],
+  [
+   "K-IR-07",
+   "Medium \u2014 lease semantics",
+   "The inherited decision-file layer treats the issuer's franchise-agreement termination dates under 'JACK on Track' as if they were the real-estate lease expiry.",
+   "The Q3 FY2026 earnings release describes a block closure programme and the sale of real estate; it does not set the expiry date of any landlord's lease, and the subject lease was never supplied.",
+   "This layer states the distinction explicitly and does not infer a lease expiry from the closure programme.",
+   "S-07"
+  ],
+  [
+   "K-IR-08",
+   "Medium \u2014 freshness",
+   "Earlier snapshots carried August 2026 BLS figures for Los Angeles.",
+   "The current BLS Los Angeles Area Economic Summary, updated November 4, 2026, reports September 2026: unemployment 4.4% (metro) and 4.5% (city and county), nonfarm payrolls 6,282.1 thousand, CPI-U +3.7%.",
+   "This layer publishes only the September 2026 observations.",
+   "S-03"
+  ],
+  [
+   "K-IR-09",
+   "Medium \u2014 conflicting conclusions",
+   "Six inherited layers reach materially different headline recommendations, including one that ranks selling first and another that advises holding both options open.",
+   "Read in the repository on 2026-11-08. No official source supports any of the rankings; they rest on assumptions about rent, cap rate and renewal probability that were never supplied.",
+   "This layer refuses to rank the pathways numerically. It presents the decision drivers, the verified inputs and the risk balance, and leaves the ranking to the owner once the blocker documents are in hand.",
+   "S-01"
+  ],
+  [
+   "K-IR-10",
+   "Low \u2014 publication state",
+   "The advisory/ layer was withheld from the published Pages artefact by another session after this session's base commit, on the grounds that its numerical scenario weights and pathway rankings are not established by the official sources it cites.",
+   "Recorded in COORDINATION.md and in the merged PR #27 log.",
+   "Noted. This layer therefore presents no scenario probabilities and no single-point pathway ranking.",
+   "S-01"
+  ]
+ ],
+ "pathways": [
+  {
+   "key": "A",
+   "name": "Sell before expiry",
+   "summary": "Convert an illiquid, single-tenant, single-site asset into cash or into a diversified position while a lease is still in place.",
+   "drivers": [
+    [
+     "Sale proceeds are priced off the remaining lease term; the shorter the term at sale, the more the buyer discounts.",
+     "S-07"
+    ],
+    [
+     "Measure ULA can take 4.00% or 5.50% of gross consideration if the site is inside the City of Los Angeles and the price clears the threshold.",
+     "S-15"
+    ],
+    [
+     "System same-store sales fell 1.1% in Q3 FY2026 and the company guided to 50 to 60 closures in fiscal 2026.",
+     "S-07"
+    ],
+    [
+     "A \u00a7 1031 exchange is available for real property and can defer the gain if the owner wants to stay in real estate.",
+     "S-17"
+    ]
+   ],
+   "risks": [
+    [
+     "Sale certainty depends on a cap rate no government source publishes; the achievable price is unverifiable here.",
+     "S-05"
+    ],
+    [
+     "Transfer tax, recapture and exchange deadlines make the execution path unforgiving.",
+     "S-17"
+    ],
+    [
+     "Selling crystallises the tax today rather than at an unknown later date.",
+     "S-17"
+    ]
+   ]
+  },
+  {
+   "key": "B",
+   "name": "Renew with the incumbent tenant",
+   "summary": "Extend the existing operator and keep the income stream, at a rent and term the tenant will actually sign.",
+   "drivers": [
+    [
+     "Unemployment in the Los Angeles metro area fell to 4.4% in September 2026 from 5.5% a year earlier, and nonfarm payrolls rose 0.5%.",
+     "S-03"
+    ],
+    [
+     "Education and health services grew 3.8% year over year and carry 1,340.7 thousand jobs, the largest sector in the metro.",
+     "S-03"
+    ],
+    [
+     "The issuer's own filings describe a shrinking footprint and falling franchise rental revenue, which weakens the tenant's negotiating posture on rent.",
+     "S-07"
+    ],
+    [
+     "Median household income in Los Angeles city is $81,939 and in the county $90,112, supporting local consumer demand.",
+     "S-01"
+    ]
+   ],
+   "risks": [
+    [
+     "A renewal that pushes the total remaining term, counting options, to 35 years or more creates a change in ownership and a reassessment under California law.",
+     "S-19"
+    ],
+    [
+     "The tenant is closing 50 to 60 restaurants in fiscal 2026 and has discontinued its dividend and buyback; credit is deteriorating, not improving.",
+     "S-07"
+    ],
+    [
+     "Population in Los Angeles County is 3.2% below its 2020 estimates base, a demand headwind for marginal sites.",
+     "S-02"
+    ],
+    [
+     "A renewal does not remove the concentration risk: one site, one operator, one intersection.",
+     "S-07"
+    ]
+   ]
+  },
+  {
+   "key": "C",
+   "name": "Short extension, then sell",
+   "summary": "Buy time with a short, clean extension that preserves a marketable remaining term, then take the asset to market from a position of strength.",
+   "drivers": [
+    [
+     "A sale is worth more with a signed term certain than with a looming expiry, so a short extension can be value-accretive even at a modest rent.",
+     "S-07"
+    ],
+    [
+     "Keeping the total remaining term, including options, strictly under 35 years avoids the leasehold reassessment trigger.",
+     "S-19"
+    ],
+    [
+     "The ten-year Treasury at 4.84% sets the risk-free anchor a buyer will use; the shorter the extension, the less duration risk the buyer takes.",
+     "S-04"
+    ]
+   ],
+   "risks": [
+    [
+     "The tenant may decline a short extension or demand a rent concession that offsets the benefit.",
+     "S-07"
+    ],
+    [
+     "Timing risk: if the market turns before the extension ends, the window closes.",
+     "S-03"
+    ],
+    [
+     "Two transaction events mean two sets of legal and advisory costs.",
+     "S-15"
+    ]
+   ]
+  },
+  {
+   "key": "D",
+   "name": "Hold to expiry, then re-tenant or reposition",
+   "summary": "Run the lease out, then lease to another operator or redevelop the site.",
+   "drivers": [
+    [
+     "Fast-food sites are small-footprint, high-visibility parcels that can often be re-let to another limited-service or service-retail user.",
+     "S-01"
+    ],
+    [
+     "Los Angeles city contains 8,304.2 people per square mile, among the densest urban footprints in the United States, which supports a range of alternative uses.",
+     "S-01"
+    ],
+    [
+     "The county added 22,250 building permits in 2025, indicating continuing construction activity.",
+     "S-02"
+    ]
+   ],
+   "risks": [
+    [
+     "Vacancy, tenant-improvement and leasing-commission costs are entirely the owner's during a dark period, and no official source can estimate them for this site.",
+     "S-05"
+    ],
+    [
+     "The 60% thirty-year likelihood of an M\u22656.7 earthquake in the Los Angeles region is an uninsured-balance-sheet risk that is worst when the site is vacant.",
+     "S-10"
+    ],
+    [
+     "Re-tenanting a purpose-built restaurant box can require capital the owner may not want to commit at this stage.",
+     "S-07"
+    ],
+    [
+     "Los Angeles County population is 3.2% below its 2020 base, so re-leasing demand assumptions should not be optimistic.",
+     "S-02"
+    ]
+   ]
+  }
+ ],
+ "risks": [
+  [
+   "R-01",
+   "Business as usual",
+   "Tenant credit deterioration",
+   "Jack in the Box Inc. guided to 50 to 60 closures in fiscal 2026, reported a 6.8% decline in franchise rental revenue over 40 weeks, discontinued its dividend and buyback, and refinanced $500 million of securitised notes during fiscal 2026.",
+   "High",
+   "S-07"
+  ],
+  [
+   "R-02",
+   "Business as usual",
+   "Site-level closure at or before expiry",
+   "The 'JACK on Track' plan is described as a block closure programme plus the sale of real estate. Whether this site is in the block cannot be determined without the lease and the operator's plan.",
+   "High",
+   "S-07"
+  ],
+  [
+   "R-03",
+   "Business as usual",
+   "Lease-obligor ambiguity",
+   "If the obligor is a single-unit franchisee rather than the public company, the credit behind the rent is materially weaker and the closure programme runs through that franchise agreement.",
+   "High",
+   "S-07"
+  ],
+  [
+   "R-04",
+   "Business as usual",
+   "Renewal at a lower rent",
+   "System same-store sales fell 1.1% in Q3 FY2026 on top of a 7.1% decline in the prior-year quarter, which supports a tenant asking for rent relief at renewal.",
+   "High",
+   "S-07"
+  ],
+  [
+   "R-05",
+   "Business as usual",
+   "Interest-rate and cap-rate repricing",
+   "The ten-year Treasury moved between 4.77% and 5.31% between 2026-09-01 and 2026-11-05 and stood at 4.84% on 2026-11-05. Net-lease values are priced off this anchor.",
+   "Medium",
+   "S-04"
+  ],
+  [
+   "R-06",
+   "Business as usual",
+   "Property-tax reassessment on sale or on a long lease",
+   "Proposition 13 resets base year value on a change in ownership, and a leasehold of 35 years or more including options is itself a change in ownership when created or terminated.",
+   "Medium",
+   "S-19"
+  ],
+  [
+   "R-07",
+   "Business as usual",
+   "Transfer-tax exposure on exit",
+   "Inside the City of Los Angeles, a sale above $5,400,000 carries a total city transfer tax of 4.45% and a sale at or above $10,900,000 carries 5.95%, on the full consideration, plus 0.11% county tax.",
+   "Medium",
+   "S-15"
+  ],
+  [
+   "R-08",
+   "Business as usual",
+   "Labour-cost inflation at the operator",
+   "California's fast-food minimum wage has been $20.00 per hour since April 1, 2024 and applies to franchisees; the state rate is $16.90 per hour from January 1, 2026. Unit economics, and therefore rent coverage, are compressed by the higher floor.",
+   "Medium",
+   "S-09"
+  ],
+  [
+   "R-09",
+   "Business as usual",
+   "Local demand headwind",
+   "Los Angeles County population is 3.2% below its April 2020 estimates base and the city is 0.8% below; population is not growing into new restaurant supply.",
+   "Medium",
+   "S-02"
+  ],
+  [
+   "R-10",
+   "Business as usual",
+   "Consumer price pressure",
+   "CPI-U in the Los Angeles metro area rose 3.7% year over year to September 2026, with energy up 20.3%, while the Employment Cost Index rose 3.9%. Real disposable income is being squeezed.",
+   "Medium",
+   "S-03"
+  ],
+  [
+   "R-11",
+   "Business as usual",
+   "Insurance availability and cost",
+   "California's residential and commercial insurance market has been under stress following the January 2025 fires; no official source in this project quantifies the premium for this parcel.",
+   "Medium",
+   "S-11"
+  ],
+  [
+   "R-12",
+   "Business as usual",
+   "Sector concentration and single-asset risk",
+   "One site, one operator, one intersection, in a system whose unit count fell by 13 net restaurants in a single quarter.",
+   "Medium",
+   "S-07"
+  ],
+  [
+   "R-13",
+   "Business as usual",
+   "1031 execution risk",
+   "A like-kind exchange has statutory identification and closing deadlines and, since 2018, covers real property only. Missing a deadline defeats the deferral.",
+   "Medium",
+   "S-17"
+  ],
+  [
+   "R-14",
+   "Black swan",
+   "Major earthquake",
+   "UCERF3 puts the 30-year likelihood of one or more M\u22656.7 earthquakes in the Los Angeles region at 60%, of M\u22657.0 at 46%, and of M\u22657.5 at 31%. Earthquake is generally excluded from standard property policies.",
+   "Severe",
+   "S-10"
+  ],
+  [
+   "R-15",
+   "Black swan",
+   "Urban wildfire",
+   "CAL FIRE issued Local Responsibility Area fire hazard severity zone maps to jurisdictions in early 2025 and has the 2026 State Responsibility Area update in public comment. Central Los Angeles is not immune: the January 2025 fires destroyed large parts of the county.",
+   "Severe",
+   "S-11"
+  ],
+  [
+   "R-16",
+   "Black swan",
+   "Flood",
+   "FEMA's Map Service Center is the official determination point, but no flood zone could be established for this parcel without the address. Urban flooding is a documented Los Angeles County hazard.",
+   "Moderate",
+   "S-12"
+  ],
+  [
+   "R-17",
+   "Black swan",
+   "Civil unrest or a prolonged local shock",
+   "No official source quantifies this probability for a specific parcel, so no number is asserted here. It is listed because a single-site retail asset has no internal diversification against a localised shutdown.",
+   "Moderate",
+   "S-01"
+  ],
+  [
+   "R-18",
+   "Black swan",
+   "Rapid policy shift on property or transfer tax",
+   "Measure ULA thresholds are indexed annually and local tax measures are subject to the ballot. A change can alter after-tax proceeds between signing and closing.",
+   "Moderate",
+   "S-15"
+  ]
+ ]
+}

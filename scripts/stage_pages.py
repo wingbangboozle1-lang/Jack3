@@ -13,6 +13,8 @@ for name in ('index.html', 'economy.html', 'demographics.html', 'tenant.html', '
     shutil.copy2(root / name, out / name)
 (out / 'assets').mkdir()
 shutil.copy2(root / 'assets/style.css', out / 'assets/style.css')
+if (root / 'dashboard').is_dir():
+    shutil.copytree(root / 'dashboard', out / 'dashboard')
 print('Staged', len(list(out.rglob('*'))), 'entries in', out)
 
 # Validate the actual artifact, not just the repository checkout. Relative links
@@ -21,6 +23,8 @@ import json
 from html.parser import HTMLParser
 from urllib.parse import urlparse, unquote
 sources = {s['url'] for s in json.loads((root / 'data/evidence.json').read_text())['sources'].values()}
+if (root / '_dashboard_src/dataset.json').is_file():
+    sources |= {s['url'] for s in json.loads((root / '_dashboard_src/dataset.json').read_text())['sources'].values()}
 class Check(HTMLParser):
     def __init__(self, page):
         super().__init__(); self.page = page; self.row = None; self.body = False
