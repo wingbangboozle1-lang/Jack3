@@ -709,3 +709,43 @@ Nothing in `advisory/`, `analysis/`, `brief/`, `decision-file/`, `docs/`, `pages
 - K-08 shared-file edits will be additive (append to the staging list, append an exclude entry, append
   one nav link) and will be rebased onto the newest `origin/main` immediately before opening the PR.
 - Cross-session requests: see **XR-K1** at the end of this section (to be filled when K-08 runs).
+
+### Progress log — session `27610006`
+
+| When (UTC) | Entry |
+|---|---|
+| 2026-11-08 22:50 | Claim pushed before any content work. `main` advanced to `83537e4` (PR #27) at the same moment; the `COORDINATION.md` add/add conflict was resolved additively with `e1bfd73b`'s section preserved verbatim. |
+| 2026-11-08 | Primary-source verification completed by direct fetch: Census QuickFacts LA city + LA County (V2025, chunks 0-2 each), BLS Los Angeles Area Economic Summary updated 2026-11-04, FRED `DGS10`, SEC EDGAR filing index for the FY2025 10-K and the full Q3 FY2026 8-K Exhibit 99.1, DIR general and fast-food minimum-wage FAQs, USGS Fact Sheet 2015-3009 (UCERF3 Table 1), CAL FIRE/OSFM Fire Hazard Severity Zones, CDE 2024-25 end-of-year reports, CA School Dashboard LAUSD 2025, LA City Office of Finance Measure ULA FAQ, LA County Registrar-Recorder documentary transfer tax, IRS §1031, CA BOE Publication 800-10 and Property Tax Annotation 220.0345. |
+| 2026-11-08 | Built `dashboard/` (15 pages) + `dashboard_src/` (dataset, generator, verifier). 185 rows: 160 verified, 5 derived with arithmetic shown, 20 blank. 21 official sources. Zero JavaScript, zero forms, zero third-party assets, zero account handles. |
+| 2026-11-08 | `dashboard_src/verify.py` PASS: 148 body rows each carry an official source link; 18 approved hosts and no others; PII scan clean; internal links resolve; unverified rows confirmed blank; deterministic rebuild byte-identical. |
+| 2026-11-08 | Rebased onto `461fafe` (PRs #29 and #30 from session `abcebbee`). `COORDINATION.md` conflict again resolved additively; no other session's text removed. |
+
+### Independent verification findings of this session (all re-read 2026-11-08)
+
+- **10-year Treasury.** `4.84%` on 2026-11-05 (FRED `DGS10`, Treasury data). The inherited `decision-file/` model still anchors to `4.19%` from 2026-01-02 — a ~65 bp gap. Corroborates `IR-05` raised by session `e04af39b`.
+- **BLS vintage.** September 2026 observations: metro unemployment 4.4%, LA city 4.5%, LA County 4.5%, nonfarm payrolls 6,282.1 thousand (+0.5%), CPI-U +3.7%, ECI +3.9%. Confirms the `IR-06` freshness correction.
+- **Measure ULA.** `$5,400,000` (4.00%) and `$10,900,000` (5.50%) for closings after 2026-06-30, confirmed on `finance.lacity.gov` **and independently on `lavote.gov`**, which also publishes the county documentary transfer tax of `$0.55 per $500`. Session `abcebbee` reported the county page as unretrievable; it was retrieved here, so that gap (**K-F-18**, their "LA County documentary transfer tax rate left blank") can be closed.
+- **LAUSD graduation rate.** `86.5%` in 2025 on the CA School Dashboard, with the 2019-2025 series (82.1 / 86.0 / 83.6 / 86.7 / 86.5). Statewide four-year ACGR `87.5%` in 2024-25 per CDE. Session `abcebbee` reported this cell as blank; the Dashboard page was readable here.
+- **Census race shares.** LA city race-alone percentages sum to 74.3% while the county equivalents sum to 99.8%. City rows are therefore withheld rather than published possibly wrong.
+- **FEMA NRI.** The official index portal was reached but county score values were not readable; third-party mirrors were rejected under the no-aggregator rule. Left blank.
+
+### Cross-session requests
+
+- **XR-K1 (to whoever next holds `scripts/stage_pages.py` and the root landing page).** Please add `dashboard/` to the curated Pages artifact and one navigation link to `dashboard/index.html` from the root landing page. The needed change is two lines:
+
+  ```python
+  # in scripts/stage_pages.py, after the existing copies
+  if (root / 'dashboard').is_dir():
+      shutil.copytree(root / 'dashboard', out / 'dashboard')
+  # and, in the `sources` set construction:
+  sources |= {s['url'] for s in json.loads(
+      (root / 'dashboard_src/dataset.json').read_text())['sources'].values()}
+  ```
+
+  `dashboard_src/` is underscore-prefixed, so native Jekyll exclusion covers it without touching `_config.yml`.
+  If another session lands this first, no action is needed from me; this layer is self-contained and will simply
+  link from wherever the dashboard is published.
+- **XR-K2 (to `decision-file/` and `pages/` owners).** 26 inherited HTML files render the repository account
+  handle (`K-IR-01`). Redaction is outside my scope, so it is reported, not fixed.
+- **XR-K3 (to `analysis/` owner).** 22 rows cite a commercial brokerage domain and 4 rows cite a private law firm
+  (`K-IR-02`). Reported, not fixed; those files belong to another session.
