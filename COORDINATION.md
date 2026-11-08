@@ -574,3 +574,22 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
 ### PR and deployment record
 - PR #27 https://github.com/wingbangboozle1-lang/Jack3/pull/27 merged 2026-11-08 at 22:50 UTC (merge commit `83537e46f9f9a37ae07045520749e37288a0cc0d`). PR validation passed including Jekyll artifact parity.
 - Pages deployment https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42532190121 succeeded. Cache-busted live `review.html` was fetched and contains the advisory withholding flag. The previously published advisory contents remain in the public repository, not the Pages artifact; repository access is not confidential storage.
+
+---
+
+## Session `c5caeb57` — Primary-Source Reconciliation, Root Workspace Expansion & Advisory Defect Repair (`arena/c5caeb57-jack3`)
+
+| Field | Value |
+|---|---|
+| Session ID | `c5caeb57` |
+| Branch | `arena/c5caeb57-jack3` (platform-fixed) |
+| Date | `2026-11-08` (UTC) |
+| Status | **in progress** |
+
+### Claimed File Scope
+- `COORDINATION.md` (this section; all earlier session sections preserved verbatim)
+- `README.md` (reconcile publication table, `/advisory/` withholding status per `e1bfd73b`, and build/validation commands)
+- Curated GitHub Pages root workspace: `data/evidence.json`, `scripts/build.py`, `scripts/validate.py`, and regenerated root HTML pages (`index.html`, `economy.html`, `tenant.html`, `risk.html`, `place.html`, `decisions.html`, `model.html`, `review.html`, `sources.html`) — resolving open root flags (`F-17`, `F-13`), adding verified 2026 primary-source evidence (DOF P-2A/P-4, Connect SoCal 2024 vs 2020, EDD Sept 2026 County jobs, 2026 CA School Dashboard + DataQuest, Nov 6 Treasury / Oct 28 FOMC, Measure ULA 7/1/2026 thresholds, LA County $2.272T Roll, CA BOE Prop 13 35-yr & Prop 19 rules, IRS Form 8824 §1031 statutory rules, JACK FY25 10-K / Q3 FY26 10-Q Note 7/8 debt/ARDs/lease structure, USGS UCERF3, Jan 2025 Eaton/Palisades + CDI FAIR Plan Dec 2028 sunset, Metro D Line / DTLA 2040, CA SOS 14 Nov 2026 measures), and adding purely algebraic (non-forecast) cap-multiple and statutory ULA cliff schedules while keeping all unverified parcel/lease values blank (`""`) and preserving `e1bfd73b`'s exclusion of uncalibrated companion forecasts from GitHub Pages.
+- Archived quantitative suite in-repo (`_advisory_src/dataset.py`, `_advisory_src/model.py`, `_advisory_src/build_advisory.py`, `_advisory_src/verify_advisory.py`, `_advisory_src/REPO_REVIEW.md`, `_advisory_src/EXECUTIVE_SUMMARY.md`, `_advisory_src/advisory_dataset.json`, `advisory/**`) — repairing misattributed `S36` (`demo30_table03.pdf` → Final Connect SoCal 2024 + Connect SoCal 2020), resolving `F-13` & `F-17`, updating `SCHOOLS_ROWS` to live 2026 Dashboard (`87.6%`), updating `BAU-05` & `TENANT_LEASE_ROWS` to Q3 FY26 `$1.492B` debt & Note 7/8 ARDs, adding EDD Sept 2026, Prop 19, and `P1` delayed-extension (`t=3`) stress sensitivity + explicit `e1bfd73b` exclusion banner (remaining excluded from Pages via `_config.yml` and `scripts/stage_pages.py`).
+- Excluded legacy companion layers (`docs/`, `analysis/`, `brief/`, `pages/`, `decision-file/`, `audit/`, `research/`) are **not modified**; their prior irregularities remain documented on `review.html` and `advisory/repo-review.html`.
+
