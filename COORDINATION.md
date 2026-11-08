@@ -574,3 +574,30 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
 ### PR and deployment record
 - PR #27 https://github.com/wingbangboozle1-lang/Jack3/pull/27 merged 2026-11-08 at 22:50 UTC (merge commit `83537e46f9f9a37ae07045520749e37288a0cc0d`). PR validation passed including Jekyll artifact parity.
 - Pages deployment https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42532190121 succeeded. Cache-busted live `review.html` was fetched and contains the advisory withholding flag. The previously published advisory contents remain in the public repository, not the Pages artifact; repository access is not confidential storage.
+
+---
+
+## Session `f47ec184` — Primary-Source Reconciliation, Algebraic Break-Even Engine & Root Integration (`2026-11-08`)
+
+**Branch:** `arena/f47ec184-jack3` (platform-fixed; rebased cleanly onto `origin/main` `febe6ea` / PR #28)
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Reconcile root evidence, resolve `F-04`/`F-17`/`IR-10`/`F-16`, add deterministic Measure ULA & `1.00 R` break-even framework, sync root docs & integrate cleanly | **in progress** | `f47ec184` | `data/evidence.json`, `scripts/build.py`, `scripts/validate.py`, `assets/style.css`, 9 generated root `*.html`, `model/area_projection.py`, `EXECUTIVE_SUMMARY.md`, `REPO_REVIEW.md`, `VERIFY.md`, `README.md` (additive header), `COORDINATION.md` (this section) |
+
+### Scope & Non-Interference Boundaries
+- **Preserved untouched (100%):** All prior companion layers (`docs/`, `analysis/`, `brief/`, `pages/`, `decision-file/`, `audit/`, `advisory/`, `_advisory_src/`, `data/*.py`, `model/projection.py`, `tools/`, `research/`, `.github/workflows/validate.yml`, `_config.yml`, `scripts/stage_pages.py`), and untouched open PRs `#4` and `#26`.
+- **Pages safety boundary maintained:** Companion layers with assumed probabilities (`_advisory_src/model.py`, `model/projection.py`) remain excluded from `_pages_artifact` / Jekyll (`_config.yml`). Published root `model.html` and `decisions.html` instead compute pure official agency trajectories, exact statutory Measure ULA net-proceeds cliffs (`0.56% / 4.56% / 6.06%`), and unweighted algebraic `1.00 R` break-even identities via `model/area_projection.py`—with zero assumed scenario weights, zero guessed cap rates, and zero private parcel estimates.
+
+### Primary-Source Verifications Completed (`2026-11-08` UTC)
+1. **Resolved `F-17` (2027 CA Minimum Wage):** Directly verified CA DIR News Release `2026-66` (`$17.40/hr` eff. `2027-01-01`, `$72,384` exempt salary) alongside City of LA `$18.42/hr` (`2026-07-01`) and AB 1228 `$20.00/hr` fast-food floor.
+2. **Resolved `F-04` / `F-13` (Official Long-Range Projections & Broken Companion URL):** Directly parsed CA Dept. of Finance `P2A_County_Total.xlsx` (FIPS `06037`: `9,811,358` in `2026` → `9,727,305` in `2030` → `9,708,647` in `2035` → `9,390,823` in `2050`), reconciled against SCAG Connect SoCal 2024 PEIR Appendix I (`10,214k` pop / `3,784k` HH / `5,277k` jobs by `2030`) and SCAG Jan 2026 Connect SoCal 2050 TWG Draft (`−5%` pop vs `+6%` HH `2024–2050`), while flagging companion `demo30_table03.pdf` as a 2019 LAUSD presentation.
+3. **SEC & Tenant Credit Deep Dive (`FY2025 10-K` + `Q3 FY2026 10-Q`):** Verified `$1,492.0M` total debt with `$432.25M` Series 2019-1 maturing August `2029` ahead of the `2030–2035` lease cliff, `$500.0M` Series 2026-1 `7.624%` refinancing (May 2031 ARD), `$23.3M` cash sweep, `$11.0M` YTD franchisee deferrals, `$18.9M` YTD property-sale gains, `1,585` corporate master-leased vs `387` franchisee-direct unit split, and separated JIB brand AUV (`$1,874k` FY25 / `$1,949k` FY24) from sold Del Taco (`$1,549k`, `IR-10`).
+4. **Capital Markets, Taxes, Hazards & Catalysts:** Directly verified Oct 28, 2026 FOMC (`3.75%–4.00%`, 2 hike dissents), Nov 6, 2026 U.S. Treasury curve (`4.86%` 10Y / `5.26%` 30Y), BLS `USDL-26-1618` Table 1 & Table 2 labor-force contraction (`−121.6k` MSA / `−94.3k` County Div.), Measure ULA post-`2026-07-01` thresholds (`$5.40M / $10.90M`), CA BOE `220.0345` `35-year` leasehold Prop 13 rule, IRS §1031 / Topic 409 & CA FTB ordinary-income tax rule, LA County 2026 Roll (`$2.272T` / `$926.1B` City), USGS UCERF3, LADBS `dbs.lacity.gov` Ord. `183893`, Jan 2025 wildfire records (preserving both LA County and CAL FIRE counts), CA CDI `2028` commercial FAIR Plan sunset, CDE/Dashboard LAUSD `2025–26` metrics, Metro D Line Section 1 opening (`2026-05-08`), and LA City Planning CHIP Year-1 report (`242` projects / `28,526` homes).
+
+### Reproducibility & Integrity Results (Pre-PR)
+- `python3 model/area_projection.py --check`: PASS.
+- `python3 scripts/build.py` + `python3 scripts/validate.py`: PASS (`120` evidence rows across `42` official/issuer sources, `9` pages).
+- `python3 scripts/stage_pages.py`: PASS (`11` curated files staged, all `<tbody>` source links & relative paths verified).
+- `python3 tools/check_site.py`, `python3 tools/linkcheck.py`, `python3 tools/check_links.py`, `python3 _advisory_src/verify_advisory.py`, `python3 tools/pii_scan.py`: ALL PASS (`0` PII findings).
+

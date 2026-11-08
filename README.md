@@ -1,5 +1,7 @@
 # Jack / Property intelligence
 
+> **Reconciled Integration Update (2026-11-08):** The curated 9-page root dashboard (`index.html`–`sources.html`) and root documents (`EXECUTIVE_SUMMARY.md`, `REPO_REVIEW.md`, `VERIFY.md`) now incorporate primary-source re-verification across **42 official/issuer references (`120` table rows)**, resolving prior gaps `F-04` (CA DOF `P2A_County_Total.xlsx`), `F-17` (CA DIR `2026-66` `$17.40/hr` effective `2027-01-01`), `IR-10` (JIB `$1,874k` vs. Del Taco `$1,549k` AUV), and SEC Q3 FY2026 debt/lease disclosures (`$432.25M` 2029 ARD wall, `$500M` `7.624%` refi, `1,585` corporate master-leased sites). Assumed probability/cap-rate companion outputs remain withheld from Pages (`_config.yml`) and are replaced on `model.html` by deterministic Measure ULA cliff math and unweighted `1.00 R` algebraic break-even identities (`python3 model/area_projection.py --check`).
+
 > **Publication update (2026-11-07):** The public Pages artifact is restricted to the root evidence-gated dashboard. The companion reports listed below remain in this repository for audit, but are not published until reverified. Earlier model rankings and the asserted equivalence of franchise and real-estate lease expiration are not reliable; see `research/integration-audit-9fa62774.md` and the public Flagged for Review page. Historical companion links below may no longer resolve on Pages.
 
 Privacy-safe, static research dashboard for an unidentified Los Angeles-area net lease asset.

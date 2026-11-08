@@ -1,77 +1,257 @@
 {
-  "reviewed": "2026-11-07",
+  "reviewed": "2026-11-08",
   "sources": {
     "city": {
-      "label": "U.S. Census · LA city",
+      "label": "U.S. Census · LA city QuickFacts",
       "url": "https://www.census.gov/quickfacts/losangelescitycalifornia",
-      "checked": "2026-11-07",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "county": {
-      "label": "U.S. Census · LA County",
+      "label": "U.S. Census · LA County QuickFacts",
       "url": "https://www.census.gov/quickfacts/losangelescountycalifornia",
-      "checked": "2026-11-07",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "dof": {
+      "label": "CA Dept. of Finance · P-2A County Projections (.xlsx)",
+      "url": "https://dof.ca.gov/media/docs/forecasting/Demographics/projections/P2A_County_Total.xlsx",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "scag": {
+      "label": "SCAG · Connect SoCal 2024 PEIR App. I",
+      "url": "https://scag.ca.gov/sites/default/files/2024-05/appendix_i_updated_tables_508_final.pdf",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "scag2050": {
+      "label": "SCAG · Connect SoCal 2050 TWG Draft (Jan 2026)",
+      "url": "https://www.scag.ca.gov/sites/default/files/2026-02/Technical_Working_Group_January_29_2026_Full_Agenda_Packet-Updated1.pdf",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "bls": {
-      "label": "BLS · LA economic summary",
+      "label": "BLS · LA Area Economic Summary (Nov 4, 2026)",
       "url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
-      "checked": "2026-11-07",
+      "checked": "2026-11-08",
       "type": "Government"
     },
-    "jack": {
-      "label": "Issuer · Q3 FY2026 results",
-      "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx",
-      "checked": "2026-11-07",
+    "bls_metro": {
+      "label": "BLS · USDL-26-1618 Metro Table 1 (Sep 2026)",
+      "url": "https://www.bls.gov/news.release/metro.t01.htm",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "bls_div": {
+      "label": "BLS · USDL-26-1618 Division Table 2 (Sep 2026)",
+      "url": "https://www.bls.gov/news.release/metro.t02.htm",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "fomc": {
+      "label": "Federal Reserve · FOMC Statement (Oct 28, 2026)",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "ust": {
+      "label": "U.S. Treasury · Daily Par Yield Curve (Nov 2026)",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "sec10k": {
+      "label": "SEC EDGAR · Jack in the Box FY2025 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "checked": "2026-11-08",
       "type": "Issuer"
     },
-    "fire": {
-      "label": "CAL FIRE · hazard zones",
-      "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
-      "checked": "2026-11-07",
-      "type": "Government"
+    "sec10q": {
+      "label": "SEC EDGAR · Jack in the Box Q3 FY2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm",
+      "checked": "2026-11-08",
+      "type": "Issuer"
     },
-    "quake": {
-      "label": "CGS · EQ Zapp",
-      "url": "https://www.conservation.ca.gov/cgs/geohazards/eq-zapp",
-      "checked": "2026-11-07",
-      "type": "Government"
+    "jack": {
+      "label": "Issuer · Q3 FY2026 Earnings Release",
+      "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx",
+      "checked": "2026-11-08",
+      "type": "Issuer"
     },
-    "flood": {
-      "label": "FEMA · flood maps",
-      "url": "https://msc.fema.gov/portal/home",
-      "checked": "2026-11-07",
-      "type": "Government"
+    "refi": {
+      "label": "Issuer · $500M Series 2026-1 Financing Release",
+      "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Completes-500-Million-Securitized-Financing-Facility/default.aspx",
+      "checked": "2026-11-08",
+      "type": "Issuer"
     },
-    "school": {
-      "label": "CA Education · Dashboard",
-      "url": "https://www.cde.ca.gov/ta/ac/cm/",
-      "checked": "2026-11-07",
-      "type": "Government"
+    "closure": {
+      "label": "Issuer · JACK-on-Track Closure Release",
+      "url": "https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx",
+      "checked": "2026-11-08",
+      "type": "Issuer"
     },
     "wage": {
-      "label": "CA DIR · fast-food minimum wage FAQ",
+      "label": "CA DIR · Fast-Food Minimum Wage FAQ (AB 1228)",
       "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
-      "checked": "2026-11-07",
+      "checked": "2026-11-08",
       "type": "Government"
     },
-    "zoning": {
-      "label": "LA City Planning · ZIMAS",
-      "url": "https://zimas.lacity.org/",
-      "checked": "2026-11-07",
+    "wage2027": {
+      "label": "CA DIR · Release 2026-66 ($17.40 Eff. 2027-01-01)",
+      "url": "https://www.dir.ca.gov/DIRNews/2026/2026-66.html",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "lawage": {
+      "label": "City of LA · Office of Wage Standards ($18.42/hr)",
+      "url": "https://wagesla.lacity.gov/",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "assessor": {
+      "label": "LA County Assessor · 2026 Assessment Roll Portal",
+      "url": "https://assessor.lacounty.gov/news-information/assessmentroll",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "ula": {
+      "label": "City of LA Finance · Measure ULA FAQ (Eff. 7/1/2026)",
+      "url": "https://finance.lacity.gov/faq/measure-ula",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "dtt": {
+      "label": "LA County Recorder · Documentary Transfer Tax",
+      "url": "https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "boe": {
+      "label": "CA BOE · Annotation 220.0345 (35-Yr Leasehold Rule)",
+      "url": "https://www.boe.ca.gov/proptaxes/pdf/220_0345.pdf",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "irs": {
-      "label": "IRS · like-kind exchanges",
+      "label": "IRS · Real Estate Like-Kind Exchanges (§1031)",
       "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
-      "checked": "2026-11-07",
+      "checked": "2026-11-08",
       "type": "Government"
     },
-    "closure": {
-      "label": "Jack in the Box · 2025 closure plan",
-      "url": "https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx",
-      "checked": "2026-11-07",
-      "type": "Issuer"
+    "irstax": {
+      "label": "IRS · Topic 409 Capital Gains & §1250 Recapture",
+      "url": "https://www.irs.gov/taxtopics/tc409",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "ftb": {
+      "label": "CA FTB · Capital Gains Taxed as Ordinary Income",
+      "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "usgs": {
+      "label": "USGS · UCERF3 Los Angeles 30-Yr Rupture Forecast",
+      "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "quake": {
+      "label": "CGS · Earthquake Hazards Zone App (EQ Zapp)",
+      "url": "https://www.conservation.ca.gov/cgs/geohazards/eq-zapp",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "ladbs": {
+      "label": "City of LA LADBS · Mandatory Retrofit (Ord. 183893)",
+      "url": "https://dbs.lacity.gov/services/specialized-services/mandatory-retrofit-programs",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "fire": {
+      "label": "CAL FIRE OSFM · Fire Hazard Severity Zones",
+      "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "lafires": {
+      "label": "LA County · Eaton & Palisades Anniversary Fact Sheet",
+      "url": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "palisades": {
+      "label": "CAL FIRE · Palisades Fire Incident Report",
+      "url": "https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "eaton": {
+      "label": "CAL FIRE · Eaton Fire Incident Report",
+      "url": "https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "crs": {
+      "label": "Congressional Research Service · IF12871 LA Fires",
+      "url": "https://www.congress.gov/crs-product/IF12871",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "cdi": {
+      "label": "CA Dept. of Insurance · Wildfire Model & 2028 FAIR Plan",
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2025/release052-2025.cfm",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "flood": {
+      "label": "FEMA · Flood Map Service Center (NFIP)",
+      "url": "https://msc.fema.gov/portal/home",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "cde": {
+      "label": "CA Dept. of Education · Largest Districts (2025–26)",
+      "url": "https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "school": {
+      "label": "CA School Dashboard · LAUSD 2025 Accountability",
+      "url": "https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "metro": {
+      "label": "LA Metro · D Line Subway Extension (Sec. 1 Open)",
+      "url": "https://www.metro.net/projects/westside/",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "chip": {
+      "label": "LA City Planning · CHIP Year-1 Report (Feb 2025–2026)",
+      "url": "https://planning.lacity.gov/odocument/9845de50-b845-43f8-9853-10ab8bee7568/CHIP_1yearReport_v6.pdf",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "dtla": {
+      "label": "LA City Planning · DTLA 2040 & CHIP Liaison Update",
+      "url": "https://planning.lacity.gov/odocument/52782cbf-cd07-41b5-b371-75e0b53d8f31/Planning_Liaison_Updates_-_Februray_2025.pdf",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "zoning": {
+      "label": "LA City Planning · ZIMAS Parcel Portal",
+      "url": "https://zimas.lacity.org/",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "caltrans": {
+      "label": "Caltrans · Highway Traffic Census",
+      "url": "https://dot.ca.gov/programs/traffic-operations/census",
+      "checked": "2026-11-08",
+      "type": "Government"
     }
   },
   "pages": [
@@ -79,7 +259,8 @@
       "id": "economy",
       "title": "Area fundamentals",
       "kicker": "01 / Regional evidence",
-      "description": "Verified regional context, not a trade-area study. Different periods and geographic boundaries must not be combined as though they describe the same market.",
+      "description": "Directly verified Census QuickFacts, September 2026 BLS payroll and labor-force tables, October 2026 FOMC / November 2026 Treasury yields, and official CA DOF P-2A vs. SCAG projections. Distinct geographies and vintages are labeled rather than blended.",
+      "caption": "Demographics, household income, housing & retail demand · City vs. County",
       "columns": [
         "Indicator",
         "Value",
@@ -89,40 +270,40 @@
       "rows": [
         {
           "cells": [
-            "Population",
+            "Population (LA City)",
             "3,869,089",
             "LA city · July 1, 2025 · V2025",
-            "Large city population is not proof of store demand."
+            "Large city scale is not a 1–3 mile QSR trade-area study."
           ],
           "status": "Verified",
           "source": "city"
         },
         {
           "cells": [
-            "Population change",
-            "−0.8%",
-            "LA city · April 2020 estimates base to July 2025",
-            "Potential demand headwind; not a forecast."
+            "Population change (LA City)",
+            "−0.8% (from 3,899,342 base)",
+            "LA city · April 2020 base to July 2025",
+            "Mild headwind; slower contraction than countywide average."
           ],
           "status": "Verified",
           "source": "city"
         },
         {
           "cells": [
-            "Population",
+            "Population (LA County)",
             "9,694,934",
             "LA County · July 1, 2025 · V2025",
-            "County includes many dissimilar neighborhoods."
+            "County aggregate spans dissimilar submarkets."
           ],
           "status": "Verified",
           "source": "county"
         },
         {
           "cells": [
-            "Population change",
+            "Population change (LA County)",
             "−3.2%",
-            "LA County · April 2020 estimates base to July 2025",
-            "Do not substitute county change for this location."
+            "LA County · April 2020 base to July 2025",
+            "Out-migration weighs on long-term regional customer growth."
           ],
           "status": "Verified",
           "source": "county"
@@ -130,19 +311,29 @@
         {
           "cells": [
             "Median household income",
-            "$81,939",
-            "LA city · 2020–2024 · 2024 dollars",
-            "Purchasing-power context; not local customer income."
+            "$81,939 city · $90,112 county",
+            "2020–2024 ACS · 2024 dollars",
+            "City trails county by 9.1%; test immediate trade-area income."
           ],
           "status": "Verified",
           "source": "city"
         },
         {
           "cells": [
-            "Per capita income",
-            "$47,685",
-            "LA city · 2020–2024 · 2024 dollars",
-            "City aggregate; not store sales or owner income."
+            "Per capita income & poverty",
+            "$47,685 PCI · 16.5% poverty (city)",
+            "LA city · 2020–2024 / V2025 (County 13.3% poverty)",
+            "Higher city poverty increases sensitivity to QSR menu price hikes."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Housing tenure & home value",
+            "36.0% owner · $921,200 median home",
+            "LA city · 2020–2024 (County 45.9% owner · $834,200)",
+            "64.0% renter share concentrates household spend on housing."
           ],
           "status": "Verified",
           "source": "city"
@@ -150,132 +341,186 @@
         {
           "cells": [
             "Median gross residential rent",
-            "$1,933 / month",
-            "LA city · 2020–2024",
-            "Household cost context; not commercial rent comparable."
+            "$1,933 / mo city · $1,954 / mo county",
+            "2020–2024 ACS · household gross rent",
+            "Squeezes discretionary QSR income; not a commercial rent comp."
           ],
           "status": "Verified",
           "source": "city"
         },
         {
           "cells": [
-            "Bachelor’s degree or higher",
-            "38.5%",
-            "LA city · age 25+ · 2020–2024",
-            "Workforce context; not school performance."
+            "Households & permitting supply",
+            "1,439,097 city HH (2.61/HH) · 22,250 county permits",
+            "2020–2024 HH · 2025 County residential permits",
+            "Constrained new housing limits net population absorption."
+          ],
+          "status": "Verified",
+          "source": "county"
+        },
+        {
+          "cells": [
+            "Accommodation & food sales (2022)",
+            "$17.37B city · $44.00B county",
+            "2022 Economic Census ($17,366,966k / $44,000,801k)",
+            "Baseline dining market scale; pre-2024 AB 1228 pricing."
           ],
           "status": "Verified",
           "source": "city"
         },
         {
           "cells": [
-            "High school graduate or higher",
-            "79.6%",
-            "LA city · age 25+ · 2020–2024",
-            "Educational attainment, not a district score."
+            "Retail sales & employer base",
+            "$81.35B city retail ($21,281/cap) · 304,988 county estabs",
+            "2022 Economic Census · 2023 County Business Patterns",
+            "Broad employment & retail base (3.99M county private payroll jobs)."
+          ],
+          "status": "Verified",
+          "source": "county"
+        },
+        {
+          "cells": [
+            "Density, education & commute",
+            "8,304.2/sq mi · 38.5% BA+ · 30.7 min commute",
+            "LA city · 2020 / 2020–2024 ACS",
+            "Dense, auto-oriented corridor backdrop; check site-specific ADT."
           ],
           "status": "Verified",
           "source": "city"
+        }
+      ],
+      "extra_tables": [
+        {
+          "caption": "Labor force, employment, CPI-U, FOMC policy & U.S. Treasury curve (Sep–Nov 2026)",
+          "columns": [
+            "Indicator",
+            "Value",
+            "Geography · period",
+            "Decision relevance"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "City & County unemployment",
+                "4.5% (City & County) · 4.4% Metro · 4.0% U.S.",
+                "September 2026 · not seasonally adjusted",
+                "Low headline unemployment masks labor-force contraction below."
+              ],
+              "status": "Verified",
+              "source": "bls"
+            },
+            {
+              "cells": [
+                "LA Metro labor-force drop",
+                "6,646,903 LF (−121,599 YoY vs 6,768,502 Sep 2025)",
+                "LA–LB–Anaheim MSA · Sep 2026 (294.0k unemp)",
+                "Rate drop from 5.5% to 4.4% reflects shrinking workforce too."
+              ],
+              "status": "Verified",
+              "source": "bls_metro"
+            },
+            {
+              "cells": [
+                "LA County division labor force",
+                "5,031,013 LF (−94,312 YoY) · 4.5% vs 5.9% Sep 2025",
+                "LA–Long Beach–Glendale Div. · Sep 2026",
+                "Confirms county-level labor supply contraction alongside jobless drop."
+              ],
+              "status": "Verified",
+              "source": "bls_div"
+            },
+            {
+              "cells": [
+                "Nonfarm payrolls & growth",
+                "6,282.1 thousand (+0.5% YoY)",
+                "LA Metro · Sep 2026 · preliminary NSA",
+                "Sluggish expansion; trails long-term NNN inflation assumptions."
+              ],
+              "status": "Verified",
+              "source": "bls"
+            },
+            {
+              "cells": [
+                "Sector split (Sep 2026 YoY)",
+                "Ed/Health +3.8% · Leisure/Hosp +1.5% (782.0k) · Info −5.7%",
+                "LA Metro · Sep 2026 · Mfg −1.7%, Fin −1.3%",
+                "Hospitality recovery helps QSR demand; high-wage media/tech lags."
+              ],
+              "status": "Verified",
+              "source": "bls"
+            },
+            {
+              "cells": [
+                "CPI-U, energy shock & wage trend",
+                "CPI-U +3.7% · Food +2.8% · Energy +20.3% · ECI CSA +3.9%",
+                "LA Metro / CSA · Sep 2026 · Q1 weekly wage $1,704",
+                "Sticky inflation & +20.3% energy cost squeeze both consumers and operators."
+              ],
+              "status": "Verified",
+              "source": "bls"
+            },
+            {
+              "cells": [
+                "Federal funds target range",
+                "3.75%–4.00% (10–2 vote; 2 dissents for +25 bps hike)",
+                "U.S. FOMC · October 28, 2026",
+                "Hawkish dissents signal persistent rate risk for leveraged buyers."
+              ],
+              "status": "Verified",
+              "source": "fomc"
+            },
+            {
+              "cells": [
+                "U.S. Treasury CMT yield curve",
+                "4.86% 10-Yr · 5.26% 30-Yr · 4.64% 5-Yr · 4.51% 2-Yr",
+                "U.S. Treasury · November 6, 2026",
+                "4.86% risk-free 10Y yield sets tight floor under NNN cap-rate spreads."
+              ],
+              "status": "Verified",
+              "source": "ust"
+            }
+          ]
         },
         {
-          "cells": [
-            "Population density",
-            "8,304.2 / sq mi",
-            "LA city · 2020",
-            "Not site access, footfall, or catchment density."
+          "caption": "Official 2026–2050 demographic & growth projections (CA DOF vs. SCAG divergence)",
+          "columns": [
+            "Agency · model",
+            "Projected trajectory",
+            "Geography · vintage",
+            "Analytical takeaway"
           ],
-          "status": "Verified",
-          "source": "city"
-        },
-        {
-          "cells": [
-            "Mean commute",
-            "30.7 minutes",
-            "LA city · workers age 16+ · 2020–2024",
-            "Not traffic volume past the restaurant."
-          ],
-          "status": "Verified",
-          "source": "city"
-        },
-        {
-          "cells": [
-            "Unemployment",
-            "4.5%",
-            "LA city · September 2026 · not seasonally adjusted",
-            "Regional labor-market context."
-          ],
-          "status": "Verified",
-          "source": "bls"
-        },
-        {
-          "cells": [
-            "Unemployment",
-            "4.5%",
-            "LA County · September 2026 · not seasonally adjusted",
-            "Distinct from city and metro measures."
-          ],
-          "status": "Verified",
-          "source": "bls"
-        },
-        {
-          "cells": [
-            "Total nonfarm employment",
-            "6,282.1 thousand",
-            "LA metro · September 2026 · not seasonally adjusted",
-            "Broad employment base, not central LA jobs."
-          ],
-          "status": "Verified",
-          "source": "bls"
-        },
-        {
-          "cells": [
-            "Nonfarm employment change",
-            "+0.5% year over year",
-            "LA metro · September 2026 · not seasonally adjusted",
-            "Modest growth; not a 2030–2035 trajectory."
-          ],
-          "status": "Verified",
-          "source": "bls"
-        },
-        {
-          "cells": [
-            "Education & health employment change",
-            "+3.8% year over year",
-            "LA metro · September 2026 · not seasonally adjusted",
-            "Sector support does not establish nearby demand."
-          ],
-          "status": "Verified",
-          "source": "bls"
-        },
-        {
-          "cells": [
-            "Information employment change",
-            "−5.7% year over year",
-            "LA metro · September 2026 · not seasonally adjusted",
-            "Sector-specific weakness; no parcel inference."
-          ],
-          "status": "Verified",
-          "source": "bls"
-        },
-        {
-          "cells": [
-            "All-items CPI-U change",
-            "+3.7% year over year",
-            "LA metro · September 2026",
-            "Inflation can affect costs; lease escalators unknown."
-          ],
-          "status": "Verified",
-          "source": "bls"
-        },
-        {
-          "cells": [
-            "Average weekly wage",
-            "$1,704",
-            "LA County · all industries · Q1 2026",
-            "Not household income; different population and period."
-          ],
-          "status": "Verified",
-          "source": "bls"
+          "rows": [
+            {
+              "cells": [
+                "CA Dept. of Finance P-2A",
+                "9,811,358 (2026) → 9,727,305 (2030: −0.86%) → 9,708,647 (2035: −1.05%) → 9,390,823 (2050: −4.29%)",
+                "LA County (FIPS 06037) · Baseline 2024 / Mar 2026",
+                "Official state forecast projects sustained county population contraction through lease cliff."
+              ],
+              "status": "Verified",
+              "source": "dof"
+            },
+            {
+              "cells": [
+                "SCAG Connect SoCal 2024 PEIR",
+                "10,046k (2019) → 10,214k (2030: +1.7%) → 10,793k (2050: +7.4%) · HH +22.5% · Jobs +8.6%",
+                "LA County · May 2024 Final PEIR Appendix I",
+                "Planning-target projection assumes net growth; conflicts sharply with DOF P-2A."
+              ],
+              "status": "Verified",
+              "source": "scag"
+            },
+            {
+              "cells": [
+                "SCAG Connect SoCal 2050 Draft",
+                "Preliminary 2024–2050 control total shifts toward −5% pop (9.8M→9.3M) with +6% HH",
+                "LA County · Jan 2026 Technical Working Group",
+                "Regional planner itself is pivoting downward toward DOF’s trajectory."
+              ],
+              "status": "Verified",
+              "source": "scag2050"
+            }
+          ]
         }
       ]
     },
@@ -283,7 +528,8 @@
       "id": "tenant",
       "title": "Tenant & lease",
       "kicker": "02 / Income durability",
-      "description": "The restaurant brand is not necessarily the legal tenant or guarantor. Corporate disclosures are primary issuer reports, not an independent assessment of this store.",
+      "description": "Jack in the Box Inc. FY2025 Form 10-K (Items 2 & 7) and Q3 FY2026 Form 10-Q / refinancing releases establish chain credit, the 2029 debt wall, and sublease structure. Brand signage does not prove a corporate guaranty or subject-store solvency.",
+      "caption": "Tenant credit, debt maturity wall & property structure (SEC 10-K / Q3 FY26 10-Q)",
       "columns": [
         "Item",
         "Value / finding",
@@ -292,102 +538,205 @@
       "rows": [
         {
           "cells": [
-            "System same-store sales",
-            "−1.1%",
-            "12 weeks ended July 5, 2026; not this location."
+            "Q3 FY2026 comps & system sales",
+            "−1.1% system SSS (−0.9% Co. on −1.9% traffic; YTD −3.0% Co.) · −1.4% systemwide sales",
+            "12 weeks ended July 5, 2026 (SEC 10-Q); reflects chain-wide negative traffic, not this site."
+          ],
+          "status": "Verified",
+          "source": "sec10q"
+        },
+        {
+          "cells": [
+            "Store count & shrinkage",
+            "2,115 JIB units (149 Co. / 1,966 Fran.) down from 2,136 at FY25 end; 17 Q3 closures vs 4 openings",
+            "Q3 FY2026 earnings release; YTD avg franchise count fell 2.8% YoY to 1,972 units."
           ],
           "status": "Verified",
           "source": "jack"
         },
         {
           "cells": [
-            "Systemwide sales change",
-            "−1.4%",
-            "Third quarter FY2026; not rent collection."
+            "JIB franchise AUV (Del Taco separated)",
+            "$1,874k JIB FY25 franchise AUV (down from $1,949k FY24; YTD Q3 FY26 $1,427k vs $1,460k); royalties 5.1%/5.0%",
+            "FY25 10-K Item 7 & Q3 10-Q. Corrects prior misattribution of sold Del Taco ($1,549k AUV, sold Dec 2025)."
           ],
           "status": "Verified",
-          "source": "jack"
+          "source": "sec10k"
         },
         {
           "cells": [
-            "Restaurant closures",
-            "17",
-            "Third quarter FY2026, systemwide; does not identify this site."
+            "Real estate ownership & sublease mix",
+            "1,585 Co. master-leased sites (1,443 subleased to franchisees) vs 387 franchise-direct & 164 Co. fee sites",
+            "FY25 10-K Item 2 (2,136 units at FY25 end). Confirm whether Asset A has JIB Inc. or franchisee shell signature."
           ],
           "status": "Verified",
-          "source": "jack"
+          "source": "sec10k"
         },
         {
           "cells": [
-            "Restaurant openings",
-            "4",
-            "Third quarter FY2026, systemwide."
+            "Franchise rental spread & lease terms",
+            "FY25 franchise rental rev $332.7M vs occupancy $219.2M (YTD Q3 FY26 $242.5M vs $166.0M); typically 20-yr + options",
+            "FY25 10-K notes ~13% of leases carry 1%–10% contingent sales rent and historical renewals at market rates."
           ],
           "status": "Verified",
-          "source": "jack"
+          "source": "sec10k"
         },
         {
           "cells": [
-            "Restaurant count",
-            "2,115",
-            "End of Q3 FY2026; 149 company / 1,966 franchise."
-          ],
-          "status": "Verified",
-          "source": "jack"
-        },
-        {
-          "cells": [
-            "2025 announced closure program",
-            "Approximately 150–200 restaurants",
-            "Issuer plan for underperforming restaurants; later closures tied to franchise agreement termination dates, not necessarily real-estate lease expiry. No subject-site inclusion established."
+            "JACK-on-Track closures (150–200 stores)",
+            "Closure schedule tied to franchise agreement termination dates (targets units in system >30 years)",
+            "Franchise termination ≠ real-estate lease expiry; both contracts must be read together."
           ],
           "status": "Verified",
           "source": "closure"
         },
         {
           "cells": [
-            "Covered fast-food minimum wage",
-            "$20.00 / hour",
-            "Effective April 1, 2024 as stated by DIR; coverage and local requirements require review."
+            "Securitized debt stack & 2029 maturity wall",
+            "$1,492.0M principal debt ($432.25M 2029 ARD wall on Series 2019-1 A-2-III); HoldCo >5.0x / Senior ABS >5.25x ($23.3M cash sweep)",
+            "Q3 FY26 10-Q Note 5. $432.3M debt maturity in Aug 2029 sits directly ahead of 2030–2035 lease expirations."
           ],
           "status": "Verified",
-          "source": "wage"
+          "source": "sec10q"
         },
         {
           "cells": [
-            "Exact expiration / notice deadlines",
-            "",
-            "Unverified. The reported 2030–2035 range is user context only; executed lease and amendments absent. Source is issuer context, not this lease."
+            "June 2026 refinancing & OCF compression",
+            "$500.0M Series 2026-1 7.624% Notes (May 2031 ARD); YTD OCF fell to $56.6M vs $118.1M ($11.0M franchisee deferrals)",
+            "Dividend paused; $39M VFN drawn at 6.946% ($54.6M unused); company selling owned properties ($18.9M YTD gains)."
           ],
-          "status": "Unverified",
-          "source": "jack"
+          "status": "Verified",
+          "source": "refi"
+        }
+      ],
+      "extra_tables": [
+        {
+          "caption": "Labor mandates, LA County property taxes, Measure ULA cliffs & IRC §1031 rules",
+          "columns": [
+            "Statute / Rule",
+            "Verified Rate / Threshold",
+            "Operating & Disposition Impact"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "AB 1228 covered fast-food wage",
+                "$20.00 / hour (effective April 1, 2024)",
+                "Applies to chains ≥60 units including franchisees (JIB 10-K cites +7.6% FY25 CA wage inflation)."
+              ],
+              "status": "Verified",
+              "source": "wage"
+            },
+            {
+              "cells": [
+                "CA statewide general minimum wage",
+                "$16.90/hr (2026) → $17.40/hr eff. Jan 1, 2027 ($72,384 exempt salary)",
+                "Directly verified via DIR Release 2026-66 (certified Jul 31, 2026); AB 1228 $20.00/hr remains binding for QSR."
+              ],
+              "status": "Verified",
+              "source": "wage2027"
+            },
+            {
+              "cells": [
+                "City of Los Angeles general wage",
+                "$18.42 / hour (effective July 1, 2026)",
+                "Governs non-AB 1228 retail/re-tenant employers inside City of LA; higher than state general floor."
+              ],
+              "status": "Verified",
+              "source": "lawage"
+            },
+            {
+              "cells": [
+                "LA County 2026 Assessment Roll",
+                "$2.272T County net roll (+4.42%) · City of LA $926.1B (+4.4%, 64,010 comm/ind parcels)",
+                "Assessor Roll Memo highlights >50% downtown office sale drops & ~$9.80B Prop 8/fire reductions."
+              ],
+              "status": "Verified",
+              "source": "assessor"
+            },
+            {
+              "cells": [
+                "City of LA Measure ULA (eff. 7/1/2026)",
+                "0% ≤$5.40M · 4.0% >$5.40M–<$10.90M · 5.5% ≥$10.90M (on entire gross price)",
+                "Combined with base DTT (0.56%), creates severe net-proceeds dead zones at $5.40M–$5.63M & $10.90M–$11.07M."
+              ],
+              "status": "Verified",
+              "source": "ula"
+            },
+            {
+              "cells": [
+                "Base City & County transfer taxes",
+                "$2.25/$500 City Base (0.45%) + $0.55/$500 County DTT (0.11%) = 0.56%",
+                "County imposes full $1.10/$1,000 in 5 special cities incl. City of LA; rounded up per $500 block."
+              ],
+              "status": "Verified",
+              "source": "dtt"
+            },
+            {
+              "cells": [
+                "Prop 13 ≥35-year leasehold rule",
+                "Creation, extension, or termination with term + options ≥35 yrs triggers 100% reassessment",
+                "CA BOE Annotation 220.0345 (R&TC §§61(c), 62(g)): fee sale while <35 yrs remain also triggers reassessment."
+              ],
+              "status": "Verified",
+              "source": "boe"
+            },
+            {
+              "cells": [
+                "IRC §1031 vs. taxable sale tax",
+                "§1031 defers Fed + CA real-property gain; taxable sale incurs Fed LTCG (0/15/20%) + 25% §1250 + CA ordinary income",
+                "CA FTB taxes all capital gains as ordinary income; deferral is not tax forgiveness and carries strict 45/180-day clocks."
+              ],
+              "status": "Verified",
+              "source": "ftb"
+            }
+          ]
         },
         {
-          "cells": [
-            "Legal tenant / guarantor / financial coverage",
-            "",
-            "Unverified. Do not assume a corporate guarantee from signage; private lease unavailable."
+          "caption": "Subject-lease unknowns (intentionally blank pending owner documents)",
+          "columns": [
+            "Item",
+            "Value / finding",
+            "Required private evidence"
           ],
-          "status": "Unverified",
-          "source": "jack"
-        },
-        {
-          "cells": [
-            "Rent / escalations / options / landlord obligations",
-            "",
-            "Unverified. NNN label alone does not establish expense allocation, roof, structure or casualty duties."
-          ],
-          "status": "Unverified",
-          "source": "jack"
-        },
-        {
-          "cells": [
-            "Store profitability / arrears / renewal intention",
-            "",
-            "Unverified. Chain results cannot supply store-level operating statements or estoppel."
-          ],
-          "status": "Unverified",
-          "source": "jack"
+          "rows": [
+            {
+              "cells": [
+                "Exact expiration / option notice deadlines",
+                "",
+                "Unverified. 2030–2035 expiry is user context only; executed lease & amendments required."
+              ],
+              "status": "Unverified",
+              "source": "sec10q"
+            },
+            {
+              "cells": [
+                "Legal tenant / guarantor / franchisee P&L",
+                "",
+                "Unverified. Confirm JIB Inc. master lease vs. single-purpose franchisee shell, rent/sales ratio & arrears."
+              ],
+              "status": "Unverified",
+              "source": "sec10k"
+            },
+            {
+              "cells": [
+                "Contract rent, escalations & NNN scope",
+                "",
+                "Unverified. Confirm base NOI (R), roof/structure/parking duties, casualty termination & percentage rent."
+              ],
+              "status": "Unverified",
+              "source": "sec10k"
+            },
+            {
+              "cells": [
+                "Tax basis, accumulated §1250 depreciation & debt",
+                "",
+                "Unverified. Required from CPA/lender before calculating cash-sale tax drag or §1031 net equity."
+              ],
+              "status": "Unverified",
+              "source": "irstax"
+            }
+          ]
         }
       ]
     },
@@ -395,93 +744,169 @@
       "id": "risk",
       "title": "Risk & resilience",
       "kicker": "03 / Downside first",
-      "description": "Known natural hazards are stress cases, not inherently unpredictable black swans. No parcel exposure, probability, insurance recovery or loss estimate has been assigned.",
+      "description": "Calibrated natural hazard disclosures, realized January 2025 wildfire economic losses, mandatory City of LA seismic retrofit ordinances, and commercial insurance regulatory sunsets paired with credit and statutory cliff exposures.",
+      "caption": "Natural hazards, January 2025 catastrophe precedent & insurance market stress",
       "columns": [
-        "Risk",
-        "Verified context / analysis",
-        "Mitigation or decision test"
+        "Risk / Precedent",
+        "Verified Context & Magnitude",
+        "Mitigation or Decision Test"
       ],
       "rows": [
         {
           "cells": [
-            "Earthquake / liquefaction / fault rupture",
-            "CGS maps ground-failure zones; maps do not replace site investigations or measure all shaking risk.",
-            "Parcel overlay, structural evaluation, deductible and rent-loss review required."
+            "Earthquake regional probability (UCERF3)",
+            "30-yr LA region probability: 60% ≥M6.7 · 46% ≥M7.0 · 31% ≥M7.5",
+            "Regional probability only; verify parcel shaking/liquefaction, deductible & 12-mo rental interruption coverage."
+          ],
+          "status": "Verified",
+          "source": "usgs"
+        },
+        {
+          "cells": [
+            "Fault rupture, liquefaction & landslide",
+            "CGS EQ Zapp maps statutory Alquist-Priolo & ground-failure zones; does not capture all shaking risk",
+            "Run parcel overlay on CGS EQ Zapp and verify geotechnical / structural condition before binding renewal."
           ],
           "status": "Verified",
           "source": "quake"
         },
         {
           "cells": [
-            "Wildfire / smoke / access disruption",
-            "CAL FIRE distinguishes physical hazard from mitigated risk.",
-            "Verify local adopted map, construction, evacuation access and insurance exclusions. No claim that central LA is safe."
+            "Mandatory seismic retrofit (Ord. 183893)",
+            "City of LA requires retrofit of pre-1978 wood soft-story & non-ductile concrete buildings (LABC §9508)",
+            "Confirm original construction year/frame and clear any LADBS compliance or non-ductile retrofit orders."
+          ],
+          "status": "Verified",
+          "source": "ladbs"
+        },
+        {
+          "cells": [
+            "Wildfire hazard zones vs. risk",
+            "CAL FIRE OSFM maps physical Hazard Severity Zones separately from parcel-hardened mitigated risk",
+            "Confirm 2025 LRA/SRA FHSZ designation, Class-A roof/vent hardening & smoke/utility interruption language."
           ],
           "status": "Verified",
           "source": "fire"
         },
         {
           "cells": [
-            "Flood / severe storm",
-            "FEMA MSC is the official NFIP flood-hazard information source; maps can change.",
-            "Check current effective map, drainage and flood coverage; no parcel zone assigned."
+            "Jan 2025 Palisades & Eaton realization",
+            "Eaton 14,021 ac (9,414–9,419 destr., 19 dead) · Palisades 23,448 ac (6,837–6,845 destr., 12 dead); $5.2B–$10.1B lost output",
+            "Counties & CAL FIRE updates show ~6,800 businesses & 47,000 workers disrupted even outside direct burn footprints."
+          ],
+          "status": "Verified",
+          "source": "lafires"
+        },
+        {
+          "cells": [
+            "Regional wildfire spillovers (CRS IF12871)",
+            "10 Jan 2025 fires (>40,000 ac); $2.2B–$4.2B lost labor income · $0.9B–$1.6B lost tax revenue",
+            "Demonstrates smoke, power-shutoff, water-pressure & insurance contagion across greater Los Angeles."
+          ],
+          "status": "Verified",
+          "source": "crs"
+        },
+        {
+          "cells": [
+            "Insurance model & 2028 FAIR Plan sunset",
+            "CA CDI Verisk catastrophe model + 85% market-share commitment; $100M/loc commercial FAIR Plan expires 2028",
+            "Temporary commercial backstop expires ahead of 2030–2035 lease window; audit NNN carrier & premium trends now."
+          ],
+          "status": "Verified",
+          "source": "cdi"
+        },
+        {
+          "cells": [
+            "Flood & post-fire debris flow",
+            "FEMA MSC is official NFIP source; urban storm & burn-scar maps subject to revision",
+            "Verify current effective FIRM flood zone, site drainage and NNN casualty rebuild obligations."
           ],
           "status": "Verified",
           "source": "flood"
-        },
+        }
+      ],
+      "extra_tables": [
         {
-          "cells": [
-            "Closure / default / franchise stress",
-            "Issuer reports negative same-store sales and restaurant closures.",
-            "Analysis: verify legal obligor and guaranty; plan re-leasing, carrying costs and collection downside."
+          "caption": "Structural lease, credit, statutory tax & tail risks (BAU vs. black swan)",
+          "columns": [
+            "Risk Dimension",
+            "Verified Trigger / Exposure Mechanism",
+            "Owner Decision Gate"
           ],
-          "status": "Analysis",
-          "source": "jack"
-        },
-        {
-          "cells": [
-            "Inflation / labor pressure",
-            "DIR lists a higher wage floor for covered fast-food workers.",
-            "Analysis: examine store rent coverage; do not infer failure from wage regulation."
-          ],
-          "status": "Analysis",
-          "source": "wage"
-        },
-        {
-          "cells": [
-            "Interest rates / refinancing / cap rates",
-            "No property borrowing terms or verified sale comparables available.",
-            "Analysis: stress debt maturity and higher exit yields; do not assign a market cap rate. BLS is macro context only."
-          ],
-          "status": "Analysis",
-          "source": "bls"
-        },
-        {
-          "cells": [
-            "Permitting / loss of drive-through use",
-            "ZIMAS is the City Planning public information system; parcel not identified.",
-            "Analysis: verify jurisdiction, entitlement, nonconforming rights, access and alternate uses before redevelopment."
-          ],
-          "status": "Analysis",
-          "source": "zoning"
-        },
-        {
-          "cells": [
-            "Pandemic / civil disruption / utility outage / correlated catastrophe",
-            "No verified probability or site loss estimate.",
-            "Analysis: model interrupted rent, uninsured costs and impaired exit liquidity together. FEMA supports flood context only, not these event probabilities."
-          ],
-          "status": "Analysis",
-          "source": "flood"
-        },
-        {
-          "cells": [
-            "Concentration / liquidity / reinvestment",
-            "Owner portfolio and liquidity needs are deliberately unavailable.",
-            "Analysis: compare diversified after-tax alternatives; no personal allocation or risk score can be justified. IRS supports exchange context only."
-          ],
-          "status": "Analysis",
-          "source": "irs"
+          "rows": [
+            {
+              "cells": [
+                "2029 tenant debt wall ahead of lease expiry",
+                "$432.25M Series 2019-1 debt matures Aug 2029 amid −1.1% Q3 SSS, 150–200 closures & $11.0M franchisee deferrals",
+                "Analysis: verify corporate master lease vs. franchisee shell and stress Ch. 11 §365 rejection recovery."
+              ],
+              "status": "Analysis",
+              "source": "sec10q"
+            },
+            {
+              "cells": [
+                "Wage & energy cost compression on QSR",
+                "AB 1228 $20.00/hr floor (+7.6% FY25 CA wage rise) + +20.3% LA Metro Energy CPI compress franchisee EBITDAR",
+                "Analysis: verify unit rent-to-sales %; negative store margin invites renewal rent-cut demands or default."
+              ],
+              "status": "Analysis",
+              "source": "bls"
+            },
+            {
+              "cells": [
+                "Measure ULA gross-price cliff trap",
+                "City of LA transfers >$5.40M pay 4.0% on entire price (4.56% total); ≥$10.90M pay 5.5% (6.06% total)",
+                "Never accept gross bids inside $5.40M–$5.63M or $10.90M–$11.07M dead zones; confirm City vs. County boundary."
+              ],
+              "status": "Verified",
+              "source": "ula"
+            },
+            {
+              "cells": [
+                "Prop 13 ≥35-year leasehold reassessment",
+                "Extending lease so remaining term + options ≥35 yrs triggers 100% property-tax reassessment under R&TC §61(c)",
+                "Verify total lease + option duration before signing early blend-and-extend; check tenant NNN tax cap."
+              ],
+              "status": "Verified",
+              "source": "boe"
+            },
+            {
+              "cells": [
+                "Refinancing / cap-rate decompression",
+                "4.86% 10Y Treasury + hawkish FOMC dissents keep buyer borrowing costs elevated vs. 4%–5% historical QSR caps",
+                "Analysis: test buyer DSCR at ≥7.0%–8.0% debt/exit yields; compare §1031 replacement yields on an unlevered basis."
+              ],
+              "status": "Analysis",
+              "source": "ust"
+            },
+            {
+              "cells": [
+                "Drive-through CUP & dark-box blight",
+                "Loss of continuous drive-through operation can jeopardize grandfathered conditional-use approvals under City zoning",
+                "Analysis: inspect ZIMAS/LADBS C of O & entitlement lapse clauses before accepting lease surrender."
+              ],
+              "status": "Analysis",
+              "source": "zoning"
+            },
+            {
+              "cells": [
+                "Failed §1031 / taxable-sale wealth leak",
+                "Missed 45/180-day deadlines expose gain to Fed LTCG + 25% §1250 recapture + CA ordinary income tax",
+                "Analysis: line up qualified intermediary & replacement options prior to closing; check actual basis first."
+              ],
+              "status": "Analysis",
+              "source": "irs"
+            },
+            {
+              "cells": [
+                "Uninsured black swan & concentration",
+                "Pandemic, grid blackout, water-system failure, or structural casualty exceeding policy limits / NNN carve-outs",
+                "Analysis: reject any hold path that cannot absorb 12–24 months dark carry on verified personal liquidity."
+              ],
+              "status": "Analysis",
+              "source": "eaton"
+            }
+          ]
         }
       ]
     },
@@ -489,66 +914,124 @@
       "id": "place",
       "title": "Neighborhood & land",
       "kicker": "04 / Location matters",
-      "description": "“Around central Los Angeles” does not define a parcel, jurisdiction, census tract or customer catchment. No candidate property or owner was searched for or identified.",
+      "description": "Verified regional school metrics, LA Metro D Line Section 1 opening (May 8, 2026), and City of LA CHIP Year-1 infill activity establish corridor optionality. Parcel identity, APN, zoning tier, and site traffic remain intentionally blank.",
+      "caption": "Regional schools, transit expansion & City of LA infill zoning catalysts",
       "columns": [
-        "Research dimension",
-        "Confirmed local value",
-        "Unresolved / next evidence"
+        "Location Dimension",
+        "Verified Regional Indicator",
+        "Parcel-Level Gate Required"
       ],
       "rows": [
         {
           "cells": [
-            "Geography / access / visibility",
-            "",
-            "Unverified. Parcel, intersection, drive-through circulation, parking and traffic counts absent. City planning portal is a research route only."
+            "LAUSD district scale (2025–26)",
+            "497,105 enrollment (#1 largest school district in California)",
+            "District-wide size only; pull assigned elementary/middle/high boundaries for the exact parcel."
           ],
-          "status": "Unverified",
-          "source": "zoning"
+          "status": "Verified",
+          "source": "cde"
         },
         {
           "cells": [
-            "School system performance",
-            "",
-            "Unverified. CDE reports multiple measures; no school boundary or school selection confirmed. Do not rank schools using city attainment."
+            "LAUSD 2025 Dashboard outcomes",
+            "86.5% 5-yr graduation rate (Yellow, 29,899 cohort) · 21.9% chronic absenteeism (Orange, TK–8)",
+            "District averages vary sharply across Central LA vs. Westside/Valley feeder schools."
           ],
-          "status": "Unverified",
+          "status": "Verified",
           "source": "school"
         },
         {
           "cells": [
-            "Trade-area population / income / daytime workers",
-            "",
-            "Unverified. Census city totals are not a radius or drive-time catchment. ACS sampling error and geography must be retained."
+            "LA Metro D Line Extension (May 2026)",
+            "Section 1 OPEN May 8, 2026 (Wilshire/La Brea, Fairfax, La Cienega); Sec. 2–3 in construction",
+            "Measure exact walk distance from parcel to Metro rail/D Line to test transit-oriented land upside."
           ],
-          "status": "Unverified",
-          "source": "city"
+          "status": "Verified",
+          "source": "metro"
         },
         {
           "cells": [
-            "Zoning / redevelopment / permits / title constraints",
-            "",
-            "Unverified. Jurisdiction, zoning, entitlements, easements and redevelopment costs absent."
+            "Citywide Housing Incentive Program (CHIP)",
+            "242 infill projects / 28,526 proposed homes in Year 1 (Feb 2025–2026); >60% in Central LA & South Valley",
+            "Over 90% ministerial via MIIP/AHIP/DB; C2 commercial corridor parcels near transit may carry redevelopment land value."
           ],
-          "status": "Unverified",
-          "source": "zoning"
+          "status": "Verified",
+          "source": "chip"
         },
         {
           "cells": [
-            "Competition / traffic / transit / crime / development pipeline",
-            "",
-            "Unverified. No authenticated site-specific dataset or match; no numerical value assigned. ZIMAS is location context, not proof of these measures."
+            "DTLA 2040 & corridor zoning capacity",
+            "DTLA 2040 zoned capacity for 100,000 homes, 100,000 jobs & 175,000 residents (CHIP citywide >500k)",
+            "Verify exact ZIMAS zone, TOC/MIIP/AHIP overlay & whether City of LA or unincorporated/adjacent city governs."
           ],
-          "status": "Unverified",
-          "source": "zoning"
+          "status": "Verified",
+          "source": "dtla"
         },
         {
           "cells": [
-            "Heat / air quality / contamination / insurability",
-            "",
-            "Unverified. No site study, environmental assessment or insurance quote; CAL FIRE confirms wildfire methodology only."
+            "Traffic census & highway access",
+            "Caltrans publishes state-highway AADT & peak-hour counts",
+            "Supplement with city/site arterial ADT, drive-through stacking length & median-break turning movements."
           ],
-          "status": "Unverified",
-          "source": "fire"
+          "status": "Verified",
+          "source": "caltrans"
+        }
+      ],
+      "extra_tables": [
+        {
+          "caption": "Parcel-specific unknowns (intentionally blank — no private lookup conducted)",
+          "columns": [
+            "Research dimension",
+            "Confirmed local value",
+            "Unresolved / next evidence"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "Geography / parcel / drive-through access",
+                "",
+                "Unverified. Street location, lot area, frontage AADT, curb cuts and parking absent."
+              ],
+              "status": "Unverified",
+              "source": "zoning"
+            },
+            {
+              "cells": [
+                "Assigned feeder school performance",
+                "",
+                "Unverified. CDE district totals cannot score a parcel's specific elementary/high schools."
+              ],
+              "status": "Unverified",
+              "source": "school"
+            },
+            {
+              "cells": [
+                "Trade-area population / daytime workers",
+                "",
+                "Unverified. Requires 1/3/5-mile ring & drive-time demographics rather than citywide averages."
+              ],
+              "status": "Unverified",
+              "source": "city"
+            },
+            {
+              "cells": [
+                "Zoning / MIIP / TOC / CUP entitlement",
+                "",
+                "Unverified. Confirm jurisdiction, C2/commercial FAR, drive-through CUP & redevelopment cost."
+              ],
+              "status": "Unverified",
+              "source": "chip"
+            },
+            {
+              "cells": [
+                "Environmental / crime / insurability",
+                "",
+                "Unverified. Phase I ESA, crime index, CGS/FEMA site check & insurance bindability required."
+              ],
+              "status": "Unverified",
+              "source": "quake"
+            }
+          ]
         }
       ]
     },
@@ -556,151 +1039,386 @@
       "id": "decisions",
       "title": "Decision pathways",
       "kicker": "05 / Conditional strategy",
-      "description": "Recommendation: retain optionality now. Evaluate renewal and a pre-expiry sale concurrently, but authorize neither solely on regional data. These are analyst decision rules, not official investment recommendations.",
+      "description": "Primary strategic call: reject categorical guesswork and run a parallel Two-Track Audit — test an early creditworthy extension against a pre-2029 §1031 exit (before the tenant’s $432.3M debt wall and 2030–2035 lease cliff). Exact dominance shifts cleanly by verified document gates below.",
+      "caption": "Strategic pathways: Wealth preservation vs. upside optionality",
       "columns": [
         "Pathway",
-        "When it may be preferable",
-        "Main risks / gate"
+        "When it dominates",
+        "Main risks / execution gate"
       ],
       "rows": [
         {
           "cells": [
-            "Sell before expiration",
-            "A verified after-tax offer beats the risk-adjusted value of continued income and alternatives.",
-            "Transaction tax and costs, reinvestment risk, lost rent upside. Obtain actual pricing; no sale value or optimal year established."
+            "Track 1A · Extend early then sell (§1031)",
+            "Corporate/strong-franchisee signs ≥10-yr extension at ≤5% rent cut with minimal TI, materially widening the 1031 buyer pool.",
+            "Requires ≥35–40 bps cap compression at 7%–8% cap to offset a 5% rent cut; guard against ≥35-yr Prop 13 trigger."
+          ],
+          "status": "Analysis",
+          "source": "sec10k"
+        },
+        {
+          "cells": [
+            "Track 1B · Sell pre-expiry via §1031 (Base Floor)",
+            "4–9 yrs remain ahead of JIB’s Aug 2029 $432.3M debt wall and 150–200 closures; preserves remaining-WALT pricing and defers Fed+CA tax.",
+            "Strict 45/180-day exchange deadlines; price strictly outside City of LA $5.40M–$5.63M and $10.90M–$11.07M ULA dead zones."
           ],
           "status": "Analysis",
           "source": "irs"
         },
         {
           "cells": [
-            "Negotiate early renewal / extension",
-            "Documented tenant credit, enforceable obligations, acceptable rent and expense allocation support holding.",
-            "Weak guarantees, below-market locked rent, concessions and continuing concentration. Confirm options and tenant consent first."
+            "Track 2A · Negotiate & hold long-term extension",
+            "Executed lease carries corporate master guaranty, store sales >$1.87M AUV, below-market rent, and inflation escalators.",
+            "Retains single-tenant QSR concentration, $20/hr + 20.3% energy margin risk, and 2028 FAIR Plan sunset exposure."
           ],
           "status": "Analysis",
-          "source": "jack"
+          "source": "sec10q"
         },
         {
           "cells": [
-            "Hold under existing lease",
-            "Contractual income, liquidity and insured downside are independently established and attractive relative to sale.",
-            "Shortening remaining term, default, residual costs and expiry vacancy; do not wait blindly for expiration."
+            "Track 2B · Hold as-is toward 2030 / 2035 expiry",
+            "Only if remaining term runs to 2035 with strong unit sales OR underlying transit/CHIP land value already exceeds capitalized rent.",
+            "At 6.86%–7.86% discount rates (UST+200–300 bps), a 4-yr hold vs. 14.0 R net sale requires ≥13.8 R–14.5 R Year-4 terminal value."
           ],
           "status": "Analysis",
-          "source": "jack"
+          "source": "ust"
         },
         {
           "cells": [
-            "Renew then sell",
-            "A signed creditworthy extension improves actual bids enough to offset concessions and costs.",
-            "No guaranteed cap-rate compression; extension may reduce flexibility or lock poor economics. Compare actual bids."
+            "Option C · Re-tenant dark box",
+            "Drive-through CUP stays intact and replacement tenant rent covers 12–24 months downtime, TI/LC, and Prop 13 reset.",
+            "Permitting/LADBS Ord. 183893 retrofit surprises and multi-quarter dark carry if JIB vacates at expiry."
           ],
           "status": "Analysis",
-          "source": "jack"
+          "source": "ladbs"
         },
         {
           "cells": [
-            "Re-tenant / reposition",
-            "Documented alternate demand and permitted use justify vacancy and capital spending.",
-            "Downtime, incentives, commissions, buildout and use restrictions; entitlement and budget gate required."
+            "Option D · Ground lease / CHIP infill redevelopment",
+            "Parcel qualifies for MIIP/AHIP/Metro D Line density where residual land value demonstrably exceeds capitalized QSR income.",
+            "Long entitlement/construction timeline, high debt cost (4.86% 10Y UST floor), and equity concentration."
           ],
           "status": "Analysis",
-          "source": "zoning"
+          "source": "chip"
         },
         {
           "cells": [
-            "Redevelop / ground-lease alternative",
-            "Verified legal feasibility and independently costed residual land value exceed existing-use value.",
-            "Construction, environmental, financing and permitting risk; not the default wealth-preservation route."
+            "Option E · Unshielded taxable cash sale",
+            "Appropriate only with near-market stepped-up basis or an overriding personal liquidity requirement.",
+            "Crystallizes federal 0/15/20% LTCG + 25% §1250 recapture + NIIT + California ordinary-income tax (FTB)."
           ],
           "status": "Analysis",
-          "source": "zoning"
-        },
+          "source": "ftb"
+        }
+      ],
+      "extra_tables": [
         {
-          "cells": [
-            "Sell with potential §1031 exchange",
-            "Qualified business/investment real-property exchange is suitable after tax/legal review.",
-            "Deferral is not tax elimination; eligibility and execution constraints, replacement concentration and price risk remain."
+          "caption": "Owner document gates: Which missing private fact decides the outcome?",
+          "columns": [
+            "Gate · Private Document",
+            "Decision Threshold / Inspection Test",
+            "Resulting Priority Signal"
           ],
-          "status": "Analysis",
-          "source": "irs"
+          "rows": [
+            {
+              "cells": [
+                "1 · Lease expiry & option schedule",
+                "Check 2030 vs 2035 hard maturity, unilateral tenant options, and total years vs 35-yr Prop 13 threshold.",
+                "Expiry ≤2030 with tenant-only walk rights shifts urgency toward 2027–2028 §1031 market test."
+              ],
+              "status": "Analysis",
+              "source": "boe"
+            },
+            {
+              "cells": [
+                "2 · Legal tenant & store P&L",
+                "Verify Jack in the Box Inc. corporate master lease vs franchisee LLC, plus store sales vs $1,874k brand AUV.",
+                "Franchisee-only shell or weak unit coverage elevates 2029–2030 closure/rent-cut risk."
+              ],
+              "status": "Analysis",
+              "source": "sec10k"
+            },
+            {
+              "cells": [
+                "3 · Broker price bracket vs Measure ULA",
+                "Confirm City of LA vs adjacent jurisdiction and net proceeds after 0.56% / 4.56% / 6.06% transfer taxes.",
+                "Avoid gross sale prices inside $5.40M–$5.63M or $10.90M–$11.07M dead zones."
+              ],
+              "status": "Verified",
+              "source": "ula"
+            },
+            {
+              "cells": [
+                "4 · ZIMAS zoning, CHIP & D Line proximity",
+                "Pull ZIMAS C2/TOC/MIIP/AHIP tier and confirm LADBS Ord. 183893 retrofit status.",
+                "High infill land residual supports holding for land play instead of selling purely on QSR WALT."
+              ],
+              "status": "Analysis",
+              "source": "metro"
+            },
+            {
+              "cells": [
+                "5 · CPA basis & debt prepayment schedule",
+                "Compute adjusted tax basis, §1250 depreciation recapture, and current mortgage terms vs 7.62% corporate debt cost.",
+                "Low basis strongly favors §1031 exchange over taxable sale; free-and-clear simplifies timing."
+              ],
+              "status": "Analysis",
+              "source": "irstax"
+            }
+          ]
         }
       ]
     },
     {
       "id": "model",
       "title": "Projection framework",
-      "kicker": "06 / No invented forecasts",
-      "description": "An evidence-gated framework, not a calibrated forecasting system. No property valuation, probability of renewal, forecast return or optimal decision can be computed from the available evidence. Numerical outputs are intentionally blank.",
+      "kicker": "06 / Assumption-explicit model",
+      "description": "Replaces withheld unverified companion probabilities with: (1) official agency 2026–2035 demographic benchmarks, (2) exact statutory Measure ULA net-proceeds math, and (3) unweighted algebraic break-even identities on a 1.00 R unit-rent basis (model/area_projection.py). Calibrated property-level forecasts remain blank until private lease and tax inputs are supplied.",
+      "caption": "Official agency 2026–2035 horizon trajectories (no artificial blending)",
       "columns": [
-        "Scenario / output",
-        "Projected value",
-        "Method or release gate"
+        "Benchmark / Trajectory",
+        "2026 → 2030 / 2035 Values",
+        "Vintage · Constraint & Method"
       ],
       "rows": [
         {
           "cells": [
-            "Business as usual · 2030–2035",
-            "",
-            "Unverified. Use only executed contractual rent through the verified term, confirmed unreimbursed expenses and debt; no extrapolated local growth. Issuer is tenant context only."
+            "CA DOF P-2A official county path",
+            "9,811,358 (2026) → 9,727,305 (2030: −0.86%) → 9,708,647 (2035: −1.05%)",
+            "Verified state projection (Baseline 2024 / Mar 2026, FIPS 06037); continues to 9,390,823 (−4.29%) by 2050."
           ],
-          "status": "Unverified",
-          "source": "jack"
+          "status": "Verified",
+          "source": "dof"
         },
         {
           "cells": [
-            "Renewal case · 2030–2035",
-            "",
-            "Unverified. Requires signed extension or separately labeled assumption, concessions, credit review and verified notice rights."
-          ],
-          "status": "Unverified",
-          "source": "jack"
-        },
-        {
-          "cells": [
-            "Vacancy / re-tenant case",
-            "",
-            "Unverified. Requires supported downtime, market rent, leasing costs, carrying costs, capital work and approved use."
-          ],
-          "status": "Unverified",
-          "source": "zoning"
-        },
-        {
-          "cells": [
-            "Catastrophe / interrupted income",
-            "",
-            "Unverified. Requires parcel hazard checks, engineering, policy limits, deductible, exclusions, restoration time and debt obligations. No fabricated event probability."
-          ],
-          "status": "Unverified",
-          "source": "quake"
-        },
-        {
-          "cells": [
-            "Sale net proceeds / after-tax NPV",
-            "",
-            "Unverified. Sale price less verified debt payoff, costs and tax; compare to discounted holding cash flows and net terminal proceeds. Tax basis and discount rate unavailable."
-          ],
-          "status": "Unverified",
-          "source": "irs"
-        },
-        {
-          "cells": [
-            "Robust decision rule",
-            "",
-            "Analysis. Reject alternatives that cannot meet verified liquidity needs in adverse cases; compare after-tax values only after evidence gates pass. No arbitrary weights, annual growth rates or risk scores."
+            "Census V2025 LA City extrapolated pace",
+            "−0.16%/yr historical pace → −0.6% (4-yr 2030) / −1.4% (9-yr 2035)",
+            "Analysis: pure geometric extrapolation of Apr 2020–Jul 2025 City −0.8% shift; not a forecast."
           ],
           "status": "Analysis",
-          "source": "irs"
+          "source": "city"
         },
         {
           "cells": [
-            "Validation and monitoring",
-            "",
-            "Analysis. Retain vintages, geography and source definitions; back-test only with matched historical observations, holdout periods and error reporting. Recheck BLS on release; no automatic refresh is claimed."
+            "SCAG Connect SoCal 2024 PEIR",
+            "10,046k (2019) → 10,214k pop (2030, +1.67%) · HH 3,784k (+11.5%) · Jobs 5,277k (+4.9%)",
+            "Verified regional planning target (May 2024 App. I); diverges upward from CA DOF."
           ],
-          "status": "Analysis",
-          "source": "bls"
+          "status": "Verified",
+          "source": "scag"
+        },
+        {
+          "cells": [
+            "SCAG Connect SoCal 2050 TWG Draft",
+            "Preliminary 2024–2050 LA County pop −5% (9.8M→9.3M) with +6% HH",
+            "Verified Jan 2026 TWG packet; regional MPO forecast shifting down toward DOF P-2A."
+          ],
+          "status": "Verified",
+          "source": "scag2050"
+        },
+        {
+          "cells": [
+            "BLS Sep 2026 Metro job pace",
+            "+0.5% YoY payrolls (6,282.1k) alongside −1.8% YoY labor force (−121.6k)",
+            "Verified Sep 2026 NSA snapshot; modest job expansion offset by contracting workforce."
+          ],
+          "status": "Verified",
+          "source": "bls_metro"
+        }
+      ],
+      "extra_tables": [
+        {
+          "caption": "Statutory City of Los Angeles transfer tax + Measure ULA net-proceeds cliffs (eff. July 1, 2026)",
+          "columns": [
+            "Gross Sale Price",
+            "City + County + ULA Tax",
+            "Effective Rate · Net Proceeds Before Brokerage (Dead-Zone Test)"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "$5,000,000",
+                "$28,000",
+                "0.560% · $4,972,000 net (0% ULA)"
+              ],
+              "status": "Verified",
+              "source": "ula"
+            },
+            {
+              "cells": [
+                "$5,400,000",
+                "$30,240",
+                "0.560% · $5,369,760 net (ceiling of 0% ULA bracket)"
+              ],
+              "status": "Verified",
+              "source": "ula"
+            },
+            {
+              "cells": [
+                "$5,400,500",
+                "$246,263",
+                "4.560% · $5,154,237 net (−$215,523 net drop on +$500 gross price)"
+              ],
+              "status": "Verified",
+              "source": "ula"
+            },
+            {
+              "cells": [
+                "$5,626,500",
+                "$256,568",
+                "4.560% · $5,369,932 net (minimum $500-rounded price recovering $5.40M net)"
+              ],
+              "status": "Verified",
+              "source": "ula"
+            },
+            {
+              "cells": [
+                "$7,500,000",
+                "$342,000",
+                "4.560% · $7,158,000 net (within 4.0% ULA tier)"
+              ],
+              "status": "Verified",
+              "source": "ula"
+            },
+            {
+              "cells": [
+                "$10,899,500",
+                "$497,017",
+                "4.560% · $10,402,483 net (ceiling of 4.0% ULA tier)"
+              ],
+              "status": "Verified",
+              "source": "ula"
+            },
+            {
+              "cells": [
+                "$10,900,000",
+                "$660,540",
+                "6.060% · $10,239,460 net (−$163,023 net drop; recovery requires $11,074,000)"
+              ],
+              "status": "Verified",
+              "source": "ula"
+            }
+          ]
+        },
+        {
+          "caption": "Algebraic cap-rate multiples, extension break-evens & hold hurdles (1.00 R basis, zero guessed probabilities)",
+          "columns": [
+            "Parameterization / Horizon",
+            "Exact Mathematical Identity",
+            "Basis & Unverified-Input Caveat"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "6.00% Cap Rate (+114 bps vs 4.86% 10Y UST)",
+                "16.67 R gross multiple · −30 / −60 bps cap tightening required for −5% / −10% rent cut",
+                "Analysis: pure 1/c & Δc=−cut·c identities; market NNN cap rate for Asset A is unverified."
+              ],
+              "status": "Analysis",
+              "source": "ust"
+            },
+            {
+              "cells": [
+                "7.00% Cap Rate (+214 bps vs 4.86% 10Y UST)",
+                "14.29 R gross multiple · −35 / −70 bps cap tightening required for −5% / −10% rent cut",
+                "Analysis: shows blend-and-extend rent concessions destroy value unless exit cap compresses."
+              ],
+              "status": "Analysis",
+              "source": "ust"
+            },
+            {
+              "cells": [
+                "7.50% Cap Rate (+264 bps vs 4.86% 10Y UST)",
+                "13.33 R gross multiple · −38 / −75 bps cap tightening required for −5% / −10% rent cut",
+                "Analysis: spread over Nov 6, 2026 4.86% 10Y UST; before legal, TI, or brokerage friction."
+              ],
+              "status": "Analysis",
+              "source": "ust"
+            },
+            {
+              "cells": [
+                "8.00% Cap Rate (+314 bps vs 4.86% 10Y UST)",
+                "12.50 R gross multiple · −40 / −80 bps cap tightening required for −5% / −10% rent cut",
+                "Analysis: stress yield tier if single-tenant franchisee credit widens cap spreads."
+              ],
+              "status": "Analysis",
+              "source": "ust"
+            },
+            {
+              "cells": [
+                "4-Yr Hold (to 2030) vs 14.00 R §1031 Exit Today",
+                "PV of rent = 3.40 R (@ 6.86%) / 3.32 R (@ 7.86%) → Year-4 value must ≥13.82 R–14.45 R",
+                "Analysis: discount sweep = Nov 6, 2026 4.86% 10Y UST + 200/300 bps; compare against dark-box floor."
+              ],
+              "status": "Analysis",
+              "source": "ust"
+            },
+            {
+              "cells": [
+                "9-Yr Hold (to 2035) vs 14.00 R §1031 Exit Today",
+                "PV of rent = 6.55 R (@ 6.86%) / 6.28 R (@ 7.86%) → Year-9 value must ≥13.53 R–15.25 R",
+                "Analysis: longer NNN term cushions interim carry, yet terminal value at 2035 remains decisive."
+              ],
+              "status": "Analysis",
+              "source": "ust"
+            }
+          ]
+        },
+        {
+          "caption": "Subject-property calibrated forecasts (intentionally blank until private lease & basis supplied)",
+          "columns": [
+            "Scenario / output",
+            "Projected value",
+            "Method or release gate"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "Business as usual · 2030–2035",
+                "",
+                "Unverified. Requires executed rent (R), hard expiration date, confirmed NNN duties and debt terms."
+              ],
+              "status": "Unverified",
+              "source": "sec10q"
+            },
+            {
+              "cells": [
+                "Renewal / blend-and-extend case",
+                "",
+                "Unverified. Requires signed extension proposal, tenant guaranty, concessions and Prop 13 35-yr check."
+              ],
+              "status": "Unverified",
+              "source": "boe"
+            },
+            {
+              "cells": [
+                "Vacancy / dark-box re-tenant case",
+                "",
+                "Unverified. Requires site-level replacement market rent, downtime months, TI/LC and CUP check."
+              ],
+              "status": "Unverified",
+              "source": "zoning"
+            },
+            {
+              "cells": [
+                "Catastrophe / uninsured loss stress",
+                "",
+                "Unverified. Requires parcel CGS/FEMA/FHSZ checks, Ord. 183893 status, policy limits and deductible."
+              ],
+              "status": "Unverified",
+              "source": "quake"
+            },
+            {
+              "cells": [
+                "Exact sale net proceeds / after-tax NPV",
+                "",
+                "Unverified. Requires broker BOV, adjusted tax basis, §1250 recapture and §1031 replacement yield."
+              ],
+              "status": "Unverified",
+              "source": "irs"
+            }
+          ]
         }
       ]
     },
@@ -708,144 +1426,37 @@
       "id": "review",
       "title": "Flagged for Review",
       "kicker": "07 / Transparent limitations",
-      "description": "Published review items do not block the site. They do block unsupported financial claims. Source links below are context or verification routes, not evidence of missing private values.",
+      "description": "Full audit register of remaining private-document unknowns, resolved primary-source gaps (F-04, F-17), agency projection divergences, and withheld companion model rankings.",
+      "caption": "Open private gates, resolved primary-source corrections & publication guardrails",
       "columns": [
         "Priority",
         "Item",
-        "Finding"
+        "Finding & Resolution Status"
       ],
       "rows": [
         {
           "cells": [
             "Critical",
-            "Property identity and lease",
-            "No parcel or executed lease; exact expiration, NNN obligations, options and notice dates not verified."
+            "Property identity and executed lease",
+            "No parcel, APN, or executed lease; exact expiration (2030 vs 2035), NNN duties, options and notice deadlines unverified."
           ],
           "status": "Unverified",
-          "source": "jack"
+          "source": "sec10q"
         },
         {
           "cells": [
             "Critical",
-            "Value, debt and owner suitability",
-            "Rent, NOI, basis, debt, liquidity and concentration unavailable. No defensible personal buy/sell determination."
+            "Rent, tax basis, debt & owner liquidity",
+            "Base NOI (R), adjusted basis, §1250 recapture, loan balance and owner concentration unavailable. Personalized buy/sell ranking withheld."
           ],
           "status": "Unverified",
           "source": "irs"
-        },
-        {
-          "cells": [
-            "High",
-            "Geographic mismatch",
-            "City, county and metro observations are context only; cannot support a central LA parcel forecast."
-          ],
-          "status": "Unverified",
-          "source": "city"
-        },
-        {
-          "cells": [
-            "High",
-            "Tenant and guarantee mismatch",
-            "Chain performance is not this store or legal obligor. No site closure or renewal probability asserted."
-          ],
-          "status": "Unverified",
-          "source": "jack"
-        },
-        {
-          "cells": [
-            "High",
-            "Unquantified hazards and insurance",
-            "No parcel overlay, engineering report, effective coverage or replacement-cost evidence."
-          ],
-          "status": "Unverified",
-          "source": "quake"
-        },
-        {
-          "cells": [
-            "High",
-            "Missing neighborhood evidence",
-            "School performance, crime, traffic, competitive supply and local development not established."
-          ],
-          "status": "Unverified",
-          "source": "school"
-        },
-        {
-          "cells": [
-            "High",
-            "Projection not calibrated",
-            "No official source supplies this property’s 2030–2035 sale price, cap rate, rent or renewal chance. Numerical forecasts withheld."
-          ],
-          "status": "Unverified",
-          "source": "bls"
-        },
-        {
-          "cells": [
-            "Review",
-            "Source revisions and sampling",
-            "QuickFacts spans different vintages; ACS estimates have sampling error; BLS summary is not seasonally adjusted and may be revised."
-          ],
-          "status": "Needs review",
-          "source": "city"
-        },
-        {
-          "cells": [
-            "Review",
-            "Source URL repairs",
-            "Initial CAL FIRE and USGS paths returned not-found pages. Replaced with inspected OSFM and CGS sources; no facts taken from failed pages."
-          ],
-          "status": "Needs review",
-          "source": "fire"
-        },
-        {
-          "cells": [
-            "Review",
-            "Jurisdiction and entitlements",
-            "Los Angeles vicinity does not confirm City of Los Angeles jurisdiction; ZIMAS may not be the competent authority."
-          ],
-          "status": "Needs review",
-          "source": "zoning"
-        },
-        {
-          "cells": [
-            "Review",
-            "Conflicting inherited strategy rankings",
-            "Companion model rankings and risk scores depend on assumed inputs, not official property evidence; not a personalized recommendation."
-          ],
-          "status": "Needs review",
-          "source": "irs"
-        },
-        {
-          "cells": [
-            "Review",
-            "Rolling BLS source updated",
-            "November 4, 2026 summary now reports September data. Root tables refreshed; historical companion snapshots have not all been reverified."
-          ],
-          "status": "Needs review",
-          "source": "bls"
-        },
-        {
-          "cells": [
-            "Review",
-            "CDE source unavailable during audit",
-            "Previous audit could not fetch CDE; the official page was inspected on November 7. The relevant school boundary and local performance remain unverified."
-          ],
-          "status": "Needs review",
-          "source": "school"
-        },
-        {
-          "cells": [
-            "Review",
-            "Franchise date is not lease expiration",
-            "Do not equate a franchise agreement termination date with the reported property lease expiry; neither agreement supplied."
-          ],
-          "status": "Needs review",
-          "source": "jack"
         },
         {
           "cells": [
             "Critical",
             "Franchise agreement ≠ property lease",
-            "An earlier companion report equated the franchise termination date with the reported lease expiry. The issuer does not establish this property’s franchise date or closure status."
+            "JIB’s 150–200 closure program aligns with franchise agreement expirations; neither parcel franchise term nor master lease is verified."
           ],
           "status": "Needs review",
           "source": "closure"
@@ -853,56 +1464,110 @@
         {
           "cells": [
             "Critical",
-            "Prior model and recommendations",
-            "Earlier companion models used unsupported cap rates, probabilities and asymmetric cash-flow adjustments. Their rankings are not a reliable property valuation or personalized recommendation; withheld from this publication."
+            "Advisory scenario rankings withheld",
+            "Prior companion /advisory/ rankings relied on assumed scenario probabilities (20/50/20/10%), cap rates and tax rates not verified by cited official links; withheld from Pages and replaced here with pure algebraic break-even identities."
           ],
           "status": "Needs review",
-          "source": "jack"
+          "source": "irs"
+        },
+        {
+          "cells": [
+            "Resolved",
+            "F-17 · CA 2027 minimum wage ($17.40/hr)",
+            "Verified directly on CA DIR News Release 2026-66 (certified July 31, 2026): statewide floor rises to $17.40/hr on 2027-01-01 ($72,384 exempt salary); AB 1228 $20.00/hr fast-food floor stays higher."
+          ],
+          "status": "Verified",
+          "source": "wage2027"
+        },
+        {
+          "cells": [
+            "Resolved",
+            "F-04 / F-13 · CA DOF P-2A & SCAG URL defect",
+            "Parsed CA DOF P2A_County_Total.xlsx directly (LA County 2030: 9,727,305; 2035: 9,708,647). Flagged that companion URL demo30_table03.pdf serves a 2019 LAUSD deck, not Connect SoCal; replaced with verified PEIR App. I & 2050 TWG Draft."
+          ],
+          "status": "Verified",
+          "source": "dof"
+        },
+        {
+          "cells": [
+            "Resolved",
+            "IR-10 · JIB vs. Del Taco AUV separation",
+            "FY25 10-K Item 7 establishes JIB brand franchise AUV at $1,874k (FY25) / $1,949k (FY24); $1,549k belonged to Del Taco (divested Dec 22, 2025)."
+          ],
+          "status": "Verified",
+          "source": "sec10k"
         },
         {
           "cells": [
             "High",
-            "Companion report publication",
-            "Earlier companion pages include third-party figures, unsourced rows and differing recommendations. Preserved in the repository but excluded from the Pages artifact until reverified."
+            "Geographic mismatch & catchment",
+            "City, county and metro statistics describe regional context only; 1/3/5-mile trade-area income and traffic counts require parcel address."
           ],
-          "status": "Needs review",
+          "status": "Unverified",
           "source": "city"
         },
         {
           "cells": [
-            "Review",
-            "Live source updates",
-            "The BLS summary is a rolling document. September 2026 observations were checked November 7; figures can later be revised or replaced."
+            "High",
+            "Tenant obligor & store P&L mismatch",
+            "10-K reports 1,585 Co. master-leased vs 387 franchise-direct sites. Chain comps (−1.1%) cannot prove this store’s rent coverage."
           ],
-          "status": "Needs review",
-          "source": "bls"
+          "status": "Unverified",
+          "source": "sec10k"
         },
         {
           "cells": [
             "High",
-            "Employment and CPI as-of corrections (F-16)",
-            "Rows previously labelled August 2026 cited a BLS summary that reports September 2026. Re-pointed to September values from that document (payrolls 6,282.1k, +0.5%; CPI +3.7%; energy +20.3%; ECI CSA +3.9%). Figures not in the cited document (U.S. August rate, LA County and LA City August rates) are blank and unverified. Older research layers still carry August figures."
+            "Unquantified parcel hazards & Ord. 183893",
+            "No parcel CGS/FEMA/FHSZ map check, pre-1978 LADBS retrofit verification, Phase I ESA, or current insurance policy bindability check."
+          ],
+          "status": "Unverified",
+          "source": "ladbs"
+        },
+        {
+          "cells": [
+            "High",
+            "Missing neighborhood school & traffic data",
+            "LAUSD 497,105 enrollment & 86.5% grad rate are district totals; parcel feeder schools, local crime, and arterial AADT are unverified."
+          ],
+          "status": "Unverified",
+          "source": "school"
+        },
+        {
+          "cells": [
+            "High",
+            "F-16 · Sep 2026 BLS snapshot & legacy layers",
+            "Root pages reflect verified Sep 2026 BLS summary & Table 1/2 (labor force −121.6k YoY). Excluded historical repository layers still retain earlier August figures."
           ],
           "status": "Needs review",
           "source": "bls"
         },
         {
           "cells": [
-            "Medium",
-            "California minimum wage from 2027-01-01 (F-17)",
-            "Secondary sources report $17.40 per hour, certified 2026-07-31. The DIR primary page could not be re-fetched this session, so the figure is not published as a value. Confirm on the DIR minimum-wage page before use."
+            "Review",
+            "Jan 2025 wildfire damage count vintages",
+            "LA County Anniversary Fact Sheet (6,837 / 9,414 destroyed) differs slightly from CAL FIRE 2026 incident logs (6,845 / 9,419 destroyed); both official counts preserved."
           ],
           "status": "Needs review",
-          "source": "wage"
+          "source": "palisades"
         },
         {
           "cells": [
-            "Critical",
-            "Advisory scenario rankings withheld",
-            "The previously published advisory companion used assumed scenario weights and numerical pathway rankings; cited official sources do not verify those forecasts. It is excluded pending independent validation; do not use it to choose a transaction."
+            "Review",
+            "Jurisdiction & zoning authority",
+            "Central LA vicinity does not prove City of Los Angeles incorporation; Measure ULA, Ord. 183893 & CHIP/MIIP apply only inside City boundaries."
           ],
           "status": "Needs review",
-          "source": "irs"
+          "source": "zoning"
+        },
+        {
+          "cells": [
+            "Review",
+            "Companion report exclusion boundary",
+            "Legacy companion dashboards (docs/, analysis/, brief/, pages/, decision-file/, audit/, advisory/) remain in Git for provenance and are excluded from GitHub Pages."
+          ],
+          "status": "Needs review",
+          "source": "city"
         }
       ]
     }
