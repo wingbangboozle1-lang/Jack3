@@ -627,3 +627,37 @@ merge** (`report/`, workflow, staging mechanics, CI repair) to `f7e46f4e` and ke
   will extend that page rather than duplicate it.
 
 No content from `f7e46f4e`, `e1bfd73b` or any earlier session was removed in this resolution.
+
+## Task board — session `abcebbee` (finalised)
+
+| ID | Task | Status | Owner | Files | Verification performed |
+|---|---|---|---|---|---|
+| A-01 | Claim + concurrency resolution | done | `abcebbee` | `COORDINATION.md` | Claim pushed before content work; conflict with `f7e46f4e` resolved additively after an accidental truncation was detected and repaired by restoring `origin/main`'s full board (+559 lines) |
+| A-02 | Line-by-line re-verification of every published row | done | `abcebbee` | `research/VERIFICATION-2026-11-08.md` | All 12 registered sources re-fetched; every value-bearing cell re-read; 10 new official pages read; gaps and link repairs recorded (V-1…V-10) |
+| A-03 | Verified dataset expansion | done | `abcebbee` | `data/evidence.json` | 141 rows (was 79), 24 sources (was 12), 12 pages (was 9). Added `demographics`, `schools`, `taxes`; extended `economy`, `tenant`, `risk`, `decisions`, `model`, `review` |
+| A-04 | Decision-first landing + executive summary | done | `abcebbee` | `scripts/build.py`, `index.html`, `EXECUTIVE_SUMMARY.md` | Landing states the conditional recommendation, the six findings, the risk balance and the triggers that would change the answer; earlier summary archived, not deleted |
+| A-05 | CI/gates on the combined tree | done | `abcebbee` | `scripts/stage_pages.py`, `.gitignore`, generated HTML | `build.py` PASS (141 rows, 12 pages); `validate.py` PASS; `stage_pages.py` PASS (14 staged entries, links + row provenance); `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py` (0 findings, 84 files), `_advisory_src/verify_advisory.py` all PASS |
+| A-06 | PR → `main`, merge, Pages deploy | in progress | `abcebbee` | `COORDINATION.md`, PR | Result recorded below |
+
+### Sources added this session (all re-read 2026-11-08)
+LA County Assessor (Prop 13) · City of Los Angeles Office of Finance (transfer tax + Measure ULA FAQ) · CA DIR (general
+minimum wage) · CA Department of Education (LAUSD district profile, largest-district table, ACGR dataset) · USGS
+(ShakeOut OFR 2008-1150) · CAL FIRE (Palisades and Eaton incident pages) · Federal Reserve via FRED (DGS10) · IRS Topic
+409 · California FTB (capital gains treatment).
+
+### Irregularities and open items published on `review.html`
+- LA County documentary transfer tax rate left **blank** — the County Recorder page could not be retrieved; only
+  secondary sources state $1.10 per $1,000.
+- LAUSD four-year graduation rate left **blank** — the CDE cohort file was not extracted.
+- USGS ShakeOut programme URL returns 404; link repaired to the official report host.
+- Measure ULA thresholds **verified** ($5,400,000 / $10,900,000, 4% / 5.5%) — the long-standing "official page 404" flag
+  is closed.
+- 2026 minimum wage **$16.90** verified; the 2027 figure ($17.40) is not on the DIR page and is not published.
+- ZIMAS and the CDE Dashboard are interactive applications and yield no extractable parcel or school fact.
+
+### Concurrency note
+Session `f7e46f4e` holds a parallel final-integration claim on `report/**`, the workflow and the shared landing. This
+session's changes are additive to the same shared files, so its PR can be rebased over them; nothing in `report/**`,
+`verification-3644edd8/**`, `advisory/**` or any other session's directory was edited or deleted here. Open PRs #4,
+#12, #22 and #26 were not touched: they are stale (>60 min, no commits) and their CI is red for integration reasons, so
+they are left for their owners or a later integration rather than merged broken.
