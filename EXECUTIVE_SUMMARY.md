@@ -1,311 +1,161 @@
-# Executive Summary
+# Executive Summary — Asset A
 
-**Subject:** PROPERTY-01 — a single-tenant Jack in the Box NNN (triple-net) lease
-property in Central Los Angeles, primary term expiring between 2030 and 2035.
-**Question:** sell before the lease expires, or renew?
-**Objective stated by the owner:** preservation of wealth *and* opportunity for
-growth, at a manageable level of risk.
-**Data snapshot:** 2026-11-06.
-**Live site:** <https://wingbangboozle1-lang.github.io/Jack3/decision-file/>
+**Subject:** a single-tenant Jack in the Box net-leased (NNN) restaurant property, central Los Angeles, reported by
+the owner to expire between 2030 and 2035.
+**Question:** sell before expiry, or renew?
+**Owner's objective:** preserve capital *and* retain growth optionality at a manageable level of risk.
+**Evidence snapshot:** 2026-11-08. **Full record:** `research/VERIFICATION-2026-11-08.md`.
+**Published dashboard:** <https://wingbangboozle1-lang.github.io/Jack3/>
 
----
-
-## Recommendation
-
-> ## Sell — and if the tenant will commit to an early extension first, buy the term and then sell the lengthened lease. Do not plan around renewing at expiry.
-
-Selling now carries the **highest worst-case present value of every strategy
-modelled**: **11.62 R** in the pessimistic scenario, against **9.88 R** for the
-next-best strategy and **1.18 R** for renewing the Jack in the Box lease to a
-2030 expiry. Renewing ranks **last in both the base and the pessimistic
-scenario**.
-
-Under the owner's stated objective the *floor* matters more than the *ceiling*,
-because the owner does not get to choose the scenario in advance. Selling has
-the highest floor and the narrowest spread of any strategy tested.
-
-`R` = one year of the property's current contractual base rent. The model is
-normalised this way because the actual rent was never supplied and no figure has
-been invented. Multiply by the real rent to get dollars.
+> **Privacy.** The asset is published as *Asset A*. No address, parcel number, owner name, contact detail, rent roll,
+> lease or financial statement is collected, stored or published. Nothing in this file identifies a person or a parcel.
+> The earlier summary dated 2026-11-06 is archived unchanged at
+> `research/archive/EXECUTIVE_SUMMARY-2026-11-06-superseded.md`; it quoted superseded August-2026 labour figures and a
+> Measure ULA threshold schedule that has since been replaced. It is retained for audit, not for use.
 
 ---
 
-## The situation
+## 1. Recommendation
 
-The owner holds a freehold interest in a single-tenant quick-service restaurant
-property in Central Los Angeles, occupied under a triple-net lease by a Jack in
-the Box restaurant, with the primary term expiring somewhere between 2030 and
-2035. Under a true NNN structure the tenant pays property taxes, insurance and
-maintenance, so the owner's *operating* exposure is close to zero while the lease
-runs. The owner's exposure is entirely to two things: **whether the tenant
-stays**, and **what the site is worth if it does not**.
+> **Run both tracks at once: start a confidential sale process 24–36 months before the earliest expiry, and demand the
+> tenant's renewal terms in writing. Convert to whichever the documents support — a verified after-tax sale, or an
+> enforceable extension of ten years or more at market rent with acceptable credit. What is not defensible is allowing
+> a 2030–2035 option clock to run out on regional averages alone.**
 
-NNN leasing is often described as passive ownership. It is not. It transfers
-every operating cost to the tenant and leaves the owner with 100% of the
-*continuation* risk.
+This is analyst judgement on verified public evidence plus the owner's stated facts. It is **not** a valuation, an
+appraisal, a tax opinion or personalised investment advice, and it does not assume a price, rent or cap rate.
 
----
+**Why the sale track leads:** every verified trend that touches this asset is flat or negative, the tenant is
+contracting and is itself selling real estate, and the owner's principal risk is a single-tenant vacancy at an unknown
+future date. Marketing while the income is contractual keeps the owner's options open; waiting transfers the timing
+decision to the tenant.
 
-## The six findings that decide it
+**Why the renewal track runs in parallel:** an extension converts a wasting asset into a longer income stream and
+usually widens the buyer pool. If the tenant will commit in writing, the owner can choose between two priced
+alternatives instead of one. The discipline is that only a **signed, enforceable, credit-supported** extension counts.
 
-### 1. The tenant is contracting, and its closure trigger is the lease expiry date
+### Decision matrix
 
-Jack in the Box Inc. discloses a **150–200 restaurant block closure programme**
-("JACK on Track", announced 2025-04-23). The restaurants targeted are, in the
-issuer's words, *"a majority of which have been in the system for over three
-decades"*, and the remaining closures occur ***"based upon respective franchise
-agreement termination dates"***.
-
-The system has shrunk from **2,191 restaurants at FY2024 year end to 2,115 at
-2026-07-05** — 86 closures in FY2025 against 31 openings, and 40 more closures in
-the first three quarters of FY2026. Fiscal 2026 guidance is approximately 2,100.
-
-**A lease expiring between 2030 and 2035 is that date.** A long-operating site
-with a lease expiring inside the window matches the stated closure profile on all
-three counts. This does not mean the site will close. It means the owner should
-not assume renewal, and should establish the site's status with the tenant before
-committing capital to either a renewal negotiation or a marketing process.
-
-*Source: [Form 10-K, FY ended 2025-09-28](https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm); [Form 10-Q, period ended 2026-07-05](https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm) — VERIFIED*
-
-### 2. System same-store sales are negative in every recent period
-
-| Period | Company | Franchise | System |
+| Route | Trigger that makes it correct | Dominant risk | Verdict |
 |---|---|---|---|
-| FY2024 | 0.0% | (1.5)% | (1.3)% |
-| FY2025 | (3.7)% | (4.3)% | **(4.2)%** |
-| Q3 FY2025 | (6.4)% | (7.2)% | (7.1)% |
-| Q3 FY2026 | (0.9)% | (1.2)% | **(1.1)%** |
+| **Sell with a §1031 replacement identified** | A documented, after-tax bid that beats the risk-adjusted hold case, with a replacement in sight | Replacement-asset risk; price risk if marketed late | **Primary track** |
+| **Extend, then sell or hold** | Tenant offers ≥10 years at market rent, credit-supported, on acceptable expense terms | Concessions; locking poor economics; no guaranteed cap-rate benefit | **Run in parallel; act only on signed terms** |
+| **Hold to expiry unchanged** | Contractual income, adequate reserves and verified insurance cover | Expiry vacancy, tenant default, capital calls at the worst moment | **Reject as a plan** |
+| **Re-tenant / reposition** | Verified alternate demand and permitted use justify vacancy and build-out | Downtime, incentives, entitlement, construction cost | Fallback only |
+| **Redevelop / ground lease** | Independently costed residual land value beats the existing-use value | Permitting, environmental, financing | Not the wealth-preservation route |
+| **Sale without exchange** | Owner wants liquidity and accepts the tax | Immediate capital-gains and depreciation-recapture tax | Rational only if liquidity dominates |
 
-Declines were driven by **lower transactions**, only partially offset by menu
-price increases. Franchised average unit volume fell from $1,573K to $1,549K.
-Franchise-level margin fell to $60.3M (37.4% of franchise revenues) from $66.2M
-(39.3%). Food and packaging costs rose to 29.3% of company restaurant sales from
-28.6%.
+### What would change this recommendation
 
-Store-level sales drive a franchisee's ability to pay rent and its willingness to
-renew. Sustained negative comps convert into rent concessions, closures, or
-non-renewal.
+1. A **signed extension** at market rent with acceptable credit — this would move the hold/extend route to the front.
+2. A **verified after-tax bid** that clearly exceeds the hold case.
+3. **Block-level evidence** that this specific trade area is growing: the city and county aggregates published here
+   cannot show that.
+4. A change in the **owner's liquidity needs or risk tolerance**, which is private information not modelled here.
 
-### 3. The county is losing population — and the official forecasters disagree on the sign
+---
 
-| Source | Direction | Detail |
-|---|---|---|
-| **U.S. Census Bureau, Vintage 2025** (measured, not forecast) | **DECLINE** | LA County 10,017,414 → 9,694,934, **−3.2%** since the 2020 estimates base |
-| U.S. Census Bureau, Vintage 2025 | DECLINE | City of Los Angeles 3,899,342 → 3,869,089, **−0.8%** |
-| SCAG, Connect SoCal 2020 | GROWTH | LA County to 11,674,000 by 2045, **+16.6%** |
-| CA Dept of Finance (cited in the City of LA 2024 plan) | DECLINE | LA County to ~9.3M by 2040 and ~8.3M by 2060 |
+## 2. The six findings that drive the decision
 
-Two official planning bodies have disagreed on the **direction of travel** for
-the same county. Successive SCAG plans have been revised down every time:
-+14.41% → +10.15% → negative for 2024–2050.
+Every figure below was re-read from the linked publisher page on 2026-11-08.
 
-This analysis underwrites to the **measured** trend and treats growth as upside,
-never as the base case. A drive-thru quick-service restaurant sells to people
-inside a short drive-time ring; any hold strategy that needs demographic growth
-to work is underwriting against the measurement.
+**1. The tenant is contracting, and closure timing is tied to franchise-agreement dates.**
+Jack in the Box reports system same-store sales of **−1.1%** and systemwide sales **−1.4%** for the quarter ended
+2026-07-05, with **17 closures and 4 openings**, leaving **2,115** restaurants (149 company, 1,966 franchise). Franchise-
+level margin fell to **37.4%** from 39.3%, driven by lower rent and royalty revenue and **higher bad-debt expense**. The
+2025 "JACK on Track" plan closes **150–200 underperforming restaurants**, with the balance closing "based upon
+respective franchise agreement termination dates", and guides to roughly **1% of system units closing annually from
+FY2026". The same plan **sells selected owned real estate** to pay down debt — which adds competing supply of
+Jack-branded net-lease assets. → [Q3 FY2026 release](https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx) ·
+[JACK on Track](https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx)
 
-*Sources: [Census QuickFacts, LA County](https://www.census.gov/quickfacts/losangelescountycalifornia); [City of LA EWDD PY2024-25 Tab 5](https://ewdd.lacity.gov/images/reports/ap25/APy25_Tab5-EconomicForecast.pdf); [SCAG](https://scag.ca.gov/sites/default/files/2024-05/demo30_table03.pdf) — VERIFIED*
+> This is chain-level evidence. It does **not** establish this restaurant's sales, rent coverage, franchise term or
+> renewal intention, and it must not be read as a closure probability for this site.
 
-### 4. The labour market looks better than it is
+**2. Regional demand is flat to declining.** LA city population **3,869,089**, **−0.8%** from the 2020 estimates base;
+LA County **−3.2%**. Poverty **16.5%**; median household income **$81,939** (2024 dollars); 36.0% owner-occupied
+housing. → [Census QuickFacts, LA city](https://www.census.gov/quickfacts/losangelescitycalifornia) ·
+[LA County](https://www.census.gov/quickfacts/losangelescountycalifornia)
 
-Los Angeles metro unemployment fell from **5.5% to 4.4%** year on year (Sept 2026
-preliminary). But the civilian labour force **also fell**, from 6,768,502 to
-6,646,903 — about **121,600 fewer people**. A falling unemployment rate caused by
-people leaving the labour force is not an expanding economy.
+**3. Job growth is thinner than costs.** Metro nonfarm payrolls **+0.5%** year over year (September 2026), with
+education & health **+3.8%** and information **−5.7%**; unemployment 4.5% city and county, 4.4% metro; CPI-U **+3.7%**
+and ECI **+3.9%**; average weekly wage **$1,704** (Q1 2026). → [BLS LA summary, updated 2026-11-04](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf)
 
-Total nonfarm payrolls rose only **+0.6%** to 6,289.1 thousand in August 2026, in
-a distinctly two-speed pattern:
+**4. The wage floor is a permanent cost.** Covered fast-food employees are paid at least **$20.00/hour** (AB 1228, from
+2024-04-01); the state minimum is **$16.90/hour** from 2026-01-01. A fixed-escalator lease does not pass this through to
+the landlord — it passes it to the tenant's margin, and therefore to renewal willingness. →
+[DIR fast food FAQ](https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm) ·
+[DIR minimum wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm)
 
-| Growing | | Contracting | |
+**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **4.84%** on 2026-11-05 —
+a market anchor, not the owner's required return. A sale inside the City of Los Angeles pays a **0.45%** base transfer
+tax plus **Measure ULA at 4% above $5,400,000 and 5.5% at or above $10,900,000** for closings after 2026-06-30 (ULA is
+measured on gross value; the base tax on value net of liens; thresholds indexed to Chained CPI). Property tax is a
+**1%** general levy with a **2%** annual assessed-value cap, reassessed on change of ownership. California taxes capital
+gains as **ordinary income**; federal long-term rates are **0/15/20%** with a **25%** maximum on unrecaptured §1250 gain;
+**§1031** defers — and does not eliminate — the gain on real property held for investment. →
+[LA County Assessor · Prop 13](https://assessor.lacounty.gov/real-estate-toolkit/proposition-13) ·
+[City of LA Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) ·
+[IRS Topic 409](https://www.irs.gov/taxtopics/tc409) · [IRS §1031](https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips) ·
+[CA FTB](https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html) ·
+[FRED DGS10](https://fred.stlouisfed.org/series/DGS10)
+
+**6. Catastrophe risk is regional, not theoretical.** The 2025 Palisades and Eaton fires destroyed **16,264 structures**
+in Los Angeles County (6,845 + 9,419) within 24 days. USGS's ShakeOut scenario models a plausible **M7.8** southern San
+Andreas earthquake at **~1,800 deaths and ~$213bn** in economic losses. Post-event insurance availability and pricing can
+change for the whole region, which is a value risk even for a building that survives. →
+[CAL FIRE Palisades](https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire) ·
+[CAL FIRE Eaton](https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire) ·
+[USGS OFR 2008-1150](https://pubs.usgs.gov/of/2008/1150/)
+
+> Note the caveat that matters: hazard **maps** classify physical potential, not this parcel's risk. No parcel overlay,
+> structural report, policy or claim history was available.
+
+---
+
+## 3. Risk balance — keeping risk manageable in both directions
+
+| Risk | Type | How it damages wealth | Pre-emptive control |
 |---|---|---|---|
-| Education and health services | +3.3% | **Information** | **−6.1%** |
-| **Leisure and hospitality** | **+2.2%** | Financial activities | −1.5% |
-| Government | +1.4% | Manufacturing | −1.1% |
-| Trade, transportation and utilities | +0.8% | Professional and business services | −0.9% |
-| | | Construction | −0.7% |
+| Single-tenant vacancy at or before expiry | Business as usual | Loses 100% of rent plus taxes, insurance and re-letting cost | Start marketing early; size reserves for a 12–24 month void |
+| Tenant default / accelerated closure | Business as usual | Rent stops before any contractual end date | Verify the legal obligor and any guaranty; obtain estoppel |
+| Interest-rate and exit-yield shift | Business as usual | Same rent, lower price | Price off current bids, not peak assumptions |
+| Tax and transaction cost | Business as usual | ULA + transfer tax + depreciation recapture cut net proceeds | Model after-tax proceeds before choosing a route |
+| Regulatory and use risk | Business as usual | Drive-through or operating restrictions on re-tenanting | Confirm zoning, non-conforming rights and entitlements |
+| Wildfire (smoke, access, insurance repricing) | Tail | Uninsured loss, regional insurance withdrawal | Check limits, deductibles, exclusions and rent-loss cover |
+| Earthquake ground failure | Tail | Physical loss plus business interruption | Geotechnical review; retrofit assessment; coverage review |
+| Flood / severe storm | Tail | Water damage, closure, uninsured contents | Check the effective FEMA map for the parcel |
+| Correlated catastrophe or pandemic | Tail | Rent interruption and illiquid exit simultaneously | Hold liquidity outside the asset; avoid forced-sale dependence |
 
-The tenant's own sector — leisure and hospitality — is one of the few growing
-ones (+16.8 thousand jobs). That is a genuine positive, and it is outweighed by
-the brand-specific evidence in findings 1 and 2.
-
-*Source: [BLS Metropolitan Area Employment and Unemployment USDL-26-1618](https://www.bls.gov/news.release/pdf/metro.pdf); [BLS Los Angeles Area Economic Summary](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) — VERIFIED*
-
-### 5. A statutory wage ratchet compresses the tenant's margin
-
-California's **$20.00/hour fast-food minimum wage** (AB 1228, Labor Code
-§§1474–1476) applies to covered employees ***regardless of whether the employer
-is the brand owner or a franchisee***. The tenant cannot avoid it by
-restructuring. A statutory council exists with authority to raise it further
-**through 2029**, capped at the lesser of 3.5% or the change in CPI-W.
-
-The City of Los Angeles general minimum wage reached **$18.42/hour** on
-2026-07-01, so the $20.00 fast-food floor is the binding rate for a Jack in the
-Box inside the city. California's general minimum wage is **$16.90/hour** from
-2026-01-01.
-
-Meanwhile LA metro CPI-U rose **+3.6%** in the 12 months to August 2026, with
-**energy +17.6%** — a direct hit on a drive-thru operation. Under NNN these costs
-land on the tenant, which is good for the landlord **until it breaks the
-tenant**.
-
-*Sources: [California DIR Fast Food Minimum Wage FAQ](https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm); [California DIR Minimum Wage FAQ](https://www.dir.ca.gov/dlse/faq_minimumwage.htm); [City of LA Office of Wage Standards](https://wagesla.lacity.gov/) — VERIFIED*
-
-### 6. The tail risk is already realised in this county
-
-The **January 2025 Eaton and Palisades Fires** are not a hypothetical for a Los
-Angeles property. They are a realised event inside the analysis period:
-
-| | Eaton Fire | Palisades Fire |
-|---|---|---|
-| Started | 2025-01-07 | 2025-01-07 |
-| Contained | 2025-01-31 | 2025-01-31 |
-| Acres burned | 14,021 | 23,448 |
-| Structures destroyed | 9,414 | 6,837 |
-| Structures damaged | 1,074 | 973 |
-| Jurisdiction | LA County Fire Dept | LA City Fire Dept |
-
-**Economic output lost: $5.2 billion to $10.1 billion.** Approximately 6,800
-businesses and 47,000 workers impacted. Labour income lost $2.2–4.2 billion. Tax
-revenue losses $900 million to $1.6 billion. Ten separate wildfires began in the
-county on 7 January 2025.
-
-On seismic risk, USGS (UCERF3) puts the 30-year probability in the Los Angeles
-region at **60% for M6.7+**, **46% for M7.0+**, and **31% for M7.5+**. A 30-year
-window fully contains a hold-to-2035 decision, and every additional year of
-holding adds exposure that no rent increase compensates for.
-
-*Sources: [County of Los Angeles official fact sheet](https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf); [CRS In Focus IF12871](https://www.congress.gov/crs-product/IF12871); [USGS](https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area) — VERIFIED*
+**The balance to strike:** the sale track protects the *floor* (it converts an uncertain future into a priced present);
+the renewal track protects the *ceiling* (it preserves income and optionality). Running them in parallel is the only
+route that keeps both without betting on a single forecast. Everything that would convert this from judgement into a
+valuation is private information — rent, term, guaranty, basis, debt — and is not guessed here.
 
 ---
 
-## The numbers
+## 4. What is deliberately blank (and why)
 
-Six strategies, three coherent scenarios, all values in R and **risk-adjusted**
-(net of transaction friction, re-tenanting capital, vacancy, tenant-survival
-probability and catastrophe expectation):
+No address, parcel, lease, rent, NOI, cap rate, sale price, basis, debt, insurance policy, structural report or school
+assignment was available. Those cells are published as **blank and marked Unverified** on the dashboard; nothing has
+been inferred or filled in. The full list, with the official page that could close each item, is on the
+[Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/review.html) page.
 
-| Strategy | Optimistic | Base | Pessimistic | Weighted E[R] | **Worst case** |
-|---|---|---|---|---|---|
-| **S1 — Sell now, lease in place** | 19.60 | 15.28 | **11.62** | 15.44 | **11.62** |
-| **S5 — Extend early, then sell** | 23.06 | **15.61** | 9.88 | 16.04 | 9.88 |
-| S6 — Hold to expiry, redevelop (2035) | 21.39 | 13.17 | 8.17 | 13.98 | 8.17 |
-| S2 — Hold to expiry, sell vacant (2035) | 21.16 | 12.88 | 7.96 | 13.72 | 7.96 |
-| S4 — Hold, re-let to another operator (2035) | **39.18** | 12.30 | 4.82 | **17.15** | 4.82 |
-| S3 — **Renew / re-let to Jack in the Box (2030)** | 21.60 | 6.45 | **1.18** | — | **1.18** |
-
-Run `python3 -m model.projection` for all fourteen strategy-by-expiry
-combinations.
-
-**Three readings, and they do not all point the same way — which is the point:**
-
-- **By worst case (wealth preservation):** S1 wins outright. 11.62 R against 1.18 R for renewing — roughly a **ten-fold** difference in the bad state.
-- **By weighted expected value (growth):** S4 wins at 17.15 R, but its worst case is 4.82 R. That is a spread more than three times wider than S1's.
-- **By rank stability:** S5 places 6th, 1st and 2nd — the best mean rank of any strategy. Its weak link is that it requires a tenant that is publicly contracting to agree to a *longer* commitment.
-
-Renewing the incumbent brand ranks **last in both the base and the pessimistic
-scenario**. It is the only strategy heavily discounted by tenant-survival
-probability, because it is the only one whose entire value depends on the
-incumbent still wanting the site.
-
-### The number that cannot be verified
-
-Between a 5.0% and an 8.5% capitalisation rate, the same income stream is worth
-**20.0 R or 11.8 R** — a 41% swing in value from an input nobody can officially
-verify. **No United States government agency publishes commercial cap rates or
-single-tenant net-lease comparable sales.** Private net-lease sites do, and none
-were used.
-
-This is why the recommendation is framed around the *worst case* rather than the
-expected case. Selling now wins the pessimistic scenario outright, and it does so
-at every cap rate in the band — **because it also removes the cap-rate risk
-itself.**
+Known open items include: the executed lease and exact expiry; the legal tenant, guarantor and any franchisee
+obligation; store-level sales, rent coverage and arrears; the parcel's zoning and hazard overlays; effective insurance
+terms; LA County's documentary transfer tax rate (the Recorder page could not be retrieved on 2026-11-08); and the
+LAUSD graduation rate (the CDE district file was not extracted).
 
 ---
 
-## Balancing preservation against growth
+## 5. Method and limits
 
-The two stated objectives pull in different directions, and the model quantifies
-the trade rather than hiding it.
-
-- **Selling now** maximises the floor: 11.62 R worst case, the highest of any strategy, with the narrowest spread. It also resolves the **concentration problem** — converting one illiquid, single-tenant, single-county position into diversifiable capital. That benefit is independent of any view on cap rates.
-- **Holding and re-letting to a different operator (S4)** maximises expected value at 17.15 R, but its worst case is 4.82 R. That is the growth option, and it is appropriate only if the owner can absorb the downside without distress *and* has independently confirmed demand for the box from a tenant other than Jack in the Box.
-- **Holding and redeveloping (S6)** is the most robust of the hold strategies in the base case (13.17 R), and is supported by one verified fact: LA County has **437,788 employer establishments** and **$550.7 billion** in annual payroll, with employer-establishment density of 172.8 per square mile in the county and 464.6 in the city. The *building* is a specialised ~1,372 sq ft drive-thru box, but the *land* sits in one of the densest employer markets in the United States. This is why the zoning lookup in the Input Register is worth paying for before dismissing it.
-
----
-
-## Conditions attached to this recommendation
-
-1. **Before spending anything on an extension negotiation, establish whether PROPERTY-01 is inside the tenant's closure programme.** If it is, S5 is unavailable and S1 is the answer outright. This costs nothing and takes one conversation.
-2. **If the lease carries a Jack in the Box Inc. corporate guaranty and the site is confirmed off the closure list**, S5 becomes preferable to S1 — it sells a longer, more financeable income stream.
-3. **If the land has a demonstrably better alternative use — confirmed by zoning, not by hope** — then S6 outranks S1 on expected value, and the owner is choosing growth over preservation. That is a legitimate choice, but it should be made explicitly and with entitlement risk priced.
-4. **Read the lease's option clause.** The issuer discloses that its own renewal options are *"generally exercisable at the company's sole discretion"*. If the owner's lease mirrors this, strategy S3 is the *tenant's* choice, not the owner's — and the entire "renew" branch of the decision is not the owner's to take.
-5. **Complete the Input Register first.** Every ranking above is normalised to R because the actual rent, basis and building details were never supplied.
-
----
-
-## What would change the answer
-
-- Evidence that the **trade area is growing against the county trend** — a tract-level population and income gain contradicting the county aggregate. County figures establish direction and context, not site-level demand; LA County contains 2,492 census tracts with more than $10M of building value each and radically different profiles.
-- A **confirmed corporate guaranty** plus written confirmation the site is not in the closure programme.
-- A **zoning or entitlement position** making S6 materially more valuable than the modelled alternative-use range.
-- **Cap rates tightening** far enough that a hold-and-re-let strategy beats selling in the pessimistic scenario. On the model, that requires the exit cap rate below roughly **5.5%**.
-
----
-
-## Risk position
-
-Five highest-scoring of seventeen on the register (score = likelihood × impact, 1–25):
-
-| ID | Risk | Score |
-|---|---|---|
-| **R-16** | The subject property was never identified — all site-specific conclusions are necessarily incomplete | **25** |
-| **R-07** | Official long-range projections disagree on the *direction* of county population change | **20** |
-| **R-01** | The tenant's disclosed closure trigger *is* the lease expiry date | **20** |
-| **R-02** | System same-store sales have declined in every recent reporting period | **20** |
-| **R-13** | No official source exists for cap rates, so exit value cannot be verified | **20** |
-
-Full register: [`decision-file/risk-register.html`](decision-file/risk-register.html).
-Tail events, including two already realised: [`decision-file/black-swan.html`](decision-file/black-swan.html).
-
-One tail deserves separate emphasis because it requires **no physical damage at
-all**: if commercial property insurance becomes unavailable or unaffordable for
-this building type in this county, the NNN lease cannot be performed and no
-institutional buyer will finance the asset. That is a total-loss mechanism
-arriving through a contract. It is marked `UNVERIFIED` because no official source
-was retrieved for it — but it should be checked with the California Department of
-Insurance before any hold strategy is relied upon.
-
----
-
-## Next steps
-
-Nine sequenced actions, ordered so the cheapest and most decision-critical come
-first, are on the [Decision Framework](https://wingbangboozle1-lang.github.io/Jack3/decision-file/decision.html) page.
-The first costs nothing:
-
-> **Establish whether PROPERTY-01 is inside the tenant's closure programme.**
-> Ask the tenant or the operator directly and get the answer in writing.
-> Everything else depends on it.
-
----
-
-## What this analysis refuses to invent
-
-Four categories of figure are published **blank** across the site, each with the
-official route to resolve it:
-
-| # | Item | Why blank |
-|---|---|---|
-| **F-01** | The property itself | No address, APN, lot size, building size, rent, escalation schedule, basis or guaranty status was supplied |
-| **F-02** | Commercial cap rates and comparable sales | No US government agency publishes these — they are private data |
-| **F-04** | LA County population projections for 2030 / 2035 / 2040 | Published only as `.xlsx` on a domain this environment cannot reach; third-party restatements disagree by >100,000 residents |
-| **F-05** | Tax rates on a sale | The relevant IRS and FTB pages returned HTTP 404; mechanisms are described and linked, but **no rate is asserted** |
-
-Fifteen flagged items in total, including three data irregularities found in
-official sources themselves. None blocks publication or the decision. All are on
-the [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/decision-file/flagged-for-review.html) page.
-
----
-
-*Full reasoning, every table and every source link: <https://wingbangboozle1-lang.github.io/Jack3/decision-file/>*
+- **Official sources only** for published values: U.S. Census Bureau, Bureau of Labor Statistics, Federal Reserve,
+  California DIR, California Department of Education, California FTB, LA County Assessor, City of Los Angeles Office of
+  Finance, CAL FIRE, USGS, FEMA, IRS, and Jack in the Box Inc. issuer filings.
+- **Verified** means the publisher reports the observation — never that it predicts this property. **Analysis** rows are
+  labelled reasoning. **Unverified** rows contain no value.
+- No model was trained, back-tested or calibrated; no numerical forecast, cap rate or renewal probability is published.
+  Compounding a 2020–2025 change forward is arithmetic, not evidence, and is not presented as a projection.
+- No personal information is published, and no attempt was made to identify the owner, the parcel or any individual.
+- Sources are rolling documents and can be revised after 2026-11-08. Re-check before acting.

@@ -1,40 +1,45 @@
-# Jack / Property intelligence
+# Asset A — net-lease decision file (central Los Angeles)
 
-> **Publication update (2026-11-07):** The public Pages artifact is restricted to the root evidence-gated dashboard. The companion reports listed below remain in this repository for audit, but are not published until reverified. Earlier model rankings and the asserted equivalence of franchise and real-estate lease expiration are not reliable; see `research/integration-audit-9fa62774.md` and the public Flagged for Review page. Historical companion links below may no longer resolve on Pages.
+Privacy-safe, static, source-linked research into a single-tenant Jack in the Box net-leased property in central
+Los Angeles, reported by the owner to expire between 2030 and 2035. The question: **sell before expiry, or renew?**
 
-Privacy-safe, static research dashboard for an unidentified Los Angeles-area net lease asset.
-It is published in layers, all linked from the root landing page and from here.
+**Live dashboard:** https://wingbangboozle1-lang.github.io/Jack3/
 
-**Live site:** https://wingbangboozle1-lang.github.io/Jack3/
+## Start here
 
-## What is published
+| Document | What it gives you |
+|---|---|
+| [Executive summary](EXECUTIVE_SUMMARY.md) | Recommendation, decision matrix, the six findings that drive it, risk balance, and what stays blank |
+| [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Twelve category pages, every table row carrying its official source |
+| [Line-by-line verification record](research/VERIFICATION-2026-11-08.md) | Every published row re-read against its publisher page on 2026-11-08, plus gaps, link repairs and irregularities |
+| [Flagged for Review](review.html) | Everything that could not be verified, published rather than hidden |
 
-| Layer | Path | Built by | What it is |
-|---|---|---|---|
-| Evidence workspace | `/` (root) | `scripts/build.py` + `data/evidence.json` | Evidence-gated brief: known vs not-verifiable, decision pathways, flagged review |
-| Research tables | `/docs/` | session `ff406d61` | Verified research dashboard, row-level official sources, flagged review |
-| Deep-dive evidence dashboard | `/analysis/` | session `8d650ba0` | 11 pages generated from JSON; 113 sourced indicators; 22-row risk register; scenario model; decision framework |
-| Deep-dive decision brief | `/brief/` | session `arena-796b983f-jack3` | 9 pages; interactive sell-vs-renew scenario model; scored risk register R-01…R-22; Measure ULA worked examples; flagged review |
-| Verified decision file | `/decision-file/` | session `arena-d989a5c6-jack3` | 23 pages generated from a committed Python data snapshot; R-normalised projection model; 17-risk and 7-event black-swan registers; 27-source register; 1,013 links all on official domains |
+## What is published on the live site
 
-## Evidence boundary
-Official observations were manually checked on 2026-11-06. Property identity, lease, rent, debt and owner financial circumstances are absent. Regional context is not a parcel forecast. Missing numerical values stay blank; conditional analyst rules are not official recommendations. See `review.html` for nonblocking review flags and `sources.html` for methodology.
+| Page | Path | Contents |
+|---|---|---|
+| Executive summary / dashboard | `/` | Recommendation, evidence boundary, risk balance, category navigation |
+| Area fundamentals | `/economy.html` | Population, income, payrolls, unemployment, wages, CPI, ECI |
+| Trade area & demographics | `/demographics.html` | Households, age, poverty, tenure, spending capacity |
+| Tenant & lease | `/tenant.html` | Issuer results, closures, capital structure, and the lease facts we do not have |
+| Risk & resilience | `/risk.html` | Business-as-usual risks, black-swan events, mitigation tests |
+| Neighborhood & land | `/place.html` | What cannot be asserted without a parcel |
+| Schools & workforce | `/schools.html` | CDE enrollment and English-learner data; missing performance measures |
+| Decision pathways | `/decisions.html` | Six routes, triggers, dominant risks, recommended sequence |
+| Taxes & transaction costs | `/taxes.html` | Prop 13, transfer taxes, Measure ULA, §1031, capital-gain treatment |
+| Projection framework | `/model.html` | Verified anchors and the forecasts deliberately withheld |
+| Flagged for Review | `/review.html` | Unverified items with the official page that would close each one |
+| Sources & methodology | `/sources.html` | 24-source register, verification standard, privacy boundary |
 
-No personal information, addresses, parcel identifiers, owner research, analytics, forms or third-party executable assets are included. Do not commit private records, even in history.
+Only these files and `assets/style.css` are staged into the Pages artifact by `scripts/stage_pages.py`.
 
-## Build and check
-```
-python scripts/build.py
-python scripts/validate.py
-python tools/check_site.py   # checks the brief/ deep-dive site
-python3 tools/linkcheck.py   # checks the analysis/ deep-dive site anchors
-python3 build_site.py        # regenerates the decision-file/ layer
-python3 tools/check_links.py # decision-file/: 1,013 links, official domains only
-python3 tools/pii_scan.py    # decision-file/ + data/ + model/: privacy gate
-python -m http.server 8000 --bind 0.0.0.0
-```
+## Repository-only layers (audit trail, not published)
 
-`data/evidence.json` is the public source of truth. Rebuild HTML after edits. Validation checks internal links and row provenance, not live external availability or semantic truth. Source checks are manual and the site is a dated snapshot, not an automatic data feed. GitHub Pages serves the repository root on main; PR validation checks deterministic output before integration.
+The repository also preserves earlier parallel layers — `advisory/`, `docs/`, `analysis/`, `brief/`, `pages/`,
+`decision-file/`, `report/`, `verification-3644edd8/`, `audit/` and `_advisory_src/`. They are kept for audit and
+continuity, are **excluded from the live site**, and are not claimed to be re-verified. `advisory/` in particular is
+withheld because its numerical scenario weights and pathway rankings are not established by the official sources it
+cited (see `review.html`).
 
 ---
 
