@@ -570,3 +570,7 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
 | Task | Status | Owner | Scope |
 |---|---|---|---|
 | Publication safety review and advisory exclusion | needs review | e1bfd73b | `_config.yml`, `scripts/stage_pages.py`, `data/evidence.json`, `review.html`, `COORDINATION.md` |
+
+### PR and deployment record
+- PR #27 https://github.com/wingbangboozle1-lang/Jack3/pull/27 merged 2026-11-08 at 22:50 UTC (merge commit `83537e46f9f9a37ae07045520749e37288a0cc0d`). PR validation passed including Jekyll artifact parity.
+- Pages deployment https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42532190121 succeeded. Cache-busted live `review.html` was fetched and contains the advisory withholding flag. The previously published advisory contents remain in the public repository, not the Pages artifact; repository access is not confidential storage.
