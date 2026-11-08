@@ -554,3 +554,19 @@ Demographic, hazard, school, tax, valuation and lease rows were **not** re-fetch
   - Flagged for Review (`F-01`–`F-14` & `IR-01`–`IR-10`): https://wingbangboozle1-lang.github.io/Jack3/advisory/flagged.html
   - Root Curated Workspace (preserved intact): https://wingbangboozle1-lang.github.io/Jack3/
 - **Status:** All session tasks (`E-01`–`E-09`) **done**; unconfirmed private parcel/lease inputs (`F-01`–`F-14`) remain blank and published as non-blocking `Needs review` / `Unverified` items on `/advisory/flagged.html`.
+
+## Session e1bfd73b — independent publication safety review
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Review existing published dashboard, verification gates and critical decision/privacy caveats; correct substantiated issues and integrate | in progress | e1bfd73b | `COORDINATION.md`, `data/evidence.json`, `scripts/validate.py`, generated root HTML if needed |
+
+2026-11-08: Claim made on platform-assigned branch. Previous sessions' completed scopes are preserved; this is a final integration review of shared published outputs. No private-property research will be undertaken.
+
+2026-11-08: Integration safety issue found: `/advisory/` is currently staged despite the root's published exclusion notice. Its projections page presents unverified numerical scenario weights, rates and pathway rankings with official links that do not establish those outputs. Expanding integration scope to `_config.yml` and `scripts/stage_pages.py` to withhold that companion pending verification, and to `data/evidence.json` / generated root pages to flag the specific issue. Repository copy remains intact. Source context: https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips (not a source of those forecasts). No other in-progress claim found for this integration work.
+
+2026-11-08: Review completed with a nonblocking needs-review flag: withheld `/advisory/` from Pages because its assumed scenario probabilities and pathway values are not verified by the cited official sources. Root review page describes this explicitly. Prior source files remain in the public repository and are not claimed to be reverified. Manually rechecked the [IRS exchange guidance](https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips), [Census QuickFacts](https://www.census.gov/quickfacts/losangelescitycalifornia), and [BLS summary](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf); they do not supply subject-specific forecasts. This session did not independently verify every inherited row or external URL. Local build, staged relative links and source-row checks, PII scan and existing tests passed; external source-link checks do not establish semantic correctness. Jekyll requires CI. Personal circumstances and private lease remain unavailable; no reliable personalized sale-versus-renew determination or calibrated parcel forecast can be made.
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Publication safety review and advisory exclusion | needs review | e1bfd73b | `_config.yml`, `scripts/stage_pages.py`, `data/evidence.json`, `review.html`, `COORDINATION.md` |
