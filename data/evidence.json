@@ -1,5 +1,5 @@
 {
-  "reviewed": "2026-11-07",
+  "reviewed": "2026-11-08",
   "sources": {
     "city": {
       "label": "U.S. Census · LA city",
@@ -72,13 +72,85 @@
       "url": "https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx",
       "checked": "2026-11-07",
       "type": "Issuer"
+    },
+    "assessor": {
+      "label": "LA County Assessor · Proposition 13",
+      "url": "https://assessor.lacounty.gov/real-estate-toolkit/proposition-13",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "ula": {
+      "label": "City of LA Finance · Measure ULA FAQ",
+      "url": "https://finance.lacity.gov/faq/measure-ula",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "dirwage": {
+      "label": "CA DIR · Minimum wage FAQ",
+      "url": "https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "cde": {
+      "label": "CDE · LAUSD district profile",
+      "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "cdelarge": {
+      "label": "CDE · Largest school districts 2025–26",
+      "url": "https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "acgr": {
+      "label": "CDE · Adjusted cohort graduation rate data",
+      "url": "https://www.cde.ca.gov/ds/ad/filesacgr.asp",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "usgs": {
+      "label": "USGS · ShakeOut scenario, OFR 2008-1150",
+      "url": "https://pubs.usgs.gov/of/2008/1150/",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "palisades": {
+      "label": "CAL FIRE · Palisades Fire incident",
+      "url": "https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "eaton": {
+      "label": "CAL FIRE · Eaton Fire incident",
+      "url": "https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "fred": {
+      "label": "Federal Reserve · 10-year Treasury (DGS10)",
+      "url": "https://fred.stlouisfed.org/series/DGS10",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "irs409": {
+      "label": "IRS · Topic 409 capital gains",
+      "url": "https://www.irs.gov/taxtopics/tc409",
+      "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "ftb": {
+      "label": "CA FTB · Capital gains and losses",
+      "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
+      "checked": "2026-11-08",
+      "type": "Government"
     }
   },
   "pages": [
     {
       "id": "economy",
       "title": "Area fundamentals",
-      "kicker": "01 / Regional evidence",
+      "kicker": "Regional evidence",
       "description": "Verified regional context, not a trade-area study. Different periods and geographic boundaries must not be combined as though they describe the same market.",
       "columns": [
         "Indicator",
@@ -276,13 +348,207 @@
           ],
           "status": "Verified",
           "source": "bls"
+        },
+        {
+          "cells": [
+            "Unemployment",
+            "4.0% / 5.1% / 4.4%",
+            "U.S. / California / LA metro · September 2026 · not seasonally adjusted",
+            "National and state comparisons for the metro rate already shown."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Employment cost index change",
+            "+3.9% year over year",
+            "LA–Long Beach CSA · September 2026 · private industry",
+            "Wage-cost pressure that a fixed-escalator lease does not pass through."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "CPI-U change · food at home / energy",
+            "+2.8% / +20.3%",
+            "LA metro · September 2026 · 12-month change",
+            "Input-cost and household-budget pressure; energy volatility is large."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Annual consumer spending · West",
+            "Housing $33,016 · food $12,447 · transport $14,110",
+            "West region · 2025 average",
+            "Regional spending capacity, not a trade-area measure."
+          ],
+          "status": "Verified",
+          "source": "bls"
+        }
+      ]
+    },
+    {
+      "id": "demographics",
+      "title": "Trade area & demographics",
+      "kicker": "DEMAND / DEMOGRAPHICS",
+      "description": "City and county distributions behind the demand question. These are aggregates, not a radius, drive-time or block-group study of the restaurant's trade area.",
+      "columns": [
+        "Indicator",
+        "Value",
+        "Geography · period",
+        "Decision relevance"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Households",
+            "1,439,097",
+            "LA city · 2020–2024",
+            "Household count, not customer counts."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Persons per household",
+            "2.61",
+            "LA city · 2020–2024",
+            "Household size context."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Persons under 18",
+            "19.2%",
+            "LA city · V2025",
+            "Family-formation context."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Persons 65 and over",
+            "14.2% · county 17.1%",
+            "LA city / county · V2025",
+            "Age mix affects daypart demand; no local inference."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Foreign-born persons",
+            "35.7% · county 33.4%",
+            "LA city / county · 2020–2024",
+            "Workforce and customer composition."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Language other than English at home",
+            "56.4%",
+            "LA city · age 5+ · 2020–2024",
+            "Operating and marketing implication, not a value driver by itself."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Poverty rate",
+            "16.5%",
+            "LA city · 2025 estimate",
+            "Price sensitivity in the aggregate city population."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Owner-occupied housing rate",
+            "36.0%",
+            "LA city · 2020–2024",
+            "Tenure mix; not a commercial demand measure."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Median value, owner-occupied homes",
+            "$921,200",
+            "LA city · 2020–2024",
+            "Household-balance-sheet context."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Civilian labor force participation",
+            "66.4%",
+            "LA city · age 16+ · 2020–2024",
+            "Employment base behind daytime demand."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Total retail sales",
+            "$81.35bn",
+            "LA city · 2022 · Economic Census",
+            "Retail scale; not restaurant sales."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Retail sales per capita",
+            "$21,281",
+            "LA city · 2022",
+            "Spending-intensity context."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Accommodation and food services sales",
+            "$17.37bn",
+            "LA city · 2022 · Economic Census",
+            "Category size; no store-level share is implied."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Trade-area population, income and daytime workers",
+            "",
+            "Unverified. City totals are not a radius or drive-time catchment; no block-group or tract data was obtained.",
+            "Required before any sales or rent projection."
+          ],
+          "status": "Unverified",
+          "source": "city"
         }
       ]
     },
     {
       "id": "tenant",
       "title": "Tenant & lease",
-      "kicker": "02 / Income durability",
+      "kicker": "Income durability",
       "description": "The restaurant brand is not necessarily the legal tenant or guarantor. Corporate disclosures are primary issuer reports, not an independent assessment of this store.",
       "columns": [
         "Item",
@@ -388,13 +654,76 @@
           ],
           "status": "Unverified",
           "source": "jack"
+        },
+        {
+          "cells": [
+            "Total revenues",
+            "$257.7m · −1.8% year over year",
+            "Third quarter FY2026; consolidated, not this store."
+          ],
+          "status": "Verified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Restaurant-level margin",
+            "17.6% (non-GAAP)",
+            "Third quarter FY2026; company restaurants only."
+          ],
+          "status": "Verified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Franchise-level margin",
+            "37.4% · down from 39.3%",
+            "Third quarter FY2026; falls with lower rent and royalty revenue."
+          ],
+          "status": "Verified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Bad-debt expense",
+            "Higher year over year (no amount stated in the release)",
+            "Third quarter FY2026; relevant to collection risk on franchisee obligations."
+          ],
+          "status": "Verified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Debt actions",
+            "$110.0m of 2019-1 Class A-2-II notes prepaid; $500m 2026-1 Class A-2 notes issued",
+            "Third quarter FY2026; issuer capital structure, not the property's financing."
+          ],
+          "status": "Verified",
+          "source": "jack"
+        },
+        {
+          "cells": [
+            "Issuer real-estate strategy",
+            "Selling selected owned real estate and directing proceeds to debt paydown",
+            "Asset-light plan announced 2025-04-23; may add competing net-lease supply."
+          ],
+          "status": "Verified",
+          "source": "closure"
+        },
+        {
+          "cells": [
+            "Ongoing system closure rate",
+            "Approximately 1% of system units annually beginning FY2026",
+            "Issuer guidance; not a probability for this site."
+          ],
+          "status": "Verified",
+          "source": "closure"
         }
       ]
     },
     {
       "id": "risk",
       "title": "Risk & resilience",
-      "kicker": "03 / Downside first",
+      "kicker": "Downside first",
       "description": "Known natural hazards are stress cases, not inherently unpredictable black swans. No parcel exposure, probability, insurance recovery or loss estimate has been assigned.",
       "columns": [
         "Risk",
@@ -482,13 +811,40 @@
           ],
           "status": "Analysis",
           "source": "irs"
+        },
+        {
+          "cells": [
+            "Wildfire catastrophe · observed 2025",
+            "Palisades: 23,448 acres, 6,845 structures destroyed. Eaton: 14,021 acres, 9,419 structures destroyed. Combined 16,264 structures lost in Los Angeles County within 24 days.",
+            "Verify parcel overlay, construction, access and insurance; this is observed severity, not a probability."
+          ],
+          "status": "Verified",
+          "source": "palisades"
+        },
+        {
+          "cells": [
+            "Southern San Andreas scenario earthquake",
+            "USGS ShakeOut: hypothetical M7.8 event, ~1,800 deaths and ~$213bn economic losses regionally.",
+            "Tail-risk scale for planning; a scenario, not a forecast or a site-specific exposure."
+          ],
+          "status": "Verified",
+          "source": "usgs"
+        },
+        {
+          "cells": [
+            "Interest-rate and exit-yield shock",
+            "10-year Treasury constant-maturity yield 4.84% on 2026-11-05.",
+            "Analysis: a higher exit yield lowers price for the same rent; no property cap rate is published."
+          ],
+          "status": "Verified",
+          "source": "fred"
         }
       ]
     },
     {
       "id": "place",
       "title": "Neighborhood & land",
-      "kicker": "04 / Location matters",
+      "kicker": "Location matters",
       "description": "“Around central Los Angeles” does not define a parcel, jurisdiction, census tract or customer catchment. No candidate property or owner was searched for or identified.",
       "columns": [
         "Research dimension",
@@ -553,9 +909,93 @@
       ]
     },
     {
+      "id": "schools",
+      "title": "Schools & workforce",
+      "kicker": "HUMAN CAPITAL / SCHOOLS",
+      "description": "Official district-level education data for the county's largest district. No school assignment, boundary or campus performance can be attributed to an unidentified parcel.",
+      "columns": [
+        "Indicator",
+        "Value",
+        "Geography · period",
+        "Decision relevance"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Los Angeles Unified enrollment",
+            "497,105",
+            "LAUSD · school year 2025-26 · Census Day",
+            "Largest district in California; demand and workforce context."
+          ],
+          "status": "Verified",
+          "source": "cde"
+        },
+        {
+          "cells": [
+            "LAUSD English learners",
+            "81,328 (16.4%)",
+            "LAUSD · 2025-26",
+            "Instructional and workforce composition."
+          ],
+          "status": "Verified",
+          "source": "cde"
+        },
+        {
+          "cells": [
+            "LAUSD rank by enrollment",
+            "1st in California",
+            "LAUSD · 2025-26",
+            "Scale reference against San Diego Unified (112,250)."
+          ],
+          "status": "Verified",
+          "source": "cdelarge"
+        },
+        {
+          "cells": [
+            "Statewide public enrollment",
+            "5,731,260",
+            "California · 2025-26",
+            "Benchmark for district scale."
+          ],
+          "status": "Verified",
+          "source": "cdelarge"
+        },
+        {
+          "cells": [
+            "District four-year graduation rate",
+            "",
+            "Not extracted. CDE publishes adjusted cohort graduation data as state, county, district and school files, but the LAUSD value was not read from the file this pass.",
+            "Would inform workforce quality; not a property-value input on its own."
+          ],
+          "status": "Unverified",
+          "source": "acgr"
+        },
+        {
+          "cells": [
+            "School assignment for the subject site",
+            "",
+            "Unverified. No address, attendance boundary or campus identified; the District serves a very large and uneven geography.",
+            "Required before any school-quality claim."
+          ],
+          "status": "Unverified",
+          "source": "school"
+        },
+        {
+          "cells": [
+            "School-level performance measures",
+            "",
+            "Unverified. The California School Dashboard reports multiple indicators; no campus was selected and no indicator was published.",
+            "Aggregate attainment is not a school rating."
+          ],
+          "status": "Unverified",
+          "source": "school"
+        }
+      ]
+    },
+    {
       "id": "decisions",
       "title": "Decision pathways",
-      "kicker": "05 / Conditional strategy",
+      "kicker": "Conditional strategy",
       "description": "Recommendation: retain optionality now. Evaluate renewal and a pre-expiry sale concurrently, but authorize neither solely on regional data. These are analyst decision rules, not official investment recommendations.",
       "columns": [
         "Pathway",
@@ -625,13 +1065,224 @@
           ],
           "status": "Analysis",
           "source": "irs"
+        },
+        {
+          "cells": [
+            "Recommended sequence (analyst judgement)",
+            "Market the asset for sale 24–36 months before the earliest contractual expiry while requiring the tenant to state renewal terms in writing. Sell if the documented offer is acceptable after tax and reinvestment testing; extend only against an enforceable, credit-supported extension of at least ten years at market rent.",
+            "This is a rule for preserving optionality, not a valuation. It fails if the lease prohibits assignment, if the owner cannot tolerate a failed marketing period, or if the tenant's written terms are worse than the as-is exit."
+          ],
+          "status": "Analysis",
+          "source": "irs"
+        },
+        {
+          "cells": [
+            "What would change the recommendation",
+            "A signed extension at market rent with acceptable credit; a materially better after-tax bid; evidence that the site's trade area is growing (block-level, not city-level); or a change in owner liquidity needs.",
+            "Each item is an evidence gate. None can be established from the regional data published here."
+          ],
+          "status": "Analysis",
+          "source": "bls"
+        },
+        {
+          "cells": [
+            "Tail-risk hedge alongside any pathway",
+            "Before signing either way: confirm policy limits, deductibles, exclusions and rent-loss cover; size reserves for a re-letting gap; and cap the share of net worth this single asset represents at a level the owner can lose without changing their plans.",
+            "Post-catastrophe insurance may be repriced or restricted; coverage cannot be assumed from a prior policy."
+          ],
+          "status": "Analysis",
+          "source": "quake"
+        }
+      ]
+    },
+    {
+      "id": "taxes",
+      "title": "Taxes & transaction costs",
+      "kicker": "AFTER TAX / TRANSACTION COSTS",
+      "description": "The statutory charges that decide what a sale actually nets and what a hold actually keeps. Rates are quoted from the administering agency; no transaction value is assumed.",
+      "columns": [
+        "Item",
+        "Rate or rule",
+        "Taxing authority · effective",
+        "Decision relevance"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Property tax general levy",
+            "1% of assessed value",
+            "California (Prop 13), administered by LA County Assessor",
+            "A hold keeps a below-market assessed base; a sale resets it for the buyer."
+          ],
+          "status": "Verified",
+          "source": "assessor"
+        },
+        {
+          "cells": [
+            "Annual assessed-value increase cap",
+            "2% maximum",
+            "LA County Assessor · Prop 13",
+            "Tax cost grows slowly while owned."
+          ],
+          "status": "Verified",
+          "source": "assessor"
+        },
+        {
+          "cells": [
+            "Reassessment triggers",
+            "Change of ownership or completed new construction",
+            "LA County Assessor · Prop 13",
+            "A sale reprices the buyer's tax basis, which affects bid levels."
+          ],
+          "status": "Verified",
+          "source": "assessor"
+        },
+        {
+          "cells": [
+            "Add-ons to the 1% levy",
+            "Voter-approved debt and direct assessments",
+            "LA County Assessor · Prop 13",
+            "Actual bills exceed 1%; obtain the parcel bill."
+          ],
+          "status": "Verified",
+          "source": "assessor"
+        },
+        {
+          "cells": [
+            "City of Los Angeles base transfer tax",
+            "$2.25 per $500 of value (0.45%)",
+            "City of LA Office of Finance",
+            "City-only; a county parcel outside the city does not pay it."
+          ],
+          "status": "Verified",
+          "source": "ula"
+        },
+        {
+          "cells": [
+            "Measure ULA surcharge",
+            "4% above $5,400,000; 5.5% at or above $10,900,000",
+            "City of LA · closings after 2026-06-30",
+            "A city sale near the threshold can net materially less; check the closing date rules."
+          ],
+          "status": "Verified",
+          "source": "ula"
+        },
+        {
+          "cells": [
+            "Measure ULA threshold indexing",
+            "Adjusted annually to Chained CPI",
+            "City of LA Office of Finance",
+            "Thresholds move; re-check before pricing."
+          ],
+          "status": "Verified",
+          "source": "ula"
+        },
+        {
+          "cells": [
+            "Value basis for the two taxes",
+            "ULA on gross value; base tax on value net of liens",
+            "City of LA Office of Finance",
+            "Leverage changes the two calculations differently."
+          ],
+          "status": "Verified",
+          "source": "ula"
+        },
+        {
+          "cells": [
+            "Federal long-term capital gain rates",
+            "0% / 15% / 20% by taxable income (2025 thresholds)",
+            "IRS · Topic 409",
+            "Gain on sale is taxed; a §1031 exchange defers it."
+          ],
+          "status": "Verified",
+          "source": "irs409"
+        },
+        {
+          "cells": [
+            "Unrecaptured §1250 gain",
+            "25% maximum rate on the depreciated portion",
+            "IRS · Topic 409",
+            "Depreciation taken reduces after-tax proceeds."
+          ],
+          "status": "Verified",
+          "source": "irs409"
+        },
+        {
+          "cells": [
+            "California capital gains treatment",
+            "No preferential rate; taxed as ordinary income",
+            "California FTB",
+            "State tax stacks on the federal gain; the marginal rate depends on the owner's bracket."
+          ],
+          "status": "Verified",
+          "source": "ftb"
+        },
+        {
+          "cells": [
+            "§1031 like-kind exchange",
+            "Real property held for business or investment may defer gain; property held primarily for sale does not qualify",
+            "IRS · like-kind exchanges",
+            "Deferral requires a replacement and does not eliminate the tax."
+          ],
+          "status": "Verified",
+          "source": "irs"
+        },
+        {
+          "cells": [
+            "§1031 reporting",
+            "Form 8824",
+            "IRS · like-kind exchanges",
+            "Documentation obligation for any exchange."
+          ],
+          "status": "Verified",
+          "source": "irs"
+        },
+        {
+          "cells": [
+            "Discount-rate anchor for any present-value work",
+            "4.84% · 10-year Treasury, 2026-11-05",
+            "Federal Reserve H.15 via FRED (DGS10)",
+            "A market anchor, not the owner's required return."
+          ],
+          "status": "Verified",
+          "source": "fred"
+        },
+        {
+          "cells": [
+            "State minimum wage",
+            "$16.90/hour from 2026-01-01",
+            "CA DIR",
+            "Raises operating costs for the tenant; fast food has a higher floor of $20.00."
+          ],
+          "status": "Verified",
+          "source": "dirwage"
+        },
+        {
+          "cells": [
+            "LA County documentary transfer tax",
+            "",
+            "Not published. The County Recorder page could not be retrieved on 2026-11-08 and only secondary sources state the rate.",
+            "Would add to seller closing costs; confirm with the County Recorder and escrow."
+          ],
+          "status": "Unverified",
+          "source": "ula"
+        },
+        {
+          "cells": [
+            "Owner's marginal tax rates, basis and debt",
+            "",
+            "Unverified. Private to the owner; no figure is assumed.",
+            "Required for any after-tax comparison."
+          ],
+          "status": "Unverified",
+          "source": "irs"
         }
       ]
     },
     {
       "id": "model",
       "title": "Projection framework",
-      "kicker": "06 / No invented forecasts",
+      "kicker": "No invented forecasts",
       "description": "An evidence-gated framework, not a calibrated forecasting system. No property valuation, probability of renewal, forecast return or optimal decision can be computed from the available evidence. Numerical outputs are intentionally blank.",
       "columns": [
         "Scenario / output",
@@ -701,13 +1352,31 @@
           ],
           "status": "Analysis",
           "source": "bls"
+        },
+        {
+          "cells": [
+            "Verified input anchors",
+            "10-year Treasury 4.84% (2026-11-05); LA CPI-U +3.7% and ECI +3.9% year over year (Sep 2026); LA city population −0.8% from the 2020 estimates base to July 2025.",
+            "Anchors, not forecasts. Each is an observation from an official release and is used only to bound discounting and growth assumptions."
+          ],
+          "status": "Verified",
+          "source": "fred"
+        },
+        {
+          "cells": [
+            "Mechanical extrapolation — deliberately not published",
+            "",
+            "Compounding an observed 2020–2025 change forward assumes the driver persists, which no official release asserts. Any 2030–2035 value produced that way would be an artefact of the rule, not evidence."
+          ],
+          "status": "Analysis",
+          "source": "bls"
         }
       ]
     },
     {
       "id": "review",
       "title": "Flagged for Review",
-      "kicker": "07 / Transparent limitations",
+      "kicker": "Transparent limitations",
       "description": "Published review items do not block the site. They do block unsupported financial claims. Source links below are context or verification routes, not evidence of missing private values.",
       "columns": [
         "Priority",
@@ -890,10 +1559,10 @@
           "cells": [
             "Medium",
             "California minimum wage from 2027-01-01 (F-17)",
-            "Secondary sources report $17.40 per hour, certified 2026-07-31. The DIR primary page could not be re-fetched this session, so the figure is not published as a value. Confirm on the DIR minimum-wage page before use."
+            "Secondary sources report $17.40 per hour for 2027. The DIR minimum-wage page was re-read on 2026-11-08 and states $16.90 per hour from 2026-01-01; it does not state a 2027 rate. Only $16.90 is published; confirm any 2027 figure on DIR before use."
           ],
           "status": "Needs review",
-          "source": "wage"
+          "source": "dirwage"
         },
         {
           "cells": [
@@ -903,6 +1572,42 @@
           ],
           "status": "Needs review",
           "source": "irs"
+        },
+        {
+          "cells": [
+            "Review",
+            "LA County documentary transfer tax (V-3)",
+            "The County Recorder page could not be retrieved on 2026-11-08; the commonly quoted $1.10 per $1,000 appears only in secondary sources. No county rate is published as a value."
+          ],
+          "status": "Needs review",
+          "source": "ula"
+        },
+        {
+          "cells": [
+            "Review",
+            "LAUSD graduation rate not extracted (V-4)",
+            "CDE publishes adjusted cohort graduation data as large state/county/district files; the LAUSD value was not read this pass, so it stays blank."
+          ],
+          "status": "Needs review",
+          "source": "acgr"
+        },
+        {
+          "cells": [
+            "Review",
+            "USGS ShakeOut link repaired (V-5)",
+            "The usgs.gov programme URL for the ShakeOut scenario returns 404; the official report host (OFR 2008-1150) serves the document and is used instead."
+          ],
+          "status": "Needs review",
+          "source": "usgs"
+        },
+        {
+          "cells": [
+            "Medium",
+            "State minimum wage: 2026 confirmed, 2027 not (V-2 / F-17)",
+            "The DIR page states $16.90/hour from 2026-01-01. The $17.40/hour reported elsewhere for 2027 does not appear there and is not published."
+          ],
+          "status": "Needs review",
+          "source": "dirwage"
         }
       ]
     }
