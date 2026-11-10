@@ -11,7 +11,7 @@ Los Angeles, reported by the owner to expire between 2030 and 2035. The question
 |---|---|
 | [Executive summary](EXECUTIVE_SUMMARY.md) | Recommendation, decision matrix, the six findings that drive it, risk balance, and what stays blank |
 | [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Twelve category pages, every table row carrying its official source |
-| [Line-by-line verification record](research/VERIFICATION-2026-11-08.md) | Every published row re-read against its publisher page on 2026-11-08, plus gaps, link repairs and irregularities |
+| [Line-by-line verification record](research/VERIFICATION-2026-11-10-203ae19e.md) | Every published row re-read against its publisher page on 2026-11-10, plus gaps closed, new official projections and irregularities (the 2026-11-08 pass is retained) |
 | [Flagged for Review](review.html) | Everything that could not be verified, published rather than hidden |
 
 ## What is published on the live site
@@ -31,12 +31,13 @@ Los Angeles, reported by the owner to expire between 2030 and 2035. The question
 | Flagged for Review | `/review.html` | Unverified items with the official page that would close each one |
 | Sources & methodology | `/sources.html` | 24-source register, verification standard, privacy boundary |
 
-Only these files and `assets/style.css` are staged into the Pages artifact by `scripts/stage_pages.py`.
+The twelve root pages above, `assets/style.css` and the `/dashboard/` category desk are staged into the Pages artifact
+by `scripts/stage_pages.py`; nothing else in the repository is published.
 
 ## Repository-only layers (audit trail, not published)
 
 The repository also preserves earlier parallel layers — `advisory/`, `docs/`, `analysis/`, `brief/`, `pages/`,
-`decision-file/`, `report/`, `verification-3644edd8/`, `audit/` and `_advisory_src/`. They are kept for audit and
+`decision-file/`, `audit/`, `site/` and `_advisory_src/`. They are kept for audit and
 continuity, are **excluded from the live site**, and are not claimed to be re-verified. `advisory/` in particular is
 withheld because its numerical scenario weights and pathway rankings are not established by the official sources it
 cited (see `review.html`).

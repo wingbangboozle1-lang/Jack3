@@ -4,8 +4,8 @@
 the owner to expire between 2030 and 2035.
 **Question:** sell before expiry, or renew?
 **Owner's objective:** preserve capital *and* retain growth optionality at a manageable level of risk.
-**Evidence snapshot:** 2026-11-10. **Full record:** `research/VERIFICATION-2026-11-10-882bff85.md` (prior record:
-`research/VERIFICATION-2026-11-08.md`).
+**Evidence snapshot:** 2026-11-10. **Full records:** `research/VERIFICATION-2026-11-10-203ae19e.md` and
+`research/VERIFICATION-2026-11-10-882bff85.md` (prior: `research/VERIFICATION-2026-11-08.md`).
 **Published dashboard:** <https://wingbangboozle1-lang.github.io/Jack3/>
 
 > **Privacy.** The asset is published as *Asset A*. No address, parcel number, owner name, contact detail, rent roll,
@@ -162,7 +162,18 @@ rows on the dashboard.
   Finance, CAL FIRE, USGS, FEMA, IRS, and Jack in the Box Inc. issuer filings.
 - **Verified** means the publisher reports the observation — never that it predicts this property. **Analysis** rows are
   labelled reasoning. **Unverified** rows contain no value.
-- No model was trained, back-tested or calibrated; no numerical forecast, cap rate or renewal probability is published.
+- No model was trained, back-tested or calibrated; no property value, cap rate or renewal probability is published.
   Compounding a 2020–2025 change forward is arithmetic, not evidence, and is not presented as a projection.
+- **Official long-range forecasts are published as observations, not as our own.** The California Department of Finance
+  projects a **−240,800** pupil decline in Los Angeles County public K-12 enrollment by 2035-36 (statewide −710,500, to
+  5,020,800; high-school graduates 453,600 → 381,300) → [DOF, 2026 series](https://dof.ca.gov/forecasting/demographics/public-k-12-graded-enrollment/).
+  That is the only official projection found that covers the 2030–2035 window at county level, and it points down.
+  SCAG's adopted county growth forecast could not be extracted from its published PDF and is therefore **not** published.
+- **The projection page carries a deterministic break-even calculation**, not a forecast (`scripts/projection.py`). It
+  states the rent growth at which holding to 2035 equals selling today, for required returns of 4.86%–9% and exit caps of
+  5.0%–6.5%, with every assumption printed beside the tables. At a 6.0% exit cap the break-even rent growth is about
+  **+0.03%/yr at a 4.86% required return** and about **+2.19%/yr at 7.0%**; an 18-month void at expiry removes roughly a
+  tenth of the holding value. The decision therefore turns on the owner's required return and the exit cap — neither of
+  which is in the public record — which is why the recommendation stays conditional and both tracks run in parallel.
 - No personal information is published, and no attempt was made to identify the owner, the parcel or any individual.
 - Sources are rolling documents and can be revised after 2026-11-10. Re-check before acting.
