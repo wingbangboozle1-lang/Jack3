@@ -767,8 +767,8 @@ which this session owns in its role as **final integration session** (task I-06 
 | ID | Task | Status | Owner | File scope |
 |---|---|---|---|---|
 | I-01 | Coordination board claim + full repo read | **claimed** | `b98090a0` | `COORDINATION.md` (this section, append-only) |
-| I-02 | Line-by-line repo review of all inherited layers; irregularity register with links for manual review | **claimed** | `b98090a0` | `REPO_REVIEW.md`, `research/VERIFICATION-2026-11-10.md` |
-| I-03 | Independent primary-source re-verification of every published number and every source URL | **claimed** | `b98090a0` | `data/canonical.json`, `research/VERIFICATION-2026-11-10.md` |
+| I-02 | Line-by-line repo review of all inherited layers; irregularity register with links for manual review | **claimed** | `b98090a0` | `REPO_REVIEW.md`, `research/VERIFICATION-2026-11-10-b98090a0.md` |
+| I-03 | Independent primary-source re-verification of every published number and every source URL | **claimed** | `b98090a0` | `data/canonical.json`, `research/VERIFICATION-2026-11-10-b98090a0.md` |
 | I-04 | Consolidated canonical site: clean dashboard landing + category subpages, master evidence table, every row source-linked, unverified blank + flagged | **claimed** | `b98090a0` | `index.html`, `*.html` (root), `assets/style.css`, `data/canonical.json`, `scripts/build_canonical.py` |
 | I-05 | Privacy audit: remove all personal/account identifiers from every published file; PII scan gate | **claimed** | `b98090a0` | published `*.html`, `assets/`, `tools/pii_scan.py` (additive) |
 | I-06 | Final integration: shared index/navigation, combined row-by-row verification, build + link check, Pages publish | **claimed** | `b98090a0` | `_config.yml`, `scripts/stage_pages.py`, `scripts/validate.py`, `.github/workflows/validate.yml` |
@@ -796,8 +796,8 @@ as audit trail and are NOT edited by this session; findings about them are publi
 | ID | Result | Evidence |
 |---|---|---|
 | I-01 | Coordination board read, claim appended and pushed (`ab7a11c`), branch created. | This section, preserved verbatim above. |
-| I-02 | Line-by-line repo review of eight inherited layers; 22 findings with official links. | `REPO_REVIEW.md`, `repo-review.html`, `research/VERIFICATION-2026-11-10.md`. |
-| I-03 | Every published number re-read against its official publisher page; 34-source register. | `data/canonical.json`, `sources.html`, `research/VERIFICATION-2026-11-10.md`. |
+| I-02 | Line-by-line repo review of eight inherited layers; 22 findings with official links. | `REPO_REVIEW.md`, `repo-review.html`, `research/VERIFICATION-2026-11-10-b98090a0.md`. |
+| I-03 | Every published number re-read against its official publisher page; 34-source register. | `data/canonical.json`, `sources.html`, `research/VERIFICATION-2026-11-10-b98090a0.md`. |
 | I-04 | One consolidated 20-page static site from a single generator; every table row source-linked; 29 blank cells. | `index.html`, root `*.html`, `assets/style.css`, `scripts/build_canonical.py`. |
 | I-05 | Privacy gate: PII scan extended to root HTML, CSS and `dashboard/**`; zero findings across 125 files. | `scripts/validate.py`, `tools/pii_scan.py`; `flagged.html` / `review.html`. |
 | I-06 | Shared navigation, `_config.yml`, `scripts/stage_pages.py`, `scripts/validate.py`, workflow and Jekyll byte-comparison gate. | `scripts/validate.py`, `scripts/stage_pages.py`, `.github/workflows/validate.yml`. |
@@ -807,7 +807,7 @@ as audit trail and are NOT edited by this session; findings about them are publi
 
 222 evidence rows: **188 Verified**, 4 Derived (arithmetic printed), 1 Analysis, 29 Blank/Unverified. 24 risks, 8 pathways, 13 projection steps, 22 flagged items, 22 repo-review findings. 19 navigation pages published as 20 HTML files.
 
-Full row-level provenance: `data/canonical.json` → `rows[].source`, and `research/VERIFICATION-2026-11-10.md`. Every published table body row carries one of these official links:
+Full row-level provenance: `data/canonical.json` → `rows[].source`, and `research/VERIFICATION-2026-11-10-b98090a0.md`. Every published table body row carries one of these official links:
 
 | Key | Publisher / document | Official link |
 |---|---|---|
@@ -870,7 +870,7 @@ Full row-level provenance: `data/canonical.json` → `rows[].source`, and `resea
 
 ### Build / verification gates
 
-- `python3 scripts/build_canonical.py` → 20 pages + `data/canonical.json` + `research/VERIFICATION-2026-11-10.md` + `REPO_REVIEW.md`.
+- `python3 scripts/build_canonical.py` → 20 pages + `data/canonical.json` + `research/VERIFICATION-2026-11-10-b98090a0.md` + `REPO_REVIEW.md`.
 - `python3 scripts/validate.py` → PASS: row provenance, 25 official hosts, blank-value rule, internal links, PII, deterministic rebuild.
 - `python3 scripts/stage_pages.py` → PASS: 21-file artifact, every row source-linked, every link resolves.
 - Legacy checkers `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py`, `_advisory_src/verify_advisory.py`, `_dashboard_src/verify.py` → all PASS.
