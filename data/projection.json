@@ -1,0 +1,148 @@
+{
+  "snapshot": "2026-11-10",
+  "unit": "R = one year of current contractual base rent",
+  "verified_inputs": {
+    "treasury_10y": 0.0486,
+    "treasury_date": "2026-11-06",
+    "treasury_source": "FRED DGS10 (Federal Reserve H.15)",
+    "discount_base": 0.06
+  },
+  "assumptions": {
+    "premium_base": 0.0114,
+    "selling_cost": 0.02,
+    "transfer_tax": 0.0445,
+    "transfer_tax_source": "City of Los Angeles Measure ULA FAQ: 0.45% base + 4.00% tier",
+    "capital_gains_drag": 0.323,
+    "term_premium": 0.1,
+    "renewal_reset": 0.9,
+    "market_relet": 0.85,
+    "exit_year": 2032,
+    "expiry_window": "2030-2035 (owner-reported)",
+    "horizon": "2026-2036"
+  },
+  "scenarios": {
+    "optimistic": {
+      "discount": 0.045,
+      "renewal_prob": 0.85,
+      "relet_fraction": 0.7,
+      "downtime_years": 1,
+      "exit_cap": 0.055,
+      "rent_growth": 0.03,
+      "pv": {
+        "A": 17.23,
+        "B": 18.53,
+        "C": 21.8,
+        "D": 19.03,
+        "E": 20.33
+      },
+      "rank": {
+        "C": 1,
+        "E": 2,
+        "D": 3,
+        "B": 4,
+        "A": 5
+      }
+    },
+    "base": {
+      "discount": 0.06,
+      "renewal_prob": 0.6,
+      "relet_fraction": 0.6,
+      "downtime_years": 2,
+      "exit_cap": 0.065,
+      "rent_growth": 0.02,
+      "pv": {
+        "A": 14.52,
+        "B": 12.65,
+        "C": 15.22,
+        "D": 15.94,
+        "E": 14.98
+      },
+      "rank": {
+        "D": 1,
+        "C": 2,
+        "E": 3,
+        "A": 4,
+        "B": 5
+      }
+    },
+    "pessimistic": {
+      "discount": 0.075,
+      "renewal_prob": 0.35,
+      "relet_fraction": 0.5,
+      "downtime_years": 2,
+      "exit_cap": 0.075,
+      "rent_growth": 0.01,
+      "pv": {
+        "A": 12.53,
+        "B": 9.23,
+        "C": 10.64,
+        "D": 13.68,
+        "E": 11.66
+      },
+      "rank": {
+        "D": 1,
+        "A": 2,
+        "E": 3,
+        "C": 4,
+        "B": 5
+      }
+    }
+  },
+  "summary": {
+    "A": {
+      "name": "A \u00b7 Sell now",
+      "floor": 12.53,
+      "expected": 14.76,
+      "ceiling": 17.23,
+      "mean_rank": 3.67,
+      "floor_rank": 2
+    },
+    "B": {
+      "name": "B \u00b7 Hold to expiry, then re-let",
+      "floor": 9.23,
+      "expected": 13.47,
+      "ceiling": 18.53,
+      "mean_rank": 4.67,
+      "floor_rank": 5
+    },
+    "C": {
+      "name": "C \u00b7 Seek renewal at expiry",
+      "floor": 10.64,
+      "expected": 15.89,
+      "ceiling": 21.8,
+      "mean_rank": 2.33,
+      "floor_rank": 4
+    },
+    "D": {
+      "name": "D \u00b7 Extend first, then sell",
+      "floor": 13.68,
+      "expected": 16.22,
+      "ceiling": 19.03,
+      "mean_rank": 1.67,
+      "floor_rank": 1
+    },
+    "E": {
+      "name": "E \u00b7 Re-tenant at expiry",
+      "floor": 11.66,
+      "expected": 15.66,
+      "ceiling": 20.33,
+      "mean_rank": 2.67,
+      "floor_rank": 3
+    }
+  },
+  "floor_winner": "D \u00b7 Extend first, then sell",
+  "expected_winner": "D \u00b7 Extend first, then sell",
+  "tax_sensitivity": {
+    "asset_value_in_R_at_base_cap": 15.38,
+    "cases": {
+      "basis_0pct": 9.42,
+      "basis_50pct": 11.91,
+      "basis_100pct": 14.39
+    },
+    "note": "Illustrative only. The owner's basis was not supplied, so no after-tax figure about the subject property is asserted."
+  },
+  "section_1031": {
+    "value_in_R": 14.39,
+    "note": "Deferral applies to the federal and state gain, not to the transfer taxes or selling costs, which are still paid."
+  }
+}

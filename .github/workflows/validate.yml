@@ -1,30 +1,62 @@
-name: Validate public research
+name: Validate and build
 on:
   push:
   pull_request:
 permissions:
   contents: read
 jobs:
-  validate:
+  build:
+    name: Verify evidence, rebuild the site and validate the artifact
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python scripts/build.py
-      - run: python scripts/validate.py
-      - run: python scripts/stage_pages.py
-      - run: python tools/check_site.py
-      - run: python tools/linkcheck.py
-      - run: python tools/check_links.py
-      - run: python tools/pii_scan.py
-      - run: python _advisory_src/verify_advisory.py
-      - run: python _dashboard_src/verify.py
-      - run: git diff --exit-code -- '*.html'
+
+      # The projection is deterministic: same inputs, same bytes, always.
+      - name: Regenerate the projection model
+        run: python _site_src/projection.py
+
+      # Every published page is generated. Nothing is hand-edited.
+      - name: Rebuild the site from the verified dataset
+        run: python _site_src/build.py
+
+      - name: Site must be reproducible byte for byte
+        run: |
+          git diff --exit-code -- '*.html' 'data/projection.json' || {
+            echo "::error title=Non-deterministic build::Committed pages do not match a fresh rebuild."
+            exit 1
+          }
+
+      # The gate: provenance, blanking, drift, domain allowlist, privacy, links.
+      - name: Validate provenance, blanking and privacy
+        run: python scripts/validate.py
+
+      # The artifact GitHub Pages will actually serve, checked file by file.
+      - name: Stage and validate the published artifact
+        run: python scripts/stage_pages.py
+
+      # The repository's earlier audit layers keep their own checks.
+      - name: Repository-wide privacy scan
+        run: python tools/pii_scan.py
+      - name: Repository-wide link domain check
+        run: python tools/check_links.py
+      - name: Deep-dive layer integrity
+        run: python tools/linkcheck.py
+      - name: Archived dashboard layer integrity
+        run: python _dashboard_src/verify.py
+      - name: Archived advisory layer integrity
+        run: python _advisory_src/verify_advisory.py
+
+      # GitHub Pages builds the root with Jekyll. Excluded layers must not
+      # appear, and the published files must survive byte for byte.
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-      - run: gem install github-pages --no-document
-      - run: jekyll build --destination _jekyll_test
-      - run: python scripts/stage_pages.py _jekyll_test
+      - name: Install the GitHub Pages gem set
+        run: gem install github-pages --no-document
+      - name: Build the site exactly as GitHub Pages will
+        run: jekyll build --destination _jekyll_test
+      - name: Jekyll output must equal the curated artifact
+        run: python scripts/stage_pages.py _jekyll_test
