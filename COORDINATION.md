@@ -883,4 +883,33 @@ Append-only for this section; `git pull --rebase` before every push; small commi
 - **Merge:** merged with merge commit `517049b0c6a58826cfca29c41101dee3e9119fc3` (merge commit method, no approval wait, as instructed). Post-merge `main` `Validate public research` **succeeded** (run 42730197349, 39 s); `pages build and deployment` **succeeded** (run 42730196505, 45 s); Pages API `builds/latest` reports `status=built` for `517049b` (created 2026-11-10T00:41:18Z, error `null`).
 - **Live verification:** `https://wingbangboozle1-lang.github.io/Jack3/` fetched after deploy — renders the current snapshot (Treasury anchor shown as 4.86% on 2026-11-06, i.e. PR #35's refresh), evidence-boundary banner intact, all category links resolve.
 - **Flagged irregularities (unchanged, non-blocking):** N-1 FRED prints 4.86% for 2026-11-06 (published site already shows it after PR #35); N-2 stale open PRs #4, #12, #22, #26, #31, #32 — all `mergeable=CONFLICTING`; #22 and #26 also fail `validate` — reported, not merged; N-3 no defect found that contradicts a published value; open gaps (property identity/lease, cap rates, parcel hazards, LA County transfer tax, LAUSD graduation rate, `/advisory/` withholding) remain published on `review.html`.
-- **Session outcome:** zero content changes proposed or made; every re-read official source agrees with the published values; both concurrent same-day verification sessions (`c70571c7` PR #34; `882bff85` PR #35) were preserved verbatim through two additive rebase resolutions.
+- **Session outcome:** zero content changes proposed or made; every re-read official source agrees with the published values; both concurrent same-day verification sessions (`c70571c7` PR #34; `882bff85` PR #35) were preserved verbatim through two additive rebase resolutions.# Session `arena/51cab373-jack3` — final integration pass (2026-11-10)
+
+**Session ID:** `51cab373` · **Branch:** `arena/51cab373-jack3` (platform-fixed) · **Date:** 2026-11-10 (UTC).
+All earlier sections above are preserved verbatim; this section is additive only.
+
+This session independently closed the same two flagged items (V-3 county transfer tax, V-4 LAUSD
+graduation rate) in parallel with sessions `c70571c7` (PR #34) and `882bff85` (PR #35, merged) on the
+same day. Both independent readings agree; main's versions were kept verbatim on rebase, so no
+verified value from main was replaced. This branch now carries only additive records.
+
+## Outcome (2026-11-10)
+
+| ID | Result |
+|---|---|
+| I-01 | Done — all open PRs assessed by CI state and merge-base: #4/#12 stale since 2026-11-06 (green CI, left to owners); #22/#26 red CI (not merged); #31/#32 `mergeable=CONFLICTING` with no shared merge-base against current `main` (independent rebuilds of the dashboard merged in PR #33) — reported, not merged. Same conclusion as `882bff85` and `cd1d5bcb`. |
+| I-02 | Done, independently — lavote.gov (LA County Registrar-Recorder/County Clerk) confirms **$0.55 per $500** (≈$1.10 per $1,000; five special cities incl. Los Angeles at the full $1.10 per $1,000; R&T Code §§11911–11933); caschooldashboard.org (CDE-operated) confirms **LAUSD 2025: 86.5% graduated (5-year), Four Year = 84.6%, Five Year = 1.8%, N=29,899**; 2019 82.1% · 2022 86.0% · 2023 83.6% · 2024 86.7% · 2025 86.5%. No discrepancy with main's published closures. This session's duplicate edits to `data/evidence.json`, `taxes.html`, `schools.html`, `review.html`, `sources.html` and `scripts/build.py` were dropped in favour of main's; this session's row-level evidence is kept at `research/VERIFICATION-2026-11-10-51cab373.md`. |
+| I-03 | Done — clean-tree checks all PASS: deterministic `build.py`; `validate.py` 141 rows / 12 pages; `stage_pages.py` staged artifact (32 entries) link + row-provenance PASS; `tools/check_site.py` 213 refs; `tools/linkcheck.py` OK; `tools/check_links.py` 0 non-official hosts; `tools/pii_scan.py` 0 findings; `_advisory_src/verify_advisory.py` PASS; `_dashboard_src/verify.py` PASS. |
+| I-04 | Done — `README.md` additively documents the published `/dashboard/` layer and corrects the source count 24 → 26 (main registers two new Government sources: `lavote`, `dashboard`); `research/VERIFICATION-2026-11-10-51cab373.md` added. Nothing else edited. |
+| I-05 | In progress — PR #40 opened, rebased onto `origin/main` after concurrent merges (#34, #35, #37, #41), merged after rebase; Pages deploy confirmation and final result recorded in the follow-up entry below. |
+
+## Cross-session notes
+
+- No other session's files were modified. On rebase, main's `COORDINATION.md`, `EXECUTIVE_SUMMARY.md`,
+  `data/evidence.json`, generated root `*.html` and `scripts/build.py` were kept verbatim; conflicts resolved
+  without discarding any session's work (this session's superseded hunks are the ones Main itself adopted).
+- The two verification files created today under different names (`research/VERIFICATION-2026-11-10.md` from
+  `c70571c7`, `research/VERIFICATION-2026-11-10-882bff85.md` from `882bff85`, `research/VERIFICATION-2026-11-10-cd1d5bcb.md`
+  from `cd1d5bcb`, and this session's `-51cab373.md`) are all retained; they are independent same-day readings and
+  their agreement is the verification.
+
