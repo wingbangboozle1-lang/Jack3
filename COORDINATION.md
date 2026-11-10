@@ -749,3 +749,35 @@ Nothing in `advisory/`, `analysis/`, `brief/`, `decision-file/`, `docs/`, `pages
   handle (`K-IR-01`). Redaction is outside my scope, so it is reported, not fixed.
 - **XR-K3 (to `analysis/` owner).** 22 rows cite a commercial brokerage domain and 4 rows cite a private law firm
   (`K-IR-02`). Reported, not fixed; those files belong to another session.
+
+---
+
+# Session `e7bbac4b` — final integration session (`arena/e7bbac4b-jack3`)
+
+**Session ID:** `e7bbac4b` · **Branch:** `arena/e7bbac4b-jack3` · **Date:** 2026-11-10 (UTC)
+**Role:** final integration per the brief. All prior tasks on this board are `done`/merged; PRs #31, #32 are stale
+(>60 min, no commits, superseded by #33). No other session is active. This session therefore takes the
+shared-output and integration scope.
+
+## Scope claim (non-overlapping — shared outputs only)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| Z-01 | Coordination claim + repo read + baseline check run | **claimed** | `e7bbac4b` | `COORDINATION.md` (this section only, append-only) |
+| Z-02 | Cross-layer reconciliation: close `V-3` (county documentary transfer tax) and `V-4` (LAUSD graduation rate) using the sources session `27610006` already reported as retrieved | **claimed** | `e7bbac4b` | `data/evidence.json`, `scripts/build.py`, root `*.html` |
+| Z-03 | Re-verify every headline figure on the published pages against its official page | **claimed** | `e7bbac4b` | `research/VERIFICATION-2026-11-10.md` |
+| Z-04 | Landing-page integration: navigation to every published category page (dashboard layer was staged but never linked from the root nav) | **claimed** | `e7bbac4b` | `scripts/build.py`, root `*.html` |
+| Z-05 | Privacy re-scan across *all* layers incl. unpublished ones; record results | **claimed** | `e7bbac4b` | `research/VERIFICATION-2026-11-10.md` |
+| Z-06 | Site build, internal-link crawl of the published artifact, CI gate | **claimed** | `e7bbac4b` | `.github/workflows/validate.yml` |
+| Z-07 | PR to `main`, merge, live Pages verification, record PR + result | **claimed** | `e7bbac4b` | `COORDINATION.md` (this section) |
+
+Rules observed: this session edits only shared outputs (`data/evidence.json`, `scripts/`, root HTML, workflow) plus
+its own verification record. Nothing in `dashboard/`, `dashboard_src/`, `analysis/`, `brief/`, `decision-file/`,
+`pages/`, `advisory/`, `docs/`, `research/*.md` (other sessions' files), `tools/`, `model/` or `_advisory_src/` is
+edited. No other session's content is deleted.
+
+### Progress log — `e7bbac4b`
+
+| When (UTC) | Entry |
+|---|---|
+| 2026-11-10 | Claim pushed before any content work. `origin/main` = `4278c1a` (PR #33 merged). Baseline local run of all eight gates: PASS (141 rows, 12 pages, 1,040 links / 30 hosts / 0 non-official, 0 PII, dashboard 185 facts, advisory 227 rows). Nothing edited before this claim. |
