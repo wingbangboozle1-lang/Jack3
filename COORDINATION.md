@@ -780,3 +780,6 @@ not touched (not this session's branches).
 - Irregularities: K-IR-01 (handle in excluded layers only, not published);
   stale open PRs #22/#26/#31/#32 untouched.
 - C-05: PR to main opened, CI green, merged, Pages verified live.
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/34 merged to main; CI
+  validate PASS; Pages status built; live site re-fetched and confirmed serving
+  the curated dashboard 2026-11-10.
