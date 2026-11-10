@@ -21,29 +21,28 @@ exclude:
   - build_site.py
   - assets/app.js
   # generated / scratch
-  - _pages_artifact
-  - _jekyll_test
-  - __pycache__
+  - _pages_artifact/
+  - _jekyll_test/
+  - __pycache__/
   - "*.py"
   - "*.pyc"
   - "*.md"
   - "*.json"
   - "*.txt"
   # source and companion layers
-  - _advisory_src
-  - _dashboard_src
-  - advisory
-  - analysis
-  - audit
-  - brief
-  - dashboard
-  - data
-  - decision-file
-  - dashboard
-  - docs
-  - model
-  - pages
-  - research
-  - scripts
-  - site
-  - tools
+  - _advisory_src/
+  - _dashboard_src/
+  - advisory/
+  - analysis/
+  - audit/
+  - brief/
+  - dashboard/
+  - data/
+  - decision-file/
+  - docs/
+  - model/
+  - pages/
+  - research/
+  - scripts/
+  - site/
+  - tools/
