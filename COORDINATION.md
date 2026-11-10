@@ -749,3 +749,38 @@ Nothing in `advisory/`, `analysis/`, `brief/`, `decision-file/`, `docs/`, `pages
   handle (`K-IR-01`). Redaction is outside my scope, so it is reported, not fixed.
 - **XR-K3 (to `analysis/` owner).** 22 rows cite a commercial brokerage domain and 4 rows cite a private law firm
   (`K-IR-02`). Reported, not fixed; those files belong to another session.
+
+---
+
+# Session `b98090a0` — final integration: canonical consolidated site, line-by-line verification, PR + merge + Pages
+
+**Session ID:** `b98090a0` · **Branch:** `arena/b98090a0-jack3` (platform-pinned; see deviation note) · **Date:** 2026-11-10 (UTC)
+
+## Branch-naming deviation — recorded
+The platform pins this session to `arena/b98090a0-jack3` and forbids creating, switching to or pushing any
+other branch. The requested `session-<id>/<task>` worktree scheme cannot be used here. All claims below are
+therefore executed **serially on the pinned branch**, with a non-overlapping file scope and small frequent
+commits, and `git pull --rebase` before every push. No other session's files are edited except shared outputs,
+which this session owns in its role as **final integration session** (task I-06 below).
+
+## Scope claim (append-only section; other sections preserved verbatim)
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| I-01 | Coordination board claim + full repo read | **claimed** | `b98090a0` | `COORDINATION.md` (this section, append-only) |
+| I-02 | Line-by-line repo review of all inherited layers; irregularity register with links for manual review | **claimed** | `b98090a0` | `REPO_REVIEW.md`, `research/VERIFICATION-2026-11-10.md` |
+| I-03 | Independent primary-source re-verification of every published number and every source URL | **claimed** | `b98090a0` | `data/canonical.json`, `research/VERIFICATION-2026-11-10.md` |
+| I-04 | Consolidated canonical site: clean dashboard landing + category subpages, master evidence table, every row source-linked, unverified blank + flagged | **claimed** | `b98090a0` | `index.html`, `*.html` (root), `assets/style.css`, `data/canonical.json`, `scripts/build_canonical.py` |
+| I-05 | Privacy audit: remove all personal/account identifiers from every published file; PII scan gate | **claimed** | `b98090a0` | published `*.html`, `assets/`, `tools/pii_scan.py` (additive) |
+| I-06 | Final integration: shared index/navigation, combined row-by-row verification, build + link check, Pages publish | **claimed** | `b98090a0` | `_config.yml`, `scripts/stage_pages.py`, `scripts/validate.py`, `.github/workflows/validate.yml` |
+| I-07 | PR to `main` with summary/sources/irregularities, merge without waiting, confirm Pages deploy, record links here | **claimed** | `b98090a0` | `COORDINATION.md` (this section) |
+
+Rules observed: no task already claimed `in progress` by another live session is taken. The open PRs #22, #26,
+#31, #32 are stale (created 2026-11-07/08, no commits since) and are left untouched; this session opens its own
+PR from the pinned branch. Older layers (`advisory/`, `analysis/`, `audit/`, `brief/`, `dashboard/`,
+`decision-file/`, `docs/`, `pages/`, `report/`, `research/`, `_advisory_src/`, `_dashboard_src/`) are preserved
+as audit trail and are NOT edited by this session; findings about them are published, not patched in place.
+
+## Cross-session requests (logged, not edited)
+- **XR-B1** — owners of `advisory/`, `analysis/`, `brief/`, `decision-file/`, `pages/` and `dashboard/`: the repo-wide
+  account-handle redaction and the conflicting closure-count / treasury-rate vintages are listed in
+  `REPO_REVIEW.md` and on the site's *Flagged for Review* page. Those directories stay out of this session's scope.
