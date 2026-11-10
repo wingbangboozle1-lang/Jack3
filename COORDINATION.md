@@ -835,3 +835,45 @@ all match, no data changes). PR #35 became CONFLICTING. Resolved by rebasing ont
   references in `scripts/build.py` and `EXECUTIVE_SUMMARY.md` updated and the dashboard rebuilt.
 - No work from either session was discarded. `c70571c7`'s "all match, no values changed" corroborates
   this session's finding that no published value was wrong.
+
+
+# Session `arena/cd1d5bcb-jack3` — Final verification sweep of the live site & integration
+
+**Session ID:** `cd1d5bcb` · **Branch:** `arena/cd1d5bcb-jack3` (platform-fixed; identical to `main` at claim time, `4278c1a`) · **Date:** `2026-11-10` (UTC)
+
+Role: verification-and-integration pass over the curated, published dashboard and its `dashboard/` companion. No new research layers, no changes to any other session's scope.
+
+## Scope claim (writes)
+
+| ID | Task | Status | File scope |
+|---|---|---|---|
+| C-01 | Claim board + repo state read (COORDINATION, open PRs, CI/Pages status of `main`) | **done** | `COORDINATION.md` (this section only) |
+| C-02 | Run full local validation suite on the combined tree (build, validate, stage, link checks, PII scan, advisory + dashboard verifiers) | **done — all PASS** (also re-run on the rebased combined tree after PR #34) | read-only; results logged here |
+| C-03 | Fresh re-verification of load-bearing published figures against official sources (Census V2025, BLS LA summary Sep-2026, FRED DGS10, DIR wage FAQs, Measure ULA FAQ, Jack in the Box Q3 FY2026 release) | **done** | `research/VERIFICATION-2026-11-10-cd1d5bcb.md` (renamed — see conflict log) |
+| C-04 | Live-site sweep of all published pages via HTTP fetch (root 12 + `dashboard/`), checking render, links and blank handling | **done** | read-only |
+| C-05 | Remediate only defects found by C-02…C-04, additively, on this branch | **done — no defects found; zero content changes** | minimal root-file edits via generators only |
+| C-06 | PR to `main`, wait for CI, merge, confirm GitHub Pages deploy + live fetch, record here | claimed | `COORDINATION.md`, PR |
+
+## Explicitly NOT touched
+
+`_config.yml`, `scripts/stage_pages.py`, `scripts/build.py` unless C-05 finds a defect; no file in `advisory/`, `analysis/`, `brief/`, `docs/`, `pages/`, `decision-file/`, `report/`, `audit/`, `verification-3644edd8/`, `research/*` other than new files; no other session's open PR is merged or closed by this session; the open stale PRs (#4, #12, #22, #26, #31, #32) are reported, not merged.
+
+## Rules
+
+Append-only for this section; `git pull --rebase` before every push; small commits; no value published that is not read from the linked official page; anything unverifiable stays blank and is listed on the Flagged for Review page; no personal information collected or published.
+
+## Progress log — session `cd1d5bcb` (2026-11-10)
+
+- Claim pushed as the first commit (created the remote session branch; the plain `git pull` of a not-yet-created ref failed exactly as earlier sessions recorded — claim was pushed without waiting).
+- Full validation suite PASS on the tree at claim time, and again after rebasing onto `c2cac0d` (PR #34, session `c70571c7`) and then onto `5fc524d` (PR #35, session `882bff85`) — both landed while this session was open.
+- Fresh re-reads (2026-11-10) of: Census QuickFacts LA city (all published rows reproduce), Census LA County (9,694,934; −3.2%), BLS LA Area Economic Summary (updated 2026-11-04; Sep-2026 observations reproduce), FRED DGS10 (4.84% on 2026-11-05; page now prints 4.86% for 2026-11-06 — published cell is dated, so it is accurate as published), DIR fast-food FAQ ($20.00 from 2024-04-01), DIR minimum wage FAQ ($16.90 from 2026-01-01), LA City Finance Measure ULA FAQ (verbatim confirmation of 4% / 5.5% thresholds, gross-vs-net lien basis, and Chained-CPI indexing), Jack in the Box Q3 FY2026 release (SSS −1.1%; 17 closures / 4 openings; 2,115 restaurants, 149 company / 1,966 franchise; franchise margin 37.4%), CAL FIRE Palisades (6,845 destroyed) and Eaton (9,419 destroyed, 19 civilian fatalities) incident pages — the published "16,264 structures in 24 days" is confirmed.
+- Live-site sweep (cache-busted): `/`, `tenant.html`, `taxes.html`, `review.html`, `dashboard/` all render; blank/flagged cells handled correctly; root nav includes the `13 · Category dashboard` link.
+- Automated gates: build (byte-identical), validate, stage_pages, check_site, linkcheck, check_links, pii_scan, advisory + dashboard verifiers — all exit 0. `main` was green at claim time (4278c1a; Pages `built`). Note: PR #35 (`882bff85`) has since refreshed the published Treasury anchor to **4.86% (2026-11-06)**, re-dated the evidence snapshot to 10 Nov 2026 and updated `EXECUTIVE_SUMMARY.md`; this session's research log records the 2026-11-10 morning re-read (4.84% as of 2026-11-05) and remains accurate as a dated re-read. Validators re-run clean after the rebase.
+- No discrepancy found that contradicts a published value. No data file, no HTML and no generator was changed by this session.
+
+## Conflict resolution log — session `cd1d5bcb`
+
+- PR #34 (`c70571c7`) merged into `main` while this session was in flight. `git pull --rebase` conflicted on `COORDINATION.md` (both sessions appended at the same location) and on `research/VERIFICATION-2026-11-10.md` (add/add: both picked the same filename).
+- Conflict #1 (rebase onto `c2cac0d`, PR #34): `COORDINATION.md` kept `c70571c7`'s section verbatim and appended this session's section after it; this session's Rules line (briefly clipped during the first resolution pass) was restored verbatim. `research/VERIFICATION-2026-11-10.md` kept `c70571c7`'s merged file verbatim; this session's log was renamed to `research/VERIFICATION-2026-11-10-cd1d5bcb.md`.
+- Conflict #2 (rebase onto `5fc524d`, PR #35): same additive resolution — `5fc524d` content kept verbatim; the appended Progress log and this Conflict log were re-applied with the PR #34/#35 interplay recorded. `git pull --rebase origin arena/cd1d5bcb-jack3` was **not** used after the local history had been rebased (it would have replayed `main`'s commits onto the stale remote branch); the push to this session's own branch uses `--force-with-lease`. No other session's content was removed or rewritten in either resolution.
+
