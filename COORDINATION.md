@@ -749,3 +749,35 @@ Nothing in `advisory/`, `analysis/`, `brief/`, `decision-file/`, `docs/`, `pages
   handle (`K-IR-01`). Redaction is outside my scope, so it is reported, not fixed.
 - **XR-K3 (to `analysis/` owner).** 22 rows cite a commercial brokerage domain and 4 rows cite a private law firm
   (`K-IR-02`). Reported, not fixed; those files belong to another session.
+
+---
+
+# Session `4f0b3fa2` — final integration & line-by-line re-verification (2026-11-10)
+
+**Session ID:** `4f0b3fa2` · **Branch:** `arena/4f0b3fa2-jack3` · **Role:** research refresh, repo review, consolidated
+dashboard rebuild, verification gates, PR → `main`, merge, Pages deploy confirmation.
+
+## Scope claim (append-only section; no other session's text edited)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| Z-01 | Claim + repo read; concurrency check | claimed | `4f0b3fa2` | this section of `COORDINATION.md` |
+| Z-02 | Line-by-line repo review + irregularity log (Z-IR-01…) | claimed | `4f0b3fa2` | `REPO_REVIEW.md`, `review.html` (data-driven) |
+| Z-03 | Official-source re-verification of every published value (2026-11-10) | claimed | `4f0b3fa2` | `research/VERIFICATION-2026-11-10.md`, `data/evidence.json` |
+| Z-04 | Corrective fixes where a published value does not match its cited official page | claimed | `4f0b3fa2` | `data/evidence.json`, `scripts/build.py` |
+| Z-05 | Consolidated category dashboard: clean landing + category subpages, table-first, every row source-linked | claimed | `4f0b3fa2` | root `*.html`, `assets/style.css`, `assets/app.js` |
+| Z-06 | Automated gates: row provenance, blank-when-unverified, official-host allowlist, internal links, PII, deterministic rebuild | claimed | `4f0b3fa2` | `scripts/validate.py`, `scripts/stage_pages.py`, `tools/check_site.py`, `tools/linkcheck.py`, `tools/pii_scan.py`, `.github/workflows/validate.yml` |
+| Z-07 | PR → `main`, CI green, merge, live Pages verification | claimed | `4f0b3fa2` | `COORDINATION.md` (this section) |
+
+**Rules observed:** this session writes only the files listed above. Every other layer (`analysis/`, `advisory/`,
+`audit/`, `brief/`, `decision-file/`, `docs/`, `pages/`, `report/`, `verification-3644edd8/`, `dashboard/`,
+`dashboard_src/`, `_advisory_src/`, `_dashboard_src/`, `model/`, `data/*.py`, `build_site.py`) is read-only for this
+session. Shared outputs (`index.html`, `assets/`, `scripts/`, `data/evidence.json`) are owned by this integration
+session per the project rules, so the edits below are made here rather than requested from another owner.
+
+## Work log
+
+| When (UTC) | Entry |
+|---|---|
+| 2026-11-10 | Claim pushed before content work. Branch `arena/4f0b3fa2-jack3` from `main` @ `4278c1a` (PR #33 merged). Seven stale PRs (#4, #12, #22, #26, #31, #32, #34) remain open from earlier sessions; they are left untouched — this session works on its own branch and does not merge or close another session's PR. |
+| 2026-11-10 | Repo review of all inherited layers recorded in `REPO_REVIEW.md`; live site confirmed serving at https://wingbangboozle1-lang.github.io/Jack3/ before any change. |
