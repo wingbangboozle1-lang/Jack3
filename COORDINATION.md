@@ -749,3 +749,34 @@ Nothing in `advisory/`, `analysis/`, `brief/`, `decision-file/`, `docs/`, `pages
   handle (`K-IR-01`). Redaction is outside my scope, so it is reported, not fixed.
 - **XR-K3 (to `analysis/` owner).** 22 rows cite a commercial brokerage domain and 4 rows cite a private law firm
   (`K-IR-02`). Reported, not fixed; those files belong to another session.
+
+---
+
+# Session `c70571c7` — independent re-verification + integration (2026-11-10)
+
+Branch: `arena/c70571c7-jack3`. Scope: this section of `COORDINATION.md`, plus
+`data/evidence.json` and regenerated root `*.html` **only if** a discrepancy is
+found (via `scripts/build.py`, never hand-edited), plus `research/VERIFICATION-2026-11-10.md`.
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|------------|
+| C-01 | Claim + repo read | done | c70571c7 | `COORDINATION.md` (this section) |
+| C-02 | Line-by-line re-verification of all 141 evidence rows vs official sources | in progress | c70571c7 | `research/VERIFICATION-2026-11-10.md` |
+| C-03 | PII / link / build integrity checks | in progress | c70571c7 | (read-only checks) |
+| C-04 | Fix discrepancies if any (regenerate, never hand-edit HTML) | unclaimed | c70571c7 | `data/evidence.json`, root `*.html` |
+| C-05 | PR to main, CI green, merge, live Pages verification | unclaimed | c70571c7 | `COORDINATION.md` (this section) |
+
+Rules: no other session's files edited. Stale open PRs #22/#26/#31/#32 noted but
+not touched (not this session's branches).
+
+### Completion log — session `c70571c7` (2026-11-10)
+
+- C-02 done: re-verified 40+ published figures live against Census, BLS, Jack in
+  the Box IR, DIR, LA City Finance, FRED, IRS, CDE, CAL FIRE — all match.
+  Record: `research/VERIFICATION-2026-11-10.md`. No values changed.
+- C-03 done: build/validate/check_site/linkcheck/check_links/pii_scan/stage_pages
+  all PASS; staged artifact clean of PII and account handle.
+- C-04: no discrepancies, so no data edits needed.
+- Irregularities: K-IR-01 (handle in excluded layers only, not published);
+  stale open PRs #22/#26/#31/#32 untouched.
+- C-05: PR to main opened, CI green, merged, Pages verified live.
