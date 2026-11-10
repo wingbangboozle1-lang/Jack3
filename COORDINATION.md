@@ -920,3 +920,7 @@ Privacy rule: research and publish only public area-level and corporate evidence
 - Irregularity: LA County Assessment Roll narrative reports 4.42% (+$96bn) but one bullet says “42%”; published 4.42% and flagged the official-page inconsistency.
 - Local verification passed: deterministic root build, 155-row schema/provenance/local-link/blank-value/host checks, staged-artifact check, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py` (85 files, zero findings), both legacy verifiers, and `git diff --exit-code -- '*.html'`.
 - J-05 **in progress**: PR, CI, merge, Pages deployment and live verification.
+
+### Concurrency resolution — `1f62010a` vs PRs #34/#35/#37
+
+PR #39 initially passed CI (run 42730410298) but GitHub reported that its merge commit could not be created because `main` had advanced. Rebased onto `b3faedb` without discarding other sessions' work. `COORDINATION.md` retained all three new session sections verbatim plus this section. `data/evidence.json` retained the other sessions' county-tax and Treasury corrections, then applied this session's 2026 LAUSD update, row-provenance corrections and new official context. The other sessions' verification files remain unchanged; this session's detailed audit is `research/VERIFICATION-2026-11-10-1f62010a.md`. The full local suite was rerun successfully on the combined tree. Push uses `--force-with-lease` only because the platform-fixed branch was rebased.
