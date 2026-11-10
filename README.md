@@ -12,6 +12,7 @@ Los Angeles, reported by the owner to expire between 2030 and 2035. The question
 | [Executive summary](EXECUTIVE_SUMMARY.md) | Recommendation, decision matrix, the six findings that drive it, risk balance, and what stays blank |
 | [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Twelve category pages, every table row carrying its official source |
 | [Line-by-line verification record](research/VERIFICATION-2026-11-08.md) | Every published row re-read against its publisher page on 2026-11-08, plus gaps, link repairs and irregularities |
+| [Re-verification addendum](research/VERIFICATION-2026-11-10.md) | Two flagged items closed on 2026-11-10 (V-3 county transfer tax, V-4 LAUSD graduation rate) with exact page evidence; combined-tree checks |
 | [Flagged for Review](review.html) | Everything that could not be verified, published rather than hidden |
 
 ## What is published on the live site
@@ -29,9 +30,10 @@ Los Angeles, reported by the owner to expire between 2030 and 2035. The question
 | Taxes & transaction costs | `/taxes.html` | Prop 13, transfer taxes, Measure ULA, §1031, capital-gain treatment |
 | Projection framework | `/model.html` | Verified anchors and the forecasts deliberately withheld |
 | Flagged for Review | `/review.html` | Unverified items with the official page that would close each one |
-| Sources & methodology | `/sources.html` | 24-source register, verification standard, privacy boundary |
+| Sources & methodology | `/sources.html` | 26-source register, verification standard, privacy boundary |
+| Category dashboard | `/dashboard/` | 15-page deep-dive decision desk: verified dataset, risk register, projections, decision matrix (merged as PR #33) |
 
-Only these files and `assets/style.css` are staged into the Pages artifact by `scripts/stage_pages.py`.
+Only these files, `dashboard/` and `assets/style.css` are staged into the Pages artifact by `scripts/stage_pages.py`.
 
 ## Repository-only layers (audit trail, not published)
 
