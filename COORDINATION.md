@@ -835,3 +835,30 @@ all match, no data changes). PR #35 became CONFLICTING. Resolved by rebasing ont
   references in `scripts/build.py` and `EXECUTIVE_SUMMARY.md` updated and the dashboard rebuilt.
 - No work from either session was discarded. `c70571c7`'s "all match, no values changed" corroborates
   this session's finding that no published value was wrong.
+
+
+# Session `arena/cd1d5bcb-jack3` — Final verification sweep of the live site & integration
+
+**Session ID:** `cd1d5bcb` · **Branch:** `arena/cd1d5bcb-jack3` (platform-fixed; identical to `main` at claim time, `4278c1a`) · **Date:** `2026-11-10` (UTC)
+
+Role: verification-and-integration pass over the curated, published dashboard and its `dashboard/` companion. No new research layers, no changes to any other session's scope.
+
+## Scope claim (writes)
+
+| ID | Task | Status | File scope |
+|---|---|---|---|
+| C-01 | Claim board + repo state read (COORDINATION, open PRs, CI/Pages status of `main`) | claimed | `COORDINATION.md` (this section only) |
+| C-02 | Run full local validation suite on the combined tree (build, validate, stage, link checks, PII scan, advisory + dashboard verifiers) | claimed | read-only; results logged here |
+| C-03 | Fresh re-verification of load-bearing published figures against official sources (Census V2025, BLS LA summary Sep-2026, FRED DGS10, DIR wage FAQs, Measure ULA FAQ, Jack in the Box Q3 FY2026 release) | claimed | `research/VERIFICATION-2026-11-10.md` (new) |
+| C-04 | Live-site sweep of all published pages via HTTP fetch (root 12 + `dashboard/`), checking render, links and blank handling | claimed | read-only |
+| C-05 | Remediate only defects found by C-02…C-04, additively, on this branch | claimed | minimal root-file edits via generators only |
+| C-06 | PR to `main`, wait for CI, merge, confirm GitHub Pages deploy + live fetch, record here | claimed | `COORDINATION.md`, PR |
+
+## Explicitly NOT touched
+
+`_config.yml`, `scripts/stage_pages.py`, `scripts/build.py` unless C-05 finds a defect; no file in `advisory/`, `analysis/`, `brief/`, `docs/`, `pages/`, `decision-file/`, `report/`, `audit/`, `verification-3644edd8/`, `research/*` other than new files; no other session's open PR is merged or closed by this session; the open stale PRs (#4, #12, #22, #26, #31, #32) are reported, not merged.
+
+## Rules
+
+Append-only for this section; `git pull --rebase` before every push; small commits; no value published that is not read from the linked official page; anything unverifiable stays blank and is listed on the Flagged for Review page; no personal information collected or published.
+
