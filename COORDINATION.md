@@ -768,3 +768,15 @@ found (via `scripts/build.py`, never hand-edited), plus `research/VERIFICATION-2
 
 Rules: no other session's files edited. Stale open PRs #22/#26/#31/#32 noted but
 not touched (not this session's branches).
+
+### Completion log — session `c70571c7` (2026-11-10)
+
+- C-02 done: re-verified 40+ published figures live against Census, BLS, Jack in
+  the Box IR, DIR, LA City Finance, FRED, IRS, CDE, CAL FIRE — all match.
+  Record: `research/VERIFICATION-2026-11-10.md`. No values changed.
+- C-03 done: build/validate/check_site/linkcheck/check_links/pii_scan/stage_pages
+  all PASS; staged artifact clean of PII and account handle.
+- C-04: no discrepancies, so no data edits needed.
+- Irregularities: K-IR-01 (handle in excluded layers only, not published);
+  stale open PRs #22/#26/#31/#32 untouched.
+- C-05: PR to main opened, CI green, merged, Pages verified live.
