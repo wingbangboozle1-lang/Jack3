@@ -900,8 +900,8 @@ session's text was removed.
 
 | Item | Record |
 |---|---|
-| Pull request | _to be filled after PR creation_ |
-| Merge result | _to be filled after merge_ |
+| Pull request | https://github.com/wingbangboozle1-lang/Jack3/pull/42 — `arena/b98090a0-jack3` → `main`, “Final integration: canonical verified decision site, 222 source-linked rows, Flagged for Review”. |
+| Merge result | Pending CI + merge (no approval wait, per standing instruction). |
 | Pages deployment | _to be filled after live verification_ |
 
 ---
