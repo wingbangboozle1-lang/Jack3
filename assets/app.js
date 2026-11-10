@@ -1,35 +1,38 @@
-// Jack3 dashboard — vanilla JS, no external dependencies (offline-safe, no broken links).
-// Features: global table-row filter, current-page nav highlight.
+
+/* Filter + status chips. No dependencies, no network, no persistence. */
 (function () {
   "use strict";
-
-  // Highlight active nav link
-  var path = window.location.pathname;
-  document.querySelectorAll("nav.main a").forEach(function (a) {
-    var href = a.getAttribute("href");
-    if (!href) return;
-    var full = new URL(href, window.location.href).pathname;
-    if (path === full || (full !== "/" && path.indexOf(full) === 0)) {
-      a.classList.add("active");
-    }
-  });
-
-  // Global filter across all data tables
-  var input = document.getElementById("global-filter");
-  var count = document.getElementById("filter-count");
-  if (input) {
-    input.addEventListener("input", function () {
-      var q = input.value.trim().toLowerCase();
-      var rows = document.querySelectorAll("table.data tbody tr");
-      var shown = 0, total = 0;
+  function wire(input, table, chips) {
+    if (!input || !table) return;
+    var body = table.tBodies[0];
+    if (!body) return;
+    var rows = Array.prototype.slice.call(body.rows);
+    var state = "all";
+    function apply() {
+      var q = (input.value || "").trim().toLowerCase();
       rows.forEach(function (tr) {
-        total++;
-        var txt = tr.textContent.toLowerCase();
-        var show = q === "" || txt.indexOf(q) !== -1;
-        tr.style.display = show ? "" : "none";
-        if (show) shown++;
+        var text = (tr.textContent || "").toLowerCase();
+        var st = (tr.getAttribute("data-status") || "").toLowerCase();
+        var okText = !q || text.indexOf(q) !== -1;
+        var okState = state === "all" || st === state;
+        tr.hidden = !(okText && okState);
       });
-      if (count) count.textContent = q === "" ? total + " rows" : shown + " / " + total + " rows";
+      var shown = rows.filter(function (tr) { return !tr.hidden; }).length;
+      var out = document.getElementById("rowcount");
+      if (out) out.textContent = shown + " of " + rows.length + " rows shown";
+    }
+    input.addEventListener("input", apply);
+    (chips || []).forEach(function (c) {
+      c.addEventListener("click", function () {
+        state = c.getAttribute("data-filter") || "all";
+        (chips || []).forEach(function (o) {
+          o.setAttribute("aria-pressed", o === c ? "true" : "false");
+        });
+        apply();
+      });
     });
+    apply();
   }
+  wire(document.getElementById("q"), document.getElementById("t"),
+       Array.prototype.slice.call(document.querySelectorAll("[data-filter]")));
 })();

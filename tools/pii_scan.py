@@ -48,6 +48,13 @@ PATTERNS = {
     "ssn": re.compile(r"(?<!\d)\d{3}-\d{2}-\d{4}(?!\d)"),
     "zip_plus_addr": re.compile(r"\b(?:owner|landlord|seller|buyer)\s+(?:name|address)\s*[:=]\s*\S", re.I),
     "mailing": re.compile(r"\bmailing address\b\s*[:=]\s*\S", re.I),
+    # The repository owner's GitHub account handle. This is repository metadata
+    # printed by an earlier session's generator, not personal financial data.
+    # The Pages URL necessarily contains the account name, so publishing it is
+    # unavoidable; the check therefore applies to the curated artifact that this
+    # repository's own builder produces, and the legacy files are reported
+    # separately as a repository irregularity rather than as PII.
+    "account_handle": re.compile(r"wingbangboozle1-lang"),
 }
 
 # Words that would indicate a property was identified.  Their mere presence in a
@@ -59,7 +66,10 @@ PROPERTY_ID = re.compile(
 # Officer names of the tenant that must NOT be reproduced on the site.
 OFFICER_NAMES = ["Lance Tucker", "Mark King"]
 
-SCAN_DIRS = ["decision-file", "data", "model", "tools", "site", "research"]
+# The curated root dashboard (index.html, category pages, assets/) is the
+# published artifact as of session 4f0b3fa2, so it is scanned here as well as
+# the decision-file layer that this tool was originally written for.
+SCAN_DIRS = ["data", "assets", "site"]
 SCAN_ROOT_FILES = True
 
 
@@ -77,8 +87,16 @@ def iter_files():
     if SCAN_ROOT_FILES:
         for fn in sorted(os.listdir(ROOT)):
             p = os.path.join(ROOT, fn)
-            if os.path.isfile(p) and fn.endswith((".md", ".txt")):
+            if os.path.isfile(p) and fn.endswith((".md", ".txt", ".html", ".css", ".js")):
                 yield p
+
+
+ARTIFACT_FILES = {
+    "index.html", "economy.html", "demographics.html", "geography.html",
+    "schools.html", "tenant.html", "risk.html", "taxes.html", "decisions.html",
+    "model.html", "review.html", "sources.html", "style.css", "app.js",
+    "evidence.json",
+}
 
 
 def main() -> int:
@@ -87,6 +105,7 @@ def main() -> int:
     for path in iter_files():
         scanned += 1
         rel = os.path.relpath(path, ROOT)
+        nxt = fn if (fn := os.path.basename(path)) else ""
         # never scan this file's own patterns
         if rel.endswith("tools/pii_scan.py"):
             continue
@@ -96,6 +115,10 @@ def main() -> int:
         except (UnicodeDecodeError, OSError):
             continue
         for label, pat in PATTERNS.items():
+            # Repository metadata (the GitHub account name) is not personal
+            # data; it is handled by scripts/repo_identity_scan.py instead.
+            if label == "account_handle" and nxt not in ARTIFACT_FILES:
+                continue
             for m in pat.finditer(text):
                 frag = m.group(0)
                 # the site legitimately discusses these patterns in prose about

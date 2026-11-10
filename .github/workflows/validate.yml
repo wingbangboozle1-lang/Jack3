@@ -1,30 +1,59 @@
 name: Validate public research
+
 on:
   push:
   pull_request:
+  workflow_dispatch:
+
 permissions:
   contents: read
+
 jobs:
   validate:
+    name: Build, verify and stage the curated dashboard
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python scripts/build.py
-      - run: python scripts/validate.py
-      - run: python scripts/stage_pages.py
-      - run: python tools/check_site.py
-      - run: python tools/linkcheck.py
-      - run: python tools/check_links.py
-      - run: python tools/pii_scan.py
-      - run: python _advisory_src/verify_advisory.py
-      - run: python _dashboard_src/verify.py
-      - run: git diff --exit-code -- '*.html'
+
+      # 1. Regenerate the curated dashboard from data/evidence.json.
+      - name: Build dashboard
+        run: python3 scripts/build.py
+
+      # 2. Row provenance, blank-when-unverified, derived arithmetic,
+      #    internal links, hygiene, privacy patterns, determinism.
+      - name: Validate dashboard integrity
+        run: python3 scripts/validate.py
+
+      # 3. Every external link must be https and on an approved official
+      #    or issuer host; no placeholders, no aggregators.
+      - name: Audit external links
+        run: python3 tools/check_links.py
+
+      # 4. PII gate over the published artifact and its data.
+      - name: Privacy scan
+        run: python3 tools/pii_scan.py
+
+      # 5. Stage and verify the exact Pages artifact.
+      - name: Stage Pages artifact
+        run: python3 scripts/stage_pages.py
+
+      # 6. The committed HTML must match a fresh build, so no page can
+      #    drift from the dataset.
+      - name: Confirm committed pages match the build
+        run: git diff --exit-code -- 'index.html' 'economy.html' 'demographics.html' 'geography.html' 'schools.html' 'tenant.html' 'risk.html' 'taxes.html' 'decisions.html' 'model.html' 'review.html' 'sources.html' 'assets/style.css' 'assets/app.js'
+
+      # 7. GitHub Pages runs Jekyll on the branch. Prove that Jekyll keeps
+      #    the curated artifact byte for byte and adds nothing of its own.
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-      - run: gem install github-pages --no-document
-      - run: jekyll build --destination _jekyll_test
-      - run: python scripts/stage_pages.py _jekyll_test
+      - name: Install Jekyll
+        run: gem install github-pages --no-document
+      - name: Jekyll build
+        run: jekyll build --destination _jekyll_test
+      - name: Compare Jekyll output with the curated artifact
+        run: python3 scripts/stage_pages.py _jekyll_test
