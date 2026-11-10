@@ -22,6 +22,8 @@ jobs:
       - run: python _advisory_src/verify_advisory.py
       - run: python _dashboard_src/verify.py
       - run: git diff --exit-code -- '*.html'
+      - name: Verification record present
+        run: test -s research/VERIFICATION-2026-11-10.md
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'

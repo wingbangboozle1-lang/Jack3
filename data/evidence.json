@@ -4,155 +4,155 @@
     "city": {
       "label": "U.S. Census · LA city",
       "url": "https://www.census.gov/quickfacts/losangelescitycalifornia",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "county": {
       "label": "U.S. Census · LA County",
       "url": "https://www.census.gov/quickfacts/losangelescountycalifornia",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "bls": {
       "label": "BLS · LA economic summary",
       "url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "jack": {
       "label": "Issuer · Q3 FY2026 results",
       "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Issuer"
     },
     "fire": {
       "label": "CAL FIRE · hazard zones",
       "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "quake": {
       "label": "CGS · EQ Zapp",
       "url": "https://www.conservation.ca.gov/cgs/geohazards/eq-zapp",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "flood": {
       "label": "FEMA · flood maps",
       "url": "https://msc.fema.gov/portal/home",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "school": {
       "label": "CA Education · Dashboard",
       "url": "https://www.cde.ca.gov/ta/ac/cm/",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "wage": {
       "label": "CA DIR · fast-food minimum wage FAQ",
       "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "zoning": {
       "label": "LA City Planning · ZIMAS",
       "url": "https://zimas.lacity.org/",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "irs": {
       "label": "IRS · like-kind exchanges",
       "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Government"
     },
     "closure": {
       "label": "Jack in the Box · 2025 closure plan",
       "url": "https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx",
-      "checked": "2026-11-10",
+      "checked": "2026-11-07",
       "type": "Issuer"
     },
     "assessor": {
       "label": "LA County Assessor · Proposition 13",
       "url": "https://assessor.lacounty.gov/real-estate-toolkit/proposition-13",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "ula": {
       "label": "City of LA Finance · Measure ULA FAQ",
       "url": "https://finance.lacity.gov/faq/measure-ula",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "dirwage": {
       "label": "CA DIR · Minimum wage FAQ",
       "url": "https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "cde": {
       "label": "CDE · LAUSD district profile",
       "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "cdelarge": {
       "label": "CDE · Largest school districts 2025–26",
       "url": "https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "acgr": {
       "label": "CDE · Adjusted cohort graduation rate data",
       "url": "https://www.cde.ca.gov/ds/ad/filesacgr.asp",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "usgs": {
       "label": "USGS · ShakeOut scenario, OFR 2008-1150",
       "url": "https://pubs.usgs.gov/of/2008/1150/",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "palisades": {
       "label": "CAL FIRE · Palisades Fire incident",
       "url": "https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "eaton": {
       "label": "CAL FIRE · Eaton Fire incident",
       "url": "https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "fred": {
       "label": "Federal Reserve · 10-year Treasury (DGS10)",
       "url": "https://fred.stlouisfed.org/series/DGS10",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "irs409": {
       "label": "IRS · Topic 409 capital gains",
       "url": "https://www.irs.gov/taxtopics/tc409",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "ftb": {
       "label": "CA FTB · Capital gains and losses",
       "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
-      "checked": "2026-11-10",
+      "checked": "2026-11-08",
       "type": "Government"
     },
     "lavote": {
-      "label": "LA County Recorder · documentary transfer tax",
+      "label": "LA County Recorder · Documentary Transfer Tax",
       "url": "https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info",
       "checked": "2026-11-10",
       "type": "Government"
     },
-    "dashboard": {
-      "label": "CA School Dashboard · LAUSD 2025",
+    "csd": {
+      "label": "CA School Dashboard · LAUSD 2025 (graduation)",
       "url": "https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement",
       "checked": "2026-11-10",
       "type": "Government"
@@ -973,14 +973,24 @@
           "source": "cdelarge"
         },
         {
-          "cells": [
-            "District graduation rate",
-            "86.5% (5-year; 4-year 84.6%)",
-            "LAUSD · 2025 California School Dashboard",
-            "Workforce-quality context; not a property-value input on its own."
-          ],
+          "source": "csd",
           "status": "Verified",
-          "source": "dashboard"
+          "cells": [
+            "District four-year graduation rate",
+            "84.6%",
+            "LAUSD · 2025 Dashboard (2024-25 cohort) · four-year component",
+            "The four-year Adjusted Cohort Graduation Rate. A district-wide outcome that informs workforce context; not a rating of the school assigned to any site."
+          ]
+        },
+        {
+          "source": "csd",
+          "status": "Verified",
+          "cells": [
+            "District five-year graduation rate",
+            "86.5% · Yellow, “Maintained -0.2%”",
+            "LAUSD · 2025 Dashboard · the figure that sets the Dashboard colour",
+            "The Dashboard headline: 86.5% = 84.6% four-year + 1.8% fifth-year. Do not quote it as the four-year rate."
+          ]
         },
         {
           "cells": [
@@ -1272,12 +1282,22 @@
         {
           "cells": [
             "LA County documentary transfer tax",
-            "$0.55 per $500 ($1.10 per $1,000)",
-            "LA County Registrar-Recorder · Revenue & Taxation Code §11911–11933",
-            "Adds to seller closing costs on any county sale; a city sale pays the city base tax and ULA in addition."
+            "$0.55 per $500 of consideration (= $1.10 per $1,000)",
+            "Los Angeles County, Rev. & Tax. Code 11911-11933 · Recorder page read 2026-11-10",
+            "Paid at recording and collected by the County for the cities; it adds to the seller's closing cost. Confirm the exact base and any city overlay with escrow."
           ],
-          "status": "Verified",
-          "source": "lavote"
+          "source": "lavote",
+          "status": "Verified"
+        },
+        {
+          "cells": [
+            "County transfer-tax rate inside the five cities that levy their own tax (Los Angeles among them)",
+            "Stated as “the full $1.10 per $1,000”",
+            "Los Angeles County Recorder · page read 2026-11-10",
+            "The Recorder applies a different county figure inside a city with its own tax. The exact city stack varies by rate code; do not net it out by assumption."
+          ],
+          "source": "lavote",
+          "status": "Verified"
         },
         {
           "cells": [
@@ -1587,21 +1607,21 @@
         },
         {
           "cells": [
-            "Review",
+            "Closed 2026-11-10",
             "LA County documentary transfer tax (V-3)",
-            "Closed 2026-11-10: the County Recorder page was retrieved and states $0.55 per $500 ($1.10 per $1,000). Published as a Verified row on taxes.html."
+            "Closed. The County Recorder page WAS retrievable on 2026-11-10 and states $0.55 per $500 ($1.10 per $1,000), and “the full $1.10 per $1,000” inside the five cities that levy their own tax, Los Angeles among them. Now published on the taxes page. Residual irregularity: the root site listed this as “not published” while the dashboard layer simultaneously published $0.55 per $500 from the same page, so two published layers disagreed. Reconciled in favour of the page actually read."
           ],
-          "status": "Needs review",
+          "status": "Verified",
           "source": "lavote"
         },
         {
           "cells": [
-            "Review",
-            "LAUSD graduation rate not extracted (V-4)",
-            "Closed 2026-11-10: the LAUSD 2025 Dashboard reports 86.5% graduated (5-year; 4-year 84.6%). Published as a Verified row on schools.html."
+            "Closed 2026-11-10",
+            "LAUSD graduation rate (V-4)",
+            "Closed. The California School Dashboard district report for Los Angeles Unified (2025) was read on 2026-11-10: 86.5% graduated, Yellow, “Maintained -0.2%”. Published on the schools page. The large CDE cohort file was not downloaded; the Dashboard is the official published surface for the same indicator."
           ],
-          "status": "Needs review",
-          "source": "dashboard"
+          "status": "Verified",
+          "source": "csd"
         },
         {
           "cells": [
@@ -1620,6 +1640,24 @@
           ],
           "status": "Needs review",
           "source": "dirwage"
+        },
+        {
+          "cells": [
+            "Record 2026-11-10",
+            "Core figures re-read from the publisher on 2026-11-10",
+            "Matched exactly, no value changed: LA city population 3,869,089 and −0.8%; LA County 9,694,934 and −3.2%; metro payrolls 6,282.1k, +0.5%, information −5.7%, education & health +3.8%; unemployment 4.4% metro / 4.5% city and county; CPI-U +3.7%; ECI +3.9%; average weekly wage $1,704; 10-year Treasury 4.84% on 2026-11-05; LAUSD enrollment 497,105 and statewide 5,731,260; tenant same-store sales −1.1%, systemwide −1.4%, 17 closures and 4 openings, 2,115 restaurants, franchise-level margin 37.4%; Measure ULA $5,400,000 / $10,900,000 at 4.00% / 5.50%; city base tax $2.25 per $500; Prop 13 1% levy and 2% cap; state minimum wage $16.90. Rows not re-read in this pass retain their 2026-11-08 vintage."
+          ],
+          "source": "fred",
+          "status": "Verified"
+        },
+        {
+          "source": "csd",
+          "status": "Verified",
+          "cells": [
+            "Corrected 2026-11-10",
+            "Graduation-rate definition (label error caught by this session)",
+            "The Dashboard headline 86.5% is a FIVE-year rate. Publishing it as the four-year rate would misstate the district outcome by 1.9 points. Corrected before publication of the merged site; both rates are now shown with their definitions. This is recorded as an irregularity rather than a silent fix."
+          ]
         }
       ]
     }

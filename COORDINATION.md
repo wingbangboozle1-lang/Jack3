@@ -752,6 +752,36 @@ Nothing in `advisory/`, `analysis/`, `brief/`, `decision-file/`, `docs/`, `pages
 
 ---
 
+# Session `e7bbac4b` — final integration session (`arena/e7bbac4b-jack3`)
+
+**Session ID:** `e7bbac4b` · **Branch:** `arena/e7bbac4b-jack3` · **Date:** 2026-11-10 (UTC)
+**Role:** final integration per the brief. All prior tasks on this board are `done`/merged; PRs #31, #32 are stale
+(>60 min, no commits, superseded by #33). No other session is active. This session therefore takes the
+shared-output and integration scope.
+
+## Scope claim (non-overlapping — shared outputs only)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| Z-01 | Coordination claim + repo read + baseline check run | **claimed** | `e7bbac4b` | `COORDINATION.md` (this section only, append-only) |
+| Z-02 | Cross-layer reconciliation: close `V-3` (county documentary transfer tax) and `V-4` (LAUSD graduation rate) using the sources session `27610006` already reported as retrieved | **claimed** | `e7bbac4b` | `data/evidence.json`, `scripts/build.py`, root `*.html` |
+| Z-03 | Re-verify every headline figure on the published pages against its official page | **claimed** | `e7bbac4b` | `research/VERIFICATION-2026-11-10.md` |
+| Z-04 | Landing-page integration: navigation to every published category page (dashboard layer was staged but never linked from the root nav) | **claimed** | `e7bbac4b` | `scripts/build.py`, root `*.html` |
+| Z-05 | Privacy re-scan across *all* layers incl. unpublished ones; record results | **claimed** | `e7bbac4b` | `research/VERIFICATION-2026-11-10.md` |
+| Z-06 | Site build, internal-link crawl of the published artifact, CI gate | **claimed** | `e7bbac4b` | `.github/workflows/validate.yml` |
+| Z-07 | PR to `main`, merge, live Pages verification, record PR + result | **claimed** | `e7bbac4b` | `COORDINATION.md` (this section) |
+
+Rules observed: this session edits only shared outputs (`data/evidence.json`, `scripts/`, root HTML, workflow) plus
+its own verification record. Nothing in `dashboard/`, `dashboard_src/`, `analysis/`, `brief/`, `decision-file/`,
+`pages/`, `advisory/`, `docs/`, `research/*.md` (other sessions' files), `tools/`, `model/` or `_advisory_src/` is
+edited. No other session's content is deleted.
+
+### Progress log — `e7bbac4b`
+
+| When (UTC) | Entry |
+|---|---|
+| 2026-11-10 | Claim pushed before any content work. `origin/main` = `4278c1a` (PR #33 merged). Baseline local run of all eight gates: PASS (141 rows, 12 pages, 1,040 links / 30 hosts / 0 non-official, 0 PII, dashboard 185 facts, advisory 227 rows). Nothing edited before this claim. |
+
 # Session `c70571c7` — independent re-verification + integration (2026-11-10)
 
 Branch: `arena/c70571c7-jack3`. Scope: this section of `COORDINATION.md`, plus
@@ -836,6 +866,38 @@ all match, no data changes). PR #35 became CONFLICTING. Resolved by rebasing ont
 - No work from either session was discarded. `c70571c7`'s "all match, no values changed" corroborates
   this session's finding that no published value was wrong.
 
+### Collision with session `882bff85` and how it was resolved — `e7bbac4b`
+
+Session `882bff85` merged PR #35 to `main` while this session's PR #36 was open. Both sessions were working the
+same shared outputs, so the two branches touched `data/evidence.json`, `scripts/build.py` and every generated page.
+Nothing from either session was discarded. Resolution, file by file:
+
+| File | Resolution |
+|---|---|
+| `data/evidence.json` | Rebuilt from this session's copy, then **carried forward every factual change from `882bff85`**: the 10-year Treasury refresh from `4.84% (2026-11-05)` to `4.86% (2026-11-06)` in the `model` anchors row, the `risk` interest-rate row and the `taxes` discount-rate row. Those three are theirs and are kept verbatim; the 4.86% figure was independently confirmed on FRED during this session. |
+| `scripts/build.py` | Kept this session's version, which includes `882bff85`'s snapshot-date change in a stronger form: the stamp now renders from `D['reviewed']` instead of a hard-coded string, so it reads 10 Nov 2026 *and* cannot drift from the data again. |
+| Root `*.html` | Regenerated from the merged data with `scripts/build.py`. Neither side's HTML was hand-merged. |
+| `COORDINATION.md` | Both session sections preserved in full; this note appended. |
+| `research/VERIFICATION-2026-11-10.md` | This session's record is kept. `882bff85`'s is preserved unchanged at `research/VERIFICATION-2026-11-10-882bff85.md`. Both cover the same date and are complementary; neither replaces the other. |
+| `EXECUTIVE_SUMMARY.md` | `882bff85`'s update kept as-is. |
+
+**Correction made during the merge — LAUSD graduation (`V-4`), this supersedes both earlier attempts.** This session
+first published `86.5%` labelled "four-year graduation rate". Reading the LAUSD Academic Engagement report on
+2026-11-10 showed that the Dashboard's headline `86.5%`, the figure that drives the colour, is the **five-year** cohort
+rate: the page states "5-Year Graduation Rate 86.5%" and breaks it down as four-year 84.6% + fifth-year 1.8%. The
+**four-year** Adjusted Cohort Graduation Rate is therefore **84.6%**. `882bff85` had written "86.5% (5-year; 4-year
+84.6%)" and this session's first pass had the label wrong; both are now replaced by explicit, separately labelled
+four-year and five-year rows. This is exactly the kind of label/definition error the site is meant to catch, so it is
+recorded rather than quietly fixed.
+
+**Duplicate-work note.** Both sessions independently closed the county documentary transfer tax (`V-3`) and the
+graduation rate (`V-4`) with the same source pages and the same values. The duplication was harmless and mutually
+corroborating, but it is a consequence of `882bff85` claiming the shared-output scope after this session had already
+claimed it — the board was not re-read between claims. Future sessions should re-read `COORDINATION.md` immediately
+before writing to `data/evidence.json`.
+
+---
+
 
 # Session `arena/cd1d5bcb-jack3` — Final verification sweep of the live site & integration
 
@@ -876,4 +938,17 @@ Append-only for this section; `git pull --rebase` before every push; small commi
 - PR #34 (`c70571c7`) merged into `main` while this session was in flight. `git pull --rebase` conflicted on `COORDINATION.md` (both sessions appended at the same location) and on `research/VERIFICATION-2026-11-10.md` (add/add: both picked the same filename).
 - Conflict #1 (rebase onto `c2cac0d`, PR #34): `COORDINATION.md` kept `c70571c7`'s section verbatim and appended this session's section after it; this session's Rules line (briefly clipped during the first resolution pass) was restored verbatim. `research/VERIFICATION-2026-11-10.md` kept `c70571c7`'s merged file verbatim; this session's log was renamed to `research/VERIFICATION-2026-11-10-cd1d5bcb.md`.
 - Conflict #2 (rebase onto `5fc524d`, PR #35): same additive resolution — `5fc524d` content kept verbatim; the appended Progress log and this Conflict log were re-applied with the PR #34/#35 interplay recorded. `git pull --rebase origin arena/cd1d5bcb-jack3` was **not** used after the local history had been rebased (it would have replayed `main`'s commits onto the stale remote branch); the push to this session's own branch uses `--force-with-lease`. No other session's content was removed or rewritten in either resolution.
+### Concurrent sessions still arriving — note added by `e7bbac4b`
 
+Between the opening of PR #36 and its merge, **three further sessions wrote to this repository**: `882bff85`
+(PR #35, shared outputs), `c70571c7` (PR #34) and `cd1d5bcb` (PR #37, additive verification only). Each time,
+`origin/main` advanced while PR #36 was open and this session resolved the conflict by preserving both sides.
+
+`cd1d5bcb`'s contribution is purely additive (`research/VERIFICATION-2026-11-10-cd1d5bcb.md` plus its own board
+section); it made no change to `data/evidence.json`. So does not alter any published value.
+
+The recurring pattern is worth recording for whoever comes next: on this repository the shared-output scope has now
+been claimed by four sessions on the same day, and **every collision has been in `COORDINATION.md`** because each
+session appends a section at the end of the same file. Appending is the right instruction, but it guarantees a
+conflict on every concurrent push. A per-session file (for example `coordination/<session-id>.md`) concatenated by the
+integration session would remove the conflict without changing the rules.
