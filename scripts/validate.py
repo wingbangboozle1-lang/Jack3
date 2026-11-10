@@ -24,6 +24,7 @@ for p in D['pages']:
         assert len(r['cells'])==len(p['columns'])
         assert r['status'] in ('Verified','Analysis','Unverified','Needs review')
         if '' in r['cells']: assert r['status']!='Verified'
+        if r['status']=='Unverified' and p['id']!='review': assert r['cells'][1]=='', (p['id'],r)
         count+=1
 for file in Path('.').glob('*.html'):
     c=Check(); c.feed(file.read_text())
@@ -31,4 +32,6 @@ for file in Path('.').glob('*.html'):
     for forbidden in ['googletagmanager.com','localhost','127.0.0.1','<iframe','<script']:
         assert forbidden not in file.read_text().lower(),(file,forbidden)
 assert all(urlparse(s['url']).scheme=='https' for s in D['sources'].values())
+allowed_hosts={'www.census.gov','www.bls.gov','investors.jackinthebox.com','osfm.fire.ca.gov','www.conservation.ca.gov','msc.fema.gov','www.cde.ca.gov','www.dir.ca.gov','zimas.lacity.org','www.irs.gov','assessor.lacounty.gov','finance.lacity.gov','pubs.usgs.gov','www.fire.ca.gov','fred.stlouisfed.org','www.ftb.ca.gov','www.lavote.gov','www.caschooldashboard.org','sustain.scag.ca.gov','lacounty.gov','thesource.metro.net'}
+assert all(urlparse(s['url']).netloc in allowed_hosts for s in D['sources'].values())
 print(f'PASS: {count} evidence rows; {len(list(Path(".").glob("*.html")))} pages; source links, local links, blank fields, prohibited embed checks.')

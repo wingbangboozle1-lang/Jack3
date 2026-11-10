@@ -908,3 +908,15 @@ All earlier claims are completed, merged, or stale by more than 60 minutes. This
 | J-05 | Final PR, CI, merge, Pages deployment, live-site verification | unclaimed | `1f62010a` | `COORDINATION.md` (this section) |
 
 Privacy rule: research and publish only public area-level and corporate evidence. Do not seek or publish owner identity, contact details, parcel identifiers, exact address, account handles, personal finances, or other personal information.
+
+### Final integration progress — 2026-11-10
+
+- J-01 **done**: reviewed inherited layers and publication configuration. Public output consolidated to the curated root dashboard; conflicting companion layers remain repository-only.
+- J-02 **done**: opened all inherited official/issuer sources again and added direct checks of LA County Registrar-Recorder, CA School Dashboard 2026, SCAG Connect SoCal 2024 Final PEIR, LA County Assessment Roll, LA Metro and the issuer's scheduled FY2026 release notice. Record: `research/VERIFICATION-2026-11-10.md` (155 rows, 30 sources).
+- J-03 **done**: removed `/dashboard/` from the Pages artifact and root navigation. `/advisory/` was already withheld. Their extrapolated scenarios/rankings are not represented as verified. Public root navigation now exposes one coherent dashboard.
+- J-04 **done**: updated `EXECUTIVE_SUMMARY.md`, `README.md`, `REPO_REVIEW.md`, `VERIFY.md`, generated root HTML and validation. Added unverified-value enforcement and an official-host allowlist.
+- Material corrections: BLS Food label; city/county provenance split; Palisades/Eaton provenance split; DGS10 4.86% on 2026-11-06; county transfer tax $0.55/$500; LAUSD four-year 86.2% and combined 87.6%; unsupported “every trend flat/negative” language removed.
+- New official context: SCAG 2030 county population/household/employment planning case, 2026 assessment roll, Metro Games-mobility funding. None is treated as a parcel forecast or value.
+- Irregularity: LA County Assessment Roll narrative reports 4.42% (+$96bn) but one bullet says “42%”; published 4.42% and flagged the official-page inconsistency.
+- Local verification passed: deterministic root build, 155-row schema/provenance/local-link/blank-value/host checks, staged-artifact check, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py` (85 files, zero findings), both legacy verifiers, and `git diff --exit-code -- '*.html'`.
+- J-05 **in progress**: PR, CI, merge, Pages deployment and live verification.

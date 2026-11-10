@@ -1,57 +1,36 @@
-# Repo Review — `wingbangboozle1-lang/Jack3`
+# Repository review — final integration
 
-**Reviewer session:** `arena-d989a5c6-jack3`
-**Reviewed at:** 2026-11-06 (UTC)
-**Base commit:** `0c9e6092aecbfd319fe50be5850f09cdbea044ca` (branch `main`, single commit)
+**Reviewed:** 2026-11-10  
+**Reviewer session:** `1f62010a`
 
----
+## Current public architecture
 
-## 1. What was in the repo
+The repository contains several generations of parallel research. The final integration publishes one curated root dashboard: `index.html`, ten evidence/category pages, `sources.html`, and `assets/style.css`. `scripts/build.py` generates those pages from `data/evidence.json`; `scripts/stage_pages.py` creates the exact Pages artifact.
 
-A complete file inventory of the base commit (`.git` excluded):
+This removes conflicting live recommendations and prevents stale repository-only pages from being mistaken for the current analysis.
 
-| Path | Size | Content |
-| --- | --- | --- |
-| `README.md` | 7 bytes | `# Jack3` |
+## Irregularities retained for review
 
-**Total tracked files: 1.**
+| ID | Severity | Finding | Disposition |
+|---|---|---|---|
+| J-IR-01 | High | `/advisory/` contains scenario weights and pathway rankings not established by its official citations. | Excluded from Pages; preserved for audit. |
+| J-IR-02 | High | `/dashboard/` extrapolates population, employment and CPI-linked rent and contains qualitative claims beyond the cited evidence. | Excluded from Pages; preserved for audit. |
+| J-IR-03 | High | Other historical layers include third-party commercial sources, stale figures, unsourced rows and conflicting recommendations. | Excluded from Pages; not represented as reverified. |
+| J-IR-04 | Medium | Some historical HTML files render the repository account handle. | Not included in the curated public artifact. No owner identity or personal information was researched. |
+| J-IR-05 | Medium | The LA County Assessment Roll official release says 4.42% in narrative but “42%” in a bullet. | Published 4.42%, flagged on `review.html`. |
+| J-IR-06 | Medium | Earlier material labeled LAUSD’s combined graduation rate as a four-year rate. | Corrected to 86.2% four-year and 87.6% combined for 2026. |
+| J-IR-07 | Medium | Earlier material cited mixed city/county values or two fire incidents with only one row-level source. | Split into single-source rows. |
+| J-IR-08 | Low | The BLS Food category was labeled “food at home.” | Corrected to Food. |
+| J-IR-09 | Low | FY2026 full-year tenant results are not yet available; issuer schedules them for 2026-12-09. | Q3 remains latest; future release flagged. |
 
-## 2. Structural findings
+## Verification boundary
 
-| Check | Result |
-| --- | --- |
-| Source code present | None |
-| Dependencies / lockfiles (`package.json`, `requirements.txt`, etc.) | None |
-| CI configuration (`.github/workflows/`) | None |
-| GitHub Pages configuration (`docs/`, `gh-pages` branch, `_config.yml`) | None |
-| Existing data tables, CSV/JSON datasets | None |
-| Prior analysis, reports, or documentation | None |
-| `COORDINATION.md` | **Absent** → created in this session (T-01) |
-| `.gitignore` | **Absent** → created in this session (T-01) |
-| Branches | `main` only; this session works on `arena/d989a5c6-jack3` |
-| Commit history | 1 commit, no merges, no tags, no releases |
+A source link does not make an inference official. Government and issuer pages substantiate observations; they do not establish Asset A’s value, optimal sale date, tenant renewal intention, store closure probability or catastrophe loss. Those remain analytical gaps.
 
-## 3. Irregularities flagged for review
+No historical directory was deleted. Excluding a directory from the Pages artifact is a publication-safety decision, not a claim that its repository history was erased.
 
-| # | Severity | Finding | Action taken |
-| --- | --- | --- | --- |
-| R-1 | Info | Repo was empty scaffolding — there is **no pre-existing dataset to verify**, so the "review the repo line by line" instruction resolves to: nothing was inherited, everything published here is newly sourced. | Documented. All data in this repo is new and individually sourced. |
-| R-2 | **High (privacy)** | Git commit author metadata on the base commit contains a personal name and a personal email address. That is repository infrastructure, not project data, but per the privacy directive it is **not reproduced anywhere in the site or in any research/data file**, and the published site contains no author, owner, or contact identifiers. | Kept out of all deliverables. See `docs/privacy.html`. |
-| R-3 | **High (scope)** | The user's request references a *specific* property ("a Jack in the Box with a NNN lease… around central Los Angeles… expiring 2030–2035"), but **no address, APN, parcel ID, lease document, rent roll, purchase price, or building size was supplied** in the repo or the prompt. | Property-specific fields are left **blank** and marked `UNVERIFIED` / `INPUT REQUIRED`. No values were invented. Analysis is therefore conducted at the **submarket level (Central Los Angeles)** with a parameterised model into which the owner's actual lease terms can be dropped. See `docs/property-profile.html`. |
-| R-4 | Medium | The stated expiry window "2030–2035" is a **5-year range, not a date**. Lease economics differ materially across it. | The model evaluates the window explicitly rather than picking a midpoint silently; both bookends (2030 and 2035) are modelled. |
-| R-5 | Medium | "Central Los Angeles" is not an official Census or City of Los Angeles statistical geography. It is a planning/colloquial designation. | Mapped to official geographies and every mapping is disclosed on `docs/geography.html` so no figure is silently attributed to an ambiguous area. |
-| R-6 | Info | Cap-rate and comparable-sale data for single-tenant NNN restaurants is **not published by any U.S. government agency**. Commercial-transaction pricing is private. | Those rows are marked `NO OFFICIAL SOURCE` and are **left blank** on the site rather than filled with broker asking prices. Decision maths that needs a cap rate is presented as a **sensitivity grid across a rate range**, never as a single asserted market number. |
+## Final decision support
 
-## 4. Verification method used for this review
+The only current public recommendation is the conditional dual track: confidential market testing plus written renewal negotiations, followed by an after-tax comparison of actual offers and enforceable terms. It is explicitly analyst judgment—not an appraisal or personalized financial, legal or tax opinion.
 
-* `git log`, `git status`, `git branch -a`, `find` inventory of the working tree — reproduced above.
-* Remote identity confirmed via `git remote -v` and `gh repo view`:
-  `https://github.com/wingbangboozle1-lang/Jack3.git`, default branch `main`.
-* No external source is applicable to R-1/R-2 (they are observations about the repo itself).
-
-## 5. Conclusion
-
-The repository was an empty scaffold. There was no legacy content to audit, no broken code,
-no stale data, and no conflicting claims. The entire deliverable — research corpus, data
-snapshot, projection model, and GitHub Pages site — is built fresh in this session, with
-per-row official sourcing as specified.
+See [`research/VERIFICATION-2026-11-10-1f62010a.md`](research/VERIFICATION-2026-11-10-1f62010a.md) for all 155 row-level checks and [`review.html`](review.html) for the public Flagged for Review register.
