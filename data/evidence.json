@@ -180,6 +180,12 @@
       "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Announces-Fourth-Quarter-and-Full-Year-2026-Earnings-Webcast/default.aspx",
       "checked": "2026-11-10",
       "type": "Issuer"
+    },
+    "dofk12": {
+      "label": "CA Dept. of Finance · Public K-12 enrollment projections, 2026 series",
+      "url": "https://dof.ca.gov/forecasting/demographics/public-k-12-graded-enrollment/",
+      "checked": "2026-11-10",
+      "type": "Government"
     }
   },
   "pages": [
@@ -1388,7 +1394,7 @@
       "id": "model",
       "title": "Projection framework",
       "kicker": "No invented forecasts",
-      "description": "An evidence-gated framework, not a calibrated forecasting system. No property valuation, probability of renewal, forecast return or optimal decision can be computed from the available evidence. Numerical outputs are intentionally blank.",
+      "description": "Official SCAG and DOF projections are labeled by publisher and vintage. Break-even tables are disclosed arithmetic, not calibrated forecasts. Unknown property inputs remain blank.",
       "columns": [
         "Scenario / output",
         "Projected value",
@@ -1444,7 +1450,7 @@
           "cells": [
             "Robust decision rule",
             "",
-            "Analysis. Reject alternatives that cannot meet verified liquidity needs in adverse cases; compare after-tax values only after evidence gates pass. No arbitrary weights, annual growth rates or risk scores."
+            "Analysis. Reject alternatives that cannot meet verified liquidity needs in adverse cases; compare after-tax values only after evidence gates pass. No arbitrary probability weights or risk scores. Sensitivity-model rates are disclosed assumptions, not forecasts."
           ],
           "status": "Analysis",
           "source": "irs"
@@ -1475,6 +1481,33 @@
           ],
           "status": "Analysis",
           "source": "bls"
+        },
+        {
+          "cells": [
+            "LA County public K-12 enrollment projection",
+            "−240,800 pupils by 2035-36",
+            "CA Dept. of Finance · 2026 series, published August 2026. Official cohort-survival projection; not a property-demand forecast."
+          ],
+          "status": "Verified",
+          "source": "dofk12"
+        },
+        {
+          "cells": [
+            "California public K-12 enrollment projection",
+            "5,731,300 (2025-26) → 5,020,800 (2035-36) · −710,500",
+            "CA Dept. of Finance · 2026 series. Statewide context; projection assumes current fertility and migration trends hold."
+          ],
+          "status": "Verified",
+          "source": "dofk12"
+        },
+        {
+          "cells": [
+            "California high school graduates projection",
+            "453,600 (2024-25 actual) → 381,300 (2035-36)",
+            "CA Dept. of Finance · 2026 series. Future labor-force-entry context, not a rent or value forecast."
+          ],
+          "status": "Verified",
+          "source": "dofk12"
         },
         {
           "cells": [

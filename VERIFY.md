@@ -5,8 +5,8 @@
 
 ## Evidence verification
 
-- **155 category rows** were reviewed against direct government or issuer pages.
-- **30 official/issuer sources** are registered in `data/evidence.json`.
+- **158 category rows** were reviewed against direct government or issuer pages.
+- **31 official/issuer sources** are registered in `data/evidence.json`.
 - The complete row-by-row record, including corrections and source links, is [`research/VERIFICATION-2026-11-10-1f62010a.md`](research/VERIFICATION-2026-11-10-1f62010a.md).
 - Every `Verified` observation was matched to its publisher, geography, period and measure.
 - Every `Unverified` value cell is blank. No sale price, cap rate, rent, owner tax rate, renewal probability or parcel-level forecast was inferred.

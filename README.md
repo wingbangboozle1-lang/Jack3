@@ -30,7 +30,7 @@ Run two tracks now: confidential sale market testing 24–36 months before the e
 | Schools & workforce | LAUSD enrollment and exact 2026 graduation measures |
 | Decision pathways | Sell, renew, hold, extend-then-sell, re-tenant, redevelop, exchange |
 | Taxes & transaction costs | Prop 13, city/county transfer taxes, ULA, §1031 and capital gains |
-| Projection framework | Verified observations and SCAG’s own 2030 planning case; no invented parcel forecast |
+| Projection framework | Official SCAG/DOF projections plus a clearly labeled break-even sensitivity model; no calibrated parcel forecast |
 | Flagged for Review | Unverified fields and irregularities |
 | Sources & methodology | Source register, definitions, limitations and privacy |
 
@@ -53,5 +53,5 @@ The Pages artifact contains only the curated root dashboard and its stylesheet. 
 - **Asset A / Owner A are placeholders.** No personal, parcel or private financial information is collected or published.
 - Every table row links to a government or issuer source.
 - Unverified values are blank and flagged; values are never inferred to fill a gap.
-- Official planning forecasts are identified as such. No property cap rate, sale price, renewal probability, disaster probability or calibrated 2030–2035 forecast is invented.
+- Official planning forecasts are identified as such. Break-even cap rates and growth rates are disclosed assumptions, not verified market facts. No sale price, renewal probability, disaster probability or calibrated 2030–2035 forecast is invented.
 - The site has no forms, trackers, external scripts or third-party embeds.

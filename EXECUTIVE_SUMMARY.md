@@ -130,6 +130,15 @@ completed transport benefit for Asset A. → [LA County Assessment Roll](https:/
 > Source irregularity: the county release's narrative says **4.42%**, consistent with its **$96 billion** increase, but
 > one bullet says “42%.” This summary uses the narrative figure and flags the typo for review.
 
+**9. Official school-enrollment projections are a demographic headwind.** The California Department of Finance's
+2026 cohort-survival series projects Los Angeles County public K-12 enrollment falling by **240,800 pupils** by 2035-36;
+statewide enrollment falls from **5,731,300** in 2025-26 to **5,020,800** in 2035-36 if current fertility and migration
+trends hold. This is an official projection with a stated method, not a store-sales forecast. → [CA DOF 2026 series](https://dof.ca.gov/forecasting/demographics/public-k-12-graded-enrollment/)
+
+**10. Break-even sensitivities are arithmetic, not forecasts.** `scripts/projection.py` compares selling and holding in
+multiples of one year of base rent across disclosed cap-rate, rent-growth, required-return and vacancy assumptions.
+It does not establish those inputs for Asset A and must not be read as a calibrated valuation or a recommended cap rate.
+
 ---
 
 ## 3. Risk balance — keeping risk manageable in both directions
@@ -175,8 +184,9 @@ assignment and campus-level performance remain unverified.
   releases.
 - **Verified** means the publisher reports the observation — never that it predicts this property. **Analysis** rows are
   labelled reasoning. **Unverified** rows contain no value.
-- No property model was trained, back-tested or calibrated; no numerical property forecast, cap rate or renewal
-  probability is published. SCAG's own 2030 figures are identified as official planning-model outputs, not as our
+- No property model was trained, back-tested or calibrated; no numerical property forecast or renewal
+  probability is published. Break-even tables use disclosed, unverified cap-rate and growth assumptions as analysis;
+  they are not asserted market values. SCAG's own 2030 figures are identified as official planning-model outputs, not as our
   forecast. Compounding a 2020–2025 change forward is arithmetic, not evidence, and is not presented as a projection.
 - No personal information is published, and no attempt was made to identify the owner, the parcel or any individual.
 - Sources are rolling documents and can be revised after 2026-11-10. Re-check before acting.
