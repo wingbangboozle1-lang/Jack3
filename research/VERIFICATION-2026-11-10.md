@@ -34,7 +34,7 @@ and published · **unchanged** = not re-read in this pass, carries its 2026-11-0
 | 16 | CPI-U all items +3.7%; energy +20.3%; food +2.8% | same | matched |
 | 17 | ECI, LA-Long Beach CSA, +3.9% YoY | same | matched |
 | 18 | Average weekly wage, all industries, Q1 2026 = $1,704 | same | matched |
-| 19 | 10-year Treasury 4.84% on 2026-11-05 | [FRED DGS10](https://fred.stlouisfed.org/series/DGS10) | matched (series also shows 4.86% for 2026-11-06) |
+| 19 | 10-year Treasury | [FRED DGS10](https://fred.stlouisfed.org/series/DGS10) | 4.84% on 2026-11-05 confirmed; **refreshed to 4.86% on 2026-11-06**, the latest observation, carried forward from session 882bff85 and independently confirmed here |
 | 20 | LAUSD enrollment 497,105 (2025-26) | [CDE Largest & Smallest Public School Districts](https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp) | matched, rank 1 |
 | 21 | Statewide public enrollment 5,731,260 | same CDE page | matched |
 | 22 | San Diego Unified 112,250 (comparison used in the rank row) | same CDE page | matched, rank 2 |
@@ -50,7 +50,8 @@ and published · **unchanged** = not re-read in this pass, carries its 2026-11-0
 | 32 | State minimum wage $16.90/hour from 2026-01-01 | [CA DIR Minimum Wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm) | matched |
 | 33 | **LA County documentary transfer tax $0.55 per $500 (= $1.10 per $1,000)** | [LA County Recorder, Documentary Transfer Tax](https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info) | **closed (was V-3)** |
 | 34 | County rate inside the five cities levying their own tax, Los Angeles among them: "the full $1.10 per $1,000" | same Recorder page | **closed (new row)** |
-| 35 | **LAUSD four-year graduation rate 86.5%** (2025 Dashboard, Yellow, "Maintained -0.2%") | [CA School Dashboard, LAUSD 2025](https://www.caschooldashboard.org/reports/19647330000000/2025) | **closed (was V-4)** |
+| 35 | **LAUSD four-year graduation rate 84.6%** | [CA School Dashboard, LAUSD 2025 · Academic Engagement](https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement) | **closed (was V-4), after a label correction — see IR-E6** |
+| 36 | **LAUSD five-year graduation rate 86.5%** (Yellow, "Maintained -0.2%"; = 84.6% four-year + 1.8% fifth-year) | same Dashboard report | **published separately** |
 
 Remaining rows on the site carry their 2026-11-08 vintage (unchanged). They are not claimed as re-read here.
 
@@ -87,6 +88,14 @@ it cannot drift from the evidence it describes.
 nothing failed the build if a generated page was edited by hand or left stale after a data change. Added a gate that
 rebuilds in a scratch directory and requires byte-identical output. Verified by deliberately corrupting a page: the
 build fails.
+
+**IR-E6 — graduation-rate definition was mislabelled (caught and corrected before publication).**
+The Dashboard's headline 86.5% is the **five-year** cohort rate. The report itself breaks it down: four-year 84.6% +
+fifth-year 1.8% = 86.5%. This session's first pass published 86.5% as the "four-year graduation rate", and session
+`882bff85` published "86.5% (5-year; 4-year 84.6%)". Both labels were wrong or ambiguous; the number was right. The
+site now publishes **two separate rows** — four-year 84.6% and five-year 86.5% — each labelled with its definition, and
+the review page records the correction rather than hiding it. Publishing 86.5% as the four-year rate would have
+overstated the district outcome by 1.9 points.
 
 **IR-E5 — the dashboard layer was reachable but not listed.** `dashboard/` was staged into the Pages artifact and
 cross-linked from the sidebar of every root page, but the landing page itself never listed it among the pages. It is
@@ -130,7 +139,25 @@ No personal information about the owner or any individual appears on the live si
 | Advisory layer | `python3 _advisory_src/verify_advisory.py` | PASS — 227 rows |
 | Dashboard layer | `python3 _dashboard_src/verify.py` | PASS — 185 facts, 148 body rows |
 
-## 6. Limits of this record
+## 6. Merge with session `882bff85` (PR #35)
+
+While PR #36 was open, session `882bff85` merged PR #35 to `main` having claimed the same shared-output scope. Both
+branches therefore touched `data/evidence.json`, `scripts/build.py` and every generated page. **Nothing from either
+session was discarded.**
+
+| File | Resolution |
+|---|---|
+| `data/evidence.json` | Rebuilt on this branch, then every factual change from `882bff85` carried forward: the 4.84% → 4.86% Treasury refresh in the `model`, `risk` and `taxes` rows (3 cells). The graduation row was replaced by the two correctly labelled rows above. |
+| `scripts/build.py` | This session's version kept — it contains `882bff85`'s snapshot-date change in a stronger form (rendered from `D['reviewed']`) plus the Page directory. |
+| Root `*.html` | Regenerated with `scripts/build.py`. No HTML was hand-merged. |
+| `COORDINATION.md` | Both sections preserved in full; collision and resolution logged. |
+| Verification records | This one, plus `882bff85`'s preserved unchanged at `research/VERIFICATION-2026-11-10-882bff85.md`. A third file written by session `c70571c7` under the same name is also preserved in history. |
+
+Both sessions independently closed the county transfer tax and the graduation rate from the same sources — duplicated
+effort, but mutually corroborating. Cause: the shared-output scope was claimed twice because the board was not
+re-read immediately before writing. Logged in `COORDINATION.md`.
+
+## 7. Limits of this record
 
 A publisher page can be revised after it is read; a "matched" result describes 2026-11-10, not permanence. No value on
 the site is a forecast, an appraisal or a probability. The automated gates check structure — that a row has a source on

@@ -42,7 +42,8 @@ print(f'PASS: {count} evidence rows; {len(list(Path(".").glob("*.html")))} pages
 # Structural check only: it does not decide which side is correct.
 CRITICAL_ROWS = {
     'LA County documentary transfer tax': r'0\.55|1\.10',
-    'District four-year graduation rate': r'86\.5',
+    'District four-year graduation rate': r'84\.6',
+    'District five-year graduation rate': r'86\.5',
 }
 problems = []
 for key, pattern in CRITICAL_ROWS.items():
@@ -53,7 +54,7 @@ for key, pattern in CRITICAL_ROWS.items():
         problems.append(f'"{key}" published without its verified value')
 dash = json.loads(Path('_dashboard_src/dataset.json').read_text())
 dash_facts = [f['indicator'] for f in dash['facts']]
-for key in ('documentary transfer tax', 'graduation rate'):
+for key in ('documentary transfer tax', 'graduation'):
     if not any(key in f.lower() for f in dash_facts):
         problems.append(f'dashboard layer no longer carries "{key}"')
 if problems:

@@ -153,7 +153,7 @@
     },
     "csd": {
       "label": "CA School Dashboard · LAUSD 2025 (graduation)",
-      "url": "https://www.caschooldashboard.org/reports/19647330000000/2025",
+      "url": "https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement",
       "checked": "2026-11-10",
       "type": "Government"
     }
@@ -845,7 +845,7 @@
         {
           "cells": [
             "Interest-rate and exit-yield shock",
-            "10-year Treasury constant-maturity yield 4.84% on 2026-11-05.",
+            "10-year Treasury constant-maturity yield 4.86% on 2026-11-06.",
             "Analysis: a higher exit yield lowers price for the same rent; no property cap rate is published."
           ],
           "status": "Verified",
@@ -973,14 +973,24 @@
           "source": "cdelarge"
         },
         {
+          "source": "csd",
+          "status": "Verified",
           "cells": [
             "District four-year graduation rate",
-            "86.5%",
-            "LAUSD · 2025 Dashboard (2024-25 cohort) · Yellow, “Maintained -0.2%”",
-            "A district-wide outcome that informs workforce context; it is not a rating of the school assigned to any site."
-          ],
+            "84.6%",
+            "LAUSD · 2025 Dashboard (2024-25 cohort) · four-year component",
+            "The four-year Adjusted Cohort Graduation Rate. A district-wide outcome that informs workforce context; not a rating of the school assigned to any site."
+          ]
+        },
+        {
+          "source": "csd",
           "status": "Verified",
-          "source": "csd"
+          "cells": [
+            "District five-year graduation rate",
+            "86.5% · Yellow, “Maintained -0.2%”",
+            "LAUSD · 2025 Dashboard · the figure that sets the Dashboard colour",
+            "The Dashboard headline: 86.5% = 84.6% four-year + 1.8% fifth-year. Do not quote it as the four-year rate."
+          ]
         },
         {
           "cells": [
@@ -1252,7 +1262,7 @@
         {
           "cells": [
             "Discount-rate anchor for any present-value work",
-            "4.84% · 10-year Treasury, 2026-11-05",
+            "4.86% · 10-year Treasury, 2026-11-06",
             "Federal Reserve H.15 via FRED (DGS10)",
             "A market anchor, not the owner's required return."
           ],
@@ -1378,7 +1388,7 @@
         {
           "cells": [
             "Verified input anchors",
-            "10-year Treasury 4.84% (2026-11-05); LA CPI-U +3.7% and ECI +3.9% year over year (Sep 2026); LA city population −0.8% from the 2020 estimates base to July 2025.",
+            "10-year Treasury 4.86% (2026-11-06); LA CPI-U +3.7% and ECI +3.9% year over year (Sep 2026); LA city population −0.8% from the 2020 estimates base to July 2025.",
             "Anchors, not forecasts. Each is an observation from an official release and is used only to bound discounting and growth assumptions."
           ],
           "status": "Verified",
@@ -1639,6 +1649,15 @@
           ],
           "source": "fred",
           "status": "Verified"
+        },
+        {
+          "source": "csd",
+          "status": "Verified",
+          "cells": [
+            "Corrected 2026-11-10",
+            "Graduation-rate definition (label error caught by this session)",
+            "The Dashboard headline 86.5% is a FIVE-year rate. Publishing it as the four-year rate would misstate the district outcome by 1.9 points. Corrected before publication of the merged site; both rates are now shown with their definitions. This is recorded as an irregularity rather than a silent fix."
+          ]
         }
       ]
     }
