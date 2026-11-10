@@ -12,6 +12,7 @@ exclude:
   - brief
   - data
   - decision-file
+  - dashboard
   - docs
   - model/
   - pages

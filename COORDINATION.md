@@ -893,3 +893,38 @@ Append-only for this section; `git pull --rebase` before every push; small commi
 | 2026-11-10 | **Resolution:** the rebase was aborted rather than hand-merged. This session's branch was reset to `5fc524d` and its work was re-applied **additively on top of the merged tree**, then every page was regenerated from the merged dataset by `scripts/build.py` (never hand-edited). Nothing in `882bff85`'s work was removed: its rows, its record and its board section are preserved verbatim. |
 | 2026-11-10 | **What this session adds on top of #35:** the projection page's deterministic break-even calculation (`scripts/projection.py`); three verified CA DOF K-12 projection rows and the SCAG unreadable-table flag; four further verified School Dashboard rows plus the two-definition enrollment flag; **a correction of a live self-contradiction** the parallel merge left behind (the review page still described the county transfer tax and graduation rate as unretrievable while the tables published them — `N-IR-09`); the graduation-rate-basis flag (`N-IR-08`); the repository review (`research/REPO-REVIEW-2026-11-10.md`); and README drift fixes. |
 | 2026-11-10 | Duplicate work is disclosed rather than hidden: both sessions re-verified the same 20+ official pages on the same day, and both closed the same two gaps independently, arriving at identical values. That agreement is itself evidence the values are right, and the board records it as such. |
+# Session `arena/1f62010a-jack3` — final independent integration and publication audit
+
+**Session ID:** `1f62010a` · **Date:** 2026-11-10 (UTC) · **Platform branch:** `arena/1f62010a-jack3`
+
+All earlier claims are completed, merged, or stale by more than 60 minutes. This session claims the final-integration scope on the platform-fixed branch. It will not edit sibling historical dashboard layers except where an explicitly logged correction is necessary.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| J-01 | Read coordination history; review repository and current publication configuration | in progress | `1f62010a` | `COORDINATION.md` (append-only), `REPO_REVIEW.md` |
+| J-02 | Re-check published rows against official/issuer sources; correct only substantiated issues | unclaimed | `1f62010a` | `data/evidence.json`, `data/*.py`, `research/VERIFICATION-2026-11-10.md`, generated root HTML |
+| J-03 | Integrate the newest consolidated dashboard and preserve a single clear public navigation | unclaimed | `1f62010a` | `dashboard/**`, `_dashboard_src/**`, `scripts/stage_pages.py`, `scripts/build.py`, `_config.yml`, `README.md` |
+| J-04 | Verify executive recommendation, risk balance, projections, blanks, privacy, links, and deterministic build | unclaimed | `1f62010a` | `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, validation scripts, generated public HTML |
+| J-05 | Final PR, CI, merge, Pages deployment, live-site verification | unclaimed | `1f62010a` | `COORDINATION.md` (this section) |
+
+Privacy rule: research and publish only public area-level and corporate evidence. Do not seek or publish owner identity, contact details, parcel identifiers, exact address, account handles, personal finances, or other personal information.
+
+### Final integration progress — 2026-11-10
+
+- J-01 **done**: reviewed inherited layers and publication configuration. Public output consolidated to the curated root dashboard; conflicting companion layers remain repository-only.
+- J-02 **done**: opened all inherited official/issuer sources again and added direct checks of LA County Registrar-Recorder, CA School Dashboard 2026, SCAG Connect SoCal 2024 Final PEIR, LA County Assessment Roll, LA Metro and the issuer's scheduled FY2026 release notice. Record: `research/VERIFICATION-2026-11-10.md` (155 rows, 30 sources).
+- J-03 **done**: removed `/dashboard/` from the Pages artifact and root navigation. `/advisory/` was already withheld. Their extrapolated scenarios/rankings are not represented as verified. Public root navigation now exposes one coherent dashboard.
+- J-04 **done**: updated `EXECUTIVE_SUMMARY.md`, `README.md`, `REPO_REVIEW.md`, `VERIFY.md`, generated root HTML and validation. Added unverified-value enforcement and an official-host allowlist.
+- Material corrections: BLS Food label; city/county provenance split; Palisades/Eaton provenance split; DGS10 4.86% on 2026-11-06; county transfer tax $0.55/$500; LAUSD four-year 86.2% and combined 87.6%; unsupported “every trend flat/negative” language removed.
+- New official context: SCAG 2030 county population/household/employment planning case, 2026 assessment roll, Metro Games-mobility funding. None is treated as a parcel forecast or value.
+- Irregularity: LA County Assessment Roll narrative reports 4.42% (+$96bn) but one bullet says “42%”; published 4.42% and flagged the official-page inconsistency.
+- Local verification passed: deterministic root build, 155-row schema/provenance/local-link/blank-value/host checks, staged-artifact check, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py` (85 files, zero findings), both legacy verifiers, and `git diff --exit-code -- '*.html'`.
+- J-05 **in progress**: PR, CI, merge, Pages deployment and live verification.
+
+### Concurrency resolution — `1f62010a` vs PRs #34/#35/#37
+
+PR #39 initially passed CI (run 42730410298) but GitHub reported that its merge commit could not be created because `main` had advanced. Rebased onto `b3faedb` without discarding other sessions' work. `COORDINATION.md` retained all three new session sections verbatim plus this section. `data/evidence.json` retained the other sessions' county-tax and Treasury corrections, then applied this session's 2026 LAUSD update, row-provenance corrections and new official context. The other sessions' verification files remain unchanged; this session's detailed audit is `research/VERIFICATION-2026-11-10-1f62010a.md`. The full local suite was rerun successfully on the combined tree. Push uses `--force-with-lease` only because the platform-fixed branch was rebased.
+
+### Second concurrency resolution — PR #38 (`203ae19e`)
+
+`main` advanced again before PR #39 could merge. Rebased onto `dfece3f` and preserved PR #38's `scripts/projection.py`, DOF research files, coordination record and break-even model. Independently checked the CA DOF source before retaining its three K-12 projection rows. Replaced PR #38's unverified SCAG placeholder with this session's successfully extracted, official SCAG 2030 values. Clarified that all break-even inputs are unverified assumptions and outputs are Analysis, never Verified market facts. Combined public dataset: 158 evidence rows and 31 official/issuer sources. Full validation and deterministic projection tests pass.
