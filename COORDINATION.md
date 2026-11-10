@@ -893,3 +893,18 @@ Append-only for this section; `git pull --rebase` before every push; small commi
 | 2026-11-10 | **Resolution:** the rebase was aborted rather than hand-merged. This session's branch was reset to `5fc524d` and its work was re-applied **additively on top of the merged tree**, then every page was regenerated from the merged dataset by `scripts/build.py` (never hand-edited). Nothing in `882bff85`'s work was removed: its rows, its record and its board section are preserved verbatim. |
 | 2026-11-10 | **What this session adds on top of #35:** the projection page's deterministic break-even calculation (`scripts/projection.py`); three verified CA DOF K-12 projection rows and the SCAG unreadable-table flag; four further verified School Dashboard rows plus the two-definition enrollment flag; **a correction of a live self-contradiction** the parallel merge left behind (the review page still described the county transfer tax and graduation rate as unretrievable while the tables published them — `N-IR-09`); the graduation-rate-basis flag (`N-IR-08`); the repository review (`research/REPO-REVIEW-2026-11-10.md`); and README drift fixes. |
 | 2026-11-10 | Duplicate work is disclosed rather than hidden: both sessions re-verified the same 20+ official pages on the same day, and both closed the same two gaps independently, arriving at identical values. That agreement is itself evidence the values are right, and the board records it as such. |
+# Session `arena/1f62010a-jack3` — final independent integration and publication audit
+
+**Session ID:** `1f62010a` · **Date:** 2026-11-10 (UTC) · **Platform branch:** `arena/1f62010a-jack3`
+
+All earlier claims are completed, merged, or stale by more than 60 minutes. This session claims the final-integration scope on the platform-fixed branch. It will not edit sibling historical dashboard layers except where an explicitly logged correction is necessary.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| J-01 | Read coordination history; review repository and current publication configuration | in progress | `1f62010a` | `COORDINATION.md` (append-only), `REPO_REVIEW.md` |
+| J-02 | Re-check published rows against official/issuer sources; correct only substantiated issues | unclaimed | `1f62010a` | `data/evidence.json`, `data/*.py`, `research/VERIFICATION-2026-11-10.md`, generated root HTML |
+| J-03 | Integrate the newest consolidated dashboard and preserve a single clear public navigation | unclaimed | `1f62010a` | `dashboard/**`, `_dashboard_src/**`, `scripts/stage_pages.py`, `scripts/build.py`, `_config.yml`, `README.md` |
+| J-04 | Verify executive recommendation, risk balance, projections, blanks, privacy, links, and deterministic build | unclaimed | `1f62010a` | `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, validation scripts, generated public HTML |
+| J-05 | Final PR, CI, merge, Pages deployment, live-site verification | unclaimed | `1f62010a` | `COORDINATION.md` (this section) |
+
+Privacy rule: research and publish only public area-level and corporate evidence. Do not seek or publish owner identity, contact details, parcel identifiers, exact address, account handles, personal finances, or other personal information.
