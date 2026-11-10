@@ -39,6 +39,7 @@ exclude:
   - dashboard
   - data
   - decision-file
+  - dashboard
   - docs
   - model
   - pages

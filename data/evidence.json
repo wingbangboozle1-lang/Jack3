@@ -1,148 +1,190 @@
 {
-  "reviewed": "2026-11-08",
+  "reviewed": "2026-11-10",
   "sources": {
     "city": {
       "label": "U.S. Census · LA city",
       "url": "https://www.census.gov/quickfacts/losangelescitycalifornia",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "county": {
       "label": "U.S. Census · LA County",
       "url": "https://www.census.gov/quickfacts/losangelescountycalifornia",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "bls": {
       "label": "BLS · LA economic summary",
       "url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "jack": {
       "label": "Issuer · Q3 FY2026 results",
       "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Issuer"
     },
     "fire": {
       "label": "CAL FIRE · hazard zones",
       "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "quake": {
       "label": "CGS · EQ Zapp",
       "url": "https://www.conservation.ca.gov/cgs/geohazards/eq-zapp",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "flood": {
       "label": "FEMA · flood maps",
       "url": "https://msc.fema.gov/portal/home",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "school": {
       "label": "CA Education · Dashboard",
       "url": "https://www.cde.ca.gov/ta/ac/cm/",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "wage": {
       "label": "CA DIR · fast-food minimum wage FAQ",
       "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "zoning": {
       "label": "LA City Planning · ZIMAS",
       "url": "https://zimas.lacity.org/",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "irs": {
       "label": "IRS · like-kind exchanges",
       "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "closure": {
       "label": "Jack in the Box · 2025 closure plan",
       "url": "https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "type": "Issuer"
     },
     "assessor": {
       "label": "LA County Assessor · Proposition 13",
       "url": "https://assessor.lacounty.gov/real-estate-toolkit/proposition-13",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "ula": {
       "label": "City of LA Finance · Measure ULA FAQ",
       "url": "https://finance.lacity.gov/faq/measure-ula",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "dirwage": {
       "label": "CA DIR · Minimum wage FAQ",
       "url": "https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "cde": {
       "label": "CDE · LAUSD district profile",
       "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "cdelarge": {
       "label": "CDE · Largest school districts 2025–26",
       "url": "https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "acgr": {
       "label": "CDE · Adjusted cohort graduation rate data",
       "url": "https://www.cde.ca.gov/ds/ad/filesacgr.asp",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "usgs": {
       "label": "USGS · ShakeOut scenario, OFR 2008-1150",
       "url": "https://pubs.usgs.gov/of/2008/1150/",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "palisades": {
       "label": "CAL FIRE · Palisades Fire incident",
       "url": "https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "eaton": {
       "label": "CAL FIRE · Eaton Fire incident",
       "url": "https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "fred": {
       "label": "Federal Reserve · 10-year Treasury (DGS10)",
       "url": "https://fred.stlouisfed.org/series/DGS10",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "irs409": {
       "label": "IRS · Topic 409 capital gains",
       "url": "https://www.irs.gov/taxtopics/tc409",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
       "type": "Government"
     },
     "ftb": {
       "label": "CA FTB · Capital gains and losses",
       "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
-      "checked": "2026-11-08",
+      "checked": "2026-11-10",
+      "type": "Government"
+    },
+    "countytax": {
+      "label": "LA County Registrar-Recorder · Documentary transfer tax",
+      "url": "https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info",
+      "checked": "2026-11-10",
+      "type": "Government"
+    },
+    "dashboard2026": {
+      "label": "CA School Dashboard · LAUSD academic engagement 2026",
+      "url": "https://www.caschooldashboard.org/reports/19647330000000/2026/academic-engagement",
+      "checked": "2026-11-10",
+      "type": "Government"
+    },
+    "scag": {
+      "label": "SCAG · Connect SoCal 2024 Final PEIR updated tables",
+      "url": "https://sustain.scag.ca.gov/sites/default/files/2024-05/appendix_i_updated_tables_508_final.pdf",
+      "checked": "2026-11-10",
+      "type": "Government"
+    },
+    "roll": {
+      "label": "LA County Assessor · 2026 Assessment Roll release",
+      "url": "https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/",
+      "checked": "2026-11-10",
+      "type": "Government"
+    },
+    "metro": {
+      "label": "LA Metro · 2028 Games transportation funding",
+      "url": "https://thesource.metro.net/congress-approves-94-3-million-for-los-angeles-2028-olympic-and-paralympic-games-transportation/",
+      "checked": "2026-11-10",
+      "type": "Government"
+    },
+    "q4": {
+      "label": "Issuer · FY2026 results scheduled for 2026-12-09",
+      "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Announces-Fourth-Quarter-and-Full-Year-2026-Earnings-Webcast/default.aspx",
+      "checked": "2026-11-10",
+      "type": "Issuer"
+    },
+    "dofk12": {
+      "label": "CA Dept. of Finance · Public K-12 enrollment projections, 2026 series",
+      "url": "https://dof.ca.gov/forecasting/demographics/public-k-12-graded-enrollment/",
+      "checked": "2026-11-10",
       "type": "Government"
     }
   },
@@ -371,7 +413,7 @@
         },
         {
           "cells": [
-            "CPI-U change · food at home / energy",
+            "CPI-U change · food / energy",
             "+2.8% / +20.3%",
             "LA metro · September 2026 · 12-month change",
             "Input-cost and household-budget pressure; energy volatility is large."
@@ -388,6 +430,36 @@
           ],
           "status": "Verified",
           "source": "bls"
+        },
+        {
+          "cells": [
+            "Net taxable assessed value",
+            "$2.272 trillion · +4.42% year over year",
+            "LA County · 2026 Assessment Roll, lien date 2026-01-01",
+            "Whole-county tax roll; not market appreciation or this asset’s value."
+          ],
+          "status": "Verified",
+          "source": "roll"
+        },
+        {
+          "cells": [
+            "Net taxable assessed value",
+            "$926.1 billion",
+            "Los Angeles city · 2026 Assessment Roll",
+            "City aggregate; not evidence of a central-LA sale price."
+          ],
+          "status": "Verified",
+          "source": "roll"
+        },
+        {
+          "cells": [
+            "2028 Games mobility funding",
+            "$94.3 million federal funding; $149 million for Vermont BRT in the same funding bill",
+            "LA County / Metro · announced 2026-02-04",
+            "Potential access investment; no venue proximity, completion or property benefit established."
+          ],
+          "status": "Verified",
+          "source": "metro"
         }
       ]
     },
@@ -436,9 +508,29 @@
         {
           "cells": [
             "Persons 65 and over",
-            "14.2% · county 17.1%",
-            "LA city / county · V2025",
-            "Age mix affects daypart demand; no local inference."
+            "14.2%",
+            "LA city · V2025",
+            "Age mix context; not a store catchment."
+          ],
+          "status": "Verified",
+          "source": "city"
+        },
+        {
+          "cells": [
+            "Persons 65 and over",
+            "17.1%",
+            "LA County · V2025",
+            "County context; not the subject trade area."
+          ],
+          "status": "Verified",
+          "source": "county"
+        },
+        {
+          "cells": [
+            "Foreign-born persons",
+            "35.7%",
+            "LA city · 2020–2024",
+            "City workforce and customer composition."
           ],
           "status": "Verified",
           "source": "city"
@@ -446,12 +538,12 @@
         {
           "cells": [
             "Foreign-born persons",
-            "35.7% · county 33.4%",
-            "LA city / county · 2020–2024",
-            "Workforce and customer composition."
+            "33.4%",
+            "LA County · 2020–2024",
+            "County context; not the subject trade area."
           ],
           "status": "Verified",
-          "source": "city"
+          "source": "county"
         },
         {
           "cells": [
@@ -814,12 +906,21 @@
         },
         {
           "cells": [
-            "Wildfire catastrophe · observed 2025",
-            "Palisades: 23,448 acres, 6,845 structures destroyed. Eaton: 14,021 acres, 9,419 structures destroyed. Combined 16,264 structures lost in Los Angeles County within 24 days.",
-            "Verify parcel overlay, construction, access and insurance; this is observed severity, not a probability."
+            "Palisades Fire · observed 2025",
+            "23,448 acres; 6,845 structures destroyed; 100% contained after 24 days",
+            "Los Angeles County incident record; not a parcel probability or a claim about central LA exposure."
           ],
           "status": "Verified",
           "source": "palisades"
+        },
+        {
+          "cells": [
+            "Eaton Fire · observed 2025",
+            "14,021 acres; 9,419 structures destroyed; 100% contained after 24 days",
+            "Los Angeles County incident record; not a parcel probability or a claim about central LA exposure."
+          ],
+          "status": "Verified",
+          "source": "eaton"
         },
         {
           "cells": [
@@ -833,7 +934,7 @@
         {
           "cells": [
             "Interest-rate and exit-yield shock",
-            "10-year Treasury constant-maturity yield 4.84% on 2026-11-05.",
+            "10-year Treasury constant-maturity yield 4.86% on 2026-11-06.",
             "Analysis: a higher exit yield lowers price for the same rent; no property cap rate is published."
           ],
           "status": "Verified",
@@ -963,12 +1064,22 @@
         {
           "cells": [
             "District four-year graduation rate",
-            "",
-            "Not extracted. CDE publishes adjusted cohort graduation data as state, county, district and school files, but the LAUSD value was not read from the file this pass.",
-            "Would inform workforce quality; not a property-value input on its own."
+            "86.2%",
+            "LAUSD · 2026 California School Dashboard",
+            "District aggregate; not an assigned-school result."
           ],
-          "status": "Unverified",
-          "source": "acgr"
+          "status": "Verified",
+          "source": "dashboard2026"
+        },
+        {
+          "cells": [
+            "District combined four- and five-year graduation rate",
+            "87.6%",
+            "LAUSD · 2026 California School Dashboard",
+            "Combined measure; do not confuse it with the four-year rate."
+          ],
+          "status": "Verified",
+          "source": "dashboard2026"
         },
         {
           "cells": [
@@ -1240,7 +1351,7 @@
         {
           "cells": [
             "Discount-rate anchor for any present-value work",
-            "4.84% · 10-year Treasury, 2026-11-05",
+            "4.86% · 10-year Treasury, 2026-11-06",
             "Federal Reserve H.15 via FRED (DGS10)",
             "A market anchor, not the owner's required return."
           ],
@@ -1260,12 +1371,12 @@
         {
           "cells": [
             "LA County documentary transfer tax",
-            "",
-            "Not published. The County Recorder page could not be retrieved on 2026-11-08 and only secondary sources state the rate.",
-            "Would add to seller closing costs; confirm with the County Recorder and escrow."
+            "$0.55 per $500 or fraction (0.11%)",
+            "LA County · consideration excluding qualifying remaining liens",
+            "Separate from Los Angeles city base tax and any Measure ULA tax."
           ],
-          "status": "Unverified",
-          "source": "ula"
+          "status": "Verified",
+          "source": "countytax"
         },
         {
           "cells": [
@@ -1283,7 +1394,7 @@
       "id": "model",
       "title": "Projection framework",
       "kicker": "No invented forecasts",
-      "description": "An evidence-gated framework, not a calibrated forecasting system. No property valuation, probability of renewal, forecast return or optimal decision can be computed from the available evidence. Numerical outputs are intentionally blank.",
+      "description": "Official SCAG and DOF projections are labeled by publisher and vintage. Break-even tables are disclosed arithmetic, not calibrated forecasts. Unknown property inputs remain blank.",
       "columns": [
         "Scenario / output",
         "Projected value",
@@ -1339,7 +1450,7 @@
           "cells": [
             "Robust decision rule",
             "",
-            "Analysis. Reject alternatives that cannot meet verified liquidity needs in adverse cases; compare after-tax values only after evidence gates pass. No arbitrary weights, annual growth rates or risk scores."
+            "Analysis. Reject alternatives that cannot meet verified liquidity needs in adverse cases; compare after-tax values only after evidence gates pass. No arbitrary probability weights or risk scores. Sensitivity-model rates are disclosed assumptions, not forecasts."
           ],
           "status": "Analysis",
           "source": "irs"
@@ -1356,7 +1467,7 @@
         {
           "cells": [
             "Verified input anchors",
-            "10-year Treasury 4.84% (2026-11-05); LA CPI-U +3.7% and ECI +3.9% year over year (Sep 2026); LA city population −0.8% from the 2020 estimates base to July 2025.",
+            "10-year Treasury 4.86% (2026-11-06); LA CPI-U +3.7% and ECI +3.9% year over year (Sep 2026); LA city population −0.8% from the 2020 estimates base to July 2025.",
             "Anchors, not forecasts. Each is an observation from an official release and is used only to bound discounting and growth assumptions."
           ],
           "status": "Verified",
@@ -1370,6 +1481,69 @@
           ],
           "status": "Analysis",
           "source": "bls"
+        },
+        {
+          "cells": [
+            "LA County public K-12 enrollment projection",
+            "−240,800 pupils by 2035-36",
+            "CA Dept. of Finance · 2026 series, published August 2026. Official cohort-survival projection; not a property-demand forecast."
+          ],
+          "status": "Verified",
+          "source": "dofk12"
+        },
+        {
+          "cells": [
+            "California public K-12 enrollment projection",
+            "5,731,300 (2025-26) → 5,020,800 (2035-36) · −710,500",
+            "CA Dept. of Finance · 2026 series. Statewide context; projection assumes current fertility and migration trends hold."
+          ],
+          "status": "Verified",
+          "source": "dofk12"
+        },
+        {
+          "cells": [
+            "California high school graduates projection",
+            "453,600 (2024-25 actual) → 381,300 (2035-36)",
+            "CA Dept. of Finance · 2026 series. Future labor-force-entry context, not a rent or value forecast."
+          ],
+          "status": "Verified",
+          "source": "dofk12"
+        },
+        {
+          "cells": [
+            "SCAG 2030 population forecast",
+            "10,214,000",
+            "LA County · Connect SoCal 2024, adopted 2024-04-04; Table 3.14-8. Official long-range planning forecast; predates Census V2025 and is not a store-demand forecast."
+          ],
+          "status": "Verified",
+          "source": "scag"
+        },
+        {
+          "cells": [
+            "SCAG 2030 households forecast",
+            "3,784,000",
+            "LA County · Connect SoCal 2024; Table 3.14-9. Planning-model output, not an observed value or a property forecast."
+          ],
+          "status": "Verified",
+          "source": "scag"
+        },
+        {
+          "cells": [
+            "SCAG 2030 employment forecast",
+            "5,277,000",
+            "LA County · Connect SoCal 2024; Table 3.14-10. Broad employment concept differs from BLS metro payrolls; do not splice the series."
+          ],
+          "status": "Verified",
+          "source": "scag"
+        },
+        {
+          "cells": [
+            "Forecast reconciliation rule",
+            "",
+            "Analysis. Compare SCAG’s adopted 2030 planning case with current Census/BLS observations; do not interpolate a 2035 value or force agreement. A calibrated local model requires a defined catchment and historical observations. Prevents a planning scenario from being mislabeled as a reliable parcel forecast."
+          ],
+          "status": "Analysis",
+          "source": "scag"
         }
       ]
     },
@@ -1575,21 +1749,21 @@
         },
         {
           "cells": [
-            "Review",
+            "Closed",
             "LA County documentary transfer tax (V-3)",
-            "The County Recorder page could not be retrieved on 2026-11-08; the commonly quoted $1.10 per $1,000 appears only in secondary sources. No county rate is published as a value."
+            "Closed 2026-11-10: official Registrar-Recorder page states $0.55 per $500 or fraction. Verified value now appears on Taxes & transaction costs. Original flag retained for audit; no longer a missing value."
           ],
-          "status": "Needs review",
-          "source": "ula"
+          "status": "Verified",
+          "source": "countytax"
         },
         {
           "cells": [
-            "Review",
+            "Closed",
             "LAUSD graduation rate not extracted (V-4)",
-            "CDE publishes adjusted cohort graduation data as large state/county/district files; the LAUSD value was not read this pass, so it stays blank."
+            "Closed 2026-11-10: the 2026 Dashboard reports four-year 86.2% and combined four/five-year 87.6%. Prior companion descriptions of 86.5% as four-year were imprecise. Campus assignment remains unverified."
           ],
-          "status": "Needs review",
-          "source": "acgr"
+          "status": "Verified",
+          "source": "dashboard2026"
         },
         {
           "cells": [
@@ -1608,6 +1782,33 @@
           ],
           "status": "Needs review",
           "source": "dirwage"
+        },
+        {
+          "cells": [
+            "Review",
+            "LA County Assessment Roll press-release typo",
+            "The narrative states a 4.42% increase ($96 billion) while one bullet says “42%.” The dashboard publishes 4.42%, consistent with the narrative; the official page itself is internally inconsistent. Do not copy the bullet typo."
+          ],
+          "status": "Needs review",
+          "source": "roll"
+        },
+        {
+          "cells": [
+            "Review",
+            "Companion dashboard remains withheld",
+            "The repository /dashboard/ layer adds extrapolated population, employment and CPI-linked rent indices and qualitative claims not established by the cited sources. It is retained for audit but excluded from the public artifact, like /advisory/. Only the curated root dashboard is published."
+          ],
+          "status": "Needs review",
+          "source": "scag"
+        },
+        {
+          "cells": [
+            "Review",
+            "FY2026 tenant results not yet released",
+            "The issuer says Q4 and full-year FY2026 results will be released after market close on 2026-12-09. Q3 remains the latest results release as of this audit. Refresh tenant evidence after the scheduled release; no results are anticipated here."
+          ],
+          "status": "Needs review",
+          "source": "q4"
         }
       ]
     }

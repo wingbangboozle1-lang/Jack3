@@ -4,7 +4,7 @@
 the owner to expire between 2030 and 2035.
 **Question:** sell before expiry, or renew?
 **Owner's objective:** preserve capital *and* retain growth optionality at a manageable level of risk.
-**Evidence snapshot:** 2026-11-08. **Full record:** `research/VERIFICATION-2026-11-08.md`.
+**Evidence snapshot:** 2026-11-10. **Full record:** `research/VERIFICATION-2026-11-10-1f62010a.md`.
 **Published dashboard:** <https://wingbangboozle1-lang.github.io/Jack3/>
 
 > **Privacy.** The asset is published as *Asset A*. No address, parcel number, owner name, contact detail, rent roll,
@@ -25,13 +25,13 @@ the owner to expire between 2030 and 2035.
 This is analyst judgement on verified public evidence plus the owner's stated facts. It is **not** a valuation, an
 appraisal, a tax opinion or personalised investment advice, and it does not assume a price, rent or cap rate.
 
-**Why the sale track leads:** every verified trend that touches this asset is flat or negative, the tenant is
-contracting and is itself selling real estate, and the owner's principal risk is a single-tenant vacancy at an unknown
-future date. Marketing while the income is contractual keeps the owner's options open; waiting transfers the timing
+**Why the sale track leads:** city and county population are below their 2020 estimates bases, metro payroll
+growth is modest, the tenant is contracting and is itself selling real estate, and the owner's principal risk is a
+single-tenant vacancy at an unknown future date. Marketing while the income is contractual keeps the owner's options open; waiting transfers the timing
 decision to the tenant.
 
-**Why the renewal track runs in parallel:** an extension converts a wasting asset into a longer income stream and
-usually widens the buyer pool. If the tenant will commit in writing, the owner can choose between two priced
+**Why the renewal track runs in parallel:** an extension can convert a shortening income stream into a longer one and
+can widen the buyer pool. If the tenant will commit in writing, the owner can choose between two priced
 alternatives instead of one. The discipline is that only a **signed, enforceable, credit-supported** extension counts.
 
 ### Decision matrix
@@ -55,9 +55,9 @@ alternatives instead of one. The discipline is that only a **signed, enforceable
 
 ---
 
-## 2. The six findings that drive the decision
+## 2. The findings that drive the decision
 
-Every figure below was re-read from the linked publisher page on 2026-11-08.
+Every figure below was re-read from the linked publisher page on 2026-11-10.
 
 **1. The tenant is contracting, and closure timing is tied to franchise-agreement dates.**
 Jack in the Box reports system same-store sales of **−1.1%** and systemwide sales **−1.4%** for the quarter ended
@@ -81,21 +81,22 @@ housing. → [Census QuickFacts, LA city](https://www.census.gov/quickfacts/losa
 education & health **+3.8%** and information **−5.7%**; unemployment 4.5% city and county, 4.4% metro; CPI-U **+3.7%**
 and ECI **+3.9%**; average weekly wage **$1,704** (Q1 2026). → [BLS LA summary, updated 2026-11-04](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf)
 
-**4. The wage floor is a permanent cost.** Covered fast-food employees are paid at least **$20.00/hour** (AB 1228, from
+**4. The statutory wage floor pressures tenant economics.** Covered fast-food employees are paid at least **$20.00/hour** (AB 1228, from
 2024-04-01); the state minimum is **$16.90/hour** from 2026-01-01. A fixed-escalator lease does not pass this through to
 the landlord — it passes it to the tenant's margin, and therefore to renewal willingness. →
 [DIR fast food FAQ](https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm) ·
 [DIR minimum wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm)
 
-**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **4.84%** on 2026-11-05 —
-a market anchor, not the owner's required return. A sale inside the City of Los Angeles pays a **0.45%** base transfer
-tax plus **Measure ULA at 4% above $5,400,000 and 5.5% at or above $10,900,000** for closings after 2026-06-30 (ULA is
+**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **4.86%** on 2026-11-06 —
+a market anchor, not the owner's required return. A sale inside the City of Los Angeles pays a **0.45%** city base transfer tax, a **0.11%** county
+documentary transfer tax, plus **Measure ULA at 4% above $5,400,000 and 5.5% at or above $10,900,000** for closings after 2026-06-30 (ULA is
 measured on gross value; the base tax on value net of liens; thresholds indexed to Chained CPI). Property tax is a
 **1%** general levy with a **2%** annual assessed-value cap, reassessed on change of ownership. California taxes capital
 gains as **ordinary income**; federal long-term rates are **0/15/20%** with a **25%** maximum on unrecaptured §1250 gain;
 **§1031** defers — and does not eliminate — the gain on real property held for investment. →
 [LA County Assessor · Prop 13](https://assessor.lacounty.gov/real-estate-toolkit/proposition-13) ·
 [City of LA Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) ·
+[LA County documentary transfer tax](https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info) ·
 [IRS Topic 409](https://www.irs.gov/taxtopics/tc409) · [IRS §1031](https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips) ·
 [CA FTB](https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html) ·
 [FRED DGS10](https://fred.stlouisfed.org/series/DGS10)
@@ -111,13 +112,40 @@ change for the whole region, which is a value risk even for a building that surv
 > Note the caveat that matters: hazard **maps** classify physical potential, not this parcel's risk. No parcel overlay,
 > structural report, policy or claim history was available.
 
+**7. Official long-range growth is a planning case, not a guaranteed recovery.** SCAG's adopted Connect SoCal 2024
+forecast shows Los Angeles County reaching **10,214,000 people**, **3,784,000 households**, and **5,277,000 jobs** in
+2030. Those model outputs predate the Census V2025 observation of **9,694,934** residents and use a different employment
+concept from BLS payrolls. They provide an upside planning case to monitor, not a basis to extrapolate 2035 rent or a
+sale price. → [SCAG Final PEIR updated tables 3.14-8 to 3.14-10](https://sustain.scag.ca.gov/sites/default/files/2024-05/appendix_i_updated_tables_508_final.pdf)
+
+**8. Public institutions and infrastructure show resilience, but no site-level benefit is established.** The county's
+2026 net taxable assessment roll reached **$2.272 trillion**, up **4.42%**; the city share was **$926.1 billion**. LAUSD
+reports an **86.2% four-year** and **87.6% combined four/five-year** graduation rate in 2026. Metro announced
+**$94.3 million** in federal Games-mobility funding and **$149 million** for Vermont BRT in the same funding bill. These
+are broad public-context indicators—not evidence of appreciation, an assigned school's quality, venue proximity, or a
+completed transport benefit for Asset A. → [LA County Assessment Roll](https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/) ·
+[CA School Dashboard 2026](https://www.caschooldashboard.org/reports/19647330000000/2026/academic-engagement) ·
+[LA Metro funding announcement](https://thesource.metro.net/congress-approves-94-3-million-for-los-angeles-2028-olympic-and-paralympic-games-transportation/)
+
+> Source irregularity: the county release's narrative says **4.42%**, consistent with its **$96 billion** increase, but
+> one bullet says “42%.” This summary uses the narrative figure and flags the typo for review.
+
+**9. Official school-enrollment projections are a demographic headwind.** The California Department of Finance's
+2026 cohort-survival series projects Los Angeles County public K-12 enrollment falling by **240,800 pupils** by 2035-36;
+statewide enrollment falls from **5,731,300** in 2025-26 to **5,020,800** in 2035-36 if current fertility and migration
+trends hold. This is an official projection with a stated method, not a store-sales forecast. → [CA DOF 2026 series](https://dof.ca.gov/forecasting/demographics/public-k-12-graded-enrollment/)
+
+**10. Break-even sensitivities are arithmetic, not forecasts.** `scripts/projection.py` compares selling and holding in
+multiples of one year of base rent across disclosed cap-rate, rent-growth, required-return and vacancy assumptions.
+It does not establish those inputs for Asset A and must not be read as a calibrated valuation or a recommended cap rate.
+
 ---
 
 ## 3. Risk balance — keeping risk manageable in both directions
 
 | Risk | Type | How it damages wealth | Pre-emptive control |
 |---|---|---|---|
-| Single-tenant vacancy at or before expiry | Business as usual | Loses 100% of rent plus taxes, insurance and re-letting cost | Start marketing early; size reserves for a 12–24 month void |
+| Single-tenant vacancy at or before expiry | Business as usual | Loses 100% of rent plus taxes, insurance and re-letting cost | Start marketing early; size reserves to verified carrying costs and re-letting downtime |
 | Tenant default / accelerated closure | Business as usual | Rent stops before any contractual end date | Verify the legal obligor and any guaranty; obtain estoppel |
 | Interest-rate and exit-yield shift | Business as usual | Same rent, lower price | Price off current bids, not peak assumptions |
 | Tax and transaction cost | Business as usual | ULA + transfer tax + depreciation recapture cut net proceeds | Model after-tax proceeds before choosing a route |
@@ -128,8 +156,8 @@ change for the whole region, which is a value risk even for a building that surv
 | Correlated catastrophe or pandemic | Tail | Rent interruption and illiquid exit simultaneously | Hold liquidity outside the asset; avoid forced-sale dependence |
 
 **The balance to strike:** the sale track protects the *floor* (it converts an uncertain future into a priced present);
-the renewal track protects the *ceiling* (it preserves income and optionality). Running them in parallel is the only
-route that keeps both without betting on a single forecast. Everything that would convert this from judgement into a
+the renewal track protects the *ceiling* (it preserves income and optionality). Running them in parallel is the prudent
+way to preserve both without betting on a single forecast. Everything that would convert this from judgement into a
 valuation is private information — rent, term, guaranty, basis, debt — and is not guessed here.
 
 ---
@@ -143,19 +171,22 @@ been inferred or filled in. The full list, with the official page that could clo
 
 Known open items include: the executed lease and exact expiry; the legal tenant, guarantor and any franchisee
 obligation; store-level sales, rent coverage and arrears; the parcel's zoning and hazard overlays; effective insurance
-terms; LA County's documentary transfer tax rate (the Recorder page could not be retrieved on 2026-11-08); and the
-LAUSD graduation rate (the CDE district file was not extracted).
+terms. The county transfer-tax and district graduation gaps were closed from official pages on 2026-11-10; school
+assignment and campus-level performance remain unverified.
 
 ---
 
 ## 5. Method and limits
 
 - **Official sources only** for published values: U.S. Census Bureau, Bureau of Labor Statistics, Federal Reserve,
-  California DIR, California Department of Education, California FTB, LA County Assessor, City of Los Angeles Office of
-  Finance, CAL FIRE, USGS, FEMA, IRS, and Jack in the Box Inc. issuer filings.
+  California DIR, California Department of Education, California FTB, LA County Assessor and Registrar-Recorder,
+  City of Los Angeles Office of Finance, SCAG, LA Metro, CAL FIRE, USGS, FEMA, IRS, and Jack in the Box Inc. issuer
+  releases.
 - **Verified** means the publisher reports the observation — never that it predicts this property. **Analysis** rows are
   labelled reasoning. **Unverified** rows contain no value.
-- No model was trained, back-tested or calibrated; no numerical forecast, cap rate or renewal probability is published.
-  Compounding a 2020–2025 change forward is arithmetic, not evidence, and is not presented as a projection.
+- No property model was trained, back-tested or calibrated; no numerical property forecast or renewal
+  probability is published. Break-even tables use disclosed, unverified cap-rate and growth assumptions as analysis;
+  they are not asserted market values. SCAG's own 2030 figures are identified as official planning-model outputs, not as our
+  forecast. Compounding a 2020–2025 change forward is arithmetic, not evidence, and is not presented as a projection.
 - No personal information is published, and no attempt was made to identify the owner, the parcel or any individual.
-- Sources are rolling documents and can be revised after 2026-11-08. Re-check before acting.
+- Sources are rolling documents and can be revised after 2026-11-10. Re-check before acting.
