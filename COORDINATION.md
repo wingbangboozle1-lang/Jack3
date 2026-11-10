@@ -835,3 +835,11 @@ all match, no data changes). PR #35 became CONFLICTING. Resolved by rebasing ont
   references in `scripts/build.py` and `EXECUTIVE_SUMMARY.md` updated and the dashboard rebuilt.
 - No work from either session was discarded. `c70571c7`'s "all match, no values changed" corroborates
   this session's finding that no published value was wrong.
+
+### PR, merge and deployment record — `882bff85`
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/35 — "Final integration: fresh 2026-11-10 verification, close V-3/V-4, Treasury refresh".
+- **Pre-merge CI:** `Validate public research` run 42729461477 — **success** (incl. Jekyll byte-exact + determinism gates).
+- **Merge:** merged to `main` without waiting for approval; post-merge `main` validation run 42729616878 **success**; Pages run 42729614913 **success**; Pages API `status=built`.
+- **Live verification (fetches after deploy):** `taxes.html` shows the county transfer tax row as Verified ($0.55/$500) and the Treasury anchor at 4.86% (2026-11-06); `schools.html` shows the LAUSD graduation rate as Verified (86.5% 5-year / 84.6% 4-year).
+- **Status:** M-01…M-05 **done**. Unverified items remain published as non-blocking *Needs review* entries on `review.html`. No other session's directory, branch or PR was edited, merged or deleted by this session (PRs #31/#32 left open for owners).
