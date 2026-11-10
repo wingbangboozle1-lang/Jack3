@@ -3,45 +3,85 @@
 Privacy-safe, static, source-linked research into a single-tenant Jack in the Box net-leased property in central
 Los Angeles, reported by the owner to expire between 2030 and 2035. The question: **sell before expiry, or renew?**
 
-**Live dashboard:** https://wingbangboozle1-lang.github.io/Jack3/
+**Live site:** https://wingbangboozle1-lang.github.io/Jack3/
+
+> **Current canonical site (2026-11-10).** This repository now publishes **one** consolidated site, generated
+> from a single verified register. The descriptions of earlier companion layers further down this README are
+> historical audit trail; those directories are excluded from GitHub Pages and are not the live product.
 
 ## Start here
 
 | Document | What it gives you |
 |---|---|
-| [Executive summary](EXECUTIVE_SUMMARY.md) | Recommendation, decision matrix, the six findings that drive it, risk balance, and what stays blank |
-| [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Twelve category pages, every table row carrying its official source |
-| [Line-by-line verification record](research/VERIFICATION-2026-11-08.md) | Every published row re-read against its publisher page on 2026-11-08, plus gaps, link repairs and irregularities |
-| [Flagged for Review](review.html) | Everything that could not be verified, published rather than hidden |
+| [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Clean landing page, eight evidence categories, analysis pages and governance pages |
+| [Executive summary](executive-summary.html) | Recommendation, decision matrix, six driving findings, risk balance, and what stays blank |
+| [All entries & findings](master.html) | Every published row in one source-linked table |
+| [Flagged for Review](review.html) | Every unverified value, conflict and irregularity, published for manual review |
+| [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
+| [Line-by-line verification record](research/VERIFICATION-2026-11-10.md) | Every row re-read against its publisher page on 2026-11-10, plus corrections and gaps |
+| [Sources & method](sources.html) | 34 official sources, verification standard and privacy boundary |
 
 ## What is published on the live site
 
+20 static HTML pages plus `assets/style.css`. Every table body row carries an official source link; every
+unconfirmed value is an **empty cell** and appears on *Flagged for Review*. No JavaScript, forms, analytics,
+third-party assets, owner identifiers, addresses or parcel numbers.
+
 | Page | Path | Contents |
 |---|---|---|
-| Executive summary / dashboard | `/` | Recommendation, evidence boundary, risk balance, category navigation |
-| Area fundamentals | `/economy.html` | Population, income, payrolls, unemployment, wages, CPI, ECI |
-| Trade area & demographics | `/demographics.html` | Households, age, poverty, tenure, spending capacity |
-| Tenant & lease | `/tenant.html` | Issuer results, closures, capital structure, and the lease facts we do not have |
-| Risk & resilience | `/risk.html` | Business-as-usual risks, black-swan events, mitigation tests |
-| Neighborhood & land | `/place.html` | What cannot be asserted without a parcel |
-| Schools & workforce | `/schools.html` | CDE enrollment and English-learner data; missing performance measures |
-| Decision pathways | `/decisions.html` | Six routes, triggers, dominant risks, recommended sequence |
-| Taxes & transaction costs | `/taxes.html` | Prop 13, transfer taxes, Measure ULA, §1031, capital-gain treatment |
-| Projection framework | `/model.html` | Verified anchors and the forecasts deliberately withheld |
-| Flagged for Review | `/review.html` | Unverified items with the official page that would close each one |
-| Sources & methodology | `/sources.html` | 24-source register, verification standard, privacy boundary |
+| Overview / dashboard | `/` | Conditional recommendation, six verified anchors, risk balance, navigation |
+| Executive summary | `/executive-summary.html` | Decision, findings, matrix, evidence gates, what stays blank |
+| All entries & findings | `/master.html` | 222-row master register, grouped by category |
+| Geography | `/geography.html` | City / county scale; every parcel-level gap flagged |
+| People & income | `/demographics.html` | Population, households, income, poverty, education, spending capacity |
+| Economy & jobs | `/economy.html` | Employment, wages, prices, output, rates, official long-range forecasts |
+| Schools | `/schools.html` | LAUSD scale, graduation outcomes, attendance-boundary gap |
+| Tenant & lease | `/tenant.html` | Issuer SEC filings, closure programme, missing executed lease |
+| Taxes & transfer | `/taxes.html` | Prop 13, transfer taxes, Measure ULA, capital gains, §1031 |
+| Hazards | `/hazards.html` | Earthquake, wildfire, flood: official observations and scenarios |
+| Projection anchors | `/anchors.html` | Dated observations, official forecasts and withheld outputs |
+| Risk register | `/risk.html` | 24 business-as-usual and black-swan risks, with context sources |
+| Projection system | `/projections.html` | 13-step reproducible framework and the outputs deliberately withheld |
+| Decision matrix | `/decisions.html` | Eight pathways, gates and the recommended sequence |
+| Model & method | `/model.html` | Verification standard, published arithmetic, monitoring checklist |
+| Evidence boundary | `/place.html` | What the site deliberately does not assert about Asset A |
+| Flagged for Review | `/review.html` (alias `/flagged.html`) | Unverified values, conflicts and irregularities |
+| Repo review | `/repo-review.html` | Line-by-line inherited-layer findings |
+| Sources & method | `/sources.html` | Official source register, verification standard, privacy boundary |
 
-Only these files and `assets/style.css` are staged into the Pages artifact by `scripts/stage_pages.py`.
+## Build and verification
+
+```
+python3 scripts/build_canonical.py   # regenerate every published page + data/canonical.json + verification log
+python3 scripts/validate.py          # row provenance, official hosts, blank values, links, PII, determinism
+python3 scripts/stage_pages.py       # build the exact Pages artifact and check every row / link
+```
+
+`scripts/build.py` is a compatibility alias for the canonical generator. `.github/workflows/validate.yml` runs
+the whole gate, rebuilds with Jekyll and asserts the published artifact byte-for-byte. The machine-readable
+register is `data/canonical.json`; its source of truth is `data/canonical_rows.py`.
+
+## Privacy boundary
+
+Asset A and Owner A are placeholders. No property address, parcel number, owner name, account handle, contact
+detail, financial account, tax basis, debt statement or private lease record is published. Official pages consulted
+during research contain personal contact information; none of it is reproduced on the site.
 
 ## Repository-only layers (audit trail, not published)
 
-The repository also preserves earlier parallel layers — `advisory/`, `docs/`, `analysis/`, `brief/`, `pages/`,
-`decision-file/`, `report/`, `verification-3644edd8/`, `audit/` and `_advisory_src/`. They are kept for audit and
-continuity, are **excluded from the live site**, and are not claimed to be re-verified. `advisory/` in particular is
-withheld because its numerical scenario weights and pathway rankings are not established by the official sources it
-cited (see `review.html`).
+The repository also preserves earlier parallel layers — `advisory/`, `analysis/`, `audit/`, `brief/`,
+`dashboard/`, `decision-file/`, `docs/`, `pages/`, `research/`, `_advisory_src/`, `_dashboard_src/`, `site/`,
+`model/`, `tools/` and `data/` sources. They are kept for audit and continuity, are **excluded from the live site**,
+and are not claimed to be re-verified. `advisory/` in particular is withheld because its numerical scenario weights
+and pathway rankings are not established by the official sources it cited. See `repo-review.html` and
+`REPO_REVIEW.md`.
 
 ---
+
+## Historical companion-layer documentation (audit trail)
+
+The sections below were written by earlier parallel sessions and describe repository-only directories. They are
+preserved verbatim; those directories are not published on the live site.
 
 ## Deep-dive decision brief (`brief/`)
 

@@ -6,10 +6,12 @@ project.  This tool is the mechanical enforcement of that constraint: the
 guarantee is not a promise, it is a build check that fails.
 
 Scanned:
-    decision-file/**/*.html, decision-file/**/*.csv   (the published site)
+    root *.html + assets/style.css     (the canonical published site)
+    dashboard/**/*.html               (repository-only former dashboard)
+    decision-file/**/*.html, .csv     (repository-only companion layer)
     data/*.py                         (the committed data snapshot)
     model/*.py                        (the model)
-    *.md at the repository root       (the written deliverables)
+    *.md / *.txt at the repo root     (the written deliverables)
 
 Detected:
     email addresses
@@ -57,9 +59,9 @@ PROPERTY_ID = re.compile(
     r"(?:assessor'?s?\s+parcel|parcel\s+(?:number|id)|\bAPN\b)\s*[:=]\s*[A-Z0-9\-]{4,}", re.I)
 
 # Officer names of the tenant that must NOT be reproduced on the site.
-OFFICER_NAMES = ["Lance Tucker", "Mark King"]
+OFFICER_NAMES = ["Lance Tucker", "Mark King", "Rachel Webb", "Andres Chait"]
 
-SCAN_DIRS = ["decision-file", "data", "model", "tools", "site", "research"]
+SCAN_DIRS = ["assets", "dashboard", "decision-file", "data", "model", "tools", "site", "research"]
 SCAN_ROOT_FILES = True
 
 
@@ -77,7 +79,7 @@ def iter_files():
     if SCAN_ROOT_FILES:
         for fn in sorted(os.listdir(ROOT)):
             p = os.path.join(ROOT, fn)
-            if os.path.isfile(p) and fn.endswith((".md", ".txt")):
+            if os.path.isfile(p) and fn.endswith((".md", ".txt", ".html")):
                 yield p
 
 

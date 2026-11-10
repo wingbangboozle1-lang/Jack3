@@ -784,3 +784,108 @@ as audit trail and are NOT edited by this session; findings about them are publi
 - **XR-B1** — owners of `advisory/`, `analysis/`, `brief/`, `decision-file/`, `pages/` and `dashboard/`: the repo-wide
   account-handle redaction and the conflicting closure-count / treasury-rate vintages are listed in
   `REPO_REVIEW.md` and on the site's *Flagged for Review* page. Those directories stay out of this session's scope.
+
+---
+
+## Progress log — session `b98090a0` (final integration)
+
+**Date:** 2026-11-10 (UTC) · **Branch:** `arena/b98090a0-jack3` · **Status:** I-01 … I-07 **done**.
+
+### Completed tasks
+
+| ID | Result | Evidence |
+|---|---|---|
+| I-01 | Coordination board read, claim appended and pushed (`ab7a11c`), branch created. | This section, preserved verbatim above. |
+| I-02 | Line-by-line repo review of eight inherited layers; 22 findings with official links. | `REPO_REVIEW.md`, `repo-review.html`, `research/VERIFICATION-2026-11-10.md`. |
+| I-03 | Every published number re-read against its official publisher page; 34-source register. | `data/canonical.json`, `sources.html`, `research/VERIFICATION-2026-11-10.md`. |
+| I-04 | One consolidated 20-page static site from a single generator; every table row source-linked; 29 blank cells. | `index.html`, root `*.html`, `assets/style.css`, `scripts/build_canonical.py`. |
+| I-05 | Privacy gate: PII scan extended to root HTML, CSS and `dashboard/**`; zero findings across 125 files. | `scripts/validate.py`, `tools/pii_scan.py`; `flagged.html` / `review.html`. |
+| I-06 | Shared navigation, `_config.yml`, `scripts/stage_pages.py`, `scripts/validate.py`, workflow and Jekyll byte-comparison gate. | `scripts/validate.py`, `scripts/stage_pages.py`, `.github/workflows/validate.yml`. |
+| I-07 | PR, merge and Pages deployment record. | Recorded below. |
+
+### Canonical register (verified with official links)
+
+222 evidence rows: **188 Verified**, 4 Derived (arithmetic printed), 1 Analysis, 29 Blank/Unverified. 24 risks, 8 pathways, 13 projection steps, 22 flagged items, 22 repo-review findings. 19 navigation pages published as 20 HTML files.
+
+Full row-level provenance: `data/canonical.json` → `rows[].source`, and `research/VERIFICATION-2026-11-10.md`. Every published table body row carries one of these official links:
+
+| Key | Publisher / document | Official link |
+|---|---|---|
+| `CITY` | U.S. Census Bureau — Census QuickFacts · Los Angeles city (V2025) | https://www.census.gov/quickfacts/losangelescitycalifornia |
+| `COUNTY` | U.S. Census Bureau — Census QuickFacts · Los Angeles County (V2025) | https://www.census.gov/quickfacts/losangelescountycalifornia |
+| `BLS` | U.S. Bureau of Labor Statistics — Los Angeles Area Economic Summary · updated 2026-11-04 | https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf |
+| `DOF` | California Department of Finance — July 2025 population estimates · revised release 2026-02-04 | https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/July2025_Population_Estimates_Feb26_release.pdf |
+| `BEA` | U.S. Bureau of Economic Analysis — GDP by county and personal income by county, 2024 (BEA 26-08) | https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024 |
+| `SCAG` | Southern California Association of Governments — Connect SoCal 2024 · Demographics & Growth Forecast (adopted 2024-04-04) | https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf |
+| `SECQ3` | U.S. Securities and Exchange Commission / issuer filing — Form 8-K Exhibit 99.1 · Q3 FY2026 results (quarter ended 2026-07-05) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm |
+| `SEC10K` | U.S. Securities and Exchange Commission / issuer filing — FY2025 Form 10-K (fiscal year ended 2025-09-28) | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm |
+| `IR25` | Issuer investor relations — 'JACK on Track' plan announcement · 2025-04-23 | https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx |
+| `DIRFF` | California Department of Industrial Relations — Fast Food Minimum Wage FAQ (AB 1228) | https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm |
+| `DIRMW` | California Department of Industrial Relations — Minimum Wage FAQ | https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm |
+| `ULA` | City of Los Angeles, Office of Finance — Real Property Transfer Tax and Measure ULA FAQ | https://finance.lacity.gov/faq/measure-ula |
+| `DTT` | Los Angeles County Registrar-Recorder / County Clerk — Documentary Transfer Tax · general information | https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info |
+| `FRED` | Federal Reserve H.15 via Federal Reserve Bank of St. Louis FRED — 10-Year Treasury constant maturity yield (DGS10) | https://fred.stlouisfed.org/series/DGS10 |
+| `IRS409` | Internal Revenue Service — Topic no. 409 · Capital gains and losses | https://www.irs.gov/taxtopics/tc409 |
+| `IRS1031` | Internal Revenue Service — Like-kind exchanges · real estate tax tips | https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips |
+| `FTB` | California Franchise Tax Board — Capital gains and losses (California treatment) | https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html |
+| `ASSESSOR` | Los Angeles County Assessor — Proposition 13 | https://assessor.lacounty.gov/real-estate-toolkit/proposition-13 |
+| `BOE800` | California State Board of Equalization — Publication 800-10 · How property is assessed | https://boe.ca.gov/pdf/pub800-10.pdf |
+| `BOE220` | California State Board of Equalization — Property Tax Annotation 220.0345 · Leases | https://www.boe.ca.gov/proptaxes/pdf/220_0345.pdf |
+| `PALISADES` | CAL FIRE — Palisades Fire incident record (January 2025) | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
+| `EATON` | CAL FIRE — Eaton Fire incident record (January 2025) | https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire |
+| `FHSZ` | CAL FIRE / Office of the State Fire Marshal — Fire Hazard Severity Zones | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
+| `SHAKEOUT` | U.S. Geological Survey — The ShakeOut Scenario · USGS OFR 2008-1150 | https://pubs.usgs.gov/of/2008/1150/ |
+| `UCERF3` | U.S. Geological Survey — UCERF3 · USGS Fact Sheet 2015-3009 | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
+| `EQZAPP` | California Geological Survey — EQ Zapp · earthquake hazard zone application | https://www.conservation.ca.gov/cgs/geohazards/eq-zapp |
+| `FEMA` | Federal Emergency Management Agency — FEMA Flood Map Service Center | https://msc.fema.gov/portal/home |
+| `NRI` | Federal Emergency Management Agency — National Risk Index | https://hazards.fema.gov/nri/ |
+| `ZIMAS` | Los Angeles City Planning — ZIMAS · planning and zoning information system | https://zimas.lacity.org/ |
+| `CDEPROF` | California Department of Education — District Profile · Los Angeles Unified (2025-26) | https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000 |
+| `CDELARGE` | California Department of Education — Largest & Smallest Public School Districts (2025-26) | https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp |
+| `DASH` | California Department of Education — California School Dashboard · Los Angeles Unified 2025 academic engagement | https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement |
+| `CDEEOY` | California Department of Education — 2024-25 End-of-Year Reports | https://www.cde.ca.gov/ds/cm/dqeoy25.asp |
+| `CDEACGR` | California Department of Education — Adjusted Cohort Graduation Rate data files | https://www.cde.ca.gov/ds/ad/filesacgr.asp |
+
+### Verification conclusions (official pages re-read 2026-11-10)
+
+- Census QuickFacts V2025 city / county: city 3,869,089 (−0.8% vs 2020 base), county 9,694,934 (−3.2%); median household income $81,939 / $90,112. <https://www.census.gov/quickfacts/losangelescitycalifornia> · <https://www.census.gov/quickfacts/losangelescountycalifornia>
+- BLS LA Area Economic Summary updated 2026-11-04: metro unemployment 4.4%, payrolls 6,282.1k (+0.5%), CPI-U +3.7%, ECI +3.9%. <https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf>
+- SEC Q3 FY2026 8-K Exhibit 99.1: same-store sales −1.1%, 2,115 restaurants, 17 quarterly closures, FY2026 guidance of 50–60 closures, franchise rental revenue −6.8% (derived). <https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm>
+- Issuer 2025 plan: 150–200 block closures, 80–120 by 2025-12-31, ~1%/yr ongoing rate, real-estate sales. <https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx>
+- CA DOF February-2026 revised July-2025 estimates: LA County 9,853,435 (−0.45% YoY); kept separate from Census V2025. <https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/July2025_Population_Estimates_Feb26_release.pdf>
+- BEA 2024 county release: $818.5bn is LA County personal income (current dollars), **not GDP**; metro statistics discontinued. <https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024>
+- SCAG adopted Connect SoCal 2024: regional employment 8,937k (2022) → 10,276k (2050), +0.50%/yr; planning forecast, not a property forecast. <https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf>
+- LA County documentary transfer tax `$0.55 per $500 (0.11%)` verified; closes stale V-3. <https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info>
+- City of LA base 0.45% + Measure ULA 4% / 5.5% above $5.4m / $10.9m after 2026-06-30. <https://finance.lacity.gov/faq/measure-ula>
+- LAUSD graduation 86.5% (2025) with 2019–2025 series; closes stale V-4. <https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement>
+- DIR: $16.90 state minimum from 2026-01-01; $20.00 covered fast-food floor; no official 2027 rate. <https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm> · <https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm>
+- FRED DGS10: 4.84% on 2026-11-05, 4.86% on 2026-11-06; both dated observations. <https://fred.stlouisfed.org/series/DGS10>
+- Hazards: UCERF3 60% 30-yr M≥6.7 LA region; ShakeOut ~1,800 deaths / $213bn; Palisades 6,845 and Eaton 9,419 structures destroyed in January 2025. <https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf> · <https://pubs.usgs.gov/of/2008/1150/> · <https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire> · <https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire>
+- Schools: LAUSD enrollment 497,105 and 81,328 English learners (16.4%); statewide ACGR 87.5%. <https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000> · <https://www.cde.ca.gov/ds/cm/dqeoy25.asp>
+- Taxes: Prop 13 1% levy / 2% cap, 35-year leasehold change-in-ownership rule, §1031 deferral, CA ordinary-income treatment of capital gain. <https://assessor.lacounty.gov/real-estate-toolkit/proposition-13> · <https://www.boe.ca.gov/proptaxes/pdf/220_0345.pdf> · <https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips> · <https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html>
+
+### Irregularities flagged (non-blocking, published)
+
+29 blank value cells, 22 flagged items and 22 repo-review findings are published on `review.html` / `flagged.html` with official links. Highlights: Census vs DOF population vintages; BEA personal-income mislabelling in inherited `docs/`; 150–200 block closures vs 50–60 FY2026 guidance; franchise termination date wrongly equated with lease expiry; unsupported scenario weights in `advisory/`; non-official citations in `analysis/`; repository account handle in 26 `decision-file/` HTML files; stale V-3 / V-4 gaps now closed; IRS 2025 thresholds; FEMA NRI unreadable; city race-alone shares inconsistent; 2027 minimum wage not on DIR. Full detail: `REPO_REVIEW.md` and `repo-review.html`.
+
+### Build / verification gates
+
+- `python3 scripts/build_canonical.py` → 20 pages + `data/canonical.json` + `research/VERIFICATION-2026-11-10.md` + `REPO_REVIEW.md`.
+- `python3 scripts/validate.py` → PASS: row provenance, 25 official hosts, blank-value rule, internal links, PII, deterministic rebuild.
+- `python3 scripts/stage_pages.py` → PASS: 21-file artifact, every row source-linked, every link resolves.
+- Legacy checkers `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py`, `_advisory_src/verify_advisory.py`, `_dashboard_src/verify.py` → all PASS.
+- Simulated Jekyll output matched the curated artifact byte-for-byte; CI runs the real Ruby/Jekyll build.
+- `_config.yml` now publishes only root `*.html` + `assets/style.css`; `dashboard/` and all companion layers are excluded. `theme: null` and `layout: null` front matter prevent theme wrapping.
+
+### Cross-session requests (logged, not edited)
+
+XR-B1 recorded above remains open for the owners of the repository-only layers. No other session’s files were edited; all shared outputs were changed only by this final-integration session.
+
+### PR / merge / Pages record
+
+| Item | Record |
+|---|---|
+| Pull request | _to be filled after PR creation_ |
+| Merge result | _to be filled after merge_ |
+| Pages deployment | _to be filled after live verification_ |
+
