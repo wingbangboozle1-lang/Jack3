@@ -1,161 +1,149 @@
-# Executive Summary — Asset A
+# Executive summary
 
-**Subject:** a single-tenant Jack in the Box net-leased (NNN) restaurant property, central Los Angeles, reported by
-the owner to expire between 2030 and 2035.
+**Asset:** one single-tenant Jack in the Box net-leased restaurant property, central Los Angeles, anonymised as
+"Asset A". The owner reports a lease expiring between 2030 and 2035.
 **Question:** sell before expiry, or renew?
-**Owner's objective:** preserve capital *and* retain growth optionality at a manageable level of risk.
-**Evidence snapshot:** 2026-11-08. **Full record:** `research/VERIFICATION-2026-11-08.md`.
-**Published dashboard:** <https://wingbangboozle1-lang.github.io/Jack3/>
-
-> **Privacy.** The asset is published as *Asset A*. No address, parcel number, owner name, contact detail, rent roll,
-> lease or financial statement is collected, stored or published. Nothing in this file identifies a person or a parcel.
-> The earlier summary dated 2026-11-06 is archived unchanged at
-> `research/archive/EXECUTIVE_SUMMARY-2026-11-06-superseded.md`; it quoted superseded August-2026 labour figures and a
-> Measure ULA threshold schedule that has since been replaced. It is retained for audit, not for use.
+**Snapshot:** 10 November 2026. Every value below was read on an official page that day; the row-level record is in
+[`research/VERIFICATION-2026-11-10.md`](research/VERIFICATION-2026-11-10.md).
+**Live dashboard:** https://wingbangboozle1-lang.github.io/Jack3/
 
 ---
 
-## 1. Recommendation
+## 1. The recommendation
 
-> **Run both tracks at once: start a confidential sale process 24–36 months before the earliest expiry, and demand the
-> tenant's renewal terms in writing. Convert to whichever the documents support — a verified after-tax sale, or an
-> enforceable extension of ten years or more at market rent with acceptable credit. What is not defensible is allowing
-> a 2030–2035 option clock to run out on regional averages alone.**
+**Run a dual track now, and decide on documents rather than forecasts.**
 
-This is analyst judgement on verified public evidence plus the owner's stated facts. It is **not** a valuation, an
-appraisal, a tax opinion or personalised investment advice, and it does not assume a price, rent or cap rate.
+1. **Take the asset to market confidentially**, starting 24–36 months before the earliest possible expiry, and
+2. **in the same quarter, demand renewal terms in writing** — rent, escalators, option terms, expense caps and a
+   guaranty.
 
-**Why the sale track leads:** every verified trend that touches this asset is flat or negative, the tenant is
-contracting and is itself selling real estate, and the owner's principal risk is a single-tenant vacancy at an unknown
-future date. Marketing while the income is contractual keeps the owner's options open; waiting transfers the timing
-decision to the tenant.
+Then convert to whichever the documents support: a verified after-tax bid, or an enforceable extension of ten years or
+more at market rent with acceptable credit. What is not defensible is letting an option clock run out while relying on
+regional averages.
 
-**Why the renewal track runs in parallel:** an extension converts a wasting asset into a longer income stream and
-usually widens the buyer pool. If the tenant will commit in writing, the owner can choose between two priced
-alternatives instead of one. The discipline is that only a **signed, enforceable, credit-supported** extension counts.
+This is a **conditional recommendation on public evidence**, not a valuation, not legal or tax advice, and not a
+personalised recommendation. The property's identity, rent, basis, debt and lease are not public documents; this
+project deliberately does not hold them, and no number has been invented to fill the gap.
 
-### Decision matrix
+**Why not simply "renew" or simply "sell":**
 
-| Route | Trigger that makes it correct | Dominant risk | Verdict |
+* **Renewing** is only rational against a signed document. The tenant is closing about 1% of its system a year, closed
+  17 units against 4 openings in a single quarter, and its franchise-level margin fell to 37.4% from 39.3% with higher
+  bad debt. A lease with three to nine years left on a shrinking brand is a wasting asset with a single obligor.
+* **Selling** is expensive and irreversible. Transfer taxes alone take 4.56% of a $6.0 million City of Los Angeles
+  sale, before commission, escrow and tax on gain. Selling into a market with no verified bid is speculation in the
+  other direction.
+
+The dual track costs the owner a broker's preparation work and a tenant conversation. It buys the two things that
+cannot be bought later: a real market price, and a real renewal offer.
+
+## 2. The six findings that drive it
+
+| # | Finding | Value | Source |
 |---|---|---|---|
-| **Sell with a §1031 replacement identified** | A documented, after-tax bid that beats the risk-adjusted hold case, with a replacement in sight | Replacement-asset risk; price risk if marketed late | **Primary track** |
-| **Extend, then sell or hold** | Tenant offers ≥10 years at market rent, credit-supported, on acceptable expense terms | Concessions; locking poor economics; no guaranteed cap-rate benefit | **Run in parallel; act only on signed terms** |
-| **Hold to expiry unchanged** | Contractual income, adequate reserves and verified insurance cover | Expiry vacancy, tenant default, capital calls at the worst moment | **Reject as a plan** |
-| **Re-tenant / reposition** | Verified alternate demand and permitted use justify vacancy and build-out | Downtime, incentives, entitlement, construction cost | Fallback only |
-| **Redevelop / ground lease** | Independently costed residual land value beats the existing-use value | Permitting, environmental, financing | Not the wealth-preservation route |
-| **Sale without exchange** | Owner wants liquidity and accepts the tax | Immediate capital-gains and depreciation-recapture tax | Rational only if liquidity dominates |
+| 1 | The city and county are losing population | City −0.8%, county −3.2% from the 2020 estimates base to July 2025 | [Census QuickFacts, LA city](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225) |
+| 2 | Jobs are growing more slowly than prices | Metro payrolls +0.5% y/y; LA CPI-U +3.7% y/y (Sep 2026) | [BLS LA Area Economic Summary](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) |
+| 3 | Labour cost is rising faster than a typical escalator | LA total compensation +4.2%, wages +3.9% y/y (Sep 2026) | [BLS ECI, Los Angeles](https://www.bls.gov/regions/west/news-release/employmentcostindex_losangeles.htm) |
+| 4 | The tenant is shrinking its own system | −1.1% same-store sales; 17 closures vs 4 openings in Q3 FY2026; 150–200 unit closure programme; ~1% a year thereafter | [Q3 FY2026 release](https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx) · [JACK on Track](https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx) |
+| 5 | Exit value is very sensitive to the exit yield | 10-year Treasury 4.88% (2026-11-09). A 6.0%→8.0% exit cap removes 25.0% of value for the same rent | [Treasury daily par yields](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611) |
+| 6 | Selling here is expensive, and there is a cliff | 0.45% city base + 4% ULA above $5.4m + county rate = 4.56% of a $6.0m sale; at $5.4m the ULA line disappears | [City of LA, Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) · [Rev. & Tax. Code §11911](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=11911) |
 
-### What would change this recommendation
+The sixth finding is the one most likely to be missed: **the ULA threshold is a cliff, not a slope.** A negotiated
+price of $5.4 million can net the seller more than $5.5 million once the 4% surcharge is removed. That is an argument
+for pricing discipline at the exit, and for checking the indexed threshold in the year of sale.
 
-1. A **signed extension** at market rent with acceptable credit — this would move the hold/extend route to the front.
-2. A **verified after-tax bid** that clearly exceeds the hold case.
-3. **Block-level evidence** that this specific trade area is growing: the city and county aggregates published here
-   cannot show that.
-4. A change in the **owner's liquidity needs or risk tolerance**, which is private information not modelled here.
+## 3. Decision matrix
 
----
+Scored on verified evidence only. Higher is better for the owner's stated objectives: preserve wealth, keep growth
+optionality, keep risk manageable.
 
-## 2. The six findings that drive the decision
+| Route | Wealth preservation | Growth optionality | Risk level | Verdict |
+|---|---|---|---|---|
+| **Dual track: market + written renewal demand** | High — a real bid and a real offer, compared | High — either outcome remains available | **Lowest** — no commitment made until documents exist | **Recommended** |
+| Sell now, without a renewal conversation | Medium — price is whatever one bidder pays | Low — exposure removed | Low, but irreversible | Acceptable if liquidity is the priority |
+| Sell via §1031 into a replacement | Medium — tax deferred, not forgiven | Medium | Medium — 45/180-day clock forces a purchase under time pressure | Only with a replacement identified first |
+| Renew now on the tenant's terms | Low if rent is below market for a decade | Low | Medium-high — a decade of single-tenant concentration | Reject unless terms pass the four tests in §4 |
+| Hold to expiry, then negotiate | Low | Low | **Highest** — at expiry the landlord has no income and the tenant has no obligation | Reject |
+| Re-tenant or redevelop | Unknown | High | High — entitlement, capital and downtime | Out of scope without a parcel and a feasibility study |
 
-Every figure below was re-read from the linked publisher page on 2026-11-08.
+## 4. The risk balance
 
-**1. The tenant is contracting, and closure timing is tied to franchise-agreement dates.**
-Jack in the Box reports system same-store sales of **−1.1%** and systemwide sales **−1.4%** for the quarter ended
-2026-07-05, with **17 closures and 4 openings**, leaving **2,115** restaurants (149 company, 1,966 franchise). Franchise-
-level margin fell to **37.4%** from 39.3%, driven by lower rent and royalty revenue and **higher bad-debt expense**. The
-2025 "JACK on Track" plan closes **150–200 underperforming restaurants**, with the balance closing "based upon
-respective franchise agreement termination dates", and guides to roughly **1% of system units closing annually from
-FY2026". The same plan **sells selected owned real estate** to pay down debt — which adds competing supply of
-Jack-branded net-lease assets. → [Q3 FY2026 release](https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx) ·
-[JACK on Track](https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx)
+**Business as usual — the risks that recur every year**
 
-> This is chain-level evidence. It does **not** establish this restaurant's sales, rent coverage, franchise term or
-> renewal intention, and it must not be read as a closure probability for this site.
+| Risk | Verified context | What keeps it manageable |
+|---|---|---|
+| Income concentration | One lease funds 100% of the income | Reserve 12–18 months of full carrying cost; cap this asset's share of net worth at a level that can be lost without changing plans |
+| Wage and cost pressure | Fast food floor $20.00/hour since 2024-04-01; state floor $16.90/hour from 2026-01-01; LA compensation +4.2% | Check the lease escalator against LA CPI. An escalator below 3.7% loses real ground every year |
+| Exit-yield risk | 10-year at 4.88%; a 200 bp move in the exit cap costs 25.0% of value | Stress the exit at 6.0% and 8.0% before deciding; do not assume cap-rate compression |
+| Tenant credit drift | 17 closures in a quarter; margin compression; higher bad debt | Verify the legal obligor and guaranty — a franchisee is not the brand |
+| Transaction cost | 4.56% of a $6.0m city sale in transfer taxes alone | Model net proceeds, not gross price; watch the $5.4m ULA cliff |
+| Exchange timing | 45 days to identify, 180 days to close; not extendable | Identify the replacement before listing, not after closing |
 
-**2. Regional demand is flat to declining.** LA city population **3,869,089**, **−0.8%** from the 2020 estimates base;
-LA County **−3.2%**. Poverty **16.5%**; median household income **$81,939** (2024 dollars); 36.0% owner-occupied
-housing. → [Census QuickFacts, LA city](https://www.census.gov/quickfacts/losangelescitycalifornia) ·
-[LA County](https://www.census.gov/quickfacts/losangelescountycalifornia)
+**Black swans — events that can remove the local economy**
 
-**3. Job growth is thinner than costs.** Metro nonfarm payrolls **+0.5%** year over year (September 2026), with
-education & health **+3.8%** and information **−5.7%**; unemployment 4.5% city and county, 4.4% metro; CPI-U **+3.7%**
-and ECI **+3.9%**; average weekly wage **$1,704** (Q1 2026). → [BLS LA summary, updated 2026-11-04](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf)
+| Event | Verified severity | Honest position |
+|---|---|---|
+| Wildfire | January 2025: **16,264 structures destroyed in Los Angeles County in 24 days** (Palisades 6,845; Eaton 9,419) | The parcel's hazard zone has not been checked. CAL FIRE maps hazard, not risk. Insurance availability and pricing can reprice for the whole region |
+| Southern San Andreas earthquake | USGS/CGS modelled M7.8: **~1,800 deaths, ~$213 billion of economic losses** across eight counties | A scenario, not a forecast. Ground-failure zone at the parcel unknown; CGS states its map is no substitute for a geotechnical investigation |
+| Flood | FEMA is the official NFIP source; maps change over time | No parcel zone assigned |
+| Pandemic / civil unrest / utility outage | No agency publishes a probability | Model as an income-interruption test, not a probability. Confirm rent-loss cover responds |
 
-**4. The wage floor is a permanent cost.** Covered fast-food employees are paid at least **$20.00/hour** (AB 1228, from
-2024-04-01); the state minimum is **$16.90/hour** from 2026-01-01. A fixed-escalator lease does not pass this through to
-the landlord — it passes it to the tenant's margin, and therefore to renewal willingness. →
-[DIR fast food FAQ](https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm) ·
-[DIR minimum wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm)
+**The four tests that make any decision manageable** — if the answer to any is "no", the evidence favours selling:
 
-**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **4.84%** on 2026-11-05 —
-a market anchor, not the owner's required return. A sale inside the City of Los Angeles pays a **0.45%** base transfer
-tax plus **Measure ULA at 4% above $5,400,000 and 5.5% at or above $10,900,000** for closings after 2026-06-30 (ULA is
-measured on gross value; the base tax on value net of liens; thresholds indexed to Chained CPI). Property tax is a
-**1%** general levy with a **2%** annual assessed-value cap, reassessed on change of ownership. California taxes capital
-gains as **ordinary income**; federal long-term rates are **0/15/20%** with a **25%** maximum on unrecaptured §1250 gain;
-**§1031** defers — and does not eliminate — the gain on real property held for investment. →
-[LA County Assessor · Prop 13](https://assessor.lacounty.gov/real-estate-toolkit/proposition-13) ·
-[City of LA Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) ·
-[IRS Topic 409](https://www.irs.gov/taxtopics/tc409) · [IRS §1031](https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips) ·
-[CA FTB](https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html) ·
-[FRED DGS10](https://fred.stlouisfed.org/series/DGS10)
+1. Can the owner carry 12–18 months of full cost with zero rent?
+2. Is the obligor and guaranty verified in writing?
+3. Do the insurance limits, deductibles and rent-loss cover actually respond to fire and quake?
+4. Is this asset's share of net worth survivable if it goes to zero?
 
-**6. Catastrophe risk is regional, not theoretical.** The 2025 Palisades and Eaton fires destroyed **16,264 structures**
-in Los Angeles County (6,845 + 9,419) within 24 days. USGS's ShakeOut scenario models a plausible **M7.8** southern San
-Andreas earthquake at **~1,800 deaths and ~$213bn** in economic losses. Post-event insurance availability and pricing can
-change for the whole region, which is a value risk even for a building that survives. →
-[CAL FIRE Palisades](https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire) ·
-[CAL FIRE Eaton](https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire) ·
-[USGS OFR 2008-1150](https://pubs.usgs.gov/of/2008/1150/)
+## 5. Projection system
 
-> Note the caveat that matters: hazard **maps** classify physical potential, not this parcel's risk. No parcel overlay,
-> structural report, policy or claim history was available.
+The dashboard publishes the reproducible part of a forecast and refuses the rest.
 
----
+**Verified anchors** — 10-year Treasury 4.88% (2026-11-09); LA CPI-U +3.7%; LA total compensation +4.2%; metro
+payrolls +0.5%; city population −0.8%.
 
-## 3. Risk balance — keeping risk manageable in both directions
+**Arithmetic anyone can check** — value per $1 of NOI at exit caps from 5.0% to 8.0%; present value of $1 in 2030 at
+0.8264; transfer taxes on a $6.0 million city sale at $273,600. Each is recomputed by `scripts/validate.py` on every
+build.
 
-| Risk | Type | How it damages wealth | Pre-emptive control |
-|---|---|---|---|
-| Single-tenant vacancy at or before expiry | Business as usual | Loses 100% of rent plus taxes, insurance and re-letting cost | Start marketing early; size reserves for a 12–24 month void |
-| Tenant default / accelerated closure | Business as usual | Rent stops before any contractual end date | Verify the legal obligor and any guaranty; obtain estoppel |
-| Interest-rate and exit-yield shift | Business as usual | Same rent, lower price | Price off current bids, not peak assumptions |
-| Tax and transaction cost | Business as usual | ULA + transfer tax + depreciation recapture cut net proceeds | Model after-tax proceeds before choosing a route |
-| Regulatory and use risk | Business as usual | Drive-through or operating restrictions on re-tenanting | Confirm zoning, non-conforming rights and entitlements |
-| Wildfire (smoke, access, insurance repricing) | Tail | Uninsured loss, regional insurance withdrawal | Check limits, deductibles, exclusions and rent-loss cover |
-| Earthquake ground failure | Tail | Physical loss plus business interruption | Geotechnical review; retrofit assessment; coverage review |
-| Flood / severe storm | Tail | Water damage, closure, uninsured contents | Check the effective FEMA map for the parcel |
-| Correlated catastrophe or pandemic | Tail | Rent interruption and illiquid exit simultaneously | Hold liquidity outside the asset; avoid forced-sale dependence |
+**Deliberately withheld** — a 2030–2035 sale price, a cap rate, a rent projection or a renewal probability. No
+government agency publishes private-market cap rates or a parcel-level forecast. Compounding a regional trend into a
+price produces an artefact of the rule, not evidence.
 
-**The balance to strike:** the sale track protects the *floor* (it converts an uncertain future into a priced present);
-the renewal track protects the *ceiling* (it preserves income and optionality). Running them in parallel is the only
-route that keeps both without betting on a single forecast. Everything that would convert this from judgement into a
-valuation is private information — rent, term, guaranty, basis, debt — and is not guessed here.
+## 6. What would change the answer
 
----
+| Trigger | Converts the recommendation to |
+|---|---|
+| Tenant declines to extend on market terms, or asks for a rent cut | Sale |
+| Tenant closes this unit, or the franchisee fails | Sale, at whatever the market offers |
+| Insurance premium or retention makes the net rent unacceptable | Sale |
+| A verified after-tax bid exceeds the risk-adjusted hold value | Sale |
+| Owner's liquidity or concentration need changes | Sale, or hold for income — owner's judgement |
+| Signed 10-year extension at market rent with a creditworthy guaranty | Renew |
+| Verified block-level trade-area growth (not city averages) | Hold or renew |
+| A replacement property identified before listing | Sale through §1031 |
 
-## 4. What is deliberately blank (and why)
+## 7. What this analysis cannot do
 
-No address, parcel, lease, rent, NOI, cap rate, sale price, basis, debt, insurance policy, structural report or school
-assignment was available. Those cells are published as **blank and marked Unverified** on the dashboard; nothing has
-been inferred or filled in. The full list, with the official page that could close each item, is on the
-[Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/review.html) page.
+* It cannot value the property: rent, NOI, basis and debt are absent, and no cap rate is published by any official
+  source.
+* It cannot assign the parcel's fire, seismic or flood zone: there is no address.
+* It cannot assess school assignment or trade-area demographics: the same reason.
+* It cannot compute after-tax proceeds: the owner's basis and bracket are private and deliberately not collected.
+* It is not legal, tax or investment advice.
 
-Known open items include: the executed lease and exact expiry; the legal tenant, guarantor and any franchisee
-obligation; store-level sales, rent coverage and arrears; the parcel's zoning and hazard overlays; effective insurance
-terms; LA County's documentary transfer tax rate (the Recorder page could not be retrieved on 2026-11-08); and the
-LAUSD graduation rate (the CDE district file was not extracted).
+Every one of these gaps is listed on the dashboard's **Flagged for review** page with the specific check that would
+close it. Nineteen items are published there; none of them blocks the recommendation, and none of them has been filled
+with an estimate.
 
----
+## 8. Immediate actions
 
-## 5. Method and limits
-
-- **Official sources only** for published values: U.S. Census Bureau, Bureau of Labor Statistics, Federal Reserve,
-  California DIR, California Department of Education, California FTB, LA County Assessor, City of Los Angeles Office of
-  Finance, CAL FIRE, USGS, FEMA, IRS, and Jack in the Box Inc. issuer filings.
-- **Verified** means the publisher reports the observation — never that it predicts this property. **Analysis** rows are
-  labelled reasoning. **Unverified** rows contain no value.
-- No model was trained, back-tested or calibrated; no numerical forecast, cap rate or renewal probability is published.
-  Compounding a 2020–2025 change forward is arithmetic, not evidence, and is not presented as a projection.
-- No personal information is published, and no attempt was made to identify the owner, the parcel or any individual.
-- Sources are rolling documents and can be revised after 2026-11-08. Re-check before acting.
+| When | Action | Why |
+|---|---|---|
+| This week | Read the lease and amendments. Photograph the option and notice clauses | The 2030–2035 range is not a document, and notice windows are commonly 6–12 months before expiry |
+| This week | Request a tenant estoppel and three years of store P&Ls or sales reports | The only way to establish rent coverage |
+| This month | Ask the tenant, in writing, for renewal terms for ten years at market rent | Produces the alternative that the sale must beat |
+| This month | Order a broker opinion of value **and** an independent appraisal | A price, not a promise |
+| This month | Get an insurance review: limits, deductibles, exclusions, rent-loss cover | Post-2025 wildfire repricing is now a first-order economic variable |
+| Before listing | Run the three free official overlays once an address is available: CAL FIRE FHSZ, CGS EQ Zapp, FEMA flood map | Closes three of the open items at no cost |
+| Before signing either way | Apply the four risk-balance tests in §4 | This is the line between a manageable position and a concentrated bet |

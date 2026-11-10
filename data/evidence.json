@@ -1957,43 +1957,53 @@
    {
     "id": "F-15",
     "indicator": "Irregularity: non-official sources inside inherited layers",
-   "value": "",
-   "geography": "This repository",
-   "period": "Found during the 2026-11-10 review",
-   "source": "bls",
-   "status": "Needs review",
-   "note": "analysis/ cites a commercial brokerage domain and a private law firm; _advisory_src/ cites a commercial brokerage. Nothing on the published site depends on them. They are retained in the repository and excluded from the artifact."
-  },
-  {
-   "id": "F-16",
-   "indicator": "Irregularity: duplicate dashboards with conflicting unverified figures",
-   "value": "",
-   "geography": "This repository",
-   "period": "Found during the 2026-11-10 review",
-   "source": "cdeacgr",
-   "status": "Needs review",
-   "note": "dashboard/, analysis/, brief/, pages/, docs/ and decision-file/ each present a different dashboard with different headline numbers and different recommendations. dashboard/ in particular asserts an LAUSD graduation rate of 86.5% that could not be retrieved from CDE on the review date. The curated root site is the only one this session can vouch for; the others are excluded from the artifact and left in place as an audit trail."
-  },
-  {
-   "id": "F-17",
-   "indicator": "Irregularity: open pull requests from earlier sessions",
-   "value": "",
-   "geography": "This repository",
-   "period": "As of 2026-11-10",
-   "source": "scag",
-   "status": "Needs review",
-   "note": "PRs #4, #12, #22, #26, #31, #32 and #34 remain open from earlier sessions. They are stale and several are red on CI. This session does not merge or close another session's pull request; they are listed in COORDINATION.md for the owner."
-  },
-  {
-   "id": "F-18",
-   "indicator": "Irregularity: property tax add-ons and parcel bill",
-   "value": "",
-   "geography": "Subject parcel",
-   "period": "Not obtained",
-   "source": "prop13",
-   "status": "Unverified",
-   "note": "Low. The 1% general levy is verified, but the actual bill includes voter-approved debt and direct assessments that can add materially. The parcel tax bill would close it."
-  }
+    "value": "",
+    "geography": "This repository",
+    "period": "Found during the 2026-11-10 review",
+    "source": "bls",
+    "status": "Needs review",
+    "note": "analysis/ cites a commercial brokerage domain and a private law firm; _advisory_src/ cites a commercial brokerage. Nothing on the published site depends on them. They are retained in the repository and excluded from the artifact."
+   },
+   {
+    "id": "F-16",
+    "indicator": "Irregularity: duplicate dashboards with conflicting unverified figures",
+    "value": "",
+    "geography": "This repository",
+    "period": "Found during the 2026-11-10 review",
+    "source": "cdeacgr",
+    "status": "Needs review",
+    "note": "dashboard/, analysis/, brief/, pages/, docs/ and decision-file/ each present a different dashboard with different headline numbers and different recommendations. dashboard/ in particular asserts an LAUSD graduation rate of 86.5% that could not be retrieved from CDE on the review date. The curated root site is the only one this session can vouch for; the others are excluded from the artifact and left in place as an audit trail."
+   },
+   {
+    "id": "F-17",
+    "indicator": "Irregularity: open pull requests from earlier sessions",
+    "value": "",
+    "geography": "This repository",
+    "period": "As of 2026-11-10",
+    "source": "scag",
+    "status": "Needs review",
+    "note": "PRs #4, #12, #22, #26, #31, #32 and #34 remain open from earlier sessions. They are stale and several are red on CI. This session does not merge or close another session's pull request; they are listed in COORDINATION.md for the owner."
+   },
+   {
+    "id": "F-18",
+    "indicator": "Irregularity: property tax add-ons and parcel bill",
+    "value": "",
+    "geography": "Subject parcel",
+    "period": "Not obtained",
+    "source": "prop13",
+    "status": "Unverified",
+    "note": "Low. The 1% general levy is verified, but the actual bill includes voter-approved debt and direct assessments that can add materially. The parcel tax bill would close it."
+   },
+   {
+    "id": "F-19",
+    "indicator": "Irregularity: City of Los Angeles race shares do not reconcile",
+    "value": "",
+    "geography": "City of Los Angeles / Los Angeles County",
+    "period": "2020-2024 ACS / V2025 (read 2026-11-10)",
+    "source": "city",
+    "status": "Needs review",
+    "note": "City race-alone percentages sum to about 74.3% (33.4 White + 8.4 Black + 1.3 AIAN + 12.1 Asian + 0.2 NHPI + 18.9 two-or-more), while the county equivalents sum to about 99.8%. Reproduced on re-read, so it is not a transcription error in this repository. No race breakdown is published anywhere on this site rather than publishing components that do not reconcile; it is an interpretive discrepancy in the QuickFacts vintage, not a figure needed for the decision."
+   }
   ]
  }
 }
