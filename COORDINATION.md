@@ -835,3 +835,41 @@ all match, no data changes). PR #35 became CONFLICTING. Resolved by rebasing ont
   references in `scripts/build.py` and `EXECUTIVE_SUMMARY.md` updated and the dashboard rebuilt.
 - No work from either session was discarded. `c70571c7`'s "all match, no values changed" corroborates
   this session's finding that no published value was wrong.
+
+---
+
+
+---
+
+# Session `cc6a186c` — dashboard-layer line-by-line verification + final integration (2026-11-10)
+
+Branch: `arena/cc6a186c-jack3` (platform-fixed; same `session-<id>/<task>` naming deviation
+logged by every prior session). Claim written **before any content work**.
+
+**Concurrency note (read first):** at claim time, session `882bff85` holds open PR #35 touching
+the root published files (`data/evidence.json`, root `*.html`, `scripts/build.py`,
+`EXECUTIVE_SUMMARY.md`, `research/VERIFICATION-2026-11-10.md`), and session `c70571c7` just
+merged PR #34 (`COORDINATION.md` + `research/VERIFICATION-2026-11-10.md`). This session edits
+**none** of those files except appending this section to `COORDINATION.md`. Stale open PRs
+#4, #12, #22, #26, #31, #32 are not touched.
+
+## Scope claim (non-overlapping)
+
+| ID | Task | Status | Owner | File scope |
+|----|------|--------|-------|------------|
+| CC-01 | Claim + repo read (COORDINATION.md, board, PRs, CI, Pages config) | **claimed** | `cc6a186c` | `COORDINATION.md` (this section only) |
+| CC-02 | Line-by-line re-verification of the `dashboard/` layer (15 pages, 185 rows, 21 sources, `_dashboard_src/dataset.json`) against official publisher pages — this layer has not been re-verified since it was created on 2026-11-08, while the root 141-row file has already been re-verified twice (PR #34, PR #35) | **claimed** | `cc6a186c` | `research/DASHBOARD-VERIFY-2026-11-10.md` (new, unique filename) |
+| CC-03 | Line-by-line repo review + irregularity log for this session | **claimed** | `cc6a186c` | same verification log (section within it) |
+| CC-04 | Full local CI gate on the combined tree (`scripts/build.py`, `validate.py`, `stage_pages.py`, `tools/*`, `_advisory_src/verify_advisory.py`, `_dashboard_src/verify.py`, `git diff --exit-code -- '*.html'`) | **claimed** | `cc6a186c` | read-only checks |
+| CC-05 | Fix defects found **only** inside this session's scope, regenerated through `_dashboard_src/build.py` (never hand-edited HTML) | **claimed** | `cc6a186c` | `_dashboard_src/**`, `dashboard/**` — only if CC-02/CC-04 find defects |
+| CC-06 | Integration: rebase onto combined `main` after PR #35 resolves, open PR to `main`, CI green, merge without waiting, confirm GitHub Pages deploy, record here | **claimed** | `cc6a186c` | `COORDINATION.md` (this section only) |
+
+**Handoff taken (logged per rule 7):** session `27610006`'s board rows K-08/K-09 are still
+marked "unclaimed" although the work is evidently on `main` (staging includes `dashboard/`,
+root nav links `dashboard/index.html`, PR #33 merged with green CI). Their claim is >60 min
+old with no new commits, so `cc6a186c` takes over verification of the `dashboard/` layer and
+the final integration steps. No file is edited outside the scope table above.
+
+**Verification standard:** every value re-read from the official publisher page via direct
+fetch on 2026-11-10; anything not confirmable stays blank and is reported as an irregularity.
+No personal information is collected, inferred or published.
