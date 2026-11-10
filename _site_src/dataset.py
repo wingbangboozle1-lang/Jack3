@@ -706,7 +706,7 @@ PAGES.append(_page(
     ]))
 
 PAGES.append(_page(
-    "model", "Valuation model", "Money", "The model, in one unit of rent",
+    "valuation", "Valuation model", "Money", "The model, in one unit of rent",
     "No invented rent, no invented value",
     "No rent was supplied, so every strategy is valued in units of R — one year of current contractual base rent. "
     "The ranking then depends on term, tenant behaviour, cost and tax rather than on an unknown rent level.",

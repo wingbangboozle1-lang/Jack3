@@ -167,7 +167,7 @@ for k in ("D", "A", "E", "C", "B"):
         f'<tr><td><b>{E(s["name"])}</b></td><td class="num">{s["floor"]:.2f}</td>'
         f'<td class="num">{s["expected"]:.2f}</td><td class="num">{s["ceiling"]:.2f}</td>'
         f'<td class="num">{s["mean_rank"]:.2f}</td>'
-        f'<td class="src"><span class="badge int">Internal</span> <a href="model.html">model</a></td></tr>'
+        f'<td class="src"><span class="badge int">Internal</span> <a href="valuation.html">model</a></td></tr>'
     )
 
 index_body = f"""
@@ -218,7 +218,7 @@ index_body = f"""
       and the rent. Extending the lease is the only action available to the owner that lengthens the stream without selling.</p>
       <p>Because the rent was never disclosed, this file does not assert a dollar value. It values every strategy in units of
       <b>R</b>, one year of current base rent, and ranks them on the worst case.</p>
-      <a href="model.html">How the model works →</a>
+      <a href="valuation.html">How the model works →</a>
     </div>
   </div>
 </section>
@@ -226,7 +226,7 @@ index_body = f"""
 <section>
   <h2 class="sec">Five pathways, scored on the downside</h2>
   <p class="sub">Values are present values in units of R. <b>Floor</b> is the pessimistic scenario — the number that matters when the
-  objective is preserving wealth. Full assumptions are on the <a href="model.html">valuation model</a> page.</p>
+  objective is preserving wealth. Full assumptions are on the <a href="valuation.html">valuation model</a> page.</p>
   <div class="tablewrap">
     <table>
       <caption>Deterministic model, three scenarios, 2026–2036 horizon</caption>

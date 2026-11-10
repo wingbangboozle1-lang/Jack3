@@ -33,7 +33,7 @@ PAGES = [
     "schools.html",
     "tenant.html",
     "taxes.html",
-    "model.html",
+    "valuation.html",
     "hazards.html",
     "risk-register.html",
     "sources.html",

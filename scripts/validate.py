@@ -209,8 +209,35 @@ def check_published_files():
             fail(f"stylesheet contains an external reference: {bad}")
 
 
+def check_jekyll_collision():
+    """A published page must not collide with an _config.yml exclude token.
+
+    Jekyll's exclude entries are plain names, so an entry such as `model`
+    excludes both the `model/` directory and a `model.html` file. That silent
+    removal took the site down once; it is now a build failure.
+    """
+    config = (ROOT / "_config.yml").read_text().splitlines()
+    tokens = set()
+    in_exclude = False
+    for line in config:
+        if line.startswith("exclude:"):
+            in_exclude = True
+            continue
+        if in_exclude:
+            if line.startswith("  - "):
+                tokens.add(line[4:].strip())
+            elif line.strip() and not line.startswith(" "):
+                in_exclude = False
+    for path in PUBLISHED:
+        stem = path.stem
+        if stem in tokens:
+            fail(f"{path.name}: page name collides with the Jekyll exclude token {stem!r} "
+                 f"and would silently vanish from the published site")
+
+
 def main():
     check_dataset()
+    check_jekyll_collision()
     check_against_capture()
     check_html()
     check_published_files()
