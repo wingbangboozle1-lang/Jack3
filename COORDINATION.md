@@ -815,3 +815,12 @@ only by `scripts/build.py` from `data/evidence.json`.
 | When (UTC) | Entry |
 |---|---|
 | 2026-11-10 | Claim pushed before any content work. Repo read: live site verified serving the 12-page root dashboard + `dashboard/` layer; CI green on `main` (run 42534304796); Pages `built`. |
+
+### Progress log (continued) — session `882bff85`
+
+| When (UTC) | Entry |
+|---|---|
+| 2026-11-10 | M-02 done: all 141 rows re-read against publisher pages; record at `research/VERIFICATION-2026-11-10.md`. No published value was wrong. |
+| 2026-11-10 | M-03 done: V-3 closed (county transfer tax $0.55/$500, lavote.gov) and V-4 closed (LAUSD 86.5% 5-year / 84.6% 4-year, CA School Dashboard), both published as Verified rows. Treasury anchor refreshed to latest dated 4.86% (2026-11-06). |
+| 2026-11-10 | M-04/M-05 done: `scripts/build.py` + `data/evidence.json` updated, root dashboard rebuilt (12 pages, 141 rows, 26 sources), `EXECUTIVE_SUMMARY.md` refreshed. All gates PASS locally: `build.py`, `validate.py`, `stage_pages.py`, `check_site.py`, `linkcheck.py`, `check_links.py` (0 non-official), `pii_scan.py` (0 findings, 85 files), `verify_advisory.py`, `_dashboard_src/verify.py`. |
+| 2026-11-10 | PR opened to `main`; merge + Pages verification to follow. PRs #31/#32 left open for owners (stale, overlapping; #32 commits build artifacts) — not merged. |
