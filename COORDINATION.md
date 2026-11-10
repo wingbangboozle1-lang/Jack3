@@ -852,7 +852,7 @@ Role: verification-and-integration pass over the curated, published dashboard an
 | C-03 | Fresh re-verification of load-bearing published figures against official sources (Census V2025, BLS LA summary Sep-2026, FRED DGS10, DIR wage FAQs, Measure ULA FAQ, Jack in the Box Q3 FY2026 release) | **done** | `research/VERIFICATION-2026-11-10-cd1d5bcb.md` (renamed — see conflict log) |
 | C-04 | Live-site sweep of all published pages via HTTP fetch (root 12 + `dashboard/`), checking render, links and blank handling | **done** | read-only |
 | C-05 | Remediate only defects found by C-02…C-04, additively, on this branch | **done — no defects found; zero content changes** | minimal root-file edits via generators only |
-| C-06 | PR to `main`, wait for CI, merge, confirm GitHub Pages deploy + live fetch, record here | claimed | `COORDINATION.md`, PR |
+| C-06 | PR to `main`, wait for CI, merge, confirm GitHub Pages deploy + live fetch, record here | **done** | `COORDINATION.md`, PR |
 
 ## Explicitly NOT touched
 
@@ -877,3 +877,10 @@ Append-only for this section; `git pull --rebase` before every push; small commi
 - Conflict #1 (rebase onto `c2cac0d`, PR #34): `COORDINATION.md` kept `c70571c7`'s section verbatim and appended this session's section after it; this session's Rules line (briefly clipped during the first resolution pass) was restored verbatim. `research/VERIFICATION-2026-11-10.md` kept `c70571c7`'s merged file verbatim; this session's log was renamed to `research/VERIFICATION-2026-11-10-cd1d5bcb.md`.
 - Conflict #2 (rebase onto `5fc524d`, PR #35): same additive resolution — `5fc524d` content kept verbatim; the appended Progress log and this Conflict log were re-applied with the PR #34/#35 interplay recorded. `git pull --rebase origin arena/cd1d5bcb-jack3` was **not** used after the local history had been rebased (it would have replayed `main`'s commits onto the stale remote branch); the push to this session's own branch uses `--force-with-lease`. No other session's content was removed or rewritten in either resolution.
 
+## C-06 record — PR, merge, Pages deploy (2026-11-10)
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/37 — `arena/cd1d5bcb-jack3` → `main` — "Verification sweep 2026-11-10: re-read official sources, live-site check, zero content changes (cd1d5bcb)". Pre-merge CI `Validate public research` **passed** (run 42730087123, job 129545592463, 38 s). Docs-only addition: `COORDINATION.md` and `research/VERIFICATION-2026-11-10-cd1d5bcb.md`; no site files touched.
+- **Merge:** merged with merge commit `517049b0c6a58826cfca29c41101dee3e9119fc3` (merge commit method, no approval wait, as instructed). Post-merge `main` `Validate public research` **succeeded** (run 42730197349, 39 s); `pages build and deployment` **succeeded** (run 42730196505, 45 s); Pages API `builds/latest` reports `status=built` for `517049b` (created 2026-11-10T00:41:18Z, error `null`).
+- **Live verification:** `https://wingbangboozle1-lang.github.io/Jack3/` fetched after deploy — renders the current snapshot (Treasury anchor shown as 4.86% on 2026-11-06, i.e. PR #35's refresh), evidence-boundary banner intact, all category links resolve.
+- **Flagged irregularities (unchanged, non-blocking):** N-1 FRED prints 4.86% for 2026-11-06 (published site already shows it after PR #35); N-2 stale open PRs #4, #12, #22, #26, #31, #32 — all `mergeable=CONFLICTING`; #22 and #26 also fail `validate` — reported, not merged; N-3 no defect found that contradicts a published value; open gaps (property identity/lease, cap rates, parcel hazards, LA County transfer tax, LAUSD graduation rate, `/advisory/` withholding) remain published on `review.html`.
+- **Session outcome:** zero content changes proposed or made; every re-read official source agrees with the published values; both concurrent same-day verification sessions (`c70571c7` PR #34; `882bff85` PR #35) were preserved verbatim through two additive rebase resolutions.
