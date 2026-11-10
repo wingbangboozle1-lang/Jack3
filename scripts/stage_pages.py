@@ -49,6 +49,22 @@ for page in sorted(out.rglob('*.html')):
     Check(page).feed(page.read_text())
 print('PASS: staged HTML links and source-linked table rows')
 
+# Guard against a stale commit: regenerate every page from data/evidence.json in a
+# scratch directory and require the committed HTML to match it byte for byte.
+import subprocess, tempfile
+with tempfile.TemporaryDirectory() as tmp:
+    tmp = Path(tmp)
+    shutil.copytree(root / 'data', tmp / 'data')
+    (tmp / 'assets').mkdir()
+    shutil.copy2(root / 'scripts/build.py', tmp / 'build.py')
+    subprocess.run(['python3', 'build.py'], cwd=tmp, check=True, capture_output=True)
+    names = ['index.html', 'sources.html', *[f"{p_['id']}.html" for p_ in json.loads(
+        (root / 'data/evidence.json').read_text())['pages']]]
+    drift = [n for n in names if (root / n).read_bytes() != (tmp / n).read_bytes()]
+    if drift:
+        raise SystemExit(f'committed pages differ from a fresh build: {drift}')
+print('PASS: committed pages match a fresh build of data/evidence.json')
+
 # CI also supplies GitHub Pages' own Jekyll output. Reject unexpected or
 # missing public files and ensure Jekyll preserved the curated contents.
 import sys
