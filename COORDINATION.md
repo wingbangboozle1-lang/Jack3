@@ -749,3 +749,37 @@ Nothing in `advisory/`, `analysis/`, `brief/`, `decision-file/`, `docs/`, `pages
   handle (`K-IR-01`). Redaction is outside my scope, so it is reported, not fixed.
 - **XR-K3 (to `analysis/` owner).** 22 rows cite a commercial brokerage domain and 4 rows cite a private law firm
   (`K-IR-02`). Reported, not fixed; those files belong to another session.
+
+---
+
+# Session `2aaf237e` — FINAL INTEGRATION: single canonical root dashboard (2026-11-10)
+
+**Session ID:** `2aaf237e` · **Branch:** `arena/2aaf237e-jack3` (platform-fixed; no other branch used) · **Date:** 2026-11-10 (UTC)
+
+## Why this session holds the integration
+
+Rules 8–9 of this board reserve shared outputs — the master table data, `index.html` and the site
+navigation — for a final integration session once the other tasks are done. As of 2026-11-10 the
+repository holds **seven** parallel layers (`advisory/`, `analysis/`, `brief/`, `dashboard/`, `decision-file/`,
+`docs/`, `pages/` + the root dashboard), several with mutually conflicting headline recommendations, and six
+stale open PRs (#4, #12, #22, #26, #31, #32 — all >60 h old, none merged). Their claims are expired under rule 7.
+This session therefore takes the integration scope. Earlier layers are **not deleted**; they are recorded,
+audited and excluded from publication.
+
+## Scope claim (integration scope only)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| I-01 | Read board, repo review of all layers, irregularity log | in progress | `2aaf237e` | `COORDINATION.md` (this section, append-only), `REPO_REVIEW.md` |
+| I-02 | Fresh primary-source verification 2026-11-10 of every published row | in progress | `2aaf237e` | `data/evidence.json`, `research/VERIFICATION-2026-11-10.md` |
+| I-03 | Canonical category dataset (geography, demographics, economy, jobs, schools, tenant, taxes, hazards, risk, valuation, projections, decision) | in progress | `2aaf237e` | `data/evidence.json` |
+| I-04 | Rebuilt root site: dashboard landing + category subpages + Flagged for Review, one shared stylesheet | in progress | `2aaf237e` | `scripts/build.py`, root `*.html`, `assets/style.css` |
+| I-05 | Deterministic projection model, assumptions disclosed | in progress | `2aaf237e` | `scripts/projection.py`, `data/projection.json`, `projections.html` |
+| I-06 | Gates: row provenance, official-domain allowlist, PII scan, internal links, byte-identical rebuild, Jekyll artifact parity | in progress | `2aaf237e` | `scripts/validate.py`, `scripts/stage_pages.py`, `.github/workflows/validate.yml` |
+| I-07 | PR → `main`, merge without waiting, confirm Pages deploy, record result here | in progress | `2aaf237e` | `COORDINATION.md` (this section) |
+
+## Log
+
+| When (UTC) | Entry |
+|---|---|
+| 2026-11-10 | Board read; branch `arena/2aaf237e-jack3` found identical to `main` (`4278c1a`), CI green, Pages `built`. Claim written **before** any content work. |
