@@ -1,5 +1,5 @@
 {
-  "reviewed": "2026-11-08",
+  "reviewed": "2026-11-10",
   "sources": {
     "city": {
       "label": "U.S. Census · LA city",
@@ -143,6 +143,18 @@
       "label": "CA FTB · Capital gains and losses",
       "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
       "checked": "2026-11-08",
+      "type": "Government"
+    },
+    "lavote": {
+      "label": "LA County Recorder · Documentary Transfer Tax",
+      "url": "https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info",
+      "checked": "2026-11-10",
+      "type": "Government"
+    },
+    "csd": {
+      "label": "CA School Dashboard · LAUSD 2025 (graduation)",
+      "url": "https://www.caschooldashboard.org/reports/19647330000000/2025",
+      "checked": "2026-11-10",
       "type": "Government"
     }
   },
@@ -963,12 +975,12 @@
         {
           "cells": [
             "District four-year graduation rate",
-            "",
-            "Not extracted. CDE publishes adjusted cohort graduation data as state, county, district and school files, but the LAUSD value was not read from the file this pass.",
-            "Would inform workforce quality; not a property-value input on its own."
+            "86.5%",
+            "LAUSD · 2025 Dashboard (2024-25 cohort) · Yellow, “Maintained -0.2%”",
+            "A district-wide outcome that informs workforce context; it is not a rating of the school assigned to any site."
           ],
-          "status": "Unverified",
-          "source": "acgr"
+          "status": "Verified",
+          "source": "csd"
         },
         {
           "cells": [
@@ -1260,12 +1272,22 @@
         {
           "cells": [
             "LA County documentary transfer tax",
-            "",
-            "Not published. The County Recorder page could not be retrieved on 2026-11-08 and only secondary sources state the rate.",
-            "Would add to seller closing costs; confirm with the County Recorder and escrow."
+            "$0.55 per $500 of consideration (= $1.10 per $1,000)",
+            "Los Angeles County, Rev. & Tax. Code 11911-11933 · Recorder page read 2026-11-10",
+            "Paid at recording and collected by the County for the cities; it adds to the seller's closing cost. Confirm the exact base and any city overlay with escrow."
           ],
-          "status": "Unverified",
-          "source": "ula"
+          "source": "lavote",
+          "status": "Verified"
+        },
+        {
+          "cells": [
+            "County transfer-tax rate inside the five cities that levy their own tax (Los Angeles among them)",
+            "Stated as “the full $1.10 per $1,000”",
+            "Los Angeles County Recorder · page read 2026-11-10",
+            "The Recorder applies a different county figure inside a city with its own tax. The exact city stack varies by rate code; do not net it out by assumption."
+          ],
+          "source": "lavote",
+          "status": "Verified"
         },
         {
           "cells": [
@@ -1575,21 +1597,21 @@
         },
         {
           "cells": [
-            "Review",
+            "Closed 2026-11-10",
             "LA County documentary transfer tax (V-3)",
-            "The County Recorder page could not be retrieved on 2026-11-08; the commonly quoted $1.10 per $1,000 appears only in secondary sources. No county rate is published as a value."
+            "Closed. The County Recorder page WAS retrievable on 2026-11-10 and states $0.55 per $500 ($1.10 per $1,000), and “the full $1.10 per $1,000” inside the five cities that levy their own tax, Los Angeles among them. Now published on the taxes page. Residual irregularity: the root site listed this as “not published” while the dashboard layer simultaneously published $0.55 per $500 from the same page, so two published layers disagreed. Reconciled in favour of the page actually read."
           ],
-          "status": "Needs review",
-          "source": "ula"
+          "status": "Verified",
+          "source": "lavote"
         },
         {
           "cells": [
-            "Review",
-            "LAUSD graduation rate not extracted (V-4)",
-            "CDE publishes adjusted cohort graduation data as large state/county/district files; the LAUSD value was not read this pass, so it stays blank."
+            "Closed 2026-11-10",
+            "LAUSD graduation rate (V-4)",
+            "Closed. The California School Dashboard district report for Los Angeles Unified (2025) was read on 2026-11-10: 86.5% graduated, Yellow, “Maintained -0.2%”. Published on the schools page. The large CDE cohort file was not downloaded; the Dashboard is the official published surface for the same indicator."
           ],
-          "status": "Needs review",
-          "source": "acgr"
+          "status": "Verified",
+          "source": "csd"
         },
         {
           "cells": [
@@ -1608,6 +1630,15 @@
           ],
           "status": "Needs review",
           "source": "dirwage"
+        },
+        {
+          "cells": [
+            "Record 2026-11-10",
+            "Core figures re-read from the publisher on 2026-11-10",
+            "Matched exactly, no value changed: LA city population 3,869,089 and −0.8%; LA County 9,694,934 and −3.2%; metro payrolls 6,282.1k, +0.5%, information −5.7%, education & health +3.8%; unemployment 4.4% metro / 4.5% city and county; CPI-U +3.7%; ECI +3.9%; average weekly wage $1,704; 10-year Treasury 4.84% on 2026-11-05; LAUSD enrollment 497,105 and statewide 5,731,260; tenant same-store sales −1.1%, systemwide −1.4%, 17 closures and 4 openings, 2,115 restaurants, franchise-level margin 37.4%; Measure ULA $5,400,000 / $10,900,000 at 4.00% / 5.50%; city base tax $2.25 per $500; Prop 13 1% levy and 2% cap; state minimum wage $16.90. Rows not re-read in this pass retain their 2026-11-08 vintage."
+          ],
+          "source": "fred",
+          "status": "Verified"
         }
       ]
     }
