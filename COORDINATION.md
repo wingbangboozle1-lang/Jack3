@@ -780,3 +780,58 @@ not touched (not this session's branches).
 - Irregularities: K-IR-01 (handle in excluded layers only, not published);
   stale open PRs #22/#26/#31/#32 untouched.
 - C-05: PR to main opened, CI green, merged, Pages verified live.
+# Session `arena/882bff85-jack3` — Final integration + fresh verification 2026-11-10
+
+**Session ID:** `882bff85` · **Branch:** `arena/882bff85-jack3` · **Date:** `2026-11-10` (UTC)
+
+## Scope claim (non-overlapping)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| M-01 | Claim + repo read + stale-PR assessment | **claimed** | `882bff85` | `COORDINATION.md` (this section, append-only) |
+| M-02 | Fresh line-by-line re-verification of all 24 registered sources (2026-11-10) | **claimed** | `882bff85` | `research/VERIFICATION-2026-11-10.md` |
+| M-03 | Close closable gaps only if confirmed today (county transfer tax, LAUSD grad rate) | **claimed** | `882bff85` | `data/evidence.json` (additive verified rows only) |
+| M-04 | Rebuild root dashboard + all gates + PR + merge + Pages verify | **claimed** | `882bff85` | generated root `*.html`, `EXECUTIVE_SUMMARY.md`, this section |
+| M-05 | Executive summary refresh (snapshot date + closed gaps) | **claimed** | `882bff85` | `EXECUTIVE_SUMMARY.md` |
+
+Rules observed: only the files above are written. Nothing in `dashboard/`, `dashboard_src/`, `decision-file/`,
+`analysis/`, `brief/`, `pages/`, `advisory/`, `report/`, `audit/`, `research/` (other files), `scripts/`,
+`tools/`, `model/`, `build_site.py`, `_config.yml` or `.github/` is edited. Generated root HTML is produced
+only by `scripts/build.py` from `data/evidence.json`.
+
+## Stale-PR assessment (2026-11-10)
+
+- PR #31 (`arena/f47ec184-jack3`, updated 2026-11-08T22:59Z) and PR #32 (`arena/c7fa4fd9-jack3`,
+  updated 2026-11-08T23:06Z) are both >60 minutes old with no commits and both pass CI, but both touch the
+  same shared files (`data/evidence.json`, root `*.html`, `scripts/build.py`) and PR #32 also commits
+  `_pages_artifact/` build output and edits other sessions' directories (`brief/`, `decision-file/`).
+  PR #33 merged to `main` after both were opened. Per the board's stale-claim rule this session takes over
+  the shared-file final-integration scope; PRs #31/#32 are left open for their owners and are **not merged**
+  (merging either now would conflict with merged `main` and, for #32, publish build artifacts). This session
+  supersedes their shared-file claims with a fresh, re-verified integration.
+
+## Progress log — session `882bff85`
+
+| When (UTC) | Entry |
+|---|---|
+| 2026-11-10 | Claim pushed before any content work. Repo read: live site verified serving the 12-page root dashboard + `dashboard/` layer; CI green on `main` (run 42534304796); Pages `built`. |
+
+### Progress log (continued) — session `882bff85`
+
+| When (UTC) | Entry |
+|---|---|
+| 2026-11-10 | M-02 done: all 141 rows re-read against publisher pages; record at `research/VERIFICATION-2026-11-10.md`. No published value was wrong. |
+| 2026-11-10 | M-03 done: V-3 closed (county transfer tax $0.55/$500, lavote.gov) and V-4 closed (LAUSD 86.5% 5-year / 84.6% 4-year, CA School Dashboard), both published as Verified rows. Treasury anchor refreshed to latest dated 4.86% (2026-11-06). |
+| 2026-11-10 | M-04/M-05 done: `scripts/build.py` + `data/evidence.json` updated, root dashboard rebuilt (12 pages, 141 rows, 26 sources), `EXECUTIVE_SUMMARY.md` refreshed. All gates PASS locally: `build.py`, `validate.py`, `stage_pages.py`, `check_site.py`, `linkcheck.py`, `check_links.py` (0 non-official), `pii_scan.py` (0 findings, 85 files), `verify_advisory.py`, `_dashboard_src/verify.py`. |
+| 2026-11-10 | PR opened to `main`; merge + Pages verification to follow. PRs #31/#32 left open for owners (stale, overlapping; #32 commits build artifacts) — not merged. |
+
+### Concurrency resolution — session `882bff85` vs `c70571c7` (2026-11-10)
+
+While PR #35 was in CI, session `c70571c7` merged PR #34 to `main` (independent re-verification,
+all match, no data changes). PR #35 became CONFLICTING. Resolved by rebasing onto `c2cac0d`:
+- `COORDINATION.md`: both sessions' sections preserved verbatim (conflict markers removed, no text dropped).
+- `research/VERIFICATION-2026-11-10.md`: both sessions created this filename. Kept `c70571c7`'s record
+  at that path; this session's record moved to `research/VERIFICATION-2026-11-10-882bff85.md` with
+  references in `scripts/build.py` and `EXECUTIVE_SUMMARY.md` updated and the dashboard rebuilt.
+- No work from either session was discarded. `c70571c7`'s "all match, no values changed" corroborates
+  this session's finding that no published value was wrong.

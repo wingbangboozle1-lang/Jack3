@@ -4,7 +4,8 @@
 the owner to expire between 2030 and 2035.
 **Question:** sell before expiry, or renew?
 **Owner's objective:** preserve capital *and* retain growth optionality at a manageable level of risk.
-**Evidence snapshot:** 2026-11-08. **Full record:** `research/VERIFICATION-2026-11-08.md`.
+**Evidence snapshot:** 2026-11-10. **Full record:** `research/VERIFICATION-2026-11-10-882bff85.md` (prior record:
+`research/VERIFICATION-2026-11-08.md`).
 **Published dashboard:** <https://wingbangboozle1-lang.github.io/Jack3/>
 
 > **Privacy.** The asset is published as *Asset A*. No address, parcel number, owner name, contact detail, rent roll,
@@ -57,7 +58,7 @@ alternatives instead of one. The discipline is that only a **signed, enforceable
 
 ## 2. The six findings that drive the decision
 
-Every figure below was re-read from the linked publisher page on 2026-11-08.
+Every figure below was re-read from the linked publisher page on 2026-11-10.
 
 **1. The tenant is contracting, and closure timing is tied to franchise-agreement dates.**
 Jack in the Box reports system same-store sales of **−1.1%** and systemwide sales **−1.4%** for the quarter ended
@@ -74,8 +75,11 @@ Jack-branded net-lease assets. → [Q3 FY2026 release](https://investors.jackint
 
 **2. Regional demand is flat to declining.** LA city population **3,869,089**, **−0.8%** from the 2020 estimates base;
 LA County **−3.2%**. Poverty **16.5%**; median household income **$81,939** (2024 dollars); 36.0% owner-occupied
-housing. → [Census QuickFacts, LA city](https://www.census.gov/quickfacts/losangelescitycalifornia) ·
-[LA County](https://www.census.gov/quickfacts/losangelescountycalifornia)
+housing. LAUSD enrolls **497,105** students (2025-26) with a 2025 graduation rate of **86.5%** (5-year) — district-scale
+workforce context, not a parcel-level school rating. → [Census QuickFacts, LA city](https://www.census.gov/quickfacts/losangelescitycalifornia) ·
+[LA County](https://www.census.gov/quickfacts/losangelescountycalifornia) ·
+[CDE LAUSD profile](https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000) ·
+[CA School Dashboard, LAUSD 2025](https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement)
 
 **3. Job growth is thinner than costs.** Metro nonfarm payrolls **+0.5%** year over year (September 2026), with
 education & health **+3.8%** and information **−5.7%**; unemployment 4.5% city and county, 4.4% metro; CPI-U **+3.7%**
@@ -87,15 +91,17 @@ the landlord — it passes it to the tenant's margin, and therefore to renewal w
 [DIR fast food FAQ](https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm) ·
 [DIR minimum wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm)
 
-**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **4.84%** on 2026-11-05 —
+**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **4.86%** on 2026-11-06 —
 a market anchor, not the owner's required return. A sale inside the City of Los Angeles pays a **0.45%** base transfer
 tax plus **Measure ULA at 4% above $5,400,000 and 5.5% at or above $10,900,000** for closings after 2026-06-30 (ULA is
-measured on gross value; the base tax on value net of liens; thresholds indexed to Chained CPI). Property tax is a
+measured on gross value; the base tax on value net of liens; thresholds indexed to Chained CPI). Any Los Angeles County
+sale also pays the county documentary transfer tax of **$0.55 per $500 ($1.10 per $1,000)**. Property tax is a
 **1%** general levy with a **2%** annual assessed-value cap, reassessed on change of ownership. California taxes capital
 gains as **ordinary income**; federal long-term rates are **0/15/20%** with a **25%** maximum on unrecaptured §1250 gain;
 **§1031** defers — and does not eliminate — the gain on real property held for investment. →
 [LA County Assessor · Prop 13](https://assessor.lacounty.gov/real-estate-toolkit/proposition-13) ·
 [City of LA Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) ·
+[LA County Recorder · transfer tax](https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info) ·
 [IRS Topic 409](https://www.irs.gov/taxtopics/tc409) · [IRS §1031](https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips) ·
 [CA FTB](https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html) ·
 [FRED DGS10](https://fred.stlouisfed.org/series/DGS10)
@@ -142,9 +148,10 @@ been inferred or filled in. The full list, with the official page that could clo
 [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/review.html) page.
 
 Known open items include: the executed lease and exact expiry; the legal tenant, guarantor and any franchisee
-obligation; store-level sales, rent coverage and arrears; the parcel's zoning and hazard overlays; effective insurance
-terms; LA County's documentary transfer tax rate (the Recorder page could not be retrieved on 2026-11-08); and the
-LAUSD graduation rate (the CDE district file was not extracted).
+obligation; store-level sales, rent coverage and arrears; the parcel's zoning and hazard overlays; and effective insurance
+terms. Two items previously open were closed on 2026-11-10: LA County's documentary transfer tax rate
+($0.55 per $500, County Recorder) and the LAUSD graduation rate (86.5%, 2025 Dashboard) are now published as Verified
+rows on the dashboard.
 
 ---
 
@@ -158,4 +165,4 @@ LAUSD graduation rate (the CDE district file was not extracted).
 - No model was trained, back-tested or calibrated; no numerical forecast, cap rate or renewal probability is published.
   Compounding a 2020–2025 change forward is arithmetic, not evidence, and is not presented as a projection.
 - No personal information is published, and no attempt was made to identify the owner, the parcel or any individual.
-- Sources are rolling documents and can be revised after 2026-11-08. Re-check before acting.
+- Sources are rolling documents and can be revised after 2026-11-10. Re-check before acting.
