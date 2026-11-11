@@ -45,6 +45,20 @@ class DecisionEngineTests(unittest.TestCase):
         result = compare_after_tax(**(self.inputs | {"hold_cash_flows": [CashFlow(1, 11)]}))
         self.assertEqual(result, {"status": "blocked", "missing": ["terminal cash flow"]})
 
+    def test_extreme_values_fail_closed_including_the_final_difference(self):
+        # Both operands can be finite while subtracting them overflows.
+        overflow_difference = self.inputs | {
+            "sale_offer": 1e308, "sale_costs": 0, "sale_tax": 0,
+            "debt_payoff": 0, "annual_required_return": 0,
+            "hold_cash_flows": [CashFlow(1, -1e308, True)],
+        }
+        with self.assertRaisesRegex(ValueError, "non-finite"):
+            compare_after_tax(**overflow_difference)
+        with self.assertRaisesRegex(ValueError, "finite number"):
+            compare_after_tax(**(self.inputs | {"sale_offer": 10 ** 1000}))
+        with self.assertRaises(ValueError):
+            compare_after_tax(**(self.inputs | {"annual_required_return": 1e308}))
+
     def test_invalid_numbers_and_time_order_rejected(self):
         cases = [
             {"annual_required_return": -1}, {"annual_required_return": math.nan},

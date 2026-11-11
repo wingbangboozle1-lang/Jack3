@@ -35,7 +35,10 @@ class CashFlow:
 def _finite(value: object, label: str) -> float:
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         raise ValueError(f"{label} must be a finite number")
-    result = float(value)
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError(f"{label} must be a finite number") from exc
     if not math.isfinite(result):
         raise ValueError(f"{label} must be a finite number")
     return result
@@ -107,13 +110,14 @@ def compare_after_tax(
         sale_net = offer - costs - tax - payoff
     except (OverflowError, ZeroDivisionError) as exc:
         raise ValueError("discounting produced an invalid result") from exc
-    if not math.isfinite(hold_pv) or not math.isfinite(sale_net):
+    difference = hold_pv - sale_net
+    if not all(math.isfinite(value) for value in (hold_pv, sale_net, difference)):
         raise ValueError("cash-flow calculation produced a non-finite result")
     return {
         "status": "analysis",
         "sale_after_tax_equity": sale_net,
         "hold_after_tax_equity_pv": hold_pv,
-        "difference_hold_minus_sale": hold_pv - sale_net,
+        "difference_hold_minus_sale": difference,
     }
 
 
