@@ -928,3 +928,40 @@ PR #39 initially passed CI (run 42730410298) but GitHub reported that its merge 
 ### Second concurrency resolution — PR #38 (`203ae19e`)
 
 `main` advanced again before PR #39 could merge. Rebased onto `dfece3f` and preserved PR #38's `scripts/projection.py`, DOF research files, coordination record and break-even model. Independently checked the CA DOF source before retaining its three K-12 projection rows. Replaced PR #38's unverified SCAG placeholder with this session's successfully extracted, official SCAG 2030 values. Clarified that all break-even inputs are unverified assumptions and outputs are Analysis, never Verified market facts. Combined public dataset: 158 evidence rows and 31 official/issuer sources. Full validation and deterministic projection tests pass.
+
+---
+
+# Session `c350ccea` — 2026-11-11 re-verification, discovery register, publication hardening
+
+**Session ID:** `c350ccea` · **Branch:** `arena/c350ccea-jack3` (platform-fixed) · **Date:** 2026-11-11 (UTC)
+**Base:** `3e973b2` (= `main`, PR #39 merged).
+
+Every earlier claim is merged or older than 60 minutes; no other session holds a live claim on the files below. This
+session takes the final-integration role for its own scope and will not rewrite another session's historical layer.
+
+## Scope claim
+
+| ID | Task | Status | File scope |
+|---|---|---|---|
+| K-01 | Claim board; read repo, published artifact, CI and Pages state | **in progress** | this section only |
+| K-02 | Line-by-line re-verification of published rows against live official/issuer pages (2026-11-11) | claimed | `research/VERIFICATION-2026-11-11-c350ccea.md` |
+| K-03 | Add the missing deliverable: a numbered open-questions / missing-information register with a concrete discovery route for each gap | claimed | `data/evidence.json` (additive page), generated `questions.html` |
+| K-04 | Publication hardening: dedicated public-artifact checker (links, hosts, row provenance, blank/PII rules) wired into CI | claimed | `tools/check_public.py`, `.github/workflows/validate.yml`, `scripts/build.py`, `scripts/stage_pages.py` |
+| K-05 | Refresh the dated documents the user reads (README, EXECUTIVE_SUMMARY, VERIFY, REPO_REVIEW) and regenerate every page from data | claimed | `README.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `REPO_REVIEW.md`, `index.html` + category pages, `assets/style.css` |
+| K-06 | PR → `main`, merge, confirm Pages deploy, verify live site | claimed | this section |
+
+**Explicitly not touched:** `advisory/`, `analysis/`, `brief/`, `decision-file/`, `docs/`, `pages/`, `report/`, `audit/`,
+`model/`, `data/*.py` legacy modules, `_advisory_src/`, `_dashboard_src/`. No other session's open PR (#4, #12, #22,
+#26, #31, #32, #36, #40, #42, #43) is merged or closed by this session; #42 and #43 overlap this scope and are reported.
+
+**Privacy rule in force:** publish area-level and issuer evidence only. No address, parcel, owner identity, contact
+detail, private lease, rent, basis or debt is sought, stored or published. Nothing identifying a person enters the site.
+
+## Log
+
+### 2026-11-11 — claim
+- Repository state read: 12 curated public pages generated from `data/evidence.json` (158 rows, 31 sources); full local
+  gate suite present; `main` at `3e973b2`.
+- Ten open PRs found, all from earlier sessions; #42 (`b98090a0`, 222-row canonical site) and #43 (`8504a55c`,
+  publication-integrity tests) overlap parts of this scope. Not merged here — reported for the owner, because merging
+  either would silently replace the current `data/evidence.json` contract without a re-verification pass.
