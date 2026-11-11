@@ -1,0 +1,16 @@
+name: Private decision arithmetic
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  decision-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run synthetic fail-closed comparison tests
+        run: python -m unittest discover -s scripts -p 'test_decision_engine.py' -v
