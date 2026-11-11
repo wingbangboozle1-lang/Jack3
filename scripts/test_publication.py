@@ -90,6 +90,23 @@ class PublicationTests(unittest.TestCase):
                     if row['status'] == 'Unverified' and page['id'] != 'review':
                         self.assertEqual(row['cells'][1], '')
 
+    def test_canonical_register_unknowns_are_blank_not_filled(self):
+        # Same rule for the published canonical register (data/canonical.json):
+        # every row resolves to a registered official https:// source; Verified
+        # rows carry a value; Blank rows carry none (never inferred/filled).
+        data = json.loads((ROOT / 'data/canonical.json').read_text())
+        sources = data['sources']
+        for key, src in sources.items():
+            with self.subTest(source=key):
+                self.assertTrue(src['url'].startswith('https://'))
+        for i, row in enumerate(data['rows']):
+            with self.subTest(row=i, indicator=row['indicator']):
+                self.assertIn(row['source'], sources)
+                if row['status'] == 'Verified':
+                    self.assertTrue(str(row['value']).strip())
+                if row['status'] == 'Blank':
+                    self.assertEqual(row['value'], '')
+
 
 if __name__ == '__main__':
     unittest.main()
