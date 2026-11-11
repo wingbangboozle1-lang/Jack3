@@ -9,7 +9,7 @@ if out.exists():
 out.mkdir()
 for name in ('index.html', 'economy.html', 'demographics.html', 'tenant.html', 'risk.html',
              'place.html', 'schools.html', 'decisions.html', 'taxes.html', 'model.html',
-             'review.html', 'sources.html'):
+             'review.html', 'questions.html', 'sources.html'):
     shutil.copy2(root / name, out / name)
 (out / 'assets').mkdir()
 shutil.copy2(root / 'assets/style.css', out / 'assets/style.css')

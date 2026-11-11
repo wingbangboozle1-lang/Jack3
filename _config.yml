@@ -22,3 +22,4 @@ exclude:
   - tools
   - build_site.py
   - assets/app.js
+  - scripts/update_2026_11_11.py

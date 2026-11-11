@@ -1,5 +1,5 @@
 {
-  "reviewed": "2026-11-10",
+  "reviewed": "2026-11-11",
   "sources": {
     "city": {
       "label": "U.S. Census · LA city",
@@ -94,7 +94,7 @@
     "cde": {
       "label": "CDE · LAUSD district profile",
       "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
-      "checked": "2026-11-10",
+      "checked": "2026-11-11",
       "type": "Government"
     },
     "cdelarge": {
@@ -128,9 +128,9 @@
       "type": "Government"
     },
     "fred": {
-      "label": "Federal Reserve · 10-year Treasury (DGS10)",
+      "label": "Federal Reserve H.15 via FRED · DGS10",
       "url": "https://fred.stlouisfed.org/series/DGS10",
-      "checked": "2026-11-10",
+      "checked": "2026-11-11",
       "type": "Government"
     },
     "irs409": {
@@ -185,6 +185,18 @@
       "label": "CA Dept. of Finance · Public K-12 enrollment projections, 2026 series",
       "url": "https://dof.ca.gov/forecasting/demographics/public-k-12-graded-enrollment/",
       "checked": "2026-11-10",
+      "type": "Government"
+    },
+    "dqteach": {
+      "label": "CA Dept. of Education · DataQuest cohort graduation report",
+      "url": "https://dq.cde.ca.gov/dataquest/dqcensus/CohRate.aspx?cds=1964733&agglevel=District&year=2025-26",
+      "checked": "2026-11-11",
+      "type": "Government"
+    },
+    "cdenews": {
+      "label": "CA Dept. of Education · news release 26-44 (2026-10-15)",
+      "url": "https://www.cde.ca.gov/nr/ne/yr26/yr26rel44.asp",
+      "checked": "2026-11-11",
       "type": "Government"
     }
   },
@@ -436,7 +448,7 @@
             "Net taxable assessed value",
             "$2.272 trillion · +4.42% year over year",
             "LA County · 2026 Assessment Roll, lien date 2026-01-01",
-            "Whole-county tax roll; not market appreciation or this asset’s value."
+            "Whole-county tax roll; not market appreciation or this asset’s value. The official release prints “42%” in one highlights bullet; 4.42% is used because the narrative and the $96bn change agree."
           ],
           "status": "Verified",
           "source": "roll"
@@ -934,7 +946,7 @@
         {
           "cells": [
             "Interest-rate and exit-yield shock",
-            "10-year Treasury constant-maturity yield 4.86% on 2026-11-06.",
+            "10-year Treasury constant-maturity yield 4.86% on 2026-11-06; 4.88% on 2026-11-09.",
             "Analysis: a higher exit yield lowers price for the same rent; no property cap rate is published."
           ],
           "status": "Verified",
@@ -1064,21 +1076,21 @@
         {
           "cells": [
             "District four-year graduation rate",
-            "86.2%",
-            "LAUSD · 2026 California School Dashboard",
-            "District aggregate; not an assigned-school result."
+            "",
+            "LAUSD · 2026 Dashboard (unverified)",
+            "Unverified. The cited Dashboard page renders its tables in the browser, so no value could be read from the served page on 2026-11-11. This file previously published 86.2% from that page (2026-11-10) and has withheld it rather than repeat a figure it cannot re-read. The server-rendered CDE DataQuest report for the same school year returns 87.4% with charter schools excluded by default, a different population; it is published as its own row."
           ],
-          "status": "Verified",
+          "status": "Unverified",
           "source": "dashboard2026"
         },
         {
           "cells": [
             "District combined four- and five-year graduation rate",
-            "87.6%",
-            "LAUSD · 2026 California School Dashboard",
-            "Combined measure; do not confuse it with the four-year rate."
+            "",
+            "LAUSD · 2026 Dashboard (unverified)",
+            "Unverified. The combined measure appears only on the browser-rendered 2026 Dashboard page. The previously published 87.6% (2026-11-10) is withheld rather than repeated unread; CDE DataQuest publishes the four-year cohort rate, not this combined measure."
           ],
-          "status": "Verified",
+          "status": "Unverified",
           "source": "dashboard2026"
         },
         {
@@ -1090,6 +1102,26 @@
           ],
           "status": "Unverified",
           "source": "school"
+        },
+        {
+          "cells": [
+            "District four-year cohort graduation rate (charter schools excluded)",
+            "87.4%",
+            "LAUSD · 2025-26 · DataQuest four-year adjusted cohort rate",
+            "Verified on the server-rendered state report. CDE removes charter schools from district reports by default, so this is not the district-wide rate and must not be compared with a charter-inclusive figure."
+          ],
+          "status": "Verified",
+          "source": "dqteach"
+        },
+        {
+          "cells": [
+            "Statewide four-year cohort graduation rate",
+            "87.9%",
+            "California · 2025-26 · CDE news release 26-44, 2026-10-15",
+            "Benchmark only. A district average says nothing about an assigned campus."
+          ],
+          "status": "Verified",
+          "source": "cdenews"
         },
         {
           "cells": [
@@ -1351,9 +1383,9 @@
         {
           "cells": [
             "Discount-rate anchor for any present-value work",
-            "4.86% · 10-year Treasury, 2026-11-06",
-            "Federal Reserve H.15 via FRED (DGS10)",
-            "A market anchor, not the owner's required return."
+            "4.86% · 10-year Treasury, 2026-11-06 (4.88% on 2026-11-09)",
+            "Federal Reserve H.15 via FRED (DGS10), re-read 2026-11-11",
+            "A market anchor, not the owner’s required return. Rates move daily; the published cells are dated."
           ],
           "status": "Verified",
           "source": "fred"
@@ -1467,7 +1499,7 @@
         {
           "cells": [
             "Verified input anchors",
-            "10-year Treasury 4.86% (2026-11-06); LA CPI-U +3.7% and ECI +3.9% year over year (Sep 2026); LA city population −0.8% from the 2020 estimates base to July 2025.",
+            "10-year Treasury 4.86% (2026-11-06) and 4.88% (2026-11-09); LA CPI-U +3.7% and ECI +3.9% year over year (Sep 2026); LA city population −0.8% from the 2020 estimates base to July 2025.",
             "Anchors, not forecasts. Each is an observation from an official release and is used only to bound discounting and growth assumptions."
           ],
           "status": "Verified",
@@ -1809,6 +1841,33 @@
           ],
           "status": "Needs review",
           "source": "q4"
+        },
+        {
+          "cells": [
+            "High",
+            "Graduation rate could not be re-read from the cited page (C-01)",
+            "On 2026-11-11 the 2026 California School Dashboard page served no table values: its indicators are rendered in the browser. The published 86.2% four-year and 87.6% combined figures were therefore downgraded to Unverified, and the server-rendered CDE DataQuest report for the same year now supplies 87.4% (charter schools excluded by default) as a separately labelled Verified row. Re-read the Dashboard directly before using any of them."
+          ],
+          "status": "Needs review",
+          "source": "dashboard2026"
+        },
+        {
+          "cells": [
+            "Medium",
+            "Treasury anchor moved after publication (C-02)",
+            "The 10-year constant-maturity yield was 4.86% on 2026-11-06 when first published and 4.88% on 2026-11-09 at the 2026-11-11 re-read. Both dates are now shown rather than replacing the earlier value, because a dated observation stays true after the series moves."
+          ],
+          "status": "Needs review",
+          "source": "fred"
+        },
+        {
+          "cells": [
+            "Medium",
+            "Five open PRs overlap this published dataset (C-03)",
+            "Open pull requests #42 (a 222-row canonical site), #43 (publication-integrity tests) and older branches each propose a different data contract for the same pages. They are not merged here: merging any of them would replace the verified dataset without a line-by-line re-check. They remain open for the owner to decide."
+          ],
+          "status": "Needs review",
+          "source": "cdenews"
         }
       ]
     }
