@@ -8,14 +8,14 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 ## Start here
 
 - [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks.
-- [Line-by-line verification](research/VERIFICATION-2026-11-10-1f62010a.md) — all 155 rows and 30 official/issuer sources.
+- [Line-by-line verification](research/VERIFICATION-2026-11-10-1f62010a.md) — all 158 category rows and 31 official/issuer sources.
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
 - [Flagged for Review](review.html) — unresolved items and source irregularities.
 
 ## Recommendation
 
-Run two tracks now: confidential sale market testing 24–36 months before the earliest contractual expiry, and a written renewal request. Choose only after comparing a documented after-tax offer with an enforceable, credit-supported extension. This is analyst judgment, not a valuation or personalized financial, legal or tax advice. Public sources cannot determine a personal optimum without the private lease and financial facts.
+Start both tracks now: prepare lease, tax, insurance and property documents and request written renewal terms. Target confidential sale-market launch 24–36 months before the earliest verified contractual expiry, after confirming the exact date, options and assignment rights. Choose only after comparing a documented after-tax offer with an enforceable, credit-supported extension. This is analyst judgment, not a valuation or personalized financial, legal or tax advice. Public sources cannot determine a personal optimum without the private lease and financial facts.
 
 ## Public pages
 
