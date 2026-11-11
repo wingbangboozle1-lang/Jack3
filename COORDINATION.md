@@ -947,3 +947,23 @@ External official-source access is restricted by this session's network policy; 
 - Pre-merge full validation and new regression workflow passed. Post-merge full validation https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42943423833 and regression suite https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42943423852 both **success**.
 - Pages build/report/deploy https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42943423075 **success** for that exact merge SHA. Published URL: https://wingbangboozle1-lang.github.io/Jack3/ . This is official deployment confirmation, not an independent live-host fetch.
 - Session tasks **done**. No external economic value is newly marked verified. No new private information was collected. Open review gaps remain non-blocking. Additive completion record follows in a documentation-only PR.
+
+# Session `76b08b4d` — independent current-state audit
+
+**Date:** 2026-11-11 UTC · **Platform branch:** `arena/76b08b4d-jack3` (fixed by Arena)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| N-01 | Read coordination history and inspect current repository / publication layout | done | `76b08b4d` | `COORDINATION.md`, read-only |
+| N-02 | Re-run current build, schema, privacy, link, and publication checks; record results and any flags | done | `76b08b4d` | `research/VERIFICATION-2026-11-11-76b08b4d.md`, `data/evidence.json`, `scripts/build.py`, generated root `index.html` and `decisions.html`, executive/docs |
+
+Rules: the platform fixes this work to `arena/76b08b4d-jack3`; do not create or switch to a `session-*` branch. No personal or property-identifying data is to be sought or published. Shared recommendation wording was changed only to fix a directly observed timing contradiction, then regenerated and revalidated. The evidence rows and empirical values are unchanged.
+
+### Completion log — 2026-11-11
+
+- Read the current coordination history and inspected the curated-root Pages configuration. The live root site fetched successfully at `https://wingbangboozle1-lang.github.io/Jack3/`; `/dashboard/`, `/advisory/`, and other historical layers remain excluded from the curated artifact.
+- Reconciled documentation drift: current `data/evidence.json` contains 158 rows across 10 category pages and 31 registered sources. `README.md` and `REPO_REVIEW.md` had described the linked final audit as 155 rows / 30 sources; corrected both to match the final 2026-11-10 audit and current registry.
+- Corrected an actionable timing ambiguity in the recommendation: current preparation and written renewal request are immediate; formal sale-market launch is targeted 24–36 months before the *verified* earliest contractual expiry, only after checking lease date/options/assignment terms. Updated source dataset, generator, generated pages, executive summary and README. No empirical figures changed.
+- Validation on 2026-11-11: root build/schema (158 rows, 12 published pages) PASS; staged Pages artifact (14 entries; row/link provenance) PASS; `tools/check_site.py` PASS; linkcheck (256 internal references) PASS; official-source/host check PASS; PII scan (90 files, zero findings) PASS; advisory and dashboard repository-only verifiers PASS; `git diff --check` PASS. Full source-by-source re-verification is not claimed today; the 158-row, 31-source verification remains documented in `research/VERIFICATION-2026-11-10-1f62010a.md`.
+- Remaining material unknowns and historical-layer irregularities remain visible in `review.html` and `REPO_REVIEW.md`; none is filled by inference. Today's detailed check record: `research/VERIFICATION-2026-11-11-76b08b4d.md`.
+- PR #44: https://github.com/wingbangboozle1-lang/Jack3/pull/44 — opened from `arena/76b08b4d-jack3` to `main`; initial `Validate public research` passed (run 42943511664). Main advanced via PR #43 during review; this branch is being rebased additively, preserving both sessions' coordination entries and all files. Current check/merge/deploy state will be recorded after integration.
