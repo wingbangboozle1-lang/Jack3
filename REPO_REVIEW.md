@@ -48,7 +48,7 @@ dashboard layers. This review does not delete any of that work. It records what 
 was corrected in the canonical site, what remains unresolved, and which files are actually
 published. **Every finding below carries an official source link for manual review.**
 
-**Canonical site:** 20 static HTML pages · 224 evidence rows (190 verified, 4 derived with arithmetic shown, 1 analysis, 29 blank/unverified) · 36 official sources · 22 flagged items · 22 review findings.
+**Canonical site:** 20 static HTML pages · 224 evidence rows (190 verified, 4 derived with arithmetic shown, 1 analysis, 29 blank/unverified) · 36 official sources · 24 flagged items · 22 review findings.
 
 ## Line-by-line findings
 

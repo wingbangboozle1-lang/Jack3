@@ -783,6 +783,19 @@ FLAGS = [
     ("F-21", "Low", "Non-official sources inside repository-only layers",
      "An inherited analysis layer cites a commercial brokerage domain and a private law-firm domain; such links are not used on the published site.",
      "Keep the published source register restricted to government and issuer pages.", "BLS"),
+    ("F-23", "Medium", "Two official statewide enrollment figures differ by 40 pupils",
+     "The California Department of Education reports 5,731,260 pupils enrolled on Census Day 2025-26; the "
+     "Department of Finance reports 5,731,300 for the same year. Different publishers, collection dates and "
+     "methods. Both are published here, side by side, and neither has been averaged or adjusted.",
+     "Both are shown with their publisher; a user needing one figure must choose a publisher explicitly.",
+     "CDELARGE"),
+    ("F-24", "Medium", "Break-even model outputs are arithmetic, not market observations",
+     "The scenario model publishes ratios and break-evens that depend on nine disclosed assumptions "
+     "(entry cap, exit cap, rent growth, required return, selling cost, vacancy, re-let factor, tax rate, "
+     "horizon). Changing the entry cap alone moves the hold/sell ratio from 0.907 to 1.323. The outputs "
+     "are labelled ANALYSIS, never Verified, and no dollar value is produced.",
+     "Re-run scripts/scenario_engine.py with the owner's real cap rate, rent growth and required return "
+     "once those are known.", "FRED"),
     ("F-22", "Low", "Stale open pull requests",
      "PRs #22, #26, #31 and #32 were opened by earlier sessions and have had no commits since 2026-11-07/08. They were not merged or modified by this session.",
      "Owners may close or rebase them; this session opened its own integration PR.", "ZIMAS"),

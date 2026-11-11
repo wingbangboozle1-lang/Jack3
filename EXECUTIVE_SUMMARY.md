@@ -25,6 +25,13 @@ the owner to expire between 2030 and 2035.
 This is analyst judgement on verified public evidence plus the owner's stated facts. It is **not** a valuation, an
 appraisal, a tax opinion or personalised investment advice, and it does not assume a price, rent or cap rate.
 
+The judgement is now backed by a published calculation rather than only by argument. Under every expiry year from
+2031 to 2035 and at the base assumptions disclosed on the [Scenario model](https://wingbangboozle1-lang.github.io/Jack3/model-scenarios.html)
+page, **holding is worth less than selling today after costs** — between 0.959 and 0.850 of it depending on whether a
+void occurs at expiry. Holding wins only if the owner's required return sits near the 4.88% Treasury anchor, if the
+exit cap stays below the entry cap, or if rent growth exceeds roughly 3.5% a year. Those are conditions the owner can
+test against real bids and real renewal terms; they are not predictions.
+
 **Why the sale track leads:** city and county population are below their 2020 estimates bases, metro payroll
 growth is modest, the tenant is contracting and is itself selling real estate, and the owner's principal risk is a
 single-tenant vacancy at an unknown future date. Marketing while the income is contractual keeps the owner's options open; waiting transfers the timing
@@ -52,6 +59,40 @@ alternatives instead of one. The discipline is that only a **signed, enforceable
 3. **Block-level evidence** that this specific trade area is growing: the city and county aggregates published here
    cannot show that.
 4. A change in the **owner's liquidity needs or risk tolerance**, which is private information not modelled here.
+
+---
+
+## 1A. The quantitative case — what the model actually shows
+
+`scripts/scenario_engine.py` is a deterministic, self-testing model. It publishes **only multiples of one year
+of current base rent (1 R)**, because rent, basis and debt are private and any dollar figure would require
+inventing them. Every assumption below is printed on the
+[Scenario model](https://wingbangboozle1-lang.github.io/Jack3/model-scenarios.html) page and is labelled
+`ASSUMPTION`; only the discount-rate floor (10-year Treasury **4.88% on 2026-11-09**, FRED DGS10), the CPI/ECI
+benchmarks and the statutory transfer-tax rules are sourced observations.
+
+**Base case.** Entry cap 5.75%, exit cap 6.25%, rent growth 1.50%, required return 7.50%, statutory transfer
+cost 0.45%, selling cost 2.00%, 18-month void with a 90% re-let.
+
+| Question | Answer at the base case |
+|---|---|
+| Sell today, net of costs | **16.97 R** |
+| Hold to the latest reported expiry (2035), before tax | **16.27 R** — 0.959 of selling |
+| Hold to 2035 with an 18-month void at expiry | **14.42 R** — 0.850 of selling |
+| Rent growth needed to make holding equal selling | **1.62%** a year; **3.51%** if a void occurs |
+| Exit cap at which the two routes are equal | **6.16%** — i.e. 41 bp above the 5.75% entry cap, and 50 bp below the 6.25% exit assumption |
+| Worst of eight stress cases | **0.752** of selling (correlated catastrophe: rent interruption + 150 bp exit-cap widening) |
+| Best stress case | **0.922** of selling (tenant default one year before expiry) |
+
+**How to read that.** Holding does not need a catastrophe to lose to selling; it loses at the base case and at
+every expiry year from 2031 to 2035. It only wins if the owner's required return is near the Treasury floor
+(4.88%), or the exit cap stays well below the entry cap, or rent growth exceeds about 3.5% a year. Those are
+conditions, not forecasts, and they are the numbers the owner should negotiate against.
+
+**The tax arithmetic is the bigger lever than the market.** At an assumed 35% combined rate, the tax drag on a
+sale ranges from **34.1%** of gross price if the adjusted basis is zero, to **10.0%** if the basis equals twelve
+years of rent. Nothing in the public record reveals which is true, so the basis — not cap rates — is the input
+that could reverse the comparison. That is why obtaining the owner's basis is step 1 of the research plan.
 
 ---
 
@@ -166,7 +207,9 @@ valuation is private information — rent, term, guaranty, basis, debt — and i
 
 No address, parcel, lease, rent, NOI, cap rate, sale price, basis, debt, insurance policy, structural report or school
 assignment was available. Those cells are published as **blank and marked Unverified** on the dashboard; nothing has
-been inferred or filled in. The full list, with the official page that could close each item, is on the
+been inferred or filled in. All **38** of them are itemised, with the document that would close each one, on the
+[Questions & evidence gaps](https://wingbangboozle1-lang.github.io/Jack3/questions.html) page — 6 are answered by an
+official source, 11 are partly answered, 13 are open and 8 cannot be verified at all. The full list, with the official page that could close each item, is on the
 [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/review.html) page.
 
 Known open items include: the executed lease and exact expiry; the legal tenant, guarantor and any franchisee
