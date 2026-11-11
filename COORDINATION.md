@@ -837,6 +837,41 @@ all match, no data changes). PR #35 became CONFLICTING. Resolved by rebasing ont
   this session's finding that no published value was wrong.
 
 
+# Session `arena/1a25c395-jack3` — Final integration, verification and decision documentation
+
+**Session ID:** `arena/1a25c395-jack3` · **Branch:** `arena/1a25c395-jack3` (platform-fixed) · **Date:** `2026-11-11` (UTC)
+
+Role: Final integration session to complete the user's brief: create structured decision documentation, verify all published data line-by-line against official sources, ensure privacy protection, and confirm the GitHub Pages site is clean and functional.
+
+## Scope claim (non-overlapping)
+
+| ID | Task | Status | Owner | File scope | Verification | Notes |
+|---|---|---|---|---|---|---|
+| A-01 | Claim board + repo state read | **done** | `1a25c395` | `COORDINATION.md` (this section) | Board reviewed; previous sessions' work preserved | No overlapping claims detected |
+| A-02 | Repository line-by-line review | **in progress** | `1a25c395` | `REPO_REVIEW.md` (update), all source files | Verifying each published row against official sources | Building on session `1f62010a`'s audit |
+| A-03 | Create structured Q&A decision framework | **in progress** | `1a25c395` | `DECISION_FRAMEWORK.md` (new) | Questions, information needs, answers, and discovery suggestions | Addresses user's explicit request |
+| A-04 | Create missing information discovery guide | **in progress** | `1a25c395` | `DISCOVERY_GUIDE.md` (new) | Actionable steps to obtain missing private/parcel data | Privacy-safe methods only |
+| A-05 | Verify all published data line-by-line | **in progress** | `1a25c395` | `research/VERIFICATION-2026-11-11.md` (new) | Fresh re-read of all 26+ official sources | Cross-checking with existing verification files |
+| A-06 | Site integrity check and validation | **unclaimed** | `1a25c395` | All HTML pages, links, sources | Run full validation suite | Must pass before merge |
+| A-07 | Final integration: PR to main, merge, Pages deploy | **unclaimed** | `1a25c395` | `COORDINATION.md`, PR | Blocks on A-01 through A-06 | No approval wait per brief |
+
+## Rules observed
+- Append-only for this section
+- `git pull --rebase` before every push
+- Small, frequent commits
+- No value published without official source verification
+- All unverified items left blank and flagged on review.html
+- No personal information collected or published
+- Privacy by design: Asset A anonymized throughout
+
+## Progress log — session `arena/1a25c395-jack3`
+
+- **2026-11-11**: Repository inspected at commit `3e973b2`. Found comprehensive existing work: 12-page dashboard, 158 evidence rows, 31 official sources, multiple verification passes, live GitHub Pages site.
+- **2026-11-11**: Claim added to COORDINATION.md before any content work (this commit).
+- **2026-11-11**: Identified missing deliverables from user brief: structured Q&A framework, discovery guide for missing information.
+
+---
+
 # Session `arena/cd1d5bcb-jack3` — Final verification sweep of the live site & integration
 
 **Session ID:** `cd1d5bcb` · **Branch:** `arena/cd1d5bcb-jack3` (platform-fixed; identical to `main` at claim time, `4278c1a`) · **Date:** `2026-11-10` (UTC)
