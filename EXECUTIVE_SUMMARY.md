@@ -17,10 +17,12 @@ the owner to expire between 2030 and 2035.
 
 ## 1. Recommendation
 
-> **Run both tracks at once: start a confidential sale process 24–36 months before the earliest expiry, and demand the
-> tenant's renewal terms in writing. Convert to whichever the documents support — a verified after-tax sale, or an
-> enforceable extension of ten years or more at market rent with acceptable credit. What is not defensible is allowing
-> a 2030–2035 option clock to run out on regional averages alone.**
+> **Start both tracks now: prepare for a sale and demand the tenant's renewal terms in writing. Begin lease, tax,
+> insurance and property-document preparation now; target launching a confidential sale process 24–36 months before
+> the earliest verified contractual expiry, after checking the exact date, options and assignment rights. Convert to
+> whichever the documents support — a verified after-tax sale, or an enforceable extension of ten years or more at
+> market rent with acceptable credit. What is not defensible is allowing a 2030–2035 option clock to run out on
+> regional averages alone.**
 
 This is analyst judgement on verified public evidence plus the owner's stated facts. It is **not** a valuation, an
 appraisal, a tax opinion or personalised investment advice, and it does not assume a price, rent or cap rate.
