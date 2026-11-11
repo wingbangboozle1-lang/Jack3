@@ -101,3 +101,18 @@ identifiers remain absent. `tools/pii_scan.py`: 136 files scanned, 0 findings (2
 | `python3 _advisory_src/verify_advisory.py` / `_dashboard_src/verify.py` | PASS |
 | `git diff --exit-code -- '*.html'` | PASS (deterministic rebuild) |
 | Jekyll build + byte-comparison | verified by GitHub Actions only (RubyGems unavailable in sandbox) |
+
+## Delta re-verification after main advanced to `ab514ee` (PRs #52/#53, this session)
+
+The dataset grew from 222 to **223 rows** (snapshot 2026-11-11) while this session worked.
+Every changed or new row was re-read against its source on 2026-11-11; all confirmed:
+
+| Change | Row(s) | Source | Result |
+|---|---|---|---|
+| FRED refresh | 10-yr Treasury **4.88% (2026-11-09)**; anchor note updated | FRED DGS10 (direct fetch 2026-11-11) | latest observation on the series page is 4.88% (2026-11-09) ✓ — also resolves observation O-1 above |
+| New graduation row | Combined four-/five-year **87.6%** = 25,255 graduates / 28,831 students; prior 86.5% | CDE `graddownload2026.txt` (GRAD2026), LAUSD district row `19647330000000` studentgroup ALL | currnumer 25255, currdenom 28831, currstatus 87.6, priorstatus 86.5 ✓ (25,255/28,831 = 87.598%) |
+| New ACGR row | Four-year ACGR **87.4%** (2025-26, LAUSD) | DataQuest CohRate district report (ACGR2026) | Report Totals: 28,447 cohort / 24,857 graduates / 87.4% ✓ |
+| FEMA source URL | `msc.fema.gov/portal/home` → `fema.gov/flood-maps` | FEMA Flood Maps page | official FEMA page; states MSC is the official NFIP mapping location; 1%-annual-chance definition ✓ |
+| New page | `questions.html` registered in `data/canonical.json` | — | registered → inventory gate follows automatically (test 8/8) |
+
+**Final tally: 223 / 223 rows confirmed against official sources; 0 value errors; 0 blanking needed.**
