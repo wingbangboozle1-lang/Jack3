@@ -928,3 +928,10 @@ PR #39 initially passed CI (run 42730410298) but GitHub reported that its merge 
 ### Second concurrency resolution — PR #38 (`203ae19e`)
 
 `main` advanced again before PR #39 could merge. Rebased onto `dfece3f` and preserved PR #38's `scripts/projection.py`, DOF research files, coordination record and break-even model. Independently checked the CA DOF source before retaining its three K-12 projection rows. Replaced PR #38's unverified SCAG placeholder with this session's successfully extracted, official SCAG 2030 values. Clarified that all break-even inputs are unverified assumptions and outputs are Analysis, never Verified market facts. Combined public dataset: 158 evidence rows and 31 official/issuer sources. Full validation and deterministic projection tests pass.
+
+## Session 8504a55c — 2026-11-11 independent publication-integrity audit
+
+Platform-fixed branch: `arena/8504a55c-jack3` (branch naming overrides requested alternate branches).
+Scope claimed: `scripts/test_publication.py`, `research/AUDIT-2026-11-11-8504a55c.md`, append-only coordination; final publication integration only if checks establish a defect. No competing session's open PR or research scope is claimed.
+Tasks: audit inherited evidence boundaries and current Pages status (in progress); add regression checks for exact artifact inventory, private-data exposure and complete local navigation (in progress); PR/CI/merge/deploy (pending).
+External official-source access is restricted by this session's network policy; inherited verification dates will not be advanced or described as independently reverified without actual access.
