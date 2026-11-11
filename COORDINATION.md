@@ -1247,7 +1247,7 @@ stages a different inventory. `Validate public research` and `pages build and de
 | B-02 | Repair the failing `Public artifact regression tests` gate so it tests the canonical artifact semantics (inventory, local links/fragments, no remote resources / event handlers, category links, blank/unknown boundaries) instead of the superseded 13-file list | **done** (`5a4af3e`; later merged with PRs #50/#49's parallel repair — combined suite below) | `scripts/test_publication.py`, `.github/workflows/publication-integrity.yml` (only if the runner needs the canonical staging entry point) |
 | B-03 | Independent verification of the **newly merged canonical dataset** (`data/canonical.json`, 222 rows — no other session has independently re-read it) against the linked official/issuer sources, 2026-11-11 | **done** (`d34ce2c`; plus the post-`ab514ee` delta re-verified: FRED 4.88% 2026-11-09, GRAD2026 87.6% = 25,255/28,831 prior 86.5%, ACGR2026 87.4% DataQuest, FEMA flood-maps URL — 223/223 confirmed (222 base + 1 new ACGR row)) | `research/VERIFICATION-2026-11-11-b7ead2a1.md` (new file) |
 | B-04 | Full local gate run on the combined tree (canonical build, validate, staging, PII, link checks, repaired regression suite) | **claimed** | read-only; results recorded in B-05 / research log |
-| B-05 | PR → `main`, CI green on both workflows, merge without waiting, confirm GitHub Pages deploy + live fetch, record PR link and result here | **claimed** | this section |
+| B-05 | PR → `main`, CI green on both workflows, merge without waiting, confirm GitHub Pages deploy + live fetch, record PR link and result here | **done** — record below | this section |
 
 **Explicitly NOT touched (active or claimed by live sessions):** `tools/check_public.py`,
 `.github/workflows/validate.yml`, `scripts/build.py`, `scripts/stage_pages.py`, `scripts/validate.py`,
@@ -1256,6 +1256,29 @@ stages a different inventory. `Validate public research` and `pages build and de
 (session `76b08b4d`, PR #44, N-01/N-02); every other session's `COORDINATION.md` section (append-only here).
 No other session's open PR (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48) is merged, closed or edited by
 this session; stale PRs #4/#12/#22/#26/#31/#32/#36/#40 are reported, not touched.
+
+### B-05 completion record (2026-11-11)
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/54 — **merged** to `main` as `6c9469c`
+  (merge commit `Merge pull request #54 from wingbangboozle1-lang/arena/b7ead2a1-jack3`).
+- **CI on the PR head:** `Validate public research` **success** (`42948281290`),
+  `Public artifact regression tests` **success** (`42948281362`) — both workflows green before merge.
+- **Post-merge on `main`:** `pages build and deployment` **success** (`42948402050`, head `6c9469c`),
+  `Validate public research` **success** (`42948402629`), `Public artifact regression tests`
+  **success** (`42948402592`). GitHub Pages API: `status: built`, latest build commit
+  `6c9469cc4dbca8441fc2eb7a27f96cf1045bdfe7` (created 2026-11-11T02:47:28Z), HTTPS enforced.
+- **Live fetches (2026-11-11):** `https://wingbangboozle1-lang.github.io/Jack3/` and
+  `questions.html` both served the merge-SHA content — six source-linked anchors, FRED 4.88%
+  (2026-11-09), Asset A placeholder boundary intact, 0 personal identifiers, all official-source
+  links resolving.
+- **Conflict log:** two conflicts resolved in this PR (both preserved both sides):
+  `COORDINATION.md` (sessions `322b173f` K-05 / `d644184d` / `49e9fb75` records + this section) and
+  `scripts/test_publication.py` (this session's `5a4af3e` repair combined with PRs #50/#49's
+  parallel repair into one superset suite, 8/8 PASS).
+- **Final verification tally:** 223/223 canonical rows confirmed against official sources
+  (`research/VERIFICATION-2026-11-11-b7ead2a1.md`), 0 value errors, 0 blanking needed.
+- This document's record of the merge is pushed after the merge itself (docs-only follow-up PR);
+  no site content changes with it.
 
 **Sequencing note:** sessions `c350ccea` (PR #48, CI green but `CONFLICTING` with the canonical merge) and
 `76b08b4d` (PR #44, rebasing) are live. This session does not merge their PRs and does not edit their files;
