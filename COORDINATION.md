@@ -963,3 +963,11 @@ Role: fresh independent audit of the already-published curated root dashboard (1
 Privacy rule (unchanged): Asset A / Owner A placeholders only. No owner identity, address, parcel ID, contact, or private financial data sought or published. No personal information appears on the site.
 
 Notes at claim time: main `3e973b2` green (Validate + Pages `built` 2026-11-10). Open PRs #43 (new, `arena/8504a55c-jack3`, privacy regression tests — another live session, do not touch), #42/#40/#36/#32/#31/#26/#22/#12/#4 (stale/conflicting per prior board entries — reported, not merged by this session). This session will not merge or close any other session's PR.
+
+### Progress log — session `322b173f` (2026-11-11)
+
+- K-01 **done**: claim pushed (`d356204`). Main `3e973b2` green; Pages `built`.
+- K-02 **done**: fresh re-read of 20 official/issuer sources (Census city+county chunks 0–2, BLS Sep-2026 PDF, FRED DGS10, Jack Q3 FY2026 + JACK on Track, DIR ×2, Measure ULA, county transfer tax, Prop 13, IRS ×2, FTB, CAL FIRE ×2, USGS ShakeOut, CDE LAUSD profile, CA DOF K-12, SCAG Tables 3.14-8/9/10, LA County Assessment Roll, LA Metro). Every published value confirmed; no contradiction found. Record: `research/VERIFICATION-2026-11-11-322b173f.md`. Honest limitation: LAUSD graduation 86.2%/87.6% not re-confirmed via fetch (JS-rendered Dashboard page); rests on dated 2026-11-10 verification. FRED newer print 4.88% (2026-11-09) noted; published dated 4.86% (2026-11-06) remains accurate.
+- K-03 **done**: full suite PASS — build, validate (158 rows/12 pages), stage_pages, check_site, linkcheck, check_links (0 non-official), pii_scan (90 files, 0 findings), advisory + dashboard verifiers, deterministic build (`git diff --exit-code -- '*.html'` clean).
+- K-04 **done — zero content changes**: no substantiated defect, so `data/evidence.json`, generators and HTML untouched. Docs-only PR.
+- K-05 **in progress**: PR → CI → merge → Pages deploy + live fetch.
