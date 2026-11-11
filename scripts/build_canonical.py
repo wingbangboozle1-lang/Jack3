@@ -58,6 +58,8 @@ PAGES = [
      "A reliable, reproducible framework for the area, and the outputs deliberately withheld."),
     ("anchors", "Projection anchors", "ANALYSIS", "11A / PROJECTION ANCHORS",
      "The dated official observations and long-range projections that may bound a model."),
+    ("questions", "Questions & answers", "ANALYSIS", "12 / QUESTIONS & ANSWERS",
+     "Current answers, missing evidence, discovery routes and decision consequences."),
     ("decisions", "Decision matrix", "ANALYSIS", "12 / DECISION MATRIX",
      "Every available pathway, its risks, its evidence gate and the recommended sequence."),
     ("model", "Model & method", "ANALYSIS", "13 / MODEL & METHOD",
@@ -191,7 +193,7 @@ def page_index() -> str:
         ("LA METRO · SEP 2026", "4.4%", "Unemployment · down from 5.5% a year earlier", "BLS", "BLS economic summary"),
         ("LA METRO · SEP 2026", "+0.5%", "Nonfarm payroll growth · 6,282.1 thousand jobs", "BLS", "BLS economic summary"),
         ("ISSUER · Q3 FY2026", "-1.1%", "System same-store sales · 2,115 restaurants", "SECQ3", "SEC 8-K Exhibit 99.1"),
-        ("US · 2026-11-06", "4.86%", "10-year Treasury · risk-free anchor for any buyer", "FRED", "FRED DGS10"),
+        ("US · 2026-11-09", "4.88%", "10-year Treasury · risk-free anchor for any buyer", "FRED", "FRED DGS10"),
         ("LA REGION · UCERF3", "60%", "30-year likelihood of an M≥6.7 earthquake", "UCERF3", "USGS Fact Sheet 2015-3009"),
     ]
     card_html = ''.join(
@@ -281,7 +283,7 @@ def page_executive_summary() -> str:
         ("2", "Demand is soft at regional scale", "City population is 0.8% below its 2020 estimates base; county is 3.2% below; a separate state estimate shows a −0.45% county year-over-year decline.", "DOF"),
         ("3", "Labour market is improving but uneven", "Metro unemployment fell to 4.4% and payrolls rose 0.5%, led by education and health (+3.8%) while information fell 5.7%.", "BLS"),
         ("4", "Tenant credit is the key unknown", "The issuer reports −1.1% same-store sales, 17 quarterly closures, a discontinued dividend and a $500m refinancing. The legal obligor at this site is unknown.", "SECQ3"),
-        ("5", "Costs and rates compress real returns", "CPI-U +3.7%, ECI +3.9%, energy +20.3%, and a 4.86% 10-year Treasury. A fixed escalator and a higher exit yield both work against the hold case.", "FRED"),
+        ("5", "Costs and rates compress real returns", "CPI-U +3.7%, ECI +3.9%, energy +20.3%, and a 4.88% 10-year Treasury. A fixed escalator and a higher exit yield both work against the hold case.", "FRED"),
         ("6", "Tail risk is real but unquantified", "USGS ShakeOut models ~1,800 deaths and $213bn in losses; the 2025 fires destroyed 16,264 structures in 24 days. No parcel overlay or insurance evidence exists.", "UCERF3"),
     ]
     frows = [[f'<b>{E(n)}</b>', E(t), E(d), src(s)] for n, t, d, s in findings]
@@ -438,6 +440,34 @@ def page_projections() -> str:
     return shell("projections", ''.join(body), "11 / PROJECTION SYSTEM")
 
 
+def page_questions() -> str:
+    rows = [
+        ("What is the best current course?", "Run confidential sale market testing and a written renewal track in parallel; choose only after comparing actual after-tax bids with enforceable terms.", "Actual bids, tenant proposal, tax review and executed lease.", "Preserves both exit and extension options; analyst judgment, not a valuation.", "IRS1031"),
+        ("When should sale marketing begin?", "Start 24–36 months before the earliest verified contractual expiry, not at expiration.", "Executed lease, amendments, options and notice calendar; reconcile the reported 2030–2035 range.", "Avoids marketing into shortening-term or vacancy risk.", "SECQ3"),
+        ("Should the property simply be sold now?", "Not on regional data alone. Sell when a documented after-tax bid beats the risk-adjusted hold and reinvestment cases.", "Independent bids, closing costs, debt payoff, tax basis and replacement plan.", "No optimal sale year or price is established.", "IRS1031"),
+        ("When is renewal preferable?", "Only with an enforceable, credit-supported extension at market rent and acceptable expense terms; the working gate is at least ten years.", "Signed amendment, legal obligor, guaranty, tenant financials, rent coverage and concessions.", "A verbal intention or franchise agreement is not a lease extension.", "SECQ3"),
+        ("Is holding unchanged to expiry acceptable?", "No, unless contractual income, reserves, insurance and a costed re-letting plan independently support it.", "Carrying-cost budget, vacancy/default stresses, capital plan and alternate demand.", "Avoids silently accepting expiry and concentration risk.", "SECQ3"),
+        ("Could renewing first and then selling help?", "Potentially, if signed terms improve real bids enough to cover concessions and transaction costs.", "Compare as-is bids with extension bids; do not assume cap-rate compression.", "Evidence-gated alternative, not a guaranteed win.", "IRS1031"),
+        ("When does re-tenanting or redevelopment make sense?", "Only if documented alternate demand and a costed, permitted plan beat existing-use and sale alternatives.", "ZIMAS/title review, entitlements, environmental/engineering work, budget and tenant interest.", "Higher-risk fallback, not the default wealth-preservation route.", "ZIMAS"),
+        ("What does the regional economy establish?", "Population is below 2020 estimates bases and payroll growth is modest. SCAG is a separate planning case, not a parcel forecast.", "Define a trade area; obtain official tract/block-group histories with consistent vintages.", "Supports caution, not a mechanical 2030–2035 value forecast.", "BLS"),
+        ("Which sale-cost rules are known?", "City/county transfer taxes, possible Measure ULA, capital-gain rules and §1031 deferral can materially change net proceeds.", "Confirm jurisdiction, price, liens, closing date, basis, holding purpose and owner-specific treatment.", "Compare after-tax proceeds; ULA applies to gross value.", "ULA"),
+        ("Can §1031 remove tax and risk?", "No. Qualifying exchanges may defer gain; they do not eliminate tax or replacement-asset and concentration risks.", "Tax/legal review, qualified intermediary process and verified replacement options before closing.", "Underwrite every replacement independently.", "IRS1031"),
+        ("How should catastrophe risks be handled?", "Use parcel overlays, engineering and actual policy terms; stress interrupted rent, uninsured cost and an illiquid exit together.", "CGS/CAL FIRE/FEMA checks, structural/geotechnical review, deductibles, exclusions and rent-loss cover.", "Do not infer safety from a city label or invent disaster probabilities.", "EQZAPP"),
+        ("Which owner facts prevent a final suitability decision?", "", "Liquidity, concentration, tax position, debt, horizon and loss tolerance remain private. Keep them in secure offline adviser review.", "No personalized allocation or loss-capacity conclusion can be made publicly.", "IRS1031"),
+        ("Which exact lease facts are missing?", "", "Executed lease/amendments: expiry, notice dates, options, rent, escalations, expenses, casualty, roof/structure and assignment rights.", "The reported 2030–2035 range and NNN label are not enough.", "SECQ3"),
+        ("Which property and tenant facts are missing?", "", "Legal tenant/guarantor, store sales/rent coverage, arrears, estoppel, rent roll, debt, tax bill, title, zoning, traffic and pipeline.", "These gaps block a reliable value, closure probability and renewal forecast.", "SECQ3"),
+        ("How should missing public-area evidence be discovered?", "", "Use Census tract/block-group downloads with margins of error; ZIMAS; CDE campus records; effective hazard maps; lawful public-agency requests.", "Do not substitute commercial estimates or nearby averages.", "CITY"),
+        ("What evidence would change the recommendation?", "A signed market-rent extension with acceptable credit; a superior after-tax bid; demonstrated trade-area growth; or changed liquidity needs.", "Re-run the same after-tax and downside comparison when any gate changes.", "Keeps the decision conditional and falsifiable.", "BLS"),
+    ]
+    body = []
+    for q, answer, needed, consequence, source in rows:
+        value = E(answer) if answer else '<span class="empty" aria-label="Unverified value; intentionally blank"></span>'
+        body.append([E(q), value, E(needed), E(consequence), badge("Analysis" if answer else "Blank"), src(source)])
+    return shell("questions", CALLOUT_BOUNDARY + h1("Questions & answers", "Current answers, explicit unknowns and discovery routes. Private documents belong in secure offline review—not on this public site.") + table(
+        ["Question", "Current answer", "Evidence needed / discovery route", "Decision consequence", "Status", "Official source"],
+        body, "Decision questions, answers and evidence gaps"), "12 / QUESTIONS & ANSWERS")
+
+
 def page_decisions() -> str:
     drows = [[E(a), E(b), E(c), E(d), src(s)] for a, b, c, d, s in DECISIONS]
     body = [CALLOUT_BOUNDARY,
@@ -468,7 +498,7 @@ def page_decisions() -> str:
             '<p>A short or below-market extension, a weak guarantor, a closure, or a catastrophe that removes '
             'rent and exit liquidity together. Chain-wide results cannot establish this site\'s fate.</p>'
             + src("SECQ3", "Issuer Q3 FY2026") + '</div></section>']
-    return shell("decisions", ''.join(body), "12 / DECISION MATRIX")
+    return shell("decisions", ''.join(body), "12A / DECISION MATRIX")
 
 
 def page_model() -> str:
@@ -803,9 +833,9 @@ def write_verification_log() -> None:
         "",
         "1. LA County documentary transfer tax (`$0.55 per $500`, 0.11%) verified on the official",
         "   Registrar-Recorder page; the earlier blank cell (V-3 / K-F-18) is closed.",
-        "2. LAUSD graduation rate (`86.5%`, 2025) verified on the California School Dashboard; the",
+        "2. LAUSD graduation rate (`87.6%` combined, 2026) verified on the California School Dashboard; the",
         "   earlier blank cell (V-4) is closed. The 2019-2025 series is published with it.",
-        "3. The 10-year Treasury observation is updated to include `4.86%` on 2026-11-06 alongside",
+        "3. The 10-year Treasury observation is updated to include `4.88%` on 2026-11-09 alongside",
         "   `4.84%` on 2026-11-05; older layers citing 4.19% (2026-01-02) are flagged, not edited.",
         "4. CA DOF February-2026 revised July-2025 LA County estimate (`9,853,435`, −0.45% YoY) is",
         "   published alongside the Census V2025 figure (`9,694,934`), labelled by agency and vintage.",
@@ -972,6 +1002,7 @@ def main() -> None:
         "sources.html": page_sources(),
         "risk.html": page_risk(),
         "projections.html": page_projections(),
+        "questions.html": page_questions(),
         "decisions.html": page_decisions(),
         "model.html": page_model(),
         "place.html": page_place(),
