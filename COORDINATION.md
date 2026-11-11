@@ -928,3 +928,16 @@ PR #39 initially passed CI (run 42730410298) but GitHub reported that its merge 
 ### Second concurrency resolution — PR #38 (`203ae19e`)
 
 `main` advanced again before PR #39 could merge. Rebased onto `dfece3f` and preserved PR #38's `scripts/projection.py`, DOF research files, coordination record and break-even model. Independently checked the CA DOF source before retaining its three K-12 projection rows. Replaced PR #38's unverified SCAG placeholder with this session's successfully extracted, official SCAG 2030 values. Clarified that all break-even inputs are unverified assumptions and outputs are Analysis, never Verified market facts. Combined public dataset: 158 evidence rows and 31 official/issuer sources. Full validation and deterministic projection tests pass.
+
+## Session 8504a55c — 2026-11-11 independent publication-integrity audit
+
+Platform-fixed branch: `arena/8504a55c-jack3` (branch naming overrides requested alternate branches).
+Scope claimed: `scripts/test_publication.py`, `research/AUDIT-2026-11-11-8504a55c.md`, append-only coordination; final publication integration only if checks establish a defect. No competing session's open PR or research scope is claimed.
+Tasks: audit inherited evidence boundaries and current Pages status (in progress); add regression checks for exact artifact inventory, private-data exposure and complete local navigation (in progress); PR/CI/merge/deploy (pending).
+External official-source access is restricted by this session's network policy; inherited verification dates will not be advanced or described as independently reverified without actual access.
+
+### 8504a55c progress
+- Scope addendum: `.github/workflows/publication-integrity.yml` is a new non-overlapping workflow running only this session's artifact regression suite.
+- Audit and five regression tests completed: exact thirteen-file artifact; all local targets/fragments; no active collection/remote HTML resources; all category links; unknown-value boundaries. Local canonical validation passes 158 rows / twelve pages. Existing legacy link/privacy checks pass; their scopes are distinguished from the canonical artifact.
+- Sources and limitations recorded in `research/AUDIT-2026-11-11-8504a55c.md`. GitHub official Pages API confirms the existing main deployment built successfully; independent live HTTP fetch and fresh government-source verification are unavailable under this session's network allowlist. No claim of fresh semantic re-verification is made. Historical research, current source dates, public figures, and other sessions' open PRs are unchanged.
+- Documentation drift: README's 155-row/30-source audit description is historical; current dataset is 158/31 after the last integration. Needs review; not a newly verified data correction. Existing public review flags remain intact.
