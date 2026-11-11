@@ -928,3 +928,30 @@ PR #39 initially passed CI (run 42730410298) but GitHub reported that its merge 
 ### Second concurrency resolution — PR #38 (`203ae19e`)
 
 `main` advanced again before PR #39 could merge. Rebased onto `dfece3f` and preserved PR #38's `scripts/projection.py`, DOF research files, coordination record and break-even model. Independently checked the CA DOF source before retaining its three K-12 projection rows. Replaced PR #38's unverified SCAG placeholder with this session's successfully extracted, official SCAG 2030 values. Clarified that all break-even inputs are unverified assumptions and outputs are Analysis, never Verified market facts. Combined public dataset: 158 evidence rows and 31 official/issuer sources. Full validation and deterministic projection tests pass.
+
+---
+
+# Session `ac2f57ec` — projection engine, question register, decision-risk matrix (2026-11-11)
+
+**Session ID:** `ac2f57ec` · **Branch:** `arena/ac2f57ec-jack3` (platform-fixed) · **Date:** 2026-11-11 (UTC)
+
+## Claim (pushed before content work)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| AC-01 | Claim board + repo state read (open PRs, CI, Pages status) | done | `ac2f57ec` | `COORDINATION.md` (this section only) |
+| AC-02 | Fresh official-source verification of every new published figure | in progress | `ac2f57ec` | `research/VERIFICATION-2026-11-11-ac2f57ec.md` |
+| AC-03 | Projection engine: deterministic year-by-year 2026–2035 model, sensitivity grids, black-swan stress cases — published with every assumption disclosed | in progress | `ac2f57ec` | `scripts/scenario_model.py`, `projection-model.html`, `projections.html`, `anchors.html` |
+| AC-04 | Questions / information / answers register with "how to close" for every missing input | in progress | `ac2f57ec` | `questions.html` |
+| AC-05 | Risk-of-every-decision matrix (business-as-usual + black swan per pathway) | in progress | `ac2f57ec` | `decisions.html` |
+| AC-06 | Integration: rebuild, full gate suite, PR, merge, Pages deploy verification | in progress | `ac2f57ec` | root `*.html`, `scripts/build_canonical.py`, `data/canonical.json`, `README.md`, `EXECUTIVE_SUMMARY.md`, `REPO_REVIEW.md` |
+
+**Explicitly not touched:** `advisory/`, `analysis/`, `brief/`, `dashboard/`, `decision-file/`, `docs/`, `pages/`, `audit/`, `report/`, `_advisory_src/`, `_dashboard_src/`, `build_site.py`, `site/`, `model/`, `data/evidence.json`, `data/*.py` (legacy layer). Those remain audit trail only.
+
+**Inherited open PRs (#4, #12, #22, #26, #31, #32, #36, #40, #42) are reported, not closed.** PR #42 (`b98090a0`)
+is the current green, mergeable final-integration PR and is fast-forward-able from `main`; this session builds on
+that exact tree rather than duplicating it, and merges once the added work is verified.
+
+**Rules in force:** official sources only; every published row carries an `https://` link to a government or issuer
+page; unconfirmable values stay blank and are listed on Flagged for Review; no personal information collected,
+researched or published; no model output presented as a valuation, price, cap rate or probability.
