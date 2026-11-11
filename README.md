@@ -4,14 +4,14 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 
 **Live site:** https://wingbangboozle1-lang.github.io/Jack3/
 
-> **Current canonical site (2026-11-10).** This repository now publishes **one** consolidated site, generated
+> **Current canonical site (2026-11-11).** This repository now publishes **one** consolidated site, generated
 > from a single verified register. The descriptions of earlier companion layers further down this README are
 > historical audit trail; those directories are excluded from GitHub Pages and are not the live product.
 
 ## Start here
 
 - [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks.
-- [Line-by-line verification](research/VERIFICATION-2026-11-10-1f62010a.md) — all 155 rows and 30 official/issuer sources.
+- [Line-by-line verification](research/VERIFICATION-2026-11-11-1f62010a.md) — all 155 rows and 30 official/issuer sources.
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
 - [Flagged for Review](review.html) — unresolved items and source irregularities.
@@ -29,8 +29,8 @@ Run two tracks now: confidential sale market testing 24–36 months before the e
 | [All entries & findings](master.html) | Every published row in one source-linked table |
 | [Flagged for Review](review.html) | Every unverified value, conflict and irregularity, published for manual review |
 | [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
-| [Line-by-line verification record](research/VERIFICATION-2026-11-10-b98090a0.md) | Every row re-read against its publisher page on 2026-11-10, plus corrections and gaps |
-| [Sources & method](sources.html) | 34 official sources, verification standard and privacy boundary |
+| [Line-by-line verification record](research/VERIFICATION-2026-11-11-b98090a0.md) | Every row re-read against its publisher page on 2026-11-11, plus corrections and gaps |
+| [Sources & method](sources.html) | 36 official sources, verification standard and privacy boundary |
 
 ## Build and verify
 

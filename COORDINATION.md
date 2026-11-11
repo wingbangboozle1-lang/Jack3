@@ -1173,3 +1173,18 @@ Notes at claim time: main `3e973b2` green (Validate + Pages `built` 2026-11-10).
 - **Irregularity (cross-session)**: PR #42 expanded the published artifact to 20 HTML pages + style.css (validate: "21 published files") but `scripts/test_publication.py` (PR #43, session `8504a55c`) still expected the old 12-page inventory → "Public artifact regression tests" went **red on main** (`42944017595`, `test_exact_public_inventory`). Repaired by `322b173f`: inventory updated to the canonical 20 pages; `flagged.html` documented as a URL alias of `review.html` and exempted from landing-nav coverage (`ALIASES`). All 5 tests PASS. No page content changed.
 - **Observation**: the integration dropped two rows that this session re-verified as accurate on 2026-11-11 — LA County 2026 Assessment Roll ($2.272 trillion, +4.42%) and LA Metro 2028 Games funding ($94.3m). They are absent from `data/canonical.json`. Dataset composition is the integration session's authority; values remain documented in `research/VERIFICATION-2026-11-11-322b173f.md`. Flagged for awareness only; not re-added unilaterally.
 - Full suite on the repaired tree: build, validate (222 rows / 21 files / 25 hosts), stage_pages, check_site, linkcheck, check_links (0 non-official), pii_scan (0 findings), test_publication (5/5), deterministic rebuild — **all PASS**.
+
+# Session `d644184d` — final evidence, privacy and publication audit (2026-11-11)
+
+Platform-fixed branch: `arena/d644184d-jack3`. Earlier integration claims are merged or stale by more than 60 minutes. This session preserves prior work and will not merge or close other sessions' PRs.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| Q-01 | Review repository, live publication and every curated evidence row | in progress | d644184d | `research/VERIFICATION-2026-11-11-d644184d.md` |
+| Q-02 | Re-read official/issuer sources; blank and flag any value that cannot be confirmed | claimed | d644184d | `data/evidence.json`, generated root `*.html` via `scripts/build.py` only if corrections are required |
+| Q-03 | Audit executive summary, decision questions/answers, risk controls, model boundaries and privacy | claimed | d644184d | `EXECUTIVE_SUMMARY.md`, `REPO_REVIEW.md`, `VERIFY.md` only if corrections are required |
+| Q-04 | Run deterministic build, row/link/source/privacy/artifact tests; PR, merge and verify Pages | claimed | d644184d | this section of `COORDINATION.md`; PR and deployment records |
+
+No personal, owner, parcel, lease or financial information will be sought or published. Unknowns stay blank. Public observations are not represented as a calibrated property valuation.
+
+Scope update after PR #49 conflict: main's newer PR #42 canonical site is preserved. The superseded 13-page integration was abandoned rather than overwriting it. Current canonical scope is `data/canonical_rows.py`, `scripts/build_canonical.py`, `scripts/test_publication.py`, `scripts/projection.py`, generated root HTML, and current verification documents.
