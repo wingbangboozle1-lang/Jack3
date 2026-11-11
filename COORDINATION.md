@@ -1226,3 +1226,41 @@ Rules observed:
 - Platform-fixed branch `arena/49e9fb75-jack3` used exclusively.
 - Active parallel sessions `76b08b4d` (PR #44), `c350ccea` (PR #48), `d644184d` (PR #49), `29cc3b29` (PR #51), `0628a817`, and `b7ead2a1` noted and respected; no files in their claimed scopes (`scripts/test_publication.py`, `scripts/decision_engine.py`, `data/evidence.json`, `data/canonical.json`, root `*.html`, etc.) or any historical companion directories (`advisory/`, `analysis/`, `brief/`, `dashboard/`, `decision-file/`, `docs/`, `pages/`, `report/`, `audit/`) are edited by this session.
 - Strict privacy boundary: `Asset A` / `Owner A` placeholders only; no personal, parcel, address, or private financial information sought, stored, or published.
+---
+
+# Session `b7ead2a1` — repair of the failing public-artifact regression gate, independent verification, final integration (2026-11-11)
+
+**Session ID:** `b7ead2a1` · **Branch:** `arena/b7ead2a1-jack3` (platform-fixed; the brief's `session-<id>/<task>`
+naming is unavailable in this environment — same deviation recorded by six earlier sessions) · **Date:** 2026-11-11 (UTC)
+
+Claim written before any content work, after reading this board in full. `main` at claim time: `c90b345`
+(PRs #42, #46, #47 merged in the last hour). Live defect observed on `main`: the `Public artifact regression
+tests` workflow (from session `8504a55c`, PR #43) **fails** on the merge of PR #42 because
+`scripts/test_publication.py` asserts the pre-canonical thirteen-file artifact while the canonical site now
+stages a different inventory. `Validate public research` and `pages build and deployment` are green on `main`.
+
+## Scope claim (writes)
+
+| ID | Task | Status | File scope |
+|---|---|---|---|
+| B-01 | Claim board; read repo, open PRs, CI and Pages state | **done** | this section only |
+| B-02 | Repair the failing `Public artifact regression tests` gate so it tests the canonical artifact semantics (inventory, local links/fragments, no remote resources / event handlers, category links, blank/unknown boundaries) instead of the superseded 13-file list | **done** (`5a4af3e`; later merged with PRs #50/#49's parallel repair — combined suite below) | `scripts/test_publication.py`, `.github/workflows/publication-integrity.yml` (only if the runner needs the canonical staging entry point) |
+| B-03 | Independent verification of the **newly merged canonical dataset** (`data/canonical.json`, 222 rows — no other session has independently re-read it) against the linked official/issuer sources, 2026-11-11 | **done** (`d34ce2c`; plus the post-`ab514ee` delta re-verified: FRED 4.88% 2026-11-09, GRAD2026 87.6% = 25,255/28,831 prior 86.5%, ACGR2026 87.4% DataQuest, FEMA flood-maps URL — 223/223 confirmed (222 base + 1 new ACGR row)) | `research/VERIFICATION-2026-11-11-b7ead2a1.md` (new file) |
+| B-04 | Full local gate run on the combined tree (canonical build, validate, staging, PII, link checks, repaired regression suite) | **claimed** | read-only; results recorded in B-05 / research log |
+| B-05 | PR → `main`, CI green on both workflows, merge without waiting, confirm GitHub Pages deploy + live fetch, record PR link and result here | **claimed** | this section |
+
+**Explicitly NOT touched (active or claimed by live sessions):** `tools/check_public.py`,
+`.github/workflows/validate.yml`, `scripts/build.py`, `scripts/stage_pages.py`, `scripts/validate.py`,
+`questions.html`/`data/evidence.json` additions (session `c350ccea`, PR #48, K-03…K-05); root `*.html`,
+`EXECUTIVE_SUMMARY.md`, `README.md`, `REPO_REVIEW.md`, `data/evidence.json`, `scripts/build.py`
+(session `76b08b4d`, PR #44, N-01/N-02); every other session's `COORDINATION.md` section (append-only here).
+No other session's open PR (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48) is merged, closed or edited by
+this session; stale PRs #4/#12/#22/#26/#31/#32/#36/#40 are reported, not touched.
+
+**Sequencing note:** sessions `c350ccea` (PR #48, CI green but `CONFLICTING` with the canonical merge) and
+`76b08b4d` (PR #44, rebasing) are live. This session does not merge their PRs and does not edit their files;
+if `main` advances while this session works, it will rebase additively and re-run every gate before merging.
+
+**Privacy rule (highest urgency):** no personal information is collected, inferred or published anywhere in
+this session's scope; the repaired gate keeps and re-runs the PII / remote-resource checks over the public
+artifact; any personal data discovered stays internal and out of the published site.

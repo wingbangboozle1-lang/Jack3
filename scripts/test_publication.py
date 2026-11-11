@@ -1,6 +1,18 @@
 """Regression tests of the actual public artifact, not historical companion sites.
 Run: python -m unittest discover -s scripts -p 'test_publication.py' -v
 These checks test integrity, not accuracy of external source claims.
+
+Inventory contract (repaired 2026-11-11, session b7ead2a1):
+  The published artifact is built from data/canonical.json by scripts/build_canonical.py
+  and staged by scripts/stage_pages.py. The expected file set is therefore derived from
+  the canonical page registry plus one documented alias:
+    - every page registered in data/canonical.json (pages[].file) must be staged;
+    - flagged.html is a byte-identical alias of review.html ("Flagged for Review"),
+      generated on purpose by build_canonical.page_flagged();
+    - anything else appearing in the artifact fails the inventory test, so stray or
+      private files cannot reach the public site unnoticed.
+  Adding a legitimate page means registering it in data/canonical.json in the same
+  change; the gate follows the registry automatically.
 """
 import json
 from html.parser import HTMLParser
@@ -12,8 +24,18 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / '_pages_artifact'
-PAGES = {p['file'] for p in json.loads((ROOT / 'data/canonical.json').read_text())['pages']} | {'flagged.html'}
-ALIASES = {'flagged.html'}
+
+CANONICAL = json.loads((ROOT / 'data/canonical.json').read_text(encoding='utf-8'))
+REGISTERED_PAGES = {p['file'] for p in CANONICAL['pages']}
+# Deliberate alias of review.html; see module docstring.
+ALIASED_PAGES = {'flagged.html'}
+# Kept for the shared-navigation assertion below.
+ALIASES = ALIASED_PAGES
+PAGES = REGISTERED_PAGES | ALIASED_PAGES
+STYLESHEET = {'assets/style.css'}
+# Status vocabulary of the canonical dataset. A new status must be a deliberate,
+# reviewed change to this contract, not an accident.
+ALLOWED_STATUSES = {'Verified', 'Blank', 'Analysis', 'Derived'}
 
 
 class Document(HTMLParser):
@@ -27,7 +49,6 @@ class Document(HTMLParser):
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
-        self.tags.add(tag)
         attrs = dict(attrs)
         if 'id' in attrs:
             self.ids.add(attrs['id'])
@@ -43,11 +64,25 @@ class PublicationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         subprocess.run([sys.executable, 'scripts/stage_pages.py'], cwd=ROOT, check=True)
-        cls.docs = {name: Document((PUBLIC / name).read_text()) for name in PAGES}
+        cls.docs = {name: Document((PUBLIC / name).read_text()) for name in sorted(PAGES)}
 
     def test_exact_public_inventory(self):
         actual = {str(p.relative_to(PUBLIC)) for p in PUBLIC.rglob('*') if p.is_file()}
-        self.assertEqual(actual, PAGES | {'assets/style.css'})
+        self.assertEqual(actual, PAGES | STYLESHEET)
+
+    def test_flagged_alias_is_byte_identical_to_review(self):
+        # flagged.html is allowed in the artifact only because it is this alias.
+        self.assertEqual(
+            (PUBLIC / 'flagged.html').read_bytes(),
+            (PUBLIC / 'review.html').read_bytes(),
+        )
+
+    def test_registered_page_names_are_bare_filenames(self):
+        for page in CANONICAL['pages']:
+            with self.subTest(page=page.get('file')):
+                name = page['file']
+                self.assertTrue(name.endswith('.html'))
+                self.assertEqual(Path(name).name, name)
 
     def test_all_local_targets_and_fragments(self):
         for name, doc in self.docs.items():
@@ -74,12 +109,27 @@ class PublicationTests(unittest.TestCase):
                 self.assertEqual(doc.remote_resources, [])
 
     def test_all_pages_accessible_from_shared_navigation(self):
+        # Every staged page must carry the shared nav that reaches every
+        # registered page; the flagged.html alias is reached as review.html.
         for name, doc in self.docs.items():
             with self.subTest(page=name):
                 targets = {urlsplit(x).path for x in doc.links}
-                self.assertTrue((PAGES - ALIASES) <= targets)
+                self.assertTrue((PAGES - ALIASED_PAGES) <= targets)
 
     def test_unknowns_are_not_verified_or_filled(self):
+        """Blank stays blank; every row cites a registered source; status vocabulary fixed."""
+        sources = set(CANONICAL['sources'])
+        for row in CANONICAL['rows']:
+            with self.subTest(category=row.get('category'), indicator=row.get('indicator')):
+                self.assertIn(row.get('source'), sources)
+                self.assertIn(row.get('status'), ALLOWED_STATUSES)
+                if row['status'] == 'Blank':
+                    self.assertEqual(row['value'], '')
+                if row['status'] == 'Verified':
+                    self.assertNotEqual(row['value'].strip(), '')
+
+    def test_legacy_evidence_dataset_rules(self):
+        # data/evidence.json still backs scripts/build.py; its rules are unchanged.
         data = json.loads((ROOT / 'data/evidence.json').read_text())
         for page in data['pages']:
             for row in page['rows']:
