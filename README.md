@@ -3,12 +3,13 @@
 Privacy-safe, source-linked research for an anonymized single-tenant Jack in the Box NNN property reported to expire between 2030 and 2035. The question is whether to sell before expiry or renew while balancing wealth preservation, growth and manageable risk.
 
 **Live site:** https://wingbangboozle1-lang.github.io/Jack3/  
-**Evidence snapshot:** 2026-11-10
+**Evidence snapshot:** 2026-11-11
 
 ## Start here
 
 - [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks.
-- [Line-by-line verification](research/VERIFICATION-2026-11-10-1f62010a.md) — all 155 rows and 30 official/issuer sources.
+- [Line-by-line verification](research/VERIFICATION-2026-11-11-c350ccea.md) — every published row re-read on 2026-11-11 against 24 official/issuer pages, with the one defect found and corrected.
+- [Open questions & missing data](questions.html) — the 20 facts a decision needs, why each blocks a choice, and the exact step that closes it.
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
 - [Flagged for Review](review.html) — unresolved items and source irregularities.
@@ -22,6 +23,7 @@ Run two tracks now: confidential sale market testing 24–36 months before the e
 | Category | Contents |
 |---|---|
 | Executive summary | Recommendation, evidence and risk balance |
+| Open questions & missing data | 20 open questions by blocking priority, plus 4 answered ones |
 | Area fundamentals | Population, income, jobs, wages, CPI, assessment roll, transport funding |
 | Demographics | Households, age, poverty, tenure and spending context |
 | Tenant & lease | Latest issuer results, closure plan and missing lease facts |
@@ -40,6 +42,7 @@ Run two tracks now: confidential sale market testing 24–36 months before the e
 python scripts/build.py
 python scripts/validate.py
 python scripts/stage_pages.py
+python tools/check_public.py
 python tools/check_site.py
 python tools/linkcheck.py
 python tools/check_links.py
@@ -51,7 +54,8 @@ The Pages artifact contains only the curated root dashboard and its stylesheet. 
 ## Privacy and evidence rules
 
 - **Asset A / Owner A are placeholders.** No personal, parcel or private financial information is collected or published.
-- Every table row links to a government or issuer source.
+- Every table row links to a government or issuer source. `tools/check_public.py` fails the build if a published row has no registered source, if an Unverified row carries a value, or if any page contains an email, phone, parcel-like string, script, form or tracker.
+- A figure that cannot be re-read on the audit date is withheld and marked unverified, not repeated. This is why the LAUSD 86.2%/87.6% rows are blank in this snapshot.
 - Unverified values are blank and flagged; values are never inferred to fill a gap.
 - Official planning forecasts are identified as such. Break-even cap rates and growth rates are disclosed assumptions, not verified market facts. No sale price, renewal probability, disaster probability or calibrated 2030–2035 forecast is invented.
 - The site has no forms, trackers, external scripts or third-party embeds.

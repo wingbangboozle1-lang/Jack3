@@ -4,7 +4,8 @@
 the owner to expire between 2030 and 2035.
 **Question:** sell before expiry, or renew?
 **Owner's objective:** preserve capital *and* retain growth optionality at a manageable level of risk.
-**Evidence snapshot:** 2026-11-10. **Full record:** `research/VERIFICATION-2026-11-10-1f62010a.md`.
+**Evidence snapshot:** 2026-11-11. **Current record:** `research/VERIFICATION-2026-11-11-c350ccea.md`;
+previous audit retained at `research/VERIFICATION-2026-11-10-1f62010a.md`.
 **Published dashboard:** <https://wingbangboozle1-lang.github.io/Jack3/>
 
 > **Privacy.** The asset is published as *Asset A*. No address, parcel number, owner name, contact detail, rent roll,
@@ -87,8 +88,8 @@ the landlord — it passes it to the tenant's margin, and therefore to renewal w
 [DIR fast food FAQ](https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm) ·
 [DIR minimum wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm)
 
-**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **4.86%** on 2026-11-06 —
-a market anchor, not the owner's required return. A sale inside the City of Los Angeles pays a **0.45%** city base transfer tax, a **0.11%** county
+**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **4.86%** on 2026-11-06 and **4.88%** on 2026-11-09
+when re-read for this snapshot — a market anchor, not the owner's required return. A sale inside the City of Los Angeles pays a **0.45%** city base transfer tax, a **0.11%** county
 documentary transfer tax, plus **Measure ULA at 4% above $5,400,000 and 5.5% at or above $10,900,000** for closings after 2026-06-30 (ULA is
 measured on gross value; the base tax on value net of liens; thresholds indexed to Chained CPI). Property tax is a
 **1%** general levy with a **2%** annual assessed-value cap, reassessed on change of ownership. California taxes capital
@@ -119,8 +120,10 @@ concept from BLS payrolls. They provide an upside planning case to monitor, not 
 sale price. → [SCAG Final PEIR updated tables 3.14-8 to 3.14-10](https://sustain.scag.ca.gov/sites/default/files/2024-05/appendix_i_updated_tables_508_final.pdf)
 
 **8. Public institutions and infrastructure show resilience, but no site-level benefit is established.** The county's
-2026 net taxable assessment roll reached **$2.272 trillion**, up **4.42%**; the city share was **$926.1 billion**. LAUSD
-reports an **86.2% four-year** and **87.6% combined four/five-year** graduation rate in 2026. Metro announced
+2026 net taxable assessment roll reached **$2.272 trillion**, up **4.42%**; the city share was **$926.1 billion**. LAUSD's four-year cohort rate is **87.4%** with charter schools excluded, per the CDE DataQuest
+report for 2025-26, and the statewide four-year rate is **87.9%** (CDE, 2026-10-15). The previously published
+86.2% four-year and 87.6% combined district figures could not be re-read on 2026-11-11 because the 2026
+School Dashboard renders its tables in the browser; they are now withheld as unverified rather than repeated. Metro announced
 **$94.3 million** in federal Games-mobility funding and **$149 million** for Vermont BRT in the same funding bill. These
 are broad public-context indicators—not evidence of appreciation, an assigned school's quality, venue proximity, or a
 completed transport benefit for Asset A. → [LA County Assessment Roll](https://lacounty.gov/2026/07/14/la-county-property-values-surpass-2-2-trillion/) ·
@@ -166,13 +169,15 @@ valuation is private information — rent, term, guaranty, basis, debt — and i
 
 No address, parcel, lease, rent, NOI, cap rate, sale price, basis, debt, insurance policy, structural report or school
 assignment was available. Those cells are published as **blank and marked Unverified** on the dashboard; nothing has
-been inferred or filled in. The full list, with the official page that could close each item, is on the
+been inferred or filled in. Section 6 lists the 20 questions that must be answered, in priority order,
+with the exact step that closes each one. The full list, with the official page that could close each item, is on the
 [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/review.html) page.
 
 Known open items include: the executed lease and exact expiry; the legal tenant, guarantor and any franchisee
 obligation; store-level sales, rent coverage and arrears; the parcel's zoning and hazard overlays; effective insurance
-terms. The county transfer-tax and district graduation gaps were closed from official pages on 2026-11-10; school
-assignment and campus-level performance remain unverified.
+terms. The county transfer-tax gap was closed from the official Registrar-Recorder page. The district graduation
+figures were downgraded back to unverified on 2026-11-11 (see section 7); school assignment and campus-level
+performance remain unverified.
 
 ---
 
@@ -181,7 +186,8 @@ assignment and campus-level performance remain unverified.
 - **Official sources only** for published values: U.S. Census Bureau, Bureau of Labor Statistics, Federal Reserve,
   California DIR, California Department of Education, California FTB, LA County Assessor and Registrar-Recorder,
   City of Los Angeles Office of Finance, SCAG, LA Metro, CAL FIRE, USGS, FEMA, IRS, and Jack in the Box Inc. issuer
-  releases.
+  releases. Sources are re-read on the date shown in `data/evidence.json`; a figure that cannot be re-read is
+  withheld rather than repeated.
 - **Verified** means the publisher reports the observation — never that it predicts this property. **Analysis** rows are
   labelled reasoning. **Unverified** rows contain no value.
 - No property model was trained, back-tested or calibrated; no numerical property forecast or renewal
@@ -190,3 +196,51 @@ assignment and campus-level performance remain unverified.
   forecast. Compounding a 2020–2025 change forward is arithmetic, not evidence, and is not presented as a projection.
 - No personal information is published, and no attempt was made to identify the owner, the parcel or any individual.
 - Sources are rolling documents and can be revised after 2026-11-10. Re-check before acting.
+
+---
+
+## 6. The 20 questions that must be answered first
+
+A recommendation cannot be final while the facts that decide it are private. These are published,
+with the discovery route for each, on **[Open questions & missing data](https://wingbangboozle1-lang.github.io/Jack3/questions.html)**.
+
+**Group A — decides whether selling is even the right track (Q-01 to Q-06).** Exact lease dates, options and
+notice windows; the legal obligor and any guaranty; contractual rent and escalations; store-level sales and
+rent coverage; the owner's basis, debt and tax rates; the owner's tolerance for a failed marketing period.
+All six are private documents. None can be supplied by public research, and no value is assumed for any of them.
+
+**Group B — decides the after-tax net and the land option (Q-07 to Q-11).** Jurisdiction (city versus county
+island, which decides whether Measure ULA and the 0.45% city tax apply at all); zoning and the legality of the
+drive-through; the parcel's FEMA, CAL FIRE and CGS designations; the insurance actually in force; independent
+residual land value. These exist as official records but require one lookup each, which is deliberately not
+performed here because the lookup identifies the parcel.
+
+**Group C — decides pricing and demand evidence (Q-12 to Q-15).** Closed net-lease QSR comparables; the
+assigned schools and their indicators; block-level trade-area demographics; competitors and the development
+pipeline. No government body publishes cap rates, so the 5.5% base and 5.0-6.5% sweep on the projection page
+remain disclosed assumptions, not market evidence.
+
+**Group D — the documentary checks that can invalidate any of the above (Q-16 to Q-20).** Whether the
+2030-2035 date is a lease expiry, an option window or a franchise-agreement date; the charter-inclusive
+graduation basis; the Assessment Roll's 4.42%/42% typo; the issuer's FY2026 results due 2026-12-09; and any
+right of first refusal, consent or assignment restriction that could block a sale or exchange.
+
+**What this changes about the recommendation.** Nothing in the ranking, and everything about confidence. The
+dual track recommended in section 1 is the route that *produces* the missing evidence — a market test creates
+comparable pricing, and a written renewal request produces the tenant's terms — instead of requiring it up
+front. That is why the answer is a process rather than a date.
+
+---
+
+## 7. What this snapshot changed (2026-11-11)
+
+| Item | Change | Basis |
+|---|---|---|
+| LAUSD graduation rows | Previously published 86.2% four-year and 87.6% combined are **withheld as unverified**; replaced by a separately labelled, server-rendered **87.4%** (charter schools excluded) and the statewide **87.9%** | The 2026 Dashboard page serves no table data to a non-browser fetch; the CDE DataQuest report and news release 26-44 both render server-side. [Dashboard](https://www.caschooldashboard.org/reports/19647330000000/2026/academic-engagement) · [DataQuest](https://dq.cde.ca.gov/dataquest/dqcensus/CohRate.aspx?cds=1964733&agglevel=District&year=2025-26) · [CDE release](https://www.cde.ca.gov/nr/ne/yr26/yr26rel44.asp) |
+| Treasury anchor | 4.86% (2026-11-06) retained and 4.88% (2026-11-09) added, both dated | [FRED DGS10](https://fred.stlouisfed.org/series/DGS10) |
+| Re-verified without change | LA city and county QuickFacts values, BLS LA summary (all rows reproduced), Q3 FY2026 issuer figures, JACK on Track closure terms, Measure ULA thresholds and basis, both transfer taxes, Prop 13, DIR wage floors, IRS Topic 409, FTB capital-gains treatment, Palisades and Eaton damage counts, USGS ShakeOut, CA DOF enrollment projections, LA County Assessment Roll, LA Metro funding, LAUSD district enrollment and statewide enrollment | See `research/VERIFICATION-2026-11-11-c350ccea.md` |
+| New register | `questions.html` (20 open questions, 4 answered) and `data/questions.py` | This session |
+| New gate | `tools/check_public.py` validates the actual Pages artifact: file set, internal links, official-host allow-list, row provenance, blank-value rule, PII patterns, embed prohibition, and that every registered source is used | Now runs in CI |
+
+**Still not established, after this pass:** any sale price, market rent, cap rate, renewal probability,
+parcel hazard designation, store-level performance, or after-tax proceeds. Those remain blank by design.

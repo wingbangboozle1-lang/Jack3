@@ -15,6 +15,7 @@ jobs:
       - run: python scripts/build.py
       - run: python scripts/validate.py
       - run: python scripts/stage_pages.py
+      - run: python tools/check_public.py
       - run: python tools/check_site.py
       - run: python tools/linkcheck.py
       - run: python tools/check_links.py
