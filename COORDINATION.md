@@ -1188,3 +1188,12 @@ Platform-fixed branch: `arena/d644184d-jack3`. Earlier integration claims are me
 No personal, owner, parcel, lease or financial information will be sought or published. Unknowns stay blank. Public observations are not represented as a calibrated property valuation.
 
 Scope update after PR #49 conflict: main's newer PR #42 canonical site is preserved. The superseded 13-page integration was abandoned rather than overwriting it. Current canonical scope is `data/canonical_rows.py`, `scripts/build_canonical.py`, `scripts/test_publication.py`, `scripts/projection.py`, generated root HTML, and current verification documents.
+
+### d644184d completion — PR, merge and deployment
+- Q-01/Q-02/Q-03/Q-04 **done**. Canonical public result: 21 HTML pages, 223 evidence rows (189 Verified, 4 Derived, 1 Analysis, 29 Blank), 16 Q&A rows and 36 official/issuer sources. Complete record: `research/VERIFICATION-2026-11-11-d644184d.md`.
+- Corrections: DGS10 **4.88% on 2026-11-09**; LAUSD **87.4% four-year ACGR (2025-26 DataQuest)** and **87.6% combined four-/five-year (2026 Dashboard file)**, separately sourced; accessible FEMA Flood Maps route; new Questions & Answers page. Unknown private values remain blank.
+- PR #49 first failed merge because main advanced. The initial superseded 12-page branch integration was abandoned; newer PR #42 canonical work and subsequent PR #50 regression repair were preserved. Rebased again onto `ae94ac8`, retained both coordination records, and used canonical-derived inventory with the documented `flagged.html` alias.
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/49 **merged** at 2026-11-11T02:22:45Z; merge commit `8791de763b66a03c610d67b564ee9f03dc2e6931`. Pre-merge Validate and publication-integrity checks passed on head `78dca163715189db9cffc9167ec645d8cee37d7e`.
+- Post-merge Validate run `42945621152` **success**; publication regression run `42945621522` **success**; Pages build/deploy run `42945619906` **success** on the exact merge SHA. Pages API reports `built`, HTTPS enforced.
+- Live page independently fetched successfully: https://wingbangboozle1-lang.github.io/Jack3/questions.html . It shows the 16 source-linked questions, conditional answers and intentionally blank unverified fields. Public site: https://wingbangboozle1-lang.github.io/Jack3/ .
+- Privacy scan zero findings; deterministic canonical generation and all local/link/artifact checks passed. No personal, owner, parcel, lease or private financial information was published.
