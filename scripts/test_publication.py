@@ -29,6 +29,8 @@ CANONICAL = json.loads((ROOT / 'data/canonical.json').read_text(encoding='utf-8'
 REGISTERED_PAGES = {p['file'] for p in CANONICAL['pages']}
 # Deliberate alias of review.html; see module docstring.
 ALIASED_PAGES = {'flagged.html'}
+# Kept for the shared-navigation assertion below.
+ALIASES = ALIASED_PAGES
 PAGES = REGISTERED_PAGES | ALIASED_PAGES
 STYLESHEET = {'assets/style.css'}
 # Status vocabulary of the canonical dataset. A new status must be a deliberate,
@@ -106,11 +108,13 @@ class PublicationTests(unittest.TestCase):
                 self.assertEqual(doc.events, [])
                 self.assertEqual(doc.remote_resources, [])
 
-    def test_all_registered_categories_accessible_from_landing(self):
-        # The landing page must reach every registered page; the flagged.html
-        # alias is intentionally not in the navigation (review.html is).
-        targets = {urlsplit(x).path for x in self.docs['index.html'].links}
-        self.assertTrue(REGISTERED_PAGES <= targets)
+    def test_all_pages_accessible_from_shared_navigation(self):
+        # Every staged page must carry the shared nav that reaches every
+        # registered page; the flagged.html alias is reached as review.html.
+        for name, doc in self.docs.items():
+            with self.subTest(page=name):
+                targets = {urlsplit(x).path for x in doc.links}
+                self.assertTrue((PAGES - ALIASED_PAGES) <= targets)
 
     def test_unknowns_are_not_verified_or_filled(self):
         """Blank stays blank; every row cites a registered source; status vocabulary fixed."""

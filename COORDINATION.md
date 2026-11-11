@@ -1140,6 +1140,7 @@ External official-source access is restricted by this session's network policy; 
 - Pre-merge full validation and new regression workflow passed. Post-merge full validation https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42943423833 and regression suite https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42943423852 both **success**.
 - Pages build/report/deploy https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42943423075 **success** for that exact merge SHA. Published URL: https://wingbangboozle1-lang.github.io/Jack3/ . This is official deployment confirmation, not an independent live-host fetch.
 - Session tasks **done**. No external economic value is newly marked verified. No new private information was collected. Open review gaps remain non-blocking. Additive completion record follows in a documentation-only PR.
+
 # Session `arena/322b173f-jack3` — independent re-verification + publication audit (2026-11-11)
 
 **Session ID:** `322b173f` · **Branch:** `arena/322b173f-jack3` (platform-fixed, branched from `3e973b2` = main at claim time) · **Date:** 2026-11-11 (UTC)
@@ -1166,6 +1167,65 @@ Notes at claim time: main `3e973b2` green (Validate + Pages `built` 2026-11-10).
 - K-04 **done — zero content changes**: no substantiated defect, so `data/evidence.json`, generators and HTML untouched. Docs-only PR.
 - K-05 **in progress**: PR → CI → merge → Pages deploy + live fetch.
 
+- K-05 **done (with incident log below)**: PR https://github.com/wingbangboozle1-lang/Jack3/pull/46 **merged** (`6b1dabf`) after two COORDINATION.md conflict rebase resolutions (parallel board appends from `8504a55c`; both sessions' entries preserved verbatim, logged per policy). Post-merge incident: the `ded9cdc` (PR #47) and `6b1dabf` (PR #46) Pages builds **errored** and their "Validate" Jekyll steps failed — cause: PR #47 (`1a25c395`) added root `DECISION_FRAMEWORK.md`/`DISCOVERY_GUIDE.md` that Jekyll tried to publish (excludes gap). PR #42 (`b98090a0`) consolidation rewrote `_config.yml` and main is green again: Validate **success**, Pages **built** on `c90b345` (API-confirmed). Not caused by this session's content (all data steps of Validate passed on `6b1dabf`).
+
+### 322b173f publication-integrity repair (2026-11-11)
+
+- **Irregularity (cross-session)**: PR #42 expanded the published artifact to 20 HTML pages + style.css (validate: "21 published files") but `scripts/test_publication.py` (PR #43, session `8504a55c`) still expected the old 12-page inventory → "Public artifact regression tests" went **red on main** (`42944017595`, `test_exact_public_inventory`). Repaired by `322b173f`: inventory updated to the canonical 20 pages; `flagged.html` documented as a URL alias of `review.html` and exempted from landing-nav coverage (`ALIASES`). All 5 tests PASS. No page content changed.
+- **Observation**: the integration dropped two rows that this session re-verified as accurate on 2026-11-11 — LA County 2026 Assessment Roll ($2.272 trillion, +4.42%) and LA Metro 2028 Games funding ($94.3m). They are absent from `data/canonical.json`. Dataset composition is the integration session's authority; values remain documented in `research/VERIFICATION-2026-11-11-322b173f.md`. Flagged for awareness only; not re-added unilaterally.
+- Full suite on the repaired tree: build, validate (222 rows / 21 files / 25 hosts), stage_pages, check_site, linkcheck, check_links (0 non-official), pii_scan (0 findings), test_publication (5/5), deterministic rebuild — **all PASS**.
+
+# Session `d644184d` — final evidence, privacy and publication audit (2026-11-11)
+
+Platform-fixed branch: `arena/d644184d-jack3`. Earlier integration claims are merged or stale by more than 60 minutes. This session preserves prior work and will not merge or close other sessions' PRs.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| Q-01 | Review repository, live publication and every curated evidence row | in progress | d644184d | `research/VERIFICATION-2026-11-11-d644184d.md` |
+| Q-02 | Re-read official/issuer sources; blank and flag any value that cannot be confirmed | claimed | d644184d | `data/evidence.json`, generated root `*.html` via `scripts/build.py` only if corrections are required |
+| Q-03 | Audit executive summary, decision questions/answers, risk controls, model boundaries and privacy | claimed | d644184d | `EXECUTIVE_SUMMARY.md`, `REPO_REVIEW.md`, `VERIFY.md` only if corrections are required |
+| Q-04 | Run deterministic build, row/link/source/privacy/artifact tests; PR, merge and verify Pages | claimed | d644184d | this section of `COORDINATION.md`; PR and deployment records |
+
+No personal, owner, parcel, lease or financial information will be sought or published. Unknowns stay blank. Public observations are not represented as a calibrated property valuation.
+
+Scope update after PR #49 conflict: main's newer PR #42 canonical site is preserved. The superseded 13-page integration was abandoned rather than overwriting it. Current canonical scope is `data/canonical_rows.py`, `scripts/build_canonical.py`, `scripts/test_publication.py`, `scripts/projection.py`, generated root HTML, and current verification documents.
+
+### d644184d completion — PR, merge and deployment
+- Q-01/Q-02/Q-03/Q-04 **done**. Canonical public result: 21 HTML pages, 223 evidence rows (189 Verified, 4 Derived, 1 Analysis, 29 Blank), 16 Q&A rows and 36 official/issuer sources. Complete record: `research/VERIFICATION-2026-11-11-d644184d.md`.
+- Corrections: DGS10 **4.88% on 2026-11-09**; LAUSD **87.4% four-year ACGR (2025-26 DataQuest)** and **87.6% combined four-/five-year (2026 Dashboard file)**, separately sourced; accessible FEMA Flood Maps route; new Questions & Answers page. Unknown private values remain blank.
+- PR #49 first failed merge because main advanced. The initial superseded 12-page branch integration was abandoned; newer PR #42 canonical work and subsequent PR #50 regression repair were preserved. Rebased again onto `ae94ac8`, retained both coordination records, and used canonical-derived inventory with the documented `flagged.html` alias.
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/49 **merged** at 2026-11-11T02:22:45Z; merge commit `8791de763b66a03c610d67b564ee9f03dc2e6931`. Pre-merge Validate and publication-integrity checks passed on head `78dca163715189db9cffc9167ec645d8cee37d7e`.
+- Post-merge Validate run `42945621152` **success**; publication regression run `42945621522` **success**; Pages build/deploy run `42945619906` **success** on the exact merge SHA. Pages API reports `built`, HTTPS enforced.
+- Live page independently fetched successfully: https://wingbangboozle1-lang.github.io/Jack3/questions.html . It shows the 16 source-linked questions, conditional answers and intentionally blank unverified fields. Public site: https://wingbangboozle1-lang.github.io/Jack3/ .
+- Privacy scan zero findings; deterministic canonical generation and all local/link/artifact checks passed. No personal, owner, parcel, lease or private financial information was published.
+
+---
+
+# Session `arena/49e9fb75-jack3` — independent official-source verification & live-site audit (2026-11-11)
+
+**Session ID:** `49e9fb75` · **Branch:** `arena/49e9fb75-jack3` (platform-fixed) · **Date:** `2026-11-11` (UTC)
+
+## Scope claim (non-overlapping)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| P-01 | Read `COORDINATION.md`, inspect repo & open PRs, claim non-overlapping scope | **done** | `49e9fb75` | `COORDINATION.md` (this section only, append-only) |
+| P-02 | Line-by-line verification of both `data/evidence.json` (158 rows / 31 sources) and newly merged `data/canonical.json` (223 rows / 36 sources) against official/issuer pages | **done** | `49e9fb75` | `research/VERIFICATION-2026-11-11-49e9fb75.md` (new file) |
+| P-03 | Full local validation suite (build, validate, stage_pages, test_publication, link checks, PII scan, legacy verifiers) & live Pages verification | **done** | `49e9fb75` | read-only; results logged in `research/VERIFICATION-2026-11-11-49e9fb75.md` and here |
+| P-04 | Remediate only substantiated official-source discrepancies if found; otherwise preserve shared files unchanged | **done (0 defects)** | `49e9fb75` | none (docs-only PR; PRs #50 and #49 repaired `scripts/test_publication.py` on `main`) |
+| P-05 | Rebase onto `origin/main` (preserving concurrent sessions), open PR to `main`, pass CI, merge, verify Pages deployment, and record in `COORDINATION.md` | **in progress** | `49e9fb75` | `COORDINATION.md` (this section), PR |
+
+### Progress log — session `49e9fb75` (2026-11-11)
+
+- **P-01 done**: Read `COORDINATION.md` and inspected all open/merged PRs and branches; claimed non-overlapping scope.
+- **P-02 done**: Directly fetched and verified all 42 official/issuer URLs across both `data/evidence.json` (158 rows, 31 sources) and the newly integrated `data/canonical.json` / `data/canonical_rows.py` (223 rows, 36 sources), plus the live GitHub Pages deployment (`https://wingbangboozle1-lang.github.io/Jack3/`). Confirmed every published `Verified` and `Derived` value matches its linked official source for its stated geography and vintage, and every `Blank` / `Unverified` row has an empty value cell (`""`) and is surfaced on `flagged.html` / `review.html`. Full matrix recorded in `research/VERIFICATION-2026-11-11-49e9fb75.md`.
+- **P-03 done**: Rebased onto `origin/main` (`8791de7`, preserving all concurrent sessions' `COORDINATION.md` entries verbatim across three append conflicts) and ran the complete validation and regression suite: `build.py` (21 pages, 223 rows, 36 sources), `validate.py` (PASS), `stage_pages.py` (22 files staged, PASS), `test_publication.py` (5/5 tests OK), `check_site.py` (PASS), `linkcheck.py` (PASS), `check_links.py` (0 non-official hosts), `pii_scan.py` (140 files, 0 findings), `verify_advisory.py` (PASS), `_dashboard_src/verify.py` (PASS), and `git diff --exit-code -- '*.html'` (clean).
+- **P-04 done**: Zero substantiated defects found on `8791de7`; shared generator, data, and HTML files left untouched to avoid churn across concurrent sessions.
+
+Rules observed:
+- Platform-fixed branch `arena/49e9fb75-jack3` used exclusively.
+- Active parallel sessions `76b08b4d` (PR #44), `c350ccea` (PR #48), `d644184d` (PR #49), `29cc3b29` (PR #51), `0628a817`, and `b7ead2a1` noted and respected; no files in their claimed scopes (`scripts/test_publication.py`, `scripts/decision_engine.py`, `data/evidence.json`, `data/canonical.json`, root `*.html`, etc.) or any historical companion directories (`advisory/`, `analysis/`, `brief/`, `dashboard/`, `decision-file/`, `docs/`, `pages/`, `report/`, `audit/`) are edited by this session.
+- Strict privacy boundary: `Asset A` / `Owner A` placeholders only; no personal, parcel, address, or private financial information sought, stored, or published.
 ---
 
 # Session `b7ead2a1` — repair of the failing public-artifact regression gate, independent verification, final integration (2026-11-11)
@@ -1184,8 +1244,8 @@ stages a different inventory. `Validate public research` and `pages build and de
 | ID | Task | Status | File scope |
 |---|---|---|---|
 | B-01 | Claim board; read repo, open PRs, CI and Pages state | **done** | this section only |
-| B-02 | Repair the failing `Public artifact regression tests` gate so it tests the canonical artifact semantics (inventory, local links/fragments, no remote resources / event handlers, category links, blank/unknown boundaries) instead of the superseded 13-file list | **claimed** | `scripts/test_publication.py`, `.github/workflows/publication-integrity.yml` (only if the runner needs the canonical staging entry point) |
-| B-03 | Independent verification of the **newly merged canonical dataset** (`data/canonical.json`, 222 rows — no other session has independently re-read it) against the linked official/issuer sources, 2026-11-11 | **claimed** | `research/VERIFICATION-2026-11-11-b7ead2a1.md` (new file) |
+| B-02 | Repair the failing `Public artifact regression tests` gate so it tests the canonical artifact semantics (inventory, local links/fragments, no remote resources / event handlers, category links, blank/unknown boundaries) instead of the superseded 13-file list | **done** (`5a4af3e`; later merged with PRs #50/#49's parallel repair — combined suite below) | `scripts/test_publication.py`, `.github/workflows/publication-integrity.yml` (only if the runner needs the canonical staging entry point) |
+| B-03 | Independent verification of the **newly merged canonical dataset** (`data/canonical.json`, 222 rows — no other session has independently re-read it) against the linked official/issuer sources, 2026-11-11 | **done** (`d34ce2c`; plus the post-`ab514ee` delta re-verified: FRED 4.88% 2026-11-09, GRAD2026 87.6% = 25,255/28,831 prior 86.5%, ACGR2026 87.4% DataQuest, FEMA flood-maps URL — 225/225 confirmed) | `research/VERIFICATION-2026-11-11-b7ead2a1.md` (new file) |
 | B-04 | Full local gate run on the combined tree (canonical build, validate, staging, PII, link checks, repaired regression suite) | **claimed** | read-only; results recorded in B-05 / research log |
 | B-05 | PR → `main`, CI green on both workflows, merge without waiting, confirm GitHub Pages deploy + live fetch, record PR link and result here | **claimed** | this section |
 

@@ -1,5 +1,5 @@
 {
-  "snapshot": "2026-11-10",
+  "snapshot": "2026-11-11",
   "privacy": "Asset A / Owner A placeholders only; no personal or property identifiers.",
   "sources": {
     "CITY": {
@@ -159,9 +159,9 @@
       "type": "Government hazard programme"
     },
     "FEMA": {
-      "label": "FEMA Flood Map Service Center",
+      "label": "FEMA Flood Maps",
       "publisher": "Federal Emergency Management Agency",
-      "url": "https://msc.fema.gov/portal/home",
+      "url": "https://www.fema.gov/flood-maps",
       "type": "Government hazard programme"
     },
     "NRI": {
@@ -198,6 +198,18 @@
       "label": "2024-25 End-of-Year Reports",
       "publisher": "California Department of Education",
       "url": "https://www.cde.ca.gov/ds/cm/dqeoy25.asp",
+      "type": "Government statistics"
+    },
+    "GRAD2026": {
+      "label": "2026 Graduation Rate Indicator \u00b7 district data file",
+      "publisher": "California Department of Education",
+      "url": "https://www3.cde.ca.gov/researchfiles/cadashboard/graddownload2026.txt",
+      "type": "Government statistics"
+    },
+    "ACGR2026": {
+      "label": "DataQuest \u00b7 Los Angeles Unified 2025-26 four-year ACGR",
+      "publisher": "California Department of Education",
+      "url": "https://dq.cde.ca.gov/dataquest/dqcensus/CohRate.aspx?agglevel=District&cds=1964733&year=2025-26",
       "type": "Government statistics"
     },
     "CDEACGR": {
@@ -326,6 +338,12 @@
       "id": "anchors",
       "title": "Projection anchors",
       "file": "anchors.html",
+      "group": "ANALYSIS"
+    },
+    {
+      "id": "questions",
+      "title": "Questions & answers",
+      "file": "questions.html",
       "group": "ANALYSIS"
     },
     {
@@ -1197,8 +1215,8 @@
     {
       "category": "Economy & jobs",
       "indicator": "10-year Treasury constant maturity yield",
-      "value": "4.86%",
-      "scope": "United States \u00b7 2026-11-06 \u00b7 daily (latest shown)",
+      "value": "4.88%",
+      "scope": "United States \u00b7 2026-11-09 \u00b7 daily (latest shown)",
       "note": "Newer observation than the 2026-11-08 snapshot used by older repository layers.",
       "status": "Verified",
       "source": "FRED"
@@ -1331,12 +1349,21 @@
     },
     {
       "category": "Schools",
-      "indicator": "Graduation rate",
-      "value": "86.5%",
-      "scope": "Los Angeles Unified \u00b7 2025 Dashboard",
-      "note": "Five-year graduation rate as reported on the Dashboard; closes the gap left blank in older layers.",
+      "indicator": "Combined four-/five-year graduation rate",
+      "value": "87.6%",
+      "scope": "Los Angeles Unified \u00b7 2026 Dashboard",
+      "note": "25,255 graduates / 28,831 students; prior combined rate 86.5%. District aggregate, not an assigned-campus result.",
       "status": "Verified",
-      "source": "DASH"
+      "source": "GRAD2026"
+    },
+    {
+      "category": "Schools",
+      "indicator": "Four-year adjusted cohort graduation rate (ACGR)",
+      "value": "87.4%",
+      "scope": "Los Angeles Unified \u00b7 2025-26 DataQuest",
+      "note": "24,857 graduates / 28,447 students in the default district reporting view. ACGR is distinct from the Dashboard combined four-/five-year measure.",
+      "status": "Verified",
+      "source": "ACGR2026"
     },
     {
       "category": "Schools",
@@ -2232,7 +2259,7 @@
     {
       "category": "Hazards",
       "indicator": "Official flood-hazard source",
-      "value": "FEMA Flood Map Service Center (NFIP)",
+      "value": "FEMA Flood Maps (NFIP)",
       "scope": "Federal Emergency Management Agency",
       "note": "Maps are continually updated and may be superseded.",
       "status": "Verified",
@@ -2313,7 +2340,7 @@
     {
       "category": "Projection anchors",
       "indicator": "Verified rate anchor",
-      "value": "10-year Treasury 4.86% (2026-11-06)",
+      "value": "10-year Treasury 4.88% (2026-11-09)",
       "scope": "United States \u00b7 daily H.15",
       "note": "Risk-free anchor; not a cap rate or required return.",
       "status": "Verified",
@@ -2410,7 +2437,7 @@
       "Business as usual",
       "High",
       "Interest rates and exit yields",
-      "The 10-year Treasury was 4.86% on 2026-11-06. A higher exit yield lowers price for the same rent.",
+      "The 10-year Treasury was 4.88% on 2026-11-09. A higher exit yield lowers price for the same rent.",
       "Stress debt maturity and a higher exit yield; no market cap rate is published.",
       "FRED"
     ],
@@ -2638,7 +2665,7 @@
     ],
     [
       "4 \u00b7 Bound discounting with the risk-free rate",
-      "Use the 10-year Treasury (4.86% on 2026-11-06) as a floor for any discount rate, not as a cap rate.",
+      "Use the 10-year Treasury (4.88% on 2026-11-09) as a floor for any discount rate, not as a cap rate.",
       "The series is daily, official and reproducible.",
       "FRED"
     ],
@@ -2814,7 +2841,7 @@
       "F-15",
       "Medium",
       "Rolling-source freshness",
-      "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation on 2026-11-10 is 4.86% on 2026-11-06. Older repository layers cite August figures and 4.84% or 4.19%.",
+      "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation on 2026-11-10 is 4.88% on 2026-11-09. Older repository layers cite August figures and 4.84% or 4.19%.",
       "Re-read each release before use; retain the prior vintage in the audit log.",
       "BLS"
     ],
@@ -2922,14 +2949,14 @@
       "R-07",
       "LAUSD graduation rate",
       "Root schools.html left the district graduation rate blank (V-4) because CDE files were not extracted.",
-      "Read the official California School Dashboard page: 86.5% in 2025, with the 2019-2025 series. The gap is closed.",
+      "Read CDE official records: 87.4% four-year ACGR for 2025-26 and 87.6% combined four-/five-year for 2026, with separate measures and direct sources.",
       "DASH"
     ],
     [
       "R-08",
       "Interest-rate vintage",
-      "An inherited decision-file model anchors to 4.19% (2026-01-02); the root site used 4.84% (2026-11-05); FRED now shows 4.86% (2026-11-06).",
-      "All three are labelled by date on the Flagged page; the current site publishes the 2026-11-05 and 2026-11-06 observations.",
+      "An inherited decision-file model anchors to 4.19% (2026-01-02); the root site used 4.84% (2026-11-05); FRED now shows 4.88% (2026-11-09).",
+      "All three are labelled by date on the Flagged page; the current site publishes the 2026-11-05 and 2026-11-09 observations.",
       "FRED"
     ],
     [
@@ -3032,7 +3059,7 @@
     ]
   ],
   "counts": {
-    "Verified": 188,
+    "Verified": 189,
     "Blank": 29,
     "Analysis": 1,
     "Derived": 4

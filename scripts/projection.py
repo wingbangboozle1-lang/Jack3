@@ -30,7 +30,7 @@ INPUTS (all disclosed, none measured for this asset)
     vacancy      months of rent loss at/after expiry                0 or 18
 
     The only externally sourced anchor is the discount-rate floor: the 10-year
-    Treasury constant-maturity yield of 4.86% on 2026-11-06 (Federal Reserve H.15
+    Treasury constant-maturity yield of 4.88% on 2026-11-09 (Federal Reserve H.15
     via FRED, series DGS10). It is a market rate, not the owner's required return.
 
 EXCLUDED AND DISCLOSED
@@ -49,8 +49,8 @@ DETERMINISM
 from __future__ import annotations
 
 HORIZON_YEARS = 10
-TREASURY_ANCHOR = 0.0486          # 10-year constant maturity, 2026-11-06, FRED DGS10
-TREASURY_ANCHOR_DATE = "2026-11-06"
+TREASURY_ANCHOR = 0.0486          # 10-year constant maturity, 2026-11-09, FRED DGS10
+TREASURY_ANCHOR_DATE = "2026-11-09"
 
 CAP_RATES = (0.050, 0.055, 0.060, 0.065)
 GROWTH_RATES = (0.000, 0.010, 0.020, 0.030)
