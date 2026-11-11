@@ -1188,3 +1188,34 @@ Platform-fixed branch: `arena/d644184d-jack3`. Earlier integration claims are me
 No personal, owner, parcel, lease or financial information will be sought or published. Unknowns stay blank. Public observations are not represented as a calibrated property valuation.
 
 Scope update after PR #49 conflict: main's newer PR #42 canonical site is preserved. The superseded 13-page integration was abandoned rather than overwriting it. Current canonical scope is `data/canonical_rows.py`, `scripts/build_canonical.py`, `scripts/test_publication.py`, `scripts/projection.py`, generated root HTML, and current verification documents.
+
+# Session `arena/29cc3b29-jack3` — takeover of stale final-integration PR #42 + cross-session repair follow-up (2026-11-11)
+
+**Session ID:** `29cc3b29` · **Branch:** `arena/29cc3b29-jack3` · **Date:** 2026-11-11 (UTC)
+
+## K-01 read + takeover decision
+
+Stale-open PRs assessed (all created 2026-11-06..2026-11-10, all `CONFLICTING` except #42): #4, #12, #22, #26, #31, #32, #36, #40 — left open for their owners, not merged, per board policy (failing validation and/or superseded by merged work). **PR #42** (`arena/b98090a0-jack3`, "Final integration: canonical verified decision site, 222 source-linked rows, Flagged for Review") was `MERGEABLE`/`CLEAN`, CI green (`validate`), head `b3fa7ae6` untouched since 2026-11-10T01:03Z (>30 h) with no completion record on `main`. Per the board's stale-claim rule this session took over the final-integration merge.
+
+## K-02 independent verification of PR #42 (2026-11-11)
+
+Full local gate suite on the PR head tree (`b3fa7ae6`, detached worktree): `scripts/build.py` (20 pages, 222 rows: 188 verified / 4 derived / 1 analysis / 29 blank; 34 official sources), `validate.py` PASS, `stage_pages.py` PASS (21 files; every row source-linked; all internal links resolve), `tools/check_site.py` / `linkcheck.py` / `check_links.py` PASS (official/primary hosts only), `tools/pii_scan.py` PASS (131 files, **0 findings**), `_advisory_src/verify_advisory.py` PASS, `_dashboard_src/verify.py` PASS, deterministic rebuild byte-identical. `COORDINATION.md` diff additive-only (0 content lines removed; 160 added). Independent re-reads today, all reproducing the published values: Census QuickFacts LA city (3,869,089 / 3,899,342 / −0.8% / 3,898,747), BLS LA Economic Summary updated 2026-11-04 (Sep-2026 payrolls +0.5%, metro 6,282.1k; unemployment metro 4.4% / county 4.5% / city 4.5%; CPI all-items +3.7%; ECI +3.9%; avg weekly wage $1,704 Q1-2026), FRED DGS10 (2026-11-06 = 4.86%), SEC EDGAR Q3 FY2026 8-K Ex-99.1 (SSS −1.1%; franchise −1.2%; company −0.9%; systemwide sales −1.4%; 4 openings / 17 closures; 2,115 restaurants = 149 company + 1,966 franchise; franchise-level margin 37.4%), DIR Fast-Food FAQ ($20.00/h from 2024-04-01, AB 1228), LA County Registrar-Recorder (county DTT $0.55/$500; City of LA eff. 2026-07-01: $2.25/$500 + 4% >$5.4M / 5.5% ≥$10.9M), CAL FIRE Palisades (23,448 acres; 6,845 structures destroyed; 12 civilian fatalities; contained 2025-01-31, active 24 days). Privacy: Asset A / Owner A placeholders only; no address, parcel, owner, contact, account handle, debt or private lease record appears anywhere in the published artifact.
+
+## K-03 merge + Pages
+
+PR #42 **merged** 2026-11-11T02:09:14Z, merge commit `c90b34580bd1fa68db81a6197e67a781a7d5e9eb` (no approval wait, per standing instruction; flagged items non-blocking). Post-merge: `Validate public research` **success** (run 42944017615); `pages build and deployment` **success** (run 42944015121); Pages API reported `built` for the merge SHA in prior checks.
+
+## Concurrency collision + resolution (this session)
+
+The 2026-11-11 merges collided in flight. Session `322b173f` merged PR #50 (`ae94ac8`) repairing `scripts/test_publication.py`'s stale 12-page inventory **before** this session's duplicate repair PR (#51, opened minutes earlier against the pre-repair tree) could merge — #51 became `CONFLICTING` and its fix was superseded. This session's duplicate edits to `scripts/test_publication.py` were **discarded; #50's version kept verbatim** (same 20-page inventory; `flagged.html` alias handling). Nothing else conflicted: one rebase-resolution on `COORDINATION.md` (this section re-appended; no text lost) and one erroneous `git pull --rebase origin arena/29cc3b29-jack3` that replayed `main`'s history onto the stale remote branch was **aborted before completion**; the branch was rebuilt additively on `ae94ac8` and pushed with `--force-with-lease`. No other session's committed work was removed or rewritten.
+
+This PR (#51) now carries only what `#50` left undone: an additive `test_canonical_register_unknowns_are_blank_not_filled` gate — `data/canonical.json` rows must resolve to registered official `https://` sources; `Verified` rows must carry values; `Blank` rows must carry none (the 29 blanks are never inferred/filled). Full local suite on the rebuilt tree: build, validate (222 rows / 21 published files / 25 official hosts), stage_pages, check_site, linkcheck, check_links (0 non-official), pii_scan (0 findings), both legacy verifiers, `test_publication.py` 6/6 — **PASS**. Site content and published data unchanged.
+
+## Irregularities / notes (non-blocking, for the record)
+
+- Cross-session race on the same regression test (above) — disclosed, not hidden; single repair merged (#50), no duplicated content shipped.
+- Session `322b173f`'s observation (kept, not re-added by this session): `data/canonical.json` omits the LA County 2026 Assessment Roll ($2.272tn, +4.42%) and LA Metro 2028 Games funding ($94.3m) rows that were re-verified on 2026-11-11; both remain documented in `research/VERIFICATION-2026-11-11-322b173f.md`. Dataset composition is the integration session's call; flagged for review.
+- Stale open PRs #4, #12, #22, #26, #31, #32, #36, #40 remain open, untouched (conflicting/superseded).
+- Live-fetch confirmation of the rebuilt site and the final Pages/CI run IDs for this PR are recorded in the follow-up docs PR (see below).
+
+Privacy rule unchanged: no personal information collected, stored or published anywhere in this session's work.
