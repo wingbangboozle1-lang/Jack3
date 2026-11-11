@@ -853,7 +853,7 @@ Role: Final integration session to complete the user's brief: create structured 
 | A-04 | Create missing information discovery guide | **done** | `1a25c395` | `DISCOVERY_GUIDE.md` (new) | 30+ actionable steps, official source directory, timeline & budget | Privacy-safe methods only |
 | A-05 | Verify all published data line-by-line | **done** | `1a25c395` | `research/VERIFICATION-2026-11-11.md` (new) | Fresh re-read of all 28 official/issuer sources | 158 rows verified, 0 discrepancies found |
 | A-06 | Site integrity check and validation | **done** | `1a25c395` | All HTML pages, links, sources | Full suite PASS: build, validate, stage, check_site, linkcheck, check_links, pii_scan | All 0 non-official domains, 0 PII findings |
-| A-07 | Final integration: PR to main, merge, Pages deploy | **in progress** | `1a25c395` | `COORDINATION.md`, PR | Blocks on A-01 through A-06 | PR creation in progress |
+| A-07 | Final integration: PR to main, merge, Pages deploy | **done** | `1a25c395` | `COORDINATION.md`, PR | PR #47 merged 2026-11-11T02:07:48Z; Pages deployed successfully; live site verified | All tasks complete |
 
 ## Rules observed
 - Append-only for this section
