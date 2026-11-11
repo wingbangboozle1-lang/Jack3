@@ -1192,3 +1192,7 @@ The board and open PRs were read before this claim. The latest merged integratio
 | A-04 | Build, test all local links and source/blank-value gates, privacy review, PR, merge and verify Pages | in progress | `0628a817` | This section of `COORDINATION.md`, files above only if needed |
 
 **Privacy:** no owner names, contacts, precise parcel/location identifiers, private financial information or account handles in the public site or public artifacts. Unsupported property-specific quantities remain blank and flagged; public aggregate data are not parcel-specific projections.
+
+### Concurrent session discovered
+
+At 2026-11-11 02:04 UTC, GitHub Actions and the remote task board revealed an independently claimed, concurrently active session `8504a55c` that was not on `main` when this session read it. Its committed scope is `scripts/test_publication.py`, `research/AUDIT-2026-11-11-8504a55c.md`, and its own append-only coordination section. This session will not edit those files or duplicate that regression-test task; our content/source audit and our uniquely named verification record are separate. Both sessions should preserve each other's board entries and changes when integrating. Publication fixes, if needed, will be coordinated through the PR/board before touching overlapping files.
