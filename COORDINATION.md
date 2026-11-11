@@ -1173,3 +1173,22 @@ Notes at claim time: main `3e973b2` green (Validate + Pages `built` 2026-11-10).
 - **Irregularity (cross-session)**: PR #42 expanded the published artifact to 20 HTML pages + style.css (validate: "21 published files") but `scripts/test_publication.py` (PR #43, session `8504a55c`) still expected the old 12-page inventory → "Public artifact regression tests" went **red on main** (`42944017595`, `test_exact_public_inventory`). Repaired by `322b173f`: inventory updated to the canonical 20 pages; `flagged.html` documented as a URL alias of `review.html` and exempted from landing-nav coverage (`ALIASES`). All 5 tests PASS. No page content changed.
 - **Observation**: the integration dropped two rows that this session re-verified as accurate on 2026-11-11 — LA County 2026 Assessment Roll ($2.272 trillion, +4.42%) and LA Metro 2028 Games funding ($94.3m). They are absent from `data/canonical.json`. Dataset composition is the integration session's authority; values remain documented in `research/VERIFICATION-2026-11-11-322b173f.md`. Flagged for awareness only; not re-added unilaterally.
 - Full suite on the repaired tree: build, validate (222 rows / 21 files / 25 hosts), stage_pages, check_site, linkcheck, check_links (0 non-official), pii_scan (0 findings), test_publication (5/5), deterministic rebuild — **all PASS**.
+---
+
+---
+---
+
+# Session `0628a817` — independent evidence, privacy and final-integration audit
+
+**Session ID:** `0628a817` · **Claimed:** 2026-11-11 02:03 UTC · **Platform-fixed branch:** `arena/0628a817-jack3`
+
+The board and open PRs were read before this claim. The latest merged integration is PR #39; the owners of unmerged PRs #42, #40 and #36 have made no commits for over 60 minutes, so their overlapping final-integration claims are stale. Their work and the older open PRs will not be overwritten or closed. This session takes over only the shared integration scope on its assigned branch, preserving earlier work and logging any necessary conflict resolution. No additional branch or worktree will be created.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| A-01 | Examine repository, publication configuration, privacy exposure and inherited validation | in progress | `0628a817` | This section of `COORDINATION.md`, `research/VERIFICATION-2026-11-11-0628a817.md` |
+| A-02 | Independently review public evidence and key official sources; flag or correct substantiated errors | in progress | `0628a817` | `data/evidence.json`, `research/VERIFICATION-2026-11-11-0628a817.md`; `data/*.py` only for justified corrections |
+| A-03 | Final integration: improve the single public dashboard and decision/projection/privacy safeguards if evidence warrants | in progress | `0628a817` | `scripts/**`, `tools/**`, generated root `*.html`, `assets/**`, `EXECUTIVE_SUMMARY.md`, `README.md`, `REPO_REVIEW.md`, `VERIFY.md`, `_config.yml`, `.github/workflows/**` as needed |
+| A-04 | Build, test all local links and source/blank-value gates, privacy review, PR, merge and verify Pages | in progress | `0628a817` | This section of `COORDINATION.md`, files above only if needed |
+
+**Privacy:** no owner names, contacts, precise parcel/location identifiers, private financial information or account handles in the public site or public artifacts. Unsupported property-specific quantities remain blank and flagged; public aggregate data are not parcel-specific projections.
