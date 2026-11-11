@@ -102,6 +102,11 @@ SOURCES = {
                "https://www.cde.ca.gov/ds/cm/dqeoy25.asp", "Government statistics"),
     "CDEACGR": ("Adjusted Cohort Graduation Rate data files", "California Department of Education",
                 "https://www.cde.ca.gov/ds/ad/filesacgr.asp", "Government data files"),
+    "DOFPROJ": ("Public K-12 graded enrollment projections, 2026 series", "California Department of Finance",
+                "https://dof.ca.gov/forecasting/demographics/public-k-12-graded-enrollment/",
+                "Official projection"),
+    "IRS8824": ("Instructions for Form 8824 · Like-Kind Exchanges (2026)", "Internal Revenue Service",
+                "https://www.irs.gov/pub/irs-pdf/i8824.pdf", "Government rule"),
 }
 
 CATEGORIES = [
@@ -302,7 +307,7 @@ ROWS = [
       "Not independently confirmed from an official city page in this pass; left blank.", "Blank", "DIRFF"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "4.84%", "United States · 2026-11-05 · daily",
       "Federal Reserve H.15 observation via FRED.", "Verified", "FRED"),
-    R("Economy & jobs", "10-year Treasury constant maturity yield", "4.86%", "United States · 2026-11-06 · daily (latest shown)",
+    R("Economy & jobs", "10-year Treasury constant maturity yield", "4.88%", "United States · 2026-11-09 · daily (latest shown)",
       "Newer observation than the 2026-11-08 snapshot used by older repository layers.", "Verified", "FRED"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "4.90%", "United States · 2026-11-04 · daily",
       "Nearby observation showing day-to-day variation.", "Verified", "FRED"),
@@ -590,6 +595,14 @@ ROWS = [
       "No official source publishes any of these. Numerical forecasts are deliberately withheld.", "Blank", "FRED"),
     R("Projection anchors", "Probability of tenant renewal or closure at this site", "", "Asset A",
       "Chain-wide guidance is not a site probability; no value published.", "Blank", "SECQ3"),
+    R("Projection anchors", "LA County public K-12 enrollment projection",
+      "-240,800 pupils by 2035-36", "Los Angeles County · 2025-26 to 2035-36",
+      "Official cohort-survival projection. A demographic headwind, not a store-sales forecast.",
+      "Verified", "DOFPROJ"),
+    R("Projection anchors", "Statewide public K-12 enrollment projection",
+      "5,731,300 (2025-26) to 5,020,800 (2035-36)", "California · 2025-26 to 2035-36",
+      "State total for context; the county row above is the relevant geography.",
+      "Verified", "DOFPROJ"),
     R("Projection anchors", "Local demand growth by 2030-2035", "", "Asset A",
       "Requires block-level evidence; city and county totals cannot supply it.", "Blank", "CITY"),
 ]
@@ -602,7 +615,7 @@ RISKS = [
     ("Business as usual", "High", "Lease expiry and notice windows", "An expiring lease transfers negotiating leverage to the party that can wait. The reported 2030-2035 range is not a date.", "Establish the exact expiry, options and notice deadlines from the executed lease; act 24-36 months before the earliest date.", "SECQ3"),
     ("Business as usual", "Medium", "Wage and input-cost pressure", "Covered fast-food work has a $20.00/hour floor; the state floor is $16.90/hour; CPI energy is +20.3%.", "Examine store-level rent coverage; do not infer failure from regulation alone.", "DIRFF"),
     ("Business as usual", "Medium", "Fixed escalators versus cost inflation", "ECI +3.9% and CPI-U +3.7% can outrun a fixed rent escalator in real terms.", "Verify the escalation clause; stress a real-rent decline through the holding period.", "BLS"),
-    ("Business as usual", "High", "Interest rates and exit yields", "The 10-year Treasury was 4.86% on 2026-11-06. A higher exit yield lowers price for the same rent.", "Stress debt maturity and a higher exit yield; no market cap rate is published.", "FRED"),
+    ("Business as usual", "High", "Interest rates and exit yields", "The 10-year Treasury was 4.88% on 2026-11-09. A higher exit yield lowers price for the same rent.", "Stress debt maturity and a higher exit yield; no market cap rate is published.", "FRED"),
     ("Business as usual", "High", "Transaction tax drag", "A City of LA sale above $5.4m can add a 4% ULA surcharge on top of the 0.45% base tax; the county documentary tax also applies.", "Confirm jurisdiction and closing date; compute after-tax net proceeds with actual figures.", "ULA"),
     ("Business as usual", "Medium", "Tax deferral is not tax elimination", "§1031 defers gain but requires a qualifying replacement; California taxes capital gain as ordinary income.", "Obtain tax advice; test the after-tax result with the owner's real basis and debt.", "IRS1031"),
     ("Business as usual", "Medium", "Property-tax reassessment on sale", "A sale resets the buyer's assessed value to market under Proposition 13, which affects bid levels.", "Obtain the parcel tax bill; model the buyer's post-sale tax cost.", "ASSESSOR"),
@@ -673,7 +686,7 @@ PROJECTION = [
      "CPI-U +3.7% and ECI +3.9% bound a cost-escalation assumption; no official source supplies this lease's escalator.",
      "Bounds, not forecasts; the lease clause is unverified.", "BLS"),
     ("4 · Bound discounting with the risk-free rate",
-     "Use the 10-year Treasury (4.86% on 2026-11-06) as a floor for any discount rate, not as a cap rate.",
+     "Use the 10-year Treasury (4.88% on 2026-11-09) as a floor for any discount rate, not as a cap rate.",
      "The series is daily, official and reproducible.", "FRED"),
     ("5 · Use only official long-range projections",
      "SCAG's adopted 2024 forecast supplies regional employment and population to 2050 with stated uncertainty.",
@@ -750,7 +763,7 @@ FLAGS = [
      "An inherited companion report equated franchise termination dates with property lease expiry. The issuer establishes neither for this site.",
      "Keep the two agreements separate; do not infer the lease date from the issuer plan.", "IR25"),
     ("F-15", "Medium", "Rolling-source freshness",
-     "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation on 2026-11-10 is 4.86% on 2026-11-06. Older repository layers cite August figures and 4.84% or 4.19%.",
+     "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation on 2026-11-10 is 4.88% on 2026-11-09. Older repository layers cite August figures and 4.86%, 4.84% or 4.19%. The series is daily, so it will move again.",
      "Re-read each release before use; retain the prior vintage in the audit log.", "BLS"),
     ("F-16", "Medium", "IRS Topic 409 thresholds are for 2025",
      "The published capital-gain thresholds are for taxable years beginning in 2025; 2026 thresholds were not on that page.",
@@ -800,8 +813,8 @@ REPO_REVIEW = [
      "Root schools.html left the district graduation rate blank (V-4) because CDE files were not extracted.",
      "Read the official California School Dashboard page: 86.5% in 2025, with the 2019-2025 series. The gap is closed.", "DASH"),
     ("R-08", "Interest-rate vintage",
-     "An inherited decision-file model anchors to 4.19% (2026-01-02); the root site used 4.84% (2026-11-05); FRED now shows 4.86% (2026-11-06).",
-     "All three are labelled by date on the Flagged page; the current site publishes the 2026-11-05 and 2026-11-06 observations.", "FRED"),
+     "An inherited decision-file model anchors to 4.19% (2026-01-02); the root site used 4.84% (2026-11-05), then 4.86% (2026-11-06); FRED now shows 4.88% (2026-11-09).",
+     "Every observation is labelled by date on the Flagged page; the current site publishes the 2026-11-09 observation and keeps the earlier ones as an audit trail. Re-read FRED before acting: the series is daily.", "FRED"),
     ("R-09", "BLS vintage",
      "Some inherited rows were labelled August 2026 while citing a summary that reports September 2026 data.",
      "The canonical dataset uses September 2026 observations from the 2026-11-04 summary only.", "BLS"),
@@ -844,4 +857,341 @@ REPO_REVIEW = [
     ("R-22", "Coordination board",
      "COORDINATION.md documents 15+ sessions, several conflicts and four stale open PRs.",
      "This session appended its own claims, sources and verification record; no earlier text was removed.", "ZIMAS"),
+]
+
+
+# ---------------------------------------------------------------------------
+# QIR — the questions, information and answers register.
+# (id, bucket, question, status, answer, what_closes_it, source_key)
+#   Answered   = an official source answers it outright
+#   Partial    = official evidence answers only part of it
+#   Open       = no official source can answer it; a private document is required
+#   Unverified = cannot be confirmed and must not be filled in
+QIR = [
+    ("Q-01", "Decision", "What decision is actually being made, and by when?",
+     "Answered",
+     "Either sell the fee interest before the lease term ends, or renew or extend and keep collecting rent. "
+     "The reported expiry window 2030-2035 means the first date the owner can be forced to act is 2030, about "
+     "4 years from this snapshot, and the last is 2035, about 9 years out. Every route in the model is "
+     "therefore evaluated on horizons of 5 to 9 years.",
+     "No further input needed; the window is owner-supplied context, not a document (see Q-09).", "SECQ3"),
+    ("Q-02", "Decision", "Is either route already ruled out by the evidence available today?",
+     "Partial",
+     "Yes for one. Hold-to-expiry-and-do-nothing has no support. At the base assumptions holding to 2035 is "
+     "worth 0.959 of selling today after costs, and 0.850 if an 18-month void occurs at expiry. A plan whose "
+     "expected value is below the alternative and whose downside is a further 11% lower is not a plan. No "
+     "route is ruled in, because the private documents are missing.",
+     "Depends on Q-09 to Q-14 (private documents).", "FRED"),
+    ("Q-03", "Decision", "Which single fact would most change the recommendation?",
+     "Answered",
+     "A signed, enforceable extension of 10 years or more at market rent with acceptable credit. It converts a "
+     "shortening income stream into a long one and widens the buyer pool, which is the only route that "
+     "improves both the hold case and the exit case. It must be signed and guaranteed to count.",
+     "Requires the tenant's written terms (Q-13).", "SECQ3"),
+    ("Q-04", "Decision", "What must be true before any offer is accepted or rejected?",
+     "Answered",
+     "Four things: a written offer with price and terms; an after-tax computation on the owner's actual basis "
+     "and debt; the tenant's written renewal terms for comparison; and confirmation of parcel jurisdiction, "
+     "zoning and hazard overlays. Without all four the comparison is between an unknown and an estimate.",
+     "Items 1 to 3 are private; item 4 is public but parcel-dependent (Q-15, Q-16, Q-24).", "ULA"),
+    ("Q-05", "Money", "What is one year of contract rent, and what is the net operating income?",
+     "Open",
+     "Unknown and deliberately not estimated. Every model output on this site is expressed as a multiple of "
+     "one year of base rent (1 R) precisely so that no rent figure is invented. One year of rent scales every "
+     "table linearly.",
+     "The executed lease and the current rent statement: private documents.", "SECQ3"),
+    ("Q-06", "Money", "What escalators apply, and do they keep pace with local costs?",
+     "Open",
+     "Unknown for this lease. The official benchmarks are CPI-U +3.7% (LA metro, September 2026) and ECI "
+     "+3.9% (LA-Long Beach CSA, September 2026). The model therefore sweeps rent growth from 0% to 3% and "
+     "shows that at a 7.5% required return the property must grow rent by about 1.62% a year just to match "
+     "selling, or 3.51% if an 18-month void occurs at expiry.",
+     "The executed lease's escalator clause.", "BLS"),
+    ("Q-07", "Money", "What will it cost to sell?",
+     "Partial",
+     "The statutory part is verified: City of Los Angeles base transfer tax 0.45% and county documentary "
+     "transfer tax 0.11%; Measure ULA adds 4% above $5,400,000 and 5.5% at $10,900,000 or more for closings "
+     "after 2026-06-30. Brokerage and diligence are not published by any official source, so the model uses "
+     "a disclosed 2.0% assumption. At a 5.75% cap the all-in cost is 2.56% of value without ULA and 6.56% with "
+     "the 4% ULA tier.",
+     "The owner's listing agreement and whether the price crosses the ULA threshold.", "ULA"),
+    ("Q-08", "Money", "What will the owner actually keep after tax?",
+     "Partial",
+     "Unknown, because the adjusted basis, the debt and the owner's marginal rates are private. What is "
+     "verified: federal long-term capital gains are 0/15/20%, unrecaptured section 1250 gain is capped at "
+     "25%, California has no preferential capital-gains rate and taxes the gain as ordinary income, and a "
+     "section 1031 exchange defers but does not eliminate the gain. The site publishes the tax drag as a "
+     "function of assumed basis instead of guessing one.",
+     "Depreciation schedules, the acquisition closing statement, the current debt balance and prior-year "
+     "returns: private.", "IRS409"),
+    ("Q-09", "Legal", "Is the 2030-2035 range the actual lease expiry?",
+     "Unverified",
+     "No document was supplied. 2030-2035 is owner context. It is not the same thing as a franchise agreement "
+     "termination date, which the issuer ties its closure programme to: those are different contracts with "
+     "different parties. Treating a franchise date as a lease expiry would be a material error.",
+     "The executed lease, all amendments, and any extension or termination options.", "SECQ3"),
+    ("Q-10", "Legal", "Who is the legal obligor, and is there a guaranty?",
+     "Open",
+     "Unknown. The tenant may be Jack in the Box Inc., a franchisee entity, or a single-purpose entity. The "
+     "issuer's own disclosure ties closures to 'respective franchise agreement termination dates', which "
+     "means the operator at this site may not be the issuer at all. Obligor credit is the largest unpriced "
+     "variable in the hold case.",
+     "The lease signature page, any guaranty, and the tenant's financial statements or an estoppel.", "SEC10K"),
+    ("Q-11", "Legal", "Is the lease assignable, and on what conditions?",
+     "Open",
+     "Unknown. Assignability determines whether the owner can sell the income stream to an investor without "
+     "tenant consent, and whether a replacement operator can be installed. No official source can answer "
+     "this.",
+     "The assignment and change-of-control clauses in the executed lease.", "SECQ3"),
+    ("Q-12", "Legal", "What are the landlord's obligations and unreimbursed costs under the NNN structure?",
+     "Open",
+     "'NNN' is a label, not a document. Roof, structure, parking-lot and HVAC capital obligations, caps on "
+     "controllable expenses, and any landlord repair covenants vary by lease and are unknown here.",
+     "The lease's expense, repair and capital-replacement clauses.", "SECQ3"),
+    ("Q-13", "Legal", "What renewal terms will the tenant actually offer?",
+     "Open",
+     "Unknown. No written renewal terms exist in the record. The recommendation requires them in writing "
+     "before any renewal decision, because a verbal indication is not an enforceable obligation.",
+     "A written renewal proposal or letter of intent from the tenant or its broker.", "SECQ3"),
+    ("Q-14", "Legal", "Have title, survey and environmental status been checked?",
+     "Open",
+     "No. No title report, ALTA survey, Phase I environmental assessment or property-condition report was "
+     "reviewed. For a restaurant site these can carry material cost: underground storage tanks, grease "
+     "interceptors, accessibility and drive-through compliance.",
+     "A title commitment, survey and Phase I environmental site assessment ordered by the owner's counsel.",
+     "ZIMAS"),
+    ("Q-15", "Asset", "Is the property inside the City of Los Angeles or in an unincorporated area?",
+     "Unverified",
+     "Unknown, and it matters: the 0.45% city base transfer tax and Measure ULA apply only inside the city. A "
+     "county or other-city location has different rates and a different zoning authority. 'Central Los "
+     "Angeles' is a colloquialism, not a legal boundary.",
+     "The parcel's assessor parcel number and the jurisdiction shown on the county assessor and city "
+     "planning portals.", "ULA"),
+    ("Q-16", "Asset", "What are the parcel's zoning, general plan and drive-through rights?",
+     "Unverified",
+     "Unknown. Drive-through entitlements are frequently non-conforming and can be lost on abandonment or "
+     "extended vacancy, which directly affects re-letting value to another quick-service operator.",
+     "The zoning designation and any conditional use permit from the city planning portal.", "ZIMAS"),
+    ("Q-17", "Asset", "What is the building's age, condition and remaining economic life?",
+     "Open",
+     "Unknown. No property-condition report or capital-expenditure schedule was supplied. A thirty-year-old "
+     "restaurant building can require roof, HVAC and site work that a NNN lease may or may not pass through.",
+     "A property-condition assessment and the last five years of capital spending.", "SECQ3"),
+    ("Q-18", "Asset", "How large is the site, and could it be subdivided or redeveloped?",
+     "Open",
+     "Unknown. Residual land value depends on lot area, frontage, access and the general plan. No official "
+     "source publishes a residual value for an unidentified parcel, so none is stated.",
+     "The parcel record, including lot area and dimensions, and a planning feasibility review.", "ZIMAS"),
+    ("Q-19", "Market", "Is the local trade area growing or shrinking?",
+     "Partial",
+     "Only at city and county scale, and there the direction is down. Los Angeles city population is 0.8% "
+     "below its 2020 estimates base and the county 3.2% below; a separate state estimate shows the county "
+     "down 44,822 (-0.45%) year over year. Nothing in the record describes this specific trade area, and city "
+     "or county totals cannot substitute for a block-level study.",
+     "A trade-area study: one, three and five mile population, daytime employment, traffic counts and "
+     "competitor units.", "COUNTY"),
+    ("Q-20", "Market", "Are local incomes and employment strong enough to support restaurant sales?",
+     "Partial",
+     "Metro payrolls grew 0.5% year over year to 6,282.1 thousand and unemployment fell to 4.4% in the metro "
+     "and 4.5% in the city and county. Median household income is $81,939 in the city and $90,112 in the "
+     "county, with 16.5% of city residents below the poverty line. These are metro aggregates: they do not "
+     "establish this store's sales.",
+     "Store-level sales and rent coverage from the tenant, or from the lease's reporting provisions.", "BLS"),
+    ("Q-21", "Market", "What cap rate does a Jack in the Box net-lease asset actually trade at?",
+     "Unverified",
+     "No official source publishes cap rates. Commercial brokerage surveys exist but are commercial sources, "
+     "which this project excludes. The model therefore sweeps 5.0% to 6.5% and never asserts a rate.",
+     "Actual comparable sales from a licensed appraiser or broker; then re-run the model with the real number.",
+     "FRED"),
+    ("Q-22", "Market", "How much would a buyer pay for the remaining term?",
+     "Unverified",
+     "Unknown. Price is a function of rent, term, credit, escalators and the buyer's required yield. Because "
+     "rent and term are private, no price can be published. A market test is the only reliable way to find "
+     "out.",
+     "A confidential marketing process producing written bids.", "FRED"),
+    ("Q-23", "Market", "How long would re-letting take, and at what rent?",
+     "Unverified",
+     "No official source publishes a re-letting period or a market rent for this parcel. The model stresses "
+     "an 18-month void with re-letting at 90% of the prior rent as a disclosed assumption, plus a 15% haircut "
+     "case. Neither is a measurement.",
+     "Comparable lease data and a broker's absorption estimate for the specific trade area.", "ZIMAS"),
+    ("Q-24", "Risk", "What natural hazards affect this parcel specifically?",
+     "Unverified",
+     "Regional hazard is documented: USGS gives a 60% thirty-year likelihood of a magnitude 6.7 or greater "
+     "earthquake in the Los Angeles region, and the January 2025 fires destroyed 16,264 structures in this "
+     "county in 24 days. What is not known is this parcel's FEMA flood zone, CAL FIRE severity zone or "
+     "California Geological Survey seismic zone, because the address is withheld.",
+     "The assessor parcel number, then the official FEMA, CAL FIRE and CGS lookups for that parcel.", "UCERF3"),
+    ("Q-25", "Risk", "Is the property insurable, at what price, and what is excluded?",
+     "Open",
+     "Unknown. No policy, quote or claims history was reviewed. Post-catastrophe repricing is a regional "
+     "channel: a building that survives an event can still lose value when the whole market's insurance cost "
+     "resets. Coverage limits, deductibles, exclusions and business-interruption terms must be read directly.",
+     "The current policy declarations, loss runs and two independent quotes.", "PALISADES"),
+    ("Q-26", "Risk", "What is the probability the tenant closes this restaurant?",
+     "Unverified",
+     "No such probability exists in any official source, and chain-level numbers cannot produce one. What is "
+     "verifiable: same-store sales fell 1.1%, 17 restaurants closed in the quarter, full-year 2026 guidance is "
+     "50 to 60 closures, and the issuer is selling owned real estate. Those are chain statistics, not a site "
+     "forecast.",
+     "The tenant's own disclosure about this site, or store-level sales and rent coverage.", "SECQ3"),
+    ("Q-27", "Risk", "What happens to the owner's position if a catastrophe strikes before a sale?",
+     "Partial",
+     "It is modelled, not predicted. A correlated event, meaning rent interruption plus a 150 basis point "
+     "exit-cap widening, reduces the hold case to 0.752 of the sell-today value, the worst of the eight "
+     "stresses tested. That is why the recommendation caps this asset's share of net worth and requires "
+     "insurance verification under either route.",
+     "Insurance verification (Q-25) and the owner's balance-sheet concentration (Q-30).", "SHAKEOUT"),
+    ("Q-28", "Risk", "What happens if interest rates stay near current levels?",
+     "Answered",
+     "The ten-year Treasury was 4.88% on 2026-11-09. Used as a discount-rate floor it is the most favourable "
+     "column in the model: at a 4.88% required return holding beats selling even with an 18-month void, and "
+     "the property needs only 1.33% rent growth to break even. The risk is not today's rate; it is a higher "
+     "exit cap at the moment the owner sells.",
+     "No further input needed; re-read FRED before acting, because the series is published daily.", "FRED"),
+    ("Q-29", "Risk", "What is the downside if the tenant defaults one year before expiry?",
+     "Partial",
+     "Modelled at about -3.9% of the base hold case, before any guaranty recovery. The actual loss depends on "
+     "whether a guaranty exists (Q-10) and on how quickly the space re-lets (Q-23). Neither is known, so the "
+     "number is illustrative arithmetic, not a forecast.",
+     "The lease and guaranty, plus a re-letting estimate.", "SECQ3"),
+    ("Q-30", "Personal", "How much of the owner's net worth is this single asset?",
+     "Open",
+     "Unknown and intentionally not collected. Concentration is the dominant risk of any single-tenant "
+     "net lease: one tenant, one building, one lease, one market. A prudent ceiling is a decision for the "
+     "owner with their adviser; this site does not set it.",
+     "The owner's own balance sheet, privately, with their adviser.", "IRS1031"),
+    ("Q-31", "Personal", "Does the owner need liquidity, income or growth over the next five to nine years?",
+     "Open",
+     "Unknown, and it changes the answer more than any market variable. A sale maximises liquidity and removes "
+     "concentration; a renewal maximises contractual income. The evidence cannot rank these preferences, so "
+     "the recommendation is deliberately conditional.",
+     "A private conversation with the owner's adviser, not a public research task.", "IRS1031"),
+    ("Q-32", "Personal", "What is the owner's tax basis, debt and refinancing position?",
+     "Open",
+     "Unknown. Basis determines depreciation recapture at up to 25% and the section 1031 arithmetic; debt "
+     "determines whether a sale must repay financing and whether the property is cash-flow positive after "
+     "debt service. The model publishes the tax drag by assumed basis instead of guessing.",
+     "Depreciation schedules, loan statements and the last filed returns.", "IRS409"),
+    ("Q-33", "Personal", "Would the owner qualify for, and want, a section 1031 exchange?",
+     "Partial",
+     "Rules are verified: real property only, held for use in a trade or business or for investment and not "
+     "held primarily for sale; replacement property must be identified within 45 days of the transfer and "
+     "received within 180 days, or by the due date of the return including extensions, whichever is earlier; "
+     "the exchange is reported on Form 8824; and the gain is deferred, not eliminated. Whether an exchange is "
+     "available depends on the owner's facts and on finding a suitable replacement.",
+     "Adviser review of the owner's facts and an identified replacement candidate.", "IRS8824"),
+    ("Q-34", "Money", "What is the county property-tax consequence of selling?",
+     "Partial",
+     "Verified rules: the 1% general levy plus voter-approved add-ons, a 2% annual cap on assessed-value "
+     "increases, reassessment on a change of ownership, and Proposition 8 temporary reductions on decline in "
+     "value. A sale resets the base year, which can raise the buyer's tax and therefore lower the price they "
+     "will pay, but the amount depends on the parcel's current assessed value, which is private.",
+     "The current tax bill and the assessed value from the county assessor.", "ASSESSOR"),
+    ("Q-35", "Asset", "What are the 2026 and 2027 wage floors, and does the lease pass them through?",
+     "Answered",
+     "Covered fast-food employees are at a $20.00 per hour floor from 2024-04-01 under AB 1228, and the state "
+     "minimum wage is $16.90 per hour from 2026-01-01. Neither is published as passable to the landlord; in a "
+     "NNN lease the labour cost lands on the tenant's margin, which feeds renewal willingness and closure "
+     "risk.",
+     "The lease's operating-covenant and co-tenancy clauses, if any.", "DIRFF"),
+    ("Q-36", "Market", "Are schools and demographics a support or a drag for this trade area?",
+     "Partial",
+     "At county scale, a drag: Los Angeles Unified enrolls 497,105 students in 2025-26, and the Department of "
+     "Finance projects Los Angeles County public K-12 enrollment to fall by 240,800 pupils by 2035-36. "
+     "District scale is not the trade area, and the assigned school for this parcel is unknown.",
+     "The parcel's attendance area and a trade-area demographic study.", "DOFPROJ"),
+    ("Q-37", "Market", "What is the official long-range growth view for the region?",
+     "Partial",
+     "Two official forecasts disagree and are published side by side instead of averaged. SCAG's adopted "
+     "Connect SoCal 2024 forecast projects regional growth, while the Department of Finance projects Los "
+     "Angeles County enrollment and population declines. This site uses neither as a parcel forecast, and the "
+     "measured Census trend since 2020 is negative for both city and county.",
+     "No further input needed; a divergence between official forecasts cannot be closed, only disclosed.",
+     "SCAG"),
+    ("Q-38", "Decision", "What would make the recommendation change?",
+     "Answered",
+     "Four triggers: a signed extension of ten years or more at market rent with acceptable credit; a "
+     "documented after-tax offer above the risk-adjusted hold case; block-level evidence that this trade area "
+     "is growing; or a change in the owner's liquidity needs or risk tolerance. Any one of them can move the "
+     "answer, and none of them is public information today.",
+     "Each trigger is closed by one of Q-09 to Q-33.", "SECQ3"),
+]
+
+
+# ---------------------------------------------------------------------------
+# RISK_OF_ROUTE — for each pathway: the business-as-usual risks, the black-swan risks,
+# why that route is specifically exposed, the mitigant, the decision test, source key.
+RISK_OF_ROUTE = [
+    ("Sell before expiry (base case)",
+     "A failed marketing period; a bid below the owner's reserve; the Measure ULA surcharge at a price above "
+     "$5.4m; reinvestment risk after closing.",
+     "A regional catastrophe during marketing withdraws buyers and reprices insurance, forcing a sale at the "
+     "worst moment.",
+     "The whole value depends on a single negotiated transaction date. If the market closes, the owner cannot "
+     "wait without paying carrying costs.",
+     "Open marketing 24 to 36 months before expiry; obtain two independent broker opinions of value; "
+     "pre-clear the ULA threshold; identify a section 1031 replacement before closing.",
+     "Do the written bids, after all transfer taxes and income tax, exceed the risk-adjusted hold case?", "ULA"),
+    ("Sell with a potential 1031 exchange",
+     "The 45-day and 180-day deadlines are unforgiving; a thin replacement market can force a worse asset or a "
+     "taxable outcome.",
+     "A catastrophe in either the sold or the purchased market during the exchange window.",
+     "Deadlines are statutory and cannot be extended for market conditions, and failure converts deferral "
+     "into a current tax liability.",
+     "Line up replacement candidates before listing; use a qualified intermediary; never take constructive "
+     "receipt of proceeds.",
+     "Is an identified replacement available, and does the after-tax comparison still favour the exchange?",
+     "IRS8824"),
+    ("Negotiate an early renewal or extension",
+     "Concessions, below-market locked rent, or a short extension that leaves the owner in the same position "
+     "with less leverage.",
+     "The tenant's own insolvency, or a catastrophe that removes the trade area the rent depends on.",
+     "The owner exchanges market upside and flexibility for a promise from a counterparty whose legal identity "
+     "is not yet verified.",
+     "Require at least ten years at market rent, a verified obligor and acceptable credit; obtain an estoppel "
+     "and a guaranty; check assignment and change-of-control terms.",
+     "Is the extension signed, enforceable, credit-supported and at market rent?", "SECQ3"),
+    ("Hold under the existing lease",
+     "Expiry vacancy, tenant default, cost inflation above the escalator, and rate-driven repricing at exit.",
+     "Earthquake, wildfire, flood or another regional catastrophe that stops rent and removes exit liquidity "
+     "at the same time.",
+     "It is the only route with no action at all, so it accepts every risk while changing none of them.",
+     "Size a re-letting reserve against verified carrying costs; verify insurance limits; set a hard review "
+     "date well before expiry.",
+     "Does the hold case beat selling after tax on the owner's real numbers, with an 18-month void assumed?",
+     "FEMA"),
+    ("Renew then sell",
+     "If the market does not price the extension higher, the owner has conceded rent for no gain.",
+     "A catastrophe between signing and sale, or the tenant's credit deteriorating after the extension.",
+     "It stacks two transactions in sequence, so it carries both the renewal risk and the sale risk.",
+     "Compare actual bids before and after the extension; never assume an extension creates a valuation "
+     "uplift; keep the term long enough to matter to a buyer.",
+     "Do actual post-extension bids exceed the pre-extension bids by more than the concessions granted?",
+     "FRED"),
+    ("Re-tenant or reposition",
+     "Downtime, tenant-improvement capital, commissions, and use restrictions on a drive-through site.",
+     "A catastrophe that removes both the incumbent and the pool of replacement operators.",
+     "The owner converts contractual income into an operating project with permitting and construction risk.",
+     "Obtain entitlement and budget certainty first; confirm that the drive-through use survives abandonment; "
+     "pre-negotiate with at least one replacement operator.",
+     "Is there verified alternate demand and a permitted use that justifies the vacancy and build-out?",
+     "ZIMAS"),
+    ("Redevelop or ground-lease alternative",
+     "Permitting, construction cost, environmental condition and financing risk.",
+     "A catastrophe or construction failure during the development period.",
+     "It has the widest dispersion of outcomes of any route and the longest time to any cash flow.",
+     "Independently costed residual land value, a Phase I environmental assessment, and a planning "
+     "pre-application; never underwrite on hope value.",
+     "Does an independently costed residual value clearly beat the existing-use value after all costs?",
+     "ZIMAS"),
+    ("Run both tracks in parallel (recommended)",
+     "Marketing costs incurred while the tenant's terms are still unknown; the two tracks can produce "
+     "conflicting signals.",
+     "A catastrophe striking during the parallel period removes the buyer pool and the tenant at once.",
+     "It commits resources to two processes and requires the discipline not to pre-commit to either before "
+     "both are in hand.",
+     "Set decision gates in writing, a hard deadline, and one after-tax comparison sheet that both tracks feed "
+     "into.",
+     "Are both a documented offer and written renewal terms in hand at the decision date?", "SECQ3"),
 ]

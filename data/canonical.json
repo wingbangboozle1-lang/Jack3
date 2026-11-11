@@ -205,6 +205,18 @@
       "publisher": "California Department of Education",
       "url": "https://www.cde.ca.gov/ds/ad/filesacgr.asp",
       "type": "Government data files"
+    },
+    "DOFPROJ": {
+      "label": "Public K-12 graded enrollment projections, 2026 series",
+      "publisher": "California Department of Finance",
+      "url": "https://dof.ca.gov/forecasting/demographics/public-k-12-graded-enrollment/",
+      "type": "Official projection"
+    },
+    "IRS8824": {
+      "label": "Instructions for Form 8824 \u00b7 Like-Kind Exchanges (2026)",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/pub/irs-pdf/i8824.pdf",
+      "type": "Government rule"
     }
   },
   "categories": [
@@ -320,6 +332,18 @@
       "id": "projections",
       "title": "Projection system",
       "file": "projections.html",
+      "group": "ANALYSIS"
+    },
+    {
+      "id": "model-scenarios",
+      "title": "Scenario model 2026-2035",
+      "file": "model-scenarios.html",
+      "group": "ANALYSIS"
+    },
+    {
+      "id": "questions",
+      "title": "Questions & evidence gaps",
+      "file": "questions.html",
       "group": "ANALYSIS"
     },
     {
@@ -1197,8 +1221,8 @@
     {
       "category": "Economy & jobs",
       "indicator": "10-year Treasury constant maturity yield",
-      "value": "4.86%",
-      "scope": "United States \u00b7 2026-11-06 \u00b7 daily (latest shown)",
+      "value": "4.88%",
+      "scope": "United States \u00b7 2026-11-09 \u00b7 daily (latest shown)",
       "note": "Newer observation than the 2026-11-08 snapshot used by older repository layers.",
       "status": "Verified",
       "source": "FRED"
@@ -2357,6 +2381,24 @@
     },
     {
       "category": "Projection anchors",
+      "indicator": "LA County public K-12 enrollment projection",
+      "value": "-240,800 pupils by 2035-36",
+      "scope": "Los Angeles County \u00b7 2025-26 to 2035-36",
+      "note": "Official cohort-survival projection. A demographic headwind, not a store-sales forecast.",
+      "status": "Verified",
+      "source": "DOFPROJ"
+    },
+    {
+      "category": "Projection anchors",
+      "indicator": "Statewide public K-12 enrollment projection",
+      "value": "5,731,300 (2025-26) to 5,020,800 (2035-36)",
+      "scope": "California \u00b7 2025-26 to 2035-36",
+      "note": "State total for context; the county row above is the relevant geography.",
+      "status": "Verified",
+      "source": "DOFPROJ"
+    },
+    {
+      "category": "Projection anchors",
       "indicator": "Local demand growth by 2030-2035",
       "value": "",
       "scope": "Asset A",
@@ -2410,7 +2452,7 @@
       "Business as usual",
       "High",
       "Interest rates and exit yields",
-      "The 10-year Treasury was 4.86% on 2026-11-06. A higher exit yield lowers price for the same rent.",
+      "The 10-year Treasury was 4.88% on 2026-11-09. A higher exit yield lowers price for the same rent.",
       "Stress debt maturity and a higher exit yield; no market cap rate is published.",
       "FRED"
     ],
@@ -2638,7 +2680,7 @@
     ],
     [
       "4 \u00b7 Bound discounting with the risk-free rate",
-      "Use the 10-year Treasury (4.86% on 2026-11-06) as a floor for any discount rate, not as a cap rate.",
+      "Use the 10-year Treasury (4.88% on 2026-11-09) as a floor for any discount rate, not as a cap rate.",
       "The series is daily, official and reproducible.",
       "FRED"
     ],
@@ -2814,7 +2856,7 @@
       "F-15",
       "Medium",
       "Rolling-source freshness",
-      "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation on 2026-11-10 is 4.86% on 2026-11-06. Older repository layers cite August figures and 4.84% or 4.19%.",
+      "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation on 2026-11-10 is 4.88% on 2026-11-09. Older repository layers cite August figures and 4.86%, 4.84% or 4.19%. The series is daily, so it will move again.",
       "Re-read each release before use; retain the prior vintage in the audit log.",
       "BLS"
     ],
@@ -2928,8 +2970,8 @@
     [
       "R-08",
       "Interest-rate vintage",
-      "An inherited decision-file model anchors to 4.19% (2026-01-02); the root site used 4.84% (2026-11-05); FRED now shows 4.86% (2026-11-06).",
-      "All three are labelled by date on the Flagged page; the current site publishes the 2026-11-05 and 2026-11-06 observations.",
+      "An inherited decision-file model anchors to 4.19% (2026-01-02); the root site used 4.84% (2026-11-05), then 4.86% (2026-11-06); FRED now shows 4.88% (2026-11-09).",
+      "Every observation is labelled by date on the Flagged page; the current site publishes the 2026-11-09 observation and keeps the earlier ones as an audit trail. Re-read FRED before acting: the series is daily.",
       "FRED"
     ],
     [
@@ -3032,7 +3074,7 @@
     ]
   ],
   "counts": {
-    "Verified": 188,
+    "Verified": 190,
     "Blank": 29,
     "Analysis": 1,
     "Derived": 4

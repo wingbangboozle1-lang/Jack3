@@ -26,7 +26,9 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from data.canonical_rows import (  # noqa: E402
     SNAPSHOT, SOURCES, CATEGORIES, ROWS, RISKS, DECISIONS, PROJECTION, FLAGS, REPO_REVIEW,
+    QIR, RISK_OF_ROUTE,
 )
+from scenario_engine import compute as engine_compute, self_test as engine_self_test  # noqa: E402
 
 E = html.escape
 
@@ -56,6 +58,10 @@ PAGES = [
      "Every business-as-usual and black-swan risk considered, with its context source."),
     ("projections", "Projection system", "ANALYSIS", "11 / PROJECTION SYSTEM",
      "A reliable, reproducible framework for the area, and the outputs deliberately withheld."),
+    ("model-scenarios", "Scenario model 2026-2035", "ANALYSIS", "11B / SCENARIO MODEL",
+     "The full deterministic run: hold versus sell by expiry year, sensitivity grids, break-evens and eight stress cases."),
+    ("questions", "Questions & evidence gaps", "ANALYSIS", "11C / QUESTIONS & GAPS",
+     "Every question a decision needs answered, what is answered versus open, and how to close each gap."),
     ("anchors", "Projection anchors", "ANALYSIS", "11A / PROJECTION ANCHORS",
      "The dated official observations and long-range projections that may bound a model."),
     ("decisions", "Decision matrix", "ANALYSIS", "12 / DECISION MATRIX",
@@ -191,7 +197,7 @@ def page_index() -> str:
         ("LA METRO · SEP 2026", "4.4%", "Unemployment · down from 5.5% a year earlier", "BLS", "BLS economic summary"),
         ("LA METRO · SEP 2026", "+0.5%", "Nonfarm payroll growth · 6,282.1 thousand jobs", "BLS", "BLS economic summary"),
         ("ISSUER · Q3 FY2026", "-1.1%", "System same-store sales · 2,115 restaurants", "SECQ3", "SEC 8-K Exhibit 99.1"),
-        ("US · 2026-11-06", "4.86%", "10-year Treasury · risk-free anchor for any buyer", "FRED", "FRED DGS10"),
+        ("US · 2026-11-09", "4.88%", "10-year Treasury · risk-free anchor for any buyer", "FRED", "FRED DGS10"),
         ("LA REGION · UCERF3", "60%", "30-year likelihood of an M≥6.7 earthquake", "UCERF3", "USGS Fact Sheet 2015-3009"),
     ]
     card_html = ''.join(
@@ -207,7 +213,9 @@ def page_index() -> str:
         for pid, t in [
             ("risk", "Business-as-usual and black-swan risks, each with a context source."),
             ("projections", "The reproducible 2026-2035 framework and the outputs withheld."),
-            ("decisions", "Eight pathways, their gates and the recommended sequence."),
+            ("decisions", "Eight pathways, their gates and the risk of each route."),
+            ("model-scenarios", "The deterministic 2026-2035 run: break-evens and eight stress cases."),
+            ("questions", "Every question the decision needs answered, and how to close each gap."),
             ("master", "Every row in this site, in one source-linked table."),
             ("review", "Unverified values, conflicts and irregularities for manual review."),
             ("repo-review", "Line-by-line findings on the inherited repository layers."),
@@ -281,7 +289,7 @@ def page_executive_summary() -> str:
         ("2", "Demand is soft at regional scale", "City population is 0.8% below its 2020 estimates base; county is 3.2% below; a separate state estimate shows a −0.45% county year-over-year decline.", "DOF"),
         ("3", "Labour market is improving but uneven", "Metro unemployment fell to 4.4% and payrolls rose 0.5%, led by education and health (+3.8%) while information fell 5.7%.", "BLS"),
         ("4", "Tenant credit is the key unknown", "The issuer reports −1.1% same-store sales, 17 quarterly closures, a discontinued dividend and a $500m refinancing. The legal obligor at this site is unknown.", "SECQ3"),
-        ("5", "Costs and rates compress real returns", "CPI-U +3.7%, ECI +3.9%, energy +20.3%, and a 4.86% 10-year Treasury. A fixed escalator and a higher exit yield both work against the hold case.", "FRED"),
+        ("5", "Costs and rates compress real returns", "CPI-U +3.7%, ECI +3.9%, energy +20.3%, and a 4.88% 10-year Treasury (2026-11-09). A fixed escalator and a higher exit yield both work against the hold case.", "FRED"),
         ("6", "Tail risk is real but unquantified", "USGS ShakeOut models ~1,800 deaths and $213bn in losses; the 2025 fires destroyed 16,264 structures in 24 days. No parcel overlay or insurance evidence exists.", "UCERF3"),
     ]
     frows = [[f'<b>{E(n)}</b>', E(t), E(d), src(s)] for n, t, d, s in findings]
@@ -434,7 +442,12 @@ def page_projections() -> str:
             'in 2022 to 10,276 thousand in 2050 (+0.50% per year) and accommodation and food service jobs from '
             '832 thousand to 938 thousand (+12.8%). It also states that the region\'s population has declined '
             'since a January 2019 peak. These are statutory planning projections with explicit uncertainty; they '
-            'are not a central-LA parcel forecast and are not mixed with Census V2025 estimates.</p>']
+            'are not a central-LA parcel forecast and are not mixed with Census V2025 estimates.</p>',
+            h2("The implemented model", "Step 10 to step 12, executed"),
+            '<p>The stress and sensitivity steps are not described here and left undone: they are '
+            'implemented, self-tested and published on the <a href="model-scenarios.html">Scenario '
+            'model</a> page, in rent multiples, with every assumption printed.</p>',
+            '<a class="button" href="model-scenarios.html">Open the scenario model <span>→</span></a>']
     return shell("projections", ''.join(body), "11 / PROJECTION SYSTEM")
 
 
@@ -460,6 +473,15 @@ def page_decisions() -> str:
             '<li><b>Either route.</b> Verify insurance, size a re-letting reserve and cap this asset\'s share '
             'of Owner A\'s net worth at a level that can be lost without changing their plans.</li>'
             '</ol>',
+            h2("Risk of every decision", "Business as usual and black swan, for each route separately"),
+            '<p>The same shock does not hit every route equally. A catastrophe is worse for a route that '
+            'commits to a single transaction date and better for one that keeps optionality. This table '
+            'states, route by route, what normally goes wrong, what goes catastrophically wrong, why that '
+            'route in particular is exposed, and the test that must pass before committing.</p>',
+            table(["Route", "Business-as-usual risk", "Black-swan risk", "Why this route is exposed",
+                   "Mitigant", "Decision test", "Official context source"],
+                  [[f"<b>{E(a)}</b>", E(b), E(c), E(d), E(e), E(f), src(g)] for a, b, c, d, e, f, g in RISK_OF_ROUTE],
+                  "Risk of every decision · business as usual and black swan"),
             h2("Dominant risk of each route", "The thing most likely to break it"),
             '<section class="split"><div><h3>Sell-side</h3><p>A failed marketing period, an unexpected '
             'transfer-tax liability, or reinvestment into an equally concentrated asset. Measure ULA and the '
@@ -469,6 +491,230 @@ def page_decisions() -> str:
             'rent and exit liquidity together. Chain-wide results cannot establish this site\'s fate.</p>'
             + src("SECQ3", "Issuer Q3 FY2026") + '</div></section>']
     return shell("decisions", ''.join(body), "12 / DECISION MATRIX")
+
+
+def page_questions() -> str:
+    counts = Counter(q[3] for q in QIR)
+    order = ["Answered", "Partial", "Open", "Unverified"]
+    cls = {"Answered": "ok", "Partial": "analysis", "Open": "blank", "Unverified": "derived"}
+    buckets = []
+    for q in QIR:
+        if q[1] not in buckets:
+            buckets.append(q[1])
+    def rows(sel):
+        return [[f"<b>{E(q[0])}</b>", E(q[1]), E(q[2]), E(q[4]),
+                 f'<span class="badge {cls[q[3]]}">{E(q[3])}</span>', E(q[5]), src(q[6])] for q in sel]
+    hdr = ["ID", "Area", "Question", "What the evidence says today", "Status",
+           "What would close it", "Official source"]
+    body = [CALLOUT_BOUNDARY,
+            h1("Questions & evidence gaps",
+               "The questions this decision has to answer, sorted by whether an official source answers "
+               "them, answers part of them, or cannot answer them at all. Every open item states exactly "
+               "what would close it."),
+            '<section class="callout"><b>How to read this page.</b> '
+            '<b>Answered</b> means an official page settles it. <b>Partial</b> means official evidence '
+            'covers part of the question and a private fact is still required. <b>Open</b> means no '
+            'official source can answer it and a private document is required. <b>Unverified</b> means '
+            'the item cannot be confirmed, so it is left blank and never inferred. Nothing on this page '
+            'is a forecast, a valuation or advice.</section>',
+            '<div class="stats"><div><strong>' + str(len(QIR)) + '</strong><span>Questions registered</span></div>'
+            + ''.join(f'<div><strong>{counts[k]}</strong><span>{k}</span></div>' for k in order) +
+            '</div>',
+            h2("Every question in one register", f"{len(QIR)} entries · grouped by status"),
+            table(hdr, rows([q for k in order for q in QIR if q[3] == k]),
+                  "Questions, information and answers register"),
+            h2("By subject area", "What each area is still missing"),
+            table(hdr, [row for b in buckets for row in rows([q for q in QIR if q[1] == b])],
+                  "Same register, grouped by subject area"),
+            h2("The five facts that block every property-level conclusion", "Critical path"),
+            '<ol class="steps">'
+            '<li><b>The executed lease.</b> Exact expiry, escalators, options, expense allocation, '
+            'assignment terms and any guaranty. Closes Q-05, Q-06, Q-09 to Q-13 and Q-29.</li>'
+            "<li><b>The legal obligor's identity and credit.</b> The operator may not be the issuer. "
+            'Closes Q-10 and moves Q-26 from unverifiable to assessable.</li>'
+            "<li><b>The owner's basis, debt and marginal rates.</b> Required for any after-tax "
+            'comparison. Closes Q-08, Q-32 and Q-34.</li>'
+            '<li><b>The parcel identifier.</b> Jurisdiction, zoning, hazard overlays and drive-through '
+            'rights all follow from it. Closes Q-15, Q-16, Q-18 and Q-24.</li>'
+            '<li><b>A real market test.</b> Written bids and written renewal terms, in the same window. '
+            'Closes Q-21, Q-22 and Q-13.</li>'
+            '</ol>',
+            h2("Suggested research plan for the missing information", "Who to ask, in what order"),
+            table(["Step", "Action", "Answers", "Why it comes in this order", "Official or authoritative route"],
+                  [["1", "Order the lease, amendments and any guaranty from the owner's file and the "
+                        "tenant's estoppel", "Q-05, Q-06, Q-09 to Q-13",
+                    "Every other analysis is scaled by rent and bounded by term, so this is the first "
+                    "document to obtain.", src("SECQ3", "Issuer filing (obligor context)")],
+                   ["2", "Pull the assessor parcel record and the tax bill", "Q-15, Q-16, Q-18, Q-34",
+                    "Gives jurisdiction, lot area, assessed value and the zoning lookup key.",
+                    src("ASSESSOR", "LA County Assessor")],
+                   ["3", "Run the three official hazard lookups on that parcel", "Q-24",
+                    "FEMA flood zone, CAL FIRE severity zone and CGS seismic zone each need the address "
+                    "or parcel, so they follow step 2.", src("FEMA", "FEMA flood maps")],
+                   ["4", "Order insurance declarations, loss runs and two quotes", "Q-25",
+                    "Catastrophe exposure must be priced before any hold case is credible.",
+                    src("PALISADES", "CAL FIRE incident record")],
+                   ["5", "Have the owner's tax adviser compute after-tax proceeds on the real basis and debt",
+                    "Q-08, Q-32, Q-33, Q-34",
+                    "Turns the model's tax-drag function into one number for this owner.",
+                    src("IRS409", "IRS Topic 409")],
+                   ["6", "Commission a trade-area study", "Q-19, Q-20, Q-23, Q-36",
+                    "Replaces city and county aggregates with block-level demand evidence.",
+                    src("COUNTY", "Census QuickFacts")],
+                   ["7", "Open confidential marketing and a written renewal request in the same window",
+                    "Q-13, Q-21, Q-22", "Only a market test produces a price and an enforceable offer.",
+                    src("ULA", "City of LA transfer tax rules")],
+                   ],
+                  "Suggested sequence for closing the gaps"),
+            '<a class="quiet" href="model-scenarios.html">See how the gaps change the numbers →</a>']
+    return shell("questions", ''.join(body), "11C / QUESTIONS & GAPS")
+
+
+def page_model_scenarios() -> str:
+    engine_self_test()
+    m = engine_compute()
+    b = m["base"]
+    def pct(x, dp=2):
+        return "n/a" if x is None else f"{x*100:.{dp}f}%"
+    def num(x, dp=3):
+        return "n/a" if x is None else f"{x:.{dp}f}"
+    sell = m["horizon"][0]["sell_net"]
+
+    hrows = [[f"{r['expiry_year']} · {r['horizon']} yrs", num(r["hold_pv"]), num(r["hold_pv_vacancy"]),
+              num(r["sell_net"]), num(r["ratio"]), num(r["ratio_vacancy"]),
+              ("+" if r["delta"] >= 0 else "") + num(r["delta"]), src("FRED", "Discount anchor")]
+             for r in m["horizon"]]
+
+    xrows = []
+    for row in m["exit_cap"]:
+        xrows.append([f"{row['cap_exit']*100:.2f}%"] + [num(v["ratio"]) for v in row["values"]]
+                     + [src("FRED", "Anchor")])
+    grows = []
+    for row in m["growth"]:
+        grows.append([f"{row['growth']*100:.2f}%"] + [num(v["ratio"]) for v in row["values"]]
+                     + [src("BLS", "CPI-U / ECI")])
+
+    brows = [[pct(r["discount"]), pct(r["growth_required"]), pct(r["growth_required_vacancy"]),
+              pct(r["exit_cap_required"]), src("FRED", "DGS10")] for r in m["breakeven"]]
+
+    trows = [[f"{r['cap_now']*100:.2f}%", num(r["gross"]), num(r["statutory"]), num(r["sell_cost"]),
+              num(r["with_ula"]), num(r["net_base"]),
+              num(r["gross"] * (1 - 0.0445 - b["sell_cost"])), src("ULA", "City / county tax rules")]
+             for r in m["transfer"]]
+
+    vrows = [[f"{r['cap_exit']*100:.2f}%", num(r["with_rent"]), num(r["with_vacancy"]),
+              num(r["loss"]), f"{r['loss_pct']*100:.1f}%", src("FRED", "Discount anchor")]
+             for r in m["vacancy"]]
+
+    krows = [[E(r["id"]), E(r["name"]), E(r["kind"]), E(r["shock"]), num(r["pv"]), num(r["ratio"]),
+              f"{r['loss_pct']*100:.1f}%", E(r["note"]), src("SHAKEOUT" if r["id"] in ("S-05", "S-06", "S-07")
+                                                             else "SECQ3", "Severity context")]
+             for r in m["stress"]]
+
+    zrows = [[f"{r['basis']:.0f} R", num(r["net_before_tax"]), num(r["tax"]), num(r["net_after_tax"]),
+              f"{r['tax_pct_of_gross']*100:.1f}%", src("IRS409", "IRS Topic 409")]
+             for r in m["basis"]]
+
+    dheads = ["Exit cap \\ discount"] + [pct(d) for d in [v["discount"] for v in m["exit_cap"][0]["values"]]] + ["Official link"]
+    gheads = ["Rent growth \\ discount"] + [pct(d) for d in [v["discount"] for v in m["growth"][0]["values"]]] + ["Official link"]
+
+    body = [CALLOUT_BOUNDARY,
+            h1("Scenario model 2026-2035",
+               "One deterministic run, every assumption printed, and no dollar value of the asset "
+               "anywhere. All results are multiples of one year of current base rent (1 R)."),
+            '<section class="callout warn"><b>What this model is not.</b> It is not a valuation, an '
+            'appraisal, a price target or a forecast of rent, cap rates or returns. It does not predict '
+            'whether the tenant renews or closes, and it assigns no probability to any hazard. It is '
+            'arithmetic that shows which route wins under stated assumptions and how far those '
+            'assumptions must move before the answer flips. Every input below marked ASSUMPTION is a '
+            'judgement, not a published observation.</section>',
+            h2("Inputs and their provenance", "Three verified observations, one verified rule, eight disclosed assumptions"),
+            table(["Input", "Value used", "Type", "Provenance"],
+                  [["Discount-rate floor", pct(m["treasury_anchor"]), "VERIFIED observation",
+                    src("FRED", "FRED DGS10, " + m["treasury_anchor_date"])],
+                   ["Cost-inflation benchmarks", f"CPI-U {pct(m['cpi_anchor'],1)}; ECI {pct(m['eci_anchor'],1)}",
+                    "VERIFIED observation", src("BLS", "BLS LA summary, Sep 2026")],
+                   ["Payroll growth benchmark", pct(m["payroll_anchor"], 1), "VERIFIED observation",
+                    src("BLS", "BLS LA summary, Sep 2026")],
+                   ["Entry cap rate", pct(b["cap_now"]), "ASSUMPTION", src("FRED", "No official cap rate is published")],
+                   ["Exit cap rate", pct(b["cap_exit"]), "ASSUMPTION", src("FRED", "No official cap rate is published")],
+                   ["Rent growth (escalator)", pct(b["growth"]), "ASSUMPTION", src("BLS", "Bounded by CPI-U and ECI")],
+                   ["Required return", pct(b["discount"]), "ASSUMPTION",
+                    src("FRED", "Treasury anchor plus a disclosed premium")],
+                   ["Transfer cost", pct(b["transfer"]), "VERIFIED rule (city base tax)",
+                    src("ULA", "City of LA Office of Finance")],
+                   ["Selling cost", pct(b["sell_cost"]), "ASSUMPTION", src("FRED", "Not published by any official source")],
+                   ["Expiry vacancy", f"{b['vacancy_months']} months", "ASSUMPTION", src("SECQ3", "Not published")],
+                   ["Re-let rent factor", pct(b["release_rent_factor"], 0), "ASSUMPTION", src("SECQ3", "Not published")],
+                   ["Tax rate", pct(b["tax_rate"], 0), "ASSUMPTION", src("IRS409", "Rate schedule is verified; owner's rate is not")],
+                   ],
+                  "Model inputs · provenance of every number"),
+            h2("The headline result", "Holding versus selling, by possible expiry year"),
+            f'<section class="callout"><b>At the base assumptions, selling today is worth '
+            f'{num(sell)} R net of costs, and holding to the last possible expiry (2035) is worth '
+            f'{num(m["horizon"][-1]["hold_pv"])} R before tax, or {num(m["horizon"][-1]["hold_pv_vacancy"])} R '
+            f'if an 18-month void occurs at expiry.</b> The hold case does not overtake the sell case at '
+            f'any expiry year tested: the ratio stays between {num(min(r["ratio"] for r in m["horizon"]),2)} '
+            f'and {num(max(r["ratio"] for r in m["horizon"]),2)} without vacancy, and between '
+            f'{num(min(r["ratio_vacancy"] for r in m["horizon"]),2)} and '
+            f'{num(max(r["ratio_vacancy"] for r in m["horizon"]),2)} with it. That is the arithmetic basis '
+            f'for the recommendation, and it is conditional on the assumptions above.</section>',
+            table(["Expiry year · horizon", "Hold PV (R)", "Hold PV with void (R)", "Sell today, net (R)",
+                   "Hold / sell", "Hold / sell with void", "Difference (R)", "Official anchor"],
+                  hrows, "Hold versus sell by expiry year"),
+            h2("Sensitivity: exit cap versus required return", "Hold / sell ratio · values above 1.00 favour holding"),
+            '<p class="small">The two grids below sweep the assumptions on either side of the base case, so '
+            'they can show a ratio above 1.00 where the base case shows 0.96. That is the point: they locate '
+            'the boundary rather than repeat the base answer. Read a cell against the base case, which sits '
+            'between the 6.00% and 6.50% exit-cap rows at a 7.50% required return, not against the column '
+            'heading alone. A cell above 1.00 means holding wins <em>at that combination</em>; the '
+            'recommendation rests on the range, not on one cell.</p>',
+            table(dheads, xrows, "Exit cap sensitivity grid"),
+            h2("Sensitivity: rent growth versus required return", "Hold / sell ratio · values above 1.00 favour holding"),
+            table(gheads, grows, "Rent growth sensitivity grid"),
+            h2("Break-even analysis", "The number the owner actually needs to negotiate against"),
+            '<p>Column 2 is the annual rent growth that makes holding exactly equal selling, after transfer '
+            'and selling costs. Column 3 repeats it with an 18-month void at expiry. Column 4 is the exit '
+            'cap at which the sale proceeds would have to be priced to make the two routes equal: if the '
+            'owner believes the exit cap will be <em>below</em> that figure, holding wins; if above, '
+            'selling wins. Compare the required exit cap with the entry cap: the gap is the cap-rate '
+            'expansion the market would have to avoid.</p>',
+            table(["Required return", "Rent growth needed to break even", "… if an 18-month void occurs",
+                   "Exit cap at which routes are equal", "Official anchor"], brows, "Break-even table"),
+            h2("Transaction-cost arithmetic", "Verified statutory rates plus one disclosed assumption"),
+            table(["Entry cap", "Gross price (R)", "Statutory transfer tax 0.56% (R)",
+                   "Selling cost 2.0% (R)", "Statutory + 4% ULA (R)", "Net proceeds, no ULA (R)",
+                   "Net proceeds with ULA (R)", "Official source"],
+                  trows, "Transfer and selling cost in rent multiples"),
+            h2("Cost of an expiry vacancy", "What the void alone does to the hold case"),
+            table(["Exit cap", "Hold PV (R)", "Hold PV with 18-month void (R)", "Loss (R)",
+                   "Loss as % of hold case", "Official anchor"], vrows, "Vacancy stress"),
+            h2("Eight stress cases", "Business as usual, then the tail"),
+            '<p>Each row re-runs the base case with one or two shocks applied. Severity figures are '
+            'disclosed assumptions scaled from <em>observed</em> official events; no cell is a '
+            'probability and no cell is a forecast for this parcel.</p>',
+            table(["ID", "Stress", "Type", "Shock applied", "PV after shock (R)", "PV / sell today",
+                   "Loss vs base case", "Note", "Severity context source"], krows, "Stress cases"),
+            h2("The tax drag, by assumed basis", "Why the basis has to come from the owner"),
+            '<p>Sale proceeds are reduced by transfer tax, selling cost and income tax on the gain. The '
+            'gain depends on the adjusted basis, which is private. This table prints the result for four '
+            'possible bases instead of inventing one. Basis is expressed in years of current rent so it '
+            'stays scale-free.</p>',
+            table(["Adjusted basis", "Net before income tax (R)", "Income tax (R)", "Net after tax (R)",
+                   "Tax as % of gross price", "Official source"], zrows, "After-tax proceeds by assumed basis"),
+            h2("Why no dollar value is published", "The calibration problem, stated plainly"),
+            '<p>One year of rent is unknown, so every output above is a ratio. Multiplying any row by a '
+            'rent figure would produce a dollar number, but that rent figure does not exist in the public '
+            'record. Publishing a dollar value would therefore require inventing the single most '
+            'important input. The model instead reports what does not depend on scale: the ordering of '
+            'routes, the break-even growth rate and the break-even exit cap.</p>',
+            '<p class="small">Reproduce with <code>python3 scripts/scenario_engine.py</code>. The module '
+            'runs its own self-test first: it checks the closed-form annuity against a brute-force '
+            'year-by-year loop and confirms that each break-even solves back to the target exactly. '
+            'If the self-test fails, the build fails.</p>',
+            '<a class="quiet" href="questions.html">Which inputs are still missing →</a> '
+            '<a class="quiet" href="decisions.html">Decision matrix →</a>']
+    return shell("model-scenarios", ''.join(body), "11B / SCENARIO MODEL")
 
 
 def page_model() -> str:
@@ -805,7 +1051,7 @@ def write_verification_log() -> None:
         "   Registrar-Recorder page; the earlier blank cell (V-3 / K-F-18) is closed.",
         "2. LAUSD graduation rate (`86.5%`, 2025) verified on the California School Dashboard; the",
         "   earlier blank cell (V-4) is closed. The 2019-2025 series is published with it.",
-        "3. The 10-year Treasury observation is updated to include `4.86%` on 2026-11-06 alongside",
+        "3. The 10-year Treasury observation is refreshed to `4.88%` on 2026-11-09 (session ac2f57ec),",
         "   `4.84%` on 2026-11-05; older layers citing 4.19% (2026-01-02) are flagged, not edited.",
         "4. CA DOF February-2026 revised July-2025 LA County estimate (`9,853,435`, −0.45% YoY) is",
         "   published alongside the Census V2025 figure (`9,694,934`), labelled by agency and vintage.",
@@ -973,6 +1219,8 @@ def main() -> None:
         "risk.html": page_risk(),
         "projections.html": page_projections(),
         "decisions.html": page_decisions(),
+        "questions.html": page_questions(),
+        "model-scenarios.html": page_model_scenarios(),
         "model.html": page_model(),
         "place.html": page_place(),
     }
