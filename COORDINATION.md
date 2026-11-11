@@ -941,9 +941,25 @@ External official-source access is restricted by this session's network policy; 
 - Audit and five regression tests completed: exact thirteen-file artifact; all local targets/fragments; no active collection/remote HTML resources; all category links; unknown-value boundaries. Local canonical validation passes 158 rows / twelve pages. Existing legacy link/privacy checks pass; their scopes are distinguished from the canonical artifact.
 - Sources and limitations recorded in `research/AUDIT-2026-11-11-8504a55c.md`. GitHub official Pages API confirms the existing main deployment built successfully; independent live HTTP fetch and fresh government-source verification are unavailable under this session's network allowlist. No claim of fresh semantic re-verification is made. Historical research, current source dates, public figures, and other sessions' open PRs are unchanged.
 - Documentation drift: README's 155-row/30-source audit description is historical; current dataset is 158/31 after the last integration. Needs review; not a newly verified data correction. Existing public review flags remain intact.
-
 ### 8504a55c publication completion
 - PR https://github.com/wingbangboozle1-lang/Jack3/pull/43 **merged** with explicit `gh pr merge 43 --merge`; merge commit `171770b93e6eff96badd09b04063106d3762be23`.
 - Pre-merge full validation and new regression workflow passed. Post-merge full validation https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42943423833 and regression suite https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42943423852 both **success**.
 - Pages build/report/deploy https://github.com/wingbangboozle1-lang/Jack3/actions/runs/42943423075 **success** for that exact merge SHA. Published URL: https://wingbangboozle1-lang.github.io/Jack3/ . This is official deployment confirmation, not an independent live-host fetch.
 - Session tasks **done**. No external economic value is newly marked verified. No new private information was collected. Open review gaps remain non-blocking. Additive completion record follows in a documentation-only PR.
+# Session `arena/322b173f-jack3` — independent re-verification + publication audit (2026-11-11)
+
+**Session ID:** `322b173f` · **Branch:** `arena/322b173f-jack3` (platform-fixed, branched from `3e973b2` = main at claim time) · **Date:** 2026-11-11 (UTC)
+
+Role: fresh independent audit of the already-published curated root dashboard (158 rows / 31 sources, snapshot 2026-11-10). No new research layers. Docs-only PR unless a substantiated defect is found; any content fix goes through `data/evidence.json` + `scripts/build.py` regeneration, never hand-edited HTML.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| K-01 | Claim board + repo/main/CI/Pages state read | in progress | `322b173f` | `COORDINATION.md` (this section only) |
+| K-02 | Fresh re-read of load-bearing official sources (Census, BLS, FRED, DIR, ULA, county tax, Jack Q3, CAL FIRE, CDE/Dashboard, SCAG/DOF) vs `data/evidence.json` | unclaimed | `322b173f` | `research/VERIFICATION-2026-11-11-322b173f.md` (new file) |
+| K-03 | Full local validation suite + deterministic-build check | unclaimed | `322b173f` | read-only; results logged here |
+| K-04 | Remediate only substantiated defects (via generators); otherwise zero content changes | unclaimed | `322b173f` | `data/evidence.json`, `scripts/build.py`, generated root HTML — only if K-02 finds a defect |
+| K-05 | PR to `main`, CI, merge, Pages deploy + live fetch, record here | unclaimed | `322b173f` | `COORDINATION.md` (this section) |
+
+Privacy rule (unchanged): Asset A / Owner A placeholders only. No owner identity, address, parcel ID, contact, or private financial data sought or published. No personal information appears on the site.
+
+Notes at claim time: main `3e973b2` green (Validate + Pages `built` 2026-11-10). Open PRs #43 (new, `arena/8504a55c-jack3`, privacy regression tests — another live session, do not touch), #42/#40/#36/#32/#31/#26/#22/#12/#4 (stale/conflicting per prior board entries — reported, not merged by this session). This session will not merge or close any other session's PR.
