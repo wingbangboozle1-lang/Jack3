@@ -1,24 +1,48 @@
-# GitHub Pages uses Jekyll on the main branch. Keep unverified companion reports
-# in the repository, but exclude them and all research/source code from the site.
+# GitHub Pages (legacy Jekyll build from main:/).
+# One canonical site is published: the root *.html pages plus assets/style.css.
+# Every other top-level file and directory is audit trail, source code or a
+# repository-only companion layer and MUST NOT be published.
+theme: null
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: null
 exclude:
+  # root documents and tooling
+  - .github
+  - .gitignore
+  - _config.yml
   - COORDINATION.md
   - EXECUTIVE_SUMMARY.md
   - README.md
   - REPO_REVIEW.md
   - VERIFY.md
-  - analysis
-  - advisory
-  - audit
-  - brief
-  - data
-  - decision-file
-  - dashboard
-  - docs
-  - model/
-  - pages
-  - research
-  - scripts
-  - site
-  - tools
   - build_site.py
   - assets/app.js
+  # generated / scratch
+  - _pages_artifact/
+  - _jekyll_test/
+  - __pycache__/
+  - "*.py"
+  - "*.pyc"
+  - "*.md"
+  - "*.json"
+  - "*.txt"
+  # source and companion layers
+  - _advisory_src/
+  - _dashboard_src/
+  - advisory/
+  - analysis/
+  - audit/
+  - brief/
+  - dashboard/
+  - data/
+  - decision-file/
+  - docs/
+  - model/
+  - pages/
+  - research/
+  - scripts/
+  - site/
+  - tools/
