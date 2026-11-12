@@ -1287,3 +1287,14 @@ if `main` advances while this session works, it will rebase additively and re-ru
 **Privacy rule (highest urgency):** no personal information is collected, inferred or published anywhere in
 this session's scope; the repaired gate keeps and re-runs the PII / remote-resource checks over the public
 artifact; any personal data discovered stays internal and out of the published site.
+
+---
+# Session `9ff0e823` — independent publication and decision audit (2026-11-12)
+
+Platform-fixed branch `arena/9ff0e823-jack3` is used as required by the environment; a session-named branch cannot be created. Privacy: no personal identifiers or property-identifying research.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit current published decision desk, publication/privacy tests and deployment; record substantiated limitations | in progress | 9ff0e823 | `research/AUDIT-2026-11-12-9ff0e823.md` (new), this board section only |
+
+Shared site data, generator and pages are outside this claim; any needed changes will be logged for integration rather than overwriting other sessions' work.
