@@ -4,9 +4,10 @@
 Outputs (all deterministic, all static HTML, no JavaScript, no external assets):
 
   data/canonical.json                    machine-readable evidence register
-  research/VERIFICATION-2026-11-10-b98090a0.md    generated line-by-line source verification log
-  research/VERIFICATION-2026-11-12-f0b78eb6.md    full 2026-11-12 independent re-verification log
-  <root>/*.html                         22 published pages (21 registered + flagged.html alias)
+  research/VERIFICATION-2026-11-12-c56c569e.md    generated line-by-line source verification log
+  research/VERIFICATION-2026-11-12-f0b78eb6.md    hand-written 2026-11-12 re-verification log (session f0b78eb6; not generated)
+  research/VERIFICATION-2026-11-10-b98090a0.md    earlier record, kept as committed (no longer rewritten)
+  <root>/*.html                         every page in PAGES + flagged.html alias
   assets/style.css                      shared stylesheet
 
 Every table body row carries an official source link.  Any value that could not be
@@ -27,6 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from data.canonical_rows import (  # noqa: E402
     SNAPSHOT, SOURCES, CATEGORIES, ROWS, RISKS, DECISIONS, PROJECTION, FLAGS, REPO_REVIEW,
+    DECISION_RISKS, INFO_REGISTER, SUGGESTIONS, SUGGESTION_PATHS,
 )
 
 E = html.escape
@@ -60,23 +62,26 @@ PAGES = [
     ("anchors", "Projection anchors", "ANALYSIS", "11A / PROJECTION ANCHORS",
      "The dated official observations and long-range projections that may bound a model."),
     ("questions", "Questions & answers", "ANALYSIS", "12 / QUESTIONS & ANSWERS",
-     "Current answers, missing evidence, discovery routes and decision consequences."),
-    ("suggestions", "Suggestions to review", "ANALYSIS", "12A / SUGGESTIONS",
-     "Proposed improvements for review before implementation; no personal data collected."),
-    ("decisions", "Decision matrix", "ANALYSIS", "12 / DECISION MATRIX",
+     "What must be answered before deciding: what is known, what is not, and how to find out."),
+    ("decisions", "Decision matrix", "ANALYSIS", "13 / DECISION MATRIX",
      "Every available pathway, its risks, its evidence gate and the recommended sequence."),
-    ("model", "Model & method", "ANALYSIS", "13 / MODEL & METHOD",
+    ("model", "Model & method", "ANALYSIS", "14 / MODEL & METHOD",
      "Verification standard, arithmetic, monitoring rules and the limits of the analysis."),
-    ("place", "Evidence boundary", "ANALYSIS", "14 / EVIDENCE BOUNDARY",
+    ("place", "Evidence boundary", "ANALYSIS", "15 / EVIDENCE BOUNDARY",
      "What this site deliberately does not assert about the subject property."),
-    ("review", "Flagged for Review", "GOVERNANCE", "15 / FLAGGED FOR REVIEW",
+    ("suggestions", "Suggestions to review", "GOVERNANCE", "16 / SUGGESTIONS",
+     "Proposed improvements to this site, with options to choose from. Nothing here has been built."),
+    ("review", "Flagged for Review", "GOVERNANCE", "17 / FLAGGED FOR REVIEW",
      "Every unverified value, conflict and irregularity, published for manual review after the site is live."),
-    ("repo-review", "Repo review", "GOVERNANCE", "16 / REPO REVIEW",
+    ("repo-review", "Repo review", "GOVERNANCE", "18 / REPO REVIEW",
      "Line-by-line findings from the inherited repository layers, with source links."),
-    ("sources", "Sources & method", "GOVERNANCE", "17 / SOURCES & METHOD",
+    ("sources", "Sources & method", "GOVERNANCE", "19 / SOURCES & METHOD",
      "The official source register, the verification standard and the privacy boundary."),
 ]
 PAGE_TITLES = {p[0]: p[1] for p in PAGES}
+# One list owns the page numbers; page functions read them from here.
+KICKER = {p[0]: p[3] for p in PAGES}
+VERIFICATION_FILE = "research/VERIFICATION-2026-11-12-c56c569e.md"
 STATUS_CLASS = {"Verified": "ok", "Derived": "derived", "Analysis": "analysis", "Blank": "blank"}
 STATUS_LABEL = {"Verified": "Verified", "Derived": "Derived", "Analysis": "Analysis", "Blank": "Unverified"}
 
@@ -212,8 +217,9 @@ def page_index() -> str:
         for pid, t in [
             ("risk", "Business-as-usual and black-swan risks, each with a context source."),
             ("projections", "The reproducible 2026-2035 framework and the outputs withheld."),
-            ("decisions", "Eight pathways, their gates and the recommended sequence."),
-            ("suggestions", "Review proposed site and decision-process improvements before implementation."),
+            ("decisions", "Eight pathways, their gates, the risk of each and the recommended sequence."),
+            ("questions", "What must be answered before deciding, what is known and how to find the rest."),
+            ("suggestions", "Proposed site improvements with options to choose from; nothing is built yet."),
             ("master", "Every row in this site, in one source-linked table."),
             ("review", "Unverified values, conflicts and irregularities for manual review."),
             ("repo-review", "Line-by-line findings on the inherited repository layers."),
@@ -341,8 +347,18 @@ def page_executive_summary() -> str:
         'Any figure produced without those inputs would be an artefact of an assumption, not evidence.</p>'
         '<a class="button" href="review.html">Flagged for Review <span>→</span></a> '
         '<a class="quiet" href="master.html">All entries &amp; findings ↗</a>',
+        h2("What to do next", "Three pages to read after this one"),
+        '<section class="split"><div><h3>Answer the gate questions</h3>'
+        f'<p>{sum(1 for q in INFO_REGISTER if q[1] == "Gate")} of the {len(INFO_REGISTER)} questions in the information register '
+        'must be answered before any route can be chosen. Almost all are answered by documents the owner '
+        'already holds or by an adviser, not by more public data.</p>'
+        '<a class="quiet" href="questions.html">Questions &amp; answers →</a></div>'
+        '<div><h3>Choose how the site should develop</h3>'
+        f'<p>{len(SUGGESTIONS)} proposed improvements are listed with the options for each and four ways to combine them. '
+        'None has been built; each waits for a choice.</p>'
+        '<a class="quiet" href="suggestions.html">Suggestions →</a></div></section>',
     ]
-    return shell("executive-summary", ''.join(body), "01 / EXECUTIVE SUMMARY")
+    return shell("executive-summary", ''.join(body), KICKER["executive-summary"])
 
 
 def page_master() -> str:
@@ -366,7 +382,7 @@ def page_master() -> str:
                  '<a href="review.html"><b>Flagged for Review</b><p>Unverified items and irregularities.</p><span>Open →</span></a>'
                  '<a href="repo-review.html"><b>Repo review</b><p>Line-by-line inherited-layer findings.</p><span>Open →</span></a>'
                  '<a href="sources.html"><b>Sources & method</b><p>Official source register.</p><span>Open →</span></a></div>')
-    return shell("master", ''.join(parts), "02 / MASTER REGISTER")
+    return shell("master", ''.join(parts), KICKER["master"])
 
 
 def page_category(slug: str) -> str:
@@ -407,13 +423,19 @@ def page_risk() -> str:
             'likelihoods and observed severity; no official source publishes a probability that this specific '
             'building is lost. Every such cell is blank on the '
             '<a href="review.html">Flagged for Review</a> page.</section>',
+            h2("Risk by decision", "The same risks, sorted by the route that carries them"),
+            table(["Pathway", "Business-as-usual risks", "Black-swan exposure", "What limits the damage",
+                   "Official context source"],
+                  [[f'<b>{E(a)}</b>', E(b), E(c), E(d), src(k)] for a, b, c, d, k in DECISION_RISKS],
+                  "Risk of every pathway · business as usual and black swan"),
+            '<a class="quiet" href="decisions.html">Decision matrix and recommended sequence →</a>',
             h2("Risk-balanced conclusion", "Wealth preservation with growth optionality"),
             '<p>The lowest-risk route is the one that keeps a choice available: market while contractual income '
             'is still in place, require written renewal terms, and cap how much of Owner A\'s net worth this '
             'single asset represents. Insurance verification and a re-letting reserve are prerequisites for '
             '<em>either</em> route. Redevelopment and a pure wait-until-expiry strategy carry the widest '
             'dispersion of outcomes and are not the default.</p>']
-    return shell("risk", ''.join(body), "10 / RISK REGISTER")
+    return shell("risk", ''.join(body), KICKER["risk"])
 
 
 def page_projections() -> str:
@@ -445,7 +467,7 @@ def page_projections() -> str:
             '832 thousand to 938 thousand (+12.8%). It also states that the region\'s population has declined '
             'since a January 2019 peak. These are statutory planning projections with explicit uncertainty; they '
             'are not a central-LA parcel forecast and are not mixed with Census V2025 estimates.</p>']
-    return shell("projections", ''.join(body), "11 / PROJECTION SYSTEM")
+    return shell("projections", ''.join(body), KICKER["projections"])
 
 
 def page_questions() -> str:
@@ -471,14 +493,59 @@ def page_questions() -> str:
     for q, answer, needed, consequence, source in rows:
         value = E(answer) if answer else '<span class="empty" aria-label="Unverified value; intentionally blank"></span>'
         body.append([E(q), value, E(needed), E(consequence), badge("Analysis" if answer else "Blank"), src(source)])
-    return shell("questions", CALLOUT_BOUNDARY + h1("Questions & answers", "Current answers, explicit unknowns and discovery routes. Private documents belong in secure offline review—not on this public site.") + table(
-        ["Question", "Current answer", "Evidence needed / discovery route", "Decision consequence", "Status", "Official source"],
-        body, "Decision questions, answers and evidence gaps"), "12 / QUESTIONS & ANSWERS")
+
+    def sev(p: str) -> str:
+        return f'<span class="sev {E(p.lower())}">{E(p)}</span>'
+
+    gates = [q for q in INFO_REGISTER if q[1] == "Gate"]
+    others = [q for q in INFO_REGISTER if q[1] != "Gate"]
+
+    def info_rows(qs):
+        return [[f'<b>{E(i)}</b>', sev(pr), E(q), E(known), E(unknown), E(how), E(holder), src(k)]
+                for i, pr, q, known, unknown, how, holder, k in qs]
+    info_hdr = ["ID", "Priority", "Question", "Known today (official sources)", "Not known",
+                "How to find out", "Held by", "Official context source"]
+    parts = [
+        CALLOUT_BOUNDARY,
+        h1("Questions & answers", "What has to be answered before a decision can reasonably be made, what is "
+           "already known, what is not, and how to find the rest. Private documents belong in secure offline "
+           "review, not on this public site."),
+        '<div class="jump"><a href="#gate">Gate questions</a><a href="#supporting">Supporting questions</a>'
+        '<a href="#order">Order of work</a><a href="#answers">Current answers</a></div>',
+        '<div class="stats compact">'
+        f'<div><strong>{len(INFO_REGISTER)}</strong><span>Questions in the register</span></div>'
+        f'<div><strong>{len(gates)}</strong><span>Gate questions</span></div>'
+        f'<div><strong>{sum(1 for q in INFO_REGISTER if q[1] == "High")}</strong><span>High priority</span></div>'
+        f'<div><strong>{sum(1 for r in ROWS if r["status"] == "Blank")}</strong><span>Blank evidence cells</span></div></div>',
+        '<div id="gate">' + h2("Gate questions", f"{len(gates)} answers without which no route can be chosen") + '</div>',
+        '<p>Each of these is answered by a document the owner or tenant already holds, or by a professional. '
+        'None can be answered from public data, which is why the recommendation on this site is conditional.</p>',
+        table(info_hdr, info_rows(gates), "Gate questions · known, not known, how to find out"),
+        '<div id="supporting">' + h2("Supporting questions", f"{len(others)} answers that refine price, structure and timing") + '</div>',
+        table(info_hdr, info_rows(others), "Supporting questions · known, not known, how to find out"),
+        '<div id="order">' + h2("Order of work", "The shortest route to a defensible decision") + '</div>',
+        '<ol class="steps">'
+        '<li><b>Read the lease.</b> A real-estate attorney abstracts the executed lease and amendments: Q-01, Q-02, Q-03, Q-12.</li>'
+        '<li><b>Fix the place privately.</b> Jurisdiction, tax bill, zoning and the three hazard viewers: Q-06, Q-11, Q-13, Q-16.</li>'
+        '<li><b>Ask the tenant in writing.</b> Estoppel, site sales and renewal intention, with a response date: Q-04, Q-05.</li>'
+        '<li><b>Fix the owner\'s numbers.</b> Basis, depreciation, structure, debt and goals with the CPA and advisers: Q-08, Q-09, Q-10.</li>'
+        '<li><b>Test the market.</b> Two or three independent price opinions and comparable sales: Q-07, Q-19.</li>'
+        '<li><b>Check the downside.</b> Insurance, building condition and environmental history: Q-14, Q-15.</li>'
+        '<li><b>Compare.</b> After-tax sale proceeds against the hold and extension cases, and against what the proceeds '
+        'would earn elsewhere: Q-18.</li></ol>',
+        '<div id="answers">' + h2("Current answers", f"{len(rows)} decision questions answered as far as the evidence allows") + '</div>',
+        table(["Question", "Current answer", "Evidence needed / discovery route", "Decision consequence", "Status", "Official source"],
+              body, "Decision questions, answers and evidence gaps"),
+        '<a class="quiet" href="suggestions.html">Tools proposed to help answer these →</a>',
+    ]
+    return shell("questions", ''.join(parts), KICKER["questions"])
 
 
 def page_suggestions() -> str:
+    proposed = '<span class="badge proposed">Proposed</span>'
+    # Seven process proposals published by an earlier session (PR #60); kept verbatim.
     # Recommendations are analyst proposals, not claims made by the linked agencies.
-    items = [
+    process_items = [
         ("1", "Protect privacy first", "Keep all identifiers, lease files and owner finances offline with authorized advisers; publish only aggregate, non-identifying findings.", "Reduces exposure; makes independent parcel checks harder without private access.", "Approve a private review protocol before collecting anything.", "ZIMAS"),
         ("2", "Build a lease and notice calendar", "Have counsel review all amendments, options, notice periods, casualty terms and obligor documents privately.", "Prevents missed dates; legal review has cost and may uncover constraints.", "No sale or renewal deadline is verified yet.", "SECQ3"),
         ("3", "Compare executable alternatives", "Obtain confidential written sale interest and renewal proposals; compare after-tax proceeds, expenses, credit, reserves and reinvestment risk.", "Preserves options but preliminary bids and proposals may change.", "Do not commit or publish private figures; verify tax treatment with advisers.", "IRS1031"),
@@ -487,6 +554,7 @@ def page_suggestions() -> str:
         ("6", "Improve the projection system", "Create and back-test a versioned, cash-flow model when verified inputs and sufficient comparable history exist; distinguish observations from assumptions.", "Supports repeatable comparisons but a model can be precise and still wrong.", "Until calibrated, withhold numeric parcel forecasts and review scenarios with advisers.", "SCAG"),
         ("7", "Maintain the evidence", "Assign a reviewer to refresh dated sources, check changed rules and test links and privacy before publication.", "Reduces stale claims; official releases have different vintages and may conflict.", "Review material changes before publishing; retain previous vintages.", "BLS"),
     ]
+    # Six site proposals published by session f0b78eb6 (PR #63); kept verbatim.
     site_proposals = [
         ("S-1 · Publish break-even sensitivities", "Display the dimensionless 1 R sensitivity grid from scripts/projection.py on Projections alongside explicit blank owner-input cells.", "Makes exit-cap and rent-growth break-evens interactive for readers, vs. risking confusion between illustrative 5.0%–6.5% caps and market quotes.", "Confirm whether illustrative tables belong on the public site or offline only.", "FRED"),
         ("S-2 · Offline Census tract extractor", "Add a local script pulling ACS 5-year tract and block-group estimates with margins of error once Owner A selects a corridor privately.", "Eliminates city/county geographic mismatch without exposing parcel identity, vs. higher sampling variance in small tracts.", "Require Owner A sign-off on tract granularity and non-publication of tract codes if narrow.", "CITY"),
@@ -495,18 +563,59 @@ def page_suggestions() -> str:
         ("S-5 · Explicit vintage and methodology tags", "Keep dual-definition rows (87.4% four-year ACGR vs 87.6% combined rate; 2025 Topic 409 vs 2026 Rev. Proc. 2025-32 vs draft 2027 guidance) visually grouped with vintage tags.", "Prevents apples-to-oranges comparisons across agencies and tax years, vs. adds row density for readers wanting one headline figure.", "Choose preferred presentation rule before adding future dual-series indicators.", "IRSRP25"),
         ("S-6 · Archive legacy companion layers", "Move superseded repository directories (advisory/, analysis/, brief/, dashboard/, decision-file/, docs/, pages/) into a clearly tagged archive branch or folder.", "Eliminates contributor confusion over obsolete scripts and figures (R-01–R-13), vs. breaks relative links cited inside older audit logs.", "Confirm audit-trail retention preference before relocating historical files.", "DOF"),
     ]
-    rows = [[E(n), E(proposal), E(action), E(tradeoff), E(gate), src(key)] for n, proposal, action, tradeoff, gate, key in items]
-    srows = [[E(opt), E(prop), E(trade), E(gate), src(key)] for opt, prop, trade, gate, key in site_proposals]
-    content = (CALLOUT_BOUNDARY
-               + h1("Suggestions to review", "Proposals only — choose a path before implementing changes. These are analyst judgments; the official links provide context, not agency endorsement.")
-               + h2("Decision-workflow proposals", "Recommended governance and private diligence sequence")
-               + table(["Priority", "Proposal", "Suggested action", "Trade-off / risk", "Review gate", "Official context"], rows, "Proposed workflow improvements · not yet implemented")
-               + h2("Site, data and model enhancements", "Concrete technical options — none applied without stakeholder approval")
-               + table(["Option", "Proposed enhancement", "Trade-off / risk", "Review gate", "Official context"], srows, "Proposed site and engineering enhancements · awaiting selection")
-               + '<p>No private facts or user selections are collected on this static site. The missing property documents cannot be obtained without authorized access.</p>'
-               + '<a class="button" href="decisions.html">Decision matrix <span>→</span></a> '
-               + '<a class="quiet" href="projections.html">Projection system ↗</a>')
-    return shell("suggestions", content, "12A / SUGGESTIONS")
+    areas: list[str] = []
+    for sg in SUGGESTIONS:
+        if sg[1] not in areas:
+            areas.append(sg[1])
+    parts = [
+        '<section class="callout warn"><b>Nothing on this page has been implemented.</b> These are proposals '
+        'for review. Each lists the options available, so a path can be chosen before any change is made to '
+        'the site or the repository.</section>',
+        h1("Suggestions to review", "Ways to make this site and the decision process more useful, set out so that "
+           "someone can review them and choose. These are analyst judgements; the official links provide "
+           "context, not agency endorsement."),
+        '<div class="stats compact">'
+        f'<div><strong>{len(SUGGESTIONS)}</strong><span>Site suggestions</span></div>'
+        f'<div><strong>{len(process_items)}</strong><span>Process proposals</span></div>'
+        f'<div><strong>{len(site_proposals)}</strong><span>Technical options</span></div>'
+        f'<div><strong>{len(areas)}</strong><span>Areas</span></div>'
+        f'<div><strong>{len(SUGGESTION_PATHS)}</strong><span>Ways to combine them</span></div>'
+        '<div><strong>0</strong><span>Implemented</span></div></div>',
+        h2("Choose a path", "Four ways to combine the suggestions"),
+        table(["Path", "Includes", "What the owner gets", "Privacy position", "Status", "Official context source"],
+              [[f'<b>{E(a)}</b>', E(b), E(c), E(d), proposed, src(k)] for a, b, c, d, k in SUGGESTION_PATHS],
+              "Paths · choose one before anything is built"),
+        '<p class="small">Path 1 is recommended because it adds the tools the decision needs while keeping every '
+        'owner-specific figure out of the repository and off the web.</p>',
+    ]
+    parts.append(h2("Process proposals", f"{len(process_items)} proposals in priority order"))
+    parts.append(table(
+        ["Priority", "Proposal", "Suggested action", "Trade-off / risk", "Review gate", "Status", "Official context"],
+        [[E(n), E(proposal), E(action), E(tradeoff), E(gate), proposed, src(key)]
+         for n, proposal, action, tradeoff, gate, key in process_items],
+        "Process proposals · not yet implemented"))
+    parts.append('<p>No private facts or user selections are collected on this static site. The missing property '
+                 'documents cannot be obtained without authorized access.</p>')
+    parts.append(h2("Site, data and model enhancements", f"{len(site_proposals)} technical options · none applied without approval"))
+    parts.append(table(
+        ["Option", "Proposed enhancement", "Trade-off / risk", "Review gate", "Status", "Official context"],
+        [[E(opt), E(prop), E(trade), E(gate), proposed, src(key)] for opt, prop, trade, gate, key in site_proposals],
+        "Proposed site and engineering enhancements · awaiting selection"))
+    for area in areas:
+        items = [sg for sg in SUGGESTIONS if sg[1] == area]
+        parts.append(h2(area, f"{len(items)} suggestion{'s' if len(items) != 1 else ''}"))
+        parts.append(table(
+            ["ID", "Suggestion", "Why it helps the decision", "Options to choose from", "Privacy and effort", "Status",
+             "Official context source"],
+            [[f'<b>{E(i)}</b>', E(t), E(why), E(opts), E(cost), proposed, src(k)]
+             for i, _a, t, why, opts, cost, k in items],
+            f"{area} · proposed, not implemented"))
+    parts.append(
+        '<section class="callout"><b>How to choose.</b> Reply with a path, or with a list of suggestion IDs and '
+        'the option letter for each, for example "Path 1, plus SG-08 A". Until a choice is recorded, the site '
+        'stays as it is and only the evidence is refreshed.</section>'
+        '<a class="quiet" href="questions.html">The questions these tools are meant to answer →</a>')
+    return shell("suggestions", ''.join(parts), KICKER["suggestions"])
 
 
 def page_decisions() -> str:
@@ -516,6 +625,23 @@ def page_decisions() -> str:
                "and the risk that dominates it. No route is scored with invented weights."),
             table(["Pathway", "When it may be preferable", "Main risks", "Evidence gate", "Official context source"],
                   drows, "Eight pathways · sell / renew / hold / re-tenant / redevelop"),
+            '<div id="pathway-risks">' + h2("Risk of every pathway", "Business as usual, then the rare event") + '</div>',
+            '<p>The same two questions are asked of each route: what can go wrong in ordinary conditions, and '
+            'what happens to it in an earthquake, a wildfire or a tenant failure. No probability is assigned to '
+            'any cell.</p>',
+            table(["Pathway", "Business-as-usual risks", "Black-swan exposure", "What limits the damage",
+                   "Official context source"],
+                  [[f'<b>{E(a)}</b>', E(b), E(c), E(d), src(k)] for a, b, c, d, k in DECISION_RISKS],
+                  "Risk of every pathway · business as usual and black swan"),
+            '<section class="split"><div><h3>What separates the routes</h3>'
+            '<p>Every route that keeps the property keeps the whole regional hazard exposure, whatever the lease '
+            'says. Only a sale, or an exchange into property outside the region, removes it. The routes differ in '
+            'how long the exposure lasts and in how much room is left to react.</p></div>'
+            '<div><h3>Best fit for preservation with manageable risk</h3>'
+            '<p>Running both tracks in parallel carries the smallest avoidable risk: it costs effort and advisory '
+            'fees, and in return a sale and an extension are both still available when the documents arrive. '
+            'Holding to expiry and redevelopment sit at the other end.</p>'
+            '<a class="quiet" href="risk.html">Full risk register →</a></div></section>',
             h2("Recommended sequence", "Analyst judgement, not a valuation"),
             '<ol class="steps">'
             '<li><b>Now.</b> Obtain the executed lease, amendments, estoppel, rent roll, tax bill, insurance '
@@ -539,7 +665,7 @@ def page_decisions() -> str:
             '<p>A short or below-market extension, a weak guarantor, a closure, or a catastrophe that removes '
             'rent and exit liquidity together. Chain-wide results cannot establish this site\'s fate.</p>'
             + src("SECQ3", "Issuer Q3 FY2026") + '</div></section>']
-    return shell("decisions", ''.join(body), "12B / DECISION MATRIX")
+    return shell("decisions", ''.join(body), KICKER["decisions"])
 
 
 def page_model() -> str:
@@ -590,7 +716,7 @@ def page_model() -> str:
                    ["CA Dept of Finance", "Revised population estimates", src("DOF", "DOF estimates")]],
                   "Monitoring checklist"),
             '<a class="quiet" href="projections.html">See the 13-step projection system →</a>']
-    return shell("model", ''.join(body), "13 / MODEL & METHOD")
+    return shell("model", ''.join(body), KICKER["model"])
 
 
 def page_place() -> str:
@@ -619,7 +745,7 @@ def page_place() -> str:
             '<li>Its rent, escalations, options, guarantor, store sales, value, cap rate or sale price.</li>'
             '</ul>',
             '<a class="button" href="review.html">Flagged for Review <span>→</span></a>']
-    return shell("place", ''.join(body), "14 / EVIDENCE BOUNDARY")
+    return shell("place", ''.join(body), KICKER["place"])
 
 
 def page_flagged() -> str:
@@ -646,7 +772,7 @@ def page_flagged() -> str:
                    for r in ROWS if r["status"] == "Blank"],
                   "Blank evidence cells · no inferred values"),
             '<a class="quiet" href="repo-review.html">Full line-by-line repo review →</a>']
-    return shell("review", ''.join(body), "15 / FLAGGED FOR REVIEW")
+    return shell("review", ''.join(body), KICKER["review"])
 
 
 def page_repo_review() -> str:
@@ -688,11 +814,11 @@ def page_repo_review() -> str:
             'address, parcel or account identifier appears on the site.</li>'
             '<li>Rebuilt the entire site from one dataset and asserted a byte-identical rebuild in CI.</li>'
             '</ol>',
-            '<p class="small">Row-level verification logs: '
-            '<code>research/VERIFICATION-2026-11-12-f0b78eb6.md</code> (2026-11-12 full re-verification) and '
-            '<code>research/VERIFICATION-2026-11-10-b98090a0.md</code> (generated register log). '
+            '<p class="small">Row-level verification logs in the repository: '
+            '<code>' + VERIFICATION_FILE + '</code> (generated from the register on every build) and '
+            '<code>research/VERIFICATION-2026-11-12-f0b78eb6.md</code> (a second, separately written 2026-11-12 pass). '
             'Machine-readable register: <code>data/canonical.json</code>.</p>']
-    return shell("repo-review", ''.join(body), "16 / REPO REVIEW")
+    return shell("repo-review", ''.join(body), KICKER["repo-review"])
 
 
 def page_sources() -> str:
@@ -732,7 +858,7 @@ def page_sources() -> str:
             'links and personal information; <code>scripts/stage_pages.py</code> builds the exact Pages '
             'artifact and compares it with Jekyll\'s output. This is a fixed snapshot, not a live data feed.</p>',
             '<a class="quiet" href="model.html">Model &amp; method →</a>']
-    return shell("sources", ''.join(body), "17 / SOURCES & METHOD")
+    return shell("sources", ''.join(body), KICKER["sources"])
 
 
 # ------------------------------------------------------------------------- artifacts
@@ -750,6 +876,10 @@ def write_dataset() -> None:
         "projection_steps": PROJECTION,
         "flags": FLAGS,
         "repo_review": REPO_REVIEW,
+        "decision_risks": DECISION_RISKS,
+        "information_register": INFO_REGISTER,
+        "suggestions": SUGGESTIONS,
+        "suggestion_paths": SUGGESTION_PATHS,
         "counts": dict(Counter(r["status"] for r in ROWS)),
     }
     (ROOT / "data/canonical.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
@@ -757,13 +887,13 @@ def write_dataset() -> None:
 
 def write_repo_review_md() -> None:
     lines = [
-        f"# Repo review — line-by-line findings ({SNAPSHOT}, UTC)",
+        f"# Repo review — line-by-line findings (updated {SNAPSHOT}, UTC)",
         "",
-        "Canonical site review (originally consolidated by `b98090a0`; re-verified and extended on `2026-11-12`). "
-        "This file is the repository-side companion to the published",
-        "[Repo review page](repo-review.html) and the row-level verification logs "
-        "[`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) and "
-        "[`research/VERIFICATION-2026-11-10-b98090a0.md`](research/VERIFICATION-2026-11-10-b98090a0.md).",
+        "Canonical site review, originally consolidated by `b98090a0` (2026-11-10) and extended on 2026-11-12",
+        "by sessions `f0b78eb6` (R-23, R-24) and `c56c569e` (R-25 onward). This file is the repository-side",
+        "companion to the published [Repo review page](repo-review.html) and the row-level verification logs",
+        f"[`{VERIFICATION_FILE}`]({VERIFICATION_FILE}) (generated) and",
+        "[`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md).",
         "",
         "The repository accumulated work from more than fifteen parallel sessions and eight overlapping",
         "dashboard layers. This review does not delete any of that work. It records what was checked, what",
@@ -797,7 +927,7 @@ def write_repo_review_md() -> None:
         "|---|---|---|",
         "| Root `*.html` + `assets/style.css` | Canonical published site | Generated by `scripts/build_canonical.py` |",
         "| `data/canonical.json`, `data/canonical_rows.py` | Machine-readable register | Source of truth; excluded from Pages |",
-        "| `research/VERIFICATION-2026-11-10-b98090a0.md` | Row-by-row verification log | Excluded from Pages; internal audit |",
+        f"| `{VERIFICATION_FILE}` | Row-by-row verification log | Excluded from Pages; internal audit |",
         "| `docs/`, `analysis/`, `brief/`, `pages/`, `decision-file/`, `advisory/`, `dashboard/` | Repository-only companion layers | Excluded from Pages by `_config.yml` |",
         "| `audit/`, `research/archive/`, `site/`, `model/`, `tools/`, `scripts/`, `_advisory_src/`, `_dashboard_src/` | Audit trail and generators | Excluded from Pages |",
         "",
@@ -842,11 +972,13 @@ def write_repo_review_md() -> None:
 
 def write_verification_log() -> None:
     lines = [
-        "# Line-by-line verification record — 2026-11-10 (UTC)",
+        "# Line-by-line verification record — 2026-11-12 (UTC)",
         "",
-        "Session `b98090a0` · final integration. Every row below was compared with the text of the",
-        "official publisher page named in the Source column. This file is an internal audit record;",
-        "it is excluded from GitHub Pages.",
+        "Session `c56c569e` · fresh re-read and final integration. Every row below was compared again",
+        "with the text of the official publisher page named in the Source column. This file is an",
+        "internal audit record; it is excluded from GitHub Pages. The earlier record,",
+        "`research/VERIFICATION-2026-11-10-b98090a0.md`, is kept as committed and is no longer rewritten",
+        "by the build.",
         "",
         "Rules: `Verified` = the publisher states that observation with this geography, period, unit",
         "and vintage. `Derived` = arithmetic on two published observations, shown in the note.",
@@ -854,10 +986,25 @@ def write_verification_log() -> None:
         "confirmed; the published value cell is empty and the row appears on the Flagged for Review page.",
         "",
         "Privacy: official pages consulted during this pass contain named contacts, email addresses,",
-        "telephone numbers and street addresses (issuer SEC exhibit, CDE district profile, CAL FIRE",
+        "telephone numbers and street addresses (issuer SEC exhibits, CDE district profile, CAL FIRE",
         "incident pages, county assessor office listings). None of that is reproduced here or on the site.",
         "",
-        "## Official pages re-read on 2026-11-10",
+        "## What was and was not re-read on 2026-11-12",
+        "",
+        "- Re-read on the publisher's page and compared value by value: every row with status",
+        "  `Verified` or `Derived`, except as listed next.",
+        "- Not re-opened: the CDE 2026 graduation data file (`GRAD2026`). The 87.6% rate and the",
+        "  28,831-student denominator were confirmed on the 2026 Dashboard page instead; the graduate",
+        "  count in that row's note was not (flag F-28).",
+        "- Partly read: the SCAG forecast PDF (4 of 10 parts), the CA DOF release (first of 7 parts),",
+        "  the BEA release (first of 2 parts) and the Q3 FY2026 SEC exhibit (3 of 6 parts). Every value",
+        "  published from those documents was found in the parts read.",
+        "- `Blank` rows have no value to compare. Their route links (`SEC10K`, `NRI`, `ZIMAS`,",
+        "  `CDEACGR`) were not opened in this pass.",
+        "- FRED DGS10 was read twice on 2026-11-12; the latest observation on both reads was 4.88%",
+        "  for 2026-11-09. The release due on 2026-11-12 had not been posted.",
+        "",
+        "## Official pages in the register",
         "",
         "| Key | Publisher | Official URL |",
         "|---|---|---|",
@@ -879,19 +1026,36 @@ def write_verification_log() -> None:
         "",
         "## Corrections applied in this pass",
         "",
-        "1. LA County documentary transfer tax (`$0.55 per $500`, 0.11%) verified on the official",
-        "   Registrar-Recorder page; the earlier blank cell (V-3 / K-F-18) is closed.",
-        "2. LAUSD graduation rate (`87.6%` combined, 2026) verified on the California School Dashboard; the",
-        "   earlier blank cell (V-4) is closed. The 2019-2025 series is published with it.",
-        "3. The 10-year Treasury observation is updated to include `4.88%` on 2026-11-09 alongside",
-        "   `4.84%` on 2026-11-05; older layers citing 4.19% (2026-01-02) are flagged, not edited.",
-        "4. CA DOF February-2026 revised July-2025 LA County estimate (`9,853,435`, −0.45% YoY) is",
-        "   published alongside the Census V2025 figure (`9,694,934`), labelled by agency and vintage.",
-        "5. BEA `$818.5 billion` is labelled total personal income (2024, current dollars), not GDP;",
-        "   the BEA metro-series discontinuation is published as a verified row.",
-        "6. The 2025 plan's `150-200` block closures and the Q3 FY2026 `50-60` FY2026 guidance are",
-        "   both published with explicit scope so they are not confused.",
-        "7. Qualitative statements about what a mapping portal does are labelled `Analysis`.",
+        "1. Census population rows (city and county) were labelled `2026-07-01`; the publisher dates the",
+        "   V2025 estimate July 1, 2025. Label corrected; values unchanged.",
+        "2. The city poverty row was labelled a `2025 SAIPE estimate`. The Census source note says city",
+        "   figures are ACS 5-year and county figures SAIPE 1-year, and the table prints no year. Both",
+        "   rows relabelled; a method row added; the missing year flagged (F-29).",
+        "3. LAUSD chronic absenteeism refreshed from 21.9% (2025 Dashboard) to 21.3% (2026 Dashboard);",
+        "   English-learner four-year rate refreshed from 64.1% to 67.7%; 2025 added to the by-year",
+        "   graduation series; the 2026 four-year and fifth-year components added.",
+        "4. City of Los Angeles general minimum wage, previously blank, filled from the Office of Wage",
+        "   Standards page: $18.42 per hour from 2026-07-01.",
+        "5. Combined city transfer-tax rates 4.45% and 5.95% relabelled from `Derived` to `Verified`:",
+        "   the Office of Finance prints both in its rate table.",
+        "6. Federal net investment income tax (3.8%, with thresholds) added from IRS Topic 559.",
+        "7. Issuer rows added from EDGAR: latest results filing is still Q3 FY2026; the chief executive",
+        "   role is held on an interim basis; an investor cooperation agreement was extended. No",
+        "   individual is named.",
+        "8. Note added to the dividend and repurchase row: the same release states that $175.0 million",
+        "   remains under the repurchase authorisation.",
+        "9. The DataQuest ACGR row now states that the default view is labelled non-charter.",
+        "",
+        "## Confirmed unchanged",
+        "",
+        "Census QuickFacts (city and county), BLS Los Angeles area summary, CA DOF, BEA, SCAG, SEC Q3",
+        "FY2026 exhibit, issuer 2025 plan release, DIR minimum-wage pages, FRED DGS10, Measure ULA FAQ",
+        "(including the gross-versus-net value basis), county documentary transfer tax, county assessor",
+        "Proposition 13 page, BOE Publication 800-10, BOE annotation 220.0345, IRS Topic 409, IRS",
+        "like-kind exchange page, FTB capital gains page, USGS UCERF3 fact sheet, USGS ShakeOut report",
+        "page, CAL FIRE Palisades and Eaton incident pages, OSFM fire hazard severity zone page, CGS EQ",
+        "Zapp page, FEMA flood maps page, CDE district profile, CDE largest-districts page, CDE 2024-25",
+        "end-of-year reports, and the 2025 Dashboard by-year series.",
         "",
         "## Deliberately withheld (no official value)",
         "",
@@ -908,7 +1072,7 @@ def write_verification_log() -> None:
         "- `.github/workflows/validate.yml`: rebuild + `git diff --exit-code -- '*.html'` determinism.",
         "",
     ]
-    (ROOT / "research/VERIFICATION-2026-11-10-b98090a0.md").write_text("\n".join(lines), encoding="utf-8")
+    (ROOT / VERIFICATION_FILE).write_text("\n".join(lines), encoding="utf-8")
 
 
 CSS = """/* Asset A decision desk — single canonical stylesheet. No external assets. */
@@ -1008,6 +1172,10 @@ td:first-child{font-weight:600;color:#26344c}
 .sev.medium{background:#e6f0fb;color:#1c4f8f}
 .sev.low{background:var(--okbg);color:var(--ok)}
 .sev.closed{background:#eef4ef;color:#276749}
+.sev.gate{background:var(--badbg);color:var(--bad)}
+.badge.proposed{background:#f1ecfb;color:#4b2e83}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;font-size:12.5px}
+.jump a{padding:5px 11px;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:inherit;background:#fff}
 .empty{display:inline-block;min-width:52px;height:14px;background:repeating-linear-gradient(45deg,#f5ead2,#f5ead2 5px,#fff8e9 5px,#fff8e9 10px);border:1px dashed #d9b96f;border-radius:3px;vertical-align:middle}
 .srclink{font-size:11.5px;white-space:nowrap}
 ul.ticks{margin:0 0 12px;padding-left:18px}
@@ -1068,7 +1236,8 @@ def main() -> None:
           f"({counts['Verified']} verified, {counts['Derived']} derived, "
           f"{counts['Analysis']} analysis, {counts['Blank']} blank), {len(SOURCES)} official sources.")
     print(f"Structured: {len(RISKS)} risks, {len(DECISIONS)} pathways, {len(PROJECTION)} projection steps, "
-          f"{len(FLAGS)} flags, {len(REPO_REVIEW)} repo-review entries.")
+          f"{len(FLAGS)} flags, {len(REPO_REVIEW)} repo-review entries, {len(DECISION_RISKS)} pathway-risk rows, "
+          f"{len(INFO_REGISTER)} information-register questions, {len(SUGGESTIONS)} suggestions.")
 
 
 if __name__ == "__main__":

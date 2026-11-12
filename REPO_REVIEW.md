@@ -38,17 +38,20 @@ The only current public recommendation is the conditional dual track: confidenti
 See [`research/VERIFICATION-2026-11-10-1f62010a.md`](research/VERIFICATION-2026-11-10-1f62010a.md) for all 155 row-level checks and [`review.html`](review.html) for the public Flagged for Review register.
 
 <!-- b98090a0 canonical repo review: start -->
-# Repo review — line-by-line findings (2026-11-12, UTC)
+# Repo review — line-by-line findings (updated 2026-11-12, UTC)
 
-Canonical site review (originally consolidated by `b98090a0`; re-verified and extended on `2026-11-12`). This file is the repository-side companion to the published
-[Repo review page](repo-review.html) and the row-level verification logs [`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) and [`research/VERIFICATION-2026-11-10-b98090a0.md`](research/VERIFICATION-2026-11-10-b98090a0.md).
+Canonical site review, originally consolidated by `b98090a0` (2026-11-10) and extended on 2026-11-12
+by sessions `f0b78eb6` (R-23, R-24) and `c56c569e` (R-25 onward). This file is the repository-side
+companion to the published [Repo review page](repo-review.html) and the row-level verification logs
+[`research/VERIFICATION-2026-11-12-c56c569e.md`](research/VERIFICATION-2026-11-12-c56c569e.md) (generated) and
+[`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md).
 
 The repository accumulated work from more than fifteen parallel sessions and eight overlapping
 dashboard layers. This review does not delete any of that work. It records what was checked, what
 was corrected in the canonical site, what remains unresolved, and which files are actually
 published. **Every finding below carries an official source link for manual review.**
 
-**Canonical site:** 22 static HTML pages (21 registered navigation pages plus `flagged.html` alias) · 230 evidence rows (199 verified, 4 derived with arithmetic shown, 1 analysis, 26 blank/unverified) · 40 official sources · 25 review flags · 24 review findings.
+**Canonical site:** 22 static HTML pages (21 registered navigation pages plus `flagged.html` alias) · 237 evidence rows (208 verified, 2 derived with arithmetic shown, 1 analysis, 26 blank/unverified) · 45 official sources · 31 review flags · 35 review findings.
 
 ## Line-by-line findings
 
@@ -75,9 +78,20 @@ published. **Every finding below carries an official source link for manual revi
 | R-19 | FEMA NRI values | hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12, so live portal county scores could not be read. | Live portal row remains blank (F-18); archived FEMA PrepToolkit v1.19.0 (March 2023) county figures published with explicit vintage caveat. | [National Risk Index overview presentation (v1.19.0, March 2023)](https://www.preptoolkit.fema.gov/documents/d/caes/1d_national-risk-index-_sheehan?download=true) |
 | R-20 | BEA measure mislabelling | Some inherited text treats $818.5bn as LA County GDP; the BEA release reports it as total personal income. | Corrected and flagged (F-17); the BEA metro-series discontinuation is published as a verified row. | [GDP by county and personal income by county, 2024 (BEA 26-08)](https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024) |
 | R-21 | Build determinism | Generated HTML was committed by multiple sessions with different generators, so a rebuild could silently change published files. | One generator now produces every published page; CI rebuilds and asserts a byte-identical diff. | [Los Angeles Area Economic Summary · updated 2026-11-04](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) |
-| R-22 | Coordination board | COORDINATION.md documents 15+ sessions, several conflicts and four stale open PRs. | This session appended its own claims, sources and verification record; no earlier text was removed. | [ZIMAS · planning and zoning information system](https://zimas.lacity.org/) |
+| R-22 | Coordination board | COORDINATION.md documents more than twenty sessions, several conflicts and eleven stale open pull requests (count on 2026-11-12). | This session appended its own claims, sources and verification record; no earlier text was removed. | [ZIMAS · planning and zoning information system](https://zimas.lacity.org/) |
 | R-23 | 2026-11-12 official-source gap closures | Census V2025 population rows carried a 2026-07-01 date typo; City general minimum wage, FY2025 10-K Item 2/7 & Note 8 figures, finalized 2026 IRS LTCG brackets (Rev. Proc. 2025-32), and the 2026-12-09 Q4/FY2026 earnings date were missing or blank. | All verified directly against official pages on 2026-11-12 and added to the register; draft 2027 IRS Rev. Proc. 2026-35 remains withheld due to placeholder dates. | [FY2025 Form 10-K (fiscal year ended 2025-09-28)](https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm) |
 | R-24 | Projection script, suggestions and root documentation sync | scripts/projection.py used 0.0486 beside a 4.88% comment (F-25); decisions.html shared the 12A kicker with suggestions.html and contained a duplicate word; README.md, EXECUTIVE_SUMMARY.md, VERIFY.md and REPO_REVIEW.md carried stale counts and withdrawn rigid thresholds. | Reconciled scripts/projection.py to 0.0488, fixed decisions kicker/typo, expanded suggestions.html with technical proposals and trade-offs, and synchronized all root documents. | [10-Year Treasury constant maturity yield (DGS10)](https://fred.stlouisfed.org/series/DGS10) |
+| R-25 | Census population date | Two population rows were labelled '2026-07-01 estimate'. The Census table dates the V2025 estimate July 1, 2025. | Corrected to 2025-07-01 on both rows; the values were already right. | [Census QuickFacts · Los Angeles city (V2025)](https://www.census.gov/quickfacts/losangelescitycalifornia) |
+| R-26 | Poverty programme label | The city poverty row was labelled a '2025 SAIPE estimate'. The Census source note says city figures are ACS 5-year estimates and only county figures are SAIPE; the table prints no year. | Both rows relabelled from the source note and a method row added; the missing year is flagged (F-29). | [QuickFacts source note · Persons in poverty, percent](https://www.census.gov/quickfacts/note/IPE120225) |
+| R-27 | School Dashboard vintage | Chronic absenteeism (21.9%) and the English-learner four-year rate (64.1%) were 2025 Dashboard prints. The 2026 Dashboard was already published. | Refreshed to 21.3% and 67.7% from the 2026 Dashboard, with the 2025 figures kept in the notes. | [California School Dashboard · Los Angeles Unified 2026 academic engagement](https://www.caschooldashboard.org/reports/19647330000000/2026/academic-engagement) |
+| R-28 | City minimum wage left blank | The City of Los Angeles general minimum wage was an empty cell although the city's Office of Wage Standards publishes it. | Filled from the official city page: $18.42 per hour from 2026-07-01. Jurisdiction of the parcel remains open (F-12). | [Minimum Wage Ordinance · July 2026 rate schedule](https://wagesla.lacity.gov/) |
+| R-29 | Combined transfer-tax rates labelled Derived | The 4.45% and 5.95% combined rates were marked Derived. The Office of Finance prints both in its own rate table. | Relabelled Verified with the arithmetic kept in the note. | [Real Property Transfer Tax and Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) |
+| R-30 | Net investment income tax missing | The tax table covered federal capital-gain rates, depreciation recapture and California treatment, but not the 3.8% federal net investment income tax. | Added from IRS Topic 559 with its thresholds; whether it applies to Owner A is private. | [Topic no. 559 · Net investment income tax](https://www.irs.gov/taxtopics/tc559) |
+| R-31 | Page numbering collision | Two pages carried the number 12, and one page function printed '12A' while the navigation list said '12'. | Page numbers are now read from one list in the generator, so the page and the list cannot disagree. | [EDGAR filing index · issuer Form 8-K current reports](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10) |
+| R-32 | No suggestions section | The brief asks for site-improvement suggestions in a dedicated section that can be reviewed before anything is built. No published page contained one. | A Suggestions page was added. Nothing on it is implemented; each entry lists the options to choose from. | [EDGAR filing index · issuer Form 8-K current reports](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10) |
+| R-33 | Verification record overwritten by each build | The generator rewrote the 2026-11-10 verification record on every build, so an earlier session's dated record changed whenever the data changed. | The 2026-11-10 record is now left as committed; this pass writes its own dated record. | [EDGAR filing index · issuer Form 8-K current reports](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10) |
+| R-35 | Parallel sessions merged while this pass was running | Three other sessions merged pull requests #59 to #62 into main during this pass. They softened the fixed ten-year and 24-36 month thresholds, added flags F-23 to F-25 and published a seven-item suggestions page. | Their changes were kept in full. This pass renumbered its own flags to F-26 onward and merged the seven proposals into the expanded Suggestions page. | [EDGAR filing index · issuer Form 8-K current reports](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10) |
+| R-34 | Root documents out of step with the register | README and the executive summary quoted row, source and page counts from earlier builds. | Counts corrected to the current build. | [EDGAR filing index · issuer Form 8-K current reports](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10) |
 
 ## Layer map
 
@@ -85,7 +99,7 @@ published. **Every finding below carries an official source link for manual revi
 |---|---|---|
 | Root `*.html` + `assets/style.css` | Canonical published site | Generated by `scripts/build_canonical.py` |
 | `data/canonical.json`, `data/canonical_rows.py` | Machine-readable register | Source of truth; excluded from Pages |
-| `research/VERIFICATION-2026-11-10-b98090a0.md` | Row-by-row verification log | Excluded from Pages; internal audit |
+| `research/VERIFICATION-2026-11-12-c56c569e.md` | Row-by-row verification log | Excluded from Pages; internal audit |
 | `docs/`, `analysis/`, `brief/`, `pages/`, `decision-file/`, `advisory/`, `dashboard/` | Repository-only companion layers | Excluded from Pages by `_config.yml` |
 | `audit/`, `research/archive/`, `site/`, `model/`, `tools/`, `scripts/`, `_advisory_src/`, `_dashboard_src/` | Audit trail and generators | Excluded from Pages |
 

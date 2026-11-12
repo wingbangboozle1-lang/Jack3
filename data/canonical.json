@@ -241,6 +241,36 @@
       "publisher": "Issuer investor relations",
       "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Announces-Fourth-Quarter-and-Full-Year-2026-Earnings-Webcast/default.aspx",
       "type": "Issuer release"
+    },
+    "DASH26": {
+      "label": "California School Dashboard \u00b7 Los Angeles Unified 2026 academic engagement",
+      "publisher": "California Department of Education",
+      "url": "https://www.caschooldashboard.org/reports/19647330000000/2026/academic-engagement",
+      "type": "Government statistics"
+    },
+    "IRS559": {
+      "label": "Topic no. 559 \u00b7 Net investment income tax",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/taxtopics/tc559",
+      "type": "Government rule"
+    },
+    "POVNOTE": {
+      "label": "QuickFacts source note \u00b7 Persons in poverty, percent",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://www.census.gov/quickfacts/note/IPE120225",
+      "type": "Government methodology note"
+    },
+    "EDGAR8K": {
+      "label": "EDGAR filing index \u00b7 issuer Form 8-K current reports",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10",
+      "type": "Regulatory filing index"
+    },
+    "SEC8K0921": {
+      "label": "Form 8-K Exhibit 99.1 \u00b7 board and governance release (filed 2026-09-21)",
+      "publisher": "U.S. Securities and Exchange Commission / issuer filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm",
+      "type": "Issuer filing"
     }
   },
   "categories": [
@@ -371,12 +401,6 @@
       "group": "ANALYSIS"
     },
     {
-      "id": "suggestions",
-      "title": "Suggestions to review",
-      "file": "suggestions.html",
-      "group": "ANALYSIS"
-    },
-    {
       "id": "decisions",
       "title": "Decision matrix",
       "file": "decisions.html",
@@ -393,6 +417,12 @@
       "title": "Evidence boundary",
       "file": "place.html",
       "group": "ANALYSIS"
+    },
+    {
+      "id": "suggestions",
+      "title": "Suggestions to review",
+      "file": "suggestions.html",
+      "group": "GOVERNANCE"
     },
     {
       "id": "review",
@@ -554,7 +584,7 @@
       "indicator": "Population",
       "value": "3,869,089",
       "scope": "Los Angeles city \u00b7 2025-07-01 estimate (V2025)",
-      "note": "Census V2025 estimate.",
+      "note": "Census V2025 estimate; the publisher dates it July 1, 2025.",
       "status": "Verified",
       "source": "CITY"
     },
@@ -590,7 +620,7 @@
       "indicator": "Population",
       "value": "9,694,934",
       "scope": "Los Angeles County \u00b7 2025-07-01 estimate (V2025)",
-      "note": "Census V2025 estimate.",
+      "note": "Census V2025 estimate; the publisher dates it July 1, 2025.",
       "status": "Verified",
       "source": "COUNTY"
     },
@@ -724,8 +754,8 @@
       "category": "People & income",
       "indicator": "Persons in poverty",
       "value": "16.5%",
-      "scope": "Los Angeles city \u00b7 2025 SAIPE estimate",
-      "note": "Price sensitivity in the aggregate city population.",
+      "scope": "Los Angeles city \u00b7 ACS 5-year estimate (per Census source note)",
+      "note": "Price sensitivity in the aggregate city population. The table prints no reference year for this fact.",
       "status": "Verified",
       "source": "CITY"
     },
@@ -733,10 +763,19 @@
       "category": "People & income",
       "indicator": "Persons in poverty",
       "value": "13.3%",
-      "scope": "Los Angeles County \u00b7 2025 SAIPE estimate",
-      "note": "Price sensitivity in the aggregate county population.",
+      "scope": "Los Angeles County \u00b7 SAIPE 1-year estimate (per Census source note)",
+      "note": "Price sensitivity in the aggregate county population. The table prints no reference year for this fact.",
       "status": "Verified",
       "source": "COUNTY"
+    },
+    {
+      "category": "People & income",
+      "indicator": "Poverty-rate method differs by geography",
+      "value": "City: ACS 5-year \u00b7 County: SAIPE 1-year",
+      "scope": "U.S. Census Bureau \u00b7 QuickFacts source note",
+      "note": "The city and county poverty rates come from different programmes; do not read the gap as a like-for-like difference.",
+      "status": "Verified",
+      "source": "POVNOTE"
     },
     {
       "category": "People & income",
@@ -1391,14 +1430,14 @@
       "indicator": "Four-year adjusted cohort graduation rate (ACGR)",
       "value": "87.4%",
       "scope": "Los Angeles Unified \u00b7 2025-26 DataQuest",
-      "note": "24,857 graduates / 28,447 students in the default district reporting view. ACGR is distinct from the Dashboard combined four-/five-year measure.",
+      "note": "24,857 graduates / 28,447 students in the default district reporting view, which the page labels 'School Type: Non-Charter'. ACGR is distinct from the Dashboard combined four-/five-year measure.",
       "status": "Verified",
       "source": "ACGR2026"
     },
     {
       "category": "Schools",
       "indicator": "Graduation rate \u00b7 prior years",
-      "value": "82.1% (2019) \u00b7 86.0% (2022) \u00b7 83.6% (2023) \u00b7 86.7% (2024)",
+      "value": "82.1% (2019) \u00b7 86.0% (2022) \u00b7 83.6% (2023) \u00b7 86.7% (2024) \u00b7 86.5% (2025)",
       "scope": "Los Angeles Unified \u00b7 Dashboard by-year series",
       "note": "Trend is not monotonic; do not extrapolate.",
       "status": "Verified",
@@ -1407,20 +1446,29 @@
     {
       "category": "Schools",
       "indicator": "Four-year graduation rate, English learners",
-      "value": "64.1%",
-      "scope": "Los Angeles Unified \u00b7 2025 Dashboard",
-      "note": "Subgroup outcome; not a campus-level result.",
+      "value": "67.7%",
+      "scope": "Los Angeles Unified \u00b7 2026 Dashboard",
+      "note": "64.1% on the 2025 Dashboard. Subgroup outcome; not a campus-level result.",
       "status": "Verified",
-      "source": "DASH"
+      "source": "DASH26"
     },
     {
       "category": "Schools",
       "indicator": "Chronic absenteeism",
-      "value": "21.9% (2025)",
-      "scope": "Los Angeles Unified \u00b7 Dashboard",
-      "note": "Declined 1.5 percentage points; 18.2% in 2019, 39.8% in 2022.",
+      "value": "21.3% (2026)",
+      "scope": "Los Angeles Unified \u00b7 2026 Dashboard \u00b7 TK to grade 8",
+      "note": "Declined 0.6 percentage points from 21.9% (2025); 18.2% in 2019, 39.8% in 2022.",
       "status": "Verified",
-      "source": "DASH"
+      "source": "DASH26"
+    },
+    {
+      "category": "Schools",
+      "indicator": "Four-year and fifth-year components of the 2026 combined rate",
+      "value": "86.2% four-year \u00b7 1.4% fifth-year",
+      "scope": "Los Angeles Unified \u00b7 2026 Dashboard",
+      "note": "The Dashboard four-year component covers all schools; the DataQuest ACGR above is the default non-charter view. Different populations, both official.",
+      "status": "Verified",
+      "source": "DASH26"
     },
     {
       "category": "Schools",
@@ -1715,7 +1763,7 @@
       "indicator": "Dividend and share repurchase programme",
       "value": "Discontinued",
       "scope": "Issuer \u00b7 stated in Q3 FY2026 release",
-      "note": "Capital-allocation signal, not a lease covenant.",
+      "note": "Capital-allocation signal, not a lease covenant. The same release also states that $175.0 million remains under the Board's repurchase authorisation.",
       "status": "Verified",
       "source": "SECQ3"
     },
@@ -1883,6 +1931,33 @@
     },
     {
       "category": "Tenant & lease",
+      "indicator": "Latest earnings release on EDGAR",
+      "value": "Q3 FY2026, filed 2026-08-12",
+      "scope": "Issuer \u00b7 EDGAR 8-K index read 2026-11-12",
+      "note": "No later Item 2.02 results filing was listed at the snapshot; two later 8-Ks (2026-08-20, 2026-09-21) concern officers, directors and an agreement. Re-check when fourth-quarter results are filed.",
+      "status": "Verified",
+      "source": "EDGAR8K"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Chief executive role",
+      "value": "Held on an interim basis by the Executive Chairman; the company President is expected to assume it within the next 12 months",
+      "scope": "Issuer \u00b7 release filed 2026-09-21",
+      "note": "Leadership transition during a closure programme; a governance signal, not a lease fact. No individual is named on this site.",
+      "status": "Verified",
+      "source": "SEC8K0921"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Investor cooperation agreement",
+      "value": "Extended, with customary standstill and voting provisions",
+      "scope": "Issuer \u00b7 release filed 2026-09-21",
+      "note": "An investor with board influence can change capital allocation and the real-estate strategy; watch the next filings.",
+      "status": "Verified",
+      "source": "SEC8K0921"
+    },
+    {
+      "category": "Tenant & lease",
       "indicator": "Subject site closure or renewal status",
       "value": "",
       "scope": "Asset A",
@@ -2011,18 +2086,18 @@
       "category": "Taxes & transfer",
       "indicator": "Combined city rate, tier 1",
       "value": "4.45%",
-      "scope": "City of Los Angeles \u00b7 derived",
-      "note": "Derived: 0.45% base + 4.00% ULA.",
-      "status": "Derived",
+      "scope": "City of Los Angeles \u00b7 Office of Finance rate table",
+      "note": "Printed by the Office of Finance as the applicable tax rate: 0.45% base + 4.00% ULA.",
+      "status": "Verified",
       "source": "ULA"
     },
     {
       "category": "Taxes & transfer",
       "indicator": "Combined city rate, tier 2",
       "value": "5.95%",
-      "scope": "City of Los Angeles \u00b7 derived",
-      "note": "Derived: 0.45% base + 5.50% ULA.",
-      "status": "Derived",
+      "scope": "City of Los Angeles \u00b7 Office of Finance rate table",
+      "note": "Printed by the Office of Finance as the applicable tax rate: 0.45% base + 5.50% ULA.",
+      "status": "Verified",
       "source": "ULA"
     },
     {
@@ -2078,6 +2153,24 @@
       "note": "Depreciation taken reduces after-tax proceeds.",
       "status": "Verified",
       "source": "IRS409"
+    },
+    {
+      "category": "Taxes & transfer",
+      "indicator": "Net investment income tax (NIIT)",
+      "value": "3.8%",
+      "scope": "Internal Revenue Service \u00b7 Topic 559",
+      "note": "On the lesser of net investment income or MAGI above $250,000 (joint), $200,000 (single / head of household) or $125,000 (married filing separately). Rents and real-estate gains are included unless a trade-or-business exception applies; owner-specific.",
+      "status": "Verified",
+      "source": "IRS559"
+    },
+    {
+      "category": "Taxes & transfer",
+      "indicator": "NIIT threshold for estates and trusts",
+      "value": "$15,650 (2025)",
+      "scope": "Internal Revenue Service \u00b7 Topic 559",
+      "note": "Relevant if the property is held in a trust or estate; the holding structure of Owner A is private and unverified.",
+      "status": "Verified",
+      "source": "IRS559"
     },
     {
       "category": "Taxes & transfer",
@@ -2514,7 +2607,7 @@
       "Business as usual",
       "Medium",
       "Wage and input-cost pressure",
-      "Covered fast-food work has a $20.00/hour floor; the state floor is $16.90/hour; CPI energy is +20.3%.",
+      "Covered fast-food work has a $20.00/hour floor; the state floor is $16.90/hour and the City of Los Angeles floor $18.42/hour; CPI energy is +20.3%.",
       "Examine store-level rent coverage; do not infer failure from regulation alone.",
       "DIRFF"
     ],
@@ -2610,7 +2703,7 @@
       "Business as usual",
       "Low",
       "Reinvestment risk after a sale",
-      "Selling converts a single asset into cash that must be redeployed; \u00a71031 timelines are strict.",
+      "Selling converts a single asset into cash that must be redeployed; a \u00a71031 exchange has its own conditions and deadlines, which the cited page does not set out in full.",
       "Identify replacement candidates before closing; compare diversified after-tax alternatives.",
       "IRS1031"
     ],
@@ -2934,7 +3027,7 @@
       "F-15",
       "Medium",
       "Rolling-source freshness",
-      "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation on 2026-11-10 is 4.88% on 2026-11-09. Older repository layers cite August figures and 4.84% or 4.19%.",
+      "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation, read again on 2026-11-12, is 4.88% for 2026-11-09. Older repository layers cite August figures and 4.84% or 4.19%.",
       "Re-read each release before use; retain the prior vintage in the audit log.",
       "BLS"
     ],
@@ -3014,9 +3107,57 @@
       "F-22",
       "Low",
       "Stale open pull requests",
-      "PRs #22, #26, #31 and #32 were opened by earlier sessions and have had no commits since 2026-11-07/08. They were not merged or modified by this session.",
-      "Owners may close or rebase them; this session opened its own integration PR.",
+      "Eleven pull requests opened by earlier sessions were still open on 2026-11-12 (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48 and #51), last updated between 2026-11-06 and 2026-11-11. None was merged, closed or edited by the integration sessions.",
+      "Owners may close or rebase them; each integration session opened its own pull request.",
       "ZIMAS"
+    ],
+    [
+      "F-26",
+      "Medium",
+      "Fourth-quarter FY2026 issuer results not yet filed",
+      "Every tenant figure on this site is from the Q3 FY2026 release (quarter ended 2026-07-05, filed 2026-08-12). The EDGAR index listed no later results filing on 2026-11-12.",
+      "Re-read the next Form 8-K Item 2.02 exhibit and the FY2026 Form 10-K when they are filed; update unit counts, closures and guidance.",
+      "EDGAR8K"
+    ],
+    [
+      "F-27",
+      "Medium",
+      "Two official four-year graduation figures for the same district",
+      "DataQuest reports an 87.4% four-year ACGR in its default view, which is labelled non-charter; the 2026 Dashboard reports an 86.2% four-year component for all schools. Both are official and measure different populations.",
+      "Keep each figure with its label; never average them. Use campus records if a school claim matters.",
+      "ACGR2026"
+    ],
+    [
+      "F-28",
+      "Low",
+      "Graduate count in the 2026 graduation data file not re-read on 2026-11-12",
+      "The 87.6% rate and the 28,831-student denominator were re-confirmed on the Dashboard page. The graduate count quoted in the note of that row comes from the CDE data file, which was not re-opened in this pass.",
+      "Open the CDE district data file and confirm the graduate count for the district row.",
+      "GRAD2026"
+    ],
+    [
+      "F-29",
+      "Low",
+      "Poverty rates carry no reference year on the QuickFacts table",
+      "The table labels the fact 'Persons in poverty, percent' without a year. The Census source note states that city figures are ACS 5-year estimates and county figures are SAIPE 1-year estimates.",
+      "Read the year from the underlying ACS and SAIPE tables before quoting a period.",
+      "POVNOTE"
+    ],
+    [
+      "F-30",
+      "Low",
+      "Two rows dropped by an earlier integration were not restored",
+      "An earlier session's register carried a county assessment-roll total and a transit capital figure that a later integration dropped. Neither was re-verified in this pass, so neither value is republished.",
+      "Re-read the county assessor's annual report and the transit agency's own page, then restore the rows if they are confirmed.",
+      "ASSESSOR"
+    ],
+    [
+      "F-31",
+      "Low",
+      "Governance rows carry a context link, not proof",
+      "Rows about repository structure, pull requests and build behaviour have no government publisher. Their link column points to a related official page so that the every-row-has-a-link rule holds; it does not evidence the finding.",
+      "Read those rows against the repository history, not against the linked page.",
+      "EDGAR8K"
     ]
   ],
   "repo_review": [
@@ -3170,7 +3311,7 @@
     [
       "R-22",
       "Coordination board",
-      "COORDINATION.md documents 15+ sessions, several conflicts and four stale open PRs.",
+      "COORDINATION.md documents more than twenty sessions, several conflicts and eleven stale open pull requests (count on 2026-11-12).",
       "This session appended its own claims, sources and verification record; no earlier text was removed.",
       "ZIMAS"
     ],
@@ -3187,12 +3328,525 @@
       "scripts/projection.py used 0.0486 beside a 4.88% comment (F-25); decisions.html shared the 12A kicker with suggestions.html and contained a duplicate word; README.md, EXECUTIVE_SUMMARY.md, VERIFY.md and REPO_REVIEW.md carried stale counts and withdrawn rigid thresholds.",
       "Reconciled scripts/projection.py to 0.0488, fixed decisions kicker/typo, expanded suggestions.html with technical proposals and trade-offs, and synchronized all root documents.",
       "FRED"
+    ],
+    [
+      "R-25",
+      "Census population date",
+      "Two population rows were labelled '2026-07-01 estimate'. The Census table dates the V2025 estimate July 1, 2025.",
+      "Corrected to 2025-07-01 on both rows; the values were already right.",
+      "CITY"
+    ],
+    [
+      "R-26",
+      "Poverty programme label",
+      "The city poverty row was labelled a '2025 SAIPE estimate'. The Census source note says city figures are ACS 5-year estimates and only county figures are SAIPE; the table prints no year.",
+      "Both rows relabelled from the source note and a method row added; the missing year is flagged (F-29).",
+      "POVNOTE"
+    ],
+    [
+      "R-27",
+      "School Dashboard vintage",
+      "Chronic absenteeism (21.9%) and the English-learner four-year rate (64.1%) were 2025 Dashboard prints. The 2026 Dashboard was already published.",
+      "Refreshed to 21.3% and 67.7% from the 2026 Dashboard, with the 2025 figures kept in the notes.",
+      "DASH26"
+    ],
+    [
+      "R-28",
+      "City minimum wage left blank",
+      "The City of Los Angeles general minimum wage was an empty cell although the city's Office of Wage Standards publishes it.",
+      "Filled from the official city page: $18.42 per hour from 2026-07-01. Jurisdiction of the parcel remains open (F-12).",
+      "LAMWO"
+    ],
+    [
+      "R-29",
+      "Combined transfer-tax rates labelled Derived",
+      "The 4.45% and 5.95% combined rates were marked Derived. The Office of Finance prints both in its own rate table.",
+      "Relabelled Verified with the arithmetic kept in the note.",
+      "ULA"
+    ],
+    [
+      "R-30",
+      "Net investment income tax missing",
+      "The tax table covered federal capital-gain rates, depreciation recapture and California treatment, but not the 3.8% federal net investment income tax.",
+      "Added from IRS Topic 559 with its thresholds; whether it applies to Owner A is private.",
+      "IRS559"
+    ],
+    [
+      "R-31",
+      "Page numbering collision",
+      "Two pages carried the number 12, and one page function printed '12A' while the navigation list said '12'.",
+      "Page numbers are now read from one list in the generator, so the page and the list cannot disagree.",
+      "EDGAR8K"
+    ],
+    [
+      "R-32",
+      "No suggestions section",
+      "The brief asks for site-improvement suggestions in a dedicated section that can be reviewed before anything is built. No published page contained one.",
+      "A Suggestions page was added. Nothing on it is implemented; each entry lists the options to choose from.",
+      "EDGAR8K"
+    ],
+    [
+      "R-33",
+      "Verification record overwritten by each build",
+      "The generator rewrote the 2026-11-10 verification record on every build, so an earlier session's dated record changed whenever the data changed.",
+      "The 2026-11-10 record is now left as committed; this pass writes its own dated record.",
+      "EDGAR8K"
+    ],
+    [
+      "R-35",
+      "Parallel sessions merged while this pass was running",
+      "Three other sessions merged pull requests #59 to #62 into main during this pass. They softened the fixed ten-year and 24-36 month thresholds, added flags F-23 to F-25 and published a seven-item suggestions page.",
+      "Their changes were kept in full. This pass renumbered its own flags to F-26 onward and merged the seven proposals into the expanded Suggestions page.",
+      "EDGAR8K"
+    ],
+    [
+      "R-34",
+      "Root documents out of step with the register",
+      "README and the executive summary quoted row, source and page counts from earlier builds.",
+      "Counts corrected to the current build.",
+      "EDGAR8K"
+    ]
+  ],
+  "decision_risks": [
+    [
+      "Sell before expiry",
+      "A failed or slow marketing period as the remaining term shortens; transfer tax of 4.45% or 5.95% if the parcel is in the City of Los Angeles and the price is above the threshold; federal, state and net-investment-income tax on the gain; proceeds reinvested at a lower yield.",
+      "Low after closing: the earthquake, wildfire and tenant-failure exposure passes to the buyer. A catastrophe or a credit event during marketing can still remove the bid.",
+      "Start early, keep the process confidential, obtain two or three independent price opinions, and compute net proceeds with the owner's real basis before accepting.",
+      "ULA"
+    ],
+    [
+      "Sell with a \u00a71031 exchange",
+      "The same sale risks, plus the risk of overpaying for a replacement to meet the exchange rules; deferral, not elimination, of tax; a new concentration in whatever is bought.",
+      "The hazard profile of the replacement replaces that of Asset A. A replacement outside the Los Angeles region removes the correlated earthquake and wildfire exposure; one inside it does not.",
+      "Identify and underwrite replacement candidates before closing; use a qualified intermediary; take tax advice first.",
+      "IRS1031"
+    ],
+    [
+      "Negotiate an early renewal or extension",
+      "Concessions to obtain the signature; rent fixed below cost inflation; a weak or absent guaranty; the issuer is closing 50-60 restaurants in FY2026 and reports same-store sales of -1.1%.",
+      "Fully retained: one building, one tenant, one region. A regional catastrophe can stop the rent and the exit at the same time.",
+      "Obtain the legal obligor and guaranty in writing; compare term, rent, credit and concessions with the sale and hold alternatives; check the 35-year leasehold rule before adding options.",
+      "SECQ3"
+    ],
+    [
+      "Hold under the existing lease to expiry",
+      "The term shortens every year and with it the pool of buyers and lenders; vacancy at expiry removes all rent while taxes, insurance and re-letting costs continue.",
+      "Fully retained, for the longest period of any route, and with the least room to react.",
+      "Only defensible with a funded re-letting reserve, verified insurance and a dated decision point well before the notice window.",
+      "IR25"
+    ],
+    [
+      "Renew, then sell",
+      "Two sets of costs; no assurance that a longer term raises the bid by more than the concessions cost; a higher interest rate at the later sale date lowers price for the same rent.",
+      "Retained until the later sale. The 30-year likelihood of an M6.7 or larger earthquake in the Los Angeles region is 60%.",
+      "Compare real bids for the property as it is against indicative bids with the extension before conceding anything.",
+      "FRED"
+    ],
+    [
+      "Re-tenant or reposition",
+      "Downtime with no rent, leasing commissions, tenant improvements, and the possible loss of drive-through rights if the use lapses. No evidence of alternative demand was obtained.",
+      "Fully retained, and the building is vacant or in transition when the event happens.",
+      "Confirm zoning and entitlements first; obtain a signed letter of intent from a replacement tenant before giving up the current one.",
+      "ZIMAS"
+    ],
+    [
+      "Redevelop or ground lease",
+      "Entitlement, construction, financing and environmental risk; the widest spread of outcomes; years without income.",
+      "Fully retained and increased: more capital is committed to one parcel in one hazard region.",
+      "Not a wealth-preservation default. Needs a parcel, a feasibility study and an independently costed residual land value.",
+      "ZIMAS"
+    ],
+    [
+      "Run both tracks in parallel (recommended)",
+      "Advisory cost and effort; lease terms that restrict marketing or assignment; the tenant learning of the sale process and hardening its renewal position.",
+      "Retained only until one track closes; this route shortens the exposure without forcing a sale.",
+      "Confidential process, a written renewal request with a response date, and a pre-agreed rule for choosing between the two results.",
+      "SECQ3"
+    ]
+  ],
+  "information_register": [
+    [
+      "Q-01",
+      "Gate",
+      "What is the exact lease expiry date, and what options and notice deadlines exist?",
+      "Only the reported range 2030-2035. The issuer says programme closures follow franchise agreement termination dates, which are not lease dates.",
+      "Expiry date, option terms, notice windows, any amendments.",
+      "Read the executed lease and every amendment; confirm with a tenant estoppel certificate.",
+      "Owner A, property manager, tenant",
+      "IR25"
+    ],
+    [
+      "Q-02",
+      "Gate",
+      "Who is the legal tenant, and is the lease guaranteed?",
+      "1,966 of the issuer's 2,115 restaurants are franchise-operated; the issuer reports franchise rental revenue, so it is the landlord or sub-landlord at many sites.",
+      "Whether the tenant is the issuer, a subsidiary or a franchisee; whether any guaranty exists and from whom.",
+      "Signature block and guaranty in the lease; estoppel; California Secretary of State entity search.",
+      "Owner A, tenant",
+      "SECQ3"
+    ],
+    [
+      "Q-03",
+      "Gate",
+      "What are the rent, the escalations and the expense responsibilities?",
+      "Nothing. 'NNN' is a label; roof, structure, casualty and tax responsibilities vary by lease.",
+      "Current rent, escalation formula, percentage rent, who pays roof, structure, taxes and insurance.",
+      "Lease abstract prepared by a real-estate attorney; rent roll and the last three years of statements.",
+      "Owner A",
+      "SECQ3"
+    ],
+    [
+      "Q-04",
+      "Gate",
+      "Does this restaurant earn enough to pay its rent?",
+      "System same-store sales were -1.1% in Q3 FY2026 and the restaurant-level margin of company-operated units was 17.6%. These are chain averages.",
+      "Site sales, rent-to-sales ratio, trend.",
+      "Sales-reporting clause in the lease; a written request to the tenant; percentage-rent statements if any.",
+      "Tenant",
+      "SECQ3"
+    ],
+    [
+      "Q-05",
+      "Gate",
+      "Is this site on a closure list, and will the tenant renew?",
+      "The issuer guides to 50-60 closures in FY2026 and announced a programme of about 150-200 closures in 2025. No site list is published.",
+      "The status of this site and the tenant's renewal intention.",
+      "Written request to the tenant's real-estate department with a response date; estoppel.",
+      "Tenant",
+      "IR25"
+    ],
+    [
+      "Q-06",
+      "Gate",
+      "Is the parcel inside the City of Los Angeles?",
+      "City rules (Measure ULA, the $18.42 city minimum wage, city zoning) apply only inside the city limits; five cities in the county charge their own transfer tax.",
+      "The jurisdiction of the parcel.",
+      "Enter the address privately in the city's planning portal or the county assessor portal; do not publish the result with the address.",
+      "Owner A",
+      "ZIMAS"
+    ],
+    [
+      "Q-07",
+      "Gate",
+      "What would the property sell for, and on which side of the ULA thresholds?",
+      "For closings after 2026-06-30 the combined city rate is 4.45% above $5,400,000 and 5.95% at $10,900,000 or more, on gross value.",
+      "Market value. No official source publishes a price or capitalisation rate for this asset.",
+      "Two or three independent broker opinions of value, or an appraisal; recorded comparable sales.",
+      "Brokers, appraiser",
+      "ULA"
+    ],
+    [
+      "Q-08",
+      "Gate",
+      "What are the owner's basis, depreciation taken, holding structure and tax rates?",
+      "Federal long-term rates of 0%, 15% or 20%; 25% maximum on unrecaptured \u00a71250 gain; 3.8% net investment income tax above the thresholds; California taxes the gain as ordinary income.",
+      "Adjusted basis, accumulated depreciation, entity or trust structure, marginal rates.",
+      "Depreciation schedules and prior returns, reviewed by the owner's CPA. Never placed on this site.",
+      "Owner A, CPA",
+      "IRS409"
+    ],
+    [
+      "Q-09",
+      "Gate",
+      "What does the owner need from this asset: income, liquidity, growth, an estate plan?",
+      "Nothing; this is private by design.",
+      "Share of net worth in this asset, liquidity needs, horizon, tolerance for a total loss of rent.",
+      "A structured conversation with the owner's financial and estate advisers.",
+      "Owner A, advisers",
+      "IRS559"
+    ],
+    [
+      "Q-10",
+      "High",
+      "Is there debt on the property, and what does it restrict?",
+      "The 10-year Treasury yield was 4.88% on 2026-11-09, the reference for refinancing cost.",
+      "Balance, maturity, prepayment cost, lender consent rights.",
+      "Loan documents and a payoff statement.",
+      "Owner A, lender",
+      "FRED"
+    ],
+    [
+      "Q-11",
+      "High",
+      "What is the assessed value and the annual tax bill, and who pays it?",
+      "The general levy is 1% of assessed value plus voter-approved add-ons; annual increases are capped at 2%; a sale reassesses the property to market for the buyer.",
+      "Current assessed value, bill amount, direct assessments, payer under the lease.",
+      "County property-tax portal using the parcel number, privately; the lease expense clause.",
+      "Owner A",
+      "ASSESSOR"
+    ],
+    [
+      "Q-12",
+      "High",
+      "Would an extension bring the total term to 35 years or more?",
+      "Creating or transferring a leasehold of 35 years or more, including options, is a change in ownership for property tax.",
+      "Remaining term including every option, before and after any proposed extension.",
+      "Lease abstract; advice from a property-tax attorney before signing.",
+      "Owner A, attorney",
+      "BOE220"
+    ],
+    [
+      "Q-13",
+      "High",
+      "Is the parcel in a fault-rupture, liquefaction, landslide, fire-hazard or flood zone?",
+      "Regional figures only: a 60% 30-year likelihood of an M6.7 or larger earthquake in the Los Angeles region; 16,264 structures destroyed in the January 2025 fires.",
+      "Every parcel-level overlay.",
+      "Enter the address privately in the state earthquake-zone application, the state fire-hazard viewer and the federal flood map service.",
+      "Owner A",
+      "EQZAPP"
+    ],
+    [
+      "Q-14",
+      "High",
+      "Who insures the building, for what, and with what deductible?",
+      "Nothing. No official source publishes availability or price for a specific parcel.",
+      "Earthquake cover, limits, deductible, exclusions, rent-loss cover, who is the named insured.",
+      "Policy declarations and the tenant's certificates of insurance; an independent broker review.",
+      "Owner A, tenant, broker",
+      "FEMA"
+    ],
+    [
+      "Q-15",
+      "High",
+      "What condition is the building in, and is the land clean?",
+      "Nothing.",
+      "Age, structural system, retrofit status, deferred maintenance, environmental history.",
+      "Structural review and a Phase I environmental assessment; city building-permit records.",
+      "Engineer, consultant",
+      "EQZAPP"
+    ],
+    [
+      "Q-16",
+      "Medium",
+      "What can legally be built or operated on the parcel if the tenant leaves?",
+      "Nothing parcel-specific. Zoning and drive-through rights are set by the jurisdiction.",
+      "Zoning, overlays, drive-through entitlement, non-conforming status, easements.",
+      "Planning portal and a title report; a land-use attorney if redevelopment is considered.",
+      "Owner A, attorney",
+      "ZIMAS"
+    ],
+    [
+      "Q-17",
+      "Medium",
+      "Is the immediate trade area growing or shrinking?",
+      "City population is 0.8% below its 2020 estimates base and the county 3.2% below. These are not neighbourhood figures.",
+      "Tract-level population, income, traffic counts, competing restaurants, planned development.",
+      "Census tract and block-group tables with margins of error; city traffic counts; the planning case list.",
+      "Public agencies",
+      "CITY"
+    ],
+    [
+      "Q-18",
+      "Medium",
+      "What would the sale proceeds earn elsewhere, and at what risk?",
+      "The 10-year Treasury yield, 4.88% on 2026-11-09, is the risk-free comparison. A \u00a71031 exchange must be into real property.",
+      "The owner's realistic alternatives after tax.",
+      "Adviser comparison of after-tax alternatives; replacement-property underwriting if an exchange is used.",
+      "Advisers",
+      "FRED"
+    ],
+    [
+      "Q-19",
+      "Medium",
+      "What have comparable short-term restaurant net leases actually sold for?",
+      "Nothing official. Capitalisation rates are published only by commercial vendors, which this site does not cite.",
+      "Recent comparable sales with remaining term and tenant.",
+      "Broker comparables supported by recorded deeds; the transfer tax shown on a recorded deed is computed from the value conveyed.",
+      "Brokers, county recorder",
+      "DTT"
+    ],
+    [
+      "Q-20",
+      "Low",
+      "Do the assigned schools matter to this decision?",
+      "District-wide figures only: an 87.6% combined graduation rate and 21.3% chronic absenteeism on the 2026 Dashboard.",
+      "Assigned campuses and their results.",
+      "State school-directory lookup by address; campus Dashboard reports.",
+      "Public agencies",
+      "DASH26"
+    ]
+  ],
+  "suggestions": [
+    [
+      "SG-01",
+      "Decision tool",
+      "After-tax net-proceeds worksheet",
+      "Turns the verified tax rules into one number the owner can compare with the hold case.",
+      "A: an offline spreadsheet template with empty input cells, kept out of the public site. B: an on-page calculator that runs only in the browser. C: leave it to the CPA.",
+      "A keeps private figures off the web and is about a day of work. B needs JavaScript, which the site currently forbids.",
+      "ULA"
+    ],
+    [
+      "SG-02",
+      "Decision tool",
+      "Lease abstract checklist",
+      "Answers Q-01 to Q-03 in one pass and stops the decision resting on the 'NNN' label.",
+      "A: a printable blank checklist page. B: an offline template only. C: none.",
+      "The blank form is safe to publish; a completed one never is. Half a day.",
+      "BOE220"
+    ],
+    [
+      "SG-03",
+      "Decision tool",
+      "Parcel hazard screening sheet",
+      "Replaces regional hazard context with the parcel's actual zone status for earthquake, fire and flood.",
+      "A: the owner runs the three official viewers privately and records the result offline. B: publish only 'checked / not checked' status. C: none.",
+      "The address must never be entered into this repository. One hour for the owner.",
+      "EQZAPP"
+    ],
+    [
+      "SG-04",
+      "Decision tool",
+      "Dated trigger timeline",
+      "Shows when the notice windows, the option dates and a possible marketing period fall; no deadline is verified until the lease is read.",
+      "A: an offline timeline with real dates. B: a public timeline in relative months only. C: both.",
+      "Real dates could identify the lease; B is safe. Half a day once the lease is read.",
+      "IR25"
+    ],
+    [
+      "SG-05",
+      "Evidence",
+      "Tenant watch-list with quarterly history",
+      "A series of same-store sales, unit counts, closures and franchise rental revenue shows direction, not one quarter.",
+      "A: add a quarterly table refreshed from each SEC filing. B: keep the latest quarter only.",
+      "Public data; about two hours per quarter.",
+      "EDGAR8K"
+    ],
+    [
+      "SG-06",
+      "Evidence",
+      "Fill the Form 10-K rows",
+      "Leased-versus-owned unit counts and franchise unit volumes are still blank; they show how the issuer holds its sites.",
+      "A: read the FY2025 Form 10-K now. B: wait for the FY2026 Form 10-K. C: both.",
+      "Public data; two to three hours.",
+      "SEC10K"
+    ],
+    [
+      "SG-07",
+      "Evidence",
+      "Neighbourhood module at tract level",
+      "City and county averages cannot describe one corner of Los Angeles.",
+      "A: the owner supplies only a census tract and the site publishes tract tables with margins of error. B: the analysis stays offline. C: none.",
+      "A tract narrows the location to a few thousand people; the owner must decide whether that is acceptable.",
+      "CITY"
+    ],
+    [
+      "SG-08",
+      "Evidence",
+      "County hazard scores from the federal risk index",
+      "Adds an official composite comparison of county hazard exposure; the cell is blank today.",
+      "A: use the official data download. B: leave blank.",
+      "Public data; one to two hours.",
+      "NRI"
+    ],
+    [
+      "SG-09",
+      "Evidence",
+      "Restore two dropped rows after re-verification",
+      "A county assessment-roll total and a transit capital figure were lost in an earlier integration.",
+      "A: re-read the official pages and restore. B: leave them out.",
+      "Public data; one hour.",
+      "ASSESSOR"
+    ],
+    [
+      "SG-10",
+      "Upkeep",
+      "Release calendar and staleness check",
+      "Rates, labour data and issuer results change monthly or quarterly; a stale figure can mislead a negotiation.",
+      "A: a published table of next release dates. B: an automated check that fails the build when the snapshot is older than a chosen number of days. C: both.",
+      "No private data. B needs an agreed tolerance, for example 45 days.",
+      "FRED"
+    ],
+    [
+      "SG-11",
+      "Upkeep",
+      "Row-level 'last verified' date",
+      "Lets a reader see which figures were re-read on which day instead of one site-wide snapshot date.",
+      "A: add a date column to every table. B: keep the single snapshot date.",
+      "Adds a column to wide tables; half a day.",
+      "BLS"
+    ],
+    [
+      "SG-12",
+      "Layout",
+      "Search and filter on the master register",
+      "More than 220 rows are hard to scan on a phone.",
+      "A: a text filter, which needs JavaScript. B: more anchors and per-category jump links, no script. C: leave as is.",
+      "A relaxes the no-script rule; B does not.",
+      "CITY"
+    ],
+    [
+      "SG-13",
+      "Layout",
+      "One-page printable brief for advisers",
+      "Gives a broker, CPA or attorney the recommendation, the gates and the open questions on a single sheet.",
+      "A: a print stylesheet for the executive summary. B: a separate brief page. C: none.",
+      "No private data; half a day.",
+      "IRS1031"
+    ],
+    [
+      "SG-14",
+      "Repository",
+      "Archive the eight inherited layers",
+      "Old dashboards with different figures remain in the repository and can be mistaken for the current one.",
+      "A: move them into one archive folder. B: delete them and rely on history. C: leave as is.",
+      "Changes other sessions' files; needs the owner's explicit choice.",
+      "EDGAR8K"
+    ],
+    [
+      "SG-15",
+      "Repository",
+      "Close or rebase the stale pull requests",
+      "Eleven pull requests from earlier sessions are still open and none reflects the current site.",
+      "A: close them with a note. B: review and merge any that still add value. C: leave open.",
+      "Owner decision; minutes.",
+      "EDGAR8K"
+    ],
+    [
+      "SG-16",
+      "Next step for the owner",
+      "Engage the advisers in sequence",
+      "Most gate questions are answered by documents and professionals, not by more public data.",
+      "A: attorney for the lease abstract first, then CPA, then two or three brokers, then insurance and engineering. B: brokers first to test value.",
+      "Entirely offline; this is the step that unlocks a final decision.",
+      "IRS409"
+    ]
+  ],
+  "suggestion_paths": [
+    [
+      "Path 1 \u00b7 Evidence desk, private work offline (recommended)",
+      "SG-01A, SG-02A, SG-03A, SG-04B, SG-05, SG-06, SG-10, SG-13, SG-16",
+      "The public site stays a source-linked evidence file; every owner-specific number lives in offline templates.",
+      "No private fact reaches the repository or the web.",
+      "IRS409"
+    ],
+    [
+      "Path 2 \u00b7 Interactive site",
+      "Path 1 plus SG-01B and SG-12A",
+      "Calculator and table filter on the site itself.",
+      "Inputs stay in the browser, but the no-JavaScript rule and its checks must be relaxed.",
+      "ULA"
+    ],
+    [
+      "Path 3 \u00b7 Neighbourhood depth",
+      "Path 1 plus SG-07A, SG-08 and SG-09",
+      "Tract-level trend evidence alongside the regional figures.",
+      "Publishing a census tract narrows the location; the owner must accept that first.",
+      "CITY"
+    ],
+    [
+      "Path 4 \u00b7 Maintain only",
+      "SG-10 and a monthly re-read",
+      "The current site kept current; no new features.",
+      "No change.",
+      "FRED"
     ]
   ],
   "counts": {
-    "Verified": 199,
+    "Verified": 208,
     "Blank": 26,
     "Analysis": 1,
-    "Derived": 4
+    "Derived": 2
   }
 }
