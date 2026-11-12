@@ -1298,3 +1298,9 @@ Platform-fixed branch `arena/9ff0e823-jack3` is used as required by the environm
 | Audit current published decision desk, publication/privacy tests and deployment; record substantiated limitations | in progress | 9ff0e823 | `research/AUDIT-2026-11-12-9ff0e823.md` (new), this board section only |
 
 Shared site data, generator and pages are outside this claim; any needed changes will be logged for integration rather than overwriting other sessions' work.
+
+### Audit progress and integration requests — 2026-11-12
+- Claim push: branch remote did not yet exist, so the initial pull of that ref failed; rebased against `origin/main` and pushed the claim. No conflict or work loss.
+- Sampled primary sources, live homepage, Pages API and local automated checks; details and links: `research/AUDIT-2026-11-12-9ff0e823.md`. This is a spot check, not a line-by-line re-verification. Privacy scan passed but is not a guarantee.
+- **Needs review / integration request:** published projection step presents 10-year Treasury as a universal discount-rate floor, not supported by the cited source; the unpublished `scripts/projection.py` has 0.0486 labeled as the 2026-11-09 4.88% observation. Suggested corrections, decision-timing qualifications, and dedicated suggestions section are documented in the audit. Please publish these on Flagged for Review and fix in the shared generator/model scope after coordinating ownership; this session did not change those owned/shared files. Source: https://fred.stlouisfed.org/series/DGS10.
+- Previous sessions' PRs remain open/conflicting. Full cross-session integration, all-row re-verification, exhaustive external link checks, and the requested publish/merge are **not complete** in this session. Local gates passed, but they do not resolve the substantive review items above.
