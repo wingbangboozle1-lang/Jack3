@@ -1382,3 +1382,12 @@ Scope clarification: canonical generation also updates `REPO_REVIEW.md`, which i
 
 - Session ec869c7c: after PR #58 merged concurrently, rebasing the documentation follow-up caused a board append conflict. Preserved session 89654da8’s full section and the PR #57 deployment record. No changes discarded.
 - Session ec869c7c: PR #59 subsequently merged while the follow-up was awaiting checks; this additional board append conflict was resolved by preserving both records.
+
+### Completion record — 89654da8
+
+- A896-01 **done** for the explicitly limited independent audit documented in `research/AUDIT-2026-11-12-89654da8.md`; inherited rows were not all independently rechecked by this session. Missing property-specific facts and the inherited script defect remain published for review.
+- A896-02 **done**: https://github.com/wingbangboozle1-lang/Jack3/pull/58 merged as `18ded45d4260ffd7ee7c88ca98fe3968937b9fed` on 2026-11-12. Pre-merge PR checks passed. Post-merge: Validate public research run `43261550761`, Public artifact regression tests run `43261550720`, and Pages build/deploy run `43261550153` all succeeded; Pages API reports `built` on that merge commit. The live Suggestions page was fetched successfully. Actual CI Jekyll artifact matched the exact staged inventory; local source-link, privacy, build and 10 regression checks also passed.
+- CI warnings: GitHub Actions reports Node 20 action runtime deprecation (actions forced to Node 24) and an upcoming `ubuntu-latest` image migration; both workflows passed. No effect on this deployment was observed.
+
+- Follow-up board record rebased over PR #59 (`b22d29e`); an append-only conflict was resolved by preserving both completion records.
+- Follow-up rebased over PR #60 (`c1b4fc7`); both sessions’ append-only notes preserved.
