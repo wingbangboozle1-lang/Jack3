@@ -1526,6 +1526,13 @@ historical layers were run as gates only and not edited.
 
 - While the docs-only follow-up (PR #68) awaited checks, `main` advanced via PR #66 (`4305293`, session `f0b78eb6`) and PR #65 (`d083b9b`, session `c56c569e` — information register, per-pathway risks, 5 new sources, 240 rows). Rebase onto `d083b9b` produced an append-only `COORDINATION.md` conflict (c56c569e status update vs this session's completion record). Resolved by preserving both sections verbatim; no work discarded. This session's audit file remains a dated record of the 230-row state on `354b400` and does not claim to cover the PR #65 additions. Gates re-run on the combined tree before merge.
 
+### C-02 PR #62 completion and final deployment status
+
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/62 merged into `main` on 2026-11-12 at 16:48:44 UTC as `a2d3e3ae062d3ee99259bfa494b09a132011022f`. `Validate public research` and `Public artifact regression tests` passed on the PR head (runs `43262531101` and `43262531136`).
+- The Pages workflow for that SHA completed its Jekyll build but the deploy job was cancelled while concurrent PR #63 advanced `main`; this was not a build failure. The newer integrated `main` at `354b400c3d6f959b8035c85765196dfce0bbade4` then passed validation (`43263198240`), publication regression (`43263198326`), and Pages build/deploy (`43263198311`). GitHub Pages API reports `built`, HTTPS enforced; URL: https://wingbangboozle1-lang.github.io/Jack3/ .
+- PR #63's later canonical inventory supersedes this session's intermediate counts. Its 2026-11-12 full row-level audit is `research/VERIFICATION-2026-11-12-f0b78eb6.md` (230 rows, 40 official/issuer sources). This session does not claim to have independently re-verified those new rows.
+- Rebase over concurrent PRs #64, #65, and #68 preserved their appended coordination records; no work was discarded.
+
 ## Completion record — session `c56c569e` (2026-11-12)
 
 - **PR:** [#65](https://github.com/wingbangboozle1-lang/Jack3/pull/65) — merged to `main` 2026-11-12T16:59:07Z, merge commit `d083b9b`.
