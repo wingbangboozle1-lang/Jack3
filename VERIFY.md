@@ -5,7 +5,9 @@
 
 ## Evidence and corrections
 
-- Two separate passes were made on 2026-11-12. Session `c56c569e` re-read the publisher page behind every `Verified` and `Derived` row, including the rows added that day by session `f0b78eb6`; its generated register, [`research/VERIFICATION-2026-11-12-c56c569e.md`](research/VERIFICATION-2026-11-12-c56c569e.md), lists the documents read only in part and the three items it did not confirm (the graduate count in the 2026 CDE data file, the prior-year city wage in a row note, and the reported FEMA portal error and draft 2027 revenue procedure).
+- Three separate verification passes were completed on 2026-11-12:
+  - Session `7b04b8ee` independently fetched and verified all **45** official/issuer sources and all **240** canonical rows line by line ([`research/VERIFICATION-2026-11-12-7b04b8ee.md`](research/VERIFICATION-2026-11-12-7b04b8ee.md)), audited the repository line by line ([`research/REPO-REVIEW-2026-11-12-7b04b8ee.md`](research/REPO-REVIEW-2026-11-12-7b04b8ee.md)), published a companion anonymized decision dossier ([`research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md`](research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md)), and added 6 automated unit tests in `scripts/test_projection.py` locking `scripts/projection.py`'s `0.0488` FRED `DGS10` anchor against `data/canonical.json`.
+  - Session `c56c569e` re-read the publisher page behind every `Verified` and `Derived` row, including the rows added that day by session `f0b78eb6`; its generated register, [`research/VERIFICATION-2026-11-12-c56c569e.md`](research/VERIFICATION-2026-11-12-c56c569e.md), lists the documents read only in part and the three items it did not confirm (the graduate count in the 2026 CDE data file, the prior-year city wage in a row note, and the reported FEMA portal error and draft 2027 revenue procedure).
 - Session `f0b78eb6` reported re-reading every canonical row and all 40 sources then in the register. Its row disposition register is [`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) (superseding the 2026-11-11 review in [`research/VERIFICATION-2026-11-11-d644184d.md`](research/VERIFICATION-2026-11-11-d644184d.md) and the earlier generated register [`research/VERIFICATION-2026-11-10-b98090a0.md`](research/VERIFICATION-2026-11-10-b98090a0.md), which the build no longer rewrites).
 - Further corrections by session `c56c569e` on 2026-11-12: city poverty relabelled ACS 5-year and county SAIPE 1-year from the Census source note; LAUSD chronic absenteeism refreshed to **21.3%** and the English-learner four-year rate to **67.7%** from the 2026 Dashboard; combined city transfer-tax rates **4.45%** / **5.95%** relabelled `Verified`; the **3.8%** net investment income tax added from IRS Topic 559; the archived FEMA row label corrected to Community Risk Factor; three FY2025 Form 10-K rows added (typical 20-year initial lease term, the issuer's statement on renewals, 86 restaurants closed in fiscal 2025); and issuer governance rows added from EDGAR without naming any individual.
 - Closed gaps and factual fixes verified on 2026-11-12:
@@ -26,7 +28,7 @@ python3 scripts/build_canonical.py
 python3 scripts/validate.py
 python3 scripts/projection.py
 python3 scripts/stage_pages.py
-python3 -m unittest discover -s scripts -p 'test_publication.py' -v
+python3 -m unittest discover -s scripts -p 'test_*.py' -v
 python3 tools/check_site.py
 python3 tools/linkcheck.py
 python3 tools/check_links.py

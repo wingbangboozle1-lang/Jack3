@@ -1552,3 +1552,30 @@ historical layers were run as gates only and not edited.
 ### C-02 follow-up — current README source-count correction (2026-11-12)
 
 After PR #65 expanded the canonical register to 240 rows and 45 sources, rechecked the current README against `data/canonical.json` and the generated register. Corrected two stale “40 official sources” references to “45 official/issuer sources.” Validation: canonical build (22 pages, 240 rows, 45 sources), `validate.py` PASS (23 files, 29 approved hosts), `stage_pages.py` PASS, publication regression 10/10, and all README Markdown targets exist. This is an internal inventory consistency correction; the dated source re-verification claims remain linked to their respective audit reports and are not extended by this check.
+
+---
+
+# Session `7b04b8ee` — full 2026-11-12 line-by-line official-source verification (240 rows / 45 sources), repo review, decision dossier & projection unit tests
+
+**Session ID:** `7b04b8ee` · **Branch:** `arena/7b04b8ee-jack3` (platform-fixed branch per environment policy) · **Date:** `2026-11-12` (UTC)
+
+Rebased cleanly over PRs `#59`–`#70` (`8c19013`) preserving every concurrent session's board records and canonical work verbatim.
+
+## Scope & completion table
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| V7-01 | Read `COORDINATION.md`, inspect repository, CI workflows, open PRs, and claim non-overlapping scope | **done** | `7b04b8ee` | `COORDINATION.md` (this section only, append-only) |
+| V7-02 | Fresh 2026-11-12 line-by-line official/issuer source verification of all **45** canonical sources and all **240** canonical rows (`Verified: 211`, `Derived: 2`, `Analysis: 1`, `Blank: 26`) + live GitHub Pages check | **done** | `7b04b8ee` | `research/VERIFICATION-2026-11-12-7b04b8ee.md` |
+| V7-03 | Line-by-line repository review across canonical site, generators, gates, root guides (`DISCOVERY_GUIDE.md`, `DECISION_FRAMEWORK.md`), companion layers and open PRs (`RR-7B-01`..`RR-7B-09`) | **done** | `7b04b8ee` | `research/REPO-REVIEW-2026-11-12-7b04b8ee.md` |
+| V7-04 | Comprehensive anonymized decision dossier (executive summary, review-before-implementation suggestions `SUG-01`..`SUG-05`, Q&A / known-vs-missing register + discovery playbook, 8-domain value-driver synthesis + `1 R` projection sensitivity framework, and 8-pathway BAU + black-swan risk analysis) | **done** | `7b04b8ee` | `research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md` |
+| V7-05 | Standalone `unittest` suite locking `scripts/projection.py` (`0.0488` FRED `2026-11-09` DGS10 parity against `data/canonical.json`, closed-form Gordon-growth identity, root inversion, monotonicity, determinism, and zero `$`/PII leak) + CI discovery hook | **done** | `7b04b8ee` | `scripts/test_projection.py`, `.github/workflows/publication-integrity.yml` |
+| V7-06 | Sync `README.md` / `VERIFY.md` verification index, run full gate suite, open PR → `main`, pass CI, merge, confirm GitHub Pages deployment, record PR & merge result | **in progress** | `7b04b8ee` | `README.md`, `VERIFY.md`, `COORDINATION.md` (this section) |
+
+**Privacy rule (top priority, highest urgency):** `Asset A` and `Owner A` placeholders only. Zero owner identities, street addresses, parcel numbers (APNs), personal contact details, private lease records, or named corporate/agency officers appear in any file added or edited by this session (`tools/pii_scan.py` and `scripts/validate.py` report 0 findings).
+
+**Cross-session review notes (logged without touching legacy/unclaimed files):**
+- `RR-7B-01`: Legacy `DISCOVERY_GUIDE.md` (excluded from GitHub Pages) still cites unverified rule-of-thumb `~$1.8M (from FDD Item 19)` and `8-10%` rent-to-sales; audited FY2025 Form 10-K Item 7 (`SEC10K`) states exact franchise AUV of `$1,874` thousand (`$1.874M`) in FY2025 vs `$1,949` thousand in FY2024.
+- `RR-7B-02`: Legacy `DECISION_FRAMEWORK.md` (excluded from GitHub Pages) still carries `2026-11-10` snapshot metadata and star-rated fixed `24-36 month` / `>=10 year` gates; superseded by `EXECUTIVE_SUMMARY.md`, `decisions.html`, and `research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md`.
+- `RR-7B-03`: `https://hazards.fema.gov/nri/` (`NRI`) redirected on our 2026-11-12 check to FEMA's RAPT page (`fema.gov/emergency-managers/practitioners/resilience-analysis-and-planning-tool`, updated `2026-08-18`), which announces NRI v1.20 is hosted in RAPT; dynamic county percentiles remain non-static, so row `[227]` properly stays `Blank` alongside archived March 2023 `NRIDECK` v1.19.0.
+- `RR-7B-04`: `tools/pii_scan.py` `SCAN_DIRS` omits `scripts/`; published output is already scanned by `scripts/validate.py`.

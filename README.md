@@ -10,7 +10,8 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 
 ## Start here
 
-- [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks.
+- [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks (companion structured dossier: [`research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md`](research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md)).
+- [Independent 240-row / 45-source verification (2026-11-12)](research/VERIFICATION-2026-11-12-7b04b8ee.md) — independent line-by-line official-source verification of all 240 canonical rows and 45 sources, paired with [`research/REPO-REVIEW-2026-11-12-7b04b8ee.md`](research/REPO-REVIEW-2026-11-12-7b04b8ee.md).
 - [Generated row register (2026-11-12)](research/VERIFICATION-2026-11-12-c56c569e.md) — rebuilt on every build from the 240 canonical rows and 45 official/issuer sources; states which pages were re-read on 2026-11-12, which were read only in part, and what was not confirmed.
 - [Line-by-line verification (2026-11-12)](research/VERIFICATION-2026-11-12-f0b78eb6.md) — a separate hand-written pass of the same date, made when the register held 230 rows and 40 sources, plus closed minimum-wage, 10-K, 2026 LTCG, and FEMA NRI updates (extending [2026-11-11](research/VERIFICATION-2026-11-11-d644184d.md) and [2026-11-12 targeted review](research/VERIFICATION-2026-11-12-ec869c7c.md)).
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
