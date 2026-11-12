@@ -1410,3 +1410,25 @@ Platform-fixed branch `arena/f0b78eb6-jack3` is used as assigned by the workspac
 
 Explicitly excluded from this scope: `scripts/stage_pages.py`, `scripts/test_publication.py`, `scripts/validate.py`, `_config.yml`, and historical companion directories. Strict privacy boundary: Asset A / Owner A placeholders only; zero personal, parcel, account, or named issuer contact/officer details added (`tools/pii_scan.py` scanned 144 files, 0 findings; `validate.py`, `stage_pages.py`, `test_publication.py` 10/10, and legacy verifiers all pass).
 
+
+---
+
+# Session `001fd935` — independent publication & brief-coverage audit (2026-11-12)
+
+**Session ID:** `001fd935` · **Branch:** `arena/001fd935-jack3` (platform-fixed; the brief's `session-<id>/<task>` naming is unavailable in this environment — same recorded deviation as earlier sessions) · **Date:** `2026-11-12` (UTC)
+
+Claim written before any content work, after reading `COORDINATION.md` in full and inspecting `origin/main` (`354b400`, PR #63 merged) plus live branches. Sessions `c56c569e` (last commit 16:53 UTC) and `7b04b8ee` (last commit 16:52 UTC) are **actively working** — their scopes (S-01..S-06, V7-01..V7-06) are respected and not touched. Open PRs #4/#12/#22/#26/#31/#32/#36/#40/#44/#48/#51 are reported only; none is merged, closed or edited by this session.
+
+## Scope claim (non-overlapping, docs-only)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| X-01 | Read board, inspect repo/main/CI/Pages/open PRs, claim non-overlapping scope | **done** | `001fd935` | `COORDINATION.md` (this section only, append-only) |
+| X-02 | Independent audit of the live canonical site vs the owner brief: executive summary, suggestions-for-review section, Q&A / known-vs-missing register, area projection framework, per-decision BAU + black-swan risk balance, privacy boundary, blank-value discipline, source-link coverage | **in progress** | `001fd935` | `research/AUDIT-2026-11-12-001fd935.md` (new file) |
+| X-03 | Run full local gate suite on `main` (canonical build, validate, stage, publication tests, site/link/host checks, PII scan, deterministic rebuild) + Pages/CI health check | **claimed** | `001fd935` | read-only; results logged in X-02 file and here |
+| X-04 | Spot-check a sample of load-bearing official sources against published values (Census, BLS, FRED, SEC, DIR, ULA, CAL FIRE, CDE) | **claimed** | `001fd935` | `research/AUDIT-2026-11-12-001fd935.md` |
+| X-05 | PR → `main`, CI green, merge without waiting, confirm GitHub Pages deployment, record PR link and result here | **claimed** | `001fd935` | `COORDINATION.md` (this section), PR |
+
+**Explicitly NOT touched:** `data/canonical_rows.py`, `data/canonical.json`, `scripts/build_canonical.py`, `scripts/projection.py`, `scripts/stage_pages.py`, `scripts/validate.py`, `scripts/test_publication.py`, `_config.yml`, root `*.html`, `README.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `REPO_REVIEW.md`, historical companion directories, and every other session's `COORDINATION.md` section. If a defect is found in a shared file, it is logged here as a cross-session request for the owning session (or the final integration session), not edited directly.
+
+**Privacy rule (top priority, highest urgency):** `Asset A` / `Owner A` placeholders only. No owner identity, address, parcel number (APN), personal contact information, private lease record or personal financial detail is sought, stored or published. Any personal information encountered on an official page during verification stays internal and out of the repository and website.
