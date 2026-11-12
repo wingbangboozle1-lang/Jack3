@@ -1349,3 +1349,7 @@ Platform-fixed branch `arena/89654da8-jack3` is used instead of a session-named 
 | A896-02 | Validate combined tree, report substantiated defects and, if appropriate, final integration PR and deployment | in progress | 89654da8 | read-only checks, this section of `COORDINATION.md`; request additional scopes before fixes |
 
 No personal, parcel, tenant, or private financial information will be sought or published; lack of evidence must not be filled by inference.
+
+### Additional scope claim — 89654da8
+
+Earlier in-progress claims above are from 2026-11-11, more than 60 minutes old with no subsequent commits visible; this is a documented handoff, not an assumption that their work is complete. Claiming `scripts/build_canonical.py`, `data/canonical_rows.py`, their generated root HTML and `data/canonical.json`, `scripts/stage_pages.py`, and `scripts/test_publication.py` for targeted privacy-gate and suggestions-page remediation and integration. No unrelated legacy companion content will be altered. The initial claim pull used the not-yet-created remote branch and failed harmlessly; rebased onto main and pushed claim successfully.
