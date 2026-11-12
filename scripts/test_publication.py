@@ -49,6 +49,7 @@ class Document(HTMLParser):
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
+        self.tags.add(tag)
         attrs = dict(attrs)
         if 'id' in attrs:
             self.ids.add(attrs['id'])
@@ -139,6 +140,18 @@ class PublicationTests(unittest.TestCase):
                         self.assertNotIn('', row['cells'])
                     if row['status'] == 'Unverified' and page['id'] != 'review':
                         self.assertEqual(row['cells'][1], '')
+
+
+class ParserRegressionTests(unittest.TestCase):
+    def test_collection_tags_are_recorded(self):
+        doc = Document('<script></script><form><input></form><iframe></iframe><object></object><embed>')
+        self.assertEqual(doc.tags & {'script', 'form', 'input', 'iframe', 'object', 'embed'},
+                         {'script', 'form', 'input', 'iframe', 'object', 'embed'})
+
+    def test_inline_and_remote_resources_are_detected(self):
+        doc = Document('<img src="https://example.com/pixel" onload="track()">')
+        self.assertEqual(doc.events, ['onload'])
+        self.assertEqual(doc.remote_resources, ['https://example.com/pixel'])
 
 
 if __name__ == '__main__':

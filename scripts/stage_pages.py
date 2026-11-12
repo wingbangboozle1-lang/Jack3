@@ -102,10 +102,11 @@ if len(sys.argv) > 1:
     expected = {p.relative_to(OUT) for p in files}
     expected_html = {p for p in expected if p.suffix == ".html"}
     found = {p.relative_to(actual) for p in actual.rglob("*") if p.is_file()}
-    found_html = {p for p in found if p.suffix == ".html"}
-    if found_html != expected_html:
-        msg = (f"unexpected Jekyll HTML files: {sorted(map(str, found_html - expected_html))}; "
-               f"missing: {sorted(map(str, expected_html - found_html))}")
+    # A private document or script can leak as a non-HTML file too. Fail closed
+    # on all unreviewed output, not just additional HTML pages.
+    if found != expected:
+        msg = (f"unexpected Jekyll files: {sorted(map(str, found - expected))}; "
+               f"missing: {sorted(map(str, expected - found))}")
         print("::error title=Jekyll artifact mismatch::" + msg)
         raise SystemExit(msg)
     for rel in expected:
@@ -116,5 +117,4 @@ if len(sys.argv) > 1:
             print(f"::error title=Jekyll content mismatch::content changed: {rel}")
             raise SystemExit(1)
     print("PASS: actual Jekyll output matches the curated artifact byte-for-byte "
-          f"({len(expected_html)} HTML pages); non-HTML generator outputs ignored: "
-          f"{len(found - expected)}")
+          f"({len(expected_html)} HTML pages, exact file inventory)")
