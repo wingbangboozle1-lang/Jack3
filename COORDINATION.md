@@ -1447,7 +1447,6 @@ Claim written before any content work, after reading `COORDINATION.md` in full a
 - X-05 **in progress**: PR → `main`, CI, merge, Pages confirmation (record below).
 - Irregularities logged in the audit file: transient Pages build lag for `354b400`/`a2d3e3a` (queue congestion; live site serving prior `built` build; fresh build triggered by this merge); repo-only `DECISION_FRAMEWORK.md`/`DISCOVERY_GUIDE.md` mention APN only as a discovery question (no values, excluded from Pages); concurrent sessions `c56c569e` and `7b04b8ee` respected and not integrated here; stale PRs #4/#12/#22/#26/#31/#32/#36/#40/#44/#48/#51 reported only.
 
-<<<<<<< HEAD
 # Session `c56c569e` — line-by-line re-verification, Suggestions section, decision-risk expansion, final integration (2026-11-12)
 
 **Session ID:** `c56c569e` · **Branch:** `arena/c56c569e-jack3` (platform-fixed; the brief's `session-<id>/<task>`
