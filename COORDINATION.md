@@ -1337,6 +1337,13 @@ E-01 and E-02 done, with remaining uncertainty **needs review** on F-23–F-25. 
 
 Conflict / handoff log: while this integration was in progress, previously unseen session `6356a8d1` merged PR #56 onto main, including a README consistency update and board claim. Rebasing raised append-only `COORDINATION.md` and README inventory conflicts. Preserved both board sections and the other session's current verification references and inventory details, updating only the counts and recommendation needed for the added page. No contribution was discarded. Both sessions' README work overlapped because the remote claim was not on main when this session expanded scope.
 
+### E-03 publication record
+
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/57 merged successfully as `9e223a75bf4fe9cc73f58e0291753dca3c143405` on 2026-11-12. PR validation and publication-integrity checks succeeded before merge.
+- On the merge commit, Validate public research run `43261195621`, Public artifact regression tests run `43261195665`, and Pages build/deploy run `43261194937` all succeeded. Pages API reports `built` on that commit and HTTPS enforced. The live `suggestions.html` and `review.html` were fetched and showed the new page and 25 flags.
+- After rebasing onto main, an attempted pull-rebase against the branch's old remote history would have replayed already-merged work and conflicted on this board. Aborted that attempt without discarding changes; pulled with rebase from `origin main` and used a lease-protected push of the current branch instead. Earlier README/board conflicts and preservation are logged above.
+- CI raised non-blocking GitHub Actions Node 20 deprecation and runner-image migration annotations; future workflow maintenance should review them. The deployed site's source-verification and external-link limitations remain in F-24.
+
 ---
 
 # Session `89654da8` — current independent audit and integration (2026-11-12)
@@ -1372,3 +1379,6 @@ Scope clarification: canonical generation also updates `REPO_REVIEW.md`, which i
 - GitHub Pages API reports `status: built`, HTTPS enforced. Public URL: https://wingbangboozle1-lang.github.io/Jack3/ .
 - Rebase conflicts with concurrent sessions `ec869c7c` and `89654da8` were resolved by preserving their integration records and this session's completion record; no work was discarded.
 - Changes in PR #56 were documentation-only. No canonical research data or HTML changed in that PR, and no new personal information was introduced.
+
+- Session ec869c7c: after PR #58 merged concurrently, rebasing the documentation follow-up caused a board append conflict. Preserved session 89654da8’s full section and the PR #57 deployment record. No changes discarded.
+- Session ec869c7c: PR #59 subsequently merged while the follow-up was awaiting checks; this additional board append conflict was resolved by preserving both records.
