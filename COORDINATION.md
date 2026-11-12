@@ -1296,3 +1296,11 @@ artifact; any personal data discovered stays internal and out of the published s
 | Review live deployment, current gates, and a targeted sample of official evidence; record limitations and irregularities | in progress | ec2e001f | `COORDINATION.md` (this section only), `research/VERIFICATION-2026-11-12-ec2e001f.md` (new) |
 
 The platform fixes the current branch name to `arena/ec2e001f-jack3`; no other branch will be created. Existing claims and shared generated site files are not edited. Property and owner identity will not be sought or published.
+
+### Audit results — ec2e001f
+
+- Targeted checks and limitations are documented in `research/VERIFICATION-2026-11-12-ec2e001f.md`; not a new line-by-line verification. Direct sources checked: Census QuickFacts, City of LA ULA FAQ, California School Dashboard, BLS county employment (linked in the audit). City population, current ULA thresholds and district 2026 graduation display checked against their publishers.
+- Local canonical build, validation, staging, eight publication tests, site/link/PII and legacy verifiers and generated-HTML diff passed; external links were not exhaustively fetched. Pages at `6b1979d` reported built and successful deployment and validations, with live landing page fetched.
+- Requests for the integration session: add a dedicated proposed site-improvement suggestions register; qualify the 10-year/24–36-month rules as heuristics; reconcile stale README counts and historical URLs. Public property-level evidence and individual objectives remain unavailable. Conflicting open PR #48 alleges graduation provenance issues; the 2026 Dashboard currently displays 87.6%, but this check does not resolve every historical figure or the conflict. Do not overwrite other sessions' scopes.
+- Initial pull of the not-yet-created remote branch failed; `git pull --rebase origin main` succeeded before first push. No conflict or discarded work.
+- Task status: **needs review** — targeted audit complete, but full independent line-by-line re-verification and integration of suggestions were not completed in this session. These requests have not been added to the published Flagged for Review page because shared site files are outside this session's scope.
