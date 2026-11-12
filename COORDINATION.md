@@ -1548,3 +1548,7 @@ historical layers were run as gates only and not edited.
 - **For the next session:** `README.md`, `VERIFY.md` and `EXECUTIVE_SUMMARY.md` carry hand-typed counts and must be
   updated whenever the register changes (R-34). `EXECUTIVE_SUMMARY.md` still cites a county assessment-roll total
   and a transit funding figure that are not in the canonical register and were not re-read in this pass (F-30).
+
+### C-02 follow-up — current README source-count correction (2026-11-12)
+
+After PR #65 expanded the canonical register to 240 rows and 45 sources, rechecked the current README against `data/canonical.json` and the generated register. Corrected two stale “40 official sources” references to “45 official/issuer sources.” Validation: canonical build (22 pages, 240 rows, 45 sources), `validate.py` PASS (23 files, 29 approved hosts), `stage_pages.py` PASS, publication regression 10/10, and all README Markdown targets exist. This is an internal inventory consistency correction; the dated source re-verification claims remain linked to their respective audit reports and are not extended by this check.
