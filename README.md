@@ -4,14 +4,15 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 
 **Live site:** https://wingbangboozle1-lang.github.io/Jack3/
 
-> **Current canonical site (2026-11-11).** This repository now publishes **one** consolidated site, generated
+> **Current canonical site (2026-11-12).** This repository now publishes **one** consolidated site, generated
 > from a single verified register. The descriptions of earlier companion layers further down this README are
 > historical audit trail; those directories are excluded from GitHub Pages and are not the live product.
 
 ## Start here
 
 - [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks.
-- [Line-by-line verification](research/VERIFICATION-2026-11-11-d644184d.md) — all 223 canonical rows, with row-level dispositions and 36 official/issuer sources (audit dated 2026-11-11).
+- [Line-by-line verification](research/VERIFICATION-2026-11-11-d644184d.md) — 223 canonical rows, with row-level dispositions and 36 official/issuer sources (full audit dated 2026-11-11).
+- [2026-11-12 targeted integration review](research/VERIFICATION-2026-11-12-ec869c7c.md) — subsequent changes, material checks and review limitations; it does not claim a fresh re-verification of all 223 rows.
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
 - [Flagged for Review](review.html) — unresolved items and source irregularities.
@@ -27,6 +28,7 @@ Verify lease dates and notice rights privately now; prepare sale and renewal tra
 | [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Clean landing page, eight evidence categories, analysis pages and governance pages |
 | [Executive summary](executive-summary.html) | Recommendation, decision matrix, six driving findings, risk balance, and what stays blank |
 | [Suggestions to review](suggestions.html) | Proposed improvements and trade-offs for review before implementation |
+| [Questions & answers](questions.html) | Evidence-backed answers, unknowns, discovery routes, and decision implications |
 | [All entries & findings](master.html) | Every published row in one source-linked table |
 | [Flagged for Review](review.html) | Every unverified value, conflict and irregularity, published for manual review |
 | [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
@@ -43,6 +45,7 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 |---|---|---|
 | Overview / dashboard | `/` | Conditional recommendation, six verified anchors, risk balance, navigation |
 | Executive summary | `/executive-summary.html` | Decision, findings, matrix, evidence gates, what stays blank |
+| Suggestions for review | `/suggestions.html` | Proposed improvements, trade-offs, and decision criteria before implementation |
 | All entries & findings | `/master.html` | 223-row master register, grouped by category |
 | Geography | `/geography.html` | City / county scale; every parcel-level gap flagged |
 | People & income | `/demographics.html` | Population, households, income, poverty, education, spending capacity |
@@ -54,6 +57,7 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 | Projection anchors | `/anchors.html` | Dated observations, official forecasts and withheld outputs |
 | Risk register | `/risk.html` | 24 business-as-usual and black-swan risks, with context sources |
 | Projection system | `/projections.html` | 13-step reproducible framework and the outputs deliberately withheld |
+| Questions & answers | `/questions.html` | Current answer, missing inputs, discovery path, and decision consequence |
 | Decision matrix | `/decisions.html` | Eight pathways, gates and the recommended sequence |
 | Model & method | `/model.html` | Verification standard, published arithmetic, monitoring checklist |
 | Evidence boundary | `/place.html` | What the site deliberately does not assert about Asset A |
