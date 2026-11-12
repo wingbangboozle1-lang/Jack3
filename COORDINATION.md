@@ -1287,3 +1287,18 @@ if `main` advances while this session works, it will rebase additively and re-ru
 **Privacy rule (highest urgency):** no personal information is collected, inferred or published anywhere in
 this session's scope; the repaired gate keeps and re-runs the PII / remote-resource checks over the public
 artifact; any personal data discovered stays internal and out of the published site.
+
+---
+
+# Session `arena/6356a8d1-jack3` — current-facing documentation consistency (2026-11-12)
+
+**Platform-fixed branch:** `arena/6356a8d1-jack3` (based on `6b1979d`, the current `main` head). The requested session branch naming is not available in this environment; this session remains on its assigned branch.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| C-01 | Read coordination board, inspect current tree and identify non-overlapping task | **done** | `6356a8d1` | `COORDINATION.md` (this section) |
+| C-02 | Reconcile current README claims about canonical evidence row count, page count, and verification links against generated canonical register and current audit record; update only current-facing README text | **claimed** | `6356a8d1` | `README.md` |
+| C-03 | Run deterministic build, complete validation/publication gates, verify docs links and privacy; record results | **pending** | `6356a8d1` | read-only |
+| C-04 | PR, CI, merge and Pages confirmation for docs-only fix; record outcome | **pending** | `6356a8d1` | `COORDINATION.md` (this section), PR |
+
+**Scope rule:** no canonical data, generated HTML, other session files or stale/open PRs are claimed or modified. Counts and page inventory will be checked against `data/canonical.json` and the canonical builder; no external fact is being newly verified by this documentation correction. Privacy boundary remains Asset A / Owner A only.
