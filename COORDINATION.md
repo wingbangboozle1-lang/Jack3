@@ -1309,3 +1309,17 @@ artifact; any personal data discovered stays internal and out of the published s
 - No external facts, property information or personal information were added. Existing evidence remains dated to its documented verification; no fresh official-source re-check is claimed in this documentation task.
 
 **Scope rule:** no canonical data, generated HTML, other session files or stale/open PRs are claimed or modified. Counts and page inventory were checked against `data/canonical.json` and the canonical builder. Privacy boundary remains Asset A / Owner A only.
+
+---
+
+# Session `ec869c7c` — independent current-evidence and publication audit (2026-11-12)
+
+Platform-fixed branch `arena/ec869c7c-jack3` is used instead of the requested session-named branch, which this environment does not permit. Read board and checked current main and open PRs before claiming. Historical claims are not assumed complete merely because of age. No other session's branch or PR will be altered.
+
+| Task | Status | Owner | Write scope |
+|---|---|---|---|
+| E-01 | Independently audit the live canonical decision content, critical official sources, privacy boundary, and current publication/CI | in progress | ec869c7c | `research/VERIFICATION-2026-11-12-ec869c7c.md` (new), this board section |
+| E-02 | Report substantiated defects and request changes to shared files if owned; otherwise repair critical findings in integration | claimed | ec869c7c | this board section; scope expansion only after checking claims |
+| E-03 | Run gates, PR, merge only if checks pass, verify deploy, record outcome | claimed | this board section |
+
+No property identifiers, personal details, private lease records or financials will be sought or published; unknowns remain unknown. Prior line-by-line audit records are not independently adopted as proof without checking.
