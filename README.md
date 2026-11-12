@@ -18,7 +18,7 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 
 ## Recommendation
 
-Run two tracks now: confidential sale market testing 24–36 months before the earliest contractual expiry, and a written renewal request. Choose only after comparing a documented after-tax offer with an enforceable, credit-supported extension. This is analyst judgment, not a valuation or personalized financial, legal or tax advice. Public sources cannot determine a personal optimum without the private lease and financial facts.
+Verify lease dates and notice rights privately now; prepare sale and renewal tracks on a timeline the documents support. Compare documented after-tax offers with enforceable renewal terms and downside risks; no minimum renewal term or fixed marketing deadline is established. This is analyst judgment, not a valuation or personalized financial, legal or tax advice. Public sources cannot determine a personal optimum without the private lease and financial facts.
 
 ## Public pages
 
@@ -26,6 +26,7 @@ Run two tracks now: confidential sale market testing 24–36 months before the e
 |---|---|
 | [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Clean landing page, eight evidence categories, analysis pages and governance pages |
 | [Executive summary](executive-summary.html) | Recommendation, decision matrix, six driving findings, risk balance, and what stays blank |
+| [Suggestions to review](suggestions.html) | Proposed improvements and trade-offs for review before implementation |
 | [All entries & findings](master.html) | Every published row in one source-linked table |
 | [Flagged for Review](review.html) | Every unverified value, conflict and irregularity, published for manual review |
 | [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
@@ -34,7 +35,7 @@ Run two tracks now: confidential sale market testing 24–36 months before the e
 
 ## Build and verify
 
-21 static HTML pages (including the `flagged.html` alias) plus `assets/style.css`, for a 22-file Pages artifact. Every table body row carries an official source link; every
+22 static HTML pages (including the `flagged.html` alias) plus `assets/style.css`, for a 23-file Pages artifact. Every table body row carries an official source link; every
 unconfirmed value is an **empty cell** and appears on *Flagged for Review*. No JavaScript, forms, analytics,
 third-party assets, owner identifiers, addresses or parcel numbers.
 
