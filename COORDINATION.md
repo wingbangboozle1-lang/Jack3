@@ -1410,3 +1410,33 @@ Platform-fixed branch `arena/f0b78eb6-jack3` is used as assigned by the workspac
 
 Explicitly excluded from this scope: `scripts/stage_pages.py`, `scripts/test_publication.py`, `scripts/validate.py`, `_config.yml`, and historical companion directories. Strict privacy boundary: Asset A / Owner A placeholders only; zero personal, parcel, account, or named issuer contact/officer details added (`tools/pii_scan.py` scanned 144 files, 0 findings; `validate.py`, `stage_pages.py`, `test_publication.py` 10/10, and legacy verifiers all pass).
 
+# Session `c56c569e` — line-by-line re-verification, Suggestions section, decision-risk expansion, final integration (2026-11-12)
+
+**Session ID:** `c56c569e` · **Branch:** `arena/c56c569e-jack3` (platform-fixed; the brief's `session-<id>/<task>`
+naming is unavailable in this environment — same recorded deviation as earlier sessions) · **Date:** 2026-11-12 (UTC)
+
+Claim written before any content work, after reading this board. `main` at claim time: `6b1979d` (PR #55 merged
+2026-11-11). `Validate public research`, `Public artifact regression tests` and `pages build and deployment` are
+all green on `main`; Pages API `status: built` for `6b1979d`. Every other session's claim on this board is merged
+or more than 60 minutes old with no commits (latest foreign commit activity 2026-11-11 ~02:50 UTC), so this session
+takes the final-integration role for today under rule 7. Open PRs #4/#12/#22/#26/#31/#32/#36/#40/#44/#48/#51 are
+**not** merged, closed or edited by this session; they are assessed and reported only.
+
+## Scope claim (writes)
+
+| ID | Task | Status | File scope |
+|---|---|---|---|
+| S-01 | Claim board; read repo, open PRs, CI and Pages state | **done** | this section only (append-only) |
+| S-02 | Fresh line-by-line re-read of all 223 canonical rows against their 36 official/issuer sources on 2026-11-12 | in progress | `research/VERIFICATION-2026-11-12-c56c569e.md` (new file) |
+| S-03 | Correct only substantiated defects; refresh dated observations where the publisher shows a newer print | claimed | `data/canonical_rows.py` → regenerated `data/canonical.json` and root `*.html` via `scripts/build_canonical.py` (never hand-edited HTML) |
+| S-04 | Fill gaps against the owner brief: dedicated **Suggestions** page (review-before-implementing register for site improvements and missing-information discovery), fuller questions / information-held / information-missing register, per-decision risk table covering business-as-usual and black-swan events | claimed | `scripts/build_canonical.py`, `data/canonical_rows.py`, new root `suggestions.html`, regenerated root `*.html`, `assets/style.css`, gate inventories in `scripts/stage_pages.py`, `scripts/validate.py`, `scripts/test_publication.py` |
+| S-05 | Reconcile documentation drift (row/page/source counts, verification-record pointers) | claimed | `EXECUTIVE_SUMMARY.md`, `README.md`, `REPO_REVIEW.md`, `VERIFY.md` |
+| S-06 | Full gate run, PR → `main`, CI green, merge, confirm Pages deploy + live fetch, record here | claimed | this section |
+
+**Explicitly NOT touched:** every historical companion layer (`advisory/`, `analysis/`, `audit/`, `brief/`,
+`dashboard/`, `decision-file/`, `docs/`, `pages/`, `site/`, `model/`, `_advisory_src/`, `_dashboard_src/`,
+`tools/`), every earlier verification record under `research/`, and every other session's section of this file.
+
+**Privacy rule (highest urgency):** Asset A / Owner A placeholders only. No owner identity, address, parcel
+number, contact detail, lease document or private financial figure is sought, stored or published. Any personal
+information encountered on an official page during verification is not copied into the repository or the site.
