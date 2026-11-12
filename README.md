@@ -33,7 +33,7 @@ Verify lease dates and notice rights privately now; prepare sale and renewal tra
 | [Flagged for Review](review.html) | Every unverified value, conflict, closed item and irregularity, published for manual review |
 | [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
 | [Line-by-line verification record](research/VERIFICATION-2026-11-12-c56c569e.md) | 240-row register generated from the data on every build, with the limits of the 2026-11-12 re-read; a second hand-written record of the same date is [`VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) |
-| [Sources & method](sources.html) | 40 official sources, verification standard and privacy boundary |
+| [Sources & method](sources.html) | 45 official/issuer sources, verification standard and privacy boundary |
 
 ## Build and verify
 
@@ -63,7 +63,7 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 | Evidence boundary | `/place.html` | What the site deliberately does not assert about Asset A |
 | Flagged for Review | `/review.html` (alias `/flagged.html`) | Unverified values, conflicts, closed checks and irregularities |
 | Repo review | `/repo-review.html` | Line-by-line inherited-layer findings |
-| Sources & method | `/sources.html` | 40 official sources, verification standard, privacy boundary |
+| Sources & method | `/sources.html` | 45 official/issuer sources, verification standard, privacy boundary |
 
 ## Build and verification
 
