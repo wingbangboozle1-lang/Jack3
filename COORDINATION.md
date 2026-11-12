@@ -1336,3 +1336,16 @@ E-02 scope expansion: `README.md` updated to remove the superseded mandatory mar
 E-01 and E-02 done, with remaining uncertainty **needs review** on F-23–F-25. Sources checked and exact scope are documented in `research/VERIFICATION-2026-11-12-ec869c7c.md`; this targeted review does not purport to re-verify all 223 rows. Added proposed improvements page, adjusted ungrounded decision rules, fixed seismic forecast vintage and multi-source executive citations, and kept property-specific information blank. 2026-11-12 local gates: build, validate, stage, 8 publication unit tests, internal link checks, PII scan and legacy verifiers passed. External-link availability is not tested by local link checks; flagged F-24.
 
 Conflict / handoff log: while this integration was in progress, previously unseen session `6356a8d1` merged PR #56 onto main, including a README consistency update and board claim. Rebasing raised append-only `COORDINATION.md` and README inventory conflicts. Preserved both board sections and the other session's current verification references and inventory details, updating only the counts and recommendation needed for the added page. No contribution was discarded. Both sessions' README work overlapped because the remote claim was not on main when this session expanded scope.
+
+---
+
+# Session `89654da8` — current independent audit and integration (2026-11-12)
+
+Platform-fixed branch `arena/89654da8-jack3` is used instead of a session-named branch, as required by the environment. Earlier claims and stale open PRs are preserved; no other session's PR will be modified.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| A896-01 | Inspect current repository, deployed site, official-source evidence, privacy and decision logic; record limitations without claiming unperformed verification | in progress | 89654da8 | `research/AUDIT-2026-11-12-89654da8.md`, this section of `COORDINATION.md` |
+| A896-02 | Validate combined tree, report substantiated defects and, if appropriate, final integration PR and deployment | in progress | 89654da8 | read-only checks, this section of `COORDINATION.md`; request additional scopes before fixes |
+
+No personal, parcel, tenant, or private financial information will be sought or published; lack of evidence must not be filled by inference.
