@@ -11,7 +11,7 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 ## Start here
 
 - [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks.
-- [Line-by-line verification](research/VERIFICATION-2026-11-11-1f62010a.md) — all 155 rows and 30 official/issuer sources.
+- [Line-by-line verification](research/VERIFICATION-2026-11-11-d644184d.md) — all 223 canonical rows, with row-level dispositions and 36 official/issuer sources (audit dated 2026-11-11).
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
 - [Flagged for Review](review.html) — unresolved items and source irregularities.
@@ -29,12 +29,12 @@ Run two tracks now: confidential sale market testing 24–36 months before the e
 | [All entries & findings](master.html) | Every published row in one source-linked table |
 | [Flagged for Review](review.html) | Every unverified value, conflict and irregularity, published for manual review |
 | [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
-| [Line-by-line verification record](research/VERIFICATION-2026-11-11-b98090a0.md) | Every row re-read against its publisher page on 2026-11-11, plus corrections and gaps |
+| [Line-by-line verification record](research/VERIFICATION-2026-11-11-d644184d.md) | 223-row canonical disposition register; independent official-source review dated 2026-11-11, plus corrections and gaps |
 | [Sources & method](sources.html) | 36 official sources, verification standard and privacy boundary |
 
 ## Build and verify
 
-20 static HTML pages plus `assets/style.css`. Every table body row carries an official source link; every
+21 static HTML pages (including the `flagged.html` alias) plus `assets/style.css`, for a 22-file Pages artifact. Every table body row carries an official source link; every
 unconfirmed value is an **empty cell** and appears on *Flagged for Review*. No JavaScript, forms, analytics,
 third-party assets, owner identifiers, addresses or parcel numbers.
 
@@ -42,7 +42,7 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 |---|---|---|
 | Overview / dashboard | `/` | Conditional recommendation, six verified anchors, risk balance, navigation |
 | Executive summary | `/executive-summary.html` | Decision, findings, matrix, evidence gates, what stays blank |
-| All entries & findings | `/master.html` | 222-row master register, grouped by category |
+| All entries & findings | `/master.html` | 223-row master register, grouped by category |
 | Geography | `/geography.html` | City / county scale; every parcel-level gap flagged |
 | People & income | `/demographics.html` | Population, households, income, poverty, education, spending capacity |
 | Economy & jobs | `/economy.html` | Employment, wages, prices, output, rates, official long-range forecasts |
