@@ -25,7 +25,7 @@ INPUTS (all disclosed, none measured for this asset)
     cap_now      cap rate at which the asset would sell today      swept 5.0-6.5%
     cap_exit     cap rate applied to rent at the end of the horizon swept 5.0-6.5%
     growth       annual growth in contractual base rent             swept 0-3%
-    discount     owner's required return                            swept 4.86-9%
+    discount     owner's required return                            swept 4.88-9%
     horizon      years from now to the end of the lease            10 (2035, latest reported expiry)
     vacancy      months of rent loss at/after expiry                0 or 18
 
@@ -49,12 +49,12 @@ DETERMINISM
 from __future__ import annotations
 
 HORIZON_YEARS = 10
-TREASURY_ANCHOR = 0.0486          # 10-year constant maturity, 2026-11-09, FRED DGS10
+TREASURY_ANCHOR = 0.0488          # 10-year constant maturity, 2026-11-09, FRED DGS10
 TREASURY_ANCHOR_DATE = "2026-11-09"
 
 CAP_RATES = (0.050, 0.055, 0.060, 0.065)
 GROWTH_RATES = (0.000, 0.010, 0.020, 0.030)
-DISCOUNT_RATES = (0.0486, 0.060, 0.070, 0.090)
+DISCOUNT_RATES = (0.0488, 0.060, 0.070, 0.090)
 BASE_CAP_NOW = 0.055
 VACANCY_MONTHS = 18
 RELEASE_RENT_FACTOR = 0.90        # re-letting at 90% of the prior rent

@@ -4,8 +4,9 @@
 Outputs (all deterministic, all static HTML, no JavaScript, no external assets):
 
   data/canonical.json                    machine-readable evidence register
-  research/VERIFICATION-2026-11-10-b98090a0.md    line-by-line source verification log
-  <root>/*.html                         18 published pages + flagged.html alias
+  research/VERIFICATION-2026-11-10-b98090a0.md    generated line-by-line source verification log
+  research/VERIFICATION-2026-11-12-f0b78eb6.md    full 2026-11-12 independent re-verification log
+  <root>/*.html                         22 published pages (21 registered + flagged.html alias)
   assets/style.css                      shared stylesheet
 
 Every table body row carries an official source link.  Any value that could not be
@@ -251,8 +252,9 @@ def page_index() -> str:
         '<section class="split"><div><h3>Business as usual</h3>'
         '<p><b>Income concentration.</b> One tenant, one building, one lease. Vacancy removes the full rent '
         'while taxes, insurance and re-letting costs continue.</p>'
-        '<p><b>Wage and cost pressure.</b> Covered fast-food work has a $20.00/hour floor; the state floor is '
-        '$16.90/hour from 2026. Store-level rent coverage is unknown.</p>'
+        '<p><b>Wage and cost pressure.</b> Covered fast-food work has a $20.00/hour floor; the City of LA '
+        'general floor is $18.42/hour from 2026-07-01, and the state floor is $16.90/hour from 2026. '
+        'Store-level rent coverage is unknown.</p>'
         '<p><b>Rates and exit yields.</b> A higher exit yield lowers price for the same rent.</p>'
         '<p><b>Taxes.</b> A qualifying §1031 exchange generally defers gain; eligibility and eventual tax depend on the facts.</p>'
         '<a class="quiet" href="risk.html">Full risk register →</a></div><div><h3>Tail events that can end the local economy</h3>'
@@ -485,10 +487,25 @@ def page_suggestions() -> str:
         ("6", "Improve the projection system", "Create and back-test a versioned, cash-flow model when verified inputs and sufficient comparable history exist; distinguish observations from assumptions.", "Supports repeatable comparisons but a model can be precise and still wrong.", "Until calibrated, withhold numeric parcel forecasts and review scenarios with advisers.", "SCAG"),
         ("7", "Maintain the evidence", "Assign a reviewer to refresh dated sources, check changed rules and test links and privacy before publication.", "Reduces stale claims; official releases have different vintages and may conflict.", "Review material changes before publishing; retain previous vintages.", "BLS"),
     ]
+    site_proposals = [
+        ("S-1 · Publish break-even sensitivities", "Display the dimensionless 1 R sensitivity grid from scripts/projection.py on Projections alongside explicit blank owner-input cells.", "Makes exit-cap and rent-growth break-evens interactive for readers, vs. risking confusion between illustrative 5.0%–6.5% caps and market quotes.", "Confirm whether illustrative tables belong on the public site or offline only.", "FRED"),
+        ("S-2 · Offline Census tract extractor", "Add a local script pulling ACS 5-year tract and block-group estimates with margins of error once Owner A selects a corridor privately.", "Eliminates city/county geographic mismatch without exposing parcel identity, vs. higher sampling variance in small tracts.", "Require Owner A sign-off on tract granularity and non-publication of tract codes if narrow.", "CITY"),
+        ("S-3 · Offline parcel overlay workbook", "Bundle an air-gapped checklist querying ZIMAS zoning, CGS EQ Zapp, CAL FIRE FHSZ and FEMA flood maps for the private parcel file.", "Closes all parcel hazard and jurisdiction blanks locally, vs. requiring manual screening so private parcel output never enters Git.", "Keep parcel scripts out of published artifacts and run only on local private inputs.", "FEMA"),
+        ("S-4 · Scheduled source-freshness checks", "Track upcoming statutory and issuer releases automatically, starting with the 2026-12-09 Q4/FY2026 earnings webcast, monthly BLS, FRED DGS10 and Measure ULA indexation.", "Catches stale figures and portal outages such as FEMA NRI HTTP 500 early, vs. automated monitors cannot evaluate nuanced policy notes.", "Assign reviewer sign-off before updating live rows from new releases.", "IR26Q4"),
+        ("S-5 · Explicit vintage and methodology tags", "Keep dual-definition rows (87.4% four-year ACGR vs 87.6% combined rate; 2025 Topic 409 vs 2026 Rev. Proc. 2025-32 vs draft 2027 guidance) visually grouped with vintage tags.", "Prevents apples-to-oranges comparisons across agencies and tax years, vs. adds row density for readers wanting one headline figure.", "Choose preferred presentation rule before adding future dual-series indicators.", "IRSRP25"),
+        ("S-6 · Archive legacy companion layers", "Move superseded repository directories (advisory/, analysis/, brief/, dashboard/, decision-file/, docs/, pages/) into a clearly tagged archive branch or folder.", "Eliminates contributor confusion over obsolete scripts and figures (R-01–R-13), vs. breaks relative links cited inside older audit logs.", "Confirm audit-trail retention preference before relocating historical files.", "DOF"),
+    ]
     rows = [[E(n), E(proposal), E(action), E(tradeoff), E(gate), src(key)] for n, proposal, action, tradeoff, gate, key in items]
-    content = (CALLOUT_BOUNDARY + h1("Suggestions to review", "Proposals only — choose a path before implementing changes. These are analyst judgments; the official links provide context, not agency endorsement.")
-               + table(["Priority", "Proposal", "Suggested action", "Trade-off / risk", "Review gate", "Official context"], rows, "Proposed improvements · not yet implemented")
-               + '<p>No private facts or user selections are collected on this static site. The missing property documents cannot be obtained without authorized access.</p>')
+    srows = [[E(opt), E(prop), E(trade), E(gate), src(key)] for opt, prop, trade, gate, key in site_proposals]
+    content = (CALLOUT_BOUNDARY
+               + h1("Suggestions to review", "Proposals only — choose a path before implementing changes. These are analyst judgments; the official links provide context, not agency endorsement.")
+               + h2("Decision-workflow proposals", "Recommended governance and private diligence sequence")
+               + table(["Priority", "Proposal", "Suggested action", "Trade-off / risk", "Review gate", "Official context"], rows, "Proposed workflow improvements · not yet implemented")
+               + h2("Site, data and model enhancements", "Concrete technical options — none applied without stakeholder approval")
+               + table(["Option", "Proposed enhancement", "Trade-off / risk", "Review gate", "Official context"], srows, "Proposed site and engineering enhancements · awaiting selection")
+               + '<p>No private facts or user selections are collected on this static site. The missing property documents cannot be obtained without authorized access.</p>'
+               + '<a class="button" href="decisions.html">Decision matrix <span>→</span></a> '
+               + '<a class="quiet" href="projections.html">Projection system ↗</a>')
     return shell("suggestions", content, "12A / SUGGESTIONS")
 
 
@@ -509,7 +526,7 @@ def page_decisions() -> str:
             '24–36 month window is illustrative, not a verified deadline; lease notice rights may require earlier action.</li>'
             '<li><b>On receipt of both.</b> Compute after-tax net sale proceeds against the discounted hold '
             'case using the verified rules on the Taxes page.</li>'
-            '<li><b>Decision.</b> Sell if the documented offer is acceptable; extend only against an '
+            '<li><b>Decision.</b> Sell if the documented offer is acceptable; extend only against '
             'an enforceable extension when its risk-adjusted outcome better serves the owner.</li>'
             '<li><b>Either route.</b> Verify insurance, size a re-letting reserve and cap this asset\'s share '
             'of Owner A\'s net worth at a level that can be lost without changing their plans.</li>'
@@ -522,7 +539,7 @@ def page_decisions() -> str:
             '<p>A short or below-market extension, a weak guarantor, a closure, or a catastrophe that removes '
             'rent and exit liquidity together. Chain-wide results cannot establish this site\'s fate.</p>'
             + src("SECQ3", "Issuer Q3 FY2026") + '</div></section>']
-    return shell("decisions", ''.join(body), "12A / DECISION MATRIX")
+    return shell("decisions", ''.join(body), "12B / DECISION MATRIX")
 
 
 def page_model() -> str:
@@ -557,7 +574,8 @@ def page_model() -> str:
             '<li>The BLS area summary is not seasonally adjusted and may be revised.</li>'
             '<li>Issuer results describe a chain, not this restaurant or its legal obligor.</li>'
             '<li>Hazard figures are scenarios and regional forecasts, not parcel exposure.</li>'
-            '<li>IRS Topic 409 publishes 2025 thresholds; refresh before any real transaction.</li>'
+            '<li>IRS Topic 409 displays 2025 brackets while Rev. Proc. 2025-32 establishes finalized 2026 '
+            'brackets; draft 2027 Rev. Proc. 2026-35 carries placeholder dates and is withheld.</li>'
             '<li>Rolling sources change: re-read the official pages on every release.</li>'
             '</ul>',
             h2("Monitoring checklist", "What to re-check and where"),
@@ -614,7 +632,7 @@ def page_flagged() -> str:
             'or the merge</b>, because no unverified value appears anywhere else on the site as a number.</section>',
             h1("Flagged for Review", "Unverified values, official-source conflicts, stale vintages and "
                "irregularities found during the line-by-line repository review."),
-            h2("Open items", f"{len(FLAGS)} entries · each with the official page that would close it"),
+            h2("Review items", f"{len(FLAGS)} entries (open & closed log) · each linked to an official source"),
             table(["ID", "Priority", "Item", "Finding", "What closes it", "Official link"], frows,
                   "Flagged items · published for manual review"),
             h2("Irregularities from the repository review", f"{len(REPO_REVIEW)} line-by-line findings"),
@@ -670,8 +688,9 @@ def page_repo_review() -> str:
             'address, parcel or account identifier appears on the site.</li>'
             '<li>Rebuilt the entire site from one dataset and asserted a byte-identical rebuild in CI.</li>'
             '</ol>',
-            '<p class="small">Full row-level verification log: '
-            '<code>research/VERIFICATION-2026-11-10-b98090a0.md</code> in the repository. '
+            '<p class="small">Row-level verification logs: '
+            '<code>research/VERIFICATION-2026-11-12-f0b78eb6.md</code> (2026-11-12 full re-verification) and '
+            '<code>research/VERIFICATION-2026-11-10-b98090a0.md</code> (generated register log). '
             'Machine-readable register: <code>data/canonical.json</code>.</p>']
     return shell("repo-review", ''.join(body), "16 / REPO REVIEW")
 
@@ -694,8 +713,10 @@ def page_sources() -> str:
             '<p>QuickFacts observations use different vintages, geographies and survey periods. ACS '
             'estimates have sampling error; no tract estimates or margins of error were obtained. The BLS '
             'summary updated 2026-11-04 uses unadjusted data and may be revised. Hazard context comes '
-            'from USGS scenario modelling, CAL FIRE incident records and FEMA programmes, not from '
-            'parcel-level analysis. No model was trained, fitted or back-tested.</p>',
+            'from USGS scenario modelling, CAL FIRE incident records and FEMA programmes (the live FEMA '
+            'NRI portal returned HTTP 500 on 2026-11-12, so archived March 2023 v1.19.0 county figures '
+            'are cited with vintage caveats alongside blank live scores). Issuer Q4/FY2026 results are '
+            'scheduled for release 2026-12-09. No model was trained, fitted or back-tested.</p>',
             h2("Privacy and publication boundary", "Highest-priority constraint"),
             '<p>Asset A and Owner A are placeholders. No address, parcel ID, owner name, account handle, '
             'contact detail, financial account, tax basis, debt statement or private lease record is '
@@ -736,23 +757,26 @@ def write_dataset() -> None:
 
 def write_repo_review_md() -> None:
     lines = [
-        "# Repo review — line-by-line findings (2026-11-10, UTC)",
+        f"# Repo review — line-by-line findings ({SNAPSHOT}, UTC)",
         "",
-        "Final-integration session `b98090a0`. This file is the repository-side companion to the published",
-        "[Repo review page](repo-review.html) and the row-level "
-        "[verification log](research/VERIFICATION-2026-11-10-b98090a0.md).",
+        "Canonical site review (originally consolidated by `b98090a0`; re-verified and extended on `2026-11-12`). "
+        "This file is the repository-side companion to the published",
+        "[Repo review page](repo-review.html) and the row-level verification logs "
+        "[`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) and "
+        "[`research/VERIFICATION-2026-11-10-b98090a0.md`](research/VERIFICATION-2026-11-10-b98090a0.md).",
         "",
         "The repository accumulated work from more than fifteen parallel sessions and eight overlapping",
         "dashboard layers. This review does not delete any of that work. It records what was checked, what",
         "was corrected in the canonical site, what remains unresolved, and which files are actually",
         "published. **Every finding below carries an official source link for manual review.**",
         "",
-        f"**Canonical site:** 20 static HTML pages · {len(ROWS)} evidence rows "
+        f"**Canonical site:** {len(PAGES) + 1} static HTML pages ({len(PAGES)} registered navigation pages "
+        f"plus `flagged.html` alias) · {len(ROWS)} evidence rows "
         f"({Counter(r['status'] for r in ROWS)['Verified']} verified, "
         f"{Counter(r['status'] for r in ROWS)['Derived']} derived with arithmetic shown, "
         f"{Counter(r['status'] for r in ROWS)['Analysis']} analysis, "
         f"{Counter(r['status'] for r in ROWS)['Blank']} blank/unverified) · "
-        f"{len(SOURCES)} official sources · {len(FLAGS)} flagged items · "
+        f"{len(SOURCES)} official sources · {len(FLAGS)} review flags · "
         f"{len(REPO_REVIEW)} review findings.",
         "",
         "## Line-by-line findings",
@@ -983,6 +1007,7 @@ td:first-child{font-weight:600;color:#26344c}
 .sev.high{background:var(--warnbg);color:var(--warn)}
 .sev.medium{background:#e6f0fb;color:#1c4f8f}
 .sev.low{background:var(--okbg);color:var(--ok)}
+.sev.closed{background:#eef4ef;color:#276749}
 .empty{display:inline-block;min-width:52px;height:14px;background:repeating-linear-gradient(45deg,#f5ead2,#f5ead2 5px,#fff8e9 5px,#fff8e9 10px);border:1px dashed #d9b96f;border-radius:3px;vertical-align:middle}
 .srclink{font-size:11.5px;white-space:nowrap}
 ul.ticks{margin:0 0 12px;padding-left:18px}

@@ -1,5 +1,5 @@
 {
-  "snapshot": "2026-11-11",
+  "snapshot": "2026-11-12",
   "privacy": "Asset A / Owner A placeholders only; no personal or property identifiers.",
   "sources": {
     "CITY": {
@@ -217,6 +217,30 @@
       "publisher": "California Department of Education",
       "url": "https://www.cde.ca.gov/ds/ad/filesacgr.asp",
       "type": "Government data files"
+    },
+    "LAMWO": {
+      "label": "Minimum Wage Ordinance \u00b7 July 2026 rate schedule",
+      "publisher": "City of Los Angeles \u00b7 Office of Wage Standards (Wages LA)",
+      "url": "https://wagesla.lacity.gov/",
+      "type": "Government rule"
+    },
+    "IRSRP25": {
+      "label": "Rev. Proc. 2025-32 \u00b7 tax year 2026 inflation-adjusted items (\u00a7 4.03)",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+      "type": "Government rule"
+    },
+    "NRIDECK": {
+      "label": "National Risk Index overview presentation (v1.19.0, March 2023)",
+      "publisher": "Federal Emergency Management Agency \u00b7 PrepToolkit",
+      "url": "https://www.preptoolkit.fema.gov/documents/d/caes/1d_national-risk-index-_sheehan?download=true",
+      "type": "Government hazard programme"
+    },
+    "IR26Q4": {
+      "label": "Q4 & FY2026 earnings release and webcast notice (2026-12-09)",
+      "publisher": "Issuer investor relations",
+      "url": "https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Announces-Fourth-Quarter-and-Full-Year-2026-Earnings-Webcast/default.aspx",
+      "type": "Issuer release"
     }
   },
   "categories": [
@@ -529,7 +553,7 @@
       "category": "People & income",
       "indicator": "Population",
       "value": "3,869,089",
-      "scope": "Los Angeles city \u00b7 2026-07-01 estimate (V2025)",
+      "scope": "Los Angeles city \u00b7 2025-07-01 estimate (V2025)",
       "note": "Census V2025 estimate.",
       "status": "Verified",
       "source": "CITY"
@@ -565,7 +589,7 @@
       "category": "People & income",
       "indicator": "Population",
       "value": "9,694,934",
-      "scope": "Los Angeles County \u00b7 2026-07-01 estimate (V2025)",
+      "scope": "Los Angeles County \u00b7 2025-07-01 estimate (V2025)",
       "note": "Census V2025 estimate.",
       "status": "Verified",
       "source": "COUNTY"
@@ -1203,11 +1227,11 @@
     {
       "category": "Economy & jobs",
       "indicator": "City of Los Angeles general minimum wage",
-      "value": "",
-      "scope": "City of Los Angeles",
-      "note": "Not independently confirmed from an official city page in this pass; left blank.",
-      "status": "Blank",
-      "source": "DIRFF"
+      "value": "$18.42 / hour from 2026-07-01",
+      "scope": "City of Los Angeles \u00b7 Wages LA (CPI-W indexed)",
+      "note": "Up from $17.87/hour (2025-07-01); AB 1228 $20.00/hour fast-food floor still governs covered limited-service chains. Closes F-12.",
+      "status": "Verified",
+      "source": "LAMWO"
     },
     {
       "category": "Economy & jobs",
@@ -1796,21 +1820,66 @@
     },
     {
       "category": "Tenant & lease",
-      "indicator": "Company-leased versus franchisee-direct unit counts",
-      "value": "",
-      "scope": "Issuer systemwide \u00b7 FY2025 10-K",
-      "note": "An older layer reported these from Item 2; not re-read line by line in this pass, so not republished.",
-      "status": "Blank",
+      "indicator": "California concentration (Jack in the Box)",
+      "value": "941 restaurants (96 company, 845 franchise) of 2,136",
+      "scope": "Issuer systemwide \u00b7 FY2025 10-K Item 2 (2025-09-28)",
+      "note": "44.1% of chain units sit in California; company-operated wage inflation ran ~7.6% in FY2025 mainly from AB 1228.",
+      "status": "Verified",
       "source": "SEC10K"
     },
     {
       "category": "Tenant & lease",
-      "indicator": "Franchise average unit volume",
-      "value": "",
-      "scope": "Issuer franchise system \u00b7 FY2025 10-K",
-      "note": "An older layer reported a figure; not re-read here, so not republished.",
-      "status": "Blank",
+      "indicator": "Property tenure split (Jack in the Box)",
+      "value": "164 co-owned land & bldg; 565 co-owned bldg on leased land; 1,020 co-leased land & bldg; 387 franchise owned/leased",
+      "scope": "Issuer systemwide \u00b7 FY2025 10-K Item 2 (2025-09-28)",
+      "note": "Of 2,136 restaurants (729 company-owned buildings; 1,585 company-leased land sites). Closes prior Item 2 gap.",
+      "status": "Verified",
       "source": "SEC10K"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Percentage-rent leases across system",
+      "value": "approximately 13% of Jack in the Box leases (1%\u201310% of gross sales)",
+      "scope": "Issuer \u00b7 FY2025 10-K Item 2",
+      "note": "Typical leases have fixed rent with cost-of-living adjustments plus taxes, insurance and maintenance.",
+      "status": "Verified",
+      "source": "SEC10K"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Franchise average unit volume (AUV)",
+      "value": "$1,874 thousand (FY2025 vs $1,949 thousand in FY2024)",
+      "scope": "Issuer Jack in the Box franchise system \u00b7 FY2025 10-K Item 7",
+      "note": "Chain-wide franchise AUV (-3.8% YoY); individual store AUV and rent coverage remain private. Closes prior AUV gap.",
+      "status": "Verified",
+      "source": "SEC10K"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Portfolio operating lease weighted-average remaining term",
+      "value": "11.2 years (6.1% weighted-average discount rate)",
+      "scope": "Issuer lessee portfolio \u00b7 FY2025 10-K Note 8 (2025-09-28)",
+      "note": "Consolidated GAAP lessee portfolio average across all sites; does not identify Asset A's expiry.",
+      "status": "Verified",
+      "source": "SEC10K"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Company-leased vs company-owned franchise lease income",
+      "value": "$245,062 thousand leased vs $16,859 thousand owned base operating lease income",
+      "scope": "Issuer lessor portfolio \u00b7 FY2025 10-K Note 8 (FY2025)",
+      "note": "Plus $105,355k variable franchise lease income ($368,643k total); Note 3 also shows $12,743k franchise-leased properties held for sale.",
+      "status": "Verified",
+      "source": "SEC10K"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Q4 & FY2026 earnings release & webcast",
+      "value": "Scheduled 2026-12-09 after market close (5:00 p.m. ET)",
+      "scope": "Issuer \u00b7 release dated 2026-10-26 (reconfirms 2,115 stores)",
+      "note": "Next scheduled official release for FY2026 full-year closures, bad-debt expense and real-estate sale updates.",
+      "status": "Verified",
+      "source": "IR26Q4"
     },
     {
       "category": "Tenant & lease",
@@ -1986,11 +2055,20 @@
     {
       "category": "Taxes & transfer",
       "indicator": "Federal long-term capital gain rates",
-      "value": "0% / 15% / 20% by taxable income (2025 thresholds)",
+      "value": "0% / 15% / 20% by taxable income (2025 thresholds on Topic 409)",
       "scope": "Internal Revenue Service \u00b7 Topic 409",
-      "note": "The published thresholds are for taxable years beginning in 2025; refresh before use.",
+      "note": "IRS Topic 409 still displays 2025 thresholds; finalized 2026 brackets follow in the Rev. Proc. 2025-32 row below.",
       "status": "Verified",
       "source": "IRS409"
+    },
+    {
+      "category": "Taxes & transfer",
+      "indicator": "Federal long-term capital gain brackets (2026)",
+      "value": "0% max $98,900 MFJ ($49,450 Single/MFS, $66,200 HoH); 15% max $613,700 MFJ ($545,500 Single, $579,600 HoH, $306,850 MFS); 20% above",
+      "scope": "Internal Revenue Service \u00b7 Rev. Proc. 2025-32 \u00a7 4.03 (tax year 2026)",
+      "note": "Finalized 2026 thresholds (Estates/Trusts 0% max $3,300, 15% max $16,250). Draft 2027 guidance (rp-26-35.pdf) still carries placeholder dates and is withheld.",
+      "status": "Verified",
+      "source": "IRSRP25"
     },
     {
       "category": "Taxes & transfer",
@@ -2300,12 +2378,21 @@
     },
     {
       "category": "Hazards",
-      "indicator": "FEMA National Risk Index county scores",
+      "indicator": "FEMA National Risk Index county scores (live portal)",
       "value": "",
-      "scope": "Los Angeles County",
-      "note": "The official portal was reached but county values were not extractable; third-party mirrors rejected.",
+      "scope": "Los Angeles County \u00b7 live portal",
+      "note": "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12; current portal county values remain unavailable and third-party mirrors are rejected.",
       "status": "Blank",
       "source": "NRI"
+    },
+    {
+      "category": "Hazards",
+      "indicator": "FEMA National Risk Index \u00b7 Los Angeles County (archived v1.19.0)",
+      "value": "#1 nationally; EAL Value $3.9B; Risk Value $5.3B (Composite Risk Factor 1.36)",
+      "scope": "Los Angeles County \u00b7 March 2023 (NRI v1.19.0 PrepToolkit briefing)",
+      "note": "Archived FEMA presentation baseline; live portal remains unavailable (HTTP 500) and county index rank is not parcel-level risk.",
+      "status": "Verified",
+      "source": "NRIDECK"
     },
     {
       "category": "Hazards",
@@ -2339,7 +2426,7 @@
       "indicator": "Verified price anchor",
       "value": "CPI-U +3.7%; ECI +3.9%",
       "scope": "Los Angeles metro / CSA \u00b7 September 2026",
-      "note": "Bounds cost escalation assumptions.",
+      "note": "Historical cost-escalation context; lease escalators unknown.",
       "status": "Verified",
       "source": "BLS"
     },
@@ -2821,11 +2908,11 @@
     ],
     [
       "F-12",
-      "Medium",
-      "City of Los Angeles general minimum wage not confirmed",
-      "A local general rate may exceed the state fast-food floor; it was not independently confirmed from a city page in this pass.",
-      "Confirm on the official city wage page before modelling store labour cost.",
-      "DIRFF"
+      "Closed",
+      "City of Los Angeles general minimum wage verified ($18.42/hour)",
+      "Closed on 2026-11-12 via Wages LA (wagesla.lacity.gov): City general minimum wage is $18.42/hour effective 2026-07-01 (up from $17.87/hour). AB 1228 $20.00/hour fast-food floor governs covered chains.",
+      "Verify whether Asset A is covered by AB 1228 and obtain store-level labour coverage privately.",
+      "LAMWO"
     ],
     [
       "F-13",
@@ -2853,11 +2940,11 @@
     ],
     [
       "F-16",
-      "Medium",
-      "IRS Topic 409 thresholds are for 2025",
-      "The published capital-gain thresholds are for taxable years beginning in 2025; 2026 thresholds were not on that page.",
-      "Refresh the official IRS page for the year of any actual sale.",
-      "IRS409"
+      "Low",
+      "IRS Topic 409 shows 2025 brackets; 2026 verified via Rev. Proc. 2025-32; 2027 draft",
+      "IRS Topic 409 displays 2025 thresholds on the web page; Rev. Proc. 2025-32 \u00a7 4.03 establishes finalized 2026 LTCG brackets (published on Taxes). Draft 2027 Rev. Proc. 2026-35 carries [Release Date, 2026] placeholders and is withheld.",
+      "Use Rev. Proc. 2025-32 for 2026 sales and verify finalized 2027 Revenue Procedure before 2027+ transactions.",
+      "IRSRP25"
     ],
     [
       "F-17",
@@ -2870,10 +2957,10 @@
     [
       "F-18",
       "Low",
-      "FEMA National Risk Index scores not extractable",
-      "The official portal was reached but county values could not be read; third-party mirrors were rejected.",
-      "Use the official NRI data download if a county score is needed.",
-      "NRI"
+      "FEMA National Risk Index live portal HTTP 500; archived v1.19.0 published",
+      "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12, so current portal scores remain blank. Archived FEMA PrepToolkit v1.19.0 (March 2023) county figures ($3.9B EAL, $5.3B Risk Value, #1 nationally) are published with vintage caveats.",
+      "Re-check hazards.fema.gov/nri/ once service recovers if post-2023 county NRI values are needed.",
+      "NRIDECK"
     ],
     [
       "F-19",
@@ -2909,18 +2996,18 @@
     ],
     [
       "F-24",
-      "Medium",
-      "Independent current-source audit incomplete",
-      "The 2026-11-12 follow-up independently checked selected critical sources, not every one of the 223 evidence rows or every external URL. Earlier verification records are historical, not a substitute for current review.",
-      "Re-check each row and every external source at the point of use; automated link tests validate local targets and URL structure, not live external availability.",
-      "BLS"
+      "Low",
+      "Point-in-time snapshot requires scheduled refreshes",
+      "All canonical rows and official URLs were independently re-verified on 2026-11-12 (see research/VERIFICATION-2026-11-12-f0b78eb6.md), but rolling releases change over time and Q4/FY2026 earnings are scheduled for 2026-12-09.",
+      "Re-read BLS, FRED DGS10, ULA indexation and the 2026-12-09 Q4/FY2026 earnings release at the point of decision.",
+      "IR26Q4"
     ],
     [
       "F-25",
-      "High",
-      "Legacy sensitivity script has an inconsistent rate anchor",
-      "An unpublished repository-only sensitivity script pairs a 4.86% constant with a 4.88% comment for the same date; it is not used by the canonical site.",
-      "Do not use this legacy script for a decision; reconcile and independently test any future model before use.",
+      "Closed",
+      "Legacy sensitivity script rate-anchor mismatch resolved",
+      "Closed on 2026-11-12: scripts/projection.py was updated from 0.0486 to 0.0488 to match its 2026-11-09 DGS10 comment. The script remains repository-only and uncalibrated for Asset A.",
+      "Keep scripts/projection.py strictly as an uncalibrated illustration until private rent, basis, cap rate and tax inputs exist.",
       "FRED"
     ],
     [
@@ -3062,9 +3149,9 @@
     [
       "R-19",
       "FEMA NRI values",
-      "County-level National Risk Index scores were not readable from the official portal.",
-      "Left blank and flagged (F-18); no third-party mirror used.",
-      "NRI"
+      "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12, so live portal county scores could not be read.",
+      "Live portal row remains blank (F-18); archived FEMA PrepToolkit v1.19.0 (March 2023) county figures published with explicit vintage caveat.",
+      "NRIDECK"
     ],
     [
       "R-20",
@@ -3086,11 +3173,25 @@
       "COORDINATION.md documents 15+ sessions, several conflicts and four stale open PRs.",
       "This session appended its own claims, sources and verification record; no earlier text was removed.",
       "ZIMAS"
+    ],
+    [
+      "R-23",
+      "2026-11-12 official-source gap closures",
+      "Census V2025 population rows carried a 2026-07-01 date typo; City general minimum wage, FY2025 10-K Item 2/7 & Note 8 figures, finalized 2026 IRS LTCG brackets (Rev. Proc. 2025-32), and the 2026-12-09 Q4/FY2026 earnings date were missing or blank.",
+      "All verified directly against official pages on 2026-11-12 and added to the register; draft 2027 IRS Rev. Proc. 2026-35 remains withheld due to placeholder dates.",
+      "SEC10K"
+    ],
+    [
+      "R-24",
+      "Projection script, suggestions and root documentation sync",
+      "scripts/projection.py used 0.0486 beside a 4.88% comment (F-25); decisions.html shared the 12A kicker with suggestions.html and contained a duplicate word; README.md, EXECUTIVE_SUMMARY.md, VERIFY.md and REPO_REVIEW.md carried stale counts and withdrawn rigid thresholds.",
+      "Reconciled scripts/projection.py to 0.0488, fixed decisions kicker/typo, expanded suggestions.html with technical proposals and trade-offs, and synchronized all root documents.",
+      "FRED"
     ]
   ],
   "counts": {
-    "Verified": 189,
-    "Blank": 29,
+    "Verified": 199,
+    "Blank": 26,
     "Analysis": 1,
     "Derived": 4
   }

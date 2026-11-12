@@ -4,7 +4,7 @@
 the owner to expire between 2030 and 2035.
 **Question:** sell before expiry, or renew?
 **Owner's objective:** preserve capital *and* retain growth optionality at a manageable level of risk.
-**Evidence snapshot:** 2026-11-11. **Full record:** `research/VERIFICATION-2026-11-11-1f62010a.md`.
+**Evidence snapshot:** 2026-11-12. **Full record:** [`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) (see also [`suggestions.html`](https://wingbangboozle1-lang.github.io/Jack3/suggestions.html) for proposed improvements).
 **Published dashboard:** <https://wingbangboozle1-lang.github.io/Jack3/>
 
 > **Privacy.** The asset is published as *Asset A*. No address, parcel number, owner name, contact detail, rent roll,
@@ -17,29 +17,29 @@ the owner to expire between 2030 and 2035.
 
 ## 1. Recommendation
 
-> **Run both tracks at once: start a confidential sale process 24–36 months before the earliest expiry, and demand the
-> tenant's renewal terms in writing. Convert to whichever the documents support — a verified after-tax sale, or an
-> enforceable extension of ten years or more at market rent with acceptable credit. What is not defensible is allowing
-> a 2030–2035 option clock to run out on regional averages alone.**
+> **Verify lease dates and notice rights privately now, then prepare confidential sale market testing and a written
+> renewal track on a timeline the lease documents support. Choose only after comparing documented after-tax bids with
+> enforceable renewal terms and downside risks; no minimum extension term or fixed marketing deadline is established.
+> What is not defensible is allowing an unverified 2030–2035 window to drift on regional averages alone.**
 
 This is analyst judgement on verified public evidence plus the owner's stated facts. It is **not** a valuation, an
 appraisal, a tax opinion or personalised investment advice, and it does not assume a price, rent or cap rate.
 
 **Why the sale track leads:** city and county population are below their 2020 estimates bases, metro payroll
 growth is modest, the tenant is contracting and is itself selling real estate, and the owner's principal risk is a
-single-tenant vacancy at an unknown future date. Marketing while the income is contractual keeps the owner's options open; waiting transfers the timing
-decision to the tenant.
+single-tenant vacancy at an unknown future date. Marketing while income remains contractual preserves options;
+waiting without checking notice windows transfers timing leverage to the tenant.
 
 **Why the renewal track runs in parallel:** an extension can convert a shortening income stream into a longer one and
-can widen the buyer pool. If the tenant will commit in writing, the owner can choose between two priced
-alternatives instead of one. The discipline is that only a **signed, enforceable, credit-supported** extension counts.
+may broaden buyer demand, though neither effect is guaranteed. If the tenant commits in writing, the owner can compare
+two priced alternatives instead of one. Only a **signed, enforceable, credit-supported** amendment counts.
 
 ### Decision matrix
 
 | Route | Trigger that makes it correct | Dominant risk | Verdict |
 |---|---|---|---|
 | **Sell with a §1031 replacement identified** | A documented, after-tax bid that beats the risk-adjusted hold case, with a replacement in sight | Replacement-asset risk; price risk if marketed late | **Primary track** |
-| **Extend, then sell or hold** | Tenant offers ≥10 years at market rent, credit-supported, on acceptable expense terms | Concessions; locking poor economics; no guaranteed cap-rate benefit | **Run in parallel; act only on signed terms** |
+| **Extend, then sell or hold** | Tenant offers an enforceable extension on acceptable term, credit, market rent and expense allocation | Concessions; locking poor economics; no guaranteed cap-rate benefit | **Run in parallel; act only on signed terms** |
 | **Hold to expiry unchanged** | Contractual income, adequate reserves and verified insurance cover | Expiry vacancy, tenant default, capital calls at the worst moment | **Reject as a plan** |
 | **Re-tenant / reposition** | Verified alternate demand and permitted use justify vacancy and build-out | Downtime, incentives, entitlement, construction cost | Fallback only |
 | **Redevelop / ground lease** | Independently costed residual land value beats the existing-use value | Permitting, environmental, financing | Not the wealth-preservation route |
@@ -47,57 +47,66 @@ alternatives instead of one. The discipline is that only a **signed, enforceable
 
 ### What would change this recommendation
 
-1. A **signed extension** at market rent with acceptable credit — this would move the hold/extend route to the front.
-2. A **verified after-tax bid** that clearly exceeds the hold case.
-3. **Block-level evidence** that this specific trade area is growing: the city and county aggregates published here
-   cannot show that.
+1. A **signed extension** comparing term, rent, credit, concessions and expenses — no minimum years is fixed in advance.
+2. A **verified after-tax bid** that clearly exceeds the risk-adjusted hold case.
+3. **Block-level evidence** that this specific trade area is growing: city and county aggregates cannot show that.
 4. A change in the **owner's liquidity needs or risk tolerance**, which is private information not modelled here.
 
 ---
 
 ## 2. The findings that drive the decision
 
-Every figure below was re-read from the linked publisher page on 2026-11-11.
+Every figure below was re-read from the linked publisher page on 2026-11-12.
 
 **1. The tenant is contracting, and closure timing is tied to franchise-agreement dates.**
 Jack in the Box reports system same-store sales of **−1.1%** and systemwide sales **−1.4%** for the quarter ended
 2026-07-05, with **17 closures and 4 openings**, leaving **2,115** restaurants (149 company, 1,966 franchise). Franchise-
-level margin fell to **37.4%** from 39.3%, driven by lower rent and royalty revenue and **higher bad-debt expense**. The
-2025 "JACK on Track" plan closes **150–200 underperforming restaurants**, with the balance closing "based upon
-respective franchise agreement termination dates", and guides to roughly **1% of system units closing annually from
-FY2026". The same plan **sells selected owned real estate** to pay down debt — which adds competing supply of
-Jack-branded net-lease assets. → [Q3 FY2026 release](https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Inc--Reports-Third-Quarter-2026-Earnings/default.aspx) ·
+level margin fell to **37.4%** from 39.3%, driven by lower rent and royalty revenue and **higher bad-debt expense**.
+In its FY2025 Form 10-K (period ended 2025-09-28), **941 of 2,136** restaurants (**44.1%**) sit in California (96 company,
+845 franchise), **1,585** sit on company-leased land, approximately **13%** carry percentage rent (`1%–10%` of gross sales),
+franchise AUV slipped to **$1,874 thousand** (from `$1,949` thousand in FY2024), and the consolidated lessee portfolio
+averages **11.2 years** remaining term at a `6.1%` discount rate. The 2025 "JACK on Track" plan closes **150–200
+underperforming restaurants**, with the balance closing "based upon respective franchise agreement termination dates",
+and guides to roughly **1% of system units closing annually from FY2026**. The same plan **sells selected owned real
+estate** (`$12,743` thousand franchise-leased properties held for sale at FY2025 year-end) to pay down debt. Next Q4 and
+FY2026 results are scheduled after market close on **2026-12-09**. →
+[Q3 FY2026 release](https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm) ·
+[FY2025 Form 10-K](https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm) ·
+[Q4 FY2026 webcast notice](https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Announces-Fourth-Quarter-and-Full-Year-2026-Earnings-Webcast/default.aspx) ·
 [JACK on Track](https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx)
 
 > This is chain-level evidence. It does **not** establish this restaurant's sales, rent coverage, franchise term or
 > renewal intention, and it must not be read as a closure probability for this site.
 
-**2. Regional demand is flat to declining.** LA city population **3,869,089**, **−0.8%** from the 2020 estimates base;
-LA County **−3.2%**. Poverty **16.5%**; median household income **$81,939** (2024 dollars); 36.0% owner-occupied
+**2. Regional demand is flat to declining.** LA city population **3,869,089** (`2025-07-01`, V2025), **−0.8%** from the 2020 estimates base;
+LA County **9,694,934**, **−3.2%** (CA DOF revised `2025-07-01` estimate: `9,853,435`, `−0.45%` YoY). City poverty **16.5%**; median household income **$81,939** (2024 dollars); 36.0% owner-occupied
 housing. → [Census QuickFacts, LA city](https://www.census.gov/quickfacts/losangelescitycalifornia) ·
-[LA County](https://www.census.gov/quickfacts/losangelescountycalifornia)
+[LA County](https://www.census.gov/quickfacts/losangelescountycalifornia) ·
+[CA DOF](https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/July2025_Population_Estimates_Feb26_release.pdf)
 
 **3. Job growth is thinner than costs.** Metro nonfarm payrolls **+0.5%** year over year (September 2026), with
 education & health **+3.8%** and information **−5.7%**; unemployment 4.5% city and county, 4.4% metro; CPI-U **+3.7%**
 and ECI **+3.9%**; average weekly wage **$1,704** (Q1 2026). → [BLS LA summary, updated 2026-11-04](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf)
 
-**4. The statutory wage floor pressures tenant economics.** Covered fast-food employees are paid at least **$20.00/hour** (AB 1228, from
-2024-04-01); the state minimum is **$16.90/hour** from 2026-01-01. A fixed-escalator lease does not pass this through to
-the landlord — it passes it to the tenant's margin, and therefore to renewal willingness. →
+**4. Statutory wage floors pressure tenant economics.** Covered fast-food employees are paid at least **$20.00/hour** (AB 1228, from
+2024-04-01); the City of Los Angeles general minimum wage is **$18.42/hour** effective **2026-07-01**; the statewide minimum is **$16.90/hour** from 2026-01-01 (company wage inflation ran ~7.6% in FY2025 primarily from AB 1228). A fixed-escalator lease passes this cost to the tenant's margin, and therefore to renewal willingness. →
 [DIR fast food FAQ](https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm) ·
+[City Wages LA](https://wagesla.lacity.gov/) ·
 [DIR minimum wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm)
 
 **5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **4.88%** on 2026-11-09 —
-a market anchor, not the owner's required return. A sale inside the City of Los Angeles pays a **0.45%** city base transfer tax, a **0.11%** county
+a dated market anchor, not a mandatory discount-rate floor or property cap rate. A sale inside the City of Los Angeles pays a **0.45%** city base transfer tax, a **0.11%** county
 documentary transfer tax, plus **Measure ULA at 4% above $5,400,000 and 5.5% at or above $10,900,000** for closings after 2026-06-30 (ULA is
 measured on gross value; the base tax on value net of liens; thresholds indexed to Chained CPI). Property tax is a
 **1%** general levy with a **2%** annual assessed-value cap, reassessed on change of ownership. California taxes capital
-gains as **ordinary income**; federal long-term rates are **0/15/20%** with a **25%** maximum on unrecaptured §1250 gain;
+gains as **ordinary income**; federal long-term rates are **0/15/20%** (2026 brackets finalized under Rev. Proc. 2025-32 § 4.03: 0% up to `$98,900` MFJ / `$49,450` Single; 15% up to `$613,700` MFJ / `$545,500` Single) with a **25%** maximum on unrecaptured §1250 gain;
 **§1031** defers — and does not eliminate — the gain on real property held for investment. →
 [LA County Assessor · Prop 13](https://assessor.lacounty.gov/real-estate-toolkit/proposition-13) ·
 [City of LA Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) ·
 [LA County documentary transfer tax](https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info) ·
-[IRS Topic 409](https://www.irs.gov/taxtopics/tc409) · [IRS §1031](https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips) ·
+[IRS Topic 409](https://www.irs.gov/taxtopics/tc409) ·
+[IRS Rev. Proc. 2025-32](https://www.irs.gov/pub/irs-drop/rp-25-32.pdf) ·
+[IRS §1031](https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips) ·
 [CA FTB](https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html) ·
 [FRED DGS10](https://fred.stlouisfed.org/series/DGS10)
 
@@ -170,9 +179,8 @@ been inferred or filled in. The full list, with the official page that could clo
 [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack3/review.html) page.
 
 Known open items include: the executed lease and exact expiry; the legal tenant, guarantor and any franchisee
-obligation; store-level sales, rent coverage and arrears; the parcel's zoning and hazard overlays; effective insurance
-terms. The county transfer-tax and district graduation gaps were closed from official pages on 2026-11-11; school
-assignment and campus-level performance remain unverified.
+obligation; store-level sales, rent coverage and arrears; the parcel's zoning and hazard overlays (note `hazards.fema.gov/nri/` returned HTTP 500 on 2026-11-12, while archived March 2023 NRI v1.19.0 LA County context is cited with vintage caveats); effective insurance
+terms; and school assignment / campus-level performance. Previously flagged gaps for LA County transfer tax, LAUSD graduation rates, City of LA general minimum wage (`$18.42/hour` effective 2026-07-01), FY2025 Form 10-K property/AUV/lease-term disclosures, finalized 2026 federal LTCG thresholds (`Rev. Proc. 2025-32`), and the `scripts/projection.py` `4.88%` anchor reconciliation were closed from official pages through 2026-11-12.
 
 ---
 
@@ -180,13 +188,13 @@ assignment and campus-level performance remain unverified.
 
 - **Official sources only** for published values: U.S. Census Bureau, Bureau of Labor Statistics, Federal Reserve,
   California DIR, California Department of Education, California FTB, LA County Assessor and Registrar-Recorder,
-  City of Los Angeles Office of Finance, SCAG, LA Metro, CAL FIRE, USGS, FEMA, IRS, and Jack in the Box Inc. issuer
-  releases.
+  City of Los Angeles Office of Finance and Office of Wage Standards, SCAG, LA Metro, CAL FIRE, USGS, FEMA (including PrepToolkit), IRS, and Jack in the Box Inc. issuer
+  SEC filings and releases.
 - **Verified** means the publisher reports the observation — never that it predicts this property. **Analysis** rows are
   labelled reasoning. **Unverified** rows contain no value.
 - No property model was trained, back-tested or calibrated; no numerical property forecast or renewal
-  probability is published. Break-even tables use disclosed, unverified cap-rate and growth assumptions as analysis;
+  probability is published. Break-even tables in `scripts/projection.py` use disclosed, unverified cap-rate and growth assumptions as analysis;
   they are not asserted market values. SCAG's own 2030 figures are identified as official planning-model outputs, not as our
   forecast. Compounding a 2020–2025 change forward is arithmetic, not evidence, and is not presented as a projection.
 - No personal information is published, and no attempt was made to identify the owner, the parcel or any individual.
-- Sources are rolling documents and can be revised after 2026-11-11. Re-check before acting.
+- Sources are rolling documents and can be revised after 2026-11-12 (next scheduled issuer Q4/FY2026 earnings release: 2026-12-09). Re-check before acting.
