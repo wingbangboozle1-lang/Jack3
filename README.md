@@ -11,11 +11,10 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 ## Start here
 
 - [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks.
-- [Line-by-line verification](research/VERIFICATION-2026-11-11-d644184d.md) — 223 canonical rows, with row-level dispositions and 36 official/issuer sources (full audit dated 2026-11-11).
-- [2026-11-12 targeted integration review](research/VERIFICATION-2026-11-12-ec869c7c.md) — subsequent changes, material checks and review limitations; it does not claim a fresh re-verification of all 223 rows.
+- [Line-by-line verification (2026-11-12)](research/VERIFICATION-2026-11-12-f0b78eb6.md) — full re-verification across all 230 canonical rows and 40 official/issuer sources, plus closed minimum-wage, 10-K, 2026 LTCG, and FEMA NRI updates (extending [2026-11-11](research/VERIFICATION-2026-11-11-d644184d.md) and [2026-11-12 targeted review](research/VERIFICATION-2026-11-12-ec869c7c.md)).
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
-- [Flagged for Review](review.html) — unresolved items and source irregularities.
+- [Flagged for Review](review.html) — unresolved items, closed checks and source irregularities.
 
 ## Recommendation
 
@@ -27,17 +26,17 @@ Verify lease dates and notice rights privately now; prepare sale and renewal tra
 |---|---|
 | [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Clean landing page, eight evidence categories, analysis pages and governance pages |
 | [Executive summary](executive-summary.html) | Recommendation, decision matrix, six driving findings, risk balance, and what stays blank |
-| [Suggestions to review](suggestions.html) | Proposed improvements and trade-offs for review before implementation |
-| [Questions & answers](questions.html) | Evidence-backed answers, unknowns, discovery routes, and decision implications |
+| [Suggestions to review](suggestions.html) | Proposed workflow, site, data and model improvements with trade-offs before implementation |
+| [Questions & answers](questions.html) | 16 Q&A rows covering evidence-backed answers, unknowns, discovery routes and consequences |
 | [All entries & findings](master.html) | Every published row in one source-linked table |
-| [Flagged for Review](review.html) | Every unverified value, conflict and irregularity, published for manual review |
+| [Flagged for Review](review.html) | Every unverified value, conflict, closed item and irregularity, published for manual review |
 | [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
-| [Line-by-line verification record](research/VERIFICATION-2026-11-11-d644184d.md) | 223-row canonical disposition register; independent official-source review dated 2026-11-11, plus corrections and gaps |
-| [Sources & method](sources.html) | 36 official sources, verification standard and privacy boundary |
+| [Line-by-line verification record](research/VERIFICATION-2026-11-12-f0b78eb6.md) | 230-row canonical disposition register; independent official-source re-verification dated 2026-11-12 |
+| [Sources & method](sources.html) | 40 official sources, verification standard and privacy boundary |
 
 ## Build and verify
 
-22 static HTML pages (including the `flagged.html` alias) plus `assets/style.css`, for a 23-file Pages artifact. Every table body row carries an official source link; every
+22 static HTML pages (21 shared-navigation pages plus the `flagged.html` alias) plus `assets/style.css`, for a 23-file Pages artifact. Every table body row carries an official source link; every
 unconfirmed value is an **empty cell** and appears on *Flagged for Review*. No JavaScript, forms, analytics,
 third-party assets, owner identifiers, addresses or parcel numbers.
 
@@ -45,25 +44,25 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 |---|---|---|
 | Overview / dashboard | `/` | Conditional recommendation, six verified anchors, risk balance, navigation |
 | Executive summary | `/executive-summary.html` | Decision, findings, matrix, evidence gates, what stays blank |
-| Suggestions for review | `/suggestions.html` | Proposed improvements, trade-offs, and decision criteria before implementation |
-| All entries & findings | `/master.html` | 223-row master register, grouped by category |
+| All entries & findings | `/master.html` | 230-row master register, grouped by category |
 | Geography | `/geography.html` | City / county scale; every parcel-level gap flagged |
 | People & income | `/demographics.html` | Population, households, income, poverty, education, spending capacity |
 | Economy & jobs | `/economy.html` | Employment, wages, prices, output, rates, official long-range forecasts |
 | Schools | `/schools.html` | LAUSD scale, graduation outcomes, attendance-boundary gap |
-| Tenant & lease | `/tenant.html` | Issuer SEC filings, closure programme, missing executed lease |
-| Taxes & transfer | `/taxes.html` | Prop 13, transfer taxes, Measure ULA, capital gains, §1031 |
+| Tenant & lease | `/tenant.html` | Issuer SEC 10-K / 8-K filings, closure programme, Q4 trigger, missing executed lease |
+| Taxes & transfer | `/taxes.html` | Prop 13, transfer taxes, Measure ULA, 2025/2026 capital gains, §1031 |
 | Hazards | `/hazards.html` | Earthquake, wildfire, flood: official observations and scenarios |
 | Projection anchors | `/anchors.html` | Dated observations, official forecasts and withheld outputs |
 | Risk register | `/risk.html` | 24 business-as-usual and black-swan risks, with context sources |
 | Projection system | `/projections.html` | 13-step reproducible framework and the outputs deliberately withheld |
-| Questions & answers | `/questions.html` | Current answer, missing inputs, discovery path, and decision consequence |
+| Questions & answers | `/questions.html` | 16 Q&A rows covering answers, evidence gaps, discovery routes and consequences |
+| Suggestions to review | `/suggestions.html` | Proposed workflow, site, data and model enhancements with trade-offs |
 | Decision matrix | `/decisions.html` | Eight pathways, gates and the recommended sequence |
 | Model & method | `/model.html` | Verification standard, published arithmetic, monitoring checklist |
 | Evidence boundary | `/place.html` | What the site deliberately does not assert about Asset A |
-| Flagged for Review | `/review.html` (alias `/flagged.html`) | Unverified values, conflicts and irregularities |
+| Flagged for Review | `/review.html` (alias `/flagged.html`) | Unverified values, conflicts, closed checks and irregularities |
 | Repo review | `/repo-review.html` | Line-by-line inherited-layer findings |
-| Sources & method | `/sources.html` | Official source register, verification standard, privacy boundary |
+| Sources & method | `/sources.html` | 40 official sources, verification standard, privacy boundary |
 
 ## Build and verification
 

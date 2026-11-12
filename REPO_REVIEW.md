@@ -38,17 +38,17 @@ The only current public recommendation is the conditional dual track: confidenti
 See [`research/VERIFICATION-2026-11-10-1f62010a.md`](research/VERIFICATION-2026-11-10-1f62010a.md) for all 155 row-level checks and [`review.html`](review.html) for the public Flagged for Review register.
 
 <!-- b98090a0 canonical repo review: start -->
-# Repo review — line-by-line findings (2026-11-10, UTC)
+# Repo review — line-by-line findings (2026-11-12, UTC)
 
-Final-integration session `b98090a0`. This file is the repository-side companion to the published
-[Repo review page](repo-review.html) and the row-level [verification log](research/VERIFICATION-2026-11-10-b98090a0.md).
+Canonical site review (originally consolidated by `b98090a0`; re-verified and extended on `2026-11-12`). This file is the repository-side companion to the published
+[Repo review page](repo-review.html) and the row-level verification logs [`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) and [`research/VERIFICATION-2026-11-10-b98090a0.md`](research/VERIFICATION-2026-11-10-b98090a0.md).
 
 The repository accumulated work from more than fifteen parallel sessions and eight overlapping
 dashboard layers. This review does not delete any of that work. It records what was checked, what
 was corrected in the canonical site, what remains unresolved, and which files are actually
 published. **Every finding below carries an official source link for manual review.**
 
-**Canonical site:** 20 static HTML pages · 223 evidence rows (189 verified, 4 derived with arithmetic shown, 1 analysis, 29 blank/unverified) · 36 official sources · 25 flagged items · 22 review findings.
+**Canonical site:** 22 static HTML pages (21 registered navigation pages plus `flagged.html` alias) · 230 evidence rows (199 verified, 4 derived with arithmetic shown, 1 analysis, 26 blank/unverified) · 40 official sources · 25 review flags · 24 review findings.
 
 ## Line-by-line findings
 
@@ -72,10 +72,12 @@ published. **Every finding below carries an official source link for manual revi
 | R-16 | Population estimates disagree | Census V2025 and CA DOF February-2026 publish different LA County figures for 2025-07-01. | Both are published with agency and vintage labels; mixing them is prohibited (F-09). | [July 2025 population estimates · revised release 2026-02-04](https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/July2025_Population_Estimates_Feb26_release.pdf) |
 | R-17 | Minimum-wage 2027 figure | A 2027 rate appears in secondary commentary but not on the DIR page. | Left blank and flagged (F-11); only the official 2026 rate is published. | [Minimum Wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm) |
 | R-18 | USGS ShakeOut link repair | An earlier programme URL returned 404; the official report host serves the document. | The canonical source register uses the official report host; scenario figures were re-read there. | [The ShakeOut Scenario · USGS OFR 2008-1150](https://pubs.usgs.gov/of/2008/1150/) |
-| R-19 | FEMA NRI values | County-level National Risk Index scores were not readable from the official portal. | Left blank and flagged (F-18); no third-party mirror used. | [National Risk Index](https://hazards.fema.gov/nri/) |
+| R-19 | FEMA NRI values | hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12, so live portal county scores could not be read. | Live portal row remains blank (F-18); archived FEMA PrepToolkit v1.19.0 (March 2023) county figures published with explicit vintage caveat. | [National Risk Index overview presentation (v1.19.0, March 2023)](https://www.preptoolkit.fema.gov/documents/d/caes/1d_national-risk-index-_sheehan?download=true) |
 | R-20 | BEA measure mislabelling | Some inherited text treats $818.5bn as LA County GDP; the BEA release reports it as total personal income. | Corrected and flagged (F-17); the BEA metro-series discontinuation is published as a verified row. | [GDP by county and personal income by county, 2024 (BEA 26-08)](https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024) |
 | R-21 | Build determinism | Generated HTML was committed by multiple sessions with different generators, so a rebuild could silently change published files. | One generator now produces every published page; CI rebuilds and asserts a byte-identical diff. | [Los Angeles Area Economic Summary · updated 2026-11-04](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) |
 | R-22 | Coordination board | COORDINATION.md documents 15+ sessions, several conflicts and four stale open PRs. | This session appended its own claims, sources and verification record; no earlier text was removed. | [ZIMAS · planning and zoning information system](https://zimas.lacity.org/) |
+| R-23 | 2026-11-12 official-source gap closures | Census V2025 population rows carried a 2026-07-01 date typo; City general minimum wage, FY2025 10-K Item 2/7 & Note 8 figures, finalized 2026 IRS LTCG brackets (Rev. Proc. 2025-32), and the 2026-12-09 Q4/FY2026 earnings date were missing or blank. | All verified directly against official pages on 2026-11-12 and added to the register; draft 2027 IRS Rev. Proc. 2026-35 remains withheld due to placeholder dates. | [FY2025 Form 10-K (fiscal year ended 2025-09-28)](https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm) |
+| R-24 | Projection script, suggestions and root documentation sync | scripts/projection.py used 0.0486 beside a 4.88% comment (F-25); decisions.html shared the 12A kicker with suggestions.html and contained a duplicate word; README.md, EXECUTIVE_SUMMARY.md, VERIFY.md and REPO_REVIEW.md carried stale counts and withdrawn rigid thresholds. | Reconciled scripts/projection.py to 0.0488, fixed decisions kicker/typo, expanded suggestions.html with technical proposals and trade-offs, and synchronized all root documents. | [10-Year Treasury constant maturity yield (DGS10)](https://fred.stlouisfed.org/series/DGS10) |
 
 ## Layer map
 
