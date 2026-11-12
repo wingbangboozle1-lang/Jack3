@@ -1406,10 +1406,15 @@ Platform-fixed branch `arena/f0b78eb6-jack3` is used as assigned by the workspac
 |---|---|---|---|---|
 | F0B-01 | Full 2026-11-12 official-source re-verification (all canonical rows + 36 existing / 4 new official URLs), Census date typo fix, closure of City LA minimum wage (`wagesla.lacity.gov`), FY2025 10-K Item 2/7 & Note 8 rows, Rev. Proc. 2025-32 2026 LTCG brackets, FEMA NRI v1.19.0 vintage note, and 2026-12-09 Q4 release trigger | done | f0b78eb6 | `data/canonical_rows.py`, `data/canonical.json`, `research/VERIFICATION-2026-11-12-f0b78eb6.md`, `research/VERIFICATION-2026-11-10-b98090a0.md` |
 | F0B-02 | Reconcile `scripts/projection.py` (`0.0486` → `0.0488`), fix `scripts/build_canonical.py` (`decisions` kicker `12B /`, duplicate `"an an"`, dynamic `REPO_REVIEW.md` page count, expand `suggestions.html` with concrete site/evidence/model proposals + trade-offs), sync `README.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, and regenerate root `*.html` / `REPO_REVIEW.md` | done | f0b78eb6 | `scripts/projection.py`, `scripts/build_canonical.py`, `README.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `REPO_REVIEW.md`, root `*.html` |
-| F0B-03 | Run full local verification suite, open integration PR, confirm CI + Jekyll byte parity, merge and verify live Pages deployment | in progress | f0b78eb6 | `COORDINATION.md` (this section) |
+| F0B-03 | Run full local verification suite, open integration PR, confirm CI + Jekyll byte parity, merge and verify live Pages deployment | done | f0b78eb6 | `COORDINATION.md` (this section) |
 
 Explicitly excluded from this scope: `scripts/stage_pages.py`, `scripts/test_publication.py`, `scripts/validate.py`, `_config.yml`, and historical companion directories. Strict privacy boundary: Asset A / Owner A placeholders only; zero personal, parcel, account, or named issuer contact/officer details added (`tools/pii_scan.py` scanned 144 files, 0 findings; `validate.py`, `stage_pages.py`, `test_publication.py` 10/10, and legacy verifiers all pass).
 
+### Completion record — `f0b78eb6`
+
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/63 merged cleanly into `main` on 2026-11-12 as `354b400c3d6f959b8035c85765196dfce0bbade4`.
+- Pre-merge PR checks (`validate` run `43263037695`, `publication-integrity` run `43263037637`) and post-merge `main` runs (`Validate public research` run `43263198240` including Ruby `jekyll build` byte-parity check, `Public artifact regression tests` run `43263198326`, and `pages build and deployment` run `43263198311`) all succeeded.
+- GitHub Pages API confirmed `status: built` on `354b400c3d6f959b8035c85765196dfce0bbade4` (`2026-11-12T16:55:46Z`), and direct fetch of live `https://wingbangboozle1-lang.github.io/Jack3/`, `/suggestions.html`, `/decisions.html`, `/review.html`, and `/repo-review.html` verified updated 2026-11-12 content (`230` canonical rows, `40` official sources, `22` HTML pages + `assets/style.css`).
 
 ---
 
