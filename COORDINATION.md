@@ -1297,8 +1297,15 @@ artifact; any personal data discovered stays internal and out of the published s
 | ID | Task | Status | Owner | File scope |
 |---|---|---|---|---|
 | C-01 | Read coordination board, inspect current tree and identify non-overlapping task | **done** | `6356a8d1` | `COORDINATION.md` (this section) |
-| C-02 | Reconcile current README claims about canonical evidence row count, page count, and verification links against generated canonical register and current audit record; update only current-facing README text | **claimed** | `6356a8d1` | `README.md` |
-| C-03 | Run deterministic build, complete validation/publication gates, verify docs links and privacy; record results | **pending** | `6356a8d1` | read-only |
-| C-04 | PR, CI, merge and Pages confirmation for docs-only fix; record outcome | **pending** | `6356a8d1` | `COORDINATION.md` (this section), PR |
+| C-02 | Reconcile current README claims about canonical evidence row count, page count, and verification links against generated canonical register and current audit record; update only current-facing README text | **done** | `6356a8d1` | `README.md` |
+| C-03 | Run deterministic build, complete validation/publication gates, verify docs links and privacy; record results | **done** | `6356a8d1` | read-only |
+| C-04 | PR, CI, merge and Pages confirmation for docs-only fix; record outcome | **in progress** | `6356a8d1` | `COORDINATION.md` (this section), PR |
 
-**Scope rule:** no canonical data, generated HTML, other session files or stale/open PRs are claimed or modified. Counts and page inventory will be checked against `data/canonical.json` and the canonical builder; no external fact is being newly verified by this documentation correction. Privacy boundary remains Asset A / Owner A only.
+### C-02/C-03 results
+
+- Corrected README verification links to the latest current canonical disposition register (`research/VERIFICATION-2026-11-11-d644184d.md`), corrected the inventory to 21 HTML files plus CSS (22 staged files), and corrected the master-table count to 223 evidence rows / 36 official or issuer sources.
+- Cross-checked values against the parsed `data/canonical.json` (223 rows, 20 registered navigation pages, 36 sources), actual root HTML inventory (21 pages, including `flagged.html` alias), and `scripts/build_canonical.py` output.
+- Local gates: canonical build and `scripts/validate.py` PASS (223 rows, 22 files staged); projection script completed; `scripts/stage_pages.py` PASS; publication regression tests 8/8 PASS; `tools/check_site.py`, `tools/linkcheck.py`, and `tools/check_links.py` PASS; `tools/pii_scan.py` scanned 140 files with zero findings. README Markdown links checked locally; HTML output remained deterministic.
+- No external facts, property information or personal information were added. Existing evidence remains dated to its documented verification; no fresh official-source re-check is claimed in this documentation task.
+
+**Scope rule:** no canonical data, generated HTML, other session files or stale/open PRs are claimed or modified. Counts and page inventory were checked against `data/canonical.json` and the canonical builder. Privacy boundary remains Asset A / Owner A only.
