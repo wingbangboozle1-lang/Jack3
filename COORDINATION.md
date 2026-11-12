@@ -1391,3 +1391,7 @@ Scope clarification: canonical generation also updates `REPO_REVIEW.md`, which i
 
 - Follow-up board record rebased over PR #59 (`b22d29e`); an append-only conflict was resolved by preserving both completion records.
 - Follow-up rebased over PR #60 (`c1b4fc7`); both sessions’ append-only notes preserved.
+
+### C-02 inventory addendum — canonical Suggestions page integrated (2026-11-12)
+
+A concurrent integration (PR #58) added the public `suggestions.html` page and updated the conditional recommendation after PR #56. The canonical site inventory was cross-checked against `data/canonical.json` and the generated artifact: 21 registered pages plus the `flagged.html` alias, 22 HTML files and 23 staged files including CSS. The README lists Suggestions and Questions & Answers, the current artifact count, and distinguishes the 2026-11-11 full row-by-row audit from the 2026-11-12 targeted integration review (which does not claim all-row re-verification). All README Markdown links resolve locally. Canonical build, validate, stage, publication tests (10/10), site/link/official-host checks and privacy scan passed (143 files, zero findings). No evidence rows or generated HTML were edited by this addendum.
