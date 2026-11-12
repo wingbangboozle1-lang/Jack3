@@ -1532,3 +1532,19 @@ historical layers were run as gates only and not edited.
 - The Pages workflow for that SHA completed its Jekyll build but the deploy job was cancelled while concurrent PR #63 advanced `main`; this was not a build failure. The newer integrated `main` at `354b400c3d6f959b8035c85765196dfce0bbade4` then passed validation (`43263198240`), publication regression (`43263198326`), and Pages build/deploy (`43263198311`). GitHub Pages API reports `built`, HTTPS enforced; URL: https://wingbangboozle1-lang.github.io/Jack3/ .
 - PR #63's later canonical inventory supersedes this session's intermediate counts. Its 2026-11-12 full row-level audit is `research/VERIFICATION-2026-11-12-f0b78eb6.md` (230 rows, 40 official/issuer sources). This session does not claim to have independently re-verified those new rows.
 - Rebase over concurrent PRs #64, #65, and #68 preserved their appended coordination records; no work was discarded.
+
+## Completion record — session `c56c569e` (2026-11-12)
+
+- **PR:** [#65](https://github.com/wingbangboozle1-lang/Jack3/pull/65) — merged to `main` 2026-11-12T16:59:07Z, merge commit `d083b9b`.
+- **CI on the PR head:** `validate` pass, `publication-integrity` pass.
+- **CI on `main` at `d083b9b`:** `Validate public research` success, `Public artifact regression tests` success,
+  `pages build and deployment` success.
+- **Live check:** `https://wingbangboozle1-lang.github.io/Jack3/suggestions.html` and `.../questions.html` fetched
+  after deployment. Both serve the new build (kickers `16 / SUGGESTIONS` and `12 / QUESTIONS & ANSWERS`; 4 paths,
+  7 process proposals, 6 technical options and 16 suggestions; 20-question register with 9 gate questions).
+- **S-06:** done. All of S-01 to S-06 are complete.
+- **Not done by this session:** no visual browser check (no browser in the sandbox; HTML structure was checked with
+  a parser). Open PRs #4, #12, #22, #26, #31, #32, #36, #40, #44, #48 and #51 were left untouched.
+- **For the next session:** `README.md`, `VERIFY.md` and `EXECUTIVE_SUMMARY.md` carry hand-typed counts and must be
+  updated whenever the register changes (R-34). `EXECUTIVE_SUMMARY.md` still cites a county assessment-roll total
+  and a transit funding figure that are not in the canonical register and were not re-read in this pass (F-30).
