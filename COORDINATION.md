@@ -1395,3 +1395,17 @@ Scope clarification: canonical generation also updates `REPO_REVIEW.md`, which i
 ### C-02 inventory addendum — canonical Suggestions page integrated (2026-11-12)
 
 A concurrent integration (PR #58) added the public `suggestions.html` page and updated the conditional recommendation after PR #56. The canonical site inventory was cross-checked against `data/canonical.json` and the generated artifact: 21 registered pages plus the `flagged.html` alias, 22 HTML files and 23 staged files including CSS. The README lists Suggestions and Questions & Answers, the current artifact count, and distinguishes the 2026-11-11 full row-by-row audit from the 2026-11-12 targeted integration review (which does not claim all-row re-verification). All README Markdown links resolve locally. Canonical build, validate, stage, publication tests (10/10), site/link/official-host checks and privacy scan passed (143 files, zero findings). No evidence rows or generated HTML were edited by this addendum.
+---
+
+# Session `f0b78eb6` — full 2026-11-12 re-verification, gap closures, projection & suggestion updates
+
+Platform-fixed branch `arena/f0b78eb6-jack3` is used as assigned by the workspace environment; earlier board entries and historical open PRs (`#44`, `#48`, `#51`; `#59`–`#62` merged) are preserved untouched. Prior sessions `6356a8d1`, `ec869c7c`, and `89654da8` have completed and merged their code/artifact changes onto `main` (`a2d3e3a`).
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| F0B-01 | Full 2026-11-12 official-source re-verification (all canonical rows + 36 existing / 4 new official URLs), Census date typo fix, closure of City LA minimum wage (`wagesla.lacity.gov`), FY2025 10-K Item 2/7 & Note 8 rows, Rev. Proc. 2025-32 2026 LTCG brackets, FEMA NRI v1.19.0 vintage note, and 2026-12-09 Q4 release trigger | in progress | f0b78eb6 | `data/canonical_rows.py`, `data/canonical.json`, `research/VERIFICATION-2026-11-12-f0b78eb6.md`, `research/VERIFICATION-2026-11-10-b98090a0.md` |
+| F0B-02 | Reconcile `scripts/projection.py` (`0.0486` → `0.0488`), fix `scripts/build_canonical.py` (`decisions` kicker `12B /`, duplicate `"an an"`, dynamic `REPO_REVIEW.md` page count, expand `suggestions.html` with concrete site/evidence/model proposals + trade-offs), sync `README.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, and regenerate root `*.html` / `REPO_REVIEW.md` | in progress | f0b78eb6 | `scripts/projection.py`, `scripts/build_canonical.py`, `README.md`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `REPO_REVIEW.md`, root `*.html` |
+| F0B-03 | Run full local verification suite, open integration PR, confirm CI + Jekyll byte parity, merge and verify live Pages deployment | in progress | f0b78eb6 | `COORDINATION.md` (this section) |
+
+Explicitly excluded from this scope: `scripts/stage_pages.py`, `scripts/test_publication.py`, `scripts/validate.py`, `_config.yml`, and historical companion directories. Strict privacy boundary: Asset A / Owner A placeholders only; zero personal, parcel, account, or named issuer contact/officer details will be added.
+
