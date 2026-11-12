@@ -11,7 +11,8 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 ## Start here
 
 - [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks.
-- [Line-by-line verification (2026-11-12)](research/VERIFICATION-2026-11-12-f0b78eb6.md) — full re-verification across all 230 canonical rows and 40 official/issuer sources, plus closed minimum-wage, 10-K, 2026 LTCG, and FEMA NRI updates (extending [2026-11-11](research/VERIFICATION-2026-11-11-d644184d.md) and [2026-11-12 targeted review](research/VERIFICATION-2026-11-12-ec869c7c.md)).
+- [Generated row register (2026-11-12)](research/VERIFICATION-2026-11-12-c56c569e.md) — rebuilt on every build from the 240 canonical rows and 45 official/issuer sources; states which pages were re-read on 2026-11-12, which were read only in part, and what was not confirmed.
+- [Line-by-line verification (2026-11-12)](research/VERIFICATION-2026-11-12-f0b78eb6.md) — a separate hand-written pass of the same date, made when the register held 230 rows and 40 sources, plus closed minimum-wage, 10-K, 2026 LTCG, and FEMA NRI updates (extending [2026-11-11](research/VERIFICATION-2026-11-11-d644184d.md) and [2026-11-12 targeted review](research/VERIFICATION-2026-11-12-ec869c7c.md)).
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
 - [Flagged for Review](review.html) — unresolved items, closed checks and source irregularities.
@@ -27,11 +28,11 @@ Verify lease dates and notice rights privately now; prepare sale and renewal tra
 | [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Clean landing page, eight evidence categories, analysis pages and governance pages |
 | [Executive summary](executive-summary.html) | Recommendation, decision matrix, six driving findings, risk balance, and what stays blank |
 | [Suggestions to review](suggestions.html) | Proposed workflow, site, data and model improvements with trade-offs before implementation |
-| [Questions & answers](questions.html) | 16 Q&A rows covering evidence-backed answers, unknowns, discovery routes and consequences |
+| [Questions & answers](questions.html) | 20-question information register (what is known, what is not, how to find out, who holds it; 9 gate the decision), an order of work, and 16 current answers |
 | [All entries & findings](master.html) | Every published row in one source-linked table |
 | [Flagged for Review](review.html) | Every unverified value, conflict, closed item and irregularity, published for manual review |
 | [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
-| [Line-by-line verification record](research/VERIFICATION-2026-11-12-f0b78eb6.md) | 230-row canonical disposition register; independent official-source re-verification dated 2026-11-12 |
+| [Line-by-line verification record](research/VERIFICATION-2026-11-12-c56c569e.md) | 240-row register generated from the data on every build, with the limits of the 2026-11-12 re-read; a second hand-written record of the same date is [`VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) |
 | [Sources & method](sources.html) | 40 official sources, verification standard and privacy boundary |
 
 ## Build and verify
@@ -44,7 +45,7 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 |---|---|---|
 | Overview / dashboard | `/` | Conditional recommendation, six verified anchors, risk balance, navigation |
 | Executive summary | `/executive-summary.html` | Decision, findings, matrix, evidence gates, what stays blank |
-| All entries & findings | `/master.html` | 230-row master register, grouped by category |
+| All entries & findings | `/master.html` | 240-row master register, grouped by category |
 | Geography | `/geography.html` | City / county scale; every parcel-level gap flagged |
 | People & income | `/demographics.html` | Population, households, income, poverty, education, spending capacity |
 | Economy & jobs | `/economy.html` | Employment, wages, prices, output, rates, official long-range forecasts |
@@ -53,11 +54,11 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 | Taxes & transfer | `/taxes.html` | Prop 13, transfer taxes, Measure ULA, 2025/2026 capital gains, §1031 |
 | Hazards | `/hazards.html` | Earthquake, wildfire, flood: official observations and scenarios |
 | Projection anchors | `/anchors.html` | Dated observations, official forecasts and withheld outputs |
-| Risk register | `/risk.html` | 24 business-as-usual and black-swan risks, with context sources |
+| Risk register | `/risk.html` | 24 business-as-usual and black-swan risks, plus the risk of each of the eight decisions, with context sources |
 | Projection system | `/projections.html` | 13-step reproducible framework and the outputs deliberately withheld |
-| Questions & answers | `/questions.html` | 16 Q&A rows covering answers, evidence gaps, discovery routes and consequences |
-| Suggestions to review | `/suggestions.html` | Proposed workflow, site, data and model enhancements with trade-offs |
-| Decision matrix | `/decisions.html` | Eight pathways, gates and the recommended sequence |
+| Questions & answers | `/questions.html` | 20-question information register, order of work, and 16 current answers |
+| Suggestions to review | `/suggestions.html` | 4 paths to choose from, 7 process proposals, 6 technical options and 16 site suggestions with lettered options; nothing implemented |
+| Decision matrix | `/decisions.html` | Eight pathways, gates, the business-as-usual and black-swan risk of each, and the recommended sequence |
 | Model & method | `/model.html` | Verification standard, published arithmetic, monitoring checklist |
 | Evidence boundary | `/place.html` | What the site deliberately does not assert about Asset A |
 | Flagged for Review | `/review.html` (alias `/flagged.html`) | Unverified values, conflicts, closed checks and irregularities |

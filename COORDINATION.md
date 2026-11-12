@@ -1446,3 +1446,69 @@ Claim written before any content work, after reading `COORDINATION.md` in full a
 - X-04 **done**: fresh spot-checks of Census QuickFacts (LA city), FRED DGS10 (4.88% on 2026-11-09), BLS LA summary (Sep 2026), DIR fast-food FAQ ($20.00/hr), City of LA Measure ULA FAQ (4% / 5.5% thresholds), and SEC Q3 FY2026 Exhibit 99.1 (−1.1% SSS, 2,115 units) — every sampled value confirmed verbatim; issuer contact details on the SEC page excluded per privacy rule.
 - X-05 **in progress**: PR → `main`, CI, merge, Pages confirmation (record below).
 - Irregularities logged in the audit file: transient Pages build lag for `354b400`/`a2d3e3a` (queue congestion; live site serving prior `built` build; fresh build triggered by this merge); repo-only `DECISION_FRAMEWORK.md`/`DISCOVERY_GUIDE.md` mention APN only as a discovery question (no values, excluded from Pages); concurrent sessions `c56c569e` and `7b04b8ee` respected and not integrated here; stale PRs #4/#12/#22/#26/#31/#32/#36/#40/#44/#48/#51 reported only.
+
+# Session `c56c569e` — line-by-line re-verification, Suggestions section, decision-risk expansion, final integration (2026-11-12)
+
+**Session ID:** `c56c569e` · **Branch:** `arena/c56c569e-jack3` (platform-fixed; the brief's `session-<id>/<task>`
+naming is unavailable in this environment — same recorded deviation as earlier sessions) · **Date:** 2026-11-12 (UTC)
+
+Claim written before any content work, after reading this board. `main` at claim time: `6b1979d` (PR #55 merged
+2026-11-11). `Validate public research`, `Public artifact regression tests` and `pages build and deployment` are
+all green on `main`; Pages API `status: built` for `6b1979d`. Every other session's claim on this board is merged
+or more than 60 minutes old with no commits (latest foreign commit activity 2026-11-11 ~02:50 UTC), so this session
+takes the final-integration role for today under rule 7. Open PRs #4/#12/#22/#26/#31/#32/#36/#40/#44/#48/#51 are
+**not** merged, closed or edited by this session; they are assessed and reported only.
+
+## Scope claim (writes)
+
+| ID | Task | Status | File scope |
+|---|---|---|---|
+| S-01 | Claim board; read repo, open PRs, CI and Pages state | **done** | this section only (append-only) |
+| S-02 | Fresh line-by-line re-read of all 223 canonical rows against their 36 official/issuer sources on 2026-11-12 | in progress | `research/VERIFICATION-2026-11-12-c56c569e.md` (new file) |
+| S-03 | Correct only substantiated defects; refresh dated observations where the publisher shows a newer print | claimed | `data/canonical_rows.py` → regenerated `data/canonical.json` and root `*.html` via `scripts/build_canonical.py` (never hand-edited HTML) |
+| S-04 | Fill gaps against the owner brief: dedicated **Suggestions** page (review-before-implementing register for site improvements and missing-information discovery), fuller questions / information-held / information-missing register, per-decision risk table covering business-as-usual and black-swan events | claimed | `scripts/build_canonical.py`, `data/canonical_rows.py`, new root `suggestions.html`, regenerated root `*.html`, `assets/style.css`, gate inventories in `scripts/stage_pages.py`, `scripts/validate.py`, `scripts/test_publication.py` |
+| S-05 | Reconcile documentation drift (row/page/source counts, verification-record pointers) | claimed | `EXECUTIVE_SUMMARY.md`, `README.md`, `REPO_REVIEW.md`, `VERIFY.md` |
+| S-06 | Full gate run, PR → `main`, CI green, merge, confirm Pages deploy + live fetch, record here | claimed | this section |
+
+**Explicitly NOT touched:** every historical companion layer (`advisory/`, `analysis/`, `audit/`, `brief/`,
+`dashboard/`, `decision-file/`, `docs/`, `pages/`, `site/`, `model/`, `_advisory_src/`, `_dashboard_src/`,
+`tools/`), every earlier verification record under `research/`, and every other session's section of this file.
+
+**Privacy rule (highest urgency):** Asset A / Owner A placeholders only. No owner identity, address, parcel
+number, contact detail, lease document or private financial figure is sought, stored or published. Any personal
+information encountered on an official page during verification is not copied into the repository or the site.
+
+## Status update — session `c56c569e` (2026-11-12, before PR)
+
+| ID | Status | Result |
+|---|---|---|
+| S-01 | **done** | Claim above. |
+| S-02 | **done** | Every `Verified` / `Derived` row compared with its publisher page on 2026-11-12. Record: `research/VERIFICATION-2026-11-12-c56c569e.md` (generated; it lists the documents read in part and the items not confirmed). |
+| S-03 | **done** | Label, date, status and freshness corrections only; no published value was found wrong. Details in `repo-review.html` R-25 to R-36. |
+| S-04 | **done** | `suggestions.html` expanded (paths, lettered options); `questions.html` information register (20 questions, 9 gate); per-pathway risk tables on `decisions.html` and `risk.html`. |
+| S-05 | **done** | `README.md`, `VERIFY.md`, `EXECUTIVE_SUMMARY.md` counts and record pointers; `REPO_REVIEW.md` regenerated. |
+| S-06 | in progress | Gate green locally; PR next. |
+
+**Overlap with parallel sessions (rule: preserve, do not overwrite).** While this session was reading sources,
+PRs #56–#63 merged to `main` (sessions `6356a8d1`, `89654da8`, `ec869c7c`, `f0b78eb6`). They touched the same
+files this session had claimed (`data/canonical_rows.py`, `scripts/build_canonical.py`, root docs,
+`suggestions.html`). Resolution, all on this branch by rebase onto `main` at `354b400`:
+
+- Their rows, sources, flags F-23–F-25, review entries R-23–R-24, softened thresholds, `projection.py` fix and
+  root-document text are kept in full.
+- This session's flags were renumbered F-26–F-31 and its review entries R-25–R-36. Its duplicate city-wage source
+  key was dropped in favour of `LAMWO`.
+- `suggestions.html`: the seven process proposals (PR #60) and six technical options (PR #63) are kept verbatim as
+  two tables; this session's paths and sixteen suggestions with options sit beside them.
+- The rows `f0b78eb6` added were re-read here on the publisher pages. All values matched. One label was corrected
+  (the FEMA deck defines CRF as Community Risk Factor, not Composite).
+- The build now writes its generated register to `research/VERIFICATION-2026-11-12-c56c569e.md` and no longer
+  rewrites `research/VERIFICATION-2026-11-10-b98090a0.md`. `research/VERIFICATION-2026-11-12-f0b78eb6.md` is untouched.
+
+**Scope extension recorded before editing:** none needed. `tools/`, `_advisory_src/`, `_dashboard_src/` and the
+historical layers were run as gates only and not edited.
+
+**Local gate (2026-11-12):** `build_canonical` (22 pages, 240 rows: 211 verified, 2 derived, 1 analysis, 26 blank;
+45 sources), `validate`, `projection`, `stage_pages` (23 files), `test_publication` (10 tests), `tools/check_site`,
+`tools/linkcheck`, `tools/check_links`, `tools/pii_scan`, `_advisory_src/verify_advisory`, `_dashboard_src/verify`,
+`git diff --exit-code -- '*.html'` — all pass.
