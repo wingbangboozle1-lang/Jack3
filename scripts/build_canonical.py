@@ -60,6 +60,8 @@ PAGES = [
      "The dated official observations and long-range projections that may bound a model."),
     ("questions", "Questions & answers", "ANALYSIS", "12 / QUESTIONS & ANSWERS",
      "Current answers, missing evidence, discovery routes and decision consequences."),
+    ("suggestions", "Suggestions to review", "ANALYSIS", "12A / SUGGESTIONS",
+     "Proposed improvements for review before implementation; no personal data collected."),
     ("decisions", "Decision matrix", "ANALYSIS", "12 / DECISION MATRIX",
      "Every available pathway, its risks, its evidence gate and the recommended sequence."),
     ("model", "Model & method", "ANALYSIS", "13 / MODEL & METHOD",
@@ -193,8 +195,8 @@ def page_index() -> str:
         ("LA METRO · SEP 2026", "4.4%", "Unemployment · down from 5.5% a year earlier", "BLS", "BLS economic summary"),
         ("LA METRO · SEP 2026", "+0.5%", "Nonfarm payroll growth · 6,282.1 thousand jobs", "BLS", "BLS economic summary"),
         ("ISSUER · Q3 FY2026", "-1.1%", "System same-store sales · 2,115 restaurants", "SECQ3", "SEC 8-K Exhibit 99.1"),
-        ("US · 2026-11-09", "4.88%", "10-year Treasury · risk-free anchor for any buyer", "FRED", "FRED DGS10"),
-        ("LA REGION · UCERF3", "60%", "30-year likelihood of an M≥6.7 earthquake", "UCERF3", "USGS Fact Sheet 2015-3009"),
+        ("US · 2026-11-09", "4.88%", "10-year Treasury · dated reference, not a required return", "FRED", "FRED DGS10"),
+        ("LA REGION · UCERF3", "60%", "30-year M≥6.7 likelihood from 2014, not parcel loss", "UCERF3", "USGS Fact Sheet 2015-3009"),
     ]
     card_html = ''.join(
         f'<article><div class="eyebrow">{E(k)}</div><strong>{E(v)}</strong><p>{E(d)}</p>{src(s, l)}</article>'
@@ -210,6 +212,7 @@ def page_index() -> str:
             ("risk", "Business-as-usual and black-swan risks, each with a context source."),
             ("projections", "The reproducible 2026-2035 framework and the outputs withheld."),
             ("decisions", "Eight pathways, their gates and the recommended sequence."),
+            ("suggestions", "Review proposed site and decision-process improvements before implementation."),
             ("master", "Every row in this site, in one source-linked table."),
             ("review", "Unverified values, conflicts and irregularities for manual review."),
             ("repo-review", "Line-by-line findings on the inherited repository layers."),
@@ -224,11 +227,10 @@ def page_index() -> str:
         'Every published figure is traceable to a government or issuer page; everything that could not '
         'be verified is left blank and listed on the Flagged for Review page.</p>',
         '<section class="hero-note"><span class="badge analysis">CONDITIONAL RECOMMENDATION · ANALYST JUDGEMENT, NOT A VALUATION</span>'
-        '<h2>Run both tracks now: market the asset for sale, and require renewal terms in writing.</h2>'
-        '<p>Begin a confidential sale process 24–36 months before the earliest contractual expiry, in parallel '
-        'with a written renewal request. Convert to whichever result the documents support: a verified '
-        'after-tax sale, or an enforceable extension of at least ten years at market rent with acceptable '
-        'credit. Letting a 2030–2035 option clock run out on regional averages alone is not defensible.</p>'
+        '<h2>Prepare both options now; choose only when the evidence supports a decision.</h2>'
+        '<p>Privately establish the lease dates and options now, then seek sale and renewal terms on a timeline '
+        'consistent with those rights. Compare documented after-tax proceeds with the risk-adjusted hold case. '
+        'The reported 2030–2035 range does not establish a deadline or a suitable decision for the owner.</p>'
         '<a class="button" href="decisions.html">Decision matrix &amp; triggers <span>→</span></a> '
         '<a class="quiet" href="executive-summary.html">Read the executive summary ↗</a></section>',
         h2("Six verified anchors", "Regional context ≠ property forecast"),
@@ -238,7 +240,7 @@ def page_index() -> str:
         '<li>Unemployment fell to 4.4% in the metro and 4.5% in the city and county. ' + src("BLS", "BLS") + '</li>'
         '<li>Education and health services, the largest metro sector at 1,340.7 thousand jobs, grew 3.8%. ' + src("BLS", "BLS") + '</li>'
         '<li>Median household income is $81,939 in the city and $90,112 in the county. ' + src("CITY", "Census") + '</li>'
-        '<li>A below-market assessed value is retained while the property is held. ' + src("ASSESSOR", "Assessor") + '</li>'
+        '<li>Property tax assessment rules may favor holding; the actual assessed value and future changes are unknown. ' + src("ASSESSOR", "Assessor") + '</li>'
         '</ul></div><div><h3>What argues for acting early</h3><ul class="ticks bad">'
         '<li>City population is 0.8% below its 2020 estimates base; the county is 3.2% below. ' + src("COUNTY", "Census") + '</li>'
         '<li>The issuer reports −1.1% system same-store sales, 17 quarterly closures and FY2026 guidance of 50–60 closures. ' + src("SECQ3", "SEC") + '</li>'
@@ -252,7 +254,7 @@ def page_index() -> str:
         '<p><b>Wage and cost pressure.</b> Covered fast-food work has a $20.00/hour floor; the state floor is '
         '$16.90/hour from 2026. Store-level rent coverage is unknown.</p>'
         '<p><b>Rates and exit yields.</b> A higher exit yield lowers price for the same rent.</p>'
-        '<p><b>Taxes.</b> §1031 defers, and does not eliminate, capital-gain tax.</p>'
+        '<p><b>Taxes.</b> A qualifying §1031 exchange generally defers gain; eligibility and eventual tax depend on the facts.</p>'
         '<a class="quiet" href="risk.html">Full risk register →</a></div><div><h3>Tail events that can end the local economy</h3>'
         '<p><b>Wildfire.</b> In January 2025 the Palisades and Eaton fires destroyed 16,264 structures in this '
         'county in 24 days. Insurance availability and pricing can change region-wide afterwards.</p>'
@@ -279,17 +281,22 @@ def page_index() -> str:
 
 def page_executive_summary() -> str:
     findings = [
-        ("1", "Lease clock, not market clock", "The reported 2030–2035 expiry is a five-year window, not a date. Negotiating leverage moves to the tenant as the term shortens.", "SECQ3"),
+        ("1", "Lease clock, not market clock", "The reported 2030–2035 expiry is a range, not a verified date. Shortening term may affect leverage; this is an analytical risk, not an issuer disclosure.", "SECQ3"),
         ("2", "Demand is soft at regional scale", "City population is 0.8% below its 2020 estimates base; county is 3.2% below; a separate state estimate shows a −0.45% county year-over-year decline.", "DOF"),
         ("3", "Labour market is improving but uneven", "Metro unemployment fell to 4.4% and payrolls rose 0.5%, led by education and health (+3.8%) while information fell 5.7%.", "BLS"),
         ("4", "Tenant credit is the key unknown", "The issuer reports −1.1% same-store sales, 17 quarterly closures, a discontinued dividend and a $500m refinancing. The legal obligor at this site is unknown.", "SECQ3"),
         ("5", "Costs and rates compress real returns", "CPI-U +3.7%, ECI +3.9%, energy +20.3%, and a 4.88% 10-year Treasury. A fixed escalator and a higher exit yield both work against the hold case.", "FRED"),
-        ("6", "Tail risk is real but unquantified", "USGS ShakeOut models ~1,800 deaths and $213bn in losses; the 2025 fires destroyed 16,264 structures in 24 days. No parcel overlay or insurance evidence exists.", "UCERF3"),
+        ("6", "Tail risk is real but unquantified", "USGS ShakeOut models ~1,800 deaths and $213bn in losses; the 2025 fires destroyed 16,264 structures. This is regional context, not a parcel forecast.", "UCERF3"),
     ]
-    frows = [[f'<b>{E(n)}</b>', E(t), E(d), src(s)] for n, t, d, s in findings]
+    # Multi-source findings need links for every distinct published observation.
+    finding_sources = {"2": ("DOF", "CITY", "COUNTY"), "5": ("BLS", "FRED"),
+                       "6": ("SHAKEOUT", "PALISADES", "EATON")}
+    frows = [[f'<b>{E(n)}</b>', E(t), E(d),
+              ' · '.join(src(key) for key in finding_sources.get(n, (source,)))]
+             for n, t, d, source in findings]
     drows = [[E(a), E(b), E(c), E(d), src(s)] for a, b, c, d, s in DECISIONS]
     gate_rows = [
-        ["<b>Signed extension at market rent</b>", "At least ten years, with acceptable credit and clear expense allocation.", src("SECQ3")],
+        ["<b>Signed extension</b>", "Compare enforceable term, rent, credit, concessions and expenses against other options; no fixed minimum is established.", src("SECQ3")],
         ["<b>Verified after-tax bid</b>", "A documented offer that beats the risk-adjusted hold case after all transfer taxes and costs.", src("ULA")],
         ["<b>Block-level growth evidence</b>", "Trade-area population, traffic and competitive supply, not city or county averages.", src("CITY")],
         ["<b>Change in owner liquidity needs</b>", "Private to Owner A; deliberately unavailable on this public site.", src("IRS1031")],
@@ -298,11 +305,10 @@ def page_executive_summary() -> str:
         CALLOUT_BOUNDARY,
         h1("Executive summary", "The decision, the evidence behind it, the risks of every route, and the limits of what public data can establish."),
         '<section class="hero-note"><span class="badge analysis">BASE CASE · CONDITIONAL RECOMMENDATION</span>'
-        '<h2>Run both tracks in parallel; sell before expiry unless a long, credit-supported extension is signed.</h2>'
-        '<p>Start a confidential sale process 24–36 months before the earliest contractual expiry while requiring '
-        'the tenant to state renewal terms in writing. Sell if a documented after-tax offer is acceptable; extend '
-        'only against an enforceable, credit-supported extension of at least ten years at market rent. This is a '
-        'rule for preserving optionality and wealth, not a valuation.</p></section>',
+        '<h2>Prepare both tracks; do not choose sale or renewal on regional averages alone.</h2>'
+        '<p>Privately verify the lease and notice dates now, explore sale interest and written renewal terms, and '
+        'compare after-tax outcomes, downside risks and owner needs. Marketing timing and extension length '
+        'depend on the facts; neither is established by a public source. This is a provisional process, not a valuation.</p></section>',
         h2("Six findings that drive the decision", "Each links to its official publisher"),
         table(["#", "Finding", "What the official evidence says", "Official source"], frows,
               "Findings F1–F6 · evidence-linked"),
@@ -312,16 +318,16 @@ def page_executive_summary() -> str:
         h2("What would change this view", "Four evidence gates"),
         table(["Gate", "What must be true", "Official context"], gate_rows, "Evidence gates"),
         h2("Risk balance for wealth preservation", "Manageable risk, not zero risk"),
-        '<section class="split"><div><h3>Concentration is the dominant risk</h3>'
+        '<section class="split"><div><h3>Concentration can be a major risk</h3>'
         '<p>A single-tenant net lease looks safe until the term ends. Holding to expiry concentrates '
         'tenant credit, lease-rollover, rate and catastrophe risk into one short window. Selling early '
         'spreads the decision across several years and converts an illiquid single asset into a choice.</p>'
         '<p>The cost of acting early is real: transfer taxes, a possible 4% ULA surcharge, capital-gain tax '
         'and reinvestment risk. Those are computable from published rules once the owner\'s figures exist.</p>'
         + src("ULA", "City of LA transfer-tax rules") + '</div><div><h3>Why not simply renew</h3>'
-        '<p>Renewal is attractive only if it is long, at market rent, and backed by a verified obligor. '
-        'The issuer\'s chain-wide results cannot supply that. A short or below-market extension locks in '
-        'the weakest part of the hold case and removes the ability to sell into a good bid.</p>'
+        '<p>Assess renewal term, rent, concessions and obligor credit together against sale and re-letting alternatives. '
+        'The issuer\'s chain-wide results cannot establish this lease or tenant. An extension may change '
+        'sale flexibility and bids; neither effect is guaranteed.</p>'
         '<p>Black-swan exposure is not diversified by renewing: the same parcel keeps the same '
         'earthquake, wildfire and flood exposure. Insurance verification and a concentration cap on '
         'net worth are required under either route.</p>'
@@ -412,7 +418,7 @@ def page_projections() -> str:
     prows = [[E(a), E(b), E(c), src(k)] for a, b, c, k in PROJECTION]
     anchors = [r for r in ROWS if r["category"] == "Projection anchors"]
     body = [CALLOUT_BOUNDARY,
-            h1("Projection system", "A reliable, reproducible framework for the area — and a strict refusal "
+            h1("Projection system", "A proposed framework for the area — and a strict refusal "
                "to publish a property value that no official source can support."),
             h2("How the framework works", f"{len(PROJECTION)} steps, each tied to an official source"),
             table(["Step", "What it does", "Why it is reliable / what is withheld", "Official source"],
@@ -428,8 +434,8 @@ def page_projections() -> str:
             + src("DOF", "CA DOF estimates") + '</div><div><h3>What is defensible instead</h3>'
             '<p>Dated observations, official long-range regional projections with their stated uncertainty, '
             'published statutory rates, and scenario stress tests that need no invented probabilities.</p>'
-            '<p>Once the private documents exist, the same 13-step framework produces an after-tax comparison '
-            'without changing its rules. That is the reliable projection system this project can honestly build.</p>'
+            '<p>A future implementation would still require private documents, model design, testing and a documented after-tax comparison '
+            'before it could be relied upon. This is a research framework, not a calibrated or back-tested forecasting system.</p>'
             + src("SCAG", "SCAG adopted forecast") + '</div></section>',
             h2("Official long-range context", "Planning forecasts, not property forecasts"),
             '<p>SCAG\'s adopted Connect SoCal 2024 forecast projects six-county employment from 8,937 thousand '
@@ -443,15 +449,15 @@ def page_projections() -> str:
 def page_questions() -> str:
     rows = [
         ("What is the best current course?", "Run confidential sale market testing and a written renewal track in parallel; choose only after comparing actual after-tax bids with enforceable terms.", "Actual bids, tenant proposal, tax review and executed lease.", "Preserves both exit and extension options; analyst judgment, not a valuation.", "IRS1031"),
-        ("When should sale marketing begin?", "Start 24–36 months before the earliest verified contractual expiry, not at expiration.", "Executed lease, amendments, options and notice calendar; reconcile the reported 2030–2035 range.", "Avoids marketing into shortening-term or vacancy risk.", "SECQ3"),
+        ("When should sale marketing begin?", "Verify notice dates now; 24–36 months before expiry is an illustrative planning window, not a verified deadline. Start earlier if the documents or market warrant.", "Executed lease, amendments, options and notice calendar; reconcile the reported 2030–2035 range.", "Avoids marketing into shortening-term or vacancy risk.", "SECQ3"),
         ("Should the property simply be sold now?", "Not on regional data alone. Sell when a documented after-tax bid beats the risk-adjusted hold and reinvestment cases.", "Independent bids, closing costs, debt payoff, tax basis and replacement plan.", "No optimal sale year or price is established.", "IRS1031"),
-        ("When is renewal preferable?", "Only with an enforceable, credit-supported extension at market rent and acceptable expense terms; the working gate is at least ten years.", "Signed amendment, legal obligor, guaranty, tenant financials, rent coverage and concessions.", "A verbal intention or franchise agreement is not a lease extension.", "SECQ3"),
+        ("When is renewal preferable?", "Compare an enforceable extension, including term, credit, rent, concessions and expenses, with the sale and hold alternatives. No minimum term is established.", "Signed amendment, legal obligor, guaranty, tenant financials, rent coverage and concessions.", "A verbal intention or franchise agreement is not a lease extension.", "SECQ3"),
         ("Is holding unchanged to expiry acceptable?", "No, unless contractual income, reserves, insurance and a costed re-letting plan independently support it.", "Carrying-cost budget, vacancy/default stresses, capital plan and alternate demand.", "Avoids silently accepting expiry and concentration risk.", "SECQ3"),
         ("Could renewing first and then selling help?", "Potentially, if signed terms improve real bids enough to cover concessions and transaction costs.", "Compare as-is bids with extension bids; do not assume cap-rate compression.", "Evidence-gated alternative, not a guaranteed win.", "IRS1031"),
         ("When does re-tenanting or redevelopment make sense?", "Only if documented alternate demand and a costed, permitted plan beat existing-use and sale alternatives.", "ZIMAS/title review, entitlements, environmental/engineering work, budget and tenant interest.", "Higher-risk fallback, not the default wealth-preservation route.", "ZIMAS"),
         ("What does the regional economy establish?", "Population is below 2020 estimates bases and payroll growth is modest. SCAG is a separate planning case, not a parcel forecast.", "Define a trade area; obtain official tract/block-group histories with consistent vintages.", "Supports caution, not a mechanical 2030–2035 value forecast.", "BLS"),
         ("Which sale-cost rules are known?", "City/county transfer taxes, possible Measure ULA, capital-gain rules and §1031 deferral can materially change net proceeds.", "Confirm jurisdiction, price, liens, closing date, basis, holding purpose and owner-specific treatment.", "Compare after-tax proceeds; ULA applies to gross value.", "ULA"),
-        ("Can §1031 remove tax and risk?", "No. Qualifying exchanges may defer gain; they do not eliminate tax or replacement-asset and concentration risks.", "Tax/legal review, qualified intermediary process and verified replacement options before closing.", "Underwrite every replacement independently.", "IRS1031"),
+        ("Can §1031 remove tax and risk?", "Qualifying exchanges generally defer recognition; they do not automatically eliminate eventual tax or replacement-asset and concentration risks.", "Tax/legal review, qualified intermediary process and verified replacement options before closing.", "Underwrite every replacement independently.", "IRS1031"),
         ("How should catastrophe risks be handled?", "Use parcel overlays, engineering and actual policy terms; stress interrupted rent, uninsured cost and an illiquid exit together.", "CGS/CAL FIRE/FEMA checks, structural/geotechnical review, deductibles, exclusions and rent-loss cover.", "Do not infer safety from a city label or invent disaster probabilities.", "EQZAPP"),
         ("Which owner facts prevent a final suitability decision?", "", "Liquidity, concentration, tax position, debt, horizon and loss tolerance remain private. Keep them in secure offline adviser review.", "No personalized allocation or loss-capacity conclusion can be made publicly.", "IRS1031"),
         ("Which exact lease facts are missing?", "", "Executed lease/amendments: expiry, notice dates, options, rent, escalations, expenses, casualty, roof/structure and assignment rights.", "The reported 2030–2035 range and NNN label are not enough.", "SECQ3"),
@@ -468,6 +474,24 @@ def page_questions() -> str:
         body, "Decision questions, answers and evidence gaps"), "12 / QUESTIONS & ANSWERS")
 
 
+def page_suggestions() -> str:
+    # Recommendations are analyst proposals, not claims made by the linked agencies.
+    items = [
+        ("1", "Protect privacy first", "Keep all identifiers, lease files and owner finances offline with authorized advisers; publish only aggregate, non-identifying findings.", "Reduces exposure; makes independent parcel checks harder without private access.", "Approve a private review protocol before collecting anything.", "ZIMAS"),
+        ("2", "Build a lease and notice calendar", "Have counsel review all amendments, options, notice periods, casualty terms and obligor documents privately.", "Prevents missed dates; legal review has cost and may uncover constraints.", "No sale or renewal deadline is verified yet.", "SECQ3"),
+        ("3", "Compare executable alternatives", "Obtain confidential written sale interest and renewal proposals; compare after-tax proceeds, expenses, credit, reserves and reinvestment risk.", "Preserves options but preliminary bids and proposals may change.", "Do not commit or publish private figures; verify tax treatment with advisers.", "IRS1031"),
+        ("4", "Resolve the trade area privately", "Use the location only in a secure workflow to select consistent Census tracts and local planning, traffic, school and competitor evidence.", "More relevant than city averages, but catchment boundaries and sampling uncertainty matter.", "Publish geography only if it cannot identify the asset.", "CITY"),
+        ("5", "Stress correlated hazards", "Privately check seismic, flood and fire maps, engineering and insurance; stress loss of rent, repairs and exit liquidity together.", "Makes tail risks visible; regional probabilities are not parcel loss probabilities.", "Use effective maps and actual policy terms; do not assign invented odds.", "UCERF3"),
+        ("6", "Improve the projection system", "Create and back-test a versioned, cash-flow model when verified inputs and sufficient comparable history exist; distinguish observations from assumptions.", "Supports repeatable comparisons but a model can be precise and still wrong.", "Until calibrated, withhold numeric parcel forecasts and review scenarios with advisers.", "SCAG"),
+        ("7", "Maintain the evidence", "Assign a reviewer to refresh dated sources, check changed rules and test links and privacy before publication.", "Reduces stale claims; official releases have different vintages and may conflict.", "Review material changes before publishing; retain previous vintages.", "BLS"),
+    ]
+    rows = [[E(n), E(proposal), E(action), E(tradeoff), E(gate), src(key)] for n, proposal, action, tradeoff, gate, key in items]
+    content = (CALLOUT_BOUNDARY + h1("Suggestions to review", "Proposals only — choose a path before implementing changes. These are analyst judgments; the official links provide context, not agency endorsement.")
+               + table(["Priority", "Proposal", "Suggested action", "Trade-off / risk", "Review gate", "Official context"], rows, "Proposed improvements · not yet implemented")
+               + '<p>No private facts or user selections are collected on this static site. The missing property documents cannot be obtained without authorized access.</p>')
+    return shell("suggestions", content, "12A / SUGGESTIONS")
+
+
 def page_decisions() -> str:
     drows = [[E(a), E(b), E(c), E(d), src(s)] for a, b, c, d, s in DECISIONS]
     body = [CALLOUT_BOUNDARY,
@@ -481,12 +505,12 @@ def page_decisions() -> str:
             'policies and the owner\'s basis and debt — privately, never on this site.</li>'
             '<li><b>Now.</b> Confirm jurisdiction, parcel hazard overlays and the remaining term including '
             'all renewal options.</li>'
-            '<li><b>24–36 months before the earliest expiry.</b> Open a confidential marketing process and, '
-            'in parallel, require the tenant to state renewal terms in writing.</li>'
+            '<li><b>Plan timing.</b> Consider confidential marketing and written renewal terms in parallel. The '
+            '24–36 month window is illustrative, not a verified deadline; lease notice rights may require earlier action.</li>'
             '<li><b>On receipt of both.</b> Compute after-tax net sale proceeds against the discounted hold '
             'case using the verified rules on the Taxes page.</li>'
             '<li><b>Decision.</b> Sell if the documented offer is acceptable; extend only against an '
-            'enforceable, credit-supported extension of at least ten years at market rent.</li>'
+            'an enforceable extension when its risk-adjusted outcome better serves the owner.</li>'
             '<li><b>Either route.</b> Verify insurance, size a re-letting reserve and cap this asset\'s share '
             'of Owner A\'s net worth at a level that can be lost without changing their plans.</li>'
             '</ol>',
@@ -1003,6 +1027,7 @@ def main() -> None:
         "risk.html": page_risk(),
         "projections.html": page_projections(),
         "questions.html": page_questions(),
+        "suggestions.html": page_suggestions(),
         "decisions.html": page_decisions(),
         "model.html": page_model(),
         "place.html": page_place(),

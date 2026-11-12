@@ -347,6 +347,12 @@
       "group": "ANALYSIS"
     },
     {
+      "id": "suggestions",
+      "title": "Suggestions to review",
+      "file": "suggestions.html",
+      "group": "ANALYSIS"
+    },
+    {
       "id": "decisions",
       "title": "Decision matrix",
       "file": "decisions.html",
@@ -2044,7 +2050,7 @@
       "category": "Hazards",
       "indicator": "30-year likelihood, M\u22657.0 earthquake",
       "value": "46%",
-      "scope": "Los Angeles region \u00b7 UCERF3",
+      "scope": "Los Angeles region \u00b7 UCERF3 (from 2014)",
       "note": "Regional probability.",
       "status": "Verified",
       "source": "UCERF3"
@@ -2053,7 +2059,7 @@
       "category": "Hazards",
       "indicator": "30-year likelihood, M\u22657.5 earthquake",
       "value": "31%",
-      "scope": "Los Angeles region \u00b7 UCERF3",
+      "scope": "Los Angeles region \u00b7 UCERF3 (from 2014)",
       "note": "Regional probability.",
       "status": "Verified",
       "source": "UCERF3"
@@ -2062,7 +2068,7 @@
       "category": "Hazards",
       "indicator": "30-year likelihood, M\u22656.0 earthquake",
       "value": "96%",
-      "scope": "Los Angeles region \u00b7 UCERF3",
+      "scope": "Los Angeles region \u00b7 UCERF3 (from 2014)",
       "note": "Regional probability.",
       "status": "Verified",
       "source": "UCERF3"
@@ -2071,7 +2077,7 @@
       "category": "Hazards",
       "indicator": "30-year likelihood, M\u22658.0 earthquake",
       "value": "7%",
-      "scope": "Los Angeles region \u00b7 UCERF3",
+      "scope": "Los Angeles region \u00b7 UCERF3 (from 2014)",
       "note": "Regional probability.",
       "status": "Verified",
       "source": "UCERF3"
@@ -2080,7 +2086,7 @@
       "category": "Hazards",
       "indicator": "Average repeat time, M\u22656.7",
       "value": "40 years",
-      "scope": "Los Angeles region \u00b7 UCERF3",
+      "scope": "Los Angeles region \u00b7 UCERF3 (from 2014)",
       "note": "An average; actual intervals vary widely.",
       "status": "Verified",
       "source": "UCERF3"
@@ -2089,7 +2095,7 @@
       "category": "Hazards",
       "indicator": "30-year likelihood, M\u22656.7",
       "value": "93%",
-      "scope": "Southern California region \u00b7 UCERF3",
+      "scope": "Southern California region \u00b7 UCERF3 (from 2014)",
       "note": "Broader geography than the Los Angeles region.",
       "status": "Verified",
       "source": "UCERF3"
@@ -2414,7 +2420,7 @@
       "High",
       "Lease expiry and notice windows",
       "An expiring lease transfers negotiating leverage to the party that can wait. The reported 2030-2035 range is not a date.",
-      "Establish the exact expiry, options and notice deadlines from the executed lease; act 24-36 months before the earliest date.",
+      "Establish the exact expiry, options and notice deadlines privately; 24-36 months is illustrative, not a verified deadline.",
       "SECQ3"
     ],
     [
@@ -2533,7 +2539,7 @@
       "Black swan",
       "Critical",
       "Major earthquake",
-      "USGS models an M7.8 southern San Andreas event at about 1,800 deaths and $213bn in regional losses; the LA region has a 60% 30-year likelihood of M\u22656.7.",
+      "USGS estimates a 60% LA-region likelihood of M\u22656.7 over 30 years starting in 2014; this is not a parcel damage probability.",
       "Confirm parcel ground-failure zones, structural evaluation, policy limits, deductible, exclusions and rent-loss cover.",
       "UCERF3"
     ],
@@ -2605,7 +2611,7 @@
       "Negotiate an early renewal / extension",
       "Documented tenant credit, enforceable obligations, acceptable rent and clear expense allocation support holding.",
       "Weak guarantees, below-market locked rent, concessions and continuing concentration.",
-      "Confirm options and obtain written tenant terms first; require at least ten years at market rent.",
+      "Confirm options and compare written terms, including duration, credit, rent and concessions, against alternatives.",
       "SECQ3"
     ],
     [
@@ -2640,7 +2646,7 @@
       "Run both tracks in parallel (recommended sequence)",
       "Preserves optionality while contractual income is still in place and the tenant still needs the site.",
       "A failed marketing period; lease assignment restrictions; unfavourable written renewal terms.",
-      "Start a confidential sale process 24-36 months before the earliest contractual expiry while requiring written renewal terms; convert to whichever result the documents support.",
+      "Verify notice dates now, then consider confidential sale and renewal discussions on a timeline supported by the documents; compare outcomes.",
       "SECQ3"
     ]
   ],
@@ -2659,14 +2665,14 @@
     ],
     [
       "3 \u00b7 Bound escalation with published inflation",
-      "CPI-U +3.7% and ECI +3.9% bound a cost-escalation assumption; no official source supplies this lease's escalator.",
-      "Bounds, not forecasts; the lease clause is unverified.",
+      "CPI-U +3.7% and ECI +3.9% are historical context, not bounds on future costs; the lease escalator is unverified.",
+      "These observations do not bound future outcomes; the lease clause is unverified.",
       "BLS"
     ],
     [
-      "4 \u00b7 Bound discounting with the risk-free rate",
-      "Use the 10-year Treasury (4.88% on 2026-11-09) as a floor for any discount rate, not as a cap rate.",
-      "The series is daily, official and reproducible.",
+      "4 \u00b7 Reference interest rates",
+      "The 10-year Treasury was 4.88% on 2026-11-09; use as dated context, not as a mandatory discount-rate floor or property cap rate.",
+      "Discount rates depend on cash-flow timing, risk and owner assumptions; the series is daily and reproducible.",
       "FRED"
     ],
     [
@@ -2892,6 +2898,30 @@
       "An inherited analysis layer cites a commercial brokerage domain and a private law-firm domain; such links are not used on the published site.",
       "Keep the published source register restricted to government and issuer pages.",
       "BLS"
+    ],
+    [
+      "F-23",
+      "High",
+      "Unsubstantiated decision and modelling thresholds",
+      "Earlier site text treated a ten-year renewal as a requirement, a 24-36 month marketing window as a deadline, Treasury yield as a universal discount-rate floor, and historical inflation as future bounds. None is established for this asset by the cited sources.",
+      "These are now conditional judgments or historical references; review lease dates and model assumptions privately before action.",
+      "FRED"
+    ],
+    [
+      "F-24",
+      "Medium",
+      "Independent current-source audit incomplete",
+      "The 2026-11-12 follow-up independently checked selected critical sources, not every one of the 223 evidence rows or every external URL. Earlier verification records are historical, not a substitute for current review.",
+      "Re-check each row and every external source at the point of use; automated link tests validate local targets and URL structure, not live external availability.",
+      "BLS"
+    ],
+    [
+      "F-25",
+      "High",
+      "Legacy sensitivity script has an inconsistent rate anchor",
+      "An unpublished repository-only sensitivity script pairs a 4.86% constant with a 4.88% comment for the same date; it is not used by the canonical site.",
+      "Do not use this legacy script for a decision; reconcile and independently test any future model before use.",
+      "FRED"
     ],
     [
       "F-22",
