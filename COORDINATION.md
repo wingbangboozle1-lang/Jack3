@@ -1287,3 +1287,12 @@ if `main` advances while this session works, it will rebase additively and re-ru
 **Privacy rule (highest urgency):** no personal information is collected, inferred or published anywhere in
 this session's scope; the repaired gate keeps and re-runs the PII / remote-resource checks over the public
 artifact; any personal data discovered stays internal and out of the published site.
+
+---
+## Session ec2e001f — independent publication and decision-readiness audit (2026-11-12)
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Review live deployment, current gates, and a targeted sample of official evidence; record limitations and irregularities | in progress | ec2e001f | `COORDINATION.md` (this section only), `research/VERIFICATION-2026-11-12-ec2e001f.md` (new) |
+
+The platform fixes the current branch name to `arena/ec2e001f-jack3`; no other branch will be created. Existing claims and shared generated site files are not edited. Property and owner identity will not be sought or published.
