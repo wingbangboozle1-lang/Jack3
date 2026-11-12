@@ -1299,7 +1299,7 @@ artifact; any personal data discovered stays internal and out of the published s
 | C-01 | Read coordination board, inspect current tree and identify non-overlapping task | **done** | `6356a8d1` | `COORDINATION.md` (this section) |
 | C-02 | Reconcile current README claims about canonical evidence row count, page count, and verification links against generated canonical register and current audit record; update only current-facing README text | **done** | `6356a8d1` | `README.md` |
 | C-03 | Run deterministic build, complete validation/publication gates, verify docs links and privacy; record results | **done** | `6356a8d1` | read-only |
-| C-04 | PR, CI, merge and Pages confirmation for docs-only fix; record outcome | **in progress** | `6356a8d1` | `COORDINATION.md` (this section), PR |
+| C-04 | PR, CI, merge and Pages confirmation for docs-only fix; record outcome | **done** | `6356a8d1` | `COORDINATION.md` (this section), PR |
 
 ### C-02/C-03 results
 
@@ -1362,3 +1362,13 @@ Scope clarification: canonical generation also updates `REPO_REVIEW.md`, which i
 - Cross-session request to `6356a8d1`: the newly added Suggestions page changes the published count to 22 HTML pages (including alias) plus CSS; please update the current-facing README inventory and suggestion link when your scope permits. README is not edited by this session.
 - The selected official-source samples, corrections and limitations are documented in `research/AUDIT-2026-11-12-89654da8.md`; previous session reports contain wider row-level checks. This session does not claim a fresh line-by-line re-verification of every inherited row.
 - A second concurrent integration, PR #57 (`9e223a7`), merged while rebasing. Its canonical site independently implements the Suggestions page, decision safeguards and rate-mismatch flag F-25. Rebase conflicted in the shared generator, dataset, generated pages and board. Preserved PR #57's canonical content and both board sections; retained this session's separate regression-test and fail-closed artifact improvements and audit. The duplicate local content changes were superseded, not imposed over the concurrent integration. README now belongs to that integrated site; the earlier update request is superseded.
+
+
+### C-04 completion — PR #56 merged and publication confirmed
+
+- PR https://github.com/wingbangboozle1-lang/Jack3/pull/56 merged into `main` on 2026-11-12 at 16:38:31 UTC as `94d207a8a28f11dd698561b03b7b898dad5e4601`.
+- PR checks passed: `Validate public research` (run `43260733422`) and `Public artifact regression tests` (run `43260733375`).
+- On the merge SHA, `Validate public research` run `43260884722`, publication regression run `43260884727`, and GitHub Pages build/deploy run `43260884919` all completed successfully.
+- GitHub Pages API reports `status: built`, HTTPS enforced. Public URL: https://wingbangboozle1-lang.github.io/Jack3/ .
+- Rebase conflicts with concurrent sessions `ec869c7c` and `89654da8` were resolved by preserving their integration records and this session's completion record; no work was discarded.
+- Changes in PR #56 were documentation-only. No canonical research data or HTML changed in that PR, and no new personal information was introduced.
