@@ -1525,3 +1525,12 @@ historical layers were run as gates only and not edited.
 ### 001fd935 rebase log (PR #68 follow-up)
 
 - While the docs-only follow-up (PR #68) awaited checks, `main` advanced via PR #66 (`4305293`, session `f0b78eb6`) and PR #65 (`d083b9b`, session `c56c569e` — information register, per-pathway risks, 5 new sources, 240 rows). Rebase onto `d083b9b` produced an append-only `COORDINATION.md` conflict (c56c569e status update vs this session's completion record). Resolved by preserving both sections verbatim; no work discarded. This session's audit file remains a dated record of the 230-row state on `354b400` and does not claim to cover the PR #65 additions. Gates re-run on the combined tree before merge.
+
+### 001fd935 final publication record (PR #68)
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/68 — **merged** to `main` as `511774c` (merge commit `Merge pull request #68 from wingbangboozle1-lang/arena/001fd935-jack3`). Docs-only: completion record + rebase log. No site content changed.
+- **Rebase:** `main` had advanced via PR #66 (`4305293`, `f0b78eb6`) and PR #65 (`d083b9b`, `c56c569e` — 240 rows, 45 sources, information register, per-pathway risks). Append-only `COORDINATION.md` conflict resolved preserving both sections verbatim; one stray marker removed; gates re-run on the combined tree (build 240 rows, validate, stage, 10/10 publication tests, PII 0 findings, deterministic rebuild clean).
+- **CI on the PR head:** `Validate public research` **success** (run `43264708628`), `Public artifact regression tests` **success** (run `43264708566`).
+- **Post-merge on `main`:** `Validate public research` **success** (`43264908753`), `Public artifact regression tests` **success** (`43264908800`), `pages build and deployment` **success** (`43264907033`). GitHub Pages API: `status: built` for `511774c`, HTTPS enforced. (The `4305293` `errored` build was superseded by the `d083b9b` `built` build — same transient queue pattern; no content defect.)
+- **Live verification:** `https://wingbangboozle1-lang.github.io/Jack3/questions.html` fetched on the merge SHA — 20-question register (9 gate), 26 blank evidence cells, Asset A boundary intact. Public site: https://wingbangboozle1-lang.github.io/Jack3/ .
+- **Session 001fd935 complete (X-01..X-05).** No personal information collected or published. This record is pushed as a docs-only follow-up.
