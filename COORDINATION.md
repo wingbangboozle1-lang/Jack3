@@ -1513,6 +1513,19 @@ historical layers were run as gates only and not edited.
 `tools/linkcheck`, `tools/check_links`, `tools/pii_scan`, `_advisory_src/verify_advisory`, `_dashboard_src/verify`,
 `git diff --exit-code -- '*.html'` — all pass.
 
+### 001fd935 publication completion (X-05 done)
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/64 — **merged** to `main` as `ff86b24` (merge commit `Merge pull request #64 from wingbangboozle1-lang/arena/001fd935-jack3`). Docs-only: `research/AUDIT-2026-11-12-001fd935.md` + this board section. No site content changed.
+- **CI on the PR head:** `Validate public research` **success** (run `43263999101`), `Public artifact regression tests` **success** (run `43263999370`).
+- **Post-merge on `main`:** `Validate public research` **success** (`43264160146`), `Public artifact regression tests` **success** (`43264159949`), `pages build and deployment` **success** (`43264159250`). GitHub Pages API: `status: built` for `ff86b24`, HTTPS enforced.
+- **Earlier Pages lag resolved:** the `354b400` build (run `43263198311`) completed **success** (4m26s); the `a2d3e3a` `errored` build was superseded by it. No content defect; queue congestion only.
+- **Live verification:** `https://wingbangboozle1-lang.github.io/Jack3/` and `suggestions.html` fetched successfully on the merge SHA — six source-linked anchors, Asset A placeholder boundary intact, Suggestions page shows 7 proposals with trade-offs and review gates.
+- **Session tasks X-01..X-05 done.** No personal information collected or published. Concurrent sessions `c56c569e` (branch advanced to `24d8bde` during this session) and `7b04b8ee` were respected throughout; their integration remains with their owning sessions. This record is pushed as a docs-only follow-up.
+
+### 001fd935 rebase log (PR #68 follow-up)
+
+- While the docs-only follow-up (PR #68) awaited checks, `main` advanced via PR #66 (`4305293`, session `f0b78eb6`) and PR #65 (`d083b9b`, session `c56c569e` — information register, per-pathway risks, 5 new sources, 240 rows). Rebase onto `d083b9b` produced an append-only `COORDINATION.md` conflict (c56c569e status update vs this session's completion record). Resolved by preserving both sections verbatim; no work discarded. This session's audit file remains a dated record of the 230-row state on `354b400` and does not claim to cover the PR #65 additions. Gates re-run on the combined tree before merge.
+
 ## Completion record — session `c56c569e` (2026-11-12)
 
 - **PR:** [#65](https://github.com/wingbangboozle1-lang/Jack3/pull/65) — merged to `main` 2026-11-12T16:59:07Z, merge commit `d083b9b`.
