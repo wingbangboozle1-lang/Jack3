@@ -18,17 +18,26 @@ incident pages, county assessor office listings). None of that is reproduced her
 ## What was and was not re-read on 2026-11-12
 
 - Re-read on the publisher's page and compared value by value: every row with status
-  `Verified` or `Derived`, except as listed next.
+  `Verified` or `Derived`, except as listed next. This includes the rows added the same day by
+  session `f0b78eb6` (FY2025 Form 10-K Items 2 and 7 and Notes 3 and 8, Rev. Proc. 2025-32
+  section 4.03, the issuer's fourth-quarter webcast notice, the archived FEMA presentation and
+  the city wage page), which were read again here rather than taken on trust.
 - Not re-opened: the CDE 2026 graduation data file (`GRAD2026`). The 87.6% rate and the
   28,831-student denominator were confirmed on the 2026 Dashboard page instead; the graduate
   count in that row's note was not (flag F-28).
+- Not confirmed here: the prior-year city wage ($17.87) quoted in a row note, and the statement
+  in notes and flags that the live FEMA portal returned an error and that a draft 2027 revenue
+  procedure carries placeholder dates. Those come from session `f0b78eb6`'s record.
 - Partly read: the SCAG forecast PDF (4 of 10 parts), the CA DOF release (first of 7 parts),
-  the BEA release (first of 2 parts) and the Q3 FY2026 SEC exhibit (3 of 6 parts). Every value
-  published from those documents was found in the parts read.
-- `Blank` rows have no value to compare. Their route links (`SEC10K`, `NRI`, `ZIMAS`,
-  `CDEACGR`) were not opened in this pass.
+  the BEA release (first of 2 parts), the Q3 FY2026 SEC exhibit (3 of 6 parts), the FY2025
+  Form 10-K (11 of 53 parts), Rev. Proc. 2025-32 (3 of 7 parts) and the FEMA presentation
+  (2 of 3 parts). Every value published from those documents was found in the parts read.
+- `Blank` rows have no value to compare. Their route links (`NRI`, `ZIMAS`, `CDEACGR`) were
+  not opened in this pass.
 - FRED DGS10 was read twice on 2026-11-12; the latest observation on both reads was 4.88%
   for 2026-11-09. The release due on 2026-11-12 had not been posted.
+- A second record of the same date, `research/VERIFICATION-2026-11-12-f0b78eb6.md`, was written
+  by another session. The two passes were made separately.
 
 ## Official pages in the register
 
@@ -247,93 +256,96 @@ incident pages, county assessor office listings). None of that is reproduced her
 | 161 | Tenant & lease | Percentage-rent leases across system | approximately 13% of Jack in the Box leases (1%–10% of gross sales) | Issuer · FY2025 10-K Item 2 | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm |
 | 162 | Tenant & lease | Franchise average unit volume (AUV) | $1,874 thousand (FY2025 vs $1,949 thousand in FY2024) | Issuer Jack in the Box franchise system · FY2025 10-K Item 7 | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm |
 | 163 | Tenant & lease | Portfolio operating lease weighted-average remaining term | 11.2 years (6.1% weighted-average discount rate) | Issuer lessee portfolio · FY2025 10-K Note 8 (2025-09-28) | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm |
-| 164 | Tenant & lease | Company-leased vs company-owned franchise lease income | $245,062 thousand leased vs $16,859 thousand owned base operating lease income | Issuer lessor portfolio · FY2025 10-K Note 8 (FY2025) | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm |
-| 165 | Tenant & lease | Q4 & FY2026 earnings release & webcast | Scheduled 2026-12-09 after market close (5:00 p.m. ET) | Issuer · release dated 2026-10-26 (reconfirms 2,115 stores) | Verified | https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Announces-Fourth-Quarter-and-Full-Year-2026-Earnings-Webcast/default.aspx |
-| 166 | Tenant & lease | Latest earnings release on EDGAR | Q3 FY2026, filed 2026-08-12 | Issuer · EDGAR 8-K index read 2026-11-12 | Verified | https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10 |
-| 167 | Tenant & lease | Chief executive role | Held on an interim basis by the Executive Chairman; the company President is expected to assume it within the next 12 months | Issuer · release filed 2026-09-21 | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm |
-| 168 | Tenant & lease | Investor cooperation agreement | Extended, with customary standstill and voting provisions | Issuer · release filed 2026-09-21 | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm |
-| 169 | Tenant & lease | Subject site closure or renewal status |  | Asset A | Blank | https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx |
-| 170 | Taxes & transfer | Property tax general levy | 1% of assessed value | California · Proposition 13 | Verified | https://assessor.lacounty.gov/real-estate-toolkit/proposition-13 |
-| 171 | Taxes & transfer | Annual assessed-value increase cap | No more than 2% | California · Proposition 13 | Verified | https://assessor.lacounty.gov/real-estate-toolkit/proposition-13 |
-| 172 | Taxes & transfer | Base-year value inflation factor | California CPI, not to exceed 2% per year | California · BOE Publication 800-10 | Verified | https://boe.ca.gov/pdf/pub800-10.pdf |
-| 173 | Taxes & transfer | Reassessment triggers | Change of ownership or completed new construction | California · Proposition 13 | Verified | https://assessor.lacounty.gov/real-estate-toolkit/proposition-13 |
-| 174 | Taxes & transfer | Add-ons to the 1% levy | Voter-approved indebtedness and direct assessments | Los Angeles County Assessor | Verified | https://assessor.lacounty.gov/real-estate-toolkit/proposition-13 |
-| 175 | Taxes & transfer | Proposition 8 decline-in-value | Temporary reduction when market value falls below FBYV | California · BOE Publication 800-10 | Verified | https://boe.ca.gov/pdf/pub800-10.pdf |
-| 176 | Taxes & transfer | 35-year leasehold change-in-ownership rule | Creating, terminating or transferring a leasehold of 35+ years (including options) is a change in ownership | California · R&T Code §61(c)(1), quoted in BOE annotation 220.0345 | Verified | https://www.boe.ca.gov/proptaxes/pdf/220_0345.pdf |
-| 177 | Taxes & transfer | Transfer of lessor's interest, 35+ years remaining | Not a change in ownership | California · R&T Code §62(g), quoted in BOE annotation 220.0345 | Verified | https://www.boe.ca.gov/proptaxes/pdf/220_0345.pdf |
-| 178 | Taxes & transfer | City of Los Angeles base transfer tax | $2.25 per $500 (0.45%) | City of Los Angeles · Office of Finance | Verified | https://finance.lacity.gov/faq/measure-ula |
-| 179 | Taxes & transfer | Measure ULA surcharge | 4% above $5,400,000; 5.5% at or above $10,900,000 | City of Los Angeles · closings after 2026-06-30 | Verified | https://finance.lacity.gov/faq/measure-ula |
-| 180 | Taxes & transfer | Measure ULA effective date | Conveyances on or after 2023-04-01 | City of Los Angeles | Verified | https://finance.lacity.gov/faq/measure-ula |
-| 181 | Taxes & transfer | Threshold indexation | Adjusted annually to BLS Chained CPI | City of Los Angeles | Verified | https://finance.lacity.gov/faq/measure-ula |
-| 182 | Taxes & transfer | Value basis of the two taxes | ULA on gross value; base tax on value net of liens | City of Los Angeles · Office of Finance | Verified | https://finance.lacity.gov/faq/measure-ula |
-| 183 | Taxes & transfer | Combined city rate, tier 1 | 4.45% | City of Los Angeles · Office of Finance rate table | Verified | https://finance.lacity.gov/faq/measure-ula |
-| 184 | Taxes & transfer | Combined city rate, tier 2 | 5.95% | City of Los Angeles · Office of Finance rate table | Verified | https://finance.lacity.gov/faq/measure-ula |
-| 185 | Taxes & transfer | Los Angeles County documentary transfer tax | $0.55 per $500 (0.11%) | Los Angeles County Registrar-Recorder | Verified | https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info |
-| 186 | Taxes & transfer | County rate for the five special cities | Calculated at the full $1.10 per $1,000 | Los Angeles County Registrar-Recorder | Verified | https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info |
-| 187 | Taxes & transfer | City of Los Angeles rates (effective 2026-07-01) confirmed independently | $2.25 per $500 plus 4% / 5.5% at $5,400,000 / $10,900,000 | Los Angeles County Registrar-Recorder | Verified | https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info |
-| 188 | Taxes & transfer | Federal long-term capital gain rates | 0% / 15% / 20% by taxable income (2025 thresholds on Topic 409) | Internal Revenue Service · Topic 409 | Verified | https://www.irs.gov/taxtopics/tc409 |
-| 189 | Taxes & transfer | Federal long-term capital gain brackets (2026) | 0% max $98,900 MFJ ($49,450 Single/MFS, $66,200 HoH); 15% max $613,700 MFJ ($545,500 Single, $579,600 HoH, $306,850 MFS); 20% above | Internal Revenue Service · Rev. Proc. 2025-32 § 4.03 (tax year 2026) | Verified | https://www.irs.gov/pub/irs-drop/rp-25-32.pdf |
-| 190 | Taxes & transfer | Unrecaptured §1250 gain | 25% maximum rate on the depreciated portion | Internal Revenue Service · Topic 409 | Verified | https://www.irs.gov/taxtopics/tc409 |
-| 191 | Taxes & transfer | Net investment income tax (NIIT) | 3.8% | Internal Revenue Service · Topic 559 | Verified | https://www.irs.gov/taxtopics/tc559 |
-| 192 | Taxes & transfer | NIIT threshold for estates and trusts | $15,650 (2025) | Internal Revenue Service · Topic 559 | Verified | https://www.irs.gov/taxtopics/tc559 |
-| 193 | Taxes & transfer | California capital gains treatment | No preferential rate; taxed as ordinary income | California Franchise Tax Board | Verified | https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html |
-| 194 | Taxes & transfer | §1031 like-kind exchange | Real property only; property held primarily for sale does not qualify | Internal Revenue Service | Verified | https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips |
-| 195 | Taxes & transfer | §1031 reporting | Form 8824 | Internal Revenue Service | Verified | https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips |
-| 196 | Taxes & transfer | Owner's marginal rates, adjusted basis and debt |  | Owner A | Blank | https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips |
-| 197 | Hazards | 30-year likelihood, M≥6.7 earthquake | 60% | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
-| 198 | Hazards | 30-year likelihood, M≥7.0 earthquake | 46% | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
-| 199 | Hazards | 30-year likelihood, M≥7.5 earthquake | 31% | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
-| 200 | Hazards | 30-year likelihood, M≥6.0 earthquake | 96% | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
-| 201 | Hazards | 30-year likelihood, M≥8.0 earthquake | 7% | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
-| 202 | Hazards | Average repeat time, M≥6.7 | 40 years | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
-| 203 | Hazards | 30-year likelihood, M≥6.7 | 93% | Southern California region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
-| 204 | Hazards | ShakeOut scenario magnitude | M7.8 southern San Andreas | USGS OFR 2008-1150 (2008) | Verified | https://pubs.usgs.gov/of/2008/1150/ |
-| 205 | Hazards | ShakeOut scenario deaths | about 1,800 | USGS OFR 2008-1150 (2008) | Verified | https://pubs.usgs.gov/of/2008/1150/ |
-| 206 | Hazards | ShakeOut scenario economic losses | about $213 billion | USGS OFR 2008-1150 (2008) | Verified | https://pubs.usgs.gov/of/2008/1150/ |
-| 207 | Hazards | Palisades Fire · area | 23,448 acres | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
-| 208 | Hazards | Palisades Fire · structures destroyed | 6,845 | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
-| 209 | Hazards | Palisades Fire · civilian fatalities | 12 | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
-| 210 | Hazards | Palisades Fire · duration | Active for 24 days | January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
-| 211 | Hazards | Eaton Fire · area | 14,021 acres | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire |
-| 212 | Hazards | Eaton Fire · structures destroyed | 9,419 | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire |
-| 213 | Hazards | Eaton Fire · civilian fatalities | 19 | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire |
-| 214 | Hazards | Combined structures destroyed, January 2025 fires | 16,264 | Los Angeles County · derived | Derived | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
-| 215 | Hazards | Fire Hazard Severity Zone classes | Moderate, High, Very High | California · OSFM | Verified | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
-| 216 | Hazards | State Responsibility Area maps effective | 2024-04-01 | California · OSFM | Verified | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
-| 217 | Hazards | Local Responsibility Area map release phases | 2025-02-10, 2025-02-24, 2025-03-10, 2025-03-24 | California · OSFM | Verified | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
-| 218 | Hazards | Hazard versus risk | Maps measure physical hazard over 30-50 years, before mitigation | California · OSFM | Verified | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
-| 219 | Hazards | 2026 SRA update | Public comment period open at snapshot date | California · OSFM | Verified | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
-| 220 | Hazards | Mapped earthquake ground-failure zones | Fault rupture, liquefaction, earthquake-induced landslides | California Geological Survey · EQ Zapp | Verified | https://www.conservation.ca.gov/cgs/geohazards/eq-zapp |
-| 221 | Hazards | EQ Zapp limitation | Not a substitute for site-specific geologic / geotechnical investigations | California Geological Survey | Verified | https://www.conservation.ca.gov/cgs/geohazards/eq-zapp |
-| 222 | Hazards | Official flood-hazard source | FEMA Flood Maps (NFIP) | Federal Emergency Management Agency | Verified | https://www.fema.gov/flood-maps |
-| 223 | Hazards | FEMA flood zone for the subject parcel |  | Asset A | Blank | https://www.fema.gov/flood-maps |
-| 224 | Hazards | Fire Hazard Severity Zone for the subject parcel |  | Asset A | Blank | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
-| 225 | Hazards | Seismic hazard zone for the subject parcel |  | Asset A | Blank | https://www.conservation.ca.gov/cgs/geohazards/eq-zapp |
-| 226 | Hazards | FEMA National Risk Index county scores (live portal) |  | Los Angeles County · live portal | Blank | https://hazards.fema.gov/nri/ |
-| 227 | Hazards | FEMA National Risk Index · Los Angeles County (archived v1.19.0) | #1 nationally; EAL Value $3.9B; Risk Value $5.3B (Composite Risk Factor 1.36) | Los Angeles County · March 2023 (NRI v1.19.0 PrepToolkit briefing) | Verified | https://www.preptoolkit.fema.gov/documents/d/caes/1d_national-risk-index-_sheehan?download=true |
-| 228 | Hazards | Post-catastrophe insurance availability and pricing |  | Asset A | Blank | https://www.fema.gov/flood-maps |
-| 229 | Projection anchors | Verified population anchor | LA city 3,869,089; LA County 9,694,934 (Census V2025) | Los Angeles city / County · 2025-07-01 | Verified | https://www.census.gov/quickfacts/losangelescitycalifornia |
-| 230 | Projection anchors | Verified employment anchor | 6,282.1 thousand nonfarm, +0.5% YoY | Los Angeles metro · September 2026 | Verified | https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf |
-| 231 | Projection anchors | Verified price anchor | CPI-U +3.7%; ECI +3.9% | Los Angeles metro / CSA · September 2026 | Verified | https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf |
-| 232 | Projection anchors | Verified rate anchor | 10-year Treasury 4.88% (2026-11-09) | United States · daily H.15 | Verified | https://fred.stlouisfed.org/series/DGS10 |
-| 233 | Projection anchors | Official long-range employment projection | SCAG region 8,937k (2022) → 10,276k (2050), +0.50%/yr | SCAG six-county region · adopted 2024 | Verified | https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf |
-| 234 | Projection anchors | Official long-range population projection | SCAG region 18,827,000 (2019) → 20,909,000 (2050) | SCAG six-county region · adopted 2024 | Verified | https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf |
-| 235 | Projection anchors | Subject property's 2030-2035 value, rent, cap rate or sale price |  | Asset A | Blank | https://fred.stlouisfed.org/series/DGS10 |
-| 236 | Projection anchors | Probability of tenant renewal or closure at this site |  | Asset A | Blank | https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm |
-| 237 | Projection anchors | Local demand growth by 2030-2035 |  | Asset A | Blank | https://www.census.gov/quickfacts/losangelescitycalifornia |
+| 164 | Tenant & lease | Typical initial term of the issuer's real estate leases | Generally 20 years, before renewal options | Issuer lessee portfolio · FY2025 10-K Note 8 | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm |
+| 165 | Tenant & lease | Issuer statement on lease renewals | Leases generally renewed as they expire, at then-current market rates | Issuer · FY2025 10-K Item 2 | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm |
+| 166 | Tenant & lease | Jack in the Box restaurants closed in fiscal 2025 | 86 (11 company, 75 franchise), against 25 in fiscal 2024 | Issuer systemwide · FY2025 10-K Item 7 (year ended 2025-09-28) | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm |
+| 167 | Tenant & lease | Company-leased vs company-owned franchise lease income | $245,062 thousand leased vs $16,859 thousand owned base operating lease income | Issuer lessor portfolio · FY2025 10-K Note 8 (FY2025) | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm |
+| 168 | Tenant & lease | Q4 & FY2026 earnings release & webcast | Scheduled 2026-12-09 after market close (5:00 p.m. ET) | Issuer · release dated 2026-10-26 (reconfirms 2,115 stores) | Verified | https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Announces-Fourth-Quarter-and-Full-Year-2026-Earnings-Webcast/default.aspx |
+| 169 | Tenant & lease | Latest earnings release on EDGAR | Q3 FY2026, filed 2026-08-12 | Issuer · EDGAR 8-K index read 2026-11-12 | Verified | https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10 |
+| 170 | Tenant & lease | Chief executive role | Held on an interim basis by the Executive Chairman; the company President is expected to assume it within the next 12 months | Issuer · release filed 2026-09-21 | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm |
+| 171 | Tenant & lease | Investor cooperation agreement | Extended, with customary standstill and voting provisions | Issuer · release filed 2026-09-21 | Verified | https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm |
+| 172 | Tenant & lease | Subject site closure or renewal status |  | Asset A | Blank | https://investors.jackinthebox.com/news/news-details/2025/Jack-in-the-Box-Inc--Unveils-JACK-on-Track-Plan-to-Improve-Long-Term-Financial-Performance/default.aspx |
+| 173 | Taxes & transfer | Property tax general levy | 1% of assessed value | California · Proposition 13 | Verified | https://assessor.lacounty.gov/real-estate-toolkit/proposition-13 |
+| 174 | Taxes & transfer | Annual assessed-value increase cap | No more than 2% | California · Proposition 13 | Verified | https://assessor.lacounty.gov/real-estate-toolkit/proposition-13 |
+| 175 | Taxes & transfer | Base-year value inflation factor | California CPI, not to exceed 2% per year | California · BOE Publication 800-10 | Verified | https://boe.ca.gov/pdf/pub800-10.pdf |
+| 176 | Taxes & transfer | Reassessment triggers | Change of ownership or completed new construction | California · Proposition 13 | Verified | https://assessor.lacounty.gov/real-estate-toolkit/proposition-13 |
+| 177 | Taxes & transfer | Add-ons to the 1% levy | Voter-approved indebtedness and direct assessments | Los Angeles County Assessor | Verified | https://assessor.lacounty.gov/real-estate-toolkit/proposition-13 |
+| 178 | Taxes & transfer | Proposition 8 decline-in-value | Temporary reduction when market value falls below FBYV | California · BOE Publication 800-10 | Verified | https://boe.ca.gov/pdf/pub800-10.pdf |
+| 179 | Taxes & transfer | 35-year leasehold change-in-ownership rule | Creating, terminating or transferring a leasehold of 35+ years (including options) is a change in ownership | California · R&T Code §61(c)(1), quoted in BOE annotation 220.0345 | Verified | https://www.boe.ca.gov/proptaxes/pdf/220_0345.pdf |
+| 180 | Taxes & transfer | Transfer of lessor's interest, 35+ years remaining | Not a change in ownership | California · R&T Code §62(g), quoted in BOE annotation 220.0345 | Verified | https://www.boe.ca.gov/proptaxes/pdf/220_0345.pdf |
+| 181 | Taxes & transfer | City of Los Angeles base transfer tax | $2.25 per $500 (0.45%) | City of Los Angeles · Office of Finance | Verified | https://finance.lacity.gov/faq/measure-ula |
+| 182 | Taxes & transfer | Measure ULA surcharge | 4% above $5,400,000; 5.5% at or above $10,900,000 | City of Los Angeles · closings after 2026-06-30 | Verified | https://finance.lacity.gov/faq/measure-ula |
+| 183 | Taxes & transfer | Measure ULA effective date | Conveyances on or after 2023-04-01 | City of Los Angeles | Verified | https://finance.lacity.gov/faq/measure-ula |
+| 184 | Taxes & transfer | Threshold indexation | Adjusted annually to BLS Chained CPI | City of Los Angeles | Verified | https://finance.lacity.gov/faq/measure-ula |
+| 185 | Taxes & transfer | Value basis of the two taxes | ULA on gross value; base tax on value net of liens | City of Los Angeles · Office of Finance | Verified | https://finance.lacity.gov/faq/measure-ula |
+| 186 | Taxes & transfer | Combined city rate, tier 1 | 4.45% | City of Los Angeles · Office of Finance rate table | Verified | https://finance.lacity.gov/faq/measure-ula |
+| 187 | Taxes & transfer | Combined city rate, tier 2 | 5.95% | City of Los Angeles · Office of Finance rate table | Verified | https://finance.lacity.gov/faq/measure-ula |
+| 188 | Taxes & transfer | Los Angeles County documentary transfer tax | $0.55 per $500 (0.11%) | Los Angeles County Registrar-Recorder | Verified | https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info |
+| 189 | Taxes & transfer | County rate for the five special cities | Calculated at the full $1.10 per $1,000 | Los Angeles County Registrar-Recorder | Verified | https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info |
+| 190 | Taxes & transfer | City of Los Angeles rates (effective 2026-07-01) confirmed independently | $2.25 per $500 plus 4% / 5.5% at $5,400,000 / $10,900,000 | Los Angeles County Registrar-Recorder | Verified | https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info |
+| 191 | Taxes & transfer | Federal long-term capital gain rates | 0% / 15% / 20% by taxable income (2025 thresholds on Topic 409) | Internal Revenue Service · Topic 409 | Verified | https://www.irs.gov/taxtopics/tc409 |
+| 192 | Taxes & transfer | Federal long-term capital gain brackets (2026) | 0% max $98,900 MFJ ($49,450 Single/MFS, $66,200 HoH); 15% max $613,700 MFJ ($545,500 Single, $579,600 HoH, $306,850 MFS); 20% above | Internal Revenue Service · Rev. Proc. 2025-32 § 4.03 (tax year 2026) | Verified | https://www.irs.gov/pub/irs-drop/rp-25-32.pdf |
+| 193 | Taxes & transfer | Unrecaptured §1250 gain | 25% maximum rate on the depreciated portion | Internal Revenue Service · Topic 409 | Verified | https://www.irs.gov/taxtopics/tc409 |
+| 194 | Taxes & transfer | Net investment income tax (NIIT) | 3.8% | Internal Revenue Service · Topic 559 | Verified | https://www.irs.gov/taxtopics/tc559 |
+| 195 | Taxes & transfer | NIIT threshold for estates and trusts | $15,650 (2025) | Internal Revenue Service · Topic 559 | Verified | https://www.irs.gov/taxtopics/tc559 |
+| 196 | Taxes & transfer | California capital gains treatment | No preferential rate; taxed as ordinary income | California Franchise Tax Board | Verified | https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html |
+| 197 | Taxes & transfer | §1031 like-kind exchange | Real property only; property held primarily for sale does not qualify | Internal Revenue Service | Verified | https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips |
+| 198 | Taxes & transfer | §1031 reporting | Form 8824 | Internal Revenue Service | Verified | https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips |
+| 199 | Taxes & transfer | Owner's marginal rates, adjusted basis and debt |  | Owner A | Blank | https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips |
+| 200 | Hazards | 30-year likelihood, M≥6.7 earthquake | 60% | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
+| 201 | Hazards | 30-year likelihood, M≥7.0 earthquake | 46% | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
+| 202 | Hazards | 30-year likelihood, M≥7.5 earthquake | 31% | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
+| 203 | Hazards | 30-year likelihood, M≥6.0 earthquake | 96% | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
+| 204 | Hazards | 30-year likelihood, M≥8.0 earthquake | 7% | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
+| 205 | Hazards | Average repeat time, M≥6.7 | 40 years | Los Angeles region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
+| 206 | Hazards | 30-year likelihood, M≥6.7 | 93% | Southern California region · UCERF3 (from 2014) | Verified | https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf |
+| 207 | Hazards | ShakeOut scenario magnitude | M7.8 southern San Andreas | USGS OFR 2008-1150 (2008) | Verified | https://pubs.usgs.gov/of/2008/1150/ |
+| 208 | Hazards | ShakeOut scenario deaths | about 1,800 | USGS OFR 2008-1150 (2008) | Verified | https://pubs.usgs.gov/of/2008/1150/ |
+| 209 | Hazards | ShakeOut scenario economic losses | about $213 billion | USGS OFR 2008-1150 (2008) | Verified | https://pubs.usgs.gov/of/2008/1150/ |
+| 210 | Hazards | Palisades Fire · area | 23,448 acres | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
+| 211 | Hazards | Palisades Fire · structures destroyed | 6,845 | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
+| 212 | Hazards | Palisades Fire · civilian fatalities | 12 | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
+| 213 | Hazards | Palisades Fire · duration | Active for 24 days | January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
+| 214 | Hazards | Eaton Fire · area | 14,021 acres | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire |
+| 215 | Hazards | Eaton Fire · structures destroyed | 9,419 | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire |
+| 216 | Hazards | Eaton Fire · civilian fatalities | 19 | Los Angeles County · January 2025 · CAL FIRE | Verified | https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire |
+| 217 | Hazards | Combined structures destroyed, January 2025 fires | 16,264 | Los Angeles County · derived | Derived | https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire |
+| 218 | Hazards | Fire Hazard Severity Zone classes | Moderate, High, Very High | California · OSFM | Verified | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
+| 219 | Hazards | State Responsibility Area maps effective | 2024-04-01 | California · OSFM | Verified | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
+| 220 | Hazards | Local Responsibility Area map release phases | 2025-02-10, 2025-02-24, 2025-03-10, 2025-03-24 | California · OSFM | Verified | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
+| 221 | Hazards | Hazard versus risk | Maps measure physical hazard over 30-50 years, before mitigation | California · OSFM | Verified | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
+| 222 | Hazards | 2026 SRA update | Public comment period open at snapshot date | California · OSFM | Verified | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
+| 223 | Hazards | Mapped earthquake ground-failure zones | Fault rupture, liquefaction, earthquake-induced landslides | California Geological Survey · EQ Zapp | Verified | https://www.conservation.ca.gov/cgs/geohazards/eq-zapp |
+| 224 | Hazards | EQ Zapp limitation | Not a substitute for site-specific geologic / geotechnical investigations | California Geological Survey | Verified | https://www.conservation.ca.gov/cgs/geohazards/eq-zapp |
+| 225 | Hazards | Official flood-hazard source | FEMA Flood Maps (NFIP) | Federal Emergency Management Agency | Verified | https://www.fema.gov/flood-maps |
+| 226 | Hazards | FEMA flood zone for the subject parcel |  | Asset A | Blank | https://www.fema.gov/flood-maps |
+| 227 | Hazards | Fire Hazard Severity Zone for the subject parcel |  | Asset A | Blank | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones |
+| 228 | Hazards | Seismic hazard zone for the subject parcel |  | Asset A | Blank | https://www.conservation.ca.gov/cgs/geohazards/eq-zapp |
+| 229 | Hazards | FEMA National Risk Index county scores (live portal) |  | Los Angeles County · live portal | Blank | https://hazards.fema.gov/nri/ |
+| 230 | Hazards | FEMA National Risk Index · Los Angeles County (archived v1.19.0) | #1 nationally; EAL Value $3.9B; Risk Value $5.3B (Community Risk Factor 1.36) | Los Angeles County · March 2023 (NRI v1.19.0 PrepToolkit briefing) | Verified | https://www.preptoolkit.fema.gov/documents/d/caes/1d_national-risk-index-_sheehan?download=true |
+| 231 | Hazards | Post-catastrophe insurance availability and pricing |  | Asset A | Blank | https://www.fema.gov/flood-maps |
+| 232 | Projection anchors | Verified population anchor | LA city 3,869,089; LA County 9,694,934 (Census V2025) | Los Angeles city / County · 2025-07-01 | Verified | https://www.census.gov/quickfacts/losangelescitycalifornia |
+| 233 | Projection anchors | Verified employment anchor | 6,282.1 thousand nonfarm, +0.5% YoY | Los Angeles metro · September 2026 | Verified | https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf |
+| 234 | Projection anchors | Verified price anchor | CPI-U +3.7%; ECI +3.9% | Los Angeles metro / CSA · September 2026 | Verified | https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf |
+| 235 | Projection anchors | Verified rate anchor | 10-year Treasury 4.88% (2026-11-09) | United States · daily H.15 | Verified | https://fred.stlouisfed.org/series/DGS10 |
+| 236 | Projection anchors | Official long-range employment projection | SCAG region 8,937k (2022) → 10,276k (2050), +0.50%/yr | SCAG six-county region · adopted 2024 | Verified | https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf |
+| 237 | Projection anchors | Official long-range population projection | SCAG region 18,827,000 (2019) → 20,909,000 (2050) | SCAG six-county region · adopted 2024 | Verified | https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf |
+| 238 | Projection anchors | Subject property's 2030-2035 value, rent, cap rate or sale price |  | Asset A | Blank | https://fred.stlouisfed.org/series/DGS10 |
+| 239 | Projection anchors | Probability of tenant renewal or closure at this site |  | Asset A | Blank | https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm |
+| 240 | Projection anchors | Local demand growth by 2030-2035 |  | Asset A | Blank | https://www.census.gov/quickfacts/losangelescitycalifornia |
 
 ## Corrections applied in this pass
 
 1. Census population rows (city and county) were labelled `2026-07-01`; the publisher dates the
-   V2025 estimate July 1, 2025. Label corrected; values unchanged.
+   V2025 estimate July 1, 2025. Label corrected (also by session `f0b78eb6`); values unchanged.
 2. The city poverty row was labelled a `2025 SAIPE estimate`. The Census source note says city
    figures are ACS 5-year and county figures SAIPE 1-year, and the table prints no year. Both
    rows relabelled; a method row added; the missing year flagged (F-29).
 3. LAUSD chronic absenteeism refreshed from 21.9% (2025 Dashboard) to 21.3% (2026 Dashboard);
    English-learner four-year rate refreshed from 64.1% to 67.7%; 2025 added to the by-year
    graduation series; the 2026 four-year and fifth-year components added.
-4. City of Los Angeles general minimum wage, previously blank, filled from the Office of Wage
-   Standards page: $18.42 per hour from 2026-07-01.
+4. City of Los Angeles general minimum wage: $18.42 per hour from 2026-07-01 confirmed on the
+   Office of Wage Standards page (the row was filled the same day by session `f0b78eb6`).
 5. Combined city transfer-tax rates 4.45% and 5.95% relabelled from `Derived` to `Verified`:
    the Office of Finance prints both in its rate table.
 6. Federal net investment income tax (3.8%, with thresholds) added from IRS Topic 559.
@@ -343,6 +355,11 @@ incident pages, county assessor office listings). None of that is reproduced her
 8. Note added to the dividend and repurchase row: the same release states that $175.0 million
    remains under the repurchase authorisation.
 9. The DataQuest ACGR row now states that the default view is labelled non-charter.
+10. The archived FEMA county row called the 1.36 multiplier a Composite Risk Factor; the
+    presentation defines it as Community Risk Factor. Label corrected.
+11. Three rows added from the FY2025 Form 10-K: typical initial lease term and renewal options
+    (Note 8), the issuer's statement on lease renewals (Item 2), and restaurants closed in
+    fiscal 2025 (Item 7).
 
 ## Confirmed unchanged
 

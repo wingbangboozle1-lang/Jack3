@@ -1913,6 +1913,33 @@
     },
     {
       "category": "Tenant & lease",
+      "indicator": "Typical initial term of the issuer's real estate leases",
+      "value": "Generally 20 years, before renewal options",
+      "scope": "Issuer lessee portfolio \u00b7 FY2025 10-K Note 8",
+      "note": "The note adds that renewal options are generally exercisable at the issuer's sole discretion for 1 to 20 years. A portfolio description; Asset A's term and options are in its own lease.",
+      "status": "Verified",
+      "source": "SEC10K"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Issuer statement on lease renewals",
+      "value": "Leases generally renewed as they expire, at then-current market rates",
+      "scope": "Issuer \u00b7 FY2025 10-K Item 2",
+      "note": "A general statement about the whole portfolio in a year with closures; it is not a commitment for any single site.",
+      "status": "Verified",
+      "source": "SEC10K"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Jack in the Box restaurants closed in fiscal 2025",
+      "value": "86 (11 company, 75 franchise), against 25 in fiscal 2024",
+      "scope": "Issuer systemwide \u00b7 FY2025 10-K Item 7 (year ended 2025-09-28)",
+      "note": "System fell from 2,191 to 2,136 restaurants after 31 openings. Closures are not listed by site.",
+      "status": "Verified",
+      "source": "SEC10K"
+    },
+    {
+      "category": "Tenant & lease",
       "indicator": "Company-leased vs company-owned franchise lease income",
       "value": "$245,062 thousand leased vs $16,859 thousand owned base operating lease income",
       "scope": "Issuer lessor portfolio \u00b7 FY2025 10-K Note 8 (FY2025)",
@@ -2481,7 +2508,7 @@
     {
       "category": "Hazards",
       "indicator": "FEMA National Risk Index \u00b7 Los Angeles County (archived v1.19.0)",
-      "value": "#1 nationally; EAL Value $3.9B; Risk Value $5.3B (Composite Risk Factor 1.36)",
+      "value": "#1 nationally; EAL Value $3.9B; Risk Value $5.3B (Community Risk Factor 1.36)",
       "scope": "Los Angeles County \u00b7 March 2023 (NRI v1.19.0 PrepToolkit briefing)",
       "note": "Archived FEMA presentation baseline; live portal remains unavailable (HTTP 500) and county index rank is not parcel-level risk.",
       "status": "Verified",
@@ -3115,8 +3142,8 @@
       "F-26",
       "Medium",
       "Fourth-quarter FY2026 issuer results not yet filed",
-      "Every tenant figure on this site is from the Q3 FY2026 release (quarter ended 2026-07-05, filed 2026-08-12). The EDGAR index listed no later results filing on 2026-11-12.",
-      "Re-read the next Form 8-K Item 2.02 exhibit and the FY2026 Form 10-K when they are filed; update unit counts, closures and guidance.",
+      "The newest quarterly tenant figures on this site are from the Q3 FY2026 release (quarter ended 2026-07-05, filed 2026-08-12). The EDGAR index listed no later results filing on 2026-11-12; the issuer has announced fourth-quarter and full-year results for 2026-12-09.",
+      "After 2026-12-09, re-read the Form 8-K Item 2.02 exhibit and then the FY2026 Form 10-K; update unit counts, closures and guidance.",
       "EDGAR8K"
     ],
     [
@@ -3333,7 +3360,7 @@
       "R-25",
       "Census population date",
       "Two population rows were labelled '2026-07-01 estimate'. The Census table dates the V2025 estimate July 1, 2025.",
-      "Corrected to 2025-07-01 on both rows; the values were already right.",
+      "Found independently by this pass and by session f0b78eb6 (R-23); corrected to 2025-07-01 on both rows. The values were already right.",
       "CITY"
     ],
     [
@@ -3354,7 +3381,7 @@
       "R-28",
       "City minimum wage left blank",
       "The City of Los Angeles general minimum wage was an empty cell although the city's Office of Wage Standards publishes it.",
-      "Filled from the official city page: $18.42 per hour from 2026-07-01. Jurisdiction of the parcel remains open (F-12).",
+      "Filled by session f0b78eb6 and confirmed separately in this pass on the same city page: $18.42 per hour from 2026-07-01. Whether the parcel is inside the city is still not established.",
       "LAMWO"
     ],
     [
@@ -3374,15 +3401,15 @@
     [
       "R-31",
       "Page numbering collision",
-      "Two pages carried the number 12, and one page function printed '12A' while the navigation list said '12'.",
+      "Two pages carried the number 12, and page functions printed '12A' and '12B' while the navigation list said '12'.",
       "Page numbers are now read from one list in the generator, so the page and the list cannot disagree.",
       "EDGAR8K"
     ],
     [
       "R-32",
       "No suggestions section",
-      "The brief asks for site-improvement suggestions in a dedicated section that can be reviewed before anything is built. No published page contained one.",
-      "A Suggestions page was added. Nothing on it is implemented; each entry lists the options to choose from.",
+      "At the start of this pass no published page held site-improvement suggestions. Two other sessions then published a page with seven process proposals and six technical options, without options to choose between or a way to combine them.",
+      "The page now keeps those thirteen entries verbatim and adds sixteen suggestions with lettered options and four paths. Nothing on it is implemented.",
       "EDGAR8K"
     ],
     [
@@ -3395,15 +3422,22 @@
     [
       "R-35",
       "Parallel sessions merged while this pass was running",
-      "Three other sessions merged pull requests #59 to #62 into main during this pass. They softened the fixed ten-year and 24-36 month thresholds, added flags F-23 to F-25 and published a seven-item suggestions page.",
-      "Their changes were kept in full. This pass renumbered its own flags to F-26 onward and merged the seven proposals into the expanded Suggestions page.",
-      "EDGAR8K"
+      "Other sessions merged pull requests #56 to #63 into main while this pass was running. They softened the fixed ten-year and 24-36 month thresholds, added flags F-23 to F-25 and review entries R-23 and R-24, added seven rows and three sources, and published a suggestions page.",
+      "Their changes were kept in full. This pass renumbered its own flags to F-26 onward and its review entries to R-25 onward, dropped its duplicate city-wage source, and re-read each of their new rows on the publisher's page.",
+      "SEC10K"
+    ],
+    [
+      "R-36",
+      "Label on the archived FEMA county row",
+      "The archived National Risk Index row called the 1.36 multiplier a 'Composite Risk Factor'. The FEMA presentation defines CRF as Community Risk Factor.",
+      "Label corrected; the figures ($3.9B expected annual loss, $5.3B risk value, rank 1) match the presentation.",
+      "NRIDECK"
     ],
     [
       "R-34",
       "Root documents out of step with the register",
-      "README and the executive summary quoted row, source and page counts from earlier builds.",
-      "Counts corrected to the current build.",
+      "README, VERIFY and the executive summary quote row, source and page counts by hand, so they fall behind whenever the register changes.",
+      "Counts corrected to the current build in this pass; they will need the same correction after the next data change.",
       "EDGAR8K"
     ]
   ],
@@ -3844,7 +3878,7 @@
     ]
   ],
   "counts": {
-    "Verified": 208,
+    "Verified": 211,
     "Blank": 26,
     "Analysis": 1,
     "Derived": 2

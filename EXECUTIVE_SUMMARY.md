@@ -4,7 +4,7 @@
 the owner to expire between 2030 and 2035.
 **Question:** sell before expiry, or renew?
 **Owner's objective:** preserve capital *and* retain growth optionality at a manageable level of risk.
-**Evidence snapshot:** 2026-11-12. **Full record:** [`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) (see also [`suggestions.html`](https://wingbangboozle1-lang.github.io/Jack3/suggestions.html) for proposed improvements).
+**Evidence snapshot:** 2026-11-12. **Full record:** [`research/VERIFICATION-2026-11-12-c56c569e.md`](research/VERIFICATION-2026-11-12-c56c569e.md) (generated from the 240-row register) and [`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) (see also [`suggestions.html`](https://wingbangboozle1-lang.github.io/Jack3/suggestions.html) for proposed improvements).
 **Published dashboard:** <https://wingbangboozle1-lang.github.io/Jack3/>
 
 > **Privacy.** The asset is published as *Asset A*. No address, parcel number, owner name, contact detail, rent roll,
