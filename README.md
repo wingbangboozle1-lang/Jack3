@@ -4,16 +4,16 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 
 **Live site:** https://wingbangboozle1-lang.github.io/Jack3/
 
-> **Current canonical site (2026-11-13; one rolling rate anchor refreshed).** This repository now publishes **one** consolidated site, generated
-> from a single verified register. The descriptions of earlier companion layers further down this README are
-> historical audit trail; those directories are excluded from GitHub Pages and are not the live product.
+> **Current canonical site snapshot (2026-11-13; targeted DGS10 refresh only).** This repository publishes **one** consolidated site, generated
+> from a single canonical register. The full row-by-row audit remains dated 2026-11-12; the 2026-11-13 register records the 4.98% (Nov 10) DGS10 observation, retains 4.88% (Nov 9) as history, and uses 5.10% (Nov 12) as the latest dated reference—without implying a full-register re-audit. Earlier companion layers below are historical and excluded from GitHub Pages.
 
 ## Start here
 
 - [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks (companion structured dossier: [`research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md`](research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md)).
 - [Independent 240-row / 45-source verification (2026-11-12)](research/VERIFICATION-2026-11-12-7b04b8ee.md) — independent line-by-line official-source verification of all 240 canonical rows and 45 sources, paired with [`research/REPO-REVIEW-2026-11-12-7b04b8ee.md`](research/REPO-REVIEW-2026-11-12-7b04b8ee.md).
 - [Dated row-by-row register (2026-11-12)](research/VERIFICATION-2026-11-12-c56c569e.md) — immutable record of the 240-row, 45-source verification pass, with pages read in part and items not confirmed.
-- [Targeted freshness audit (2026-11-13)](research/AUDIT-2026-11-13-02fb510c.md) — official FRED DGS10 refresh to 5.10% (2026-11-12 observation); no claim of a full re-verification.
+- [Targeted freshness audit (2026-11-13)](research/AUDIT-2026-11-13-02fb510c.md) — official FRED DGS10 refresh to 5.10% (2026-11-12 observation), with sampled other-source checks documented separately; no claim of a full re-verification.
+- [Current generated register (2026-11-13)](research/VERIFICATION-2026-11-13-406ca5a9.md) — 242 current rows and 45 official/issuer sources; only this session's DGS10 observations and dependent anchor text are refreshed, with the 2026-11-12 full audit preserved.
 - [Line-by-line verification (2026-11-12)](research/VERIFICATION-2026-11-12-f0b78eb6.md) — a separate hand-written pass of the same date, made when the register held 230 rows and 40 sources, plus closed minimum-wage, 10-K, 2026 LTCG, and FEMA NRI updates (extending [2026-11-11](research/VERIFICATION-2026-11-11-d644184d.md) and [2026-11-12 targeted review](research/VERIFICATION-2026-11-12-ec869c7c.md)).
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
@@ -47,7 +47,7 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 |---|---|---|
 | Overview / dashboard | `/` | Conditional recommendation, six verified anchors, risk balance, navigation |
 | Executive summary | `/executive-summary.html` | Decision, findings, matrix, evidence gates, what stays blank |
-| All entries & findings | `/master.html` | 240-row master register, grouped by category |
+| All entries & findings | `/master.html` | 242-row master register, grouped by category |
 | Geography | `/geography.html` | City / county scale; every parcel-level gap flagged |
 | People & income | `/demographics.html` | Population, households, income, poverty, education, spending capacity |
 | Economy & jobs | `/economy.html` | Employment, wages, prices, output, rates, official long-range forecasts |

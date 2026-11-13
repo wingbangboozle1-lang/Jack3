@@ -1,7 +1,8 @@
 # Verification — canonical publication
 
-**Audit date:** 2026-11-12  
-**Public scope:** 22 static HTML pages (21 shared-navigation pages including `suggestions.html` and `questions.html`, plus the `flagged.html` alias), 240 evidence rows (211 verified, 2 derived, 1 analysis, 26 blank), 20 information-register questions, 16 decision Q&A rows, 24 risks, 8 pathway-risk rows, 31 review flags (`F-01`–`F-31`), 36 repo-review findings, and 45 official/issuer sources. Historical companion layers are excluded.
+- **Current register snapshot:** 2026-11-13 (targeted DGS10 refresh only).
+- **Last full line-by-line source audit:** 2026-11-12 (240 rows / 45 sources).
+- **Current public scope:** 22 static HTML pages (21 shared-navigation pages including `suggestions.html` and `questions.html`, plus the `flagged.html` alias), 242 evidence rows (213 verified, 2 derived, 1 analysis, 26 blank), 20 information-register questions, 16 decision Q&A rows, 24 risks, 8 pathway-risk rows, 32 review flags (`F-01`–`F-32`), 36 repo-review findings, and 45 official/issuer sources. Historical companion layers are excluded.
 
 ## Evidence and corrections
 
@@ -17,7 +18,7 @@
   - Verified finalized 2026 federal LTCG taxable-income thresholds under **IRS Rev. Proc. 2025-32 § 4.03** (`$98,900` / `$613,700` MFJ), while flagging that IRS Topic 409 still displays 2025 numbers and draft 2027 guidance (`rp-26-35.pdf`) carries `[Release Date, 2026]` placeholders (`F-16`).
   - Confirmed `hazards.fema.gov/nri/` returned HTTP 500 on 2026-11-12 (`F-18` live portal remains blank) while publishing archived March 2023 NRI v1.19.0 LA County context (`$3.9B` EAL / `$5.3B` Risk Value) from official FEMA PrepToolkit with explicit vintage caveats.
   - Closed `F-25` in `scripts/projection.py` by aligning `TREASURY_ANCHOR` and `DISCOUNT_RATES[0]` (`0.0486` → `0.0488`) with the 2026-11-09 DGS10 observation.
-- Historical DGS10 observation: **4.88% on 2026-11-09**. The latest observation in the targeted 2026-11-13 refresh is **5.10% on 2026-11-12**. Both are dated market references, not a property forecast, cap rate or mandatory discount-rate floor.
+- Dated DGS10 observations: **4.98% on 2026-11-10** and **5.10% on 2026-11-12** (latest shown on 2026-11-13); no observation was displayed for 2026-11-11. **4.88% on 2026-11-09** is retained as historical. These are market references, not a property forecast, cap rate or mandatory discount-rate floor.
 - LAUSD is **87.4% four-year ACGR (2025–26 DataQuest)** and **87.6% combined four-/five-year (2026 Dashboard file)**. These are distinct measures and carry separate direct CDE links.
 - Every `Verified` observation retains its publisher, geography, period and measure. Every `Blank` value is empty and flagged. `Analysis` and `Derived` rows are not promoted to official observations.
 
@@ -48,4 +49,4 @@ The recommendation remains a conditional dual track: privately verify lease date
 
 ## Targeted freshness update — 2026-11-13
 
-A fresh read of [Federal Reserve Bank of St. Louis FRED DGS10](https://fred.stlouisfed.org/series/DGS10) showed a new latest observation of **5.10% on 2026-11-12** (page updated 2026-11-13). The prior **4.88% on 2026-11-09** remains a correct historical observation, not the latest. The canonical row, projection anchor, uncalibrated sensitivity script and related current-facing summary were updated; the 2026-11-12 comprehensive verification record was preserved unchanged. See [`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md). This is a source-specific refresh only, not a new line-by-line verification of all rows.
+The [Federal Reserve Bank of St. Louis FRED DGS10](https://fred.stlouisfed.org/series/DGS10) page read on 2026-11-13 showed **5.10% for 2026-11-12**, no observation for 2026-11-11, **4.98% for 2026-11-10**, and **4.88% for 2026-11-09**. PR #76 refreshed the current anchor and dimensionless sensitivity input to 5.10%; this follow-up retains 4.88% as history, adds the 4.98% dated row and regenerates the 242-row current register. The 2026-11-12 240-row / 45-source audit remains unchanged. See [`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md) and the [`current generated register`](research/VERIFICATION-2026-11-13-406ca5a9.md). This is still a targeted DGS10 update, not a new line-by-line verification of all current rows.

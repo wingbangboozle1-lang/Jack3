@@ -4,7 +4,7 @@
 the owner to expire between 2030 and 2035.
 **Question:** sell before expiry, or renew?
 **Owner's objective:** preserve capital *and* retain growth optionality at a manageable level of risk.
-**Evidence snapshot:** 2026-11-13 (targeted DGS10 freshness update only; the broad row-by-row audit remains dated 2026-11-12). **Full record:** [`research/VERIFICATION-2026-11-12-c56c569e.md`](research/VERIFICATION-2026-11-12-c56c569e.md) and [`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md), with the supplemental [`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md) (see also [`suggestions.html`](https://wingbangboozle1-lang.github.io/Jack3/suggestions.html) for proposed improvements).
+**Evidence snapshot:** 2026-11-13 (targeted DGS10 refresh only; the broad row-by-row audit remains dated 2026-11-12). **Full record:** [`research/VERIFICATION-2026-11-12-c56c569e.md`](research/VERIFICATION-2026-11-12-c56c569e.md) and [`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md), with the supplemental [`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md) and current [242-row generated register](research/VERIFICATION-2026-11-13-406ca5a9.md) (see also [`suggestions.html`](https://wingbangboozle1-lang.github.io/Jack3/suggestions.html) for proposed improvements).
 **Published dashboard:** <https://wingbangboozle1-lang.github.io/Jack3/>
 
 > **Privacy.** The asset is published as *Asset A*. No address, parcel number, owner name, contact detail, rent roll,
@@ -56,7 +56,7 @@ two priced alternatives instead of one. Only a **signed, enforceable, credit-sup
 
 ## 2. The findings that drive the decision
 
-The broad findings below were re-read from linked publisher pages on 2026-11-12; the DGS10 observation was refreshed from FRED on 2026-11-13. No other source is claimed to have been re-read on 2026-11-13.
+The broad findings below reflect the 2026-11-12 source review; the DGS10 figure was refreshed from FRED on 2026-11-13. A separate targeted audit recorded its own limited spot-checks of other official pages; see [`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md).
 
 **1. The tenant is contracting, and closure timing is tied to franchise-agreement dates.**
 Jack in the Box reports system same-store sales of **−1.1%** and systemwide sales **−1.4%** for the quarter ended
@@ -94,7 +94,7 @@ and ECI **+3.9%**; average weekly wage **$1,704** (Q1 2026). → [BLS LA summary
 [City Wages LA](https://wagesla.lacity.gov/) ·
 [DIR minimum wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm)
 
-**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **5.10%** on 2026-11-12 (latest shown when FRED was read on 2026-11-13); the prior observation was 4.88% on 2026-11-09. This is dated market context, not a property cap rate, mandatory discount-rate floor or asset-specific required return. A sale inside the City of Los Angeles pays a **0.45%** city base transfer tax, a **0.11%** county
+**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **5.10%** on 2026-11-12 (latest shown when FRED was read on 2026-11-13); the previous non-missing observation was **4.98%** on 2026-11-10, and the page showed no observation for November 11. The 4.88% reading on November 9 remains historical. This is dated market context, not a property cap rate, mandatory discount-rate floor or asset-specific required return. A sale inside the City of Los Angeles pays a **0.45%** city base transfer tax, a **0.11%** county
 documentary transfer tax, plus **Measure ULA at 4% above $5,400,000 and 5.5% at or above $10,900,000** for closings after 2026-06-30 (ULA is
 measured on gross value; the base tax on value net of liens; thresholds indexed to Chained CPI). Property tax is a
 **1%** general levy with a **2%** annual assessed-value cap, reassessed on change of ownership. California taxes capital
@@ -179,7 +179,7 @@ been inferred or filled in. The full list, with the official page that could clo
 
 Known open items include: the executed lease and exact expiry; the legal tenant, guarantor and any franchisee
 obligation; store-level sales, rent coverage and arrears; the parcel's zoning and hazard overlays (note `hazards.fema.gov/nri/` returned HTTP 500 on 2026-11-12, while archived March 2023 NRI v1.19.0 LA County context is cited with vintage caveats); effective insurance
-terms; and school assignment / campus-level performance. Previously flagged gaps for LA County transfer tax, LAUSD graduation rates, City of LA general minimum wage (`$18.42/hour` effective 2026-07-01), FY2025 Form 10-K property/AUV/lease-term disclosures, finalized 2026 federal LTCG thresholds (`Rev. Proc. 2025-32`), and the `scripts/projection.py` `4.88%` anchor reconciliation were closed from official pages through 2026-11-12.
+terms; and school assignment / campus-level performance. Previously flagged gaps for LA County transfer tax, LAUSD graduation rates, City of LA general minimum wage (`$18.42/hour` effective 2026-07-01), FY2025 Form 10-K property/AUV/lease-term disclosures, finalized 2026 federal LTCG thresholds (`Rev. Proc. 2025-32`), and the `scripts/projection.py` `4.88%` anchor reconciliation were closed from official pages through 2026-11-12; FRED's DGS10 reference was refreshed on 2026-11-13 and its current register now includes the 4.98% preceding observation.
 
 ---
 

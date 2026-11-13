@@ -48,6 +48,19 @@ class ProjectionFrameworkTests(unittest.TestCase):
         self.assertAlmostEqual(projection.TREASURY_ANCHOR, expected_rate, places=6)
         self.assertAlmostEqual(projection.DISCOUNT_RATES[0], projection.TREASURY_ANCHOR, places=6)
 
+    def test_recent_dgs10_observations_are_dated_and_preserved(self) -> None:
+        canonical = json.loads((ROOT / "data" / "canonical.json").read_text(encoding="utf-8"))
+        observations = {
+            row["scope"].split(" · ")[1]: row["value"]
+            for row in canonical["rows"]
+            if row.get("source") == "FRED"
+            and row.get("indicator") == "10-year Treasury constant maturity yield"
+            and len(row.get("scope", "").split(" · ")) > 1
+        }
+        self.assertEqual(observations.get("2026-11-12"), "5.10%")
+        self.assertEqual(observations.get("2026-11-10"), "4.98%")
+        self.assertEqual(observations.get("2026-11-09"), "4.88%")
+
     def test_closed_form_gordon_identity(self) -> None:
         # Exact identity: when cap_now == cap_exit == c and r - g == c (0 vacancy),
         # PV(rent stream) + PV(exit at (1+g)^N / c) == 1 / c == sell_now_multiple(c).
