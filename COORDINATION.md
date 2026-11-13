@@ -1731,3 +1731,8 @@ held an open claim on this board (last foreign commit: PR #71, 2026-11-12). Open
 `build.py`, `validate.py`, `stage_pages.py`, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py`
 (0 findings), `_advisory_src/verify_advisory.py`, `_dashboard_src/verify.py`, `unittest` for `scripts/test_*.py` (16 OK). Counts unchanged
 at 240 rows / 45 sources; flags 31 → 32.
+
+
+- **A84-03 done:** PR [#72](https://github.com/wingbangboozle1-lang/Jack3/pull/72) merged by squash on 2026-11-13 at `ebc062c007af271e661db1798e91fb0ce00982a7`. PR checks passed: `validate`, `publication-integrity`; post-merge `Validate public research` (run `43515381006`) and `Public artifact regression tests` (run `43515380782`) succeeded. GitHub Pages build/deploy (run `43515379008`) succeeded, and Pages API reports `built`, HTTPS enforced at https://wingbangboozle1-lang.github.io/Jack3/ .
+- The post-merge `git pull --rebase origin main` detected that the session's claim and report patches were already included in PR #72's squash commit. The duplicate replay was skipped only after confirming both files and the complete audit section existed on `origin/main`; no content was dropped.
+- All A84 tasks are done. No personal information was collected, stored, or published.
