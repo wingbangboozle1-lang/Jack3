@@ -1595,3 +1595,31 @@ Read this coordination board and confirmed prior sessions completed the canonica
 | A6-03 | Record verification, findings, limitations and publication status | in progress | `6f8f06bd` | this appended section; audit file |
 
 **Privacy boundary:** use only `Asset A` / `Owner A` placeholders. No personal information, address, parcel/APN, private lease record or personal financial information will be sought or published. Existing upstream source-verification reports remain the source for factual verification; this audit will not present inherited verification as a fresh recheck.
+
+---
+
+# Session `084de50e` — current-state publication audit (2026-11-13)
+
+**Session ID:** `084de50e` · **Branch:** `arena/084de50e-jack3` (platform-fixed) · **Base:** `532073e` · **Date:** 2026-11-13 UTC
+
+## Scope claim (docs-only, non-overlapping)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| A84-01 | Read coordination board, inspect current merged site and publication state; claim scope | **in progress** | `084de50e` | `COORDINATION.md` (this section only) |
+| A84-02 | Run the current canonical build, publication, privacy, and link gates; record precise results and irregularities without changing shared data/site files | **claimed** | `084de50e` | `research/AUDIT-2026-11-13-084de50e.md` (new file) |
+| A84-03 | Confirm current PR/Pages state via GitHub and review audit record | **claimed** | `084de50e` | `COORDINATION.md` (this section), audit report |
+
+**Privacy:** Asset A / Owner A placeholders only. No private data, property identifiers, or personal data will be sought or published. This session will not claim fresh source verification beyond what the cited prior verification records document.
+
+**No overlap:** canonical data, generator, public HTML, workflows, and other sessions' log sections are read-only. Any defects found in shared files will be documented as review requests, not edited here.
+
+### `084de50e` completion record — current-state publication audit (2026-11-13)
+
+- A84-01 **done**; A84-02 **done**; A84-03 **in progress** pending PR / merge / deployment confirmation.
+- Report: [`research/AUDIT-2026-11-13-084de50e.md`](research/AUDIT-2026-11-13-084de50e.md). This was a docs-only audit. Canonical data and published HTML were not changed.
+- Local gates all passed: canonical rebuild (22 pages, 240 rows, 45 sources; 211 verified / 2 derived / 1 analysis / 26 blank), validate (23 published files, 29 approved hosts), stage pages, publication tests (10/10), projection tests (6/6), site/link/host checks, PII scan (149 files, 0 findings), companion dashboard and advisory verifiers, and `git diff --check`. Regeneration left no tracked generated changes.
+- GitHub check on main `532073ea89ba76c22bc8429e458938592a913cf2`: Pages API status `built`, HTTPS enforced; latest validation, publication regression, and Pages deployment workflows succeeded. This pass queried GitHub's API, but did not directly fetch the public Pages HTTP content or re-fetch every publisher URL.
+- Source freshness limitation: the latest source re-verification remains dated 2026-11-12; this audit does not claim it has independently reverified those facts on 2026-11-13. This is explicitly documented in the audit.
+- No privacy leak or new site irregularity found. Missing parcel / lease / property financial / owner-specific tax information remains blank and on the public Questions and Flagged for Review pages; there is no defensible numerical parcel forecast.
+- Initial `git pull --rebase origin arena/084de50e-jack3` failed because the remote branch did not yet exist. No files were affected; before pushing the claim, `git pull --rebase origin main` succeeded and the assigned branch was pushed. No branch switch or other branch push occurred.
