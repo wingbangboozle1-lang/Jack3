@@ -16,8 +16,8 @@
   - Verified FY2025 Form 10-K Item 2 (`941` California units of `2,136`; property tenure split `164`/`565`/`1,020`/`387`; `~13%` percentage-rent leases), Item 7 (`$1,874k` FY2025 Franchise AUV vs `$1,949k` FY2024), Note 8 (`11.2`-year weighted-average remaining operating lease term at `6.1%`), and the issuer's **2026-12-09** Q4/FY2026 earnings webcast notice (`2,115` systemwide stores).
   - Verified finalized 2026 federal LTCG taxable-income thresholds under **IRS Rev. Proc. 2025-32 § 4.03** (`$98,900` / `$613,700` MFJ), while flagging that IRS Topic 409 still displays 2025 numbers and draft 2027 guidance (`rp-26-35.pdf`) carries `[Release Date, 2026]` placeholders (`F-16`).
   - Confirmed `hazards.fema.gov/nri/` returned HTTP 500 on 2026-11-12 (`F-18` live portal remains blank) while publishing archived March 2023 NRI v1.19.0 LA County context (`$3.9B` EAL / `$5.3B` Risk Value) from official FEMA PrepToolkit with explicit vintage caveats.
-  - Closed `F-25` in `scripts/projection.py` by aligning `TREASURY_ANCHOR` and `DISCOUNT_RATES[0]` (`0.0486` → `0.0488`) with the 2026-11-09 DGS10 observation.
-- DGS10 is **4.88% on 2026-11-09**. It remains a dated market reference, not a forecast or mandatory discount-rate floor.
+  - Closed `F-25` in `scripts/projection.py` by aligning `TREASURY_ANCHOR` and `DISCOUNT_RATES[0]` (`0.0486` → `0.0488`) with the 2026-11-09 DGS10 observation; later refreshed to `0.0510` for the 2026-11-12 observation (see session `arena/c155a72c-jack3`).
+- DGS10 is **5.10% on 2026-11-12** (read 2026-11-13; prior print 4.88% on 2026-11-09). It remains a dated market reference, not a forecast or mandatory discount-rate floor.
 - LAUSD is **87.4% four-year ACGR (2025–26 DataQuest)** and **87.6% combined four-/five-year (2026 Dashboard file)**. These are distinct measures and carry separate direct CDE links.
 - Every `Verified` observation retains its publisher, geography, period and measure. Every `Blank` value is empty and flagged. `Analysis` and `Derived` rows are not promoted to official observations.
 
