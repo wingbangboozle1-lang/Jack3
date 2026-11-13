@@ -1579,3 +1579,21 @@ Rebased cleanly over PRs `#59`–`#70` (`8c19013`) preserving every concurrent s
 - `RR-7B-02`: Legacy `DECISION_FRAMEWORK.md` (excluded from GitHub Pages) still carries `2026-11-10` snapshot metadata and star-rated fixed `24-36 month` / `>=10 year` gates; superseded by `EXECUTIVE_SUMMARY.md`, `decisions.html`, and `research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md`.
 - `RR-7B-03`: `https://hazards.fema.gov/nri/` (`NRI`) redirected on our 2026-11-12 check to FEMA's RAPT page (`fema.gov/emergency-managers/practitioners/resilience-analysis-and-planning-tool`, updated `2026-08-18`), which announces NRI v1.20 is hosted in RAPT; dynamic county percentiles remain non-static, so row `[227]` properly stays `Blank` alongside archived March 2023 `NRIDECK` v1.19.0.
 - `RR-7B-04`: `tools/pii_scan.py` `SCAN_DIRS` omits `scripts/`; published output is already scanned by `scripts/validate.py`.
+
+---
+
+# Session `084de50e` — current-state publication audit (2026-11-13)
+
+**Session ID:** `084de50e` · **Branch:** `arena/084de50e-jack3` (platform-fixed) · **Base:** `532073e` · **Date:** 2026-11-13 UTC
+
+## Scope claim (docs-only, non-overlapping)
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| A84-01 | Read coordination board, inspect current merged site and publication state; claim scope | **in progress** | `084de50e` | `COORDINATION.md` (this section only) |
+| A84-02 | Run the current canonical build, publication, privacy, and link gates; record precise results and irregularities without changing shared data/site files | **claimed** | `084de50e` | `research/AUDIT-2026-11-13-084de50e.md` (new file) |
+| A84-03 | Confirm current PR/Pages state via GitHub and review audit record | **claimed** | `084de50e` | `COORDINATION.md` (this section), audit report |
+
+**Privacy:** Asset A / Owner A placeholders only. No private data, property identifiers, or personal data will be sought or published. This session will not claim fresh source verification beyond what the cited prior verification records document.
+
+**No overlap:** canonical data, generator, public HTML, workflows, and other sessions' log sections are read-only. Any defects found in shared files will be documented as review requests, not edited here.
