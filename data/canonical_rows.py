@@ -17,6 +17,7 @@ This module is data only.  scripts/build_canonical.py renders it.
 """
 
 SNAPSHOT = "2026-11-13"
+FULL_AUDIT_DATE = "2026-11-12"
 
 # key -> (short label, publisher, official URL, kind)
 SOURCES = {
@@ -341,12 +342,16 @@ ROWS = [
       "City of Los Angeles · Wages LA (CPI-W indexed)",
       "Up from $17.87/hour (2025-07-01); AB 1228 $20.00/hour fast-food floor still governs covered limited-service chains. Closes F-12.",
       "Verified", "LAMWO"),
+    R("Economy & jobs", "10-year Treasury constant maturity yield", "5.10%", "United States · 2026-11-12 · daily (latest shown on 2026-11-13)",
+      "FRED page refreshed 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation on 2026-11-09 is retained as dated history. Dated context only, not an Asset A discount rate, property cap rate or required return.", "Verified", "FRED"),
+    R("Economy & jobs", "10-year Treasury constant maturity yield", "4.98%", "United States · 2026-11-10 · daily",
+      "Previous non-missing observation shown on the official FRED page fetched 2026-11-13.", "Verified", "FRED"),
+    R("Economy & jobs", "10-year Treasury constant maturity yield", "4.88%", "United States · 2026-11-09 · daily",
+      "Historical daily observation; it was the latest shown in the 2026-11-12 source read and is retained for comparison.", "Verified", "FRED"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "4.84%", "United States · 2026-11-05 · daily",
       "Federal Reserve H.15 observation via FRED.", "Verified", "FRED"),
-    R("Economy & jobs", "10-year Treasury constant maturity yield", "5.10%", "United States · 2026-11-12 · daily (latest shown on 2026-11-13)",
-      "Federal Reserve H.15 observation via FRED; the prior observation was 4.88% on 2026-11-09. Dated context only, not an asset discount rate, cap rate or required return.", "Verified", "FRED"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "4.90%", "United States · 2026-11-04 · daily",
-      "Nearby observation showing day-to-day variation.", "Verified", "FRED"),
+      "Nearby historical observation showing day-to-day variation.", "Verified", "FRED"),
     R("Economy & jobs", "Total personal income", "$818.5 billion", "Los Angeles County · 2024 · current dollars",
       "BEA reports this as personal income, not GDP. The same release discontinued metropolitan-area statistics.", "Verified", "BEA"),
     R("Economy & jobs", "Metropolitan-area GDP / personal income publication", "Discontinued with the 2024 county release", "United States · BEA",
@@ -845,9 +850,9 @@ FLAGS = [
     ("F-14", "High", "Franchise agreement termination is not a lease expiry",
      "An inherited companion report equated franchise termination dates with property lease expiry. The issuer establishes neither for this site.",
      "Keep the two agreements separate; do not infer the lease date from the issuer plan.", "IR25"),
-    ("F-15", "Medium", "Rolling-source freshness",
-     "The BLS summary was updated 2026-11-04 to September 2026 data. FRED's 2026-11-12 observation was 5.10%, shown on the series page refreshed 2026-11-13; the previously latest 4.88% on 2026-11-09 remains a valid historical observation. Older repository layers cite August figures and 4.84% or 4.19%.",
-     "Re-read each release before use; retain the prior vintage in the audit log. The FRED change affects only the dated reference, not a property cap rate or required return.", "FRED"),
+    ("F-15", "Medium", "BLS release date and vintage",
+     "The BLS Los Angeles summary was updated 2026-11-04 and reports September 2026 data; later releases may revise or extend the series.",
+     "Re-read the BLS summary before use and retain the dated vintage.", "BLS"),
     ("F-16", "Low", "IRS Topic 409 shows 2025 brackets; 2026 verified via Rev. Proc. 2025-32; 2027 draft",
      "IRS Topic 409 displays 2025 thresholds on the web page; Rev. Proc. 2025-32 § 4.03 establishes finalized 2026 LTCG brackets (published on Taxes). Draft 2027 Rev. Proc. 2026-35 carries [Release Date, 2026] placeholders and is withheld.",
      "Use Rev. Proc. 2025-32 for 2026 sales and verify finalized 2027 Revenue Procedure before 2027+ transactions.", "IRSRP25"),
@@ -873,7 +878,7 @@ FLAGS = [
      "All canonical rows and official URLs were independently re-verified on 2026-11-12 (see research/VERIFICATION-2026-11-12-f0b78eb6.md), but rolling releases change over time and Q4/FY2026 earnings are scheduled for 2026-12-09.",
      "Re-read BLS, FRED DGS10, ULA indexation and the 2026-12-09 Q4/FY2026 earnings release at the point of decision.", "IR26Q4"),
     ("F-25", "Closed", "Legacy sensitivity script rate-anchor mismatch resolved",
-     "Closed on 2026-11-12: scripts/projection.py was updated from 0.0486 to 0.0488 to match its 2026-11-09 DGS10 comment. The script remains repository-only and uncalibrated for Asset A.",
+     "Originally closed on 2026-11-12 when scripts/projection.py was aligned from 0.0486 to 0.0488 for the then-latest 2026-11-09 DGS10 observation. The 2026-11-13 targeted refresh updated its dated scenario point to 0.0510 for 2026-11-12. The script remains repository-only and uncalibrated for Asset A.",
      "Keep scripts/projection.py strictly as an uncalibrated illustration until private rent, basis, cap rate and tax inputs exist.", "FRED"),
     ("F-22", "Low", "Stale open pull requests",
      "Eleven pull requests opened by earlier sessions were still open on 2026-11-12 (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48 and #51), last updated between 2026-11-06 and 2026-11-11. None was merged, closed or edited by the integration sessions.",
@@ -898,7 +903,7 @@ FLAGS = [
      "Rows about repository structure, pull requests and build behaviour have no government publisher. Their link column points to a related official page so that the every-row-has-a-link rule holds; it does not evidence the finding.",
      "Read those rows against the repository history, not against the linked page.", "EDGAR8K"),
     ("F-32", "Low", "FRED DGS10 refreshed after the 2026-11-12 verification snapshot",
-     "The official series now shows 5.10% for 2026-11-12 (read 2026-11-13), replacing 4.88% for 2026-11-09 as the latest available observation. The 4.88% dated value remains historically correct.",
+     "The FRED page read 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation for 2026-11-09 remains historically correct, not the latest.",
      "The published current rate anchor and illustrative script are refreshed; revisit this rolling observation before decisions. Neither value sets Asset A's discount rate, cap rate or required return.", "FRED"),
 ]
 
@@ -927,8 +932,8 @@ REPO_REVIEW = [
      "Root schools.html left the district graduation rate blank (V-4) because CDE files were not extracted.",
      "Read CDE official records: 87.4% four-year ACGR for 2025-26 and 87.6% combined four-/five-year for 2026, with separate measures and direct sources.", "DASH"),
     ("R-08", "Interest-rate vintage",
-     "An inherited decision-file model anchors to 4.19% (2026-01-02); prior root snapshots used 4.84% (2026-11-05) and 4.88% (2026-11-09); FRED's 2026-11-12 observation is 5.10% (read 2026-11-13).",
-     "The dated observations remain distinct; the current site publishes the November 5, 9 and 12 values. None is a property cap rate or required return.", "FRED"),
+     "An inherited decision-file model anchors to 4.19% (2026-01-02); prior root snapshots used 4.84% (2026-11-05) and 4.88% (2026-11-09). FRED's current series showed 4.98% for 2026-11-10 and 5.10% for 2026-11-12 (read 2026-11-13).",
+     "Keep dated observations distinct; the current site publishes the November 9, 10 and 12 values alongside older November 4 and 5 rows. None is a property cap rate or required return.", "FRED"),
     ("R-09", "BLS vintage",
      "Some inherited rows were labelled August 2026 while citing a summary that reports September 2026 data.",
      "The canonical dataset uses September 2026 observations from the 2026-11-04 summary only.", "BLS"),
@@ -975,8 +980,8 @@ REPO_REVIEW = [
      "Census V2025 population rows carried a 2026-07-01 date typo; City general minimum wage, FY2025 10-K Item 2/7 & Note 8 figures, finalized 2026 IRS LTCG brackets (Rev. Proc. 2025-32), and the 2026-12-09 Q4/FY2026 earnings date were missing or blank.",
      "All verified directly against official pages on 2026-11-12 and added to the register; draft 2027 IRS Rev. Proc. 2026-35 remains withheld due to placeholder dates.", "SEC10K"),
     ("R-24", "Projection script, suggestions and root documentation sync",
-     "scripts/projection.py used 0.0486 beside a 4.88% comment (F-25); decisions.html shared the 12A kicker with suggestions.html and contained a duplicate word; README.md, EXECUTIVE_SUMMARY.md, VERIFY.md and REPO_REVIEW.md carried stale counts and withdrawn rigid thresholds.",
-     "Reconciled scripts/projection.py to 0.0488, fixed decisions kicker/typo, expanded suggestions.html with technical proposals and trade-offs, and synchronized all root documents.", "FRED"),
+     "The 2026-11-12 integration found scripts/projection.py used 0.0486 beside a 4.88% comment (F-25); decisions.html shared the 12A kicker with suggestions.html and contained a duplicate word; root docs carried stale counts and withdrawn rigid thresholds.",
+     "The 2026-11-12 correction set the script to 0.0488; the targeted 2026-11-13 DGS10 refresh moved its dated scenario point to 0.0510. Kicker/typo and documentation fixes remain in place.", "FRED"),
     # ---- added 2026-11-12 (session c56c569e) after a fresh re-read of every row
     ("R-25", "Census population date",
      "Two population rows were labelled '2026-07-01 estimate'. The Census table dates the V2025 estimate July 1, 2025.",

@@ -1814,3 +1814,33 @@ at 240 rows / 45 sources; flags 31 → 32.
 - **Post-merge CI:** on merge SHA `94e5b8d`, `Validate public research` (run `43517590982`), `Public artifact regression tests` (run `43517591088`), and `pages build and deployment` (run `43517589595`) all completed successfully. The Pages run finished at 22:14:47 UTC.
 - **Pages state:** GitHub Pages API reports `status: built`, `https_enforced: true`, and URL https://wingbangboozle1-lang.github.io/Jack3/ . This was a docs-only PR; no public site page, navigation or canonical data was changed.
 - **Completion/privacy:** A523-01 through A523-04 are done. No personal information or exact property identifier was collected or published.
+
+---
+
+# Session `406ca5a9` — post-merge final integration audit (2026-11-13)
+
+**Session ID:** `406ca5a9` · **Branch:** `arena/406ca5a9-jack3` (platform-fixed branch) · **Date:** 2026-11-13 (UTC)
+
+Read the coordination board before starting. The branch originally started at `532073e` (PR #71 merge to `main`, 2026-11-12 17:12 UTC), then rebased onto `2b51a94` after concurrent PRs #73–#79 merged. The prior V7-06 closeout was stale and covered by PR #72; P406-01 remains withdrawn as duplicate. Existing source audits and data work from the concurrent sessions are preserved and credited, not represented as newly reverified here.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| P406-01 | Current-state publication audit and GitHub deployment check | **withdrawn as duplicate; covered by PR #72** | `406ca5a9` | `research/POSTMERGE-AUDIT-2026-11-13-406ca5a9.md` (not created); checks corroborate `084de50e`'s report |
+| P406-02 | Complete the DGS10 targeted refresh without duplicating the already-merged anchor update; preserve the dated full-register audit, add the adjacent dated observation, regenerate and test, and record the exact scope | **in progress** | `406ca5a9` | `data/canonical_rows.py`, `scripts/test_projection.py`, `scripts/build_canonical.py`, generated `data/canonical.json` / root HTML / `REPO_REVIEW.md` / current register, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `README.md`, `research/VERIFICATION-2026-11-13-406ca5a9.md`, `COORDINATION.md` (this section); existing `scripts/projection.py` anchor from PR #76 is read-only |
+
+**Privacy boundary:** `Asset A` / `Owner A` placeholders only. This session will not collect or publish personal, parcel, contact, lease, or private financial details. The general audit/report was not duplicated: `084de50e` owns that read-only deliverable in PR #72. PR #76 subsequently refreshed the 5.10% current anchor and model input; P406-02 will not repeat that change. After rebase, this follow-up is narrowed to add the 4.98% (2026-11-10) row, retain 4.88% (2026-11-09) as a dated historical row, update dependent DGS10 wording, and generate the current register while preserving the 2026-11-12 full audit.
+
+
+### P406 scope-change note — avoid duplicate audit; act on official-source refresh (2026-11-13)
+
+Before content work, session `084de50e`'s PR #72 became visible. It owns the overlapping read-only current-publication audit (`research/AUDIT-2026-11-13-084de50e.md`, plus its coordination entry); its PR explicitly leaves canonical data and published pages unchanged. P406-01's general audit/report deliverable is therefore withdrawn as duplicate and handed to PR #72. The gates run locally by `406ca5a9` are corroborative only and will not be published as a second copy. A coordination comment on PR #72 records the finding below.
+
+A distinct official-source freshness issue was found on the [Federal Reserve Bank of St. Louis FRED DGS10 series](https://fred.stlouisfed.org/series/DGS10), fetched 2026-11-13: the page reports **5.10% for 2026-11-12**, with the series updated 2026-11-13 3:16 PM CST; 2026-11-11 is missing and 2026-11-10 is 4.98%. This supersedes the canonical model/site's then-current 4.88% (2026-11-09) anchor.
+
+**Concurrent-main scope adjustment:** the subsequent fetch/rebase found PR #76 had already refreshed the current 5.10% anchor and sensitivity input, preserved the dated 2026-11-12 audit, and published a scoped FRED audit. To avoid duplicating that merged work, P406-02 now adds only the 4.98% (2026-11-10) DGS10 row and a distinct 4.88% (2026-11-09) historical row; it updates dependent current-rate wording and emits a generated 242-row register. The projection anchor itself remains 0.0510 from PR #76. The new register states that P406-02 re-read only DGS10 and does not claim a full-register audit.
+
+**Rebase/conflict record:** fetched `origin/main` at `2b51a94` and rebased the fixed branch to preserve PRs #73–#79. The first rebase conflicted only in append-only `COORDINATION.md`; resolution retained the full main sections for sessions `9fa2710f` and `02fb510c` before appending P406. Pending P406 changes were held aside and selectively rebuilt against that merged state, so no source-audit report, canonical update or page work from those sessions was overwritten. After PRs #80–#81 advanced `main` to `f13cf67`, a second rebase again conflicted only in `COORDINATION.md`; the complete `523a639b` audit and completion records were preserved before the P406 section. No other session content was dropped.
+
+**Local verification on the combined tree:** canonical build produced 22 HTML pages, 242 rows (213 Verified / 2 Derived / 1 Analysis / 26 Blank), 45 sources, and 32 flags; validation passed (23 published files, 29 approved hosts); staged Pages artifact passed (22 HTML + CSS); 17/17 unit tests passed, including DGS10 anchor parity and the new dated-observation regression; site/link/official-host checks passed (256 internal links, 1,040 links across 30 hosts, zero non-official hosts); PII scan passed (153 files, 0 findings); advisory and dashboard verifiers passed; `git diff --check` passed. The generated 2026-11-12 full-audit record was not modified. The follow-up PR CI and deployment of the two added dated rows remain pending.
+
+The earlier 240-row/45-source independent verification on 2026-11-12 remains the last full-register line-by-line audit; no other publisher pages or all current rows were re-fetched by P406-02 on 2026-11-13. No private/property information is required or sought.

@@ -1275,6 +1275,33 @@
     {
       "category": "Economy & jobs",
       "indicator": "10-year Treasury constant maturity yield",
+      "value": "5.10%",
+      "scope": "United States \u00b7 2026-11-12 \u00b7 daily (latest shown on 2026-11-13)",
+      "note": "FRED page refreshed 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation on 2026-11-09 is retained as dated history. Dated context only, not an Asset A discount rate, property cap rate or required return.",
+      "status": "Verified",
+      "source": "FRED"
+    },
+    {
+      "category": "Economy & jobs",
+      "indicator": "10-year Treasury constant maturity yield",
+      "value": "4.98%",
+      "scope": "United States \u00b7 2026-11-10 \u00b7 daily",
+      "note": "Previous non-missing observation shown on the official FRED page fetched 2026-11-13.",
+      "status": "Verified",
+      "source": "FRED"
+    },
+    {
+      "category": "Economy & jobs",
+      "indicator": "10-year Treasury constant maturity yield",
+      "value": "4.88%",
+      "scope": "United States \u00b7 2026-11-09 \u00b7 daily",
+      "note": "Historical daily observation; it was the latest shown in the 2026-11-12 source read and is retained for comparison.",
+      "status": "Verified",
+      "source": "FRED"
+    },
+    {
+      "category": "Economy & jobs",
+      "indicator": "10-year Treasury constant maturity yield",
       "value": "4.84%",
       "scope": "United States \u00b7 2026-11-05 \u00b7 daily",
       "note": "Federal Reserve H.15 observation via FRED.",
@@ -1284,18 +1311,9 @@
     {
       "category": "Economy & jobs",
       "indicator": "10-year Treasury constant maturity yield",
-      "value": "5.10%",
-      "scope": "United States \u00b7 2026-11-12 \u00b7 daily (latest shown on 2026-11-13)",
-      "note": "Federal Reserve H.15 observation via FRED; the prior observation was 4.88% on 2026-11-09. Dated context only, not an asset discount rate, cap rate or required return.",
-      "status": "Verified",
-      "source": "FRED"
-    },
-    {
-      "category": "Economy & jobs",
-      "indicator": "10-year Treasury constant maturity yield",
       "value": "4.90%",
       "scope": "United States \u00b7 2026-11-04 \u00b7 daily",
-      "note": "Nearby observation showing day-to-day variation.",
+      "note": "Nearby historical observation showing day-to-day variation.",
       "status": "Verified",
       "source": "FRED"
     },
@@ -3053,10 +3071,10 @@
     [
       "F-15",
       "Medium",
-      "Rolling-source freshness",
-      "The BLS summary was updated 2026-11-04 to September 2026 data. FRED's 2026-11-12 observation was 5.10%, shown on the series page refreshed 2026-11-13; the previously latest 4.88% on 2026-11-09 remains a valid historical observation. Older repository layers cite August figures and 4.84% or 4.19%.",
-      "Re-read each release before use; retain the prior vintage in the audit log. The FRED change affects only the dated reference, not a property cap rate or required return.",
-      "FRED"
+      "BLS release date and vintage",
+      "The BLS Los Angeles summary was updated 2026-11-04 and reports September 2026 data; later releases may revise or extend the series.",
+      "Re-read the BLS summary before use and retain the dated vintage.",
+      "BLS"
     ],
     [
       "F-16",
@@ -3126,7 +3144,7 @@
       "F-25",
       "Closed",
       "Legacy sensitivity script rate-anchor mismatch resolved",
-      "Closed on 2026-11-12: scripts/projection.py was updated from 0.0486 to 0.0488 to match its 2026-11-09 DGS10 comment. The script remains repository-only and uncalibrated for Asset A.",
+      "Originally closed on 2026-11-12 when scripts/projection.py was aligned from 0.0486 to 0.0488 for the then-latest 2026-11-09 DGS10 observation. The 2026-11-13 targeted refresh updated its dated scenario point to 0.0510 for 2026-11-12. The script remains repository-only and uncalibrated for Asset A.",
       "Keep scripts/projection.py strictly as an uncalibrated illustration until private rent, basis, cap rate and tax inputs exist.",
       "FRED"
     ],
@@ -3190,7 +3208,7 @@
       "F-32",
       "Low",
       "FRED DGS10 refreshed after the 2026-11-12 verification snapshot",
-      "The official series now shows 5.10% for 2026-11-12 (read 2026-11-13), replacing 4.88% for 2026-11-09 as the latest available observation. The 4.88% dated value remains historically correct.",
+      "The FRED page read 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation for 2026-11-09 remains historically correct, not the latest.",
       "The published current rate anchor and illustrative script are refreshed; revisit this rolling observation before decisions. Neither value sets Asset A's discount rate, cap rate or required return.",
       "FRED"
     ]
@@ -3248,8 +3266,8 @@
     [
       "R-08",
       "Interest-rate vintage",
-      "An inherited decision-file model anchors to 4.19% (2026-01-02); prior root snapshots used 4.84% (2026-11-05) and 4.88% (2026-11-09); FRED's 2026-11-12 observation is 5.10% (read 2026-11-13).",
-      "The dated observations remain distinct; the current site publishes the November 5, 9 and 12 values. None is a property cap rate or required return.",
+      "An inherited decision-file model anchors to 4.19% (2026-01-02); prior root snapshots used 4.84% (2026-11-05) and 4.88% (2026-11-09). FRED's current series showed 4.98% for 2026-11-10 and 5.10% for 2026-11-12 (read 2026-11-13).",
+      "Keep dated observations distinct; the current site publishes the November 9, 10 and 12 values alongside older November 4 and 5 rows. None is a property cap rate or required return.",
       "FRED"
     ],
     [
@@ -3360,8 +3378,8 @@
     [
       "R-24",
       "Projection script, suggestions and root documentation sync",
-      "scripts/projection.py used 0.0486 beside a 4.88% comment (F-25); decisions.html shared the 12A kicker with suggestions.html and contained a duplicate word; README.md, EXECUTIVE_SUMMARY.md, VERIFY.md and REPO_REVIEW.md carried stale counts and withdrawn rigid thresholds.",
-      "Reconciled scripts/projection.py to 0.0488, fixed decisions kicker/typo, expanded suggestions.html with technical proposals and trade-offs, and synchronized all root documents.",
+      "The 2026-11-12 integration found scripts/projection.py used 0.0486 beside a 4.88% comment (F-25); decisions.html shared the 12A kicker with suggestions.html and contained a duplicate word; root docs carried stale counts and withdrawn rigid thresholds.",
+      "The 2026-11-12 correction set the script to 0.0488; the targeted 2026-11-13 DGS10 refresh moved its dated scenario point to 0.0510. Kicker/typo and documentation fixes remain in place.",
       "FRED"
     ],
     [
@@ -3886,7 +3904,7 @@
     ]
   ],
   "counts": {
-    "Verified": 211,
+    "Verified": 213,
     "Blank": 26,
     "Analysis": 1,
     "Derived": 2
