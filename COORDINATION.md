@@ -1778,3 +1778,24 @@ at 240 rows / 45 sources; flags 31 → 32.
 - **Live verification:** cache-busted fetches of `/`, `/projections.html`, and `/review.html` confirmed the current 5.10% (2026-11-12) observation, its non-property-reference caveat, and the 32-entry Flagged for Review register. The initial un-busted fetch served a cached 4.88% page; the query-string fetch showed the deployed current build. This is recorded as transient CDN cache behavior, not a source or build discrepancy.
 - **Follow-up request (not edited):** `research/VERIFICATION-2026-11-13-c155a72c.md` and session `c155a72c`'s coordination summary call the 5.10% DGS10 observation a “discount-rate floor”. That wording is not supported as a universal requirement by FRED and conflicts with the current site's “dated market reference only” wording. Request the owning session amend that report/summary to say “dated market reference” and avoid an unsupported floor. The correction is not blocking: the canonical site, script, and tests no longer use that floor framing.
 - **A13-01..A13-04 done.** Comprehensive 2026-11-12 source audits remain historical; this session re-read the specific sources and fields listed in its 2026-11-13 audit only. No personal information was collected or published.
+
+---
+
+# Session `523a639b` — focused official-source review of schools and hazards (2026-11-13)
+
+**Session ID:** `523a639b` · **Platform-fixed branch:** `arena/523a639b-jack3` · **Initial base:** `532073ea89ba76c22bc8429e458938592a913cf2` (PR #71 merge).
+
+**Coordination / re-scope note:** the original claim on this branch was a broad current-state publication audit. During the required rebase onto `origin/main`, PR #72 (session `084de50e`) had just merged the same docs-only publication/build audit. PR #73 (session `9fa2710f`, open at review time) independently claimed a fresh pass over Census, BLS, Treasury, LA wage and Measure ULA facts. To avoid duplicate work, the broad audit and those source categories were retired before source review; this session is narrowed to current official school and hazard evidence (CDE, CAL FIRE, USGS/CGS and FEMA) and the adequacy of the related blank/flagged disclosures. No changes to shared data or site files are claimed.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| A523-01 | Read the shared board, inspect current merged/parallel work, and identify overlap; re-scope before substantive review | **done** | `523a639b` | this section of `COORDINATION.md` (append-only record) |
+| A523-02 | Freshly inspect official school and hazard publisher pages against the corresponding canonical rows and public flags; record only confirmed facts and unresolved coverage | **in progress** | `523a639b` | `research/AUDIT-2026-11-13-523a639b.md` (new) |
+| A523-03 | Check the selected rows' source mapping, status and publication wording against the generated site and existing validation gates | **claimed** | `523a639b` | read-only; results in audit file |
+| A523-04 | Record findings and any cross-session request; open a docs-only PR only after the review/gates pass, then verify the merged result | **claimed** | `523a639b` | `COORDINATION.md` (this section), audit file, PR |
+
+**Rebase conflict log:** the first required rebase advanced from PR #71 (`532073e`) to PR #72 (`ebc062c`) and conflicted only in the append-only `COORDINATION.md` tail. It was resolved by preserving session `084de50e`'s section and narrowing this claim to avoid overlap. The second rebase advanced from `ebc062c` through the then-current `origin/main` at `af72b61` (including merged PRs #73, #74, #75, #77 and #78) and again conflicted only in `COORDINATION.md`. All main-side `084de50e`, `9fa2710f`, and `c155a72c` records, plus this section, were preserved; no files or session records were discarded.
+
+**Scope boundary:** `data/canonical_rows.py`, `data/canonical.json`, the generator, shared navigation, generated HTML, workflows, and other sessions' records are not edited by this audit. If any corrected public flag or shared-data change is warranted, log it as a cross-session request for the integration owner rather than editing it here.
+
+**Privacy (highest urgency):** only `Asset A` / `Owner A` placeholders. Do not seek, store, infer, or publish owner identity, exact property location/APN, private lease documents, personal contacts, or individual financial information. Any personal information incidentally visible on public sources stays out of this repository and the site.
