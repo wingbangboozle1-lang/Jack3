@@ -1701,7 +1701,16 @@ held an open claim on this board (last foreign commit: PR #71, 2026-11-12). Open
 | C155-02 | Independent re-read of 9 official/issuer pages (ULA, Census city, FRED series + data table, BLS LA summary, DIR minimum wage, Jack in the Box IR release, CAL FIRE/OSFM FHSZ) and the matching rows | **done** | `research/VERIFICATION-2026-11-13-c155a72c.md` (new) |
 | C155-03 | Freshness correction: FRED DGS10 newest print 5.10% (2026-11-12) replaces 4.88% (2026-11-09) as the current anchor; projection constants and dependent generator text updated; unit test passes | **done** | `data/canonical_rows.py`, `scripts/build_canonical.py`, `scripts/projection.py`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md` (rate sentences only) |
 | C155-04 | Flag the vintage split for review (F-32, Medium) so the owner can decide whether to regenerate the dated dossier | **done** | `data/canonical_rows.py` (flag list) |
-| C155-05 | Full local gate run, PR → `main`, CI, merge, Pages check, record here | in progress | this section |
+| C155-05 | Full local gate run, PR → `main`, CI, merge, Pages check, record here | **done** | this section |
+
+**PR / merge / deploy record (C155-05).**
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/75 — **merged** to `main` on 2026-11-13T22:03:02Z as merge commit `a92420a05006c7ce3007e1e7382518b1662e69a1`. Merged without `--auto`, after CI passed on the final head (`0a478ba`).
+- **Conflicts:** two rebases over concurrent `main` commits (PR #72, PR #73). Each conflict was confined to this append-only board; both resolved by keeping every other session's section verbatim plus this one. No content from another session was discarded. The PR branch was force-pushed once, with lease, to replace its own pre-rebase commit on this session branch.
+- **CI on PR head `0a478ba`:** `validate` pass (includes the Jekyll build step that could not run locally), `publication-integrity` pass.
+- **CI on `main` after merge:** `Validate public research` and `Public artifact regression tests` in progress at last check; `pages build and deployment` completed `success`. GitHub Pages API: `status: built`, `https://wingbangboozle1-lang.github.io/Jack3/`.
+- **Live check (fetch, 2026-11-13):** `projections.html` and `flagged.html` served the new build; Flagged page shows the updated F-15 freshness text and the 32-entry register.
+- **Not in scope and not touched:** every other session's section, open PRs #4–#51, and the historical layers.
 
 ## Sources (all fetched 2026-11-13)
 
