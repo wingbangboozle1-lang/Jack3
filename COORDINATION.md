@@ -1684,3 +1684,50 @@ No overlap with other sessions' claimed scopes; this section is append-only and 
 - **Live check:** `https://wingbangboozle1-lang.github.io/Jack3/` fetched after deployment — serves the merged build; GitHub Pages API `status: built`, HTTPS enforced.
 
 This session is complete. No personal information was collected or published.
+# Session `arena/c155a72c-jack3` — independent spot-verification, rate-anchor refresh, integration (2026-11-13)
+
+**Session ID:** `c155a72c` · **Branch:** `arena/c155a72c-jack3` (platform-fixed; the `session-<id>/<task>` naming in the brief is
+not used, same recorded deviation as earlier sessions) · **Date:** 2026-11-13 (UTC) · **Base:** `main` at `532073e` (PR #71).
+
+**Claim note.** This board was read first; baseline gates were run before any edit. The scope claim below was written at
+completion rather than before the first edit, because the baseline checks were needed to choose the scope. No other session
+held an open claim on this board (last foreign commit: PR #71, 2026-11-12). Open PRs #4–#51 are not merged, closed or edited here.
+
+## Scope & completion table
+
+| ID | Task | Status | File scope |
+|---|---|---|---|
+| C155-01 | Baseline: read board, run all gates on `532073e` (green) | **done** | none |
+| C155-02 | Independent re-read of 9 official/issuer pages (ULA, Census city, FRED series + data table, BLS LA summary, DIR minimum wage, Jack in the Box IR release, CAL FIRE/OSFM FHSZ) and the matching rows | **done** | `research/VERIFICATION-2026-11-13-c155a72c.md` (new) |
+| C155-03 | Freshness correction: FRED DGS10 newest print 5.10% (2026-11-12) replaces 4.88% (2026-11-09) as the current anchor; projection constants and dependent generator text updated; unit test passes | **done** | `data/canonical_rows.py`, `scripts/build_canonical.py`, `scripts/projection.py`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md` (rate sentences only) |
+| C155-04 | Flag the vintage split for review (F-32, Medium) so the owner can decide whether to regenerate the dated dossier | **done** | `data/canonical_rows.py` (flag list) |
+| C155-05 | Full local gate run, PR → `main`, CI, merge, Pages check, record here | in progress | this section |
+
+## Sources (all fetched 2026-11-13)
+
+- City of LA Office of Finance, Measure ULA FAQ — https://finance.lacity.gov/faq/measure-ula
+- U.S. Census Bureau QuickFacts, Los Angeles city — https://www.census.gov/quickfacts/losangelescitycalifornia
+- FRED DGS10 (Federal Reserve H.15) — https://fred.stlouisfed.org/series/DGS10 and https://fred.stlouisfed.org/data/DGS10
+- U.S. BLS, Los Angeles Area Economic Summary (updated 2026-11-04) — https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf
+- California DIR, Minimum Wage FAQ — https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm
+- Jack in the Box Inc., Q4/FY2026 earnings-webcast release (2026-10-26) — https://investors.jackinthebox.com/news/news-details/2026/Jack-in-the-Box-Announces-Fourth-Quarter-and-Full-Year-2026-Earnings-Webcast/default.aspx
+- CAL FIRE OSFM, Fire Hazard Severity Zones — https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones
+
+## Results
+
+- **Matched:** all sampled values on the nine pages (see the verification record for the row-by-row list).
+- **Not re-read:** FY2025 Form 10-K (53 parts; AUV row 161 not re-checked), and the other rows not in the list above.
+- **Changed:** the 10-year Treasury anchor (see C155-03). Projection outputs change as a consequence: the discount-rate floor
+  in the break-even tables is now 5.10%. The 1 R framework is unchanged in method.
+
+## Irregularities
+
+- **F-32 (Medium):** rate-anchor vintage — older dated records still quote 4.88%; logged for owner review, not regenerated.
+- **Environment:** Jekyll is not installed in this sandbox, so the CI-only Jekyll artifact comparison could not run locally.
+  All static HTML gates pass; that step runs in CI on the PR.
+
+## Gate results (local, 2026-11-13)
+
+`build.py`, `validate.py`, `stage_pages.py`, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py`
+(0 findings), `_advisory_src/verify_advisory.py`, `_dashboard_src/verify.py`, `unittest` for `scripts/test_*.py` (16 OK). Counts unchanged
+at 240 rows / 45 sources; flags 31 → 32.

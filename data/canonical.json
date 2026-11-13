@@ -1284,9 +1284,9 @@
     {
       "category": "Economy & jobs",
       "indicator": "10-year Treasury constant maturity yield",
-      "value": "4.88%",
-      "scope": "United States \u00b7 2026-11-09 \u00b7 daily (latest shown)",
-      "note": "Newer observation than the 2026-11-08 snapshot used by older repository layers.",
+      "value": "5.10%",
+      "scope": "United States \u00b7 2026-11-12 \u00b7 daily (latest shown)",
+      "note": "Newest observation on FRED when read on 2026-11-13 (FRED table, last updated 2026-11-13). The prior print was 4.88% on 2026-11-09.",
       "status": "Verified",
       "source": "FRED"
     },
@@ -2553,7 +2553,7 @@
     {
       "category": "Projection anchors",
       "indicator": "Verified rate anchor",
-      "value": "10-year Treasury 4.88% (2026-11-09)",
+      "value": "10-year Treasury 5.10% (2026-11-12)",
       "scope": "United States \u00b7 daily H.15",
       "note": "Risk-free anchor; not a cap rate or required return.",
       "status": "Verified",
@@ -3054,7 +3054,7 @@
       "F-15",
       "Medium",
       "Rolling-source freshness",
-      "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation, read again on 2026-11-12, is 4.88% for 2026-11-09. Older repository layers cite August figures and 4.84% or 4.19%.",
+      "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation, read on 2026-11-13, is 5.10% for 2026-11-12 (the prior print was 4.88% for 2026-11-09). Older repository layers cite August figures and 4.84% or 4.19%.",
       "Re-read each release before use; retain the prior vintage in the audit log.",
       "BLS"
     ],
@@ -3185,6 +3185,14 @@
       "Rows about repository structure, pull requests and build behaviour have no government publisher. Their link column points to a related official page so that the every-row-has-a-link rule holds; it does not evidence the finding.",
       "Read those rows against the repository history, not against the linked page.",
       "EDGAR8K"
+    ],
+    [
+      "F-32",
+      "Medium",
+      "Rate anchor moved after earlier records; dated research files still quote 4.88%",
+      "FRED's DGS10 table shows 5.10% for 2026-11-12 (last updated 2026-11-13), after the 4.88% print for 2026-11-09 that earlier layers used. The projection anchor, the discount-rate floor in scripts/projection.py and the live rows now use 5.10%. Earlier dated records (research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md and the 2026-11-10 to 2026-11-12 verification files) still quote 4.88% and the sensitivity figures computed from it; they are kept as dated history and are not regenerated.",
+      "Owner to decide whether the decision dossier sensitivity table should be regenerated at 5.10%. Re-read FRED DGS10 before any use; a 10-year yield is a dated market reference, not a required return.",
+      "FRED"
     ]
   ],
   "repo_review": [
@@ -3240,8 +3248,8 @@
     [
       "R-08",
       "Interest-rate vintage",
-      "An inherited decision-file model anchors to 4.19% (2026-01-02); the root site used 4.84% (2026-11-05); FRED now shows 4.88% (2026-11-09).",
-      "All three are labelled by date on the Flagged page; the current site publishes the 2026-11-05 and 2026-11-09 observations.",
+      "An inherited decision-file model anchors to 4.19% (2026-01-02); the root site used 4.84% (2026-11-05); FRED later showed 4.88% (2026-11-09) and then 5.10% (2026-11-12).",
+      "All three are labelled by date on the Flagged page; the current site publishes the 2026-11-05, 2026-11-09 and 2026-11-12 observations.",
       "FRED"
     ],
     [
@@ -3674,7 +3682,7 @@
       "Q-18",
       "Medium",
       "What would the sale proceeds earn elsewhere, and at what risk?",
-      "The 10-year Treasury yield, 4.88% on 2026-11-09, is the risk-free comparison. A \u00a71031 exchange must be into real property.",
+      "The 10-year Treasury yield, 5.10% on 2026-11-12, is the risk-free comparison. A \u00a71031 exchange must be into real property.",
       "The owner's realistic alternatives after tax.",
       "Adviser comparison of after-tax alternatives; replacement-property underwriting if an exchange is used.",
       "Advisers",

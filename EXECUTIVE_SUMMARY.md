@@ -94,7 +94,7 @@ and ECI **+3.9%**; average weekly wage **$1,704** (Q1 2026). → [BLS LA summary
 [City Wages LA](https://wagesla.lacity.gov/) ·
 [DIR minimum wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm)
 
-**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **4.88%** on 2026-11-09 —
+**5. Exit pricing and taxes decide the net.** The 10-year Treasury constant-maturity yield was **5.10%** on 2026-11-12 (4.88% on 2026-11-09 before that print) —
 a dated market anchor, not a mandatory discount-rate floor or property cap rate. A sale inside the City of Los Angeles pays a **0.45%** city base transfer tax, a **0.11%** county
 documentary transfer tax, plus **Measure ULA at 4% above $5,400,000 and 5.5% at or above $10,900,000** for closings after 2026-06-30 (ULA is
 measured on gross value; the base tax on value net of liens; thresholds indexed to Chained CPI). Property tax is a

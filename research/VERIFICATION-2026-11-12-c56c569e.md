@@ -186,7 +186,7 @@ incident pages, county assessor office listings). None of that is reproduced her
 | 91 | Economy & jobs | AB 1228 applies to franchisees | Yes | California · DIR | Verified | https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm |
 | 92 | Economy & jobs | City of Los Angeles general minimum wage | $18.42 / hour from 2026-07-01 | City of Los Angeles · Wages LA (CPI-W indexed) | Verified | https://wagesla.lacity.gov/ |
 | 93 | Economy & jobs | 10-year Treasury constant maturity yield | 4.84% | United States · 2026-11-05 · daily | Verified | https://fred.stlouisfed.org/series/DGS10 |
-| 94 | Economy & jobs | 10-year Treasury constant maturity yield | 4.88% | United States · 2026-11-09 · daily (latest shown) | Verified | https://fred.stlouisfed.org/series/DGS10 |
+| 94 | Economy & jobs | 10-year Treasury constant maturity yield | 5.10% | United States · 2026-11-12 · daily (latest shown) | Verified | https://fred.stlouisfed.org/series/DGS10 |
 | 95 | Economy & jobs | 10-year Treasury constant maturity yield | 4.90% | United States · 2026-11-04 · daily | Verified | https://fred.stlouisfed.org/series/DGS10 |
 | 96 | Economy & jobs | Total personal income | $818.5 billion | Los Angeles County · 2024 · current dollars | Verified | https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024 |
 | 97 | Economy & jobs | Metropolitan-area GDP / personal income publication | Discontinued with the 2024 county release | United States · BEA | Verified | https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024 |
@@ -327,7 +327,7 @@ incident pages, county assessor office listings). None of that is reproduced her
 | 232 | Projection anchors | Verified population anchor | LA city 3,869,089; LA County 9,694,934 (Census V2025) | Los Angeles city / County · 2025-07-01 | Verified | https://www.census.gov/quickfacts/losangelescitycalifornia |
 | 233 | Projection anchors | Verified employment anchor | 6,282.1 thousand nonfarm, +0.5% YoY | Los Angeles metro · September 2026 | Verified | https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf |
 | 234 | Projection anchors | Verified price anchor | CPI-U +3.7%; ECI +3.9% | Los Angeles metro / CSA · September 2026 | Verified | https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf |
-| 235 | Projection anchors | Verified rate anchor | 10-year Treasury 4.88% (2026-11-09) | United States · daily H.15 | Verified | https://fred.stlouisfed.org/series/DGS10 |
+| 235 | Projection anchors | Verified rate anchor | 10-year Treasury 5.10% (2026-11-12) | United States · daily H.15 | Verified | https://fred.stlouisfed.org/series/DGS10 |
 | 236 | Projection anchors | Official long-range employment projection | SCAG region 8,937k (2022) → 10,276k (2050), +0.50%/yr | SCAG six-county region · adopted 2024 | Verified | https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf |
 | 237 | Projection anchors | Official long-range population projection | SCAG region 18,827,000 (2019) → 20,909,000 (2050) | SCAG six-county region · adopted 2024 | Verified | https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf |
 | 238 | Projection anchors | Subject property's 2030-2035 value, rent, cap rate or sale price |  | Asset A | Blank | https://fred.stlouisfed.org/series/DGS10 |

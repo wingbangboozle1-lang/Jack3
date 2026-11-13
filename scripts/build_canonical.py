@@ -201,7 +201,7 @@ def page_index() -> str:
         ("LA METRO · SEP 2026", "4.4%", "Unemployment · down from 5.5% a year earlier", "BLS", "BLS economic summary"),
         ("LA METRO · SEP 2026", "+0.5%", "Nonfarm payroll growth · 6,282.1 thousand jobs", "BLS", "BLS economic summary"),
         ("ISSUER · Q3 FY2026", "-1.1%", "System same-store sales · 2,115 restaurants", "SECQ3", "SEC 8-K Exhibit 99.1"),
-        ("US · 2026-11-09", "4.88%", "10-year Treasury · dated reference, not a required return", "FRED", "FRED DGS10"),
+        ("US · 2026-11-12", "5.10%", "10-year Treasury · dated reference, not a required return", "FRED", "FRED DGS10"),
         ("LA REGION · UCERF3", "60%", "30-year M≥6.7 likelihood from 2014, not parcel loss", "UCERF3", "USGS Fact Sheet 2015-3009"),
     ]
     card_html = ''.join(
@@ -293,7 +293,7 @@ def page_executive_summary() -> str:
         ("2", "Demand is soft at regional scale", "City population is 0.8% below its 2020 estimates base; county is 3.2% below; a separate state estimate shows a −0.45% county year-over-year decline.", "DOF"),
         ("3", "Labour market is improving but uneven", "Metro unemployment fell to 4.4% and payrolls rose 0.5%, led by education and health (+3.8%) while information fell 5.7%.", "BLS"),
         ("4", "Tenant credit is the key unknown", "The issuer reports −1.1% same-store sales, 17 quarterly closures, a discontinued dividend and a $500m refinancing. The legal obligor at this site is unknown.", "SECQ3"),
-        ("5", "Costs and rates compress real returns", "CPI-U +3.7%, ECI +3.9%, energy +20.3%, and a 4.88% 10-year Treasury. A fixed escalator and a higher exit yield both work against the hold case.", "FRED"),
+        ("5", "Costs and rates compress real returns", "CPI-U +3.7%, ECI +3.9%, energy +20.3%, and a 5.10% 10-year Treasury (2026-11-12). A fixed escalator and a higher exit yield both work against the hold case.", "FRED"),
         ("6", "Tail risk is real but unquantified", "USGS ShakeOut models ~1,800 deaths and $213bn in losses; the 2025 fires destroyed 16,264 structures. This is regional context, not a parcel forecast.", "UCERF3"),
     ]
     # Multi-source findings need links for every distinct published observation.
