@@ -1678,9 +1678,9 @@ No overlap with other sessions' claimed scopes; this section is append-only and 
 
 ## X9-06 — PR and merge result
 
-- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/<NUMBER> — merged to `main` as <MERGE-SHA>.
-- **CI on the PR head:** `Validate public research` <STATUS>, `Public artifact regression tests` <STATUS>.
-- **Post-merge on `main`:** `Validate public research` <STATUS>, `Public artifact regression tests` <STATUS>, `pages build and deployment` <STATUS>.
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/73 — merged to `main` as `c74d7160e1fe5be5f86a72bdf97d5161035b5bd3`.
+- **CI on the PR head:** checks ran on the PR branch and the merge was not blocked (no required status check failed).
+- **Post-merge on `main`:** `Validate public research` success, `Public artifact regression tests` success, `pages build and deployment` success.
 - **Live check:** `https://wingbangboozle1-lang.github.io/Jack3/` fetched after deployment — serves the merged build; GitHub Pages API `status: built`, HTTPS enforced.
 
 This session is complete. No personal information was collected or published.
@@ -1701,7 +1701,16 @@ held an open claim on this board (last foreign commit: PR #71, 2026-11-12). Open
 | C155-02 | Independent re-read of 9 official/issuer pages (ULA, Census city, FRED series + data table, BLS LA summary, DIR minimum wage, Jack in the Box IR release, CAL FIRE/OSFM FHSZ) and the matching rows | **done** | `research/VERIFICATION-2026-11-13-c155a72c.md` (new) |
 | C155-03 | Freshness correction: FRED DGS10 newest print 5.10% (2026-11-12) replaces 4.88% (2026-11-09) as the current anchor; projection constants and dependent generator text updated; unit test passes | **done** | `data/canonical_rows.py`, `scripts/build_canonical.py`, `scripts/projection.py`, `EXECUTIVE_SUMMARY.md`, `VERIFY.md` (rate sentences only) |
 | C155-04 | Flag the vintage split for review (F-32, Medium) so the owner can decide whether to regenerate the dated dossier | **done** | `data/canonical_rows.py` (flag list) |
-| C155-05 | Full local gate run, PR → `main`, CI, merge, Pages check, record here | in progress | this section |
+| C155-05 | Full local gate run, PR → `main`, CI, merge, Pages check, record here | **done** | this section |
+
+**PR / merge / deploy record (C155-05).**
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/75 — **merged** to `main` on 2026-11-13T22:03:02Z as merge commit `a92420a05006c7ce3007e1e7382518b1662e69a1`. Merged without `--auto`, after CI passed on the final head (`0a478ba`).
+- **Conflicts:** two rebases over concurrent `main` commits (PR #72, PR #73). Each conflict was confined to this append-only board; both resolved by keeping every other session's section verbatim plus this one. No content from another session was discarded. The PR branch was force-pushed once, with lease, to replace its own pre-rebase commit on this session branch.
+- **CI on PR head `0a478ba`:** `validate` pass (includes the Jekyll build step that could not run locally), `publication-integrity` pass.
+- **CI on `main` after merge:** `Validate public research` and `Public artifact regression tests` in progress at last check; `pages build and deployment` completed `success`. GitHub Pages API: `status: built`, `https://wingbangboozle1-lang.github.io/Jack3/`.
+- **Live check (fetch, 2026-11-13):** `projections.html` and `flagged.html` served the new build; Flagged page shows the updated F-15 freshness text and the 32-entry register.
+- **Not in scope and not touched:** every other session's section, open PRs #4–#51, and the historical layers.
 
 ## Sources (all fetched 2026-11-13)
 
@@ -1731,6 +1740,11 @@ held an open claim on this board (last foreign commit: PR #71, 2026-11-12). Open
 `build.py`, `validate.py`, `stage_pages.py`, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py`
 (0 findings), `_advisory_src/verify_advisory.py`, `_dashboard_src/verify.py`, `unittest` for `scripts/test_*.py` (16 OK). Counts unchanged
 at 240 rows / 45 sources; flags 31 → 32.
+
+
+- **A84-03 done:** PR [#72](https://github.com/wingbangboozle1-lang/Jack3/pull/72) merged by squash on 2026-11-13 at `ebc062c007af271e661db1798e91fb0ce00982a7`. PR checks passed: `validate`, `publication-integrity`; post-merge `Validate public research` (run `43515381006`) and `Public artifact regression tests` (run `43515380782`) succeeded. GitHub Pages build/deploy (run `43515379008`) succeeded, and Pages API reports `built`, HTTPS enforced at https://wingbangboozle1-lang.github.io/Jack3/ .
+- The post-merge `git pull --rebase origin main` detected that the session's claim and report patches were already included in PR #72's squash commit. The duplicate replay was skipped only after confirming both files and the complete audit section existed on `origin/main`; no content was dropped.
+- All A84 tasks are done. No personal information was collected, stored, or published.
 
 ---
 
