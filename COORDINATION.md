@@ -1814,3 +1814,27 @@ at 240 rows / 45 sources; flags 31 → 32.
 - **Post-merge CI:** on merge SHA `94e5b8d`, `Validate public research` (run `43517590982`), `Public artifact regression tests` (run `43517591088`), and `pages build and deployment` (run `43517589595`) all completed successfully. The Pages run finished at 22:14:47 UTC.
 - **Pages state:** GitHub Pages API reports `status: built`, `https_enforced: true`, and URL https://wingbangboozle1-lang.github.io/Jack3/ . This was a docs-only PR; no public site page, navigation or canonical data was changed.
 - **Completion/privacy:** A523-01 through A523-04 are done. No personal information or exact property identifier was collected or published.
+
+---
+
+# Session `406ca5a9` — post-merge final integration audit (2026-11-13)
+
+**Session ID:** `406ca5a9` · **Branch:** `arena/406ca5a9-jack3` (platform-fixed branch) · **Date:** 2026-11-13 (UTC)
+
+Read the coordination board before starting. This checkout is at `532073e` (PR #71 merge to `main`, 2026-11-12 17:12 UTC). The prior V7-06 closeout is more than 60 minutes old and the PR is already merged; this session takes over only its stale post-merge closeout under the board's handoff rule. No concurrent files or unpublished research are overwritten. Existing V7 research and data work will be credited as prior-session work, not represented as newly reverified here.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| P406-01 | Current-state publication audit and GitHub deployment check | **withdrawn as duplicate; covered by PR #72** | `406ca5a9` | `research/POSTMERGE-AUDIT-2026-11-13-406ca5a9.md` (not created); checks corroborate `084de50e`'s report |
+| P406-02 | Refresh the rolling official DGS10 observation and dependent canonical rate-anchor/model outputs; preserve the dated full-register audit, regenerate and test, and record the exact source-specific change | **in progress** | `406ca5a9` | `data/canonical_rows.py`, `scripts/projection.py`, `scripts/test_projection.py`, `scripts/build_canonical.py`, generated `data/canonical.json` / root HTML / generated register, `EXECUTIVE_SUMMARY.md`, `VERIFY.md`, `README.md` only if needed, `research/FRESHNESS-2026-11-13-406ca5a9.md`, `COORDINATION.md` (this section) |
+
+**Privacy boundary:** `Asset A` / `Owner A` placeholders only. This session will not collect or publish personal, parcel, contact, lease, or private financial details. The general audit/report was not duplicated: `084de50e` owns that read-only deliverable in PR #72, which explicitly did not modify canonical data or public pages. A coordination comment on PR #72 disclosed this targeted DGS10 source finding; the findings-driven canonical/model refresh below is separate.
+
+
+### P406 scope-change note — avoid duplicate audit; act on official-source refresh (2026-11-13)
+
+Before content work, session `084de50e`'s PR #72 became visible. It owns the overlapping read-only current-publication audit (`research/AUDIT-2026-11-13-084de50e.md`, plus its coordination entry); its PR explicitly leaves canonical data and published pages unchanged. P406-01's general audit/report deliverable is therefore withdrawn as duplicate and handed to PR #72. The gates run locally by `406ca5a9` are corroborative only and will not be published as a second copy. A coordination comment on PR #72 records the finding below.
+
+A distinct official-source freshness issue was found on the [Federal Reserve Bank of St. Louis FRED DGS10 series](https://fred.stlouisfed.org/series/DGS10), fetched 2026-11-13: the page reports **5.10% for 2026-11-12**, with the series updated 2026-11-13 3:16 PM CST; 2026-11-11 is missing and 2026-11-10 is 4.98%. This supersedes the canonical model/site's then-current 4.88% (2026-11-09) anchor.
+
+The earlier 240-row/45-source independent verification on 2026-11-12 remains the last full-register line-by-line audit; P406-02 is a targeted refresh of the DGS10 observation and its dependencies, not a claim that all 240 rows or all 45 publisher pages were re-fetched on 2026-11-13. No private/property information is required or sought.
