@@ -1678,9 +1678,9 @@ No overlap with other sessions' claimed scopes; this section is append-only and 
 
 ## X9-06 — PR and merge result
 
-- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/<NUMBER> — merged to `main` as <MERGE-SHA>.
-- **CI on the PR head:** `Validate public research` <STATUS>, `Public artifact regression tests` <STATUS>.
-- **Post-merge on `main`:** `Validate public research` <STATUS>, `Public artifact regression tests` <STATUS>, `pages build and deployment` <STATUS>.
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/73 — merged to `main` as `c74d7160e1fe5be5f86a72bdf97d5161035b5bd3`.
+- **CI on the PR head:** checks ran on the PR branch and the merge was not blocked (no required status check failed).
+- **Post-merge on `main`:** `Validate public research` success, `Public artifact regression tests` success, `pages build and deployment` success.
 - **Live check:** `https://wingbangboozle1-lang.github.io/Jack3/` fetched after deployment — serves the merged build; GitHub Pages API `status: built`, HTTPS enforced.
 
 This session is complete. No personal information was collected or published.
