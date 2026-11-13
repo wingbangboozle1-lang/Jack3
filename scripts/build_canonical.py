@@ -4,7 +4,7 @@
 Outputs (all deterministic, all static HTML, no JavaScript, no external assets):
 
   data/canonical.json                    machine-readable evidence register
-  research/VERIFICATION-2026-11-12-c56c569e.md    generated line-by-line source verification log
+  research/VERIFICATION-2026-11-12-c56c569e.md    immutable 2026-11-12 line-by-line source verification log
   research/VERIFICATION-2026-11-12-f0b78eb6.md    hand-written 2026-11-12 re-verification log (session f0b78eb6; not generated)
   research/VERIFICATION-2026-11-10-b98090a0.md    earlier record, kept as committed (no longer rewritten)
   <root>/*.html                         every page in PAGES + flagged.html alias
@@ -293,7 +293,7 @@ def page_executive_summary() -> str:
         ("2", "Demand is soft at regional scale", "City population is 0.8% below its 2020 estimates base; county is 3.2% below; a separate state estimate shows a −0.45% county year-over-year decline.", "DOF"),
         ("3", "Labour market is improving but uneven", "Metro unemployment fell to 4.4% and payrolls rose 0.5%, led by education and health (+3.8%) while information fell 5.7%.", "BLS"),
         ("4", "Tenant credit is the key unknown", "The issuer reports −1.1% same-store sales, 17 quarterly closures, a discontinued dividend and a $500m refinancing. The legal obligor at this site is unknown.", "SECQ3"),
-        ("5", "Costs and rates compress real returns", "CPI-U +3.7%, ECI +3.9%, energy +20.3%, and a 5.10% 10-year Treasury (2026-11-12). A fixed escalator and a higher exit yield both work against the hold case.", "FRED"),
+        ("5", "Costs and rates compress real returns", "CPI-U +3.7%, ECI +3.9%, energy +20.3%, and a 5.10% 10-year Treasury observation on 2026-11-12. This dated reference is not a property return hurdle.", "FRED"),
         ("6", "Tail risk is real but unquantified", "USGS ShakeOut models ~1,800 deaths and $213bn in losses; the 2025 fires destroyed 16,264 structures. This is regional context, not a parcel forecast.", "UCERF3"),
     ]
     # Multi-source findings need links for every distinct published observation.
@@ -804,8 +804,7 @@ def page_repo_review() -> str:
             '<ol class="steps">'
             '<li>Read <code>COORDINATION.md</code> and the full file inventory before claiming a task.</li>'
             '<li>Enumerated every published HTML file and every external host it links to.</li>'
-            '<li>Re-fetched each official publisher page and compared every published numeric value '
-            'against the text of that page, including geography, period, unit and vintage.</li>'
+            '<li>The 2026-11-12 line-by-line audit re-fetched official publisher pages and compared the values then published, including geography, period, unit and vintage; later refreshes are separately dated and do not claim to re-check unrelated rows.</li>'
             '<li>Recorded disagreements between agencies and between inherited layers rather than '
             'silently choosing one.</li>'
             '<li>Left unconfirmable values empty and published them here and on the '
@@ -816,7 +815,8 @@ def page_repo_review() -> str:
             '</ol>',
             '<p class="small">Row-level verification logs in the repository: '
             '<code>' + VERIFICATION_FILE + '</code> (generated from the register on every build) and '
-            '<code>research/VERIFICATION-2026-11-12-f0b78eb6.md</code> (a second, separately written 2026-11-12 pass). '
+            '<code>research/VERIFICATION-2026-11-12-f0b78eb6.md</code> (a second, separately written 2026-11-12 pass), '
+            'and <code>research/AUDIT-2026-11-13-02fb510c.md</code> (targeted FRED freshness update; no full re-verification claimed). '
             'Machine-readable register: <code>data/canonical.json</code>.</p>']
     return shell("repo-review", ''.join(body), KICKER["repo-review"])
 
@@ -830,9 +830,9 @@ def page_sources() -> str:
             table(["Publisher / document", "Publisher", "Type", "Official link"], srows,
                   "Official source register"),
             h2("Verification standard", "What 'Verified' means here"),
-            '<p><b>Verified</b> means the publisher page was re-read on ' + E(SNAPSHOT) +
-            ' and states that observation, with the geography, period, unit and vintage shown in the row. '
-            'It does not mean the observation predicts this property. <b>Derived</b> means arithmetic on '
+            '<p><b>Verified</b> means the publisher states that observation, with the geography, period, unit and vintage shown in the row. '
+            'The broad row-by-row publisher review is dated 2026-11-12; FRED DGS10 was refreshed on 2026-11-13, '
+            'and the snapshot date does not imply every other source was re-read that day. It does not mean the observation predicts this property. <b>Derived</b> means arithmetic on '
             'two published observations; the arithmetic is printed in the row. <b>Analysis</b> is our '
             'conditional reasoning and its link supplies background context only. <b>Unverified</b> rows '
             'have an empty value cell and an entry on the <a href="review.html">Flagged for Review</a> page.</p>',
@@ -970,123 +970,10 @@ def write_repo_review_md() -> None:
     path.write_text(existing.rstrip() + "\n\n" + section, encoding="utf-8")
 
 
-def write_verification_log() -> None:
-    lines = [
-        "# Line-by-line verification record — 2026-11-12 (UTC)",
-        "",
-        "Session `c56c569e` · fresh re-read and final integration. Every row below was compared again",
-        "with the text of the official publisher page named in the Source column. This file is an",
-        "internal audit record; it is excluded from GitHub Pages. The earlier record,",
-        "`research/VERIFICATION-2026-11-10-b98090a0.md`, is kept as committed and is no longer rewritten",
-        "by the build.",
-        "",
-        "Rules: `Verified` = the publisher states that observation with this geography, period, unit",
-        "and vintage. `Derived` = arithmetic on two published observations, shown in the note.",
-        "`Analysis` = conditional reasoning, not an official observation. `Blank` = no official value",
-        "confirmed; the published value cell is empty and the row appears on the Flagged for Review page.",
-        "",
-        "Privacy: official pages consulted during this pass contain named contacts, email addresses,",
-        "telephone numbers and street addresses (issuer SEC exhibits, CDE district profile, CAL FIRE",
-        "incident pages, county assessor office listings). None of that is reproduced here or on the site.",
-        "",
-        "## What was and was not re-read on 2026-11-12",
-        "",
-        "- Re-read on the publisher's page and compared value by value: every row with status",
-        "  `Verified` or `Derived`, except as listed next. This includes the rows added the same day by",
-        "  session `f0b78eb6` (FY2025 Form 10-K Items 2 and 7 and Notes 3 and 8, Rev. Proc. 2025-32",
-        "  section 4.03, the issuer's fourth-quarter webcast notice, the archived FEMA presentation and",
-        "  the city wage page), which were read again here rather than taken on trust.",
-        "- Not re-opened: the CDE 2026 graduation data file (`GRAD2026`). The 87.6% rate and the",
-        "  28,831-student denominator were confirmed on the 2026 Dashboard page instead; the graduate",
-        "  count in that row's note was not (flag F-28).",
-        "- Not confirmed here: the prior-year city wage ($17.87) quoted in a row note, and the statement",
-        "  in notes and flags that the live FEMA portal returned an error and that a draft 2027 revenue",
-        "  procedure carries placeholder dates. Those come from session `f0b78eb6`'s record.",
-        "- Partly read: the SCAG forecast PDF (4 of 10 parts), the CA DOF release (first of 7 parts),",
-        "  the BEA release (first of 2 parts), the Q3 FY2026 SEC exhibit (3 of 6 parts), the FY2025",
-        "  Form 10-K (11 of 53 parts), Rev. Proc. 2025-32 (3 of 7 parts) and the FEMA presentation",
-        "  (2 of 3 parts). Every value published from those documents was found in the parts read.",
-        "- `Blank` rows have no value to compare. Their route links (`NRI`, `ZIMAS`, `CDEACGR`) were",
-        "  not opened in this pass.",
-        "- FRED DGS10 was read twice on 2026-11-12; the latest observation on both reads was 4.88%",
-        "  for 2026-11-09. The release due on 2026-11-12 had not been posted.",
-        "- A second record of the same date, `research/VERIFICATION-2026-11-12-f0b78eb6.md`, was written",
-        "  by another session. The two passes were made separately.",
-        "",
-        "## Official pages in the register",
-        "",
-        "| Key | Publisher | Official URL |",
-        "|---|---|---|",
-    ]
-    for k, s in SOURCES.items():
-        lines.append(f"| {k} | {s[1]} | {s[2]} |")
-    lines += [
-        "",
-        "## Row-by-row register",
-        "",
-        "| # | Category | Indicator | Value | Geography / period | Status | Source |",
-        "|---:|---|---|---|---|---|---|",
-    ]
-    for i, r in enumerate(ROWS, 1):
-        v = "" if r["status"] == "Blank" else r["value"]
-        row = [str(i), r["category"], r["indicator"], v, r["scope"], r["status"], SOURCES[r["source"]][2]]
-        lines.append("| " + " | ".join(x.replace("|", "\\|") for x in row) + " |")
-    lines += [
-        "",
-        "## Corrections applied in this pass",
-        "",
-        "1. Census population rows (city and county) were labelled `2026-07-01`; the publisher dates the",
-        "   V2025 estimate July 1, 2025. Label corrected (also by session `f0b78eb6`); values unchanged.",
-        "2. The city poverty row was labelled a `2025 SAIPE estimate`. The Census source note says city",
-        "   figures are ACS 5-year and county figures SAIPE 1-year, and the table prints no year. Both",
-        "   rows relabelled; a method row added; the missing year flagged (F-29).",
-        "3. LAUSD chronic absenteeism refreshed from 21.9% (2025 Dashboard) to 21.3% (2026 Dashboard);",
-        "   English-learner four-year rate refreshed from 64.1% to 67.7%; 2025 added to the by-year",
-        "   graduation series; the 2026 four-year and fifth-year components added.",
-        "4. City of Los Angeles general minimum wage: $18.42 per hour from 2026-07-01 confirmed on the",
-        "   Office of Wage Standards page (the row was filled the same day by session `f0b78eb6`).",
-        "5. Combined city transfer-tax rates 4.45% and 5.95% relabelled from `Derived` to `Verified`:",
-        "   the Office of Finance prints both in its rate table.",
-        "6. Federal net investment income tax (3.8%, with thresholds) added from IRS Topic 559.",
-        "7. Issuer rows added from EDGAR: latest results filing is still Q3 FY2026; the chief executive",
-        "   role is held on an interim basis; an investor cooperation agreement was extended. No",
-        "   individual is named.",
-        "8. Note added to the dividend and repurchase row: the same release states that $175.0 million",
-        "   remains under the repurchase authorisation.",
-        "9. The DataQuest ACGR row now states that the default view is labelled non-charter.",
-        "10. The archived FEMA county row called the 1.36 multiplier a Composite Risk Factor; the",
-        "    presentation defines it as Community Risk Factor. Label corrected.",
-        "11. Three rows added from the FY2025 Form 10-K: typical initial lease term and renewal options",
-        "    (Note 8), the issuer's statement on lease renewals (Item 2), and restaurants closed in",
-        "    fiscal 2025 (Item 7).",
-        "",
-        "## Confirmed unchanged",
-        "",
-        "Census QuickFacts (city and county), BLS Los Angeles area summary, CA DOF, BEA, SCAG, SEC Q3",
-        "FY2026 exhibit, issuer 2025 plan release, DIR minimum-wage pages, FRED DGS10, Measure ULA FAQ",
-        "(including the gross-versus-net value basis), county documentary transfer tax, county assessor",
-        "Proposition 13 page, BOE Publication 800-10, BOE annotation 220.0345, IRS Topic 409, IRS",
-        "like-kind exchange page, FTB capital gains page, USGS UCERF3 fact sheet, USGS ShakeOut report",
-        "page, CAL FIRE Palisades and Eaton incident pages, OSFM fire hazard severity zone page, CGS EQ",
-        "Zapp page, FEMA flood maps page, CDE district profile, CDE largest-districts page, CDE 2024-25",
-        "end-of-year reports, and the 2025 Dashboard by-year series.",
-        "",
-        "## Deliberately withheld (no official value)",
-        "",
-    ]
-    for r in ROWS:
-        if r["status"] == "Blank":
-            lines.append(f"- **{r['indicator']}** — {r['note']} Route: {SOURCES[r['source']][2]}")
-    lines += [
-        "",
-        "## Build gates",
-        "",
-        "- `scripts/validate.py`: row provenance, official hosts, blank-value rule, internal links, PII.",
-        "- `scripts/stage_pages.py`: exact Pages artifact, source-linked rows, Jekyll byte comparison.",
-        "- `.github/workflows/validate.yml`: rebuild + `git diff --exit-code -- '*.html'` determinism.",
-        "",
-    ]
-    (ROOT / VERIFICATION_FILE).write_text("\n".join(lines), encoding="utf-8")
+def assert_verification_log_present() -> None:
+    """Require the immutable 2026-11-12 audit; later checks get separate dated notes."""
+    if not (ROOT / VERIFICATION_FILE).is_file():
+        raise FileNotFoundError(f"Immutable dated verification record is missing: {VERIFICATION_FILE}")
 
 
 CSS = """/* Asset A decision desk — single canonical stylesheet. No external assets. */
@@ -1219,7 +1106,7 @@ code{background:#eef1f6;padding:1px 5px;border-radius:4px;font-size:11.5px}
 
 def main() -> None:
     write_dataset()
-    write_verification_log()
+    assert_verification_log_present()
     write_repo_review_md()
     (ROOT / "assets/style.css").write_text(CSS, encoding="utf-8")
 

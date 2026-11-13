@@ -1,5 +1,5 @@
 {
-  "snapshot": "2026-11-12",
+  "snapshot": "2026-11-13",
   "privacy": "Asset A / Owner A placeholders only; no personal or property identifiers.",
   "sources": {
     "CITY": {
@@ -1285,8 +1285,8 @@
       "category": "Economy & jobs",
       "indicator": "10-year Treasury constant maturity yield",
       "value": "5.10%",
-      "scope": "United States \u00b7 2026-11-12 \u00b7 daily (latest shown)",
-      "note": "Newest observation on FRED when read on 2026-11-13 (FRED table, last updated 2026-11-13). The prior print was 4.88% on 2026-11-09.",
+      "scope": "United States \u00b7 2026-11-12 \u00b7 daily (latest shown on 2026-11-13)",
+      "note": "Federal Reserve H.15 observation via FRED; the prior observation was 4.88% on 2026-11-09. Dated context only, not an asset discount rate, cap rate or required return.",
       "status": "Verified",
       "source": "FRED"
     },
@@ -2554,8 +2554,8 @@
       "category": "Projection anchors",
       "indicator": "Verified rate anchor",
       "value": "10-year Treasury 5.10% (2026-11-12)",
-      "scope": "United States \u00b7 daily H.15",
-      "note": "Risk-free anchor; not a cap rate or required return.",
+      "scope": "United States \u00b7 daily H.15 \u00b7 latest shown on 2026-11-13",
+      "note": "Risk-free market reference only; not a property cap rate, required return or universal discount-rate floor.",
       "status": "Verified",
       "source": "FRED"
     },
@@ -2650,7 +2650,7 @@
       "Business as usual",
       "High",
       "Interest rates and exit yields",
-      "The 10-year Treasury was 4.88% on 2026-11-09. A higher exit yield lowers price for the same rent.",
+      "The 10-year Treasury observation was 5.10% on 2026-11-12 (latest shown 2026-11-13). A higher exit yield lowers price for the same rent; Treasury is not a property cap rate.",
       "Stress debt maturity and a higher exit yield; no market cap rate is published.",
       "FRED"
     ],
@@ -2878,7 +2878,7 @@
     ],
     [
       "4 \u00b7 Reference interest rates",
-      "The 10-year Treasury was 4.88% on 2026-11-09; use as dated context, not as a mandatory discount-rate floor or property cap rate.",
+      "The 10-year Treasury was 5.10% on 2026-11-12 (read 2026-11-13); use as dated context, not as a mandatory discount-rate floor or property cap rate.",
       "Discount rates depend on cash-flow timing, risk and owner assumptions; the series is daily and reproducible.",
       "FRED"
     ],
@@ -3054,9 +3054,9 @@
       "F-15",
       "Medium",
       "Rolling-source freshness",
-      "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation, read on 2026-11-13, is 5.10% for 2026-11-12 (the prior print was 4.88% for 2026-11-09). Older repository layers cite August figures and 4.84% or 4.19%.",
-      "Re-read each release before use; retain the prior vintage in the audit log.",
-      "BLS"
+      "The BLS summary was updated 2026-11-04 to September 2026 data. FRED's 2026-11-12 observation was 5.10%, shown on the series page refreshed 2026-11-13; the previously latest 4.88% on 2026-11-09 remains a valid historical observation. Older repository layers cite August figures and 4.84% or 4.19%.",
+      "Re-read each release before use; retain the prior vintage in the audit log. The FRED change affects only the dated reference, not a property cap rate or required return.",
+      "FRED"
     ],
     [
       "F-16",
@@ -3188,10 +3188,10 @@
     ],
     [
       "F-32",
-      "Medium",
-      "Rate anchor moved after earlier records; dated research files still quote 4.88%",
-      "FRED's DGS10 table shows 5.10% for 2026-11-12 (last updated 2026-11-13), after the 4.88% print for 2026-11-09 that earlier layers used. The projection anchor, the discount-rate floor in scripts/projection.py and the live rows now use 5.10%. Earlier dated records (research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md and the 2026-11-10 to 2026-11-12 verification files) still quote 4.88% and the sensitivity figures computed from it; they are kept as dated history and are not regenerated.",
-      "Owner to decide whether the decision dossier sensitivity table should be regenerated at 5.10%. Re-read FRED DGS10 before any use; a 10-year yield is a dated market reference, not a required return.",
+      "Low",
+      "FRED DGS10 refreshed after the 2026-11-12 verification snapshot",
+      "The official series now shows 5.10% for 2026-11-12 (read 2026-11-13), replacing 4.88% for 2026-11-09 as the latest available observation. The 4.88% dated value remains historically correct.",
+      "The published current rate anchor and illustrative script are refreshed; revisit this rolling observation before decisions. Neither value sets Asset A's discount rate, cap rate or required return.",
       "FRED"
     ]
   ],
@@ -3248,8 +3248,8 @@
     [
       "R-08",
       "Interest-rate vintage",
-      "An inherited decision-file model anchors to 4.19% (2026-01-02); the root site used 4.84% (2026-11-05); FRED later showed 4.88% (2026-11-09) and then 5.10% (2026-11-12).",
-      "All three are labelled by date on the Flagged page; the current site publishes the 2026-11-05, 2026-11-09 and 2026-11-12 observations.",
+      "An inherited decision-file model anchors to 4.19% (2026-01-02); prior root snapshots used 4.84% (2026-11-05) and 4.88% (2026-11-09); FRED's 2026-11-12 observation is 5.10% (read 2026-11-13).",
+      "The dated observations remain distinct; the current site publishes the November 5, 9 and 12 values. None is a property cap rate or required return.",
       "FRED"
     ],
     [
@@ -3602,7 +3602,7 @@
       "Q-10",
       "High",
       "Is there debt on the property, and what does it restrict?",
-      "The 10-year Treasury yield was 4.88% on 2026-11-09, the reference for refinancing cost.",
+      "The 10-year Treasury yield was 5.10% on 2026-11-12 (read 2026-11-13); it is a dated benchmark, not this property's refinancing quote.",
       "Balance, maturity, prepayment cost, lender consent rights.",
       "Loan documents and a payoff statement.",
       "Owner A, lender",
@@ -3682,7 +3682,7 @@
       "Q-18",
       "Medium",
       "What would the sale proceeds earn elsewhere, and at what risk?",
-      "The 10-year Treasury yield, 5.10% on 2026-11-12, is the risk-free comparison. A \u00a71031 exchange must be into real property.",
+      "The 10-year Treasury yield was 5.10% on 2026-11-12 (read 2026-11-13); it is dated market context, not an estimate of Owner A's after-tax alternatives. A \u00a71031 exchange must be into real property.",
       "The owner's realistic alternatives after tax.",
       "Adviser comparison of after-tax alternatives; replacement-property underwriting if an exchange is used.",
       "Advisers",

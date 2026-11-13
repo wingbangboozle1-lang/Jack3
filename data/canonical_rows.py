@@ -4,8 +4,10 @@ Privacy boundary: no owner name, address, parcel identifier, account, lease docu
 tax basis, debt statement or personal contact detail appears anywhere in this file.
 The property is ``Asset A`` and the owner is ``Owner A``.
 
-Every row below was re-read from the official publisher page listed in SOURCES on
-2026-11-12 (UTC).  ``Verified`` = the publisher states that exact observation.
+The broad line-by-line verification below was performed on 2026-11-12 (UTC); the
+DGS10 rate anchor was refreshed from its official live series on 2026-11-13. This
+is not a claim that all other rows were re-read on 2026-11-13. ``Verified`` = the
+publisher states that exact observation.
 ``Derived`` = arithmetic on two published observations; the arithmetic is shown.
 ``Analysis`` = conditional reasoning, not an official observation.
 ``Blank``   = no official value could be confirmed; the value cell is empty and the
@@ -14,7 +16,7 @@ Every row below was re-read from the official publisher page listed in SOURCES o
 This module is data only.  scripts/build_canonical.py renders it.
 """
 
-SNAPSHOT = "2026-11-12"
+SNAPSHOT = "2026-11-13"
 
 # key -> (short label, publisher, official URL, kind)
 SOURCES = {
@@ -341,8 +343,8 @@ ROWS = [
       "Verified", "LAMWO"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "4.84%", "United States · 2026-11-05 · daily",
       "Federal Reserve H.15 observation via FRED.", "Verified", "FRED"),
-    R("Economy & jobs", "10-year Treasury constant maturity yield", "5.10%", "United States · 2026-11-12 · daily (latest shown)",
-      "Newest observation on FRED when read on 2026-11-13 (FRED table, last updated 2026-11-13). The prior print was 4.88% on 2026-11-09.", "Verified", "FRED"),
+    R("Economy & jobs", "10-year Treasury constant maturity yield", "5.10%", "United States · 2026-11-12 · daily (latest shown on 2026-11-13)",
+      "Federal Reserve H.15 observation via FRED; the prior observation was 4.88% on 2026-11-09. Dated context only, not an asset discount rate, cap rate or required return.", "Verified", "FRED"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "4.90%", "United States · 2026-11-04 · daily",
       "Nearby observation showing day-to-day variation.", "Verified", "FRED"),
     R("Economy & jobs", "Total personal income", "$818.5 billion", "Los Angeles County · 2024 · current dollars",
@@ -673,7 +675,7 @@ ROWS = [
     R("Projection anchors", "Verified price anchor", "CPI-U +3.7%; ECI +3.9%",
       "Los Angeles metro / CSA · September 2026", "Historical cost-escalation context; lease escalators unknown.", "Verified", "BLS"),
     R("Projection anchors", "Verified rate anchor", "10-year Treasury 5.10% (2026-11-12)",
-      "United States · daily H.15", "Risk-free anchor; not a cap rate or required return.", "Verified", "FRED"),
+      "United States · daily H.15 · latest shown on 2026-11-13", "Risk-free market reference only; not a property cap rate, required return or universal discount-rate floor.", "Verified", "FRED"),
     R("Projection anchors", "Official long-range employment projection",
       "SCAG region 8,937k (2022) → 10,276k (2050), +0.50%/yr",
       "SCAG six-county region · adopted 2024", "Planning forecast with stated uncertainty; not a property forecast.", "Verified", "SCAG"),
@@ -696,7 +698,7 @@ RISKS = [
     ("Business as usual", "High", "Lease expiry and notice windows", "An expiring lease transfers negotiating leverage to the party that can wait. The reported 2030-2035 range is not a date.", "Establish the exact expiry, options and notice deadlines privately; 24-36 months is illustrative, not a verified deadline.", "SECQ3"),
     ("Business as usual", "Medium", "Wage and input-cost pressure", "Covered fast-food work has a $20.00/hour floor; the state floor is $16.90/hour and the City of Los Angeles floor $18.42/hour; CPI energy is +20.3%.", "Examine store-level rent coverage; do not infer failure from regulation alone.", "DIRFF"),
     ("Business as usual", "Medium", "Fixed escalators versus cost inflation", "ECI +3.9% and CPI-U +3.7% can outrun a fixed rent escalator in real terms.", "Verify the escalation clause; stress a real-rent decline through the holding period.", "BLS"),
-    ("Business as usual", "High", "Interest rates and exit yields", "The 10-year Treasury was 4.88% on 2026-11-09. A higher exit yield lowers price for the same rent.", "Stress debt maturity and a higher exit yield; no market cap rate is published.", "FRED"),
+    ("Business as usual", "High", "Interest rates and exit yields", "The 10-year Treasury observation was 5.10% on 2026-11-12 (latest shown 2026-11-13). A higher exit yield lowers price for the same rent; Treasury is not a property cap rate.", "Stress debt maturity and a higher exit yield; no market cap rate is published.", "FRED"),
     ("Business as usual", "High", "Transaction tax drag", "A City of LA sale above $5.4m can add a 4% ULA surcharge on top of the 0.45% base tax; the county documentary tax also applies.", "Confirm jurisdiction and closing date; compute after-tax net proceeds with actual figures.", "ULA"),
     ("Business as usual", "Medium", "Tax deferral is not tax elimination", "§1031 defers gain but requires a qualifying replacement; California taxes capital gain as ordinary income.", "Obtain tax advice; test the after-tax result with the owner's real basis and debt.", "IRS1031"),
     ("Business as usual", "Medium", "Property-tax reassessment on sale", "A sale resets the buyer's assessed value to market under Proposition 13, which affects bid levels.", "Obtain the parcel tax bill; model the buyer's post-sale tax cost.", "ASSESSOR"),
@@ -767,7 +769,7 @@ PROJECTION = [
      "CPI-U +3.7% and ECI +3.9% are historical context, not bounds on future costs; the lease escalator is unverified.",
      "These observations do not bound future outcomes; the lease clause is unverified.", "BLS"),
     ("4 · Reference interest rates",
-     "The 10-year Treasury was 4.88% on 2026-11-09; use as dated context, not as a mandatory discount-rate floor or property cap rate.",
+     "The 10-year Treasury was 5.10% on 2026-11-12 (read 2026-11-13); use as dated context, not as a mandatory discount-rate floor or property cap rate.",
      "Discount rates depend on cash-flow timing, risk and owner assumptions; the series is daily and reproducible.", "FRED"),
     ("5 · Use only official long-range projections",
      "SCAG's adopted 2024 forecast supplies regional employment and population to 2050 with stated uncertainty.",
@@ -844,8 +846,8 @@ FLAGS = [
      "An inherited companion report equated franchise termination dates with property lease expiry. The issuer establishes neither for this site.",
      "Keep the two agreements separate; do not infer the lease date from the issuer plan.", "IR25"),
     ("F-15", "Medium", "Rolling-source freshness",
-     "The BLS summary was updated 2026-11-04 to September 2026 data; FRED's latest observation, read on 2026-11-13, is 5.10% for 2026-11-12 (the prior print was 4.88% for 2026-11-09). Older repository layers cite August figures and 4.84% or 4.19%.",
-     "Re-read each release before use; retain the prior vintage in the audit log.", "BLS"),
+     "The BLS summary was updated 2026-11-04 to September 2026 data. FRED's 2026-11-12 observation was 5.10%, shown on the series page refreshed 2026-11-13; the previously latest 4.88% on 2026-11-09 remains a valid historical observation. Older repository layers cite August figures and 4.84% or 4.19%.",
+     "Re-read each release before use; retain the prior vintage in the audit log. The FRED change affects only the dated reference, not a property cap rate or required return.", "FRED"),
     ("F-16", "Low", "IRS Topic 409 shows 2025 brackets; 2026 verified via Rev. Proc. 2025-32; 2027 draft",
      "IRS Topic 409 displays 2025 thresholds on the web page; Rev. Proc. 2025-32 § 4.03 establishes finalized 2026 LTCG brackets (published on Taxes). Draft 2027 Rev. Proc. 2026-35 carries [Release Date, 2026] placeholders and is withheld.",
      "Use Rev. Proc. 2025-32 for 2026 sales and verify finalized 2027 Revenue Procedure before 2027+ transactions.", "IRSRP25"),
@@ -895,9 +897,9 @@ FLAGS = [
     ("F-31", "Low", "Governance rows carry a context link, not proof",
      "Rows about repository structure, pull requests and build behaviour have no government publisher. Their link column points to a related official page so that the every-row-has-a-link rule holds; it does not evidence the finding.",
      "Read those rows against the repository history, not against the linked page.", "EDGAR8K"),
-    ("F-32", "Medium", "Rate anchor moved after earlier records; dated research files still quote 4.88%",
-     "FRED's DGS10 table shows 5.10% for 2026-11-12 (last updated 2026-11-13), after the 4.88% print for 2026-11-09 that earlier layers used. The projection anchor, the discount-rate floor in scripts/projection.py and the live rows now use 5.10%. Earlier dated records (research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md and the 2026-11-10 to 2026-11-12 verification files) still quote 4.88% and the sensitivity figures computed from it; they are kept as dated history and are not regenerated.",
-     "Owner to decide whether the decision dossier sensitivity table should be regenerated at 5.10%. Re-read FRED DGS10 before any use; a 10-year yield is a dated market reference, not a required return.", "FRED"),
+    ("F-32", "Low", "FRED DGS10 refreshed after the 2026-11-12 verification snapshot",
+     "The official series now shows 5.10% for 2026-11-12 (read 2026-11-13), replacing 4.88% for 2026-11-09 as the latest available observation. The 4.88% dated value remains historically correct.",
+     "The published current rate anchor and illustrative script are refreshed; revisit this rolling observation before decisions. Neither value sets Asset A's discount rate, cap rate or required return.", "FRED"),
 ]
 
 # --------------------------------------------------------------- Repo review findings
@@ -925,8 +927,8 @@ REPO_REVIEW = [
      "Root schools.html left the district graduation rate blank (V-4) because CDE files were not extracted.",
      "Read CDE official records: 87.4% four-year ACGR for 2025-26 and 87.6% combined four-/five-year for 2026, with separate measures and direct sources.", "DASH"),
     ("R-08", "Interest-rate vintage",
-     "An inherited decision-file model anchors to 4.19% (2026-01-02); the root site used 4.84% (2026-11-05); FRED later showed 4.88% (2026-11-09) and then 5.10% (2026-11-12).",
-     "All three are labelled by date on the Flagged page; the current site publishes the 2026-11-05, 2026-11-09 and 2026-11-12 observations.", "FRED"),
+     "An inherited decision-file model anchors to 4.19% (2026-01-02); prior root snapshots used 4.84% (2026-11-05) and 4.88% (2026-11-09); FRED's 2026-11-12 observation is 5.10% (read 2026-11-13).",
+     "The dated observations remain distinct; the current site publishes the November 5, 9 and 12 values. None is a property cap rate or required return.", "FRED"),
     ("R-09", "BLS vintage",
      "Some inherited rows were labelled August 2026 while citing a summary that reports September 2026 data.",
      "The canonical dataset uses September 2026 observations from the 2026-11-04 summary only.", "BLS"),
@@ -1093,7 +1095,7 @@ INFO_REGISTER = [
      "Share of net worth in this asset, liquidity needs, horizon, tolerance for a total loss of rent.",
      "A structured conversation with the owner's financial and estate advisers.", "Owner A, advisers", "IRS559"),
     ("Q-10", "High", "Is there debt on the property, and what does it restrict?",
-     "The 10-year Treasury yield was 4.88% on 2026-11-09, the reference for refinancing cost.",
+     "The 10-year Treasury yield was 5.10% on 2026-11-12 (read 2026-11-13); it is a dated benchmark, not this property's refinancing quote.",
      "Balance, maturity, prepayment cost, lender consent rights.",
      "Loan documents and a payoff statement.", "Owner A, lender", "FRED"),
     ("Q-11", "High", "What is the assessed value and the annual tax bill, and who pays it?",
@@ -1125,7 +1127,7 @@ INFO_REGISTER = [
      "Tract-level population, income, traffic counts, competing restaurants, planned development.",
      "Census tract and block-group tables with margins of error; city traffic counts; the planning case list.", "Public agencies", "CITY"),
     ("Q-18", "Medium", "What would the sale proceeds earn elsewhere, and at what risk?",
-     "The 10-year Treasury yield, 5.10% on 2026-11-12, is the risk-free comparison. A §1031 exchange must be into real property.",
+     "The 10-year Treasury yield was 5.10% on 2026-11-12 (read 2026-11-13); it is dated market context, not an estimate of Owner A's after-tax alternatives. A §1031 exchange must be into real property.",
      "The owner's realistic alternatives after tax.",
      "Adviser comparison of after-tax alternatives; replacement-property underwriting if an exchange is used.", "Advisers", "FRED"),
     ("Q-19", "Medium", "What have comparable short-term restaurant net leases actually sold for?",

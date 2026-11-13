@@ -3,7 +3,7 @@
 
 Guards against:
   1. Regression of TREASURY_ANCHOR / DISCOUNT_RATES[0] away from the dated
-     FRED DGS10 observation in data/canonical.json (see review flag F-25).
+     FRED DGS10 observation in data/canonical.json (see review flag F-32).
   2. Algebraic errors in _pv_rent_stream, hold_pv, sell_now_multiple, and
      break_even_growth (closed-form Gordon-growth identity: when cap_now ==
      cap_exit == c and discount == c + g with zero vacancy, hold_pv == 1/c

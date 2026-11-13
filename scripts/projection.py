@@ -29,9 +29,10 @@ INPUTS (all disclosed, none measured for this asset)
     horizon      years from now to the end of the lease            10 (2035, latest reported expiry)
     vacancy      months of rent loss at/after expiry                0 or 18
 
-    The only externally sourced anchor is the discount-rate floor: the 10-year
+    The only externally sourced anchor is a dated market reference: the 10-year
     Treasury constant-maturity yield of 5.10% on 2026-11-12 (Federal Reserve H.15
-    via FRED, series DGS10). It is a market rate, not the owner's required return.
+    via FRED, series DGS10; page read 2026-11-13). It is neither a discount-rate
+    floor nor the owner's required return.
 
 EXCLUDED AND DISCLOSED
     Transaction costs, transfer taxes (0.45% city base tax and Measure ULA 4%/5.5%

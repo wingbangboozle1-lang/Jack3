@@ -1745,3 +1745,28 @@ at 240 rows / 45 sources; flags 31 → 32.
 - **A84-03 done:** PR [#72](https://github.com/wingbangboozle1-lang/Jack3/pull/72) merged by squash on 2026-11-13 at `ebc062c007af271e661db1798e91fb0ce00982a7`. PR checks passed: `validate`, `publication-integrity`; post-merge `Validate public research` (run `43515381006`) and `Public artifact regression tests` (run `43515380782`) succeeded. GitHub Pages build/deploy (run `43515379008`) succeeded, and Pages API reports `built`, HTTPS enforced at https://wingbangboozle1-lang.github.io/Jack3/ .
 - The post-merge `git pull --rebase origin main` detected that the session's claim and report patches were already included in PR #72's squash commit. The duplicate replay was skipped only after confirming both files and the complete audit section existed on `origin/main`; no content was dropped.
 - All A84 tasks are done. No personal information was collected, stored, or published.
+
+---
+
+# Session `02fb510c` — targeted DGS10 freshness & publication audit (2026-11-13)
+
+**Branch:** `arena/02fb510c-jack3` (workspace-fixed). Scope: targeted current-source freshness update, companion script/test, immutable historical verification records, and audit note. No property-specific or personal data collected or published.
+
+| ID | Task | Status | Scope |
+|---|---|---|---|
+| A13-01 | Read board and claim non-overlapping audit; record fresh source finding and scope extension | done | this section |
+| A13-02 | Fetch current official publishers and run full local gates | done | read-only + `research/AUDIT-2026-11-13-02fb510c.md` |
+| A13-03 | Update stale DGS10 anchor and related projection references; document precise scope | done | canonical data/generator outputs, projection script/tests, dated audit |
+| A13-04 | PR checks, integrate any concurrent main changes, merge, confirm Pages and record outcome | in progress | this section + PR #76 |
+
+**Official-source observation:** FRED DGS10 ([series page](https://fred.stlouisfed.org/series/DGS10)), read 2026-11-13, shows **5.10% for 2026-11-12**, with page refresh at 3:16 PM CST. The earlier 4.88% on 2026-11-09 remains a correct historical value, but is no longer latest. Census QuickFacts Los Angeles city, BLS LA Area Economic Summary, and SEC Q3 FY2026 8-K Exhibit 99.1 were also spot-checked; the values and narrow scope are listed in the dated audit note. This session does not claim to have re-read every canonical row or all external URLs on November 13.
+
+**Work and local verification:** refreshed the current canonical rate row/anchor and associated root pages; updated the dimensionless projection reference to 0.0510 / 2026-11-12 and made explicit it is not a property cap rate or universal discount-rate floor. The 2026-11-12 line-by-line record was restored to its original dated contents and made immutable in the generator; the November 13 update is a separate supplement. Repository-only scenario assumptions are flagged as assumptions and are excluded from Pages. After integrating main, canonical build, validate, staging, publication tests (10/10), projection tests (6/6), site/link checks, official-host check, PII scan (152 files, 0 findings), companion verifier, deterministic rebuild, and `git diff --check` passed.
+
+**Concurrent integration / conflicts:** while PR #76 was open, PRs #72, #73 and #75 merged to `main`; PR #75 independently delivered the same FRED freshness correction plus its own source checks and report. The first merge attempt for PR #76 was rejected as not cleanly mergeable. Fetched and merged the new `origin/main` into this same assigned branch; append-only `COORDINATION.md`, the summary/review docs, canonical data, generator, and generated pages conflicted. Resolution retained the concurrent PRs' source-audit artifacts and coordination history, retained the November 12 verification report as the original dated record, and regenerated the site from the combined canonical data. No competing work was discarded. The branch was pushed after checks were rerun; PR #76 checks/deployment confirmation are in progress.
+
+**Pull request:** [#76](https://github.com/wingbangboozle1-lang/Jack3/pull/76), `arena/02fb510c-jack3` → `main`. Initial head checks passed (`validate`, `publication-integrity`) before `main` advanced. Re-running checks on the integrated head is required before merge. Deployment has not yet been confirmed.
+
+**Second concurrent-main integration:** while PR #76 checks were running, PRs #77 and #78 merged coordination-only follow-ups to `main` (commit `af72b61`). Updated the assigned branch with that main head; the only conflict was append-only `COORDINATION.md`. Preserved both concurrent sections verbatim and appended this session's record after them. No site or research content was discarded.
+
+**Push/rebase note:** After creating the merge commit that integrated `origin/main` (`a92420a`), the requested `git pull --rebase origin arena/02fb510c-jack3` attempted to replay already-integrated main commits and conflicted at PR #72's append-only coordination entry. Aborted that rebase without losing the merge or any content. The branch's merge commit descends from the prior branch head and contains `origin/main` as its second parent; it will be pushed as a normal fast-forward. The original V7-06 dated verification report is preserved as it existed before PR #75; the PR #75 source-check artifact remains alongside the separate 02fb510c freshness note.
