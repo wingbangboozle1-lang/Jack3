@@ -1596,3 +1596,11 @@ Rebased cleanly over PRs `#59`–`#70` (`8c19013`) preserving every concurrent s
 **Privacy:** Asset A / Owner A placeholders only. Do not collect, store or publish personal, parcel, account, contact or private lease information. Any encountered personal information remains internal and is not copied into the repository.
 
 **Scope rule:** No canonical source data, generated pages, README/summary, generator, or another session's scope is claimed. This is a new audit record plus append-only board update; any actual content defect will be recorded here as a change request unless a distinct unclaimed write scope is confirmed.
+
+### A13-01 scope extension / handoff — stale rate anchor (2026-11-13)
+
+Fresh publisher read of the official FRED DGS10 series shows a new observation (`2026-11-12: 5.10%`, page updated 2026-11-13 3:16 PM CST). The published canonical register and the live-facing projection anchor still label `2026-11-09: 4.88%` as the latest shown; the official series itself confirms that 4.88% was correct for that date, but is no longer latest. This is a dated-data freshness issue, not an error in the historical observation.
+
+The prior `7b04b8ee` V7-06 integration row is marked in progress in the historical log, but its PR #71 merged to main at `532073e` on 2026-11-12T17:12:50Z; no further commit is recorded in that scope. Taking over only the completed publication follow-up, with these additional writes to refresh the time-sensitive anchor and its deterministic derived material: `data/canonical_rows.py`, generated `data/canonical.json` and root HTML via `scripts/build_canonical.py`, `scripts/projection.py` and `scripts/test_projection.py`, plus a new dated audit note. This handoff does not claim to re-verify unrelated evidence rows; all non-rate content remains at its stated 2026-11-12 snapshot. The rest of V7-06's README/VERIFY edits are already in main and remain unchanged.
+
+Source: [Federal Reserve Bank of St. Louis FRED, DGS10](https://fred.stlouisfed.org/series/DGS10), read 2026-11-13; the page reports 2026-11-12 at 5.10%, 2026-11-10 at 4.98%, 2026-11-09 at 4.88%, and 2026-11-06 at 4.86%. This published daily series provides the dated observation only; it does not establish a property discount rate, cap rate, or return hurdle.
