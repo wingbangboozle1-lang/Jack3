@@ -1623,3 +1623,19 @@ Read this coordination board and confirmed prior sessions completed the canonica
 - Source freshness limitation: the latest source re-verification remains dated 2026-11-12; this audit does not claim it has independently reverified those facts on 2026-11-13. This is explicitly documented in the audit.
 - No privacy leak or new site irregularity found. Missing parcel / lease / property financial / owner-specific tax information remains blank and on the public Questions and Flagged for Review pages; there is no defensible numerical parcel forecast.
 - Initial `git pull --rebase origin arena/084de50e-jack3` failed because the remote branch did not yet exist. No files were affected; before pushing the claim, `git pull --rebase origin main` succeeded and the assigned branch was pushed. No branch switch or other branch push occurred.
+
+---
+
+# Session `6f8f06bd` — current-tree audit and publication verification (2026-11-13)
+
+**Branch:** `arena/6f8f06bd-jack3` (platform-fixed current branch) · **Date:** 2026-11-13 UTC.
+
+Read this coordination board and confirmed prior sessions completed the canonical dataset, executive decision materials, suggested-options section, information/questions register, risk analysis, and GitHub Pages publication. This session's non-overlapping scope is documentation-only; no edits to canonical/shared data, generators, navigation, or generated site pages are authorized.
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| A6-01 | Independently run the current repository's documented deterministic build, validation, source-row/link/privacy/artifact gates | in progress | `6f8f06bd` | read-only |
+| A6-02 | Review current public executive summary, decision questions, suggestions and flagged review boundaries; record only observations, not unsupported fact claims | in progress | `6f8f06bd` | `research/AUDIT-2026-11-13-6f8f06bd.md` (new file) |
+| A6-03 | Record verification, findings, limitations and publication status | in progress | `6f8f06bd` | this appended section; audit file |
+
+**Privacy boundary:** use only `Asset A` / `Owner A` placeholders. No personal information, address, parcel/APN, private lease record or personal financial information will be sought or published. Existing upstream source-verification reports remain the source for factual verification; this audit will not present inherited verification as a fresh recheck.
