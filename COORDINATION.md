@@ -1579,3 +1579,20 @@ Rebased cleanly over PRs `#59`–`#70` (`8c19013`) preserving every concurrent s
 - `RR-7B-02`: Legacy `DECISION_FRAMEWORK.md` (excluded from GitHub Pages) still carries `2026-11-10` snapshot metadata and star-rated fixed `24-36 month` / `>=10 year` gates; superseded by `EXECUTIVE_SUMMARY.md`, `decisions.html`, and `research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md`.
 - `RR-7B-03`: `https://hazards.fema.gov/nri/` (`NRI`) redirected on our 2026-11-12 check to FEMA's RAPT page (`fema.gov/emergency-managers/practitioners/resilience-analysis-and-planning-tool`, updated `2026-08-18`), which announces NRI v1.20 is hosted in RAPT; dynamic county percentiles remain non-static, so row `[227]` properly stays `Blank` alongside archived March 2023 `NRIDECK` v1.19.0.
 - `RR-7B-04`: `tools/pii_scan.py` `SCAN_DIRS` omits `scripts/`; published output is already scanned by `scripts/validate.py`.
+
+---
+
+# Session `02fb510c` — 2026-11-13 independent publication and decision-brief audit
+
+**Platform-fixed branch:** `arena/02fb510c-jack3` (the workspace-assigned branch; no branch switching).
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| A13-01 | Read coordination board, inspect current canonical site, sources, build and publication configuration; claim a non-overlapping audit scope | **in progress** | `02fb510c` | this append-only section |
+| A13-02 | Run current publication, privacy, source-row and internal-link gates; record results without claiming unrun external checks | unclaimed | `02fb510c` | read-only; `research/AUDIT-2026-11-13-02fb510c.md` |
+| A13-03 | Independently inspect decision recommendation, model limits, known/missing information, suggestions and flagged items; make corrections only if proven and outside other claimed scopes | unclaimed | `02fb510c` | `research/AUDIT-2026-11-13-02fb510c.md`; any additional write scope requires a logged request first |
+| A13-04 | If audit is clean, publish an audit-only PR, pass checks, merge and confirm Pages; record result | unclaimed | `02fb510c` | this section, new audit file, PR |
+
+**Privacy:** Asset A / Owner A placeholders only. Do not collect, store or publish personal, parcel, account, contact or private lease information. Any encountered personal information remains internal and is not copied into the repository.
+
+**Scope rule:** No canonical source data, generated pages, README/summary, generator, or another session's scope is claimed. This is a new audit record plus append-only board update; any actual content defect will be recorded here as a change request unless a distinct unclaimed write scope is confirmed.
