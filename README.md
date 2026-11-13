@@ -4,7 +4,7 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 
 **Live site:** https://wingbangboozle1-lang.github.io/Jack3/
 
-> **Current canonical site (2026-11-12).** This repository now publishes **one** consolidated site, generated
+> **Current canonical site (2026-11-13; one rolling rate anchor refreshed).** This repository now publishes **one** consolidated site, generated
 > from a single verified register. The descriptions of earlier companion layers further down this README are
 > historical audit trail; those directories are excluded from GitHub Pages and are not the live product.
 
@@ -12,7 +12,8 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 
 - [Executive summary](EXECUTIVE_SUMMARY.md) — conditional recommendation, decision matrix, key findings and risks (companion structured dossier: [`research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md`](research/DECISION-DOSSIER-2026-11-12-7b04b8ee.md)).
 - [Independent 240-row / 45-source verification (2026-11-12)](research/VERIFICATION-2026-11-12-7b04b8ee.md) — independent line-by-line official-source verification of all 240 canonical rows and 45 sources, paired with [`research/REPO-REVIEW-2026-11-12-7b04b8ee.md`](research/REPO-REVIEW-2026-11-12-7b04b8ee.md).
-- [Generated row register (2026-11-12)](research/VERIFICATION-2026-11-12-c56c569e.md) — rebuilt on every build from the 240 canonical rows and 45 official/issuer sources; states which pages were re-read on 2026-11-12, which were read only in part, and what was not confirmed.
+- [Dated row-by-row register (2026-11-12)](research/VERIFICATION-2026-11-12-c56c569e.md) — immutable record of the 240-row, 45-source verification pass, with pages read in part and items not confirmed.
+- [Targeted freshness audit (2026-11-13)](research/AUDIT-2026-11-13-02fb510c.md) — official FRED DGS10 refresh to 5.10% (2026-11-12 observation); no claim of a full re-verification.
 - [Line-by-line verification (2026-11-12)](research/VERIFICATION-2026-11-12-f0b78eb6.md) — a separate hand-written pass of the same date, made when the register held 230 rows and 40 sources, plus closed minimum-wage, 10-K, 2026 LTCG, and FEMA NRI updates (extending [2026-11-11](research/VERIFICATION-2026-11-11-d644184d.md) and [2026-11-12 targeted review](research/VERIFICATION-2026-11-12-ec869c7c.md)).
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
@@ -33,7 +34,7 @@ Verify lease dates and notice rights privately now; prepare sale and renewal tra
 | [All entries & findings](master.html) | Every published row in one source-linked table |
 | [Flagged for Review](review.html) | Every unverified value, conflict, closed item and irregularity, published for manual review |
 | [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
-| [Line-by-line verification record](research/VERIFICATION-2026-11-12-c56c569e.md) | 240-row register generated from the data on every build, with the limits of the 2026-11-12 re-read; a second hand-written record of the same date is [`VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md) |
+| [Line-by-line verification record](research/VERIFICATION-2026-11-12-c56c569e.md) | Immutable record of the 240-row 2026-11-12 re-read; a second hand-written record is [`VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md); the scoped 2026-11-13 rate refresh is [`AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md) |
 | [Sources & method](sources.html) | 45 official/issuer sources, verification standard and privacy boundary |
 
 ## Build and verify
@@ -69,7 +70,7 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 ## Build and verification
 
 ```
-python3 scripts/build_canonical.py   # regenerate every published page + data/canonical.json + verification log
+python3 scripts/build_canonical.py   # regenerate published pages + data/canonical.json; dated verification logs remain immutable
 python3 scripts/validate.py          # row provenance, official hosts, blank values, links, PII, determinism
 python3 scripts/stage_pages.py       # build the exact Pages artifact and check every row / link
 ```

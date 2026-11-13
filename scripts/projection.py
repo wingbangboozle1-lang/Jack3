@@ -25,13 +25,14 @@ INPUTS (all disclosed, none measured for this asset)
     cap_now      cap rate at which the asset would sell today      swept 5.0-6.5%
     cap_exit     cap rate applied to rent at the end of the horizon swept 5.0-6.5%
     growth       annual growth in contractual base rent             swept 0-3%
-    discount     owner's required return                            swept 4.88-9%
+    discount     owner's required return                            swept 5.10-9%
     horizon      years from now to the end of the lease            10 (2035, latest reported expiry)
     vacancy      months of rent loss at/after expiry                0 or 18
 
-    The only externally sourced anchor is the discount-rate floor: the 10-year
-    Treasury constant-maturity yield of 4.88% on 2026-11-09 (Federal Reserve H.15
-    via FRED, series DGS10). It is a market rate, not the owner's required return.
+    The only externally sourced anchor is a dated market reference: the 10-year
+    Treasury constant-maturity yield of 5.10% on 2026-11-12 (Federal Reserve H.15
+    via FRED, series DGS10; page read 2026-11-13). It is neither a discount-rate
+    floor nor the owner's required return.
 
 EXCLUDED AND DISCLOSED
     Transaction costs, transfer taxes (0.45% city base tax and Measure ULA 4%/5.5%
@@ -49,12 +50,12 @@ DETERMINISM
 from __future__ import annotations
 
 HORIZON_YEARS = 10
-TREASURY_ANCHOR = 0.0488          # 10-year constant maturity, 2026-11-09, FRED DGS10
-TREASURY_ANCHOR_DATE = "2026-11-09"
+TREASURY_ANCHOR = 0.0510          # 10-year constant maturity, 2026-11-12, FRED DGS10
+TREASURY_ANCHOR_DATE = "2026-11-12"
 
 CAP_RATES = (0.050, 0.055, 0.060, 0.065)
 GROWTH_RATES = (0.000, 0.010, 0.020, 0.030)
-DISCOUNT_RATES = (0.0488, 0.060, 0.070, 0.090)
+DISCOUNT_RATES = (0.0510, 0.060, 0.070, 0.090)
 BASE_CAP_NOW = 0.055
 VACANCY_MONTHS = 18
 RELEASE_RENT_FACTOR = 0.90        # re-letting at 90% of the prior rent
