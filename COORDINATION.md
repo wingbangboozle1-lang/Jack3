@@ -1852,3 +1852,45 @@ A distinct official-source freshness issue was found on the [Federal Reserve Ban
 - **Completion/privacy:** P406-02 is done. The 2026-11-12 full-register audit remains the last line-by-line audit; this session re-read only DGS10 and its dependent text. P406-01 remains withdrawn as duplicate (PR #72). No private property or personal information was collected or published.
 
 The earlier 240-row/45-source independent verification on 2026-11-12 remains the last full-register line-by-line audit; no other publisher pages or all current rows were re-fetched by P406-02 on 2026-11-13. No private/property information is required or sought.
+
+---
+
+# Session `d671e03b` — spot-check re-verification of published values, live-deploy check, stale-PR inventory (2026-11-14)
+
+**Branch:** `arena/d671e03b-jack3` (platform-fixed branch; based on `main` at `68f36e4`, PR #83) · **Date:** 2026-11-14 (UTC) · **Scope:** `COORDINATION.md` only. No site page, canonical row, generator or other session's file was edited.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| D671-01 | Run all repo gates on the current `main` tree | **done** | `d671e03b` | read-only; regenerated output was byte-identical (`git status` clean) |
+| D671-02 | Re-read a sample of published Verified values directly from their official pages | **done** (27 values, 6 sources) | `d671e03b` | `COORDINATION.md` (this section) |
+| D671-03 | Confirm the live Pages deployment and list open PRs | **done** | `d671e03b` | read-only |
+
+**Gates run on the current tree (all passed):** `build_canonical.py` (22 pages, 242 rows = 213 Verified / 2 Derived / 1 Analysis / 26 Blank, 45 sources, 32 flags); `validate.py` (23 published files, 29 official hosts); `stage_pages.py` (23 staged files); `unittest` (17 tests, OK); `tools/check_site.py` (213 internal references); `tools/linkcheck.py` (256 internal links, 0 broken); `tools/pii_scan.py` (154 files, 0 findings); `_advisory_src/verify_advisory.py`; `_dashboard_src/verify.py` (148 body rows source-linked, 20 unverified rows blank, deterministic rebuild).
+
+**Official pages re-read in this session (fetched 2026-11-14) and the values checked:**
+
+| Published row(s) | Official page | Published value | Result |
+|---|---|---|---|
+| Unemployment rate Sep 2026 — LA metro 4.4%, LA County 4.5%, LA city 4.5%, CA 5.1%, US 4.0%; Sep 2025 comparatives | [BLS Los Angeles Area Economic Summary (updated 2026-11-04)](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) | as published | match |
+| Nonfarm 6,282.1k; change +30.2k (+0.5%); Education & health +3.8%; Leisure & hospitality +1.5%; Information −5.7%; Manufacturing −1.2%; Financial −1.7%; Prof. & business −0.5%; Government −1.1% | same BLS summary | as published | match |
+| CPI-U all items +3.7%, food +2.8%, energy +20.3% (LA metro, 12 months to Sep 2026) | same BLS summary | as published | match |
+| Average weekly wage LA County $1,704 (Q1 2026); average hourly wage $37.15 (LA metro, May 2025); ECI +3.9% | same BLS summary | as published | match |
+| West-region annual expenditures: housing $33,016, transport $14,110, food $12,447 (2025) | same BLS summary | as published | match |
+| California minimum wage $16.90/hour from 2026-01-01 | [DIR Minimum Wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm) | as published | match |
+| City of LA minimum wage $18.42/hour from 2026-07-01 | [Office of Wage Standards (Wages LA)](https://wagesla.lacity.gov/) | as published | match |
+| LA city population 3,869,089 (V2025, 2025-07-01); estimates base 3,899,342; change −0.8%; 2020 census 3,898,747 | [Census QuickFacts · Los Angeles city](https://www.census.gov/quickfacts/losangelescitycalifornia) | as published | match |
+| LA County DOF estimate 9,853,435 (24.93% of state); CA 39,528,899; LA County change −44,822 (−0.45%), ranked 58 of 58 numerically | [CA DOF Feb-2026 release, July 2025 estimates](https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/July2025_Population_Estimates_Feb26_release.pdf) | as published | match |
+| 10-year Treasury 5.10% (2026-11-12); 4.98% (2026-11-10); no 2026-11-11 observation; 4.88% (2026-11-09) | [FRED DGS10 (updated Nov 13, 2026, 3:16 PM CST)](https://fred.stlouisfed.org/series/DGS10) | as published | match |
+
+Total: 27 individual values re-read from 6 official pages; 0 mismatches. The Census population/change values and the DOF county values agree with the separate vintages the site already labels (Census V2025 vs. DOF Feb-2026 revision are kept distinct, as published).
+
+**Live deployment check:** GitHub Pages API reports `status: built`, `https_enforced: true`, source `main:/`, URL https://wingbangboozle1-lang.github.io/Jack3/ . The latest `main` runs for `68f36e4` (PR #83) — `pages build and deployment`, `Validate public research`, `Public artifact regression tests` — all completed with `success`. The sandbox cannot reach `*.github.io` directly, so the live HTML itself was not fetched from here; the Pages API and the artifact checks above were used instead.
+
+**Irregularities / open items (not blocking; for owner review):**
+- **I-D671-01 (repo hygiene):** 12 PRs remain open from earlier sessions (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48, #51 — heads `arena/*-jack3` etc.). Several predate the current `main` and are superseded by merged work. This session did not close or merge them; a maintainer should decide per PR. Listed with `gh pr list --state open`.
+- **I-D671-02 (scope gap, carried forward):** a full line-by-line re-read of all 242 rows was not repeated in this session. The last full pass is the 2026-11-12 audit; only the 27 values above were re-read today.
+- **I-D671-03 (site-side, FYI):** the Census county population (9,694,934, V2025) and the DOF county population (9,853,435, Feb-2026 revision) differ by about 158,500. Both are official and labelled separately on the site; no value was changed.
+
+**Privacy boundary:** no personal, owner, tenant-officer, parcel, lease or contact data was collected or written to the repository. Asset A / Owner A placeholders only.
+
+**Sources (links for manual review):** [BLS LA Area Economic Summary](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) · [DIR Minimum Wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm) · [Wages LA](https://wagesla.lacity.gov/) · [Census QuickFacts Los Angeles city](https://www.census.gov/quickfacts/losangelescitycalifornia) · [CA DOF July 2025 estimates (Feb-2026)](https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/July2025_Population_Estimates_Feb26_release.pdf) · [FRED DGS10](https://fred.stlouisfed.org/series/DGS10)
