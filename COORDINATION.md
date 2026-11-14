@@ -1894,3 +1894,9 @@ Total: 27 individual values re-read from 6 official pages; 0 mismatches. The Cen
 **Privacy boundary:** no personal, owner, tenant-officer, parcel, lease or contact data was collected or written to the repository. Asset A / Owner A placeholders only.
 
 **Sources (links for manual review):** [BLS LA Area Economic Summary](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) · [DIR Minimum Wage FAQ](https://www.dir.ca.gov/dlse/FAQ_MinimumWage.htm) · [Wages LA](https://wagesla.lacity.gov/) · [Census QuickFacts Los Angeles city](https://www.census.gov/quickfacts/losangelescitycalifornia) · [CA DOF July 2025 estimates (Feb-2026)](https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/July2025_Population_Estimates_Feb26_release.pdf) · [FRED DGS10](https://fred.stlouisfed.org/series/DGS10)
+
+### D671 PR / merge / deploy record
+
+- **PR #84** (`arena/d671e03b-jack3` → `main`): merged 2026-11-14 00:57:23 UTC as merge commit `856771117e6d7b5280f487fd9bcd07e7d777fe09`. Required checks on the PR head passed (`validate`, `publication-integrity`).
+- **Post-merge:** GitHub Pages build/deployment for `8567711` succeeded; Pages API reports `built`.
+- **Scope:** docs-only (this coordination record). D671-01 to D671-03 are done. Open items I-D671-01 to I-D671-03 are unchanged and not blocking.
