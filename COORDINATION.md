@@ -1954,3 +1954,25 @@ No personal, owner, tenant-officer, parcel, lease or contact data was collected 
 - **Post-merge:** live site confirmed serving at https://wingbangboozle1-lang.github.io/Jack3/ — landing page loads, all category navigation links resolve, 22-page canonical artifact intact. GitHub Pages source `main:/`, `https_enforced: true`.
 - **Scope:** coordination-record-only change (COORDINATION.md). No site pages, canonical rows, generators, or other sessions' files were modified.
 
+
+---
+
+# Session `543cfb27` — privacy-first decision tools and printable advisor brief (2026-11-15)
+
+**Branch:** `arena/543cfb27-jack3` (platform-fixed; no branch switching) · **Base:** `b0f1e13` / PR #85 · **Date:** 2026-11-15 UTC.
+
+## Scope claim
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| M543-01 | Add a browser-local, no-persistence sell/hold arithmetic worksheet, after-tax cash-proceeds module, and real-quote short-lease spread calculator; leave every field blank and choose no winner | **in progress** | `543cfb27` | `assets/private-calculator.js`, `private-calculator.html`, `scripts/build_canonical.py`, generated canonical pages / `data/canonical.json`, privacy and artifact gates |
+| M543-02 | Publish a one-page print-styled advisor brief and a public-evidence decision-gate progress board without disclosing property or owner facts | **in progress** | `543cfb27` | `advisor-brief.html`, `questions.html`, `scripts/build_canonical.py`, generated canonical pages / `data/canonical.json` |
+| M543-03 | Update privacy disclosure, exact Pages inventory, deterministic validation/tests and current documentation for the new local-only asset | **in progress** | `543cfb27` | `assets/style.css`, `_config.yml`, `scripts/validate.py`, `scripts/stage_pages.py`, `scripts/test_publication.py`, new calculator tests, `README.md`, `VERIFY.md`, `COORDINATION.md` |
+| M543-04 | Run full local gates; verify no entered data is persisted/transmitted, no new property/economic values are asserted, and all emitted table rows retain official links | **pending** | `543cfb27` | read-only checks; append results here |
+| M543-05 | Rebase current branch, open PR from this branch, pass CI, merge explicitly, verify Pages deployment and record result | **pending** | `543cfb27` | current branch / PR; `COORDINATION.md` |
+
+**Coordination / boundary.** The board and repository were inspected before claiming this scope. No later active claim was found; earlier in-progress entries are historical and already merged. This session uses the platform-assigned branch rather than the user-requested `session-<id>/<task>` naming; it will not switch branches. Open legacy PRs #4, #12, #22, #26, #31, #32, #36, #40, #44, #48 and #51 are out of scope and will remain untouched. Shared navigation / generated outputs are in scope for this final additive integration because the earlier work is merged.
+
+**Rebase/conflict record.** While pushing the immediate claim, `git pull --rebase origin main` brought in PR #86 (`a1a7af0c`, merge SHA `b168458`, based on `b0f1e13`) and conflicted only in append-only `COORDINATION.md`. Resolution retained the complete A1-01..A1-05 audit and PR/deploy record verbatim, then appended this claim. No other session's work was discarded. The session branch will be rebased/pushed only after recording the resolution.
+
+**Evidence constraint.** The existing 242-row register and its official source links are not being re-audited in this feature task. No new market, parcel, lease, owner, tax-liability, hazard-probability, sale-price or projection value may be added. The calculator must be blank by default, use only numbers entered by the reader, make no network or persistence calls, and report arithmetic only—never an automatic recommendation. The short-lease spread is usable only for actual written quotes for the same asset, date and materially matched terms; otherwise it must remain unavailable. The advisor page uses only already-registered official/issuer sources and makes the existing evidence date/scope clear.
