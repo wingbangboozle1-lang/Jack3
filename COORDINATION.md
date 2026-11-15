@@ -1953,3 +1953,15 @@ No personal, owner, tenant-officer, parcel, lease or contact data was collected 
 - **Pre-merge checks:** all repo gates pass on the current tree (listed above). CI workflows `validate.yml` and `publication-integrity.yml` are configured to run on PR.
 - **Post-merge:** GitHub Pages build/deployment to be confirmed via Pages API (`status: built`).
 
+---
+
+# Session `1b7e5d21` — current canonical publication gate and deployment check (2026-11-15)
+
+**Platform-fixed branch:** `arena/1b7e5d21-jack3` · **Initial base:** `b0f1e1320eea8eabe604258d7a3e5057d5b387e5` · **Scope:** `COORDINATION.md` only. This is a limited operational re-check, not a new line-by-line source audit or an integration of other branches.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| J3-01 | Re-run the canonical repository publication gates without changing shared site/data files | **in progress** | `1b7e5d21` | read-only checks; this section only |
+| J3-02 | Verify the GitHub Pages state, latest recorded checks, and stale open-PR inventory through GitHub | **in progress** | `1b7e5d21` | read-only GitHub API/CLI; this section only |
+
+Claim made after reading the shared board and inspecting the current tree. Prior board sections and other session scopes are preserved. No external publisher pages have been re-read in this session, and no current canonical observation is asserted as freshly verified.
