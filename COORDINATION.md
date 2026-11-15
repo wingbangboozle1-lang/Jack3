@@ -2126,3 +2126,17 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 This audit reran the repository's structural, provenance, link, privacy, and reproducibility gates; it did **not** freshly re-read all 242 factual evidence rows against the publishers. The previous full line-by-line pass is documented in the dated 2026-11-12 verification records referenced by README, and later coordination entries document narrower spot checks. Thus this session makes no new factual verification claim. Parcel identity, executed NNN lease/notice calendar, local trade-area evidence, insurance/engineering/hazard determinations, seller tax basis, owner-specific finances, renewal quote, sale offers and verified after-tax comparison remain private-input blockers; the site correctly leaves unconfirmed values blank and flags them. No personal or parcel identifiers were collected or published.
 
 **PR / integration:** this is a coordination-only audit. PR and merge details will be appended after the PR is created and its result is confirmed. No new Pages content was introduced by this audit; deployment status is not claimed based on these local checks.
+
+---
+
+# Session `arena/90c10204-jack3` — current publication gate and decision/privacy audit (2026-11-15)
+
+**Claim:** session `90c10204`, on the platform-fixed branch `arena/90c10204-jack3`. **Scope:** `COORDINATION.md` only; all other checks are read-only. No property identifier, private lease, owner financial record, or personal data was collected.
+
+| ID | Task | Status | Owner | Files / scope | Notes |
+|---|---|---|---|---|---|
+| J90-01 | Read coordination board and inspect current branch/site inventory | in progress | `90c10204` | `COORDINATION.md` (this section) | Read board before work; working tree began clean at `f02ceef` |
+| J90-02 | Re-run canonical build, validation, staging, regression tests, internal-link and privacy gates | in progress | `90c10204` | read-only generated checks | Results to be recorded below |
+| J90-03 | Review live canonical recommendation against the instruction not to select sale or renewal before private verified inputs | in progress | `90c10204` | read-only public pages and canonical generator | No source facts changed |
+| J90-04 | Record findings and current publication/deployment boundary | unclaimed | `90c10204` | `COORDINATION.md` (this section) | No application output or evidence rows changed |
+
