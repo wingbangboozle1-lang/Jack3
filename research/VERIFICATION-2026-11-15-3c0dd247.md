@@ -40,6 +40,6 @@ Totals: 13 official pages re-read; about 55 individual values compared; 0 mismat
 
 ## Open items carried forward (not blocking)
 
-- Only 13 pages were re-read today. Full row re-verification of the 242-row register is due on the next scheduled audit.
+- Only 13 pages were re-read today. Full row re-verification of the register (255 rows after merging `main` at 1920c85) is due on the next scheduled audit.
 - Pull requests from earlier sessions remain open for owner decision: #4, #12, #22, #26, #31, #32, #36, #40, #44, #48, #51 and #87. This session did not close or edit them.
 - `COORDINATION.md` has grown past 2,100 lines across more than 30 sessions. Archiving older sections would make it easier to read; this is a repository-maintenance suggestion for owner review.
