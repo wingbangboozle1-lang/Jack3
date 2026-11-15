@@ -2193,3 +2193,44 @@ This audit reran the repository's structural, provenance, link, privacy, and rep
 
 **Deployment state before this change:** GitHub Pages API reports `status: built`, source `main:/`, HTTPS enforced; successful main Actions runs on `f02ceef` were observed for `pages-build-deployment`, `Public artifact regression tests`, and `Validate public research`. This does not yet confirm deployment of the new change; PR checks and post-merge deployment will be recorded separately.
 
+---
+
+# Session `arena/681faa63-jack3` — final integration close-out and publication verification (2026-11-15)
+
+**Claim / scope:** session `arena/681faa63-jack3`, platform-fixed branch `arena/681faa63-jack3`. Scope: `COORDINATION.md` only (this append-only section). No canonical data, published page, source row, generator, or other session's files will be edited. This is a non-overlapping close-out because the canonical site and its data are already complete and verified; the task is to record the merges since the last board entry, re-run the publication gates on the current tree, confirm GitHub Pages deployment, close the open integration item (J90-04) left by session `90c10204`, and create + merge a pull request from this branch to `main`.
+
+**Merges not previously recorded in this log:** PRs #83–#96 (coordination / audit / refresh records by sessions `406ca5a9`, `523a639b`, `02fb510c`, `c155a72c`, `9fa2710f`, `d671e03b`, `a1a7af0c`, `f6c66237`, `2cc06f64`, `7884ac9d`, `0fc530a9`, `90c10204`) and PR #97 (session `2ed1057f`, quarterly Jack in the Box same-store-sales series) are merged to `main`; PR #98 (session `90c10204`, sale/renewal decision neutrality) is merged as `b3f80b7`. Current tree is `1920c858` (HEAD = `main`). Open PR #87 (`1b7e5d21`) and the older stale PRs #4, #12, #22, #26, #31, #32, #36, #40, #44, #48, #51 are left for their owners; not merged or closed here.
+
+## Task board
+
+| ID | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| H-01 | Read board, rebase onto current main (`1920c858`, incl. PRs #97/#98), claim scope | done | `arena/681faa63-jack3` | `COORDINATION.md` (this section) | Branch was behind main; fast-forwarded to `1920c858` |
+| H-02 | Re-run canonical build / validation / staging / regression / link / privacy gates on current tree | done | `arena/681faa63-jack3` | read-only generated checks | 255 rows / 48 sources; all gates PASS; deterministic, tree clean |
+| H-03 | Confirm GitHub Pages deployment status | done | `arena/681faa63-jack3` | `gh api` Pages endpoints | status `built`; source `main:/`; `https_enforced: true`; live URL `https://wingbangboozle1-lang.github.io/Jack3/` |
+| H-04 | Close J90-04: record PR #98 merge result | done | `arena/681faa63-jack3` | `COORDINATION.md` | PR #98 merged as `b3f80b7` on 2026-11-15 |
+| H-05 | Create PR `arena/681faa63-jack3` → `main`, merge without waiting, confirm Pages deploy, record result | in progress | `arena/681faa63-jack3` | `COORDINATION.md`, PR | PR created and merged below; result recorded after execution |
+
+## Gate results (re-run on current tree `1920c858`, 2026-11-15)
+
+- `scripts/build_canonical.py`: 23 pages, **255 evidence rows** (225 verified / 3 derived / 1 analysis / 26 blank), **48 official sources**; 24 risks, 8 pathways, 13 projection steps, 32 flags, 20 information-register questions, 16 suggestions.
+- `scripts/validate.py`: **PASS** — 24 published files, 29 official hosts; row provenance, links, PII, deterministic rebuild all clean.
+- `scripts/stage_pages.py`: **PASS** — 24-file Pages artifact (23 HTML + `assets/style.css`); every table row source-linked; every internal link resolves.
+- `python3 -m unittest discover -s scripts -p 'test_*.py'`: **19 tests OK**.
+- `tools/linkcheck.py`: no broken internal links or anchors.
+- `tools/pii_scan.py`: **156 files scanned, 0 findings**.
+
+## Evidence boundary and privacy
+
+This session made no new factual claims about the market, parcel, lease or owner, and collected no personal information. The last full line-by-line source audit remains dated 2026-11-12; this session verified the build/blank/privacy/link integrity contract only. `Asset A` / `Owner A` placeholders only. Unconfirmed values stay blank and are published on `review.html` (26 blank rows). No exact location, parcel identifier (APN), lease document, tax basis, rent roll, or owner finances were accessed or published. The sale-vs-renewal decision remains deliberately unselected pending private verified inputs (no winner selected), consistent with the PR #98 correction. `scripts/validate.py` enforces the privacy gate.
+
+## Open items (non-blocking; for owner review)
+
+- 26 intentionally blank evidence rows, published on `review.html` with source context; must not be filled by inference.
+- Sale/renewal recommendation is conditional: verify lease dates and notice rights privately, then compare documented after-tax offers with enforceable renewal terms; no minimum renewal term or fixed marketing deadline is established.
+- Older open PRs (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48, #51, #87) left untouched for their owners or a maintainer.
+
+## PR / merge / deploy record (H-05)
+
+Pending: pull request to be created from `arena/681faa63-jack3` → `main`; merge and GitHub Pages deployment to be confirmed; PR link, merge commit, and deploy result recorded here after execution.
+
