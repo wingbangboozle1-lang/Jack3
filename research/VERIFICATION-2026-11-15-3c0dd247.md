@@ -8,7 +8,7 @@ deliberately not copied.
 ## Scope
 
 This pass re-read the official page behind each value below on 2026-11-15 (UTC) and compared it
-with the published register row. It is **not** a full re-read of all 242 rows. The last full
+with the published register row. It is **not** a full re-read of all register rows (255 after merging `main`). The last full
 line-by-line pass remains the 2026-11-12 audit. Rows not listed here were not re-read today.
 
 ## Results
