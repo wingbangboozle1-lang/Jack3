@@ -1953,3 +1953,25 @@ No personal, owner, tenant-officer, parcel, lease or contact data was collected 
 - **Pre-merge checks:** all repo gates pass on the current tree (listed above). CI workflows `validate.yml` and `publication-integrity.yml` are configured to run on PR.
 - **Post-merge:** GitHub Pages build/deployment to be confirmed via Pages API (`status: built`).
 
+
+---
+
+# Session `81855a0b` — W-task build-out: decision gates, calculator, hazard screen, advisor summary, trade-area workflow (2026-11-15)
+
+**Branch:** `arena/81855a0b-jack3` (platform-assigned; based on `main` at `b168458`) · **Date:** 2026-11-15 (UTC) · **Scope owner:** `81855a0b`
+
+**Branch-naming note:** the board's `session-<id>/<task>` convention is superseded for this session by the platform branch `arena/81855a0b-jack3`, which is the only branch this session writes to.
+
+**Privacy:** Asset A / Owner A placeholders only. No address, parcel number, owner, tenant officer, account, lease, or private finances are sought, stored, or published. Anything that needs those inputs is left blank and listed for private completion.
+
+## Task board
+
+| ID | Task (user requirement) | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| M81-01 | Claim tasks, log board, keep scopes non-overlapping | **in progress** | `81855a0b` | `COORDINATION.md` (this section) | Claim pushed before content work |
+| M81-02 | W-03 decision-gate progress board | claimed | `81855a0b` | new page `decision-gates.html` | Every gate tied to a dated status and an official or named source |
+| M81-03 | W-04 parcel-level hazard screening (procedure + official map tools; parcel cells blank) | claimed | `81855a0b` | new page `hazard-screening.html` | No parcel is known; no parcel-level result is asserted |
+| M81-04 | W-02 sell-versus-hold worksheet + after-tax module + combined stress test, runs in the reader's browser | claimed | `81855a0b` | new page `calculator.html` (one inline script, no network, no storage) | Only verified tax rules are built in; every owner input starts blank |
+| M81-05 | W-10 one-page printable advisor summary | claimed | `81855a0b` | new page `advisor-summary.html` (print CSS) | Anonymised; every fact sourced |
+| M81-06 | W-01 trade-area figures (replace city/county proxies) | claimed | `81855a0b` | new page `trade-area.html` | Tract values need a private location step; left blank and flagged |
+| M81-07 | Integration: nav/registry, validator + test updates for the one approved calculator script, rebuild, gates, PR, merge, Pages check | claimed | `81855a0b` | `scripts/build_canonical.py`, `scripts/validate.py`, `scripts/test_publication.py`, `data/canonical.json`, generated root pages, `COORDINATION.md` | Shared navigation and generator are changed only in this integration step |
