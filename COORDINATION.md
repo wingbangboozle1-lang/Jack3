@@ -1961,7 +1961,15 @@ No personal, owner, tenant-officer, parcel, lease or contact data was collected 
 
 | ID | Task | Status | Owner | Files / scope |
 |---|---|---|---|---|
-| J3-01 | Re-run the canonical repository publication gates without changing shared site/data files | **in progress** | `1b7e5d21` | read-only checks; this section only |
+| J3-01 | Re-run the canonical repository publication gates without changing shared site/data files | **done** | `1b7e5d21` | read-only checks; this section only |
 | J3-02 | Verify the GitHub Pages state, latest recorded checks, and stale open-PR inventory through GitHub | **in progress** | `1b7e5d21` | read-only GitHub API/CLI; this section only |
 
 Claim made after reading the shared board and inspecting the current tree. Prior board sections and other session scopes are preserved. No external publisher pages have been re-read in this session, and no current canonical observation is asserted as freshly verified.
+
+### J3 audit results (2026-11-15)
+
+- **Local checks passed:** canonical generator (22 pages; 242 rows: 213 Verified / 2 Derived / 1 Analysis / 26 Blank; 45 sources); `scripts/validate.py`; exact 23-file Pages staging; `tools/check_site.py` (213 references); `tools/linkcheck.py` (256 internal links, no broken targets); `tools/check_links.py` (1,040 links across 30 hosts, zero unapproved hosts); PII scanner (154 files, zero findings); advisory and dashboard verifiers; projection output; all 17 publication/projection unit tests; and `git diff --check`. Rebuild was deterministic; no generated file changed.
+- **GitHub Pages:** GitHub Pages API reports `status: built`, HTTPS enforced, source `main:/`, public URL https://wingbangboozle1-lang.github.io/Jack3/ . Latest completed main deployment visible from GitHub's run list is `pages build and deployment` run `43537791945`, success for merge `b0f1e13` (PR #85); main validation and artifact regression runs `43538017685` / `43538017605` also succeeded.
+- **Open PR inventory:** GitHub CLI returned 11 open PRs (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48, #51), last updated Nov 6–11. They are stale relative to merged main history; no PR was closed or merged as part of this scoped re-check.
+- **Limitations:** This pass did not fetch/re-read external official publishers and is not a fresh source audit. Ruby/Jekyll are not installed in this workspace, so the local Jekyll build step could not run. Push-triggered GitHub Actions runs `43715506555` (Validate public research) and `43715506180` (Public artifact regression tests) were still queued when checked; attempts to watch them through `gh` returned GitHub API HTTP 403 rate-limit errors. Public run pages corroborated queued state. No claim of CI completion is made here.
+- **No data/site changes:** existing public content is unchanged; no personal/parcel/owner data was collected, and no recommendation was recalibrated. The existing open items and source-gap flags remain non-blocking and require review by authorized advisers.
