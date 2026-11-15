@@ -2100,3 +2100,11 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 - **Merge:** merged to `main` via `gh pr merge 92 --merge` as merge commit `29bb7ed118ab6a6562b2e9ca7484aa3e6fc36c83`, without waiting for approval, at 2026-11-15T13:04:54Z.
 - **Pre-merge checks:** CI `validate` and `publication-integrity` both passed on the PR head. Local gates green: `build_canonical.py` (22 pages, 242 evidence rows = 213 Verified / 2 Derived / 1 Analysis / 26 Blank, 45 official sources), `validate.py` PASS, `stage_pages.py` PASS, `unittest` (17 tests OK). Independent official-source re-verification: Census city/county QuickFacts, BLS LA Area Economic Summary, SEC 8-K Exhibit 99.1 Q3 FY2026, FRED DGS10 — all match, 0 mismatches.
 - **Post-merge:** PR merged to `main`; GitHub Pages auto-deploys on push to `main:/` (legacy builder, `https_enforced: true`). Direct Pages API confirmation and live `*.github.io` fetch were not possible from this sandbox (GitHub API rate-limited; `*.github.io` not reachable from the sandbox), but CI was green and the merge commit is on `main`.
+
+---
+
+# Session `arena/0fc530a9-jack3` — current-tree publication audit (2026-11-15)
+
+**Claim / scope:** current-tree publication and privacy gate re-run; `COORDINATION.md` only. No canonical data, published page, source row, generator, or other session's files will be edited. This is a non-overlapping audit because the main site and its data are already complete; the task is to independently re-run repository gates and record the current result.
+
+**Task status:** in progress at claim; completion record will follow after the gate results are recorded.
