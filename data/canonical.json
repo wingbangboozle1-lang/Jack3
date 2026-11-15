@@ -44,6 +44,24 @@
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
       "type": "Issuer filing"
     },
+    "SECQ4FY25": {
+      "label": "Form 8-K Exhibit 99.1 \u00b7 Q4 and FY2025 results (quarter ended 2025-09-28)",
+      "publisher": "U.S. Securities and Exchange Commission / issuer filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm",
+      "type": "Issuer filing"
+    },
+    "SECQ1FY26": {
+      "label": "Form 8-K Exhibit 99.1 \u00b7 Q1 FY2026 results (16 weeks ended 2026-01-18)",
+      "publisher": "U.S. Securities and Exchange Commission / issuer filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm",
+      "type": "Issuer filing"
+    },
+    "SECQ2FY26": {
+      "label": "Form 8-K Exhibit 99.1 \u00b7 Q2 FY2026 results (quarter ended 2026-04-12)",
+      "publisher": "U.S. Securities and Exchange Commission / issuer filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000066/ex991-q226earningsrelease.htm",
+      "type": "Issuer filing"
+    },
     "SEC10K": {
       "label": "FY2025 Form 10-K (fiscal year ended 2025-09-28)",
       "publisher": "U.S. Securities and Exchange Commission / issuer filing",
@@ -1583,6 +1601,123 @@
       "note": "Comparison base.",
       "status": "Verified",
       "source": "SECQ3"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "System same-store sales, Q1 FY2025 (comparative)",
+      "value": "+0.4%",
+      "scope": "Jack in the Box brand \u00b7 16 weeks ended 2025-01-19",
+      "note": "Company (0.4%), franchise +0.5%. Prior-year column in the Q1 FY2026 release. Del Taco excluded.",
+      "status": "Verified",
+      "source": "SECQ1FY26"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "System same-store sales, Q2 FY2025 (comparative)",
+      "value": "-4.4%",
+      "scope": "Jack in the Box brand \u00b7 12 weeks ended 2025-04-13",
+      "note": "Company (4.0%), franchise (4.5%). Prior-year column in the Q2 FY2026 release.",
+      "status": "Verified",
+      "source": "SECQ2FY26"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "System same-store sales, Q4 FY2025",
+      "value": "-7.4%",
+      "scope": "Jack in the Box brand \u00b7 12 weeks ended 2025-09-28",
+      "note": "Company (5.3%), franchise (7.6%). Trough of the series shown here.",
+      "status": "Verified",
+      "source": "SECQ4FY25"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "System same-store sales, Q1 FY2026",
+      "value": "-6.7%",
+      "scope": "Jack in the Box brand \u00b7 16 weeks ended 2026-01-18",
+      "note": "Company (4.7%), franchise (7.0%). Sixteen-week quarter.",
+      "status": "Verified",
+      "source": "SECQ1FY26"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "System same-store sales, Q2 FY2026",
+      "value": "-3.8%",
+      "scope": "Jack in the Box brand \u00b7 12 weeks ended 2026-04-12",
+      "note": "Company (2.8%), franchise (3.9%).",
+      "status": "Verified",
+      "source": "SECQ2FY26"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Improvement in system same-store sales, Q4 FY2025 to Q3 FY2026",
+      "value": "6.3 points",
+      "scope": "Jack in the Box brand \u00b7 derived",
+      "note": "Derived: (1.1) from the Q3 FY2026 release minus (7.4) from the Q4 FY2025 release = 6.3 points. Still negative in every quarter from Q2 FY2025 to Q3 FY2026.",
+      "status": "Derived",
+      "source": "SECQ3"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Jack in the Box restaurants at quarter end, Q2 FY2025",
+      "value": "2,183",
+      "scope": "Issuer \u00b7 Jack in the Box brand \u00b7 2025-04-13",
+      "note": "146 company-operated / 2,037 franchised. Prior-year column in the Q2 FY2026 release.",
+      "status": "Verified",
+      "source": "SECQ2FY26"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Jack in the Box restaurants at quarter end, Q4 FY2025",
+      "value": "2,136",
+      "scope": "Issuer \u00b7 Jack in the Box brand \u00b7 2025-09-28",
+      "note": "150 company-operated / 1,986 franchised.",
+      "status": "Verified",
+      "source": "SECQ4FY25"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Jack in the Box restaurants at quarter end, Q1 FY2026",
+      "value": "2,128",
+      "scope": "Issuer \u00b7 Jack in the Box brand \u00b7 2026-01-18",
+      "note": "149 company-operated / 1,979 franchised.",
+      "status": "Verified",
+      "source": "SECQ1FY26"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Jack in the Box restaurants at quarter end, Q2 FY2026",
+      "value": "2,128",
+      "scope": "Issuer \u00b7 Jack in the Box brand \u00b7 2026-04-12",
+      "note": "149 company-operated / 1,979 franchised. Flat on the quarter.",
+      "status": "Verified",
+      "source": "SECQ2FY26"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Jack in the Box closures in the quarter, Q4 FY2025",
+      "value": "47",
+      "scope": "Issuer \u00b7 Jack in the Box brand \u00b7 12 weeks ended 2025-09-28",
+      "note": "38 of the 47 were part of the 'JACK on Track' closure programme; 15 openings in the same quarter.",
+      "status": "Verified",
+      "source": "SECQ4FY25"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Jack in the Box closures in the quarter, Q1 FY2026",
+      "value": "14",
+      "scope": "Issuer \u00b7 Jack in the Box brand \u00b7 16 weeks ended 2026-01-18",
+      "note": "Six openings in the same quarter.",
+      "status": "Verified",
+      "source": "SECQ1FY26"
+    },
+    {
+      "category": "Tenant & lease",
+      "indicator": "Jack in the Box closures in the quarter, Q2 FY2026",
+      "value": "9",
+      "scope": "Issuer \u00b7 Jack in the Box brand \u00b7 12 weeks ended 2026-04-12",
+      "note": "Nine openings in the same quarter.",
+      "status": "Verified",
+      "source": "SECQ2FY26"
     },
     {
       "category": "Tenant & lease",
@@ -3910,9 +4045,9 @@
     ]
   ],
   "counts": {
-    "Verified": 213,
+    "Verified": 225,
     "Blank": 26,
     "Analysis": 1,
-    "Derived": 2
+    "Derived": 3
   }
 }
