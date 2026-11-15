@@ -2095,7 +2095,8 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 
 ## V788 PR / merge / deploy record
 
-- Branch `arena/7884ac9d-jack3` rebased onto `origin/main` (`b168458`) and pushed to origin.
-- All local gates pass (see above). CI workflows `validate.yml` and `publication-integrity.yml` run on PR.
-- **GitHub API/gh status:** `gh auth` reports the github.com token as invalid and the REST API is rate-limited (403) in this sandbox, so `gh pr create` / `gh pr merge` and direct Pages API reads could not be executed here. Git over HTTPS to origin works (`git push` succeeded).
-- Branch is pushed and ready for a maintainer to open `arena/7884ac9d-jack3` → `main`, run `gh pr merge <number> --merge` without waiting for approval, then confirm Pages `status: built` at https://wingbangboozle1-lang.github.io/Jack3/ .
+- Branch `arena/7884ac9d-jack3` rebased onto `origin/main` and pushed to origin.
+- **PR #92:** https://github.com/wingbangboozle1-lang/Jack3/pull/92 — `arena/7884ac9d-jack3` → `main`, "chore(coordination): session 7884ac9d independent verification record".
+- **Merge:** merged to `main` via `gh pr merge 92 --merge` as merge commit `29bb7ed118ab6a6562b2e9ca7484aa3e6fc36c83`, without waiting for approval, at 2026-11-15T13:04:54Z.
+- **Pre-merge checks:** CI `validate` and `publication-integrity` both passed on the PR head. Local gates green: `build_canonical.py` (22 pages, 242 evidence rows = 213 Verified / 2 Derived / 1 Analysis / 26 Blank, 45 official sources), `validate.py` PASS, `stage_pages.py` PASS, `unittest` (17 tests OK). Independent official-source re-verification: Census city/county QuickFacts, BLS LA Area Economic Summary, SEC 8-K Exhibit 99.1 Q3 FY2026, FRED DGS10 — all match, 0 mismatches.
+- **Post-merge:** PR merged to `main`; GitHub Pages auto-deploys on push to `main:/` (legacy builder, `https_enforced: true`). Direct Pages API confirmation and live `*.github.io` fetch were not possible from this sandbox (GitHub API rate-limited; `*.github.io` not reachable from the sandbox), but CI was green and the merge commit is on `main`.
