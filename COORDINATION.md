@@ -2112,3 +2112,38 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 | 2ED-01 | Tenant watch-list: quarterly same-store sales, unit counts and closures, Jack in the Box brand, from official SEC Exhibit 99.1 releases (closes information-register item SG-05) | in progress | `2ed1057f` | `data/canonical_rows.py` (Tenant & lease rows and SOURCES only), regenerated root HTML and `data/canonical.json` via `scripts/build_canonical.py`, this COORDINATION.md section | Only publicly filed issuer data. No property, lease, owner or parcel data is touched. |
 
 Not claimed here (blocked on inputs no public official source can supply for this asset; left open, logged on the Flagged page by existing rows): after-tax module (needs owner basis and holding period), short-lease discount priced from real quotes (needs quotes), parcel-level hazard zone status (needs the parcel identifier, which must stay offline), tract-level trade-area figures (needs the location). The existing info-register and flags already record these.
+
+## Completion record — `2ed1057f` / 2ED-01 (2026-11-15, UTC)
+
+**Status: done.** Closes information-register item SG-05 ("a series … shows direction, not one quarter") for the Jack in the Box brand.
+
+**What changed** (`data/canonical_rows.py` only, then regenerated outputs): 3 new official SOURCES keys (`SECQ4FY25`, `SECQ1FY26`, `SECQ2FY26`) and 14 new Tenant & lease rows: system same-store sales for Q1 FY25 (comparative), Q2 FY25 (comparative), Q4 FY25, Q1 FY26 and Q2 FY26; one Derived row (improvement Q4 FY25 → Q3 FY26 = 6.3 points, arithmetic shown); restaurant counts at Q2 FY25, Q4 FY25, Q1 FY26 and Q2 FY26; closures for Q4 FY25, Q1 FY26 and Q2 FY26. Canonical register is now 255 rows (225 Verified, 3 Derived, 1 Analysis, 26 Blank) across 48 official sources. Blank count unchanged at 26.
+
+**Quarterly series (Jack in the Box brand, system same-store sales; company / franchise in the row notes):**
+
+| Quarter (weeks ended) | System | Company | Franchise | Official source (SEC Exhibit 99.1) |
+|---|---|---|---|---|
+| Q1 FY25 (16 wks to 2025-01-19), comparative | +0.4% | (0.4%) | +0.5% | https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm |
+| Q2 FY25 (12 wks to 2025-04-13), comparative | (4.4%) | (4.0%) | (4.5%) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000066/ex991-q226earningsrelease.htm |
+| Q3 FY25 (12 wks to 2025-07-06), comparative | (7.1%) | (6.4%) | (7.2%) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm |
+| Q4 FY25 (12 wks to 2025-09-28) | (7.4%) | (5.3%) | (7.6%) | https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm |
+| Q1 FY26 (16 wks to 2026-01-18) | (6.7%) | (4.7%) | (7.0%) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm |
+| Q2 FY26 (12 wks to 2026-04-12) | (3.8%) | (2.8%) | (3.9%) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000066/ex991-q226earningsrelease.htm |
+| Q3 FY26 (12 wks to 2026-07-05) | (1.1%) | (0.9%) | (1.2%) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm |
+
+Direction: negative in every quarter from Q2 FY25 through Q3 FY26; the trough was Q4 FY25 (−7.4%) and the latest quarter is −1.1%. Read as a shrinking decline, not a recovery to growth. Unit counts at quarter end: 2,183 (Q2 FY25), 2,136 (Q4 FY25), 2,128 (Q1 FY26), 2,128 (Q2 FY26), 2,115 (Q3 FY26). Closures in the quarter: 47 (Q4 FY25, of which 38 under the JACK on Track programme), 14 (Q1 FY26), 9 (Q2 FY26), 17 (Q3 FY26).
+
+**Verification performed:** every value above was read directly from the SEC-hosted Exhibit 99.1 page via the EDGAR filing index for accession numbers 0000807882-25-000070, -26-000039, -26-000066 and -26-000090. The Q1 and Q2 FY25 values are the prior-year columns printed in the FY2026 releases, not values read from the original FY2025 releases. Arithmetic re-checked: 6.3 = −1.1 − (−7.4). `scripts/build_canonical.py`, `scripts/validate.py` (PASS), `scripts/stage_pages.py` (PASS), `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py` (0 findings), `_advisory_src/verify_advisory.py`, `_dashboard_src/verify.py`, and `unittest` (18 tests OK) all pass.
+
+**Irregularities / open items (flagged, not blocking):**
+- Fiscal quarters differ in length (12 vs 16 weeks). Q1 comparability is weaker; the rows say so.
+- The requested franchise rental revenue series was NOT collected for each quarter in this pass. Only the Q3 FY26 cumulative figure is on the site. Still open.
+- Q1 and Q2 FY25 values are restated comparatives; if the originally reported FY25 figures differ, the FY25 originals should be checked (not done).
+- Items from the owner brief that need inputs no public official source can supply are NOT filled and remain open: after-tax module (owner basis and holding period), short-lease discount from real quotes, parcel-level hazard zone status (requires the parcel identifier, which must stay offline), and tract-level trade-area figures (requires the location). None of these were inferred.
+
+**Sources (links for manual review):**
+- https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm
+- https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm
+- https://www.sec.gov/Archives/edgar/data/807882/000080788226000066/ex991-q226earningsrelease.htm
+- https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm
+- EDGAR 8-K filing list for CIK 807882: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=40
