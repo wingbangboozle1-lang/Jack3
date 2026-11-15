@@ -272,7 +272,7 @@ def page_index() -> str:
         '<a class="quiet" href="risk.html">Full risk register →</a></div><div><h3>Tail events that can end the local economy</h3>'
         '<p><b>Wildfire.</b> In January 2025 the Palisades and Eaton fires destroyed 16,264 structures in this '
         'county in 24 days. Insurance availability and pricing can change region-wide afterwards.</p>'
-        '<p><b>Earthquake.</b> USGS models a plausible M7.8 southern San Andreas event at about 1,800 deaths '
+        '<p><b>Earthquake.</b> A 2008 USGS ShakeOut scenario modelled a plausible M7.8 southern San Andreas event at about 1,800 deaths '
         'and $213bn in regional losses. Parcel-level ground-failure exposure has not been checked.</p>'
         '<p><b>Flood, correlated utility or pandemic disruption.</b> No parcel zone or probability is assigned.</p>'
         '<p><b>Tenant failure or accelerated closure.</b> The issuer closes underperforming units and sells '
@@ -300,7 +300,7 @@ def page_executive_summary() -> str:
         ("3", "Labour market is improving but uneven", "Metro unemployment fell to 4.4% and payrolls rose 0.5%, led by education and health (+3.8%) while information fell 5.7%.", "BLS"),
         ("4", "Tenant credit is the key unknown", "The issuer reports −1.1% same-store sales, 17 quarterly closures, a discontinued dividend and a $500m refinancing. The legal obligor at this site is unknown.", "SECQ3"),
         ("5", "Costs and rates compress real returns", "CPI-U +3.7%, ECI +3.9%, energy +20.3%, and a 5.10% 10-year Treasury observation on 2026-11-12. This dated reference is not a property return hurdle.", "FRED"),
-        ("6", "Tail risk is real but unquantified", "USGS ShakeOut models ~1,800 deaths and $213bn in losses; the 2025 fires destroyed 16,264 structures. This is regional context, not a parcel forecast.", "UCERF3"),
+        ("6", "Tail risk is real but unquantified", "The 2008 USGS ShakeOut scenario modelled ~1,800 deaths and $213bn in losses; the 2025 fires destroyed 16,264 structures. This is regional context, not a parcel forecast.", "UCERF3"),
     ]
     # Multi-source findings need links for every distinct published observation.
     finding_sources = {"2": ("DOF", "CITY", "COUNTY"), "5": ("BLS", "FRED"),

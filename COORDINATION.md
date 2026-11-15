@@ -2103,6 +2103,19 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 
 ---
 
+# Session `3c0dd247` — repo review, official-source re-check, flagged-item update, PR and merge (2026-11-15)
+
+**Branch:** `arena/3c0dd247-jack3` (fixed by the platform; based on `main` at `f02ceef`) · **Date:** 2026-11-15 (UTC) · **Scope:** `scripts/build_canonical.py` (two landing/risk sentences), `data/canonical_rows.py` (flags F-33 to F-35 only), generated `*.html` / `data/canonical.json`, `research/VERIFICATION-2026-11-15-3c0dd247.md` (new), and this section of `COORDINATION.md`. No other session's section or file is edited.
+
+**Note on branch naming:** the platform fixes this session to `arena/3c0dd247-jack3`, so the `session-<id>/<task>` branch convention above is not used. All work stays on that one branch.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| R3-01 | Claim + baseline gate re-run on `main` | done | `3c0dd247` | this section |
+| R3-02 | Independent official-source re-read of decision-critical values (UCERF3, ULA, CAL FIRE, USGS ShakeOut, FEMA NRI deck, SEC 8-K, DIR, Census, BLS, FRED) | done | `3c0dd247` | `research/VERIFICATION-2026-11-15-3c0dd247.md` |
+| R3-03 | Correct present-tense 2008 scenario wording; flag three source-scope items | done | `3c0dd247` | `scripts/build_canonical.py`, `data/canonical_rows.py` (F-33 to F-35) |
+| R3-04 | Regenerate, run all gates, commit, push, PR, merge, confirm Pages | in progress | `3c0dd247` | generated pages, this section |
+
 # Session `2ed1057f` (branch `arena/2ed1057f-jack3`) — claim: quarterly tenant trend series (SG-05), 2026-11-15
 
 **Claim (written before any edit):**
