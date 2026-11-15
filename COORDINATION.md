@@ -2100,3 +2100,18 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 - **Merge:** merged to `main` via `gh pr merge 92 --merge` as merge commit `29bb7ed118ab6a6562b2e9ca7484aa3e6fc36c83`, without waiting for approval, at 2026-11-15T13:04:54Z.
 - **Pre-merge checks:** CI `validate` and `publication-integrity` both passed on the PR head. Local gates green: `build_canonical.py` (22 pages, 242 evidence rows = 213 Verified / 2 Derived / 1 Analysis / 26 Blank, 45 official sources), `validate.py` PASS, `stage_pages.py` PASS, `unittest` (17 tests OK). Independent official-source re-verification: Census city/county QuickFacts, BLS LA Area Economic Summary, SEC 8-K Exhibit 99.1 Q3 FY2026, FRED DGS10 — all match, 0 mismatches.
 - **Post-merge:** PR merged to `main`; GitHub Pages auto-deploys on push to `main:/` (legacy builder, `https_enforced: true`). Direct Pages API confirmation and live `*.github.io` fetch were not possible from this sandbox (GitHub API rate-limited; `*.github.io` not reachable from the sandbox), but CI was green and the merge commit is on `main`.
+
+---
+
+# Session `3c0dd247` — repo review, official-source re-check, flagged-item update, PR and merge (2026-11-15)
+
+**Branch:** `arena/3c0dd247-jack3` (fixed by the platform; based on `main` at `f02ceef`) · **Date:** 2026-11-15 (UTC) · **Scope:** `scripts/build_canonical.py` (two landing/risk sentences), `data/canonical_rows.py` (flags F-33 to F-35 only), generated `*.html` / `data/canonical.json`, `research/VERIFICATION-2026-11-15-3c0dd247.md` (new), and this section of `COORDINATION.md`. No other session's section or file is edited.
+
+**Note on branch naming:** the platform fixes this session to `arena/3c0dd247-jack3`, so the `session-<id>/<task>` branch convention above is not used. All work stays on that one branch.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| R3-01 | Claim + baseline gate re-run on `main` | done | `3c0dd247` | this section |
+| R3-02 | Independent official-source re-read of decision-critical values (UCERF3, ULA, CAL FIRE, USGS ShakeOut, FEMA NRI deck, SEC 8-K, DIR, Census, BLS, FRED) | done | `3c0dd247` | `research/VERIFICATION-2026-11-15-3c0dd247.md` |
+| R3-03 | Correct present-tense 2008 scenario wording; flag three source-scope items | done | `3c0dd247` | `scripts/build_canonical.py`, `data/canonical_rows.py` (F-33 to F-35) |
+| R3-04 | Regenerate, run all gates, commit, push, PR, merge, confirm Pages | in progress | `3c0dd247` | generated pages, this section |
