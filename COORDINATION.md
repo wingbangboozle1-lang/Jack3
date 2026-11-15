@@ -1954,3 +1954,16 @@ No personal, owner, tenant-officer, parcel, lease or contact data was collected 
 - **Post-merge:** live site confirmed serving at https://wingbangboozle1-lang.github.io/Jack3/ — landing page loads, all category navigation links resolve, 22-page canonical artifact intact. GitHub Pages source `main:/`, `https_enforced: true`.
 - **Scope:** coordination-record-only change (COORDINATION.md). No site pages, canonical rows, generators, or other sessions' files were modified.
 
+# Session `f4171a60` — independent current-state decision-site audit (2026-11-15)
+
+**Branch:** `arena/f4171a60-jack3` (platform-fixed assigned active branch; base `b0f1e13`; branch naming follows the workspace, not the requested `session-<id>/<task>` form) · **Date:** 2026-11-15 UTC.
+
+**Scope claim:** Read this coordination board before starting. The latest completed work is session `d671e03b`; this claim is a new, non-overlapping independent audit. The older open PRs listed by D671 are not owned by this session and will not be modified, closed, or merged. `git pull --rebase origin main` completed before claiming; the branch was up to date.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| F417-01 | Read the board and current repository / publication state; claim a non-overlapping task | **done** | `f4171a60` | read-only; this section |
+| F417-02 | Independently audit the current public decision dossier for privacy, known-vs-unknown treatment, decision-safety, official-source traceability, site/build integrity, and whether requested features are actually present; run available reproducible gates | **in progress** | `f4171a60` | `research/AUDIT-2026-11-15-f4171a60.md` (new audit report); `COORDINATION.md` (append-only); all other files read-only |
+| F417-03 | Record source checks, exact gate results, irregularities and handoff/PR/deployment status without overstating any verification | **in progress** | `f4171a60` | same report and append-only coordination section |
+
+**Boundary:** no personal or parcel identifiers will be sought. If a defect requires editing shared canonical data, navigation, generated pages, or another session's scope, it will be documented here as a request rather than changed without a separate scope decision. Existing unverified/private-input-dependent values must remain blank and flagged.
