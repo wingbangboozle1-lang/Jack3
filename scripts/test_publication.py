@@ -96,6 +96,14 @@ class PublicationTests(unittest.TestCase):
         self.assertIn('body.advisor-brief .sidebar', css)
         self.assertIn('advisor-brief.html', {p['file'] for p in CANONICAL['pages']})
 
+    def test_no_sale_or_renewal_winner_before_verified_inputs(self):
+        summary = (PUBLIC / 'executive-summary.html').read_text(encoding='utf-8')
+        self.assertIn('do not choose sale or renewal on regional averages alone', summary)
+        self.assertIn('Sell before expiry</td>', summary)
+        self.assertNotIn('Sell before expiry (base case)', summary)
+        self.assertNotIn('Primary track', summary)
+        self.assertIn('Run both tracks in parallel (recommended sequence)', summary)
+
     def test_all_local_targets_and_fragments(self):
         for name, doc in self.docs.items():
             for link in doc.links:

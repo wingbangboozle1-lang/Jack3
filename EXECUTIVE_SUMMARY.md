@@ -25,25 +25,20 @@ the owner to expire between 2030 and 2035.
 This is analyst judgement on verified public evidence plus the owner's stated facts. It is **not** a valuation, an
 appraisal, a tax opinion or personalised investment advice, and it does not assume a price, rent or cap rate.
 
-**Why the sale track leads:** city and county population are below their 2020 estimates bases, metro payroll
-growth is modest, the tenant is contracting and is itself selling real estate, and the owner's principal risk is a
-single-tenant vacancy at an unknown future date. Marketing while income remains contractual preserves options;
-waiting without checking notice windows transfers timing leverage to the tenant.
+**Why run both sale and renewal tracks:** the evidence available publicly does not resolve property-level value, tenant intent, lease rights, owner tax, or the owner's liquidity and risk needs. City and county aggregates are context only; issuer-wide closures and sales do not establish the status of this restaurant. Keeping both options open while privately verifying notice dates can preserve flexibility, but it is a process recommendation—not a conclusion that a sale or renewal is superior.
 
-**Why the renewal track runs in parallel:** an extension can convert a shortening income stream into a longer one and
-may broaden buyer demand, though neither effect is guaranteed. If the tenant commits in writing, the owner can compare
-two priced alternatives instead of one. Only a **signed, enforceable, credit-supported** amendment counts.
+An extension may secure contractual income and may affect buyer interest; neither effect is guaranteed. A sale may reduce single-asset exposure but creates tax, reinvestment and transaction risk. Compare only documented after-tax bids against enforceable renewal terms and a risk-adjusted hold case after verified inputs exist.
 
 ### Decision matrix
 
-| Route | Trigger that makes it correct | Dominant risk | Verdict |
+| Route | Evidence gate | Dominant risk | Current status |
 |---|---|---|---|
-| **Sell with a §1031 replacement identified** | A documented, after-tax bid that beats the risk-adjusted hold case, with a replacement in sight | Replacement-asset risk; price risk if marketed late | **Primary track** |
-| **Extend, then sell or hold** | Tenant offers an enforceable extension on acceptable term, credit, market rent and expense allocation | Concessions; locking poor economics; no guaranteed cap-rate benefit | **Run in parallel; act only on signed terms** |
-| **Hold to expiry unchanged** | Contractual income, adequate reserves and verified insurance cover | Expiry vacancy, tenant default, capital calls at the worst moment | **Reject as a plan** |
-| **Re-tenant / reposition** | Verified alternate demand and permitted use justify vacancy and build-out | Downtime, incentives, entitlement, construction cost | Fallback only |
-| **Redevelop / ground lease** | Independently costed residual land value beats the existing-use value | Permitting, environmental, financing | Not the wealth-preservation route |
-| **Sale without exchange** | Owner wants liquidity and accepts the tax | Immediate capital-gains and depreciation-recapture tax | Rational only if liquidity dominates |
+| **Sell before expiry** | A documented, after-tax bid beats the risk-adjusted hold case and available alternatives | Transaction tax, reinvestment risk, lost rent upside, failed marketing | **Do not select before verified inputs** |
+| **Extend, then sell or hold** | Enforceable tenant terms, acceptable rent and credit, with concessions and expenses priced | Concessions, weak guarantee, locking poor economics | **Keep available; compare signed terms** |
+| **Hold under the existing lease** | Contractual income, liquidity, insurance and downside are independently established and attractive relative to sale | Shortening term, default, expiry vacancy and residual costs | **Do not assume; quantify against alternatives** |
+| **Re-tenant / reposition** | Verified alternate demand, permitted use and costed downtime/build-out | Vacancy, incentives, entitlement and construction cost | **Fallback only if evidence supports it** |
+| **Redevelop / ground lease** | Legal feasibility and independently costed residual value exceed existing-use value | Permitting, environmental and financing | **Not ranked without parcel evidence** |
+| **Sale with or without §1031 exchange** | Tax and legal advisers compare a documented net sale result with hold/renew outcomes | Tax, replacement-asset and concentration risk | **No exchange decision before owner-specific review** |
 
 ### What would change this recommendation
 
