@@ -905,6 +905,16 @@ FLAGS = [
     ("F-32", "Low", "FRED DGS10 refreshed after the 2026-11-12 verification snapshot",
      "The FRED page read 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation for 2026-11-09 remains historically correct, not the latest.",
      "The published current rate anchor and illustrative script are refreshed; revisit this rolling observation before decisions. Neither value sets Asset A's discount rate, cap rate or required return.", "FRED"),
+    # ---- added 2026-11-15 (session 3c0dd247)
+    ("F-33", "Low", "Landing and risk summary described a 2008 scenario in the present tense",
+     "The overview and risk-summary text said that USGS models or ShakeOut models about 1,800 deaths and $213bn. The figures come from the 2008 scenario (USGS OFR 2008-1150); the scenario rows already say so and say it is not a forecast.",
+     "Closed on 2026-11-15: the wording now reads 'A 2008 USGS ShakeOut scenario modelled'. No figure changed; both numbers were re-read on the USGS report page.", "SHAKEOUT"),
+    ("F-34", "Low", "Palisades Fire damage figures come from a page marked 'Not a CAL FIRE Incident'",
+     "The CAL FIRE incident page for the Palisades Fire says 'Not a CAL FIRE Incident' and names the Los Angeles City Fire Department as agency having jurisdiction. The 6,845 structures destroyed, 12 civilian fatalities and 23,448 acres are reproduced from that official page and carry the CAL FIRE label because it hosts them.",
+     "Read the labels as an official incident record hosted by CAL FIRE. Check the City of Los Angeles post-fire totals before any quantitative use of the Palisades count.", "PALISADES"),
+    ("F-35", "Low", "Employment Cost Index is a Los Angeles-Long Beach CSA figure, not a metro figure",
+     "The +3.9% Employment Cost Index (wages and salaries, 12 months to September 2026) is for the Los Angeles-Long Beach, CA combined statistical area, as the BLS summary table labels it. The register row keeps that scope; the overview, risk and decision text repeat '+3.9%' without it.",
+     "Read the figure as Los Angeles-Long Beach CSA context. No value changed; restate the scope wherever the figure is quoted.", "BLS"),
 ]
 
 # --------------------------------------------------------------- Repo review findings
