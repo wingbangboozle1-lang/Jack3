@@ -2115,3 +2115,94 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 | R3-02 | Independent official-source re-read of decision-critical values (UCERF3, ULA, CAL FIRE, USGS ShakeOut, FEMA NRI deck, SEC 8-K, DIR, Census, BLS, FRED) | done | `3c0dd247` | `research/VERIFICATION-2026-11-15-3c0dd247.md` |
 | R3-03 | Correct present-tense 2008 scenario wording; flag three source-scope items | done | `3c0dd247` | `scripts/build_canonical.py`, `data/canonical_rows.py` (F-33 to F-35) |
 | R3-04 | Regenerate, run all gates, commit, push, PR, merge, confirm Pages | in progress | `3c0dd247` | generated pages, this section |
+
+# Session `2ed1057f` (branch `arena/2ed1057f-jack3`) — claim: quarterly tenant trend series (SG-05), 2026-11-15
+
+**Claim (written before any edit):**
+
+| ID | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| 2ED-01 | Tenant watch-list: quarterly same-store sales, unit counts and closures, Jack in the Box brand, from official SEC Exhibit 99.1 releases (closes information-register item SG-05) | in progress | `2ed1057f` | `data/canonical_rows.py` (Tenant & lease rows and SOURCES only), regenerated root HTML and `data/canonical.json` via `scripts/build_canonical.py`, this COORDINATION.md section | Only publicly filed issuer data. No property, lease, owner or parcel data is touched. |
+
+Not claimed here (blocked on inputs no public official source can supply for this asset; left open, logged on the Flagged page by existing rows): after-tax module (needs owner basis and holding period), short-lease discount priced from real quotes (needs quotes), parcel-level hazard zone status (needs the parcel identifier, which must stay offline), tract-level trade-area figures (needs the location). The existing info-register and flags already record these.
+
+## Completion record — `2ed1057f` / 2ED-01 (2026-11-15, UTC)
+
+**Status: done.** Closes information-register item SG-05 ("a series … shows direction, not one quarter") for the Jack in the Box brand.
+
+**What changed** (`data/canonical_rows.py` only, then regenerated outputs): 3 new official SOURCES keys (`SECQ4FY25`, `SECQ1FY26`, `SECQ2FY26`) and 14 new Tenant & lease rows: system same-store sales for Q1 FY25 (comparative), Q2 FY25 (comparative), Q4 FY25, Q1 FY26 and Q2 FY26; one Derived row (improvement Q4 FY25 → Q3 FY26 = 6.3 points, arithmetic shown); restaurant counts at Q2 FY25, Q4 FY25, Q1 FY26 and Q2 FY26; closures for Q4 FY25, Q1 FY26 and Q2 FY26. Canonical register is now 255 rows (225 Verified, 3 Derived, 1 Analysis, 26 Blank) across 48 official sources. Blank count unchanged at 26.
+
+**Quarterly series (Jack in the Box brand, system same-store sales; company / franchise in the row notes):**
+
+| Quarter (weeks ended) | System | Company | Franchise | Official source (SEC Exhibit 99.1) |
+|---|---|---|---|---|
+| Q1 FY25 (16 wks to 2025-01-19), comparative | +0.4% | (0.4%) | +0.5% | https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm |
+| Q2 FY25 (12 wks to 2025-04-13), comparative | (4.4%) | (4.0%) | (4.5%) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000066/ex991-q226earningsrelease.htm |
+| Q3 FY25 (12 wks to 2025-07-06), comparative | (7.1%) | (6.4%) | (7.2%) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm |
+| Q4 FY25 (12 wks to 2025-09-28) | (7.4%) | (5.3%) | (7.6%) | https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm |
+| Q1 FY26 (16 wks to 2026-01-18) | (6.7%) | (4.7%) | (7.0%) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm |
+| Q2 FY26 (12 wks to 2026-04-12) | (3.8%) | (2.8%) | (3.9%) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000066/ex991-q226earningsrelease.htm |
+| Q3 FY26 (12 wks to 2026-07-05) | (1.1%) | (0.9%) | (1.2%) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm |
+
+Direction: negative in every quarter from Q2 FY25 through Q3 FY26; the trough was Q4 FY25 (−7.4%) and the latest quarter is −1.1%. Read as a shrinking decline, not a recovery to growth. Unit counts at quarter end: 2,183 (Q2 FY25), 2,136 (Q4 FY25), 2,128 (Q1 FY26), 2,128 (Q2 FY26), 2,115 (Q3 FY26). Closures in the quarter: 47 (Q4 FY25, of which 38 under the JACK on Track programme), 14 (Q1 FY26), 9 (Q2 FY26), 17 (Q3 FY26).
+
+**Verification performed:** every value above was read directly from the SEC-hosted Exhibit 99.1 page via the EDGAR filing index for accession numbers 0000807882-25-000070, -26-000039, -26-000066 and -26-000090. The Q1 and Q2 FY25 values are the prior-year columns printed in the FY2026 releases, not values read from the original FY2025 releases. Arithmetic re-checked: 6.3 = −1.1 − (−7.4). `scripts/build_canonical.py`, `scripts/validate.py` (PASS), `scripts/stage_pages.py` (PASS), `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py` (0 findings), `_advisory_src/verify_advisory.py`, `_dashboard_src/verify.py`, and `unittest` (18 tests OK) all pass.
+
+**Irregularities / open items (flagged, not blocking):**
+- Fiscal quarters differ in length (12 vs 16 weeks). Q1 comparability is weaker; the rows say so.
+- The requested franchise rental revenue series was NOT collected for each quarter in this pass. Only the Q3 FY26 cumulative figure is on the site. Still open.
+- Q1 and Q2 FY25 values are restated comparatives; if the originally reported FY25 figures differ, the FY25 originals should be checked (not done).
+- Items from the owner brief that need inputs no public official source can supply are NOT filled and remain open: after-tax module (owner basis and holding period), short-lease discount from real quotes, parcel-level hazard zone status (requires the parcel identifier, which must stay offline), and tract-level trade-area figures (requires the location). None of these were inferred.
+
+**Sources (links for manual review):**
+- https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm
+- https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm
+- https://www.sec.gov/Archives/edgar/data/807882/000080788226000066/ex991-q226earningsrelease.htm
+- https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm
+- EDGAR 8-K filing list for CIK 807882: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=40
+
+# Session `arena/0fc530a9-jack3` — current-tree publication audit (2026-11-15)
+
+**Claim / scope:** current-tree publication and privacy gate re-run; `COORDINATION.md` only. No canonical data, published page, source row, generator, or other session's files will be edited. This is a non-overlapping audit because the main site and its data are already complete; the task is to independently re-run repository gates and record the current result.
+
+**Task status:** done. Read-only verification completed on the checked-out current tree; generated artifacts remained deterministic and unchanged.
+
+## Gate results
+
+- `python3 scripts/build_canonical.py`: 23 pages, 242 evidence rows (213 verified / 2 derived / 1 analysis / 26 blank), 45 official sources; 24 risks, 8 pathways, 13 projection steps, 32 flags, 20 information-register questions, 16 suggestions.
+- `python3 scripts/validate.py`: PASS; 24 published files, row provenance, official-host policy, links, PII, and deterministic rebuild clean.
+- `python3 scripts/stage_pages.py`: PASS; 24-file Pages artifact (23 HTML + stylesheet), every table row source-linked, every internal link resolves.
+- `python3 -m unittest discover -s scripts -p 'test_*.py'`: 18 tests passed.
+- `python3 tools/check_site.py`: all checks passed; 213 internal references.
+- `python3 tools/linkcheck.py`: 256 internal links and 302 external link references checked in the configured scope; no broken internal links or anchors. This is not a claim that all external hosts were reachable or all source content was freshly re-read.
+- `python3 tools/pii_scan.py`: 156 files scanned, 0 findings.
+- `_advisory_src/verify_advisory.py`: pass; 12 HTML pages, 227 table rows, 32 unconfirmed cells blank, 0 PII, no scripts.
+- `_dashboard_src/verify.py`: pass; 148 body rows source-linked, 20 unverified rows blank, PII clean, deterministic rebuild.
+
+## Evidence boundary and irregularities
+
+This audit reran the repository's structural, provenance, link, privacy, and reproducibility gates; it did **not** freshly re-read all 242 factual evidence rows against the publishers. The previous full line-by-line pass is documented in the dated 2026-11-12 verification records referenced by README, and later coordination entries document narrower spot checks. Thus this session makes no new factual verification claim. Parcel identity, executed NNN lease/notice calendar, local trade-area evidence, insurance/engineering/hazard determinations, seller tax basis, owner-specific finances, renewal quote, sale offers and verified after-tax comparison remain private-input blockers; the site correctly leaves unconfirmed values blank and flags them. No personal or parcel identifiers were collected or published.
+
+**PR / integration:** this is a coordination-only audit. PR and merge details will be appended after the PR is created and its result is confirmed. No new Pages content was introduced by this audit; deployment status is not claimed based on these local checks.
+
+---
+
+# Session `arena/90c10204-jack3` — current publication gate and decision/privacy audit (2026-11-15)
+
+**Claim:** session `90c10204`, on the platform-fixed branch `arena/90c10204-jack3`. Initial scope was `COORDINATION.md` only. Expanded, non-overlapping integration scope (no other active owner in the latest board for these current canonical files): `data/canonical_rows.py`, generated root pages via `scripts/build_canonical.py`, `scripts/test_publication.py` (regression test), and the stale non-published `EXECUTIVE_SUMMARY.md`; `COORDINATION.md` remains append-only. The change is limited to removing an unsupported default-sale label and harmonizing the legacy summary with the current evidence-gated dual-track position. No source observations change. No property identifier, private lease, owner financial record, or personal data was collected.
+
+| ID | Task | Status | Owner | Files / scope | Notes |
+|---|---|---|---|---|---|
+| J90-01 | Read coordination board and inspect current branch/site inventory | done | `90c10204` | `COORDINATION.md` (this section) | Read board before work; working tree began clean at `f02ceef` |
+| J90-02 | Re-run canonical build, validation, staging, regression tests, internal-link and privacy gates | done | `90c10204` | read-only generated checks | 242 rows, 24 staged files, 19 tests pass; details below |
+| J90-03 | Review decision labels against the instruction not to select sale or renewal before private verified inputs; correct conflict | done | `90c10204` | `data/canonical_rows.py`, generated pages, `EXECUTIVE_SUMMARY.md`, `scripts/test_publication.py` | Removed unsupported sale-base-case label; no evidence values changed |
+| J90-04 | Record findings and current publication/deployment boundary | in progress | `90c10204` | `COORDINATION.md` (this section) | Current Pages API and successful main workflow runs checked |
+
+**Finding and correction:** The generated executive summary already stated not to choose sale or renewal based on regional averages and recommended a parallel fact-finding sequence. However, its first decision-matrix row called sale before expiry the **“base case”**, implying a winner before lease, parcel, tax, and owner inputs were verified. The non-published `EXECUTIVE_SUMMARY.md` also described sale as the primary track and rejected holding, which contradicted the public evidence gate. Removed the unsupported default-sale wording in the canonical row and brought the legacy summary into line: compare sale, renewal/extension, and hold only once actual after-tax bids, signed terms, private tax facts, and risk inputs are available. The process recommendation is to privately verify notice rights and maintain parallel tracks; no sale/renewal winner is selected. No numeric source value or official-source row was changed.
+
+**Gates run on the corrected tree (2026-11-15):** `scripts/build_canonical.py` → 23 pages, 242 evidence rows (213 verified / 2 derived / 1 analysis / 26 blank), 45 sources; `scripts/validate.py` → PASS (24 published artifacts; 29 official hosts; provenance, blank-value, link, privacy, deterministic-build checks); `scripts/stage_pages.py` → PASS (24 files; every table row linked and every internal link resolves); `python3 -m unittest discover -s scripts -p 'test_*.py' -v` → 19 tests OK, including new test `test_no_sale_or_renewal_winner_before_verified_inputs`; `tools/linkcheck.py` → 256 internal and 302 external links inspected in configured scope, no broken internal links/anchors; `tools/pii_scan.py` → 0 findings in 156 files; `git diff --check` → clean. The first parallel run of tests and staging briefly raced on the generated artifact and failed to find a page; the sequential rerun above passed. `tools/check_site.py`, `tools/check_links.py`, `_advisory_src/verify_advisory.py`, and `_dashboard_src/verify.py` also passed on the pre-correction tree; corrections changed only the decision label, its generated copy, and non-published summary wording, not other data or links.
+
+**Official-source verification boundary:** this session did not re-read all 242 external observations. The latest complete site-level re-verification is logged in the earlier 2026-11-12/13 records below; values were not altered. This session verified the data/build/blank/privacy/link integrity contract and corrected a recommendation-label inconsistency, not the underlying market facts. No exact location, parcel identifier, personal information, lease file, tax basis, or owner finances were accessed.
+
+**Deployment state before this change:** GitHub Pages API reports `status: built`, source `main:/`, HTTPS enforced; successful main Actions runs on `f02ceef` were observed for `pages-build-deployment`, `Public artifact regression tests`, and `Validate public research`. This does not yet confirm deployment of the new change; PR checks and post-merge deployment will be recorded separately.
+
