@@ -2103,6 +2103,19 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 
 ---
 
+# Session `3c0dd247` — repo review, official-source re-check, flagged-item update, PR and merge (2026-11-15)
+
+**Branch:** `arena/3c0dd247-jack3` (fixed by the platform; based on `main` at `f02ceef`) · **Date:** 2026-11-15 (UTC) · **Scope:** `scripts/build_canonical.py` (two landing/risk sentences), `data/canonical_rows.py` (flags F-33 to F-35 only), generated `*.html` / `data/canonical.json`, `research/VERIFICATION-2026-11-15-3c0dd247.md` (new), and this section of `COORDINATION.md`. No other session's section or file is edited.
+
+**Note on branch naming:** the platform fixes this session to `arena/3c0dd247-jack3`, so the `session-<id>/<task>` branch convention above is not used. All work stays on that one branch.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| R3-01 | Claim + baseline gate re-run on `main` | done | `3c0dd247` | this section |
+| R3-02 | Independent official-source re-read of decision-critical values (UCERF3, ULA, CAL FIRE, USGS ShakeOut, FEMA NRI deck, SEC 8-K, DIR, Census, BLS, FRED) | done | `3c0dd247` | `research/VERIFICATION-2026-11-15-3c0dd247.md` |
+| R3-03 | Correct present-tense 2008 scenario wording; flag three source-scope items | done | `3c0dd247` | `scripts/build_canonical.py`, `data/canonical_rows.py` (F-33 to F-35) |
+| R3-04 | Regenerate, run all gates, commit, push, PR, merge, confirm Pages | in progress | `3c0dd247` | generated pages, this section |
+
 # Session `2ed1057f` (branch `arena/2ed1057f-jack3`) — claim: quarterly tenant trend series (SG-05), 2026-11-15
 
 **Claim (written before any edit):**
@@ -2170,10 +2183,6 @@ Direction: negative in every quarter from Q2 FY25 through Q3 FY26; the trough wa
 
 This audit reran the repository's structural, provenance, link, privacy, and reproducibility gates; it did **not** freshly re-read all 242 factual evidence rows against the publishers. The previous full line-by-line pass is documented in the dated 2026-11-12 verification records referenced by README, and later coordination entries document narrower spot checks. Thus this session makes no new factual verification claim. Parcel identity, executed NNN lease/notice calendar, local trade-area evidence, insurance/engineering/hazard determinations, seller tax basis, owner-specific finances, renewal quote, sale offers and verified after-tax comparison remain private-input blockers; the site correctly leaves unconfirmed values blank and flags them. No personal or parcel identifiers were collected or published.
 
-**PR / integration:** this is a coordination-only audit. PR and merge details will be appended after the PR is created and its result is confirmed. No new Pages content was introduced by this audit; deployment status is not claimed based on these local checks.
-
----
-
 # Session `arena/90c10204-jack3` — current publication gate and decision/privacy audit (2026-11-15)
 
 **Claim:** session `90c10204`, on the platform-fixed branch `arena/90c10204-jack3`. Initial scope was `COORDINATION.md` only. Expanded, non-overlapping integration scope (no other active owner in the latest board for these current canonical files): `data/canonical_rows.py`, generated root pages via `scripts/build_canonical.py`, `scripts/test_publication.py` (regression test), and the stale non-published `EXECUTIVE_SUMMARY.md`; `COORDINATION.md` remains append-only. The change is limited to removing an unsupported default-sale label and harmonizing the legacy summary with the current evidence-gated dual-track position. No source observations change. No property identifier, private lease, owner financial record, or personal data was collected.
@@ -2200,3 +2209,15 @@ This audit reran the repository's structural, provenance, link, privacy, and rep
 - **Merge:** `gh pr merge 97 --merge` → merge commit `1920c85872871c574860ed51be481bf32d54d2e5`, merged 2026-11-15T23:15:00Z, without waiting for approval.
 - **Deploy:** GitHub Actions `pages build and deployment` for `1920c85` completed **success**; Pages source `main:/`, status `built`. Live fetch of https://wingbangboozle1-lang.github.io/Jack3/tenant.html shows the new quarterly rows with official SEC links.
 - **Not done in this session (blocked on inputs no public official source can supply for this asset):** after-tax module (owner basis and holding period), short-lease discount from real quotes, parcel-level hazard zone status (needs the offline parcel identifier), tract-level trade-area figures (needs the location), franchise rental revenue by quarter (not collected in this pass). Each is recorded as open; none was inferred or filled.
+
+---
+
+## PR / merge / deployment record
+
+- PR [#96](https://github.com/wingbangboozle1-lang/Jack3/pull/96) (`arena/0fc530a9-jack3` → `main`) merged at 2026-11-15T23:12:47Z as `fc8baef3a5ac222392c245c23142c9fab639e1ea`.
+- Required PR checks `validate` and `publication-integrity` passed. Local gates above passed.
+- GitHub Pages run [#43773568777](https://github.com/wingbangboozle1-lang/Jack3/actions/runs/43773568777) completed successfully, including build and deploy. Pages API reports `built`, source `main:/`, and HTTPS enforced. Published URL: https://wingbangboozle1-lang.github.io/Jack3/ .
+- Workflow emitted non-blocking platform notices: actions pinned to Node.js 20 will be forced onto Node.js 24, and `ubuntu-latest` migrates to Ubuntu 26 beginning 2026-10-19. No job failed.
+- Scope remains coordination-only. No source facts, evidence rows, or site pages were edited; do not treat this audit as fresh line-by-line factual verification.
+
+**Conflict resolution note:** while preparing this follow-up record, `main` advanced with session `90c10204` and the coordination append conflicted. Rebased onto `origin/main`, preserved that session's decision-label correction record verbatim, and retained this audit's PR/deploy record. No concurrent work was discarded.
