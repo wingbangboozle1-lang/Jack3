@@ -2100,3 +2100,15 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 - **Merge:** merged to `main` via `gh pr merge 92 --merge` as merge commit `29bb7ed118ab6a6562b2e9ca7484aa3e6fc36c83`, without waiting for approval, at 2026-11-15T13:04:54Z.
 - **Pre-merge checks:** CI `validate` and `publication-integrity` both passed on the PR head. Local gates green: `build_canonical.py` (22 pages, 242 evidence rows = 213 Verified / 2 Derived / 1 Analysis / 26 Blank, 45 official sources), `validate.py` PASS, `stage_pages.py` PASS, `unittest` (17 tests OK). Independent official-source re-verification: Census city/county QuickFacts, BLS LA Area Economic Summary, SEC 8-K Exhibit 99.1 Q3 FY2026, FRED DGS10 — all match, 0 mismatches.
 - **Post-merge:** PR merged to `main`; GitHub Pages auto-deploys on push to `main:/` (legacy builder, `https_enforced: true`). Direct Pages API confirmation and live `*.github.io` fetch were not possible from this sandbox (GitHub API rate-limited; `*.github.io` not reachable from the sandbox), but CI was green and the merge commit is on `main`.
+
+---
+
+# Session `2ed1057f` (branch `arena/2ed1057f-jack3`) — claim: quarterly tenant trend series (SG-05), 2026-11-15
+
+**Claim (written before any edit):**
+
+| ID | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| 2ED-01 | Tenant watch-list: quarterly same-store sales, unit counts and closures, Jack in the Box brand, from official SEC Exhibit 99.1 releases (closes information-register item SG-05) | in progress | `2ed1057f` | `data/canonical_rows.py` (Tenant & lease rows and SOURCES only), regenerated root HTML and `data/canonical.json` via `scripts/build_canonical.py`, this COORDINATION.md section | Only publicly filed issuer data. No property, lease, owner or parcel data is touched. |
+
+Not claimed here (blocked on inputs no public official source can supply for this asset; left open, logged on the Flagged page by existing rows): after-tax module (needs owner basis and holding period), short-lease discount priced from real quotes (needs quotes), parcel-level hazard zone status (needs the parcel identifier, which must stay offline), tract-level trade-area figures (needs the location). The existing info-register and flags already record these.
