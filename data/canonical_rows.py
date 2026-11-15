@@ -727,7 +727,7 @@ RISKS = [
 # --------------------------------------------------------------------- Decision matrix
 # (pathway, when preferable, main risks, evidence gate, official context source)
 DECISIONS = [
-    ("Sell before expiry (base case)",
+    ("Sell before expiry",
      "A documented, verified after-tax offer beats the risk-adjusted value of continued income and available alternatives.",
      "Transaction tax and costs; reinvestment risk; lost rent upside; a failed marketing period.",
      "Obtain actual bids and an after-tax computation; no sale price or optimal year is established.", "IRS1031"),
