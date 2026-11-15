@@ -2170,6 +2170,7 @@ Direction: negative in every quarter from Q2 FY25 through Q3 FY26; the trough wa
 
 This audit reran the repository's structural, provenance, link, privacy, and reproducibility gates; it did **not** freshly re-read all 242 factual evidence rows against the publishers. The previous full line-by-line pass is documented in the dated 2026-11-12 verification records referenced by README, and later coordination entries document narrower spot checks. Thus this session makes no new factual verification claim. Parcel identity, executed NNN lease/notice calendar, local trade-area evidence, insurance/engineering/hazard determinations, seller tax basis, owner-specific finances, renewal quote, sale offers and verified after-tax comparison remain private-input blockers; the site correctly leaves unconfirmed values blank and flags them. No personal or parcel identifiers were collected or published.
 
+<<<<<<< HEAD
 **PR / integration:** this is a coordination-only audit. PR and merge details will be appended after the PR is created and its result is confirmed. No new Pages content was introduced by this audit; deployment status is not claimed based on these local checks.
 
 ---
@@ -2193,3 +2194,12 @@ This audit reran the repository's structural, provenance, link, privacy, and rep
 
 **Deployment state before this change:** GitHub Pages API reports `status: built`, source `main:/`, HTTPS enforced; successful main Actions runs on `f02ceef` were observed for `pages-build-deployment`, `Public artifact regression tests`, and `Validate public research`. This does not yet confirm deployment of the new change; PR checks and post-merge deployment will be recorded separately.
 
+=======
+## PR / merge / deployment record
+
+- PR [#96](https://github.com/wingbangboozle1-lang/Jack3/pull/96) (`arena/0fc530a9-jack3` → `main`) merged at 2026-11-15T23:12:47Z as `fc8baef3a5ac222392c245c23142c9fab639e1ea`.
+- Required PR checks `validate` and `publication-integrity` passed. Local gates above passed.
+- GitHub Pages run [#43773568777](https://github.com/wingbangboozle1-lang/Jack3/actions/runs/43773568777) completed successfully, including build and deploy. Pages API reports `built`, source `main:/`, and HTTPS enforced. Published URL: https://wingbangboozle1-lang.github.io/Jack3/ .
+- Workflow emitted non-blocking platform notices: actions pinned to Node.js 20 will be forced onto Node.js 24, and `ubuntu-latest` migrates to Ubuntu 26 beginning 2026-10-19. No job failed.
+- Scope remains coordination-only. No source facts, evidence rows, or site pages were edited; do not treat this audit as fresh line-by-line factual verification.
+>>>>>>> 8a20c93 (docs(coordination): record audit merge and Pages deploy)
