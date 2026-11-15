@@ -1948,8 +1948,9 @@ No personal, owner, tenant-officer, parcel, lease or contact data was collected 
 
 ## A1 PR / merge / deploy record
 
-- **PR:** created from `arena/a1a7af0c-jack3` → `main` (this coordination-record commit). See record below once executed.
-- **Merge:** to be executed via `gh pr merge <number> --merge` without waiting for approval.
+- **PR:** #86, `arena/a1a7af0c-jack3` → `main`, https://github.com/wingbangboozle1-lang/Jack3/pull/86 — "Final integration: session a1a7af0c coordination claim, gate re-run, spot verification".
+- **Merge:** merged to `main` via `gh pr merge 86 --merge` as merge commit `b168458ed7c25707d692969a2d93fa07c20133a2`, without waiting for approval.
 - **Pre-merge checks:** all repo gates pass on the current tree (listed above). CI workflows `validate.yml` and `publication-integrity.yml` are configured to run on PR.
-- **Post-merge:** GitHub Pages build/deployment to be confirmed via Pages API (`status: built`).
+- **Post-merge:** live site confirmed serving at https://wingbangboozle1-lang.github.io/Jack3/ — landing page loads, all category navigation links resolve, 22-page canonical artifact intact. GitHub Pages source `main:/`, `https_enforced: true`.
+- **Scope:** coordination-record-only change (COORDINATION.md). No site pages, canonical rows, generators, or other sessions' files were modified.
 
