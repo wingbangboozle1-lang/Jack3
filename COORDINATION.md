@@ -1997,3 +1997,16 @@ Total: 12 individual values re-read from 6 official pages; 0 mismatches. No valu
 **Privacy boundary:** no personal, owner, tenant-officer, parcel, lease or contact data was collected or written to the repository. Asset A / Owner A placeholders only.
 
 **Sources (links for manual review):** [Census QuickFacts Los Angeles County](https://www.census.gov/quickfacts/losangelescountycalifornia) · [Census QuickFacts Los Angeles city](https://www.census.gov/quickfacts/losangelescitycalifornia) · [BLS LA Area Economic Summary](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) · [SEC 8-K Exhibit 99.1 · Q3 FY2026](https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm) · [FRED DGS10](https://fred.stlouisfed.org/series/DGS10) · [USGS UCERF3 Fact Sheet 2015-3009](https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf)
+
+---
+
+# Session `f6c66237` — current publication/privacy integrity check (2026-11-15)
+
+**Branch:** `arena/f6c66237-jack3` (platform-fixed; based on `b0f1e1320eea8eabe604258d7a3e5057d5b387e5`) · **Scope:** independent, non-content audit of the current canonical public artifact. No source values, shared navigation, canonical data, or published pages are owned by this task.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| F6-01 | Inspect coordination board and claim non-overlapping current publication/privacy gate audit | **done** | `f6c66237` | `COORDINATION.md`, `research/AUDIT-2026-11-15-f6c66237.md` |
+| F6-02 | Run deterministic build, publication/link/privacy checks, and document exact results / irregularities | **done** | `f6c66237` | same; generated outputs unchanged |
+
+**Verification performed:** canonical build (22 pages / 242 rows / 45 sources); validation (23 public files, 29 approved hosts); staged artifact; 17 unit tests; site/link/official-host checks; PII scan (154 files, zero findings); both companion verifiers; exact 23-file Pages inventory. All passed. Checked official FRED DGS10 on 2026-11-15: latest displayed value remains 5.10% (2026-11-12), matching the site's dated observation. Detailed commands, scope boundaries, and results: [`research/AUDIT-2026-11-15-f6c66237.md`](research/AUDIT-2026-11-15-f6c66237.md). The last full source-by-source audit remains dated 2026-11-12; no claim to re-read all 242 current rows. No personal, parcel, lease, owner, or financial information was collected. No site/canonical-data edit was warranted. Irregularities: property-specific trade-area and parcel-hazard evidence and private sale/renewal economics remain unavailable; 11 older PRs were open and not triaged. Direct Pages API check returned HTTP 403 rate-limit exceeded; `gh run list` showed the base commit's validation/artifact tests and Pages deploy had succeeded, but this session could not independently read the Pages API status.
