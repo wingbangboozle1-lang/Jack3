@@ -2122,7 +2122,7 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 
 | ID | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|---|
-| 2ED-01 | Tenant watch-list: quarterly same-store sales, unit counts and closures, Jack in the Box brand, from official SEC Exhibit 99.1 releases (closes information-register item SG-05) | in progress | `2ed1057f` | `data/canonical_rows.py` (Tenant & lease rows and SOURCES only), regenerated root HTML and `data/canonical.json` via `scripts/build_canonical.py`, this COORDINATION.md section | Only publicly filed issuer data. No property, lease, owner or parcel data is touched. |
+| 2ED-01 | Tenant watch-list: quarterly same-store sales, unit counts and closures, Jack in the Box brand, from official SEC Exhibit 99.1 releases (closes information-register item SG-05) | done | `2ed1057f` | `data/canonical_rows.py` (Tenant & lease rows and SOURCES only), regenerated root HTML and `data/canonical.json` via `scripts/build_canonical.py`, this COORDINATION.md section | Only publicly filed issuer data. No property, lease, owner or parcel data is touched. |
 
 Not claimed here (blocked on inputs no public official source can supply for this asset; left open, logged on the Flagged page by existing rows): after-tax module (needs owner basis and holding period), short-lease discount priced from real quotes (needs quotes), parcel-level hazard zone status (needs the parcel identifier, which must stay offline), tract-level trade-area figures (needs the location). The existing info-register and flags already record these.
 
@@ -2202,6 +2202,13 @@ This audit reran the repository's structural, provenance, link, privacy, and rep
 
 **PR #98 / merge / deployment record:** [PR #98](https://github.com/wingbangboozle1-lang/Jack3/pull/98) merged to `main` at 2026-11-15T23:14:25Z as `b3f80b76839d8c4d4a030908e2b5e2128a11dca8`. Required `validate` and `publication-integrity` checks both passed on the PR. Its first Pages run (#43773721828) was cancelled during a concurrent `main` update from PR #97; the Pages run for the resulting latest main head `1920c85872871c574860ed51be481bf32d54d2e5`, [#43773773102](https://github.com/wingbangboozle1-lang/Jack3/actions/runs/43773773102), completed build and deploy successfully. GitHub Pages API reports `status: built`, source `main:/`, HTTPS enforced. Fetched the live [executive summary](https://wingbangboozle1-lang.github.io/Jack3/executive-summary.html) after deployment and confirmed it states “do not choose sale or renewal on regional averages alone”; the matrix says “Sell before expiry” without a “base case” qualifier and keeps the parallel-track sequence. `J90-01`–`J90-04` are done. No external evidence values were changed; source verification boundary above remains in force.
 
+## PR / merge / deploy record — `2ed1057f` (2026-11-15, UTC)
+
+- **PR #97:** https://github.com/wingbangboozle1-lang/Jack3/pull/97 — `arena/2ed1057f-jack3` → `main` (2ED-01 quarterly tenant series, SG-05).
+- **Conflict during merge:** `main` had moved (PR #96, session `0fc530a9`, appended to `COORDINATION.md` only). `gh pr merge` refused with a merge conflict. Resolved by merging `origin/main` into the session branch and keeping both appended log sections verbatim; no content from either session was dropped. Re-ran all gates and CI on the merged head before merging (validate PASS, publication-integrity PASS).
+- **Merge:** `gh pr merge 97 --merge` → merge commit `1920c85872871c574860ed51be481bf32d54d2e5`, merged 2026-11-15T23:15:00Z, without waiting for approval.
+- **Deploy:** GitHub Actions `pages build and deployment` for `1920c85` completed **success**; Pages source `main:/`, status `built`. Live fetch of https://wingbangboozle1-lang.github.io/Jack3/tenant.html shows the new quarterly rows with official SEC links.
+- **Not done in this session (blocked on inputs no public official source can supply for this asset):** after-tax module (owner basis and holding period), short-lease discount from real quotes, parcel-level hazard zone status (needs the offline parcel identifier), tract-level trade-area figures (needs the location), franchise rental revenue by quarter (not collected in this pass). Each is recorded as open; none was inferred or filled.
 
 ---
 
