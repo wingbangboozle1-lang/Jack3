@@ -2131,7 +2131,7 @@ This audit reran the repository's structural, provenance, link, privacy, and rep
 
 # Session `arena/90c10204-jack3` — current publication gate and decision/privacy audit (2026-11-15)
 
-**Claim:** session `90c10204`, on the platform-fixed branch `arena/90c10204-jack3`. **Scope:** `COORDINATION.md` only; all other checks are read-only. No property identifier, private lease, owner financial record, or personal data was collected.
+**Claim:** session `90c10204`, on the platform-fixed branch `arena/90c10204-jack3`. Initial scope was `COORDINATION.md` only. Expanded, non-overlapping integration scope (no other active owner in the latest board for these current canonical files): `data/canonical_rows.py`, generated root pages via `scripts/build_canonical.py`, and the stale non-published `EXECUTIVE_SUMMARY.md`; `COORDINATION.md` remains append-only. The change is limited to removing an unsupported default-sale label and harmonizing the legacy summary with the current evidence-gated dual-track position. No source observations change. No property identifier, private lease, owner financial record, or personal data was collected.
 
 | ID | Task | Status | Owner | Files / scope | Notes |
 |---|---|---|---|---|---|
