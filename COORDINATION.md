@@ -2017,12 +2017,14 @@ Total: 12 individual values re-read from 6 official pages; 0 mismatches. No valu
 
 **Branch:** `arena/2ad93fc5-jack3` (platform-fixed; based on `main` at `b0f1e13`).
 **Role:** final-integration follow-up for the explicitly requested one-page printable advisor summary (W-10).
-**Scope claimed:** `COORDINATION.md` (this section), `scripts/build_canonical.py`, generated `advisor-brief.html`, generated `index.html` / `assets/style.css`, and `scripts/test_publication.py`. No personal, owner, lease, parcel or financial data is collected or added.
+**Scope claimed:** `COORDINATION.md` (this section), `scripts/build_canonical.py`, generated `advisor-brief.html`, canonical page registry + generated root HTML / `assets/style.css`, `scripts/test_publication.py`, and `README.md` page inventory. No personal, owner, lease, parcel or financial data is collected or added.
 
 | ID | Task | Status | Owner | Files |
 |---|---|---|---|---|
-| A2-01 | Add a one-page, print-optimized, source-linked advisor brief while preserving the static/privacy-only site model | in progress | `2ad93fc5` | listed scope |
-| A2-02 | Rebuild and run publication, link, PII, and regression gates; inspect generated content | in progress | `2ad93fc5` | read-only + listed scope |
-| A2-03 | PR, checks, merge, Pages confirmation | pending | `2ad93fc5` | this section + PR |
+| A2-01 | Add a one-page, print-optimized, source-linked advisor brief while preserving the static/privacy-only site model | done | `2ad93fc5` | listed scope |
+| A2-02 | Rebuild and run publication, link, PII, and regression gates; inspect generated content | done | `2ad93fc5` | read-only + listed scope |
+| A2-03 | PR, checks, merge, Pages confirmation | in progress | `2ad93fc5` | this section + PR |
 
-**Verification boundary:** the brief will summarize only the existing evidence snapshot and existing conditional analysis. It will keep the sale-versus-renewal winner unresolved, list missing owner-specific evidence, and link each evidence-table row to registered official sources. It will not claim new external-source verification or a site-specific recommendation.
+**Implementation / verification (2026-11-15):** added `advisor-brief.html` to the canonical page registry and shared navigation, with a dedicated letter-landscape print layout, compact evidence boundary, private decision gates, and a source-linked table. The page carries no user-specific inputs. It uses only official publisher links already registered in the canonical dataset; this work did not re-read those external sources and does not claim new factual verification. The decision remains conditional: preserve both options until private lease, tax, offers, trade-area and parcel-risk inputs are verified.
+
+**Gates on this working tree:** canonical build (23 registered pages; 242 rows, unchanged); `scripts/validate.py` (24 published artifacts, all body rows sourced and privacy checks clean); `scripts/stage_pages.py` (24-file staged artifact; no broken internal links); `tools/linkcheck.py` (256 internal / 302 external links checked in its configured scope, no broken local links); `tools/pii_scan.py` (155 files, 0 findings); unit tests (18 OK); `_advisory_src/verify_advisory.py` and `_dashboard_src/verify.py` (both pass); `git diff --check` clean. Added a regression check for page registration, print CSS scope, and decision/privacy caveats. README counts and page inventory updated. The generated companion research index changed only with page count/navigation; no evidence row or source datum was edited.

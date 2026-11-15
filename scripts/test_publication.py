@@ -85,6 +85,17 @@ class PublicationTests(unittest.TestCase):
                 self.assertTrue(name.endswith('.html'))
                 self.assertEqual(Path(name).name, name)
 
+    def test_advisor_brief_has_page_scoped_print_layout(self):
+        brief = (PUBLIC / 'advisor-brief.html').read_text(encoding='utf-8')
+        css = (PUBLIC / 'assets/style.css').read_text(encoding='utf-8')
+        self.assertIn('<body class="advisor-brief">', brief)
+        self.assertIn('Current position: preserve both options', brief)
+        self.assertIn('The public record does not contain the executed lease', brief)
+        self.assertIn('browser\'s print command', brief)
+        self.assertIn('@page advisorbrief{size:letter landscape', css)
+        self.assertIn('body.advisor-brief .sidebar', css)
+        self.assertIn('advisor-brief.html', {p['file'] for p in CANONICAL['pages']})
+
     def test_all_local_targets_and_fragments(self):
         for name, doc in self.docs.items():
             for link in doc.links:

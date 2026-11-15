@@ -123,3 +123,43 @@ code{background:#eef1f6;padding:1px 5px;border-radius:4px;font-size:11.5px}
  h1{font-size:28px}
  .split{grid-template-columns:1fr}
 }
+.brief-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:15px}
+.brief-heading h1{font-size:29px;margin:0 0 4px}
+.brief-heading .lede{font-size:12px;margin:0}
+.print-note{font-size:11px;color:var(--mut);white-space:nowrap;margin:0 0 3px}
+.advisor-grid{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:18px;margin:0 0 14px}
+.advisor-grid section{min-width:0}
+.advisor-grid h2{font-size:15px;border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:7px}
+.advisor-grid .ticks{padding-left:15px;margin:0}
+.advisor-grid .ticks li,.advisor-grid .steps li{font-size:11px;line-height:1.35;margin-bottom:5px}
+.advisor-grid .steps{padding-left:17px;margin:0}
+.advisor-grid .small{font-size:10.5px;line-height:1.4;margin:0 0 7px}
+.brief-decision{font-size:12px;padding:9px 12px;margin-bottom:13px}
+body.advisor-brief table{font-size:10px}
+body.advisor-brief caption{font-size:11px;padding:6px 8px}
+body.advisor-brief th,body.advisor-brief td{padding:5px 7px}
+body.advisor-brief .srclink{font-size:9px;white-space:normal}
+.brief-foot{font-size:10px;color:var(--mut);margin-top:8px}
+@page advisorbrief{size:letter landscape;margin:.35in}
+@media print{
+ body.advisor-brief{page:advisorbrief;background:#fff;color:#111;font-size:8pt;line-height:1.25}
+ body.advisor-brief .skip,body.advisor-brief .sidebar,body.advisor-brief .topbar,body.advisor-brief footer{display:none!important}
+ body.advisor-brief .app,body.advisor-brief .main{display:block;min-height:0;max-width:none;margin:0}
+ body.advisor-brief main{padding:0;margin:0}
+ body.advisor-brief .brief-heading{padding-bottom:5px;margin-bottom:7px}
+ body.advisor-brief .brief-heading h1{font-size:18pt}
+ body.advisor-brief .brief-heading .eyebrow{font-size:7pt;margin-bottom:3px}
+ body.advisor-brief .brief-heading .lede,body.advisor-brief .print-note{font-size:7pt}
+ body.advisor-brief .advisor-grid{grid-template-columns:1fr 1.2fr 1fr;gap:12px;margin-bottom:6px}
+ body.advisor-brief .advisor-grid h2{font-size:10pt;margin-bottom:4px;padding-bottom:3px}
+ body.advisor-brief .advisor-grid .ticks li,body.advisor-brief .advisor-grid .steps li{font-size:7.1pt;line-height:1.2;margin-bottom:3px}
+ body.advisor-brief .advisor-grid .small{font-size:7pt;line-height:1.25;margin-bottom:4px}
+ body.advisor-brief .brief-decision{font-size:8pt;padding:6px 8px;margin-bottom:7px}
+ body.advisor-brief table{font-size:7pt}
+ body.advisor-brief caption{font-size:7.5pt;padding:4px 6px}
+ body.advisor-brief th,body.advisor-brief td{padding:3px 5px}
+ body.advisor-brief .srclink{font-size:6.5pt;white-space:normal;overflow-wrap:anywhere}
+ body.advisor-brief .brief-foot{font-size:7pt;margin-top:4px}
+ body.advisor-brief a{color:#111;text-decoration:underline}
+ body.advisor-brief .table-wrap{overflow:visible;border-color:#999;margin-bottom:5px}
+}

@@ -40,6 +40,8 @@ PAGES = [
      "The decision at a glance, the evidence behind it, and the whole register in one place."),
     ("executive-summary", "Executive summary", "OVERVIEW", "01 / EXECUTIVE SUMMARY",
      "Recommendation, findings, decision matrix, risk balance, and everything that stays blank."),
+    ("advisor-brief", "Printable advisor brief", "OVERVIEW", "01A / ADVISOR BRIEF",
+     "A one-page, source-linked print summary for confidential advisor discussions."),
     ("master", "All entries & findings", "OVERVIEW", "02 / MASTER REGISTER",
      "Every published row in one table, grouped by category, with its official source."),
     ("geography", "Geography", "EVIDENCE BY CATEGORY", "03 / GEOGRAPHY",
@@ -141,6 +143,7 @@ def shell(page_id: str, content: str, kicker: str = "", description: str = "") -
     nav = ''.join(nav_parts)
     desc = description or PAGE_TITLES[page_id]
     title = PAGE_TITLES[page_id]
+    body_class = ' class="advisor-brief"' if page_id == "advisor-brief" else ""
     # Empty layout disables GitHub Pages' default theme wrapper and keeps the
     # published bytes identical to this generator's output after Jekyll strips
     # the front matter.  scripts/stage_pages.py strips the same front matter.
@@ -156,7 +159,7 @@ layout: null
 <title>{E(title)} · Asset A decision desk</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body{body_class}>
 <a class="skip" href="#main">Skip to content</a>
 <div class="app">
 <aside class="sidebar">
@@ -217,6 +220,7 @@ def page_index() -> str:
     gate_links = ''.join(
         f'<a href="{pid}.html"><b>{E(PAGE_TITLES[pid])}</b><p>{E(t)}</p><span>Open →</span></a>'
         for pid, t in [
+            ("advisor-brief", "One-page print summary for confidential conversations with your advisors."),
             ("risk", "Business-as-usual and black-swan risks, each with a context source."),
             ("projections", "The reproducible 2026-2035 framework and the outputs withheld."),
             ("decisions", "Eight pathways, their gates, the risk of each and the recommended sequence."),
@@ -361,6 +365,53 @@ def page_executive_summary() -> str:
         '<a class="quiet" href="suggestions.html">Suggestions →</a></div></section>',
     ]
     return shell("executive-summary", ''.join(body), KICKER["executive-summary"])
+
+
+def page_advisor_brief() -> str:
+    context_rows = [
+        ["<b>Regional economy</b>", "Useful backdrop only; city/county measures do not establish this trade area's demand or rent coverage.",
+         src("CITY", "Census city") + " · " + src("BLS", "BLS metro")],
+        ["<b>Tenant / lease</b>", "Issuer-wide disclosures cannot verify this location's obligor, rent, options, notices, or store economics.",
+         src("SECQ3", "Issuer Q3 filing") + " · " + src("SEC10K", "Issuer 10-K")],
+        ["<b>Taxes / sale</b>", "After-tax proceeds require private basis, depreciation, ownership, debt, offer and transaction costs.",
+         src("IRS409", "IRS capital gains") + " · " + src("ULA", "City transfer tax") + " · " + src("DTT", "County transfer tax")],
+        ["<b>Parcel hazards</b>", "No parcel zone or insurance conclusion is established without secure parcel-level review.",
+         src("FEMA", "FEMA flood maps") + " · " + src("FHSZ", "OSFM fire zones") + " · " + src("EQZAPP", "CGS seismic map")],
+    ]
+    body = [
+        '<div class="brief-heading"><div><div class="eyebrow">CONFIDENTIAL ADVISOR DISCUSSION · PUBLIC, ANONYMIZED SUMMARY</div>'
+        '<h1>Jack in the Box NNN property | decision brief</h1>'
+        '<p class="lede">Asset A · Central Los Angeles area · evidence snapshot 2026-11-13 · prepared for adviser review</p></div>'
+        '<p class="print-note">Print using your browser\'s print command · landscape, one page</p></div>',
+        '<section class="callout brief-decision"><b>Current position: preserve both options; do not select sell or renew yet.</b> '
+        'Privately confirm the lease and notice calendar first. Then compare executable sale terms after tax with a negotiated renewal / hold case and the correlated downside risks. '
+        'The reported expiry range of 2030–2035 is owner-supplied context, not a verified lease date or decision deadline.</section>',
+        '<div class="advisor-grid">'
+        '<section><h2>What the evidence supports</h2><ul class="ticks plain">'
+        '<li>Public city, county and metro evidence gives broad economic context; it is not a parcel valuation or a reliable local projection by itself.</li>'
+        '<li>Jack in the Box issuer filings describe system performance, not the lease guarantor or the subject store.</li>'
+        '<li>Both paths retain risk: hold carries tenant, lease-rollover and concentration exposure; sell carries transaction costs, tax and reinvestment risk.</li>'
+        '<li>Wildfire, earthquake and flood impacts can combine rent interruption, repairs, insurance constraints and reduced exit liquidity.</li>'
+        '</ul></section>'
+        '<section><h2>Decision gates · private work first</h2><ol class="steps">'
+        '<li>Real-estate counsel: abstract the executed lease and amendments; verify expiry, options, notice windows, casualty / assignment provisions and legal obligor. Reconcile every date to a notice calendar.</li>'
+        '<li>CPA / tax counsel: calculate sale proceeds after debt, costs, transfer taxes, basis, depreciation and applicable federal / state taxes; separately model any eligible exchange.</li>'
+        '<li>Broker: obtain confidential written sale indications and enforceable renewal terms, then compare equivalent dates and assumptions.</li>'
+        '<li>Engineer / insurance adviser: screen actual parcel hazards and policy terms; stress correlated downtime, repair and liquidity scenarios.</li>'
+        '<li>Researcher: use the location only in a secure workflow for consistent tract, traffic, planning, school and competitor evidence.</li>'
+        '</ol></section>'
+        '<section><h2>Evidence boundaries</h2>'
+        '<p class="small">The public record does not contain the executed lease, exact parcel, store sales, rent schedule, tax basis, debt, offer, renewal quote, insurance policy or owner liquidity / concentration limits. No sale price, cap rate, after-tax figure, parcel hazard status, calibrated forecast or winner is asserted.</p>'
+        '<p class="small"><b>Privacy:</b> keep identifiers, lease files and owner finances offline with authorized advisers; publish only aggregate, non-identifying findings. This page contains placeholders and no private inputs.</p>'
+        '<p class="small">The table summarizes the source boundary; each row links to official context. A cited agency page does not verify the missing property-specific fact.</p>'
+        '</section></div>',
+        table(["Evidence area", "What is known / not established", "Official context source"], context_rows,
+              "Official context and property-specific gaps"),
+        '<p class="brief-foot">Next reading: <a href="questions.html">decision questions</a> · '
+        '<a href="decisions.html">pathway and risk matrix</a> · <a href="review.html">Flagged for Review</a> · '
+        '<a href="sources.html">source register and method</a>. Not an appraisal, legal opinion, tax opinion or personalised investment advice.</p>',
+    ]
+    return shell("advisor-brief", ''.join(body), KICKER["advisor-brief"])
 
 
 def page_master() -> str:
@@ -1198,6 +1249,46 @@ code{background:#eef1f6;padding:1px 5px;border-radius:4px;font-size:11.5px}
  h1{font-size:28px}
  .split{grid-template-columns:1fr}
 }
+.brief-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:15px}
+.brief-heading h1{font-size:29px;margin:0 0 4px}
+.brief-heading .lede{font-size:12px;margin:0}
+.print-note{font-size:11px;color:var(--mut);white-space:nowrap;margin:0 0 3px}
+.advisor-grid{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:18px;margin:0 0 14px}
+.advisor-grid section{min-width:0}
+.advisor-grid h2{font-size:15px;border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:7px}
+.advisor-grid .ticks{padding-left:15px;margin:0}
+.advisor-grid .ticks li,.advisor-grid .steps li{font-size:11px;line-height:1.35;margin-bottom:5px}
+.advisor-grid .steps{padding-left:17px;margin:0}
+.advisor-grid .small{font-size:10.5px;line-height:1.4;margin:0 0 7px}
+.brief-decision{font-size:12px;padding:9px 12px;margin-bottom:13px}
+body.advisor-brief table{font-size:10px}
+body.advisor-brief caption{font-size:11px;padding:6px 8px}
+body.advisor-brief th,body.advisor-brief td{padding:5px 7px}
+body.advisor-brief .srclink{font-size:9px;white-space:normal}
+.brief-foot{font-size:10px;color:var(--mut);margin-top:8px}
+@page advisorbrief{size:letter landscape;margin:.35in}
+@media print{
+ body.advisor-brief{page:advisorbrief;background:#fff;color:#111;font-size:8pt;line-height:1.25}
+ body.advisor-brief .skip,body.advisor-brief .sidebar,body.advisor-brief .topbar,body.advisor-brief footer{display:none!important}
+ body.advisor-brief .app,body.advisor-brief .main{display:block;min-height:0;max-width:none;margin:0}
+ body.advisor-brief main{padding:0;margin:0}
+ body.advisor-brief .brief-heading{padding-bottom:5px;margin-bottom:7px}
+ body.advisor-brief .brief-heading h1{font-size:18pt}
+ body.advisor-brief .brief-heading .eyebrow{font-size:7pt;margin-bottom:3px}
+ body.advisor-brief .brief-heading .lede,body.advisor-brief .print-note{font-size:7pt}
+ body.advisor-brief .advisor-grid{grid-template-columns:1fr 1.2fr 1fr;gap:12px;margin-bottom:6px}
+ body.advisor-brief .advisor-grid h2{font-size:10pt;margin-bottom:4px;padding-bottom:3px}
+ body.advisor-brief .advisor-grid .ticks li,body.advisor-brief .advisor-grid .steps li{font-size:7.1pt;line-height:1.2;margin-bottom:3px}
+ body.advisor-brief .advisor-grid .small{font-size:7pt;line-height:1.25;margin-bottom:4px}
+ body.advisor-brief .brief-decision{font-size:8pt;padding:6px 8px;margin-bottom:7px}
+ body.advisor-brief table{font-size:7pt}
+ body.advisor-brief caption{font-size:7.5pt;padding:4px 6px}
+ body.advisor-brief th,body.advisor-brief td{padding:3px 5px}
+ body.advisor-brief .srclink{font-size:6.5pt;white-space:normal;overflow-wrap:anywhere}
+ body.advisor-brief .brief-foot{font-size:7pt;margin-top:4px}
+ body.advisor-brief a{color:#111;text-decoration:underline}
+ body.advisor-brief .table-wrap{overflow:visible;border-color:#999;margin-bottom:5px}
+}
 """
 
 
@@ -1211,6 +1302,7 @@ def main() -> None:
     outputs: dict[str, str] = {
         "index.html": page_index(),
         "executive-summary.html": page_executive_summary(),
+        "advisor-brief.html": page_advisor_brief(),
         "master.html": page_master(),
         "review.html": page_flagged(),
         "flagged.html": page_flagged(),

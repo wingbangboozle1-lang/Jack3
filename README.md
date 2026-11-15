@@ -29,6 +29,7 @@ Verify lease dates and notice rights privately now; prepare sale and renewal tra
 |---|---|
 | [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Clean landing page, eight evidence categories, analysis pages and governance pages |
 | [Executive summary](executive-summary.html) | Recommendation, decision matrix, six driving findings, risk balance, and what stays blank |
+| [Printable advisor brief](advisor-brief.html) | One-page print layout, decision gates, privacy boundary, and official-source context |
 | [Suggestions to review](suggestions.html) | Proposed workflow, site, data and model improvements with trade-offs before implementation |
 | [Questions & answers](questions.html) | 20-question information register (what is known, what is not, how to find out, who holds it; 9 gate the decision), an order of work, and 16 current answers |
 | [All entries & findings](master.html) | Every published row in one source-linked table |
@@ -39,7 +40,7 @@ Verify lease dates and notice rights privately now; prepare sale and renewal tra
 
 ## Build and verify
 
-22 static HTML pages (21 shared-navigation pages plus the `flagged.html` alias) plus `assets/style.css`, for a 23-file Pages artifact. Every table body row carries an official source link; every
+23 static HTML pages (22 shared-navigation pages plus the `flagged.html` alias) plus `assets/style.css`, for a 24-file Pages artifact. Every table body row carries an official source link; every
 unconfirmed value is an **empty cell** and appears on *Flagged for Review*. No JavaScript, forms, analytics,
 third-party assets, owner identifiers, addresses or parcel numbers.
 
@@ -47,6 +48,7 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 |---|---|---|
 | Overview / dashboard | `/` | Conditional recommendation, six verified anchors, risk balance, navigation |
 | Executive summary | `/executive-summary.html` | Decision, findings, matrix, evidence gates, what stays blank |
+| Printable advisor brief | `/advisor-brief.html` | One-page landscape print view with source-linked evidence and private-work gates |
 | All entries & findings | `/master.html` | 242-row master register, grouped by category |
 | Geography | `/geography.html` | City / county scale; every parcel-level gap flagged |
 | People & income | `/demographics.html` | Population, households, income, poverty, education, spending capacity |
