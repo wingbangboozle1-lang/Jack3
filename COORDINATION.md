@@ -2259,9 +2259,19 @@ Fresh official-source re-fetches (Census, BLS, SEC, FRED, DIR, City of LA, USGS,
 
 | ID | Status | Result |
 |---|---|---|
-| J3-01 | **done** | Claim pushed (this commit). |
-| J3-02 | **pending** | Gate results recorded below once run. |
-| J3-03 | **pending** | Line-by-line review results recorded below once complete. |
-| J3-04 | **pending** | Pages status recorded after `gh api` checks. |
-| J3-05 | **pending** | PR link and merge result recorded below once executed. |
+| J3-01 | **done** | Claim section appended, committed and pushed immediately (commit `bd6ba1d`, later rebased onto `main` `40b87da` as `fc7150a`). |
+| J3-02 | **done** | `scripts/build_canonical.py` → 23 pages, 242 evidence rows (213 verified, 2 derived, 1 analysis, 26 blank), 45 official sources; `scripts/validate.py` → PASS (24 published files, 29 official hosts; row provenance, links, PII and deterministic rebuild clean); `scripts/stage_pages.py` → PASS (24 staged files; every table row source-linked; every internal link resolves); `python3 -m unittest discover -s scripts -p 'test_*.py'` → 18 tests OK; `tools/linkcheck.py` → OK, no broken internal links or anchors; `tools/pii_scan.py` → 156 files, 0 findings; `tools/check_site.py` → ALL CHECKS PASSED. |
+| J3-03 | **done** | Reviewed `index.html`, `review.html` and `flagged.html`: every table body row carries an official source link or is an intentionally blank cell listed in the blank-evidence table; 32 flagged items (F-01–F-32) and 36 repo-review irregularities (R-01–R-36), each linked to an official source; shared navigation present on every page; PII scan clean. |
+| J3-04 | **done** | Pages API `status: built`, `https_enforced: true`, source `main:/` at https://wingbangboozle1-lang.github.io/Jack3/ (confirmed before and after the merge). |
+| J3-05 | **done** | PR #101 (`arena/344e8a0f-jack3` → `main`, https://github.com/wingbangboozle1-lang/Jack3/pull/101) merged via `gh pr merge 101 --merge` as merge commit `eb202bc58209d4070998d08c532586f86836cada` on 2026-11-15, without waiting for approval; pre-merge gates all green on the branch; post-merge `pages build and deployment` completed success on `main`; Pages API `status: built`, `https_enforced: true`; live URL https://wingbangboozle1-lang.github.io/Jack3/ . |
+
+## PR / merge / deployment record
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/101 — `arena/344e8a0f-jack3` → `main`, "chore(coordination): session 344e8a0f final-integration verification record". Coordination-record-only PR: no site page, canonical row, generator, style sheet, navigation, or other session's file was edited.
+- **Pre-merge checks (branch):** `build_canonical.py` (23 pages / 242 rows / 45 sources), `validate.py` PASS, `stage_pages.py` PASS, 18 unit tests OK, `linkcheck.py` OK, `pii_scan.py` 0 findings, `check_site.py` ALL CHECKS PASSED.
+- **Merge:** `gh pr merge 101 --merge` → merge commit `eb202bc58209d4070998d08c532586f86836cada`, merged 2026-11-15 without waiting for approval. No `--auto`.
+- **Post-merge:** `pages build and deployment` on `main` completed success; Pages API reports `status: built`, source `main:/`, `https_enforced: true`; live URL https://wingbangboozle1-lang.github.io/Jack3/ .
+- **Open items (non-blocking, published for review):** 32 flagged items (F-01–F-32) and 36 repo-review irregularities (R-01–R-36) on the Flagged for Review page, each with official links; they do not block publication or the merge. Open pull requests from earlier sessions (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48, #51, #87, #97, #98) were reported, not merged, closed or edited.
+- **Verification limitation (disclosed):** no fresh official-source re-fetches were possible from this sandbox (outbound network limited to GitHub hosts); all existing official-source URLs preserved verbatim and every row's source link checked internally. Published figure dates preserved as published; no figure refreshed, inferred or filled in.
+- **Privacy boundary:** `Asset A` / `Owner A` placeholders only; PII gate clean (0 findings); no personal, parcel, lease or financial information collected or published.
 
