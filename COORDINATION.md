@@ -2100,3 +2100,29 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 - **Merge:** merged to `main` via `gh pr merge 92 --merge` as merge commit `29bb7ed118ab6a6562b2e9ca7484aa3e6fc36c83`, without waiting for approval, at 2026-11-15T13:04:54Z.
 - **Pre-merge checks:** CI `validate` and `publication-integrity` both passed on the PR head. Local gates green: `build_canonical.py` (22 pages, 242 evidence rows = 213 Verified / 2 Derived / 1 Analysis / 26 Blank, 45 official sources), `validate.py` PASS, `stage_pages.py` PASS, `unittest` (17 tests OK). Independent official-source re-verification: Census city/county QuickFacts, BLS LA Area Economic Summary, SEC 8-K Exhibit 99.1 Q3 FY2026, FRED DGS10 — all match, 0 mismatches.
 - **Post-merge:** PR merged to `main`; GitHub Pages auto-deploys on push to `main:/` (legacy builder, `https_enforced: true`). Direct Pages API confirmation and live `*.github.io` fetch were not possible from this sandbox (GitHub API rate-limited; `*.github.io` not reachable from the sandbox), but CI was green and the merge commit is on `main`.
+
+---
+
+# Session `arena/0fc530a9-jack3` — current-tree publication audit (2026-11-15)
+
+**Claim / scope:** current-tree publication and privacy gate re-run; `COORDINATION.md` only. No canonical data, published page, source row, generator, or other session's files will be edited. This is a non-overlapping audit because the main site and its data are already complete; the task is to independently re-run repository gates and record the current result.
+
+**Task status:** done. Read-only verification completed on the checked-out current tree; generated artifacts remained deterministic and unchanged.
+
+## Gate results
+
+- `python3 scripts/build_canonical.py`: 23 pages, 242 evidence rows (213 verified / 2 derived / 1 analysis / 26 blank), 45 official sources; 24 risks, 8 pathways, 13 projection steps, 32 flags, 20 information-register questions, 16 suggestions.
+- `python3 scripts/validate.py`: PASS; 24 published files, row provenance, official-host policy, links, PII, and deterministic rebuild clean.
+- `python3 scripts/stage_pages.py`: PASS; 24-file Pages artifact (23 HTML + stylesheet), every table row source-linked, every internal link resolves.
+- `python3 -m unittest discover -s scripts -p 'test_*.py'`: 18 tests passed.
+- `python3 tools/check_site.py`: all checks passed; 213 internal references.
+- `python3 tools/linkcheck.py`: 256 internal links and 302 external link references checked in the configured scope; no broken internal links or anchors. This is not a claim that all external hosts were reachable or all source content was freshly re-read.
+- `python3 tools/pii_scan.py`: 156 files scanned, 0 findings.
+- `_advisory_src/verify_advisory.py`: pass; 12 HTML pages, 227 table rows, 32 unconfirmed cells blank, 0 PII, no scripts.
+- `_dashboard_src/verify.py`: pass; 148 body rows source-linked, 20 unverified rows blank, PII clean, deterministic rebuild.
+
+## Evidence boundary and irregularities
+
+This audit reran the repository's structural, provenance, link, privacy, and reproducibility gates; it did **not** freshly re-read all 242 factual evidence rows against the publishers. The previous full line-by-line pass is documented in the dated 2026-11-12 verification records referenced by README, and later coordination entries document narrower spot checks. Thus this session makes no new factual verification claim. Parcel identity, executed NNN lease/notice calendar, local trade-area evidence, insurance/engineering/hazard determinations, seller tax basis, owner-specific finances, renewal quote, sale offers and verified after-tax comparison remain private-input blockers; the site correctly leaves unconfirmed values blank and flags them. No personal or parcel identifiers were collected or published.
+
+**PR / integration:** this is a coordination-only audit. PR and merge details will be appended after the PR is created and its result is confirmed. No new Pages content was introduced by this audit; deployment status is not claimed based on these local checks.
