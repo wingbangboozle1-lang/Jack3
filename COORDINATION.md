@@ -2201,3 +2201,47 @@ This audit reran the repository's structural, provenance, link, privacy, and rep
 - Scope remains coordination-only. No source facts, evidence rows, or site pages were edited; do not treat this audit as fresh line-by-line factual verification.
 
 **Conflict resolution note:** while preparing this follow-up record, `main` advanced with session `90c10204` and the coordination append conflicted. Rebased onto `origin/main`, preserved that session's decision-label correction record verbatim, and retained this audit's PR/deploy record. No concurrent work was discarded.
+
+
+# Session `arena/344e8a0f-jack3` — final integration verification and Pages deployment record (2026-11-15)
+
+**Session ID:** `344e8a0f` · **Branch:** `arena/344e8a0f-jack3` (platform-fixed; the brief's `session-<id>/<task>` naming is unavailable in this environment — same recorded deviation as earlier sessions) · **Date:** `2026-11-15` (UTC) · **Base:** `main` at `f02ceef` (merge of PR #94, session `2ad93fc5`, advisor brief added to the canonical registry) · **Status:** active
+
+## Scope claim (append-only section; writes limited to this section of `COORDINATION.md` and a new dated verification record under `research/`)
+
+No site page, canonical row, generator, style sheet, navigation, or other session's file is edited by this session. No other session's open PR is merged, closed, or edited.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| J3-01 | Read board, claim non-overlapping scope, push claim immediately | done | `344e8a0f` | `COORDINATION.md` (this section, append-only) |
+| J3-02 | Re-run full local verification gates on the current canonical artifact | in progress | `344e8a0f` | `scripts/build_canonical.py`, `scripts/validate.py`, `scripts/stage_pages.py`, `scripts/test_publication.py`, `scripts/test_projection.py`, `tools/linkcheck.py`, `tools/pii_scan.py`, `python3 -m unittest` |
+| J3-03 | Line-by-line review of published root pages: every table body row source-linked or intentionally blank/flagged; shared navigation intact; no PII; deterministic rebuild | in progress | `344e8a0f` | root `*.html`, `assets/style.css`, `review.html`, `flagged.html` |
+| J3-04 | Confirm GitHub Pages deployment of current `main` (`status: built`, `https_enforced: true`) before and after any merge | planned | `344e8a0f` | `gh api repos/wingbangboozle1-lang/Jack3/pages` + Actions runs (read-only) |
+| J3-05 | Open PR `arena/344e8a0f-jack3` → `main`, merge without waiting (`gh pr merge <N> --merge`), confirm Pages redeploy, record PR link and merge result | planned | `344e8a0f` | `COORDINATION.md` (this section), PR |
+
+## Rules observed
+
+- Append-only for this section; `git pull --rebase` before every push; small frequent commits; conflicts resolved without discarding other sessions' work.
+- Shared outputs (master table data, `index.html`, navigation) are changed only by the final integration session; this session changes none of them.
+- No value published without official source verification. This session makes **no new factual claims**: external publisher pages cannot be re-fetched from this sandbox (outbound network is limited to GitHub hosts), so verification is structural and internal — every published row traced to its registered official source in `data/canonical.json`, blank/unverified cells left blank and flagged, all internal links resolved, PII gate clean. Dates on published figures are preserved as published; no figure is refreshed, inferred or filled in here.
+- Privacy boundary (highest urgency): `Asset A` / `Owner A` placeholders only. No address, parcel number (APN), owner identity, contact detail, lease document, rent roll, tax basis, named individual, or tenant-officer name is collected, written to the repository, or published.
+- Open PRs belonging to other sessions (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48, #51, #87, #97, #98) are reported, not merged, closed or edited.
+
+## Verification limitation (disclosed)
+
+Fresh official-source re-fetches (Census, BLS, SEC, FRED, DIR, City of LA, USGS, CAL FIRE, CDE) were last performed by earlier sessions and are recorded in their dated verification reports (latest full pass 2026-11-12). This session's network allowlist does not include publisher domains, so no publisher page is re-read here; the existing registry URLs are preserved verbatim and every row's source link is checked internally for presence and official-host membership. Flagged/blank items on `review.html` remain non-blocking and are published for owner review.
+
+## Log
+
+- 2026-11-15: claim section appended to `COORDINATION.md`, committed and pushed immediately per board rule 1. Base `main` is `f02ceef`; Pages was reporting `status: building` on the PR #94 merge at claim time.
+
+## Task board (this section) — completion record
+
+| ID | Status | Result |
+|---|---|---|
+| J3-01 | **done** | Claim pushed (this commit). |
+| J3-02 | **pending** | Gate results recorded below once run. |
+| J3-03 | **pending** | Line-by-line review results recorded below once complete. |
+| J3-04 | **pending** | Pages status recorded after `gh api` checks. |
+| J3-05 | **pending** | PR link and merge result recorded below once executed. |
+
