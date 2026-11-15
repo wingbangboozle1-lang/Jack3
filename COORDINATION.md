@@ -2114,7 +2114,7 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 | R3-01 | Claim + baseline gate re-run on `main` | done | `3c0dd247` | this section |
 | R3-02 | Independent official-source re-read of decision-critical values (UCERF3, ULA, CAL FIRE, USGS ShakeOut, FEMA NRI deck, SEC 8-K, DIR, Census, BLS, FRED) | done | `3c0dd247` | `research/VERIFICATION-2026-11-15-3c0dd247.md` |
 | R3-03 | Correct present-tense 2008 scenario wording; flag three source-scope items | done | `3c0dd247` | `scripts/build_canonical.py`, `data/canonical_rows.py` (F-33 to F-35) |
-| R3-04 | Regenerate, run all gates, commit, push, PR, merge, confirm Pages | in progress | `3c0dd247` | generated pages, this section |
+| R3-04 | Regenerate, run all gates, commit, push, PR, merge, confirm Pages | done | `3c0dd247` | generated pages, this section |
 
 # Session `2ed1057f` (branch `arena/2ed1057f-jack3`) — claim: quarterly tenant trend series (SG-05), 2026-11-15
 
@@ -2264,6 +2264,19 @@ Fresh official-source re-fetches (Census, BLS, SEC, FRED, DIR, City of LA, USGS,
 | J3-03 | **pending** | Line-by-line review results recorded below once complete. |
 | J3-04 | **pending** | Pages status recorded after `gh api` checks. |
 | J3-05 | **pending** | PR link and merge result recorded below once executed. |
+
+## R3 PR / merge / deploy record (`3c0dd247`, 2026-11-15)
+
+- **PR #100** — `arena/3c0dd247-jack3` → `main`: https://github.com/wingbangboozle1-lang/Jack3/pull/100 — "Session 3c0dd247: official-source re-check, flags F-33 to F-35, 2008 ShakeOut wording fix".
+- **First merge attempt refused (not mergeable).** `main` had advanced with PRs #97 and #98 (decision-matrix neutrality and a coordination-log merge), which touched the same generated pages, `REPO_REVIEW.md` and `COORDINATION.md`. Nothing was force-pushed and nothing was discarded.
+- **Resolution.** `origin/main` was merged into `arena/3c0dd247-jack3` (commit `011daa0`). Both coordination logs were kept in full (append-only conflict resolved by keeping both sides). The four generated files were regenerated from the merged `scripts/build_canonical.py` and `data/canonical_rows.py`, not hand-edited. Flag IDs F-33 to F-35 did not collide with any ID on `main`. The register is now 255 rows, 225 verified, 3 derived, 1 analysis, 26 blank, 48 sources.
+- **Gates on the merged tree (all passed):** `build`, `validate`, `stage_pages`, `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `tools/pii_scan.py` (0 findings), `_advisory_src/verify_advisory.py`, `_dashboard_src/verify.py`, unit tests (18 OK). CI on the PR head: `validate` pass, `publication-integrity` pass.
+- **Merge:** `gh pr merge 100 --merge` succeeded at 2026-11-15T23:17:02Z as merge commit `354d81d`, without waiting for approval.
+- **Pages deploy:** GitHub Actions "pages build and deployment" completed `success` for `main` at `19ddd67`. The legacy Pages builder reports `errored` for some intermediate commits. Earlier sessions recorded the same pattern, and the Actions deployment is the one that serves the site.
+- **Live check (2026-11-15, after deploy):** https://wingbangboozle1-lang.github.io/Jack3/index.html shows 255 evidence rows and 48 official sources. https://wingbangboozle1-lang.github.io/Jack3/review.html shows 35 review entries. https://wingbangboozle1-lang.github.io/Jack3/hazards.html shows the UCERF3, ShakeOut and CAL FIRE rows. A request without a cache-busting query returned an earlier cached copy (242 rows) for a short time; the live page now shows 255.
+- **Open PRs from earlier sessions (not closed or edited by this session):** #4, #12, #22, #26, #31, #32, #36, #40, #44, #48, #51 and #87. Owners should decide per PR.
+- **Irregularities for owner review (published on Flagged for Review):** F-18 / R-36 (live FEMA NRI portal HTTP 500; archived 2023 deck used), F-34 (Palisades page marked "Not a CAL FIRE Incident"), F-35 (ECI figure is an LA-Long Beach CSA figure).
+- **Not verified in this session:** the remaining register rows (about 200 of 255) were not re-read today. The last full line-by-line pass remains 2026-11-12. The next full pass is listed as open item in `research/VERIFICATION-2026-11-15-3c0dd247.md`.
 
 ---
 
