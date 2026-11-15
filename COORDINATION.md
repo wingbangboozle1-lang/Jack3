@@ -2109,7 +2109,7 @@ Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease
 
 | ID | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|---|
-| 2ED-01 | Tenant watch-list: quarterly same-store sales, unit counts and closures, Jack in the Box brand, from official SEC Exhibit 99.1 releases (closes information-register item SG-05) | in progress | `2ed1057f` | `data/canonical_rows.py` (Tenant & lease rows and SOURCES only), regenerated root HTML and `data/canonical.json` via `scripts/build_canonical.py`, this COORDINATION.md section | Only publicly filed issuer data. No property, lease, owner or parcel data is touched. |
+| 2ED-01 | Tenant watch-list: quarterly same-store sales, unit counts and closures, Jack in the Box brand, from official SEC Exhibit 99.1 releases (closes information-register item SG-05) | done | `2ed1057f` | `data/canonical_rows.py` (Tenant & lease rows and SOURCES only), regenerated root HTML and `data/canonical.json` via `scripts/build_canonical.py`, this COORDINATION.md section | Only publicly filed issuer data. No property, lease, owner or parcel data is touched. |
 
 Not claimed here (blocked on inputs no public official source can supply for this asset; left open, logged on the Flagged page by existing rows): after-tax module (needs owner basis and holding period), short-lease discount priced from real quotes (needs quotes), parcel-level hazard zone status (needs the parcel identifier, which must stay offline), tract-level trade-area figures (needs the location). The existing info-register and flags already record these.
 
@@ -2193,3 +2193,10 @@ This audit reran the repository's structural, provenance, link, privacy, and rep
 
 **Deployment state before this change:** GitHub Pages API reports `status: built`, source `main:/`, HTTPS enforced; successful main Actions runs on `f02ceef` were observed for `pages-build-deployment`, `Public artifact regression tests`, and `Validate public research`. This does not yet confirm deployment of the new change; PR checks and post-merge deployment will be recorded separately.
 
+## PR / merge / deploy record — `2ed1057f` (2026-11-15, UTC)
+
+- **PR #97:** https://github.com/wingbangboozle1-lang/Jack3/pull/97 — `arena/2ed1057f-jack3` → `main` (2ED-01 quarterly tenant series, SG-05).
+- **Conflict during merge:** `main` had moved (PR #96, session `0fc530a9`, appended to `COORDINATION.md` only). `gh pr merge` refused with a merge conflict. Resolved by merging `origin/main` into the session branch and keeping both appended log sections verbatim; no content from either session was dropped. Re-ran all gates and CI on the merged head before merging (validate PASS, publication-integrity PASS).
+- **Merge:** `gh pr merge 97 --merge` → merge commit `1920c85872871c574860ed51be481bf32d54d2e5`, merged 2026-11-15T23:15:00Z, without waiting for approval.
+- **Deploy:** GitHub Actions `pages build and deployment` for `1920c85` completed **success**; Pages source `main:/`, status `built`. Live fetch of https://wingbangboozle1-lang.github.io/Jack3/tenant.html shows the new quarterly rows with official SEC links.
+- **Not done in this session (blocked on inputs no public official source can supply for this asset):** after-tax module (owner basis and holding period), short-lease discount from real quotes, parcel-level hazard zone status (needs the offline parcel identifier), tract-level trade-area figures (needs the location), franchise rental revenue by quarter (not collected in this pass). Each is recorded as open; none was inferred or filled.
