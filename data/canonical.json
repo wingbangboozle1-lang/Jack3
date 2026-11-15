@@ -329,6 +329,12 @@
       "group": "OVERVIEW"
     },
     {
+      "id": "advisor-brief",
+      "title": "Printable advisor brief",
+      "file": "advisor-brief.html",
+      "group": "OVERVIEW"
+    },
+    {
       "id": "master",
       "title": "All entries & findings",
       "file": "master.html",

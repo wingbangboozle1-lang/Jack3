@@ -1,6 +1,6 @@
 # Current evidence register — targeted DGS10 refresh 2026-11-13 (UTC)
 
-**Current register:** 242 rows (213 Verified, 2 Derived, 1 Analysis, 26 Blank) across 45 official/issuer sources. The published site contains 22 HTML pages including the flagged alias.
+**Current register:** 242 rows (213 Verified, 2 Derived, 1 Analysis, 26 Blank) across 45 official/issuer sources. The published site contains 23 HTML pages including the flagged alias.
 
 ## Verification boundary
 
