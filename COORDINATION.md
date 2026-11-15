@@ -1954,6 +1954,7 @@ No personal, owner, tenant-officer, parcel, lease or contact data was collected 
 - **Post-merge:** live site confirmed serving at https://wingbangboozle1-lang.github.io/Jack3/ — landing page loads, all category navigation links resolve, 22-page canonical artifact intact. GitHub Pages source `main:/`, `https_enforced: true`.
 - **Scope:** coordination-record-only change (COORDINATION.md). No site pages, canonical rows, generators, or other sessions' files were modified.
 
+---
 
 # Session `sess-2cc06f64` — official-source verification of published values, build/validation gate (2026-11-15)
 
@@ -2000,6 +2001,8 @@ Total: 12 individual values re-read from 6 official pages; 0 mismatches. No valu
 
 ---
 
+---
+
 # Session `f6c66237` — current publication/privacy integrity check (2026-11-15)
 
 **Branch:** `arena/f6c66237-jack3` (platform-fixed; based on `b0f1e1320eea8eabe604258d7a3e5057d5b387e5`) · **Scope:** independent, non-content audit of the current canonical public artifact. No source values, shared navigation, canonical data, or published pages are owned by this task.
@@ -2012,6 +2015,8 @@ Total: 12 individual values re-read from 6 official pages; 0 mismatches. No valu
 **Verification performed:** canonical build (22 pages / 242 rows / 45 sources); validation (23 public files, 29 approved hosts); staged artifact; 17 unit tests; site/link/official-host checks; PII scan (154 files, zero findings); both companion verifiers; exact 23-file Pages inventory. All passed. Checked official FRED DGS10 on 2026-11-15: latest displayed value remains 5.10% (2026-11-12), matching the site's dated observation. Detailed commands, scope boundaries, and results: [`research/AUDIT-2026-11-15-f6c66237.md`](research/AUDIT-2026-11-15-f6c66237.md). The last full source-by-source audit remains dated 2026-11-12; no claim to re-read all 242 current rows. No personal, parcel, lease, owner, or financial information was collected. No site/canonical-data edit was warranted. Irregularities: property-specific trade-area and parcel-hazard evidence and private sale/renewal economics remain unavailable; 11 older PRs were open and not triaged. Direct Pages API check returned HTTP 403 rate-limit exceeded; `gh run list` showed the base commit's validation/artifact tests and Pages deploy had succeeded, but this session could not independently read the Pages API status. PR [#88](https://github.com/wingbangboozle1-lang/Jack3/pull/88) merged on 2026-11-15 as `41277a95cd15ec0f83ed80c5e80cae455dea175b`; `publication-integrity` and `validate` passed on the rebased PR head. Post-merge Pages API / Actions status could not be queried due the same GitHub API rate limit; the 23-file deployment artifact is unchanged by this report-only PR, but do not interpret this audit as a post-merge live deployment confirmation.
 
 **Concurrent rebase note:** while PR #88 was open, main advanced through PRs #86 and #89 (including session records `a1a7af0c` and `sess-2cc06f64`). Rebase conflicted only in append-only `COORDINATION.md`; resolved by retaining the complete updated main-side sections and re-appending this session's claim before replaying its completion/audit commit. No concurrent work was discarded.
+---
+
 **Verification performed:** canonical build (22 pages / 242 rows / 45 sources); validation (23 public files, 29 approved hosts); staged artifact; 17 unit tests; site/link/official-host checks; PII scan (154 files, zero findings); both companion verifiers; exact 23-file Pages inventory. All passed. Checked official FRED DGS10 on 2026-11-15: latest displayed value remains 5.10% (2026-11-12), matching the site's dated observation. Detailed commands, scope boundaries, and results: [`research/AUDIT-2026-11-15-f6c66237.md`](research/AUDIT-2026-11-15-f6c66237.md). The last full source-by-source audit remains dated 2026-11-12; no claim to re-read all 242 current rows. No personal, parcel, lease, owner, or financial information was collected. No site/canonical-data edit was warranted. Irregularities: property-specific trade-area and parcel-hazard evidence and private sale/renewal economics remain unavailable; 11 older PRs were open and not triaged. Direct Pages API check returned HTTP 403 rate-limit exceeded; `gh run list` showed the base commit's validation/artifact tests and Pages deploy had succeeded, but this session could not independently read the Pages API status.
 # Session `2ad93fc5` — printable advisor brief (2026-11-15)
 
@@ -2030,3 +2035,67 @@ Total: 12 individual values re-read from 6 official pages; 0 mismatches. No valu
 **Gates on this working tree:** canonical build (23 registered pages; 242 rows, unchanged); `scripts/validate.py` (24 published artifacts, all body rows sourced and privacy checks clean); `scripts/stage_pages.py` (24-file staged artifact; no broken internal links); `tools/linkcheck.py` (256 internal / 302 external links checked in its configured scope, no broken local links); `tools/pii_scan.py` (155 files, 0 findings); unit tests (18 OK); `_advisory_src/verify_advisory.py` and `_dashboard_src/verify.py` (both pass); `git diff --check` clean. Added a regression check for page registration, print CSS scope, and decision/privacy caveats. README counts and page inventory updated. The generated companion research index changed only with page count/navigation; no evidence row or source datum was edited.
 
 **Concurrent integration / conflict record:** after the initial claim push, `main` advanced through PRs #86, #89 and #88, with official-source and publication-integrity audit sections added by other sessions. Rebases onto the newer `origin/main` repeatedly conflicted only in append-only `COORDINATION.md`; each resolution retained the concurrent `a1a7af0c`, `sess-2cc06f64` and `f6c66237` sections alongside this session's entries. No concurrent report, site output or coordination history was discarded. PR #91's initial merge attempts were blocked by these parallel base updates; this branch is now rebased onto the current `main` head and checks must pass before another merge attempt.
+
+---
+
+---
+
+---
+
+# Session `arena/7884ac9d-jack3` — independent verification, gate re-run and publication record (2026-11-15)
+
+**Branch:** `arena/7884ac9d-jack3` (rebased onto `main`/`origin/main` at `b168458`, PR #86 merged) · **Date:** 2026-11-15 (UTC) · **Scope:** `COORDINATION.md` (this section only); no site page, canonical row, generator, or other session's file was edited.
+
+**Rules in force** (carried forward): read COORDINATION.md before work; claim by writing session ID + file scope, then commit and push the claim immediately; never start a task another session has claimed; keep scopes non-overlapping; small frequent commits; `git pull --rebase` before every push; resolve conflicts without discarding other sessions' work; shared outputs (master table data, index.html, navigation) changed only by the final integration session.
+
+## Task board
+
+| ID | Task | Status | Owner | Files / scope | Notes |
+|---|---|---|---|---|---|
+| V788-01 | Coordination claim + re-run all repo gates on `main` | done | `7884ac9d` | `COORDINATION.md` (this section) | All gates pass; no site changes needed |
+| V788-02 | Independent official-source re-verification of decision-critical figures | done | `7884ac9d` | `COORDINATION.md` (this section) | Census, BLS, SEC, FRED — see table below |
+| V788-03 | Confirm staged Pages artifact builds with no broken links | done | `7884ac9d` | `scripts/stage_pages.py` | 23 files staged, 0 broken links |
+| V788-04 | Privacy boundary check | done | `7884ac9d` | published files | Asset A / Owner A placeholders only; no PII collected |
+
+## Gates re-run on the current tree (all passed)
+
+`scripts/build_canonical.py` → 22 pages, 242 evidence rows (213 Verified / 2 Derived / 1 Analysis / 26 Blank), 45 official sources, 32 flags; `scripts/validate.py` → PASS (23 published files, 29 official hosts; row provenance, links, PII and deterministic rebuild all clean); `scripts/stage_pages.py` → PASS (23 files staged: 22 HTML pages + assets/style.css; every table body row carries an official source link; every internal link and anchor resolves); `python3 -m unittest discover -s scripts -p 'test_*.py'` → 17 tests OK.
+
+## Independent official-source re-verification (fetched 2026-11-15)
+
+Every published value below was re-read directly from the linked official publisher page and matches the canonical site. No value was changed.
+
+| Published row(s) | Official publisher page | Published value | Result |
+|---|---|---|---|
+| LA County population 9,694,934 (Census V2025, Jul 1 2025); −3.2% vs 2020 estimates base | U.S. Census Bureau — QuickFacts: Los Angeles County, California | https://www.census.gov/quickfacts/losangelescountycalifornia | match |
+| LA city population 3,869,089 (Census V2025, Jul 1 2025); −0.8% vs 2020 base; estimates base 3,899,342 | U.S. Census Bureau — QuickFacts: Los Angeles city, California | https://www.census.gov/quickfacts/losangelescitycalifornia | match |
+| LA metro unemployment 4.4% (Sep-26); LA County 4.5%; LA city 4.5%; nonfarm payrolls 6,282.1k +0.5% YoY; education & health services 1,340.7k +3.8%; CPI-U +3.7%; ECI +3.9%; avg. weekly wage LA County $1,704 (Q1-26); avg. hourly wage LA metro $37.15 (May-25) | U.S. BLS — Los Angeles Area Economic Summary (updated Nov 4, 2026) | https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf | match |
+| Jack in the Box Q3 FY2026 system same-store sales −1.1%; 17 quarterly closures; end-of-Q3 restaurant count 149 company / 1,966 franchise / 2,115 total | U.S. SEC — Form 8-K Exhibit 99.1, Q3 FY2026 earnings release (quarter ended Jul 5, 2026) | https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm | match |
+| 10-year Treasury 5.10% (2026-11-12); no 2026-11-11 observation; 4.98% (2026-11-10); 4.88% (2026-11-09) | Federal Reserve H.15 via FRED — DGS10 | https://fred.stlouisfed.org/series/DGS10 | match |
+
+Total: 5 official pages re-read; 0 mismatches. No personal, owner, parcel, lease, contact, tenant-officer or account data was collected or written to the repository. Officer names and contact details visible on the issuer's SEC release were deliberately NOT recorded.
+
+## Privacy boundary (highest urgency)
+
+`Asset A` / `Owner A` placeholders only. No address, parcel number (APN), owner identity, contact detail, lease document, rent roll, tax basis or named individual appears in any file touched by this session. `scripts/validate.py` enforces the privacy gate; the canonical build emits no PII. Any personal information incidentally visible on an official page during verification stays internal and out of the repository and website.
+
+## Open items (non-blocking; for owner review)
+
+- A full line-by-line re-read of all 242 rows was not repeated in this session (the last full pass is the 2026-11-12 audit). Only the decision-critical values above were re-read. No values were changed.
+- 26 rows remain intentionally blank/unverified and are published on the Flagged for Review page (`review.html`) with their source context; they are not values and must not be filled by inference.
+- 12 PRs remain open from earlier sessions (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48, #51 and others); several predate the current `main` and are superseded by merged work. This session did not close or merge them; a maintainer should decide per PR.
+
+## Sources (links for manual review)
+
+- U.S. Census Bureau — QuickFacts LA County: https://www.census.gov/quickfacts/losangelescountycalifornia
+- U.S. Census Bureau — QuickFacts LA city: https://www.census.gov/quickfacts/losangelescitycalifornia
+- U.S. BLS — Los Angeles Area Economic Summary: https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf
+- U.S. SEC — Jack in the Box Q3 FY2026 Exhibit 99.1: https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm
+- Federal Reserve H.15 via FRED — DGS10: https://fred.stlouisfed.org/series/DGS10
+
+## V788 PR / merge / deploy record
+
+- Branch `arena/7884ac9d-jack3` rebased onto `origin/main` (`b168458`) and pushed to origin.
+- All local gates pass (see above). CI workflows `validate.yml` and `publication-integrity.yml` run on PR.
+- **GitHub API/gh status:** `gh auth` reports the github.com token as invalid and the REST API is rate-limited (403) in this sandbox, so `gh pr create` / `gh pr merge` and direct Pages API reads could not be executed here. Git over HTTPS to origin works (`git push` succeeded).
+- Branch is pushed and ready for a maintainer to open `arena/7884ac9d-jack3` → `main`, run `gh pr merge <number> --merge` without waiting for approval, then confirm Pages `status: built` at https://wingbangboozle1-lang.github.io/Jack3/ .
