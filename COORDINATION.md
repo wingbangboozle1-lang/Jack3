@@ -1954,3 +1954,46 @@ No personal, owner, tenant-officer, parcel, lease or contact data was collected 
 - **Post-merge:** live site confirmed serving at https://wingbangboozle1-lang.github.io/Jack3/ — landing page loads, all category navigation links resolve, 22-page canonical artifact intact. GitHub Pages source `main:/`, `https_enforced: true`.
 - **Scope:** coordination-record-only change (COORDINATION.md). No site pages, canonical rows, generators, or other sessions' files were modified.
 
+
+# Session `sess-2cc06f64` — official-source verification of published values, build/validation gate (2026-11-15)
+
+**Branch:** `arena/2cc06f64-jack3` (platform-fixed branch; based on `main` at `b0f1e13`, the merge of PR #85) · **Date:** 2026-11-15 (UTC) · **Scope:** `COORDINATION.md` only (coordination record). No site page, canonical row, generator or other session's file was edited.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| S2-01 | Verify key published values directly from official pages | **done** | `sess-2cc06f64` | `COORDINATION.md` (this section) |
+| S2-02 | Run full build + validation + staging gates | **done** | `sess-2cc06f64` | `scripts/build.py`, `scripts/validate.py`, `scripts/stage_pages.py` |
+| S2-03 | Confirm site is deployed to GitHub Pages | **done** | `sess-2cc06f64` | read-only; Pages API rate-limited, confirmed via prior merged records |
+| S2-04 | Create integration PR and merge to main | **n/a** | `sess-2cc06f64` | branch is identical to `main` (merge of PR #85); no delta to merge |
+
+**Gates run on the current tree (all passed):** `scripts/build.py` (22 pages, 242 rows = 213 Verified / 2 Derived / 1 Analysis / 26 Blank, 45 sources, 32 flags); `scripts/validate.py` (23 published files, 29 official hosts, row provenance, links, PII, deterministic rebuild all clean); `scripts/stage_pages.py` (23 staged files, every table row source-linked, every internal link resolves).
+
+**Official pages re-read in this session (web-fetched 2026-11-15) and the values checked:**
+
+| Published row(s) | Official page | Published value | Result |
+|---|---|---|---|
+| LA County population — 9,694,934 (July 1, 2025, V2025) | [Census QuickFacts · Los Angeles County](https://www.census.gov/quickfacts/losangelescountycalifornia) | as published | match |
+| LA County population change — −3.2% (2020 base to 2025-07-01) | same Census QuickFacts | as published | match |
+| LA City population — 3,869,089 (July 1, 2025, V2025); change −0.8% | [Census QuickFacts · Los Angeles city](https://www.census.gov/quickfacts/losangelescitycalifornia) | as published | match |
+| LA City median household income — $81,939 (2020-2024 ACS) | same Census QuickFacts | as published | match |
+| LA County median household income — $90,112 (2020-2024 ACS) | same Census QuickFacts | as published | match |
+| LA Metro unemployment — 4.4% (September 2026), down 1.1 pp from Sep 2025 | [BLS LA Area Economic Summary (updated 2026-11-04)](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) | as published | match |
+| LA Metro nonfarm payroll — 6,282.1 thousand, +0.5% over year | same BLS summary | as published | match |
+| Education & health services — 1,340.7 thousand, +3.8% | same BLS summary | as published | match |
+| Jack in the Box same-store sales — −1.1% (Q3 FY2026, 12 weeks ended 2026-07-05) | [SEC 8-K Exhibit 99.1 · Q3 FY2026](https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm) | as published | match |
+| Jack in the Box restaurant count — 2,115 (end Q3 FY2026) | same SEC 8-K | as published | match |
+| 10-year Treasury — 5.10% (2026-11-12) | [FRED DGS10](https://fred.stlouisfed.org/series/DGS10) | as published | match |
+| UCERF3 — 60% probability of M6.7+ in LA region, 30 years | [USGS UCERF3 Fact Sheet 2015-3009](https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf) | as published | match |
+
+Total: 12 individual values re-read from 6 official pages; 0 mismatches. No value on the published site was found to differ from its official publisher.
+
+**Live deployment check:** GitHub Pages was previously confirmed deployed at https://wingbangboozle1-lang.github.io/Jack3/ by sessions `5cb84cd0` (PR #1), `ff406d61` (PR #2), `sess-8d650ba0` (PR #7), `arena-796b983f` (PR #3), `93f3087c` (PR #9), `arena-d989a5c6` (decision-file/), `523a639b`/`084de50e` (PR #80), `406ca5a9` (PR #82), and `d671e03b` (PR #84). The most recent Pages API report (from session `d671e03b`, 2026-11-14) reports `status: built`, `https_enforced: true`, source `main:/`. This session's branch is at the same commit as `main`, so the live site already reflects all merged work.
+
+**Irregularities / open items (not blocking; for owner review):**
+- **S2-I-01 (carried forward):** 12 open PRs from earlier sessions remain on the repo (see `gh pr list --state open`). Several predate current `main` and are superseded by merged work. A maintainer should decide per PR.
+- **S2-I-02 (carried forward):** The last full line-by-line re-read of all 242 rows was the 2026-11-12 audit. This session re-read 12 key values; no full re-read was performed.
+- **S2-I-03 (carried forward):** Census county population (9,694,934, V2025) and DOF county population (9,853,435, Feb-2026 revision) differ by ~158,500. Both are official and labelled separately on the site.
+
+**Privacy boundary:** no personal, owner, tenant-officer, parcel, lease or contact data was collected or written to the repository. Asset A / Owner A placeholders only.
+
+**Sources (links for manual review):** [Census QuickFacts Los Angeles County](https://www.census.gov/quickfacts/losangelescountycalifornia) · [Census QuickFacts Los Angeles city](https://www.census.gov/quickfacts/losangelescitycalifornia) · [BLS LA Area Economic Summary](https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf) · [SEC 8-K Exhibit 99.1 · Q3 FY2026](https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm) · [FRED DGS10](https://fred.stlouisfed.org/series/DGS10) · [USGS UCERF3 Fact Sheet 2015-3009](https://pubs.usgs.gov/fs/2015/3009/pdf/fs2015-3009.pdf)
