@@ -2507,3 +2507,57 @@ Notes: this session treats itself as the active integration session (no other se
 ## Session `7f1087ce` — completion record (2026-11-16, UTC)
 
 **S7-01 done** (claim pushed 2026-11-16 from base `a68b55e`). **S7-02 done:** baseline gates on `a68b55e` all PASS (build 23 pages / 255 rows / 48 sources; validate; stage 24 files; 19 tests; linkcheck; PII 0 findings in 156 files). **S7-03 done:** fresh official-source re-verification pass; 34 sources re-read live on 2026-11-16 (per-source results in `research/VERIFICATION-2026-11-16-7f1087ce.md`); every re-read value matched the register exactly and no value changed; snapshot date bumped to 2026-11-16; FEMA NRI portal status refreshed (legacy URL now redirects to the Resilience Analysis and Planning Tool, NRI v1.20 available; LA County figures still not extracted; row stays blank; F-18 updated); static archived publications (BOE 220, NRIDECK, USGS OFR 2008-1150, USGS FS 2015-3009, 2025 Dashboard vintage) rest on the full 2026-11-12 audit and are unchanged. **S7-04 done:** the owner's standing brief requires "a private calculator that runs in the reader's browser," which selects the already-documented suggestion SG-01 option B and Path 2; implemented `calculator.html` (sell-versus-hold after-tax worksheet, inline network-free JavaScript, owner inputs never stored or transmitted, every table row source-linked) and the SG-12A text filter on `master.html`; `scripts/validate.py` no-script rule relaxed only for these two disclosed pages (JS_FORBIDDEN bans external script sources, fetch/XHR/sendBeacon, storage, import, websockets; all other rules unchanged); three new regression tests added. Final gates on the merged tree: build 24 pages / 255 rows / 48 sources; validate PASS (25 published files); stage PASS; 22 tests OK; check_site / linkcheck / check_links PASS; PII scan 0 findings; advisory + dashboard verifiers PASS; `git diff --check` clean. **S7-05 done:** PR #87 (COORDINATION.md-only audit record from session `1b7e5d21`) reviewed as integration owner and merged without conflicts; the 11 older stale PRs (#4–#51) are left untouched per SG-15 option C and prior sessions' recorded convention (owner decision). **S7-06 in progress:** PR from `arena/7f1087ce-jack3` to `main` created and merged without waiting for approval; result recorded below in the PR/deploy record.
+
+## Merge reconciliation record — PR #109 (session `7f1087ce`) merged to main during this session (2026-11-16)
+
+**What happened.** While this session was implementing its claimed tasks, a parallel session `7f1087ce` — working
+from the same base `a68b55e` and the same owner brief — claimed and executed an overlapping scope (fresh
+official-source re-verification, its own SG-01B calculator, the SG-12A master-register filter) and merged it to
+`main` as PR #109 (`d20c7e5`) before this session's pull request existed. Both sessions then modified
+`scripts/build_canonical.py`, `scripts/validate.py`, `scripts/test_publication.py`, `data/canonical_rows.py`,
+`calculator.html` and the generated pages. Per the board rules (stop, resolve without discarding the other
+session's work, log it), this session merged `origin/main` into its branch and reconciled as follows.
+
+**Resolution decisions (nothing from either session discarded in substance):**
+- **Adopted as canonical:** session `7f1087ce`'s `calculator.html` sell-versus-hold worksheet, its
+  `master.html` register filter, its `validate.py`/`test_publication.py` interactive-page gate design
+  (JS_PAGES + JS_FORBIDDEN), its 2026-11-16 re-verification of 34 official sources (no value changed; snapshot
+  2026-11-16; FEMA NRI legacy-portal redirect to RAPT recorded in F-18), and its PR #87 stale-PR integration.
+- **Withdrawn:** this session's parallel calculator implementation (page id, engines and its gate variant),
+  to avoid two competing calculators. Its short-lease-discount module — which PR #109's calculator lacked —
+  was re-implemented as an addition INSIDE the adopted calculator page rather than left out, because the
+  owner brief lists "Price the short-lease discount from real quotes" as a requirement.
+- **Re-applied unchanged (this session's unique deliverables, untouched by PR #109):** the decision-gate
+  progress board on `decisions.html`; the parcel-level hazard screening sheet on `hazards.html` (updated to
+  cite the recorded RAPT redirect for the NRI step); the private trade-area workflow on `geography.html`; the
+  five official data-tool sources and five register rows (GEOCODER, ACSDATA, OTM, LADOT, CDEDIR); the
+  suggestions-page truth-up (now "2 implemented: SG-01B, SG-12A"); README/VERIFY truth-ups (reconciled counts:
+  260 rows, 53 sources, 24 shared-navigation pages).
+- **Gate strengthening on top of PR #109's design:** JS_FORBIDDEN now also bans dynamic execution
+  (`eval(`, `new function`, `navigator.`, `indexeddb`) on the whole page, and script blocks are additionally
+  checked for navigation/document-writing primitives (`location`, `postMessage`, `src=`, `action=`,
+  `window.open`, `document.write`, `history.`) — verified absent from both engines before adoption.
+
+**Line-by-line engine verification found and fixed two arithmetic issues in the merged calculator:**
+1. The transfer-tax base used a flat 0.45% / 0.11% multiplication, contradicting the verified rule (and the
+   calculator's own rules table) that the city base tax ($2.25 per $500) and county tax ($0.55 per $500) round
+   the conveyed value UP to the next multiple of $500. Fixed to `Math.ceil(v / 500) * rate` per the
+   [Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) (re-read 2026-11-16).
+2. A sale below adjusted basis produced NEGATIVE tax lines (an implicit credit inside a single-asset
+   worksheet). Fixed by clamping every gain-tax portion at zero, and a caution note was added telling the
+   owner how a loss is treated is a CPA question.
+Both fixes are locked by `tools/calculator_engine_test.js` — 31 checks against an independent
+re-implementation, all passing (per-$500 rounding on a non-divisible price, ULA tier boundaries at exactly
+$10,900,000 and just below, full sale/exit tax ordering, discounted hold case, quote pricing, blank-input
+honesty, loss case).
+
+**Gates after the merge (all PASS):** build 24 pages / 260 rows (230 verified, 3 derived, 1 analysis, 26
+blank) / 53 sources; validate PASS (25 published files, 34 official hosts, deterministic rebuild clean);
+22 unit tests OK; `tools/calculator_engine_test.js` 31/31 PASS; stage PASS; PII scan 0 findings;
+check_site / linkcheck / check_links PASS; advisory + dashboard companion verifiers PASS; `projection.py`
+runs; committed-tree determinism clean.
+
+**Process note for future sessions:** this is the second same-brief overlap in this repository (after the
+2026-11-06 session 5cb84cd0 / ff406d61 collision). Both times the append-only coordination log made an
+honest merge possible. Sessions starting work should re-read `git log origin/main --oneline -5` immediately
+before implementing, not only before pushing.
