@@ -46,6 +46,9 @@ class Document(HTMLParser):
         self.tags = set()
         self.remote_resources = []
         self.events = []
+        self.inputs = []
+        self.script_sources = []
+        self.csp = []
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
@@ -53,6 +56,12 @@ class Document(HTMLParser):
         attrs = dict(attrs)
         if 'id' in attrs:
             self.ids.add(attrs['id'])
+        if tag == 'input':
+            self.inputs.append(attrs)
+        if tag == 'script':
+            self.script_sources.append(attrs.get('src'))
+        if tag == 'meta' and attrs.get('http-equiv', '').lower() == 'content-security-policy':
+            self.csp.append(attrs.get('content', ''))
         self.events.extend(k for k in attrs if k.lower().startswith('on'))
         for key in ('href', 'src', 'action'):
             if key in attrs:
@@ -124,9 +133,38 @@ class PublicationTests(unittest.TestCase):
     def test_no_active_collection_or_remote_resources(self):
         for name, doc in self.docs.items():
             with self.subTest(page=name):
-                self.assertFalse(doc.tags & {'script', 'iframe', 'form', 'input', 'object', 'embed'})
+                forbidden = {'iframe', 'form', 'object', 'embed'}
+                if name != 'private-calculator.html':
+                    forbidden |= {'script', 'input'}
+                self.assertFalse(doc.tags & forbidden)
                 self.assertEqual(doc.events, [])
                 self.assertEqual(doc.remote_resources, [])
+                if name == 'private-calculator.html':
+                    self.assertEqual(doc.script_sources, [None])
+
+    def test_private_calculator_is_blank_self_contained_and_client_only(self):
+        page = (PUBLIC / 'private-calculator.html').read_text(encoding='utf-8')
+        doc = self.docs['private-calculator.html']
+        required_inputs = {
+            'horizon-years', 'discount-rate', 'sale-gross', 'sale-costs', 'sale-transfer',
+            'sale-debt', 'sale-tax', 'sale-other', 'hold-annual-net', 'hold-terminal-net',
+            'renew-annual-net', 'renew-terminal-net'
+        }
+        self.assertEqual({item.get('id') for item in doc.inputs}, required_inputs)
+        self.assertEqual(len(doc.inputs), len(required_inputs))
+        self.assertTrue(all('value' not in item and 'name' not in item for item in doc.inputs))
+        self.assertTrue(all(item.get('autocomplete') == 'off' for item in doc.inputs))
+        self.assertIn("default-src 'none'", page)
+        self.assertIn("connect-src 'none'", page)
+        self.assertIn("form-action 'none'", page)
+        self.assertIn('The calculator makes no request containing entered values', page)
+        self.assertIn('It does not compute taxable gain', page)
+        self.assertIn('download="asset-a-private-calculator.html"', page)
+        self.assertNotIn('<script src=', page.lower())
+        for forbidden in ('fetch(', 'XMLHttpRequest', 'WebSocket', 'EventSource', 'sendBeacon',
+                          'localStorage', 'sessionStorage', 'indexedDB', 'document.cookie'):
+            self.assertNotIn(forbidden.lower(), page.lower())
+        self.assertNotIn('<link rel="stylesheet"', page.lower())
 
     def test_all_pages_accessible_from_shared_navigation(self):
         # Every staged page must carry the shared nav that reaches every

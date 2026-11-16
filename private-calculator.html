@@ -1,0 +1,439 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Private calculator">
+<title>Private calculator · Asset A decision desk</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; font-src 'none'; object-src 'none'; form-action 'none'; base-uri 'none'">
+<style>/* Asset A decision desk — single canonical stylesheet. No external assets. */
+:root{--bg:#f4f6fa;--card:#fff;--ink:#16213b;--mut:#5d6b83;--line:#e2e7f0;--accent:#0f766e;--accent2:#1d4ed8;--ok:#157347;--okbg:#e8f6ee;--warn:#a15c00;--warnbg:#fff4dd;--bad:#b42318;--badbg:#fdecea;--an:#4c3fa3;--anbg:#efecfb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+.skip{position:absolute;left:-9999px;top:0;background:#fff;padding:10px 16px;z-index:99}
+.skip:focus{left:12px;top:12px}
+.app{display:flex;min-height:100vh;max-width:1600px;margin:0 auto}
+.sidebar{width:252px;flex:0 0 252px;background:#fff;border-right:1px solid var(--line);padding:22px 16px 30px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.brand{display:flex;gap:11px;align-items:center;color:var(--ink);padding:2px 6px 20px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.brand:hover{text-decoration:none}
+.brand .mark{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--ink);color:#fff;font-weight:800;font-size:17px;letter-spacing:-1px}
+.brand b{display:block;font-size:14px;letter-spacing:.09em}
+.brand small{display:block;color:var(--mut);font-size:10px;letter-spacing:.11em;margin-top:2px}
+.sidebar nav{display:flex;flex-direction:column;gap:1px}
+.nav-label{font-size:10px;font-weight:700;letter-spacing:.13em;color:#8a97ab;margin:17px 10px 7px}
+.sidebar nav a{padding:7px 11px;border-radius:7px;color:#39465c;font-size:13.5px;display:block}
+.sidebar nav a:hover{background:#f1f4f9;text-decoration:none}
+.sidebar nav a[aria-current=page]{background:var(--ink);color:#fff;font-weight:600}
+.privacy{margin-top:24px;padding:13px;background:#f7f9fc;border:1px solid var(--line);border-radius:9px;font-size:11.5px;color:var(--mut)}
+.privacy b{color:var(--accent);display:block;margin-bottom:6px;font-size:11.5px}
+.privacy p{margin:0}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.topbar{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 32px;background:#fff;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.11em;color:var(--mut);font-weight:600;flex-wrap:wrap}
+.stamp{color:var(--accent);white-space:nowrap}
+main{padding:30px 32px 54px;flex:1;min-width:0}
+footer{padding:20px 32px 30px;border-top:1px solid var(--line);color:var(--mut);font-size:11.5px;background:#fff}
+h1{font-size:34px;line-height:1.18;letter-spacing:-.02em;margin:6px 0 12px}
+h1 span{color:var(--accent)}
+h2{font-size:20px;margin:0;letter-spacing:-.01em}
+h3{font-size:16px;margin:0 0 10px}
+p{margin:0 0 12px}
+.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.15em;color:var(--accent);margin:0 0 10px;text-transform:uppercase}
+.lede{font-size:16.5px;color:#3d4b63;max-width:900px;margin:0 0 22px}
+.small{font-size:12.5px;color:var(--mut)}
+.section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding:0 0 9px;margin:32px 0 16px;flex-wrap:wrap}
+.section-heading span{font-size:12px;color:var(--mut)}
+.callout{background:#eef7f5;border:1px solid #c9e6df;border-left:4px solid var(--accent);padding:14px 17px;border-radius:9px;font-size:13.5px;margin:0 0 22px;color:#22413d}
+.callout.warn{background:#fff8e9;border-color:#f2dda9;border-left-color:#c98a00;color:#5a3d05}
+.callout b{color:inherit}
+.hero-note{background:var(--ink);color:#eaf0f8;border-radius:14px;padding:26px 28px;margin:0 0 26px}
+.hero-note h2{color:#fff;font-size:23px;margin:12px 0 10px;line-height:1.3}
+.hero-note p{color:#c7d3e4;max-width:900px}
+.hero-note .badge{background:#26405e;color:#cfe8ff}
+.button,.quiet{display:inline-block;font-size:13px;font-weight:600;margin-top:8px}
+.button{background:#fff;color:var(--ink);padding:9px 16px;border-radius:8px}
+.button:hover{text-decoration:none;background:#e9f4f2}
+.hero-note .quiet{color:#a9e5dc;margin-left:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:13px}
+.cards article{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:17px}
+.cards .eyebrow{margin-bottom:7px;color:var(--mut);font-size:9.5px}
+.cards strong{display:block;font-size:27px;letter-spacing:-.02em;line-height:1.15;margin-bottom:7px}
+.cards p{font-size:12px;color:var(--mut);min-height:48px;margin-bottom:9px}
+.cards a{font-size:11.5px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.split>div{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:19px 21px}
+.split h3{font-size:16px}
+.split p{font-size:13.5px;color:#42506a}
+.route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.route-grid a{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 17px;transition:border-color .15s}
+.route-grid a:hover{border-color:var(--accent);text-decoration:none}
+.route-grid b{display:block;font-size:14px;color:var(--ink);margin-bottom:5px}
+.route-grid p{font-size:12px;color:var(--mut);margin:0 0 9px;min-height:34px}
+.route-grid span{font-size:11.5px;color:var(--accent);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:11px}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:15px;text-align:center}
+.stats strong{display:block;font-size:24px;line-height:1.2}
+.stats span{font-size:11px;color:var(--mut)}
+.stats.compact{margin-bottom:18px}
+.stats.compact strong{font-size:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 13px;font-size:12px;color:var(--accent2)}
+.cat-head{display:flex;gap:12px;align-items:baseline;margin:30px 0 4px;font-size:19px;flex-wrap:wrap}
+.cat-head span{font-size:11px;color:var(--mut);font-weight:400}
+.cat-head a{font-size:12px;margin-left:auto}
+.table-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:12.6px}
+caption{text-align:left;padding:12px 15px;font-weight:700;font-size:13px;color:var(--ink);border-bottom:1px solid var(--line)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid #edf0f6;vertical-align:top}
+thead th{background:#f7f9fc;color:#4a5870;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;position:sticky;top:0;white-space:nowrap;z-index:1}
+tbody tr:nth-child(even){background:#fbfcfe}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#f0f7f5}
+td:first-child{font-weight:600;color:#26344c}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:10.5px;font-weight:700;white-space:nowrap}
+.badge.ok{background:var(--okbg);color:var(--ok)}
+.badge.derived{background:#e6f0fb;color:#1c4f8f}
+.badge.analysis{background:var(--anbg);color:var(--an)}
+.badge.blank{background:var(--warnbg);color:var(--warn)}
+.sev{display:inline-block;padding:2px 8px;border-radius:12px;font-size:10.5px;font-weight:700;white-space:nowrap;background:#eef1f6;color:#4a5870}
+.sev.critical{background:var(--badbg);color:var(--bad)}
+.sev.high{background:var(--warnbg);color:var(--warn)}
+.sev.medium{background:#e6f0fb;color:#1c4f8f}
+.sev.low{background:var(--okbg);color:var(--ok)}
+.sev.closed{background:#eef4ef;color:#276749}
+.sev.gate{background:var(--badbg);color:var(--bad)}
+.badge.proposed{background:#f1ecfb;color:#4b2e83}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;font-size:12.5px}
+.jump a{padding:5px 11px;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:inherit;background:#fff}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:13px;margin:0 0 18px}
+.calc-field{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.calc-field label{display:block;font-weight:700;font-size:13px;margin-bottom:7px;color:#26344c}
+.calc-field input{width:100%;padding:10px 11px;border:1px solid #aab5c6;border-radius:7px;background:#fff;color:var(--ink);font:inherit;font-variant-numeric:tabular-nums}
+.calc-field input:focus{outline:3px solid #b7e4dc;border-color:var(--accent)}
+.calc-field small{display:block;color:var(--mut);font-size:11px;line-height:1.4;margin-top:7px}
+.calc-formula{background:#f7f9fc;border-left:3px solid var(--accent2);padding:10px 13px;margin:-6px 0 18px;font-size:12.5px}
+.calc-buttons{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 12px}
+.calc-buttons button{border:0;border-radius:8px;background:var(--ink);color:#fff;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer}
+.calc-buttons button:hover{background:#263b60}
+.calc-buttons button:focus-visible{outline:3px solid #74cfc1;outline-offset:2px}
+.calc-buttons button.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.calc-buttons button.secondary:hover{background:#f1f4f9}
+.calc-error{background:var(--badbg);color:var(--bad);border:1px solid #f4c7c3;padding:12px 14px;border-radius:8px;margin:0 0 18px}
+.calc-results{background:#fff;border:1px solid var(--line);border-radius:11px;padding:18px;margin:18px 0}
+.calc-results h2{margin-bottom:14px}
+.calc-output article{background:#f7f9fc;border:1px solid var(--line);border-radius:8px;padding:14px}
+.calc-output article span{display:block;color:var(--mut);font-size:11.5px;min-height:34px}
+.calc-output article strong{display:block;color:var(--ink);font-size:20px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.badge.implemented{background:var(--okbg);color:var(--ok)}
+.badge.partial{background:#fff4dd;color:#8a5300}
+.empty{display:inline-block;min-width:52px;height:14px;background:repeating-linear-gradient(45deg,#f5ead2,#f5ead2 5px,#fff8e9 5px,#fff8e9 10px);border:1px dashed #d9b96f;border-radius:3px;vertical-align:middle}
+.srclink{font-size:11.5px;white-space:nowrap}
+ul.ticks{margin:0 0 12px;padding-left:18px}
+ul.ticks li{margin-bottom:8px;font-size:13.2px}
+ul.ticks.good li::marker{color:var(--ok)}
+ul.ticks.bad li::marker{color:var(--bad)}
+ul.ticks.plain li{color:#42506a}
+ol.steps{margin:0 0 18px;padding-left:20px}
+ol.steps li{margin-bottom:9px;font-size:13.5px}
+code{background:#eef1f6;padding:1px 5px;border-radius:4px;font-size:11.5px}
+@media(max-width:900px){
+ .app{display:block}
+ .sidebar{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:14px}
+ .brand{padding-bottom:12px;margin-bottom:8px}
+ .sidebar nav{flex-direction:row;flex-wrap:wrap;gap:4px}
+ .nav-label{display:none}
+ .sidebar nav a{font-size:12px;padding:5px 9px;border:1px solid var(--line)}
+ .privacy{display:none}
+ .topbar{padding:10px 18px}
+ main{padding:22px 18px 40px}
+ footer{padding:18px}
+ h1{font-size:28px}
+ .split{grid-template-columns:1fr}
+}
+.brief-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:15px}
+.brief-heading h1{font-size:29px;margin:0 0 4px}
+.brief-heading .lede{font-size:12px;margin:0}
+.print-note{font-size:11px;color:var(--mut);white-space:nowrap;margin:0 0 3px}
+.advisor-grid{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:18px;margin:0 0 14px}
+.advisor-grid section{min-width:0}
+.advisor-grid h2{font-size:15px;border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:7px}
+.advisor-grid .ticks{padding-left:15px;margin:0}
+.advisor-grid .ticks li,.advisor-grid .steps li{font-size:11px;line-height:1.35;margin-bottom:5px}
+.advisor-grid .steps{padding-left:17px;margin:0}
+.advisor-grid .small{font-size:10.5px;line-height:1.4;margin:0 0 7px}
+.brief-decision{font-size:12px;padding:9px 12px;margin-bottom:13px}
+body.advisor-brief table{font-size:10px}
+body.advisor-brief caption{font-size:11px;padding:6px 8px}
+body.advisor-brief th,body.advisor-brief td{padding:5px 7px}
+body.advisor-brief .srclink{font-size:9px;white-space:normal}
+.brief-foot{font-size:10px;color:var(--mut);margin-top:8px}
+@page advisorbrief{size:letter landscape;margin:.35in}
+@media print{
+ body.advisor-brief{page:advisorbrief;background:#fff;color:#111;font-size:8pt;line-height:1.25}
+ body.advisor-brief .skip,body.advisor-brief .sidebar,body.advisor-brief .topbar,body.advisor-brief footer{display:none!important}
+ body.advisor-brief .app,body.advisor-brief .main{display:block;min-height:0;max-width:none;margin:0}
+ body.advisor-brief main{padding:0;margin:0}
+ body.advisor-brief .brief-heading{padding-bottom:5px;margin-bottom:7px}
+ body.advisor-brief .brief-heading h1{font-size:18pt}
+ body.advisor-brief .brief-heading .eyebrow{font-size:7pt;margin-bottom:3px}
+ body.advisor-brief .brief-heading .lede,body.advisor-brief .print-note{font-size:7pt}
+ body.advisor-brief .advisor-grid{grid-template-columns:1fr 1.2fr 1fr;gap:12px;margin-bottom:6px}
+ body.advisor-brief .advisor-grid h2{font-size:10pt;margin-bottom:4px;padding-bottom:3px}
+ body.advisor-brief .advisor-grid .ticks li,body.advisor-brief .advisor-grid .steps li{font-size:7.1pt;line-height:1.2;margin-bottom:3px}
+ body.advisor-brief .advisor-grid .small{font-size:7pt;line-height:1.25;margin-bottom:4px}
+ body.advisor-brief .brief-decision{font-size:8pt;padding:6px 8px;margin-bottom:7px}
+ body.advisor-brief table{font-size:7pt}
+ body.advisor-brief caption{font-size:7.5pt;padding:4px 6px}
+ body.advisor-brief th,body.advisor-brief td{padding:3px 5px}
+ body.advisor-brief .srclink{font-size:6.5pt;white-space:normal;overflow-wrap:anywhere}
+ body.advisor-brief .brief-foot{font-size:7pt;margin-top:4px}
+ body.advisor-brief a{color:#111;text-decoration:underline}
+ body.advisor-brief .table-wrap{overflow:visible;border-color:#999;margin-bottom:5px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+  <a class="brand" href="index.html"><span class="mark">A.</span><span><b>ASSET A</b><small>NET-LEASE DECISION DESK</small></span></a>
+  <nav aria-label="Site navigation"><div class="nav-label">OVERVIEW</div><a href="index.html">Overview</a><a href="executive-summary.html">Executive summary</a><a href="advisor-brief.html">Printable advisor brief</a><a href="master.html">All entries &amp; findings</a><div class="nav-label">EVIDENCE BY CATEGORY</div><a href="geography.html">Geography</a><a href="demographics.html">People &amp; income</a><a href="economy.html">Economy &amp; jobs</a><a href="schools.html">Schools</a><a href="tenant.html">Tenant &amp; lease</a><a href="taxes.html">Taxes &amp; transfer</a><a href="hazards.html">Hazards</a><div class="nav-label">ANALYSIS</div><a href="risk.html">Risk register</a><a href="projections.html">Projection system</a><a href="anchors.html">Projection anchors</a><a href="questions.html">Questions &amp; answers</a><a href="decisions.html">Decision matrix</a><a aria-current="page" href="private-calculator.html">Private calculator</a><a href="model.html">Model &amp; method</a><a href="place.html">Evidence boundary</a><div class="nav-label">GOVERNANCE</div><a href="suggestions.html">Suggestions to review</a><a href="review.html">Flagged for Review</a><a href="repo-review.html">Repo review</a><a href="sources.html">Sources &amp; method</a></nav>
+  <div class="privacy"><b>◈ Privacy by design</b><p>Asset A · Owner A · placeholders only.<br>No address, parcel, owner, account or lease identifier is published.<br><br>Evidence snapshot 2026-11-13.</p></div>
+</aside>
+<div class="main">
+  <header class="topbar"><span>RESEARCH / LOS ANGELES / NET LEASE</span><span class="stamp">● Evidence snapshot · 2026-11-13</span></header>
+  <main id="main">
+    <div class="eyebrow">13A / PRIVATE CALCULATOR</div>
+    <section class="callout warn"><b>Privacy and use.</b> Inputs are blank by default and calculations run only in this page. The calculator makes no request containing entered values and the page code does not save them to browser storage, cookies, files, or a server. Browser history and session-restore behavior are outside the page's control; use Clear all and close the browser when finished. The hosted page itself is public and the host may record ordinary page-access logs; this is not an access-controlled adviser workspace. Do not enter names, addresses, parcel numbers, account details, or upload documents. For the strongest separation, download the blank, self-contained HTML page and use it offline with authorized advisers.</section><h1>Private browser calculator</h1><p class="lede">An arithmetic-only comparison of a documented sale-now net amount with hold and negotiated-renewal cases. No property or owner values are prefilled; no option is selected.</p><div class="calc-actions"><a class="quiet" href="private-calculator.html" download="asset-a-private-calculator.html">Download the blank standalone calculator for offline use ↓</a></div><section class="callout"><b>Use only dated, documented inputs.</b> Sale-now line items should come from a written offer, escrow and the owner’s CPA/tax counsel. The hold and renewal cash flows and exit proceeds are scenarios; label any assumption as unverified in your private workpapers. A positive difference means only that the entered scenario has a larger calculated present value than the sale-now net under the selected discount rate. It is not a recommendation, appraisal, tax calculation or risk ranking.</section><div class="section-heading"><h2>1 · Comparison assumptions</h2><span>No default horizon or discount rate</span></div><div class="calc-grid"><div class="calc-field"><label for="horizon-years">Comparison horizon (whole years)</label><input id="horizon-years" type="number" inputmode="numeric" step="1" min="1" autocomplete="off" aria-describedby="horizon-years-help"><small id="horizon-years-help">Use a date supported by the lease abstract and decision plan. Current lease expiry is not verified.</small></div><div class="calc-field"><label for="discount-rate">Required annual return / discount rate (%)</label><input id="discount-rate" type="number" inputmode="decimal" step="0.01" min="0" autocomplete="off" aria-describedby="discount-rate-help"><small id="discount-rate-help">Owner/adviser-selected hurdle rate, not the Treasury yield or a property forecast.</small></div></div><div class="section-heading"><h2>2 · Sell now</h2><span>Gross offer less documented costs, taxes and debt</span></div><div class="calc-grid"><div class="calc-field"><label for="sale-gross">Current written sale price ($)</label><input id="sale-gross" type="number" inputmode="decimal" step="0.01" min="0" autocomplete="off" aria-describedby="sale-gross-help"><small id="sale-gross-help">Use an executable written offer or a dated broker indication; distinguish the two.</small></div><div class="calc-field"><label for="sale-costs">Transaction costs ($)</label><input id="sale-costs" type="number" inputmode="decimal" step="0.01" min="0" autocomplete="off" aria-describedby="sale-costs-help"><small id="sale-costs-help">Broker, legal, escrow and other documented transaction expenses; enter 0 only if verified.</small></div><div class="calc-field"><label for="sale-transfer">City / county transfer taxes ($)</label><input id="sale-transfer" type="number" inputmode="decimal" step="0.01" min="0" autocomplete="off" aria-describedby="sale-transfer-help"><small id="sale-transfer-help">Use the current official jurisdiction and escrow calculation; include applicable transfer taxes.</small></div><div class="calc-field"><label for="sale-debt">Debt and lien payoff ($)</label><input id="sale-debt" type="number" inputmode="decimal" step="0.01" min="0" autocomplete="off" aria-describedby="sale-debt-help"><small id="sale-debt-help">Use a dated lender payoff statement; do not publish it.</small></div><div class="calc-field"><label for="sale-tax">CPA-estimated sale income taxes ($)</label><input id="sale-tax" type="number" inputmode="decimal" step="0.01" min="0" autocomplete="off" aria-describedby="sale-tax-help"><small id="sale-tax-help">Enter the CPA's case-specific estimate, including applicable federal, California and other income taxes.</small></div><div class="calc-field"><label for="sale-other">Other sale costs ($)</label><input id="sale-other" type="number" inputmode="decimal" step="0.01" min="0" autocomplete="off" aria-describedby="sale-other-help"><small id="sale-other-help">Other documented costs not already included above; avoid double-counting.</small></div></div><p class="calc-formula"><b>Sale-now net:</b> written price − transaction costs − transfer taxes − debt/lien payoff − CPA-estimated income taxes − other costs.</p><div class="section-heading"><h2>3 · Hold existing lease</h2><span>Constant annual after-tax cash flow plus a net exit amount</span></div><div class="calc-grid"><div class="calc-field"><label for="hold-annual-net">Annual owner cash flow after tax and costs ($)</label><input id="hold-annual-net" type="number" inputmode="decimal" step="0.01" autocomplete="off" aria-describedby="hold-annual-net-help"><small id="hold-annual-net-help">Level annual amount for every year of the horizon; net of recurring operating costs, debt service, reserves, repairs and tax.</small></div><div class="calc-field"><label for="hold-terminal-net">Terminal sale proceeds after all costs, debt and taxes ($)</label><input id="hold-terminal-net" type="number" inputmode="decimal" step="0.01" autocomplete="off" aria-describedby="hold-terminal-net-help"><small id="hold-terminal-net-help">Net amount at the end of the horizon; use a documented case-specific estimate and label any forecast as an assumption.</small></div></div><div class="section-heading"><h2>4 · Negotiate renewal, hold, then exit</h2><span>Use only enforceable renewal terms for a decision-ready case</span></div><div class="calc-grid"><div class="calc-field"><label for="renew-annual-net">Annual owner cash flow after tax and costs ($)</label><input id="renew-annual-net" type="number" inputmode="decimal" step="0.01" autocomplete="off" aria-describedby="renew-annual-net-help"><small id="renew-annual-net-help">Level annual amount for every year; model signed renewal rent, expenses, concessions, capex and tax with advisers first.</small></div><div class="calc-field"><label for="renew-terminal-net">Terminal sale proceeds after all costs, debt and taxes ($)</label><input id="renew-terminal-net" type="number" inputmode="decimal" step="0.01" autocomplete="off" aria-describedby="renew-terminal-net-help"><small id="renew-terminal-net-help">Net amount at the end of the same horizon under the renewal case; a future value is a scenario, not an observed quote.</small></div></div><div class="calc-buttons"><button id="calculate-button" type="button">Calculate comparison</button> <button id="clear-button" type="button" class="secondary">Clear all values</button></div><p id="calculator-error" class="calc-error" role="alert" hidden></p><section id="calculator-results" class="calc-results" aria-live="polite" hidden><h2>Calculated present values · no path selected</h2><div class="calc-grid calc-output"><article><span>Sell now · net after-tax proceeds today</span><strong id="result-sale">—</strong></article><article><span>Hold existing lease · present value</span><strong id="result-hold">—</strong></article><article><span>Negotiated renewal · present value</span><strong id="result-renew">—</strong></article><article><span>Hold present value minus sale-now net</span><strong id="result-hold-gap">—</strong></article><article><span>Renewal present value minus sale-now net</span><strong id="result-renew-gap">—</strong></article></div><p class="small">The arithmetic does not choose a winner. It assumes a level after-tax cash flow received at each year-end, a terminal net amount at the end of the selected horizon, no growth, and the same user-selected annual discount rate for both hold cases. It does not model probabilities, changing tax rules, lease-option timing, vacancy, inflation, risk tolerance or reinvestment opportunities unless reflected in the inputs.</p></section><div class="section-heading"><h2>Formula and decision limits</h2><span>Arithmetic only; tax and market inputs remain external</span></div><div class="split"><div><h3>Present-value formula</h3><p>For each hold case: <code>PV = annual net cash flow × annuity factor + terminal net proceeds ÷ (1 + r)<sup>N</sup></code>. The annuity factor is <code>(1 − (1 + r)<sup>−N</sup>) ÷ r</code>; when <code>r = 0</code>, it equals <code>N</code>. All annual flows are assumed to arrive at year-end.</p><p class="small">The sale-now net amount is not discounted because it is measured today. Keep all amounts in the same currency and use a consistent nominal or real-dollar convention with the matching discount rate.</p></div><div><h3>What this tool does not calculate</h3><p>It does not compute taxable gain, adjusted basis, depreciation recapture, capital-gain brackets, NIIT, California tax, Measure ULA, county transfer tax or §1031 eligibility. It only subtracts the tax and cost amounts entered by the user. Tax and legal rules can change before a 2030–2035 transaction; obtain a current professional calculation.</p><p class="small">A higher modeled present value is not a personalized wealth recommendation. The sale, hold and renewal alternatives also differ in liquidity, concentration, catastrophe exposure and feasibility.</p></div></div><div class="section-heading"><h2>Official review routes</h2><span>Sources explain rules; the calculator does not encode rates</span></div><ul class="ticks plain"><li><a class="srclink" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service — Topic no. 409 · Capital gains and losses">IRS capital gains and losses ↗</a> · <a class="srclink" href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service — Rev. Proc. 2025-32 · tax year 2026 inflation-adjusted items (§ 4.03)">IRS tax-year 2026 guidance ↗</a> · <a class="srclink" href="https://www.irs.gov/taxtopics/tc559" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service — Topic no. 559 · Net investment income tax">IRS net investment income tax ↗</a></li><li><a class="srclink" href="https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html" target="_blank" rel="noopener noreferrer" title="California Franchise Tax Board — Capital gains and losses (California treatment)">California Franchise Tax Board · capital gains ↗</a> · <a class="srclink" href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service — Like-kind exchanges · real estate tax tips">IRS like-kind exchange guidance ↗</a></li><li><a class="srclink" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="City of Los Angeles, Office of Finance — Real Property Transfer Tax and Measure ULA FAQ">City of Los Angeles · Measure ULA and transfer tax ↗</a> · <a class="srclink" href="https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info" target="_blank" rel="noopener noreferrer" title="Los Angeles County Registrar-Recorder / County Clerk — Documentary Transfer Tax · general information">Los Angeles County · documentary transfer tax ↗</a></li></ul><p class="small">The linked pages are official sources for manual review, not a tax opinion about the owner. No personal tax result or future transfer-tax amount has been prefilled.</p><script>
+/*
+ * Private browser calculator. This file is embedded inline in private-calculator.html
+ * by scripts/build_canonical.py so the blank page can be saved and used offline.
+ * No network APIs, browser storage, cookies, or form submission are used.
+ */
+(function (factory) {
+  "use strict";
+  var api = factory();
+  if (typeof module === "object" && module.exports) {
+    module.exports = api;
+  }
+  if (typeof document !== "undefined") {
+    api.init(document);
+  }
+})(function () {
+  "use strict";
+
+  var FIELD_IDS = [
+    "horizon-years",
+    "discount-rate",
+    "sale-gross",
+    "sale-costs",
+    "sale-transfer",
+    "sale-debt",
+    "sale-tax",
+    "sale-other",
+    "hold-annual-net",
+    "hold-terminal-net",
+    "renew-annual-net",
+    "renew-terminal-net"
+  ];
+
+  var FIELD_LABELS = {
+    "horizon-years": "Comparison horizon",
+    "discount-rate": "Required return / discount rate",
+    "sale-gross": "Current written sale price",
+    "sale-costs": "Current transaction costs",
+    "sale-transfer": "Current transfer taxes",
+    "sale-debt": "Current debt and lien payoff",
+    "sale-tax": "Current CPA-estimated income taxes",
+    "sale-other": "Other current sale costs",
+    "hold-annual-net": "Hold annual after-tax cash flow",
+    "hold-terminal-net": "Hold terminal after-tax proceeds",
+    "renew-annual-net": "Renewal annual after-tax cash flow",
+    "renew-terminal-net": "Renewal terminal after-tax proceeds"
+  };
+
+  function isFiniteNumber(value) {
+    return typeof value === "number" && Number.isFinite(value);
+  }
+
+  function annuityFactor(rate, years) {
+    if (!isFiniteNumber(rate) || rate < 0) {
+      throw new RangeError("Discount rate must be a finite nonnegative rate.");
+    }
+    if (!Number.isSafeInteger(years) || years < 1) {
+      throw new RangeError("Comparison horizon must be a positive whole number.");
+    }
+    if (rate === 0) return years;
+    return (1 - Math.pow(1 + rate, -years)) / rate;
+  }
+
+  function presentValue(levelAnnualCashFlow, terminalNetProceeds, rate, years) {
+    if (!isFiniteNumber(levelAnnualCashFlow) || !isFiniteNumber(terminalNetProceeds)) {
+      throw new TypeError("Cash-flow and terminal-proceeds inputs must be finite numbers.");
+    }
+    var factor = annuityFactor(rate, years);
+    return levelAnnualCashFlow * factor + terminalNetProceeds / Math.pow(1 + rate, years);
+  }
+
+  function netSaleProceeds(sale) {
+    var keys = ["grossPrice", "transactionCosts", "transferTaxes", "debtPayoff", "incomeTaxes", "otherCosts"];
+    keys.forEach(function (key) {
+      if (!isFiniteNumber(sale[key])) {
+        throw new TypeError("Sale input " + key + " must be a finite number.");
+      }
+    });
+    return sale.grossPrice - sale.transactionCosts - sale.transferTaxes - sale.debtPayoff - sale.incomeTaxes - sale.otherCosts;
+  }
+
+  function compare(input) {
+    if (!input || !isFiniteNumber(input.years) || !isFiniteNumber(input.discountRatePct)) {
+      throw new TypeError("Horizon and discount rate are required.");
+    }
+    var rate = input.discountRatePct / 100;
+    var saleNow = netSaleProceeds(input.sale);
+    var holdValue = presentValue(input.hold.annualNetCashFlow, input.hold.terminalNetProceeds, rate, input.years);
+    var renewalValue = presentValue(input.renewal.annualNetCashFlow, input.renewal.terminalNetProceeds, rate, input.years);
+    var values = [saleNow, holdValue, renewalValue];
+    if (!values.every(isFiniteNumber)) {
+      throw new RangeError("The entered values exceed the calculator's supported numeric range.");
+    }
+    return {
+      saleNow: saleNow,
+      holdPresentValue: holdValue,
+      renewalPresentValue: renewalValue,
+      holdDifferenceVsSale: holdValue - saleNow,
+      renewalDifferenceVsSale: renewalValue - saleNow,
+      annuityFactor: annuityFactor(rate, input.years)
+    };
+  }
+
+  function readInputs(doc) {
+    var raw = {};
+    var missing = [];
+    FIELD_IDS.forEach(function (id) {
+      var element = doc.getElementById(id);
+      var text = element && typeof element.value === "string" ? element.value.trim() : "";
+      if (text === "") {
+        missing.push(FIELD_LABELS[id]);
+      } else {
+        raw[id] = Number(text);
+      }
+    });
+    if (missing.length) {
+      return { error: "Complete every input before calculating. Enter 0 when a documented amount is zero; do not invent a missing value. Missing: " + missing.join(", ") + "." };
+    }
+    if (!Object.keys(raw).every(function (id) { return isFiniteNumber(raw[id]); })) {
+      return { error: "Use finite numeric values only. Leave no field blank; enter 0 only when the verified amount is zero." };
+    }
+    if (!Number.isSafeInteger(raw["horizon-years"]) || raw["horizon-years"] < 1) {
+      return { error: "The comparison horizon must be a positive whole number." };
+    }
+    if (raw["discount-rate"] < 0) {
+      return { error: "The required return must be a nonnegative finite percentage. This is an owner/adviser assumption, not a market forecast." };
+    }
+    ["sale-gross", "sale-costs", "sale-transfer", "sale-debt", "sale-tax", "sale-other"].forEach(function (id) {
+      if (raw[id] < 0) missing.push(FIELD_LABELS[id] + " (must not be negative)");
+    });
+    if (missing.length) {
+      return { error: "Check these inputs: " + missing.join(", ") + "." };
+    }
+    return {
+      value: {
+        years: raw["horizon-years"],
+        discountRatePct: raw["discount-rate"],
+        sale: {
+          grossPrice: raw["sale-gross"],
+          transactionCosts: raw["sale-costs"],
+          transferTaxes: raw["sale-transfer"],
+          debtPayoff: raw["sale-debt"],
+          incomeTaxes: raw["sale-tax"],
+          otherCosts: raw["sale-other"]
+        },
+        hold: {
+          annualNetCashFlow: raw["hold-annual-net"],
+          terminalNetProceeds: raw["hold-terminal-net"]
+        },
+        renewal: {
+          annualNetCashFlow: raw["renew-annual-net"],
+          terminalNetProceeds: raw["renew-terminal-net"]
+        }
+      }
+    };
+  }
+
+  function init(doc) {
+    var calculateButton = doc.getElementById("calculate-button");
+    var clearButton = doc.getElementById("clear-button");
+    var errorBox = doc.getElementById("calculator-error");
+    var results = doc.getElementById("calculator-results");
+    if (!calculateButton || !clearButton || !errorBox || !results) return;
+
+    function showError(message) {
+      errorBox.textContent = message;
+      errorBox.hidden = !message;
+    }
+
+    function clearResults() {
+      ["result-sale", "result-hold", "result-renew", "result-hold-gap", "result-renew-gap"].forEach(function (id) {
+        doc.getElementById(id).textContent = "—";
+      });
+      results.hidden = true;
+    }
+
+    calculateButton.addEventListener("click", function () {
+      showError("");
+      var parsed = readInputs(doc);
+      if (parsed.error) {
+        clearResults();
+        showError(parsed.error);
+        return;
+      }
+      var result;
+      try {
+        result = compare(parsed.value);
+      } catch (error) {
+        clearResults();
+        showError(error && error.message ? error.message : "The entered values could not be calculated.");
+        return;
+      }
+      var money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+      doc.getElementById("result-sale").textContent = money.format(result.saleNow);
+      doc.getElementById("result-hold").textContent = money.format(result.holdPresentValue);
+      doc.getElementById("result-renew").textContent = money.format(result.renewalPresentValue);
+      doc.getElementById("result-hold-gap").textContent = money.format(result.holdDifferenceVsSale);
+      doc.getElementById("result-renew-gap").textContent = money.format(result.renewalDifferenceVsSale);
+      results.hidden = false;
+    });
+
+    clearButton.addEventListener("click", function () {
+      FIELD_IDS.forEach(function (id) {
+        var element = doc.getElementById(id);
+        if (element) element.value = "";
+      });
+      showError("");
+      clearResults();
+    });
+  }
+
+  return Object.freeze({
+    FIELD_IDS: Object.freeze(FIELD_IDS.slice()),
+    annuityFactor: annuityFactor,
+    presentValue: presentValue,
+    netSaleProceeds: netSaleProceeds,
+    compare: compare,
+    init: init
+  });
+});
+
+</script>
+  </main>
+  <footer>Independent decision-support research, not an appraisal, legal opinion or personalised financial advice.<br>Static evidence snapshot · No analytics, tracking or third-party embeds · Calculator inputs are not transmitted or saved by this page · <a href="sources.html">Methodology &amp; limitations</a> · <a href="review.html">Flagged for Review</a></footer>
+</div>
+</div>
+</body>
+</html>

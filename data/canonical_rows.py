@@ -956,6 +956,12 @@ FLAGS = [
     ("F-35", "Low", "Employment Cost Index is a Los Angeles-Long Beach CSA figure, not a metro figure",
      "The +3.9% Employment Cost Index (wages and salaries, 12 months to September 2026) is for the Los Angeles-Long Beach, CA combined statistical area, as the BLS summary table labels it. The register row keeps that scope; the overview, risk and decision text repeat '+3.9%' without it.",
      "Read the figure as Los Angeles-Long Beach CSA context. No value changed; restate the scope wherever the figure is quoted.", "BLS"),
+    ("F-36", "High", "After-tax comparison remains adviser-input dependent",
+     "The private browser calculator sums user-entered sale price, costs, transfer taxes, debt payoff and CPA-estimated taxes, then discounts level annual cash flows and terminal net proceeds. It does not calculate taxable gain, tax rates, future rent or exit value, parcel hazards, or risk-adjusted alternatives. No owner, lease, offer, tax-basis or financing inputs were supplied or independently verified.",
+     "Before relying on outputs, obtain the private lease abstract and notice calendar, written bids and renewal terms, current escrow transfer-tax estimate, lender payoff and CPA/tax-counsel estimates. Treat future proceeds and the required return as assumptions unless supported. Keep identities and documents out of this public repository; use the standalone calculator offline if preferred.", "IRS409"),
+    ("F-37", "Medium", "Quarterly franchise rental-revenue series remains incomplete",
+     "The recent tenant update adds quarterly same-store sales, unit counts and closures. It does not provide a reconciled quarter-by-quarter franchise rental-revenue series; the latest cumulative figure alone is not enough to show a quarterly trend.",
+     "Re-read the SEC filing exhibits after release, distinguish quarter-only amounts from year-to-date totals, and leave any period blank if the issuer does not disclose a comparable value.", "SECQ3"),
 ]
 
 # --------------------------------------------------------------- Repo review findings
@@ -1196,13 +1202,13 @@ INFO_REGISTER = [
      "State school-directory lookup by address; campus Dashboard reports.", "Public agencies", "DASH26"),
 ]
 
-# -------------------------------- Suggestions (proposed only; nothing here is implemented)
+# -------------------------------- Suggestions (one directly requested tool implemented; remaining proposals are unselected)
 # (id, area, suggestion, why it helps the decision, options to choose from, privacy and effort, official context source)
 SUGGESTIONS = [
-    ("SG-01", "Decision tool", "After-tax net-proceeds worksheet",
-     "Turns the verified tax rules into one number the owner can compare with the hold case.",
-     "A: an offline spreadsheet template with empty input cells, kept out of the public site. B: an on-page calculator that runs only in the browser. C: leave it to the CPA.",
-     "A keeps private figures off the web and is about a day of work. B needs JavaScript, which the site currently forbids.", "ULA"),
+    ("SG-01", "Decision tool", "Browser-only sale / hold / renewal calculator",
+     "Combines adviser-entered after-tax sale, cash-flow and exit figures into a present-value comparison; it does not calculate tax law or select a winner.",
+     "Implemented: a self-contained page with blank inputs and no network calls or app-side storage. Alternatives remain a CPA-only comparison or a separately controlled offline workbook.",
+     "The hosted page is public, not an access-controlled workspace. Tax amounts, transfer-tax estimates, debt payoff and future proceeds must be supplied and verified by advisers; download the blank file and use it offline for stronger separation.", "IRS409"),
     ("SG-02", "Decision tool", "Lease abstract checklist",
      "Answers Q-01 to Q-03 in one pass and stops the decision resting on the 'NNN' label.",
      "A: a printable blank checklist page. B: an offline template only. C: none.",
@@ -1216,9 +1222,9 @@ SUGGESTIONS = [
      "A: an offline timeline with real dates. B: a public timeline in relative months only. C: both.",
      "Real dates could identify the lease; B is safe. Half a day once the lease is read.", "IR25"),
     ("SG-05", "Evidence", "Tenant watch-list with quarterly history",
-     "A series of same-store sales, unit counts, closures and franchise rental revenue shows direction, not one quarter.",
-     "A: add a quarterly table refreshed from each SEC filing. B: keep the latest quarter only.",
-     "Public data; about two hours per quarter.", "EDGAR8K"),
+     "Partially implemented: the site carries quarterly same-store sales, restaurant counts and closures; a consistent quarter-by-quarter franchise rental revenue series remains open.",
+     "A: extract a comparable quarterly rental-revenue series from SEC filings when disclosed, separating quarter-only from year-to-date amounts. B: keep the current cumulative figure only. C: leave the series blank if definitions do not reconcile.",
+     "Public issuer data; refresh after each filing and preserve fiscal-quarter lengths and definitions.", "EDGAR8K"),
     ("SG-06", "Evidence", "Fill the Form 10-K rows",
      "Leased-versus-owned unit counts and franchise unit volumes are still blank; they show how the issuer holds its sites.",
      "A: read the FY2025 Form 10-K now. B: wait for the FY2026 Form 10-K. C: both.",
@@ -1245,12 +1251,12 @@ SUGGESTIONS = [
      "Adds a column to wide tables; half a day.", "BLS"),
     ("SG-12", "Layout", "Search and filter on the master register",
      "More than 220 rows are hard to scan on a phone.",
-     "A: a text filter, which needs JavaScript. B: more anchors and per-category jump links, no script. C: leave as is.",
-     "A relaxes the no-script rule; B does not.", "CITY"),
+     "A: add a separate client-side text filter. B: add more anchors and per-category jump links without another script. C: leave as is.",
+     "A would add another interactive script and require the same no-network, no-storage and privacy tests as the calculator. B adds no executable code.", "CITY"),
     ("SG-13", "Layout", "One-page printable brief for advisers",
-     "Gives a broker, CPA or attorney the recommendation, the gates and the open questions on a single sheet.",
-     "A: a print stylesheet for the executive summary. B: a separate brief page. C: none.",
-     "No private data; half a day.", "IRS1031"),
+     "The advisor-brief.html page provides a one-page source-linked summary with decision gates and privacy boundaries.",
+     "Implemented as a separate print-ready page; further changes to its content or print layout remain optional.",
+     "No private data is included. Review the one-page brief before sharing it with advisers.", "IRS1031"),
     ("SG-14", "Repository", "Archive the eight inherited layers",
      "Old dashboards with different figures remain in the repository and can be mistaken for the current one.",
      "A: move them into one archive folder. B: delete them and rely on history. C: leave as is.",
@@ -1265,16 +1271,16 @@ SUGGESTIONS = [
      "Entirely offline; this is the step that unlocks a final decision.", "IRS409"),
 ]
 
-# (path, what it includes, what the owner gets, privacy position, effort)
+# (path, what it includes, what the owner gets, privacy position, official context source key)
 SUGGESTION_PATHS = [
-    ("Path 1 · Evidence desk, private work offline (recommended)",
-     "SG-01A, SG-02A, SG-03A, SG-04B, SG-05, SG-06, SG-10, SG-13, SG-16",
-     "The public site stays a source-linked evidence file; every owner-specific number lives in offline templates.",
-     "No private fact reaches the repository or the web.", "IRS409"),
-    ("Path 2 · Interactive site",
-     "Path 1 plus SG-01B and SG-12A",
-     "Calculator and table filter on the site itself.",
-     "Inputs stay in the browser, but the no-JavaScript rule and its checks must be relaxed.", "ULA"),
+    ("Path 1 · Browser calculator with private adviser workflow",
+     "SG-01, SG-02A, SG-03A, SG-04B, SG-05, SG-06, SG-10, SG-13, SG-16",
+     "The public evidence desk provides a self-contained calculator; completed lease, identity and financial records stay in the authorized adviser workspace.",
+     "Calculator inputs are not sent or persisted by the page. The hosted page is public and logs page access; download and disconnect before entering confidential amounts if preferred.", "IRS409"),
+    ("Path 2 · Adviser-only comparison, no browser inputs",
+     "SG-01 CPA-only alternative plus SG-02A, SG-03A, SG-04B, SG-10, SG-13, SG-16",
+     "A CPA prepares the comparison in a separately controlled offline workbook; the public site remains a source-linked evidence file.",
+     "No owner figures are entered into the public calculator; advisers still need secure document-handling and access controls.", "ULA"),
     ("Path 3 · Neighbourhood depth",
      "Path 1 plus SG-07A, SG-08 and SG-09",
      "Tract-level trend evidence alongside the regional figures.",

@@ -2357,3 +2357,55 @@ Claim made after reading the shared board and inspecting the current tree. Prior
 ### J3 integration / concurrent-session record
 
 While PR #87 was open, session `a1a7af0c` merged PR #86, advancing `main` from `b0f1e13` to `b168458`. PR #87 reported a coordination-file conflict. Fetched and rebased this fixed branch onto the new `origin/main`; the only conflict was at the append-only `COORDINATION.md` tail. Preserved the complete `a1a7af0c` claim, audit and merge/deploy record, plus this session's claim; no other-session content or site/data files were discarded. Re-ran the canonical generator, validation, staging, link/host checks, PII scan, both companion verifiers, projection generator, 17 unit tests and `git diff --check` on the combined tree; all passed and the generator left published files unchanged. Jekyll is still unavailable locally; no source page was re-read. PR #87 remains open pending refreshed PR checks and status review.
+
+---
+
+# Session `arena/0261166a-jack3` — privacy-first browser calculator and final audit (2026-11-16)
+
+**Session ID:** `0261166a` · **Branch:** `arena/0261166a-jack3` (platform-fixed; work remains on this branch) · **Date:** 2026-11-16 (UTC) · **Rebased base:** `main` at `e0a45dea642246ecd5516603eb709844249eda94` · **Status:** active
+
+**Scope claim (append-only):** `COORDINATION.md` (this section), `scripts/build_canonical.py`, `scripts/validate.py`, `scripts/test_publication.py`, `data/canonical_rows.py` (SG-01 only if needed), generated canonical root pages and `data/canonical.json`, `README.md`, and one dated verification record under `research/`. Existing public evidence facts and source values are not being refreshed. No address, APN, owner identity, lease document, tax basis, account, or private financial input will be collected or published. No other session's open PR will be merged, closed, or edited.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| A1 | Read coordination board and inspect the current canonical site; record a non-overlapping claim | done | `0261166a` | `COORDINATION.md` (this section) |
+| A2 | Re-run current canonical build, validation, regression, link, and privacy gates before changes | in progress | `0261166a` | read-only checks |
+| A3 | Implement the requested local-only browser calculator for CPA/escrow-verified inputs; no network submission or persistence | planned | `0261166a` | `scripts/build_canonical.py`, `scripts/validate.py`, `scripts/test_publication.py`, registered page/nav, generated pages |
+| A4 | Reconcile current-facing README and SG-01 wording with the published register and calculator; keep historical verification logs immutable | planned | `0261166a` | `README.md`, `data/canonical_rows.py` (SG-01 only), generated suggestion page |
+| A5 | Run all gates, record source/privacy limits, create PR from this branch, merge only if checks pass, confirm Pages deployment | planned | `0261166a` | verification record, this section, PR |
+
+## Initial coordination note
+
+- The preceding final-integration session (`681faa63`) and current-tree audit session (`344e8a0f`) are marked complete in this board. No open task is claimed by another active session in this checkout. The current branch is platform-fixed; the user-requested `session-<id>/<task>` naming convention is not used, consistent with earlier entries.
+- `git ls-remote` confirmed `origin/main` is the base commit above and no remote head exists yet for this fixed session branch. This claim was committed as `f603187` and pushed immediately on the current branch.
+
+## Scope amendment and progress (2026-11-16)
+
+- Scope amendment: the original claim said `data/canonical_rows.py` SG-01 only. Inspection confirmed that SG-05's quarterly tenant watch-list is only partially complete (the comparable franchise rental-revenue series remains open), SG-13's one-page advisor brief already exists, and SG-12's old no-JavaScript wording became stale after adding the requested calculator. Scope therefore also includes SG-05, SG-12, SG-13 and review flags F-36/F-37 in `data/canonical_rows.py`, plus their generated pages. This is a documented extension within the same unclaimed canonical-integration scope; no other session owns these files in this checkout.
+- A2 baseline completed before edits: 255 evidence rows (225 Verified / 3 Derived / 1 Analysis / 26 Blank), 48 sources; canonical validation, staging, 19 unit tests, legacy link check and PII scan all passed.
+- A3 implemented: registered `private-calculator.html`, a self-contained blank page with 12 unnamed/unprefilled numeric inputs, one inline script, restrictive CSP, no network/storage API, clear/reset action, transparent flat-cash-flow PV formula, and official tax-rule review links. The tool does not calculate tax liability, forecast property value, persist inputs, or select a winner.
+- A4 implemented: README counts now match the canonical 255-row / 48-source register; suggestion statuses distinguish implemented (SG-01 and SG-13), partial (SG-05), and proposed items; F-36/F-37 publish the calculator tax-input limitation and the incomplete rental-revenue series.
+- Verification limitation: outbound access in this sandbox is restricted to GitHub, npm and package-index hosts. No Census, BLS, SEC, IRS, FTB, City/County, CDE, FEMA, USGS or other publisher page was freshly re-read in this session. Existing official-source links remain attached and were checked structurally against the official-host registry; no source value was refreshed or inferred.
+
+| ID | Updated status | Current result |
+|---|---|---|
+| A1 | done | Board read; fixed-branch claim pushed as `f603187`. |
+| A2 | done | Baseline checks passed; final-tree checks remain in A5. |
+| A3 | done | Browser-only calculator generated and safety-guarded. |
+| A4 | done | Current README and suggestion/flag wording reconciled; scope amendment logged. |
+| A5 | in progress | Full post-change gates and dated record are complete; PR #108 is open and initial GitHub Actions checks passed, including Jekyll build/artifact comparison; merge and Pages deployment confirmation pending. |
+
+## A5 pre-PR verification and source links (2026-11-16)
+
+- `build_canonical.py`: 24 HTML pages (23 registered pages + `flagged.html` alias), 255 evidence rows (225 Verified / 3 Derived / 1 Analysis / 26 Blank), 48 official/issuer sources, 37 flags.
+- `scripts/validate.py`: PASS — 25 published files (24 HTML + stylesheet), 29 approved official hosts; provenance, blank-value policy, all table-row source links, internal links, calculator CSP/source/privacy gate, PII and deterministic rebuild clean.
+- `scripts/stage_pages.py`: PASS — 25-file curated artifact; all table rows source-linked and all internal links resolve.
+- `python3 -m unittest discover -s scripts -p 'test_*.py'`: 20 tests OK. `node --check scripts/private_calculator.js` and `node scripts/test_private_calculator.js`: PASS (formula, edge cases, browser input/clear flow, and no-network/no-persistence source guard).
+- `tools/check_site.py`, `tools/linkcheck.py`, `tools/check_links.py`, `_advisory_src/verify_advisory.py`, `_dashboard_src/verify.py`: PASS. `tools/pii_scan.py`: 159 files scanned, 0 findings. `git diff --check`: PASS.
+- Jekyll/Ruby are not installed locally; CI will run the repository's actual Jekyll build and byte-for-byte artifact comparison before merge.
+- **Source URLs for manual review** (existing canonical source registry; not freshly re-opened in this session): IRS capital gains https://www.irs.gov/taxtopics/tc409 ; IRS 2026 tax-year guidance https://www.irs.gov/pub/irs-drop/rp-25-32.pdf ; IRS NIIT https://www.irs.gov/taxtopics/tc559 ; California FTB capital gains https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html ; IRS §1031 https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips ; City of LA Measure ULA https://finance.lacity.gov/faq/measure-ula ; LA County transfer tax https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info .
+- Full source freshness remains open: the 2026-11-12 broad pass covered 240 rows / 45 sources; later additions have scoped verification records, but this session did not freshly re-read the complete 255-row register. No source values were changed.
+
+## Scope amendment 2 (2026-11-16)
+
+The calculator implementation also touches `scripts/private_calculator.js` (embedded single-file calculation source), `scripts/test_private_calculator.js` (arithmetic, browser flow, and privacy guards), and `.github/workflows/validate.yml` (run the new Node checks in CI). These are necessary components of A3 and do not overlap another active session's ownership.
