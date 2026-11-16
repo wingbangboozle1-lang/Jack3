@@ -8,7 +8,13 @@ Enforced:
   4. Every external link is https and on an approved official host.
   5. Every internal link and fragment resolves inside the published artifact.
   6. Every page carries the shared navigation, and no page links to a missing file.
-  7. No scripts, iframes, forms, tracking vendors, localhost or http:// links.
+  7. No iframes, forms, tracking vendors, localhost or http:// links anywhere.
+     Inline, network-free JavaScript is allowed ONLY on the disclosed interactive
+     pages (JS_PAGES): the private browser calculator and the master-register
+     filter. Those pages must contain no external script source and no storage,
+     transmission or import primitive. Every other page forbids <script entirely.
+     (Relaxed 2026-11-16, session 7f1087ce, to implement adopted suggestion
+     SG-01B / Path 2; logged in COORDINATION.md. All other rules unchanged.)
   8. Privacy gate: no emails, phone numbers, street addresses, parcel numbers,
      taxpayer identifiers, account handles or tenant officer names in published files.
   9. Determinism: rebuilding does not change any published file.
@@ -43,8 +49,12 @@ PII = {
     "account-handle": re.compile(r"wingbangboozle1", re.I),
     "officer-name": re.compile(r"Lance Tucker|Mark King|Rachel Webb|Andres Chait", re.I),
 }
-FORBIDDEN = ("<script", "<iframe", "<form", "googletagmanager", "google-analytics",
+FORBIDDEN = ("<iframe", "<form", "googletagmanager", "google-analytics",
              "localhost", "127.0.0.1", "http://", "onclick=", "onerror=")
+# Disclosed interactive pages: inline, network-free JavaScript only (SG-01B / Path 2).
+JS_PAGES = {"calculator.html", "master.html"}
+JS_FORBIDDEN = ("<script src", "fetch(", "xmlhttprequest", "sendbeacon", "localstorage",
+                "sessionstorage", "document.cookie", "import(", "websocket")
 
 
 class PageParser(html.parser.HTMLParser):
@@ -117,6 +127,12 @@ def main() -> int:
     for p in PUBLISHED:
         text = p.read_text(encoding="utf-8")
         low = text.lower()
+        if "<script" in low and p.name not in JS_PAGES:
+            errors.append(f"{p.name}: inline <script> is only allowed on {sorted(JS_PAGES)}")
+        if p.name in JS_PAGES:
+            for token in JS_FORBIDDEN:
+                if token in low:
+                    errors.append(f"{p.name}: forbidden token on interactive page {token!r}")
         for token in FORBIDDEN:
             if token in low:
                 errors.append(f"{p.name}: forbidden token {token!r}")
