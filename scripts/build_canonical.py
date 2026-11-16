@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Build ONE canonical, privacy-safe GitHub Pages site from the verified register.
 
-Outputs (all deterministic, all static HTML, no JavaScript, no external assets):
+Outputs (all deterministic, all static HTML, no external assets):
 
   data/canonical.json                    machine-readable evidence register
   research/VERIFICATION-2026-11-12-c56c569e.md    immutable 2026-11-12 line-by-line source verification log
-  research/VERIFICATION-2026-11-13-406ca5a9.md    generated current register; only the targeted DGS10 refresh is new
+  research/VERIFICATION-2026-11-13-406ca5a9.md    generated current register; targeted refreshes are documented in-file
   research/VERIFICATION-2026-11-12-f0b78eb6.md    hand-written 2026-11-12 re-verification log (session f0b78eb6; not generated)
   research/VERIFICATION-2026-11-10-b98090a0.md    earlier record, kept as committed (no longer rewritten)
   <root>/*.html                         every page in PAGES + flagged.html alias
@@ -14,6 +14,13 @@ Outputs (all deterministic, all static HTML, no JavaScript, no external assets):
 Every table body row carries an official source link.  Any value that could not be
 confirmed from an official source is left as an EMPTY cell, labelled Unverified,
 and published on the Flagged for Review page.
+
+One deliberate exception to the historical no-JavaScript rule: calculator.html
+("Private calculator") embeds a single INLINE arithmetic engine that runs entirely
+in the reader's browser.  It performs no network requests, stores nothing, sets no
+cookies and loads no external asset, so owner figures never leave the page.
+scripts/validate.py enforces these offline properties at build time for that page
+and keeps the strict no-script rule for every other published page.
 
 Run:  python3 scripts/build_canonical.py
 """
@@ -68,6 +75,8 @@ PAGES = [
      "What must be answered before deciding: what is known, what is not, and how to find out."),
     ("decisions", "Decision matrix", "ANALYSIS", "13 / DECISION MATRIX",
      "Every available pathway, its risks, its evidence gate and the recommended sequence."),
+    ("calculator", "Private calculator", "ANALYSIS", "13A / PRIVATE CALCULATOR",
+     "After-tax sale, hold-versus-sell and short-lease-discount arithmetic that runs entirely in the reader's browser. Inputs never leave the page."),
     ("model", "Model & method", "ANALYSIS", "14 / MODEL & METHOD",
      "Verification standard, arithmetic, monitoring rules and the limits of the analysis."),
     ("place", "Evidence boundary", "ANALYSIS", "15 / EVIDENCE BOUNDARY",
@@ -225,7 +234,8 @@ def page_index() -> str:
             ("projections", "The reproducible 2026-2035 framework and the outputs withheld."),
             ("decisions", "Eight pathways, their gates, the risk of each and the recommended sequence."),
             ("questions", "What must be answered before deciding, what is known and how to find the rest."),
-            ("suggestions", "Proposed site improvements with options to choose from; nothing is built yet."),
+            ("suggestions", "Proposed site improvements with options to choose from; what was built is marked."),
+            ("calculator", "After-tax sale, sell-versus-hold and short-lease-discount arithmetic that runs entirely in your browser; inputs never leave the page."),
             ("master", "Every row in this site, in one source-linked table."),
             ("review", "Unverified values, conflicts and irregularities for manual review."),
             ("repo-review", "Line-by-line findings on the inherited repository layers."),
@@ -454,8 +464,81 @@ def page_category(slug: str) -> str:
                 '<b>Derived</b>: arithmetic on two published observations, with the arithmetic shown. '
                 '<b>Analysis</b>: conditional reasoning, not an official observation. '
                 '<b>Unverified</b>: the value cell is empty; see <a href="review.html">Flagged for Review</a>.</p>')
+    body.append(CATEGORY_EXTRA.get(slug, ""))
     body.append('<a class="quiet" href="master.html">Back to all entries →</a>')
     return shell(slug, ''.join(body), idx[3])
+
+
+def hazard_screening_sheet() -> str:
+    rows = [
+        ["1 · Earthquake zones of required investigation", "CGS Earthquake Zones of Required Investigation application (EQ Zapp)",
+         "Whether the parcel is in a fault-rupture, liquefaction or landslide zone", "Not performed here — private step", "EQZAPP"],
+        ["2 · Regional earthquake likelihood (already published)", "USGS UCERF3 fact sheet and 2008 ShakeOut scenario",
+         "Published on this page as regional context; never a parcel loss estimate", "Published (regional only)", "UCERF3"],
+        ["3 · Wildfire hazard severity zone", "CAL FIRE Fire Hazard Severity Zone viewer",
+         "The FHSZ class and whether the parcel sits in a state or local responsibility area", "Not performed here — private step", "FHSZ"],
+        ["4 · Flood zone", "FEMA flood maps (National Flood Insurance Program)",
+         "The FEMA panel and zone letter covering the parcel", "Not performed here — private step", "FEMA"],
+        ["5 · County-level composite scores", "FEMA National Risk Index for Los Angeles County",
+         "County risk scores as context; the portal has shown instability (open flag F-18)", "Flagged — see Flagged for Review", "NRI"],
+        ["6 · Zoning, overlays and city hazard layers", "ZIMAS · City of Los Angeles planning and zoning system",
+         "Jurisdiction, zoning, overlay districts and drive-through rights", "Not performed here — private step", "ZIMAS"],
+        ["7 · Insurance availability, limits and deductibles", "Private broker quotes; NFIP context on the FEMA page",
+         "Earthquake cover, rent-loss cover, deductibles, exclusions and the named insured", "Not obtainable from official sources — owner step", "FEMA"],
+        ["8 · Structural condition and retrofit history", "Structural engineer review; city building-permit records",
+         "Age, structural system, retrofit status, deferred maintenance", "Not obtainable from official sources — owner step", "EQZAPP"],
+    ]
+    return [
+        h2("Parcel-level hazard screening sheet", "W-04 · the official checks, in order"),
+        '<p>The register below is regional by design: no official source publishes a parcel\'s zone status, '
+        'and the address must never be entered into this repository or its data. Run the steps in this order, '
+        'entering the address <b>only on the government sites themselves</b>, and record the results in your '
+        'private property file (SG-03A). The first six steps take about an hour; steps 7 and 8 are the paid '
+        'professional checks that turn a zone status into a decision input.</p>',
+        table(["Step", "Official tool or document", "What to record privately", "Status on this site", "Official source"],
+              [[f'<b>{E(a)}</b>', E(b), E(c), E(d), src(k)] for a, b, c, d, k in rows],
+              "Parcel hazard screening · official tools and private recording steps"),
+        '<p class="small">When the parcel\'s actual zone results are known, they change the insurance cost, '
+        'the re-letting case and the exit liquidity — three inputs the decision matrix depends on. Until then, '
+        'the hazard rows on this page stay regional and the parcel rows stay blank.</p>',
+    ]
+
+
+def trade_area_workflow() -> str:
+    steps = [
+        ["1", "Identify the tract(s) privately", "Census Geocoder", "The census tract GEOID (and block group) for the address",
+         "Owner's private file only", "GEOCODER"],
+        ["2", "Pull tract demographics with margins of error", "data.census.gov", "Tract-level population, income, housing and tenure tables from the ACS",
+         "Owner's private file only", "ACSDATA"],
+        ["3", "Measure the workplace economy", "LEHD OnTheMap", "Workplace-area job counts, worker composition and inflow/outflow for the selected tracts",
+         "Owner's private file only", "OTM"],
+        ["4", "Read the street evidence", "LADOT traffic counts (City GeoHub)", "The locations where LADOT collected traffic counts near the site",
+         "Owner's private file only", "LADOT"],
+        ["5", "Name the campuses", "California School Directory", "The public schools and districts serving the area",
+         "Owner's private file only", "CDEDIR"],
+        ["6", "Confirm the planning context", "ZIMAS", "Zoning, overlays, case filings and planned development around the parcel",
+         "Owner's private file only", "ZIMAS"],
+    ]
+    return [
+        h2("Private trade-area workflow", "W-01 · tract-level figures without publishing a location"),
+        '<p>City and county rows above cannot describe one corner of Los Angeles. The census tract tables '
+        'that could are deliberately not published here: a tract narrows the location to a few thousand '
+        'people, and the privacy boundary forbids narrowing. This workflow produces the same evidence for '
+        'the owner\'s private file instead — the location is used only inside the official tools, never '
+        'inside this repository, its data or its pages.</p>',
+        table(["Step", "Action", "Official tool", "What it produces", "Where the result lives", "Official source"],
+              [[f'<b>{E(a)}</b>', E(b), E(c), E(d), E(e), src(k)] for a, b, c, d, e, k in steps],
+              "Trade-area workflow · five official tools, results kept private"),
+        '<p class="small">If the owner later decides a tract table may be published (SG-07 option A), it is '
+        'added as register rows with margins of error and a dated verification record — not before. The '
+        '<a href="questions.html">information register</a> (Q-17) tracks this as an open gate.</p>',
+    ]
+
+
+CATEGORY_EXTRA = {
+    "geography": ''.join(trade_area_workflow()),
+    "hazards": ''.join(hazard_screening_sheet()),
+}
 
 
 def page_risk() -> str:
@@ -695,6 +778,13 @@ def page_decisions() -> str:
             'fees, and in return a sale and an extension are both still available when the documents arrive. '
             'Holding to expiry and redevelopment sit at the other end.</p>'
             '<a class="quiet" href="risk.html">Full risk register →</a></div></section>',
+            h2("Decision-gate progress board", "What closes each gate, and who holds it"),
+            '<p>The public site cannot observe private progress, so every status below is honestly '
+            '<b>Open</b>: the register holds no executed lease, no owner financials and no parcel record. '
+            'Mark progress on your own offline copy of this page; never publish the closing documents here. '
+            'Rows are drawn from the information register on the '
+            '<a href="questions.html">Questions &amp; answers</a> page.</p>',
+            gate_board(),
             h2("Recommended sequence", "Analyst judgement, not a valuation"),
             '<ol class="steps">'
             '<li><b>Now.</b> Obtain the executed lease, amendments, estoppel, rent roll, tax bill, insurance '
@@ -721,7 +811,392 @@ def page_decisions() -> str:
     return shell("decisions", ''.join(body), KICKER["decisions"])
 
 
+def gate_board() -> str:
+    """Decision-gate progress board (W-03): the high-priority register questions as gates."""
+    rows = []
+    for qid, prio, question, _known, needed, _route, who, skey in INFO_REGISTER:
+        if prio != "High":
+            continue
+        rows.append([
+            f'<b>{E(qid)}</b> · {E(question)}', E(needed), E(who),
+            '<span class="badge blank">Open — awaiting private, verified inputs</span>', src(skey),
+        ])
+    return table(["Decision gate", "What closes it", "Who holds the answer",
+                  "Status on the public site", "Official context source"],
+                 rows, "Decision-gate progress board · every status is Open until verified privately")
+
+
+CALC_SCRIPT = r'''
+(function () {
+  "use strict";
+  var PROCEEDS_NOW = NaN;
+  function id(x) { return document.getElementById(x); }
+  function num(x) {
+    if (typeof x !== "string" || x.trim() === "") { return NaN; }
+    var v = parseFloat(x.replace(/[$,\s]/g, ""));
+    return isFinite(v) ? v : NaN;
+  }
+  function pct(x) { var v = num(x); return isFinite(v) ? v / 100 : NaN; }
+  function money(v) {
+    if (!isFinite(v)) { return "\u2014"; }
+    return "$" + Math.round(v).toLocaleString("en-US");
+  }
+  function say(el, msg, bad) {
+    var box = id(el);
+    box.textContent = msg || "";
+    box.style.display = msg ? "block" : "none";
+    box.className = "calc-msg" + (bad ? " bad" : "");
+  }
+  function out(field, v) { id(field).textContent = v; }
+  function fill(vals) {
+    for (var k in vals) { if (vals.hasOwnProperty(k)) { out(k, vals[k]); } }
+  }
+  function val(field) {
+    var v = num(id(field).value);
+    if (!isFinite(v)) {
+      throw { field: field };
+    }
+    return v;
+  }
+
+  /* Verified transfer-tax rules (sources on this page). Base taxes are charged
+     $2.25 (city) and $0.55 (county) per $500 or fractional part, i.e. rounded up
+     to the next multiple of $500; ULA tiers are percentage-based. */
+  function transferTaxes(gross, inCity) {
+    var cityBase = inCity ? Math.ceil(gross / 500) * 2.25 : 0;
+    var county = Math.ceil(gross / 500) * 0.55;
+    var ula = 0, tier = "At or below $5,400,000 — no ULA surcharge";
+    if (inCity && gross >= 10900000) { ula = 0.055 * gross; tier = "Tier 2 — 5.5% at or above $10,900,000"; }
+    else if (inCity && gross > 5400000) { ula = 0.04 * gross; tier = "Tier 1 — 4% above $5,400,000"; }
+    return { base: cityBase, county: county, ula: ula, tier: tier };
+  }
+
+  /* Verified income-tax rules: unrecaptured Section 1250 gain at a 25% maximum
+     federal rate; the remainder at the owner's long-term capital-gain rate;
+     NIIT 3.8%; California taxes capital gains as ordinary income. */
+  function incomeTaxes(netPrice, basis, depr, fedRate, caRate, niitApplies) {
+    var gain = netPrice - (basis - depr);
+    var positive = Math.max(gain, 0);
+    var recap = 0.25 * Math.min(Math.max(depr, 0), positive);
+    var fed = isFinite(fedRate) ? fedRate * Math.max(gain - depr, 0) : NaN;
+    var niit = niitApplies ? 0.038 * positive : 0;
+    var ca = isFinite(caRate) ? caRate * positive : NaN;
+    return { gain: gain, recap: recap, fed: fed, niit: niit, ca: ca };
+  }
+
+  function computeSale() {
+    try {
+      var gross = val("c1_price");
+      var basis = val("c1_basis");
+      var depr = num(id("c1_depr").value); if (!isFinite(depr)) { depr = 0; }
+      var sellCost = pct(id("c1_sellcost").value); if (!isFinite(sellCost)) { sellCost = 0; }
+      var debt = num(id("c1_debt").value); if (!isFinite(debt)) { debt = 0; }
+      var fedRate = pct(id("c1_fedrate").value);
+      var caRate = pct(id("c1_carate").value);
+      var inCity = id("c1_juris").value === "city";
+      var niitOn = id("c1_niit").checked;
+      if (!isFinite(fedRate)) { throw { field: "c1_fedrate" }; }
+      if (!isFinite(caRate)) { throw { field: "c1_carate" }; }
+      say("m1_msg", "");
+      var costs = gross * sellCost;
+      var net = gross - costs;
+      var tt = transferTaxes(gross, inCity);
+      var it = incomeTaxes(net, basis, depr, fedRate, caRate, niitOn);
+      var totalTax = (tt.base + tt.county + tt.ula) + it.recap + it.fed + it.niit + it.ca;
+      var proceeds = net - totalTax - debt;
+      PROCEEDS_NOW = proceeds;
+      fill({
+        "r1_tier": tt.tier,
+        "r1_costs": money(costs) + (sellCost ? "" : " (none entered)"),
+        "r1_net": money(net),
+        "r1_gain": money(it.gain) + (it.gain < 0 ? " (a loss \u2014 confirm treatment with your CPA)" : ""),
+        "r1_adj": money(basis - depr),
+        "r1_base": inCity ? money(tt.base) : "not applied (outside the city, as entered)",
+        "r1_county": money(tt.county),
+        "r1_ula": inCity ? money(tt.ula) : "not applied",
+        "r1_recap": money(it.recap),
+        "r1_fed": money(it.fed) + " at " + (fedRate * 100).toFixed(1) + "% on the non-recapture gain",
+        "r1_niit": niitOn ? money(it.niit) + " (3.8% \u2014 simplified; your MAGI governs)" : "not selected",
+        "r1_ca": money(it.ca) + " at " + (caRate * 100).toFixed(1) + "% (ordinary-income treatment)",
+        "r1_total": money(totalTax),
+        "r1_proceeds": money(proceeds),
+        "r1_proceeds2": money(proceeds) + " after debt payoff of " + money(debt)
+      });
+      id("c2_proceeds_view").textContent = money(proceeds);
+      say("m1_note", "Computed locally from your inputs. If an exchange under Section 1031 is intended, gain deferral changes this picture \u2014 deferred is not forgiven. Confirm every figure with your CPA before acting.", false);
+    } catch (e) {
+      say("m1_msg", "Every sale figure must be your own \u2014 nothing is inferred. Enter a number in the highlighted-type fields, including your federal and California rates.", true);
+    }
+  }
+
+  function computeHold() {
+    try {
+      if (!isFinite(PROCEEDS_NOW)) { throw { field: "none" }; }
+      var rent = val("c2_rent");
+      var rentTax = pct(id("c2_renttax").value); if (!isFinite(rentTax)) { rentTax = 0; }
+      var g = pct(id("c2_growth").value); if (!isFinite(g)) { g = 0; }
+      var d = val("c2_disc"); d = d / 100;
+      var years = Math.round(val("c2_years"));
+      var pg = pct(id("c2_pricegrowth").value); if (!isFinite(pg)) { pg = 0; }
+      var rein = pct(id("c2_reinvest").value); if (!isFinite(rein)) { rein = d; }
+      if (years < 1 || years > 20) { throw { field: "c2_years" }; }
+      say("m2_msg", "");
+      var pvRent = 0, t, cf;
+      for (t = 1; t <= years; t++) {
+        cf = rent * Math.pow(1 + g, t) * (1 - rentTax);
+        pvRent += cf / Math.pow(1 + d, t);
+      }
+      /* Terminal sale at the horizon: the projected price runs through the same
+         verified rules, holding depreciation and rates as entered (a disclosed
+         simplification your CPA will refine). */
+      var grossH = val("c1_price") * Math.pow(1 + pg, years);
+      var basis = val("c1_basis");
+      var depr = num(id("c1_depr").value); if (!isFinite(depr)) { depr = 0; }
+      var fedRate = pct(id("c1_fedrate").value);
+      var caRate = pct(id("c1_carate").value);
+      var inCity = id("c1_juris").value === "city";
+      var niitOn = id("c1_niit").checked;
+      var costsH = grossH * (pct(id("c1_sellcost").value) || 0);
+      var netH = grossH - costsH;
+      var ttH = transferTaxes(grossH, inCity);
+      var itH = incomeTaxes(netH, basis, depr, fedRate, caRate, niitOn);
+      var debtH = num(id("c1_debt").value); if (!isFinite(debtH)) { debtH = 0; }
+      var proceedsH = netH - (ttH.base + ttH.county + ttH.ula + itH.recap + itH.fed + itH.niit + itH.ca) - debtH;
+      var pvTerminal = proceedsH / Math.pow(1 + d, years);
+      var holdTrack = pvRent + pvTerminal;
+      var saleTrack = PROCEEDS_NOW * Math.pow(1 + rein, years);
+      fill({
+        "r2_proceeds": money(PROCEEDS_NOW),
+        "r2_pvrent": money(pvRent),
+        "r2_y1": money(rent * (1 - rentTax)) + " after tax in year 1",
+        "r2_terminal": money(proceedsH) + " at year " + years + ", discounted to " + money(pvTerminal),
+        "r2_hold": money(holdTrack),
+        "r2_sale": money(saleTrack) + " at your " + (rein * 100).toFixed(2) + "% reinvestment rate",
+        "r2_diff": money(holdTrack - saleTrack) + " \u2014 hold track minus sale-now track; positive means the hold path computes larger on your inputs"
+      });
+      say("m2_note", "Two hypothetical tracks on your own assumptions. Neither figure is verified, neither is a recommendation, and the difference is not a decision. Re-run it whenever a real offer or real renewal terms arrive.", false);
+    } catch (e) {
+      say("m2_msg", "Fill Module 1 first, then enter your rent, discount rate and horizon. Nothing here is inferred from regional averages.", true);
+    }
+  }
+
+  function computeQuotes() {
+    try {
+      var noi = val("c3_noi");
+      say("m3_msg", "");
+      var rows = [], i, p, yr, cap, implied, names = ["A", "B", "C"];
+      for (i = 0; i < 3; i++) {
+        p = num(id("c3_p" + i).value);
+        yr = num(id("c3_t" + i).value);
+        cap = pct(id("c3_c" + i).value);
+        if (!isFinite(p) && !isFinite(cap)) { continue; }
+        implied = isFinite(cap) && cap > 0 ? noi / cap : NaN;
+        rows.push({ name: names[i], price: p, term: yr, cap: cap, implied: implied });
+      }
+      if (rows.length < 2) { throw { field: "none" }; }
+      var htmlRows = [];
+      for (i = 0; i < rows.length; i++) {
+        var q = rows[i];
+        htmlRows.push('<div class="calc-row"><span>Quote ' + q.name + " \u2014 " +
+          (isFinite(q.price) ? money(q.price) + " offered" : "no price entered") +
+          (isFinite(q.term) ? ", " + q.term + " years remaining" : "") + "</span><b>" +
+          (isFinite(q.implied) ? money(q.implied) + " implied by the " + (q.cap * 100).toFixed(2) + "% cap" :
+            isFinite(q.price) ? (noi / q.price * 100).toFixed(2) + "% implied cap from the offer" : "\u2014") +
+          "</b></div>");
+      }
+      var longest = rows.reduce(function (a, b) { return (isFinite(b.term) && (a === null || b.term > a.term)) ? b : a; }, null);
+      var shortest = rows.reduce(function (a, b) { return (isFinite(b.term) && (a === null || b.term < a.term)) ? b : a; }, null);
+      var perYear = (longest && shortest && longest !== shortest && longest.term > shortest.term)
+        ? (longest.price - shortest.price) / (longest.term - shortest.term) : NaN;
+      htmlRows.push('<div class="calc-row total"><span>Short-lease discount priced from your real quotes</span><b>' +
+        (isFinite(perYear) ? money(perYear) + " per year of remaining term (" + longest.name + " vs " + shortest.name + ")" : "\u2014 enter offers with different remaining terms") +
+        "</b></div>");
+      id("r3_rows").innerHTML = htmlRows.join("");
+      say("m3_note", "Cap rates are published by commercial vendors, which this site does not cite; the method above is the only published output. Replace the illustrative quote boxes with the real written offers you receive, and keep the quotes themselves offline.", false);
+    } catch (e) {
+      say("m3_msg", "Enter your net operating income and at least two real quotes (price and remaining term for each). No quote is invented here.", true);
+    }
+  }
+
+  function clearAll() {
+    var inputs = document.querySelectorAll("input, select");
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].type === "checkbox") { inputs[i].checked = false; }
+      else if (inputs[i].tagName === "SELECT") { inputs[i].selectedIndex = 0; }
+      else { inputs[i].value = ""; }
+    }
+    PROCEEDS_NOW = NaN;
+    var targets = ["r1_tier","r1_costs","r1_net","r1_adj","r1_gain","r1_base","r1_county","r1_ula","r1_recap","r1_fed","r1_niit","r1_ca","r1_total","r1_proceeds","r1_proceeds2","r2_proceeds","r2_pvrent","r2_y1","r2_terminal","r2_hold","r2_sale","r2_diff"];
+    for (var j = 0; j < targets.length; j++) { out(targets[j], "\u2014"); }
+    id("r3_rows").innerHTML = "";
+    ["m1_msg","m2_msg","m3_msg","m1_note","m2_note","m3_note"].forEach(function (e2) { say(e2, ""); });
+    id("c2_proceeds_view").textContent = "\u2014";
+  }
+
+  id("c1_go").addEventListener("click", computeSale);
+  id("c2_go").addEventListener("click", computeHold);
+  id("c3_go").addEventListener("click", computeQuotes);
+  id("calc_clear").addEventListener("click", clearAll);
+})();
+'''
+
+
+def calc_field(fid: str, label: str, hint: str, kind: str = "number") -> str:
+    step = ' step="any"' if kind == "number" else ""
+    typ = "number" if kind == "number" else kind
+    return (f'<div class="field"><label for="{E(fid)}">{E(label)}</label>'
+            f'<input type="{typ}" id="{E(fid)}"{step}>'
+            f'<small>{hint}</small></div>')
+
+
+def calc_row(rid: str, label: str, total: bool = False) -> str:
+    cls = ' class="total"' if total else ""
+    return f'<div class="calc-row"{cls}><span>{E(label)}</span><b id="{E(rid)}">—</b></div>'
+
+
+def page_calculator() -> str:
+    rule_taxes = [
+        ["City base transfer tax", "$2.25 per $500 or fractional part (0.45%); the value is rounded up to the nearest $500 for the base tax", src("ULA")],
+        ["Measure ULA surcharge (City of LA)", "4% above $5,400,000; 5.5% at or above $10,900,000; effective for conveyances on or after 2023-04-01, thresholds adjusted annually to the BLS Chained CPI (2026 thresholds re-read 2026-11-16)", src("ULA")],
+        ["Los Angeles County documentary transfer tax", "$0.55 per $500 (0.11%), charged everywhere in the county in addition to any city base tax", src("DTT")],
+        ["Combined city tiers", "4.45% (above $5,400,000) and 5.95% (at or above $10,900,000)", src("ULA")],
+        ["Reassessment on sale", "A change of ownership reassesses the property to market value for the buyer at the 1% general levy plus add-ons", src("ASSESSOR")],
+        ["35-year leasehold rule", "Creating or transferring a leasehold of 35 years or more (including options) is itself a change in ownership; a lessor's interest transfer with 35+ years remaining is not", src("BOE220")],
+        ["§1031 exchange", "Real-property exchanges can defer gain; deferral is not elimination and property held primarily for sale does not qualify — not computed by this tool", src("IRS1031")],
+    ]
+    rule_income = [
+        ["Federal long-term capital gains", "0% / 15% / 20% by taxable income; you enter your own marginal rate", src("IRS409")],
+        ["2026 federal brackets (Rev. Proc. 2025-32)", "0% up to $98,900 MFJ ($49,450 single, $66,200 HoH); 15% up to $613,700 MFJ ($545,500 single, $579,600 HoH, $306,850 MFS); 20% above", src("IRSRP25")],
+        ["Unrecaptured §1250 gain", "25% maximum federal rate on the depreciation portion of the gain", src("IRS409")],
+        ["Net investment income tax", "3.8% on net investment income, subject to modified adjusted gross income thresholds — this tool applies it to the whole gain as a simplification", src("IRS559")],
+        ["California treatment", "No preferential capital-gains rate; gains are taxed as ordinary income at your marginal rate, which you enter", src("FTB")],
+        ["Reinvestment context", "The latest dated risk-free reference is the 10-year Treasury observation (5.10% on 2026-11-12) — context only, not your required return", src("FRED")],
+        ["Growth context", "Regional long-range planning forecasts are the only official growth anchors; they are not property forecasts", src("SCAG")],
+    ]
+    ttax = table(["Sale rule", "Verified constant", "Official source"], [[E(a), b, c] for a, b, c in rule_taxes],
+                 "Transfer-tax and ownership rules used by Module 1 · verified, not owner-specific")
+    itax = table(["Income-tax rule", "Verified constant", "Official source"], [[E(a), b, c] for a, b, c in rule_income],
+                 "Income-tax rules used by Modules 1 and 2 · verified, not owner-specific")
+
+    m1 = [
+        calc_field("c1_price", "Gross sale price offered ($)", "A documented offer, not an appraisal."),
+        calc_field("c1_basis", "Original cost basis ($)", "What you paid, from your own records."),
+        calc_field("c1_depr", "Accumulated straight-line depreciation ($)", "Depreciation taken to date; 0 if none."),
+        calc_field("c1_sellcost", "Selling costs (% of price)", "Commissions and closing costs; leave blank for none."),
+        calc_field("c1_debt", "Debt to pay off at closing ($)", "Loan balance; leave blank if unencumbered."),
+        calc_field("c1_fedrate", "Your federal LTCG rate (%)", "15 or 20 for most owners; the 2026 brackets above are the verified map."),
+        calc_field("c1_carate", "Your California marginal rate (%)", "CA taxes the gain as ordinary income."),
+        '<div class="field"><label for="c1_juris">Jurisdiction</label><select id="c1_juris">'
+        '<option value="city" selected>City of Los Angeles (base 0.45% + ULA + county 0.11%)</option>'
+        '<option value="county">Elsewhere in LA County (county 0.11% only)</option></select>'
+        "<small>The register cannot confirm the parcel's jurisdiction; pick what your title report shows.</small></div>",
+        '<div class="field"><label for="c1_niit">NIIT</label>'
+        '<input type="checkbox" id="c1_niit"> <span class="mini">3.8% applies to my gain</span>'
+        "<small>Subject to your MAGI; the tool applies it to the full gain as a simplification.</small></div>",
+    ]
+    m2 = [
+        calc_field("c2_rent", "Annual net rent you receive ($)", "From your rent roll or bank records."),
+        calc_field("c2_renttax", "Tax rate on the rental profit (%)", "Your marginal rate on rental income."),
+        calc_field("c2_growth", "Rent growth per year (%)", "Your assumption; official forecasts are context, not inputs."),
+        calc_field("c2_disc", "Discount rate (%)", "The return that compensates YOUR risk on this single asset."),
+        calc_field("c2_years", "Horizon (years, 1–20)", "Whole years from today to the comparison date."),
+        calc_field("c2_pricegrowth", "Price growth per year (%)", "Your assumption for the exit price."),
+        calc_field("c2_reinvest", "Reinvestment rate after a sale (%)", "What the proceeds would honestly earn after tax; defaults to the discount rate if blank."),
+    ]
+    quote = []
+    for i, name in enumerate(["A", "B", "C"]):
+        quote += [
+            calc_field(f"c3_p{i}", f"Quote {name} — price offered ($)", "From a real written offer."),
+            calc_field(f"c3_t{i}", f"Quote {name} — remaining term (years)", "Term the buyer is pricing."),
+            calc_field(f"c3_c{i}", f"Quote {name} — cap rate (%)", "If the broker quoted one; blank otherwise."),
+        ]
+
+    body = [
+        '<section class="callout warn"><b>Private tool — the boundary in one line.</b> '
+        'Everything you type stays in this browser tab: this page makes no network requests, stores nothing, '
+        'sets no cookies and loads no external asset. Closing the tab erases every figure. It computes arithmetic '
+        'on the verified rules below using <b>your</b> numbers; it is not tax, legal or investment advice, and it '
+        '<b>does not choose between selling and holding</b> — no winner can be selected until your verified private '
+        'inputs and real offers exist. <a href="sources.html">Verification standard</a>.</section>',
+        h1("Private calculator", "After-tax sale proceeds, a sell-versus-hold comparison, and a short-lease "
+           "discount priced from real quotes — computed locally, from your inputs only."),
+        '<p class="lede">This page implements the owner-mandated after-tax module (SG-01B). The constants it '
+        'uses are the verified rules published on the <a href="taxes.html">Taxes &amp; transfer</a> page; every '
+        'personal field starts blank because no owner figure is known, inferred or published anywhere on this '
+        'site. Print the page for your CPA or attorney; the source links stay attached.</p>',
+        h2("Verified rule constants", "The only pre-filled numbers on this page"),
+        ttax, itax,
+        h2("Module 1 · After-tax net sale proceeds", "One number, from your private figures"),
+        '<div class="calc">' + ''.join(m1) + '</div>',
+        '<div class="calc-actions"><button type="button" class="button primary" id="c1_go">Compute after-tax proceeds</button>'
+        '<button type="button" class="button" id="calc_clear">Clear everything</button></div>',
+        '<div class="calc-msg" id="m1_msg" style="display:none"></div>',
+        '<div class="calc-results">'
+        + calc_row("r1_tier", "Measure ULA tier that applies")
+        + calc_row("r1_costs", "Selling costs on the gross price")
+        + calc_row("r1_net", "Net price after selling costs")
+        + calc_row("r1_adj", "Adjusted basis (basis − accumulated depreciation)")
+        + calc_row("r1_gain", "Total gain")
+        + calc_row("r1_base", "City base transfer tax")
+        + calc_row("r1_county", "County documentary transfer tax")
+        + calc_row("r1_ula", "Measure ULA surcharge")
+        + calc_row("r1_recap", "Federal tax on unrecaptured §1250 gain (25% max)")
+        + calc_row("r1_fed", "Federal tax on the remaining capital gain")
+        + calc_row("r1_niit", "Net investment income tax")
+        + calc_row("r1_ca", "California tax on the gain")
+        + calc_row("r1_total", "Total taxes and transfer costs")
+        + calc_row("r1_proceeds", "After-tax net sale proceeds", total=True)
+        + calc_row("r1_proceeds2", "Cash left after paying off debt")
+        + '</div>',
+        '<div class="calc-msg" id="m1_note" style="display:none"></div>',
+        h2("Module 2 · Sell now versus hold to a chosen horizon", "Two tracks, one horizon, no recommendation"),
+        '<p>Compares (a) the after-tax proceeds of a sale today, reinvested at your rate, against (b) holding: '
+        'the discounted after-tax rent stream plus a terminal sale at your projected price, run through the same '
+        'verified rules. Fill Module 1 first.</p>',
+        '<div class="calc">' + ''.join(m2) + '</div>',
+        '<div class="calc-actions"><button type="button" class="button primary" id="c2_go">Compare the two tracks</button></div>',
+        '<div class="calc-msg" id="m2_msg" style="display:none"></div>',
+        '<div class="calc-results">'
+        + calc_row("r2_proceeds", "After-tax proceeds used from Module 1")
+        + calc_row("r2_pvrent", "Present value of the after-tax rent stream")
+        + calc_row("r2_y1", "Year-1 rent kept after tax")
+        + calc_row("r2_terminal", "Terminal sale proceeds at the horizon")
+        + calc_row("r2_hold", "Hold track (rent + terminal sale, discounted)")
+        + calc_row("r2_sale", "Sale-now track (proceeds reinvested)")
+        + calc_row("r2_diff", "Difference between the tracks", total=True)
+        + '</div>',
+        '<div class="calc-msg" id="m2_note" style="display:none"></div>',
+        h2("Module 3 · Price the short-lease discount from real quotes", "Your written offers, one method"),
+        '<p>A short remaining term is priced by comparing real offers for the same income at different remaining '
+        'terms. The public register cannot supply quotes — cap rates come from commercial vendors the site does '
+        'not cite — so the quotes below are yours. The method, not a market number, is what this page publishes.</p>',
+        '<div class="calc">' + ''.join(quote)
+        + calc_field("c3_noi", "Annual net operating income ($)", "The rent a buyer would capitalise."),
+        '</div>',
+        '<div class="calc-actions"><button type="button" class="button primary" id="c3_go">Price the discount</button></div>',
+        '<div class="calc-msg" id="m3_msg" style="display:none"></div>',
+        '<div class="calc-results"><div id="r3_rows"></div></div>',
+        '<div class="calc-msg" id="m3_note" style="display:none"></div>',
+        h2("How this tool respects the privacy boundary", "Same boundary as the rest of the site"),
+        '<ul class="ticks plain">'
+        '<li>No network access, no storage, no cookies, no analytics, no forms — enforced at build time by '
+        '<a href="model.html">the verification standard</a> and its automated gates.</li>'
+        '<li>Every constant on this page is a verified rule with an official link; every personal field is blank '
+        'in the published register and stays blank unless you type it here.</li>'
+        '<li>Asset A and Owner A remain placeholders; this page does not know and does not ask for the address, '
+        'the parcel number, the rent, the basis or the offers.</li>'
+        '<li>Print results for advisers; close the tab and nothing persists.</li>'
+        '<li>The calculator computes; it does not decide. The <a href="decisions.html">decision-gate progress '
+        'board</a> lists what must be verified before any route is chosen.</li>'
+        '</ul>',
+    ]
+    content = ''.join(body)
+    content += '<script>' + CALC_SCRIPT + '</script>'
+    return shell("calculator", content, KICKER["calculator"])
+
+
 def page_model() -> str:
+
     checks = [
         ("Source tier", "Government agency pages, issuer SEC filings and issuer investor releases only. No aggregators, brokerages, law firms or media.", "BLS"),
         ("Row-level provenance", "Every table body row carries an https:// link into the official source register.", "CITY"),
@@ -733,12 +1208,13 @@ def page_model() -> str:
         ("Build determinism", "One generator writes every published page; CI rebuilds and asserts a byte-identical diff.", "BLS"),
         ("Link integrity", "Every internal href resolves inside the published artifact; external links are https and on the approved official host list.", "FEMA"),
         ("No calibration claim", "No model was trained, fitted or back-tested; no property-level numerical output is published.", "FRED"),
+        ("Offline calculator gate", "The only script on the site is the private calculator's inline engine on calculator.html; build gates prove it makes no network request, stores nothing and loads no external asset, and every other page stays script-free.", "ULA"),
     ]
     crows = [[E(a), E(b), src(k)] for a, b, k in checks]
     body = [CALLOUT_BOUNDARY,
             h1("Model & method", "The verification standard applied to every row, the arithmetic that is "
                "actually shown, and the limits of this research."),
-            h2("Verification standard", "Ten rules enforced by the build"),
+            h2("Verification standard", "Eleven rules enforced by the build"),
             table(["Rule", "What it means", "Official example"], crows, "Method rules"),
             h2("Arithmetic that is published", "Only three derived values"),
             table(["Derived value", "Arithmetic", "Official source"],
@@ -1045,11 +1521,16 @@ def write_current_register() -> None:
         f"[`{VERIFICATION_FILE}`]({VERIFICATION_FILE}). A separate 2026-11-12 pass is recorded in "
         "[`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md).",
         "",
-        f"For this {SNAPSHOT} register update, session `406ca5a9` re-read only the official FRED DGS10 "
+        f"For the 2026-11-13 register update, session `406ca5a9` re-read only the official FRED DGS10 "
         "series and its directly dependent rate-anchor text. A separate source-check session also "
         "sampled other official pages; its scope is recorded in "
-        "[`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md). "
-        "This file does not imply that other publishers or all current rows were re-opened by this session.",
+        "[`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md). ",
+        "For the 2026-11-16 register update, session `87ca5536` re-read the FRED DGS10 series (no value "
+        "change; 5.10% for 2026-11-12 remained the latest observation), re-read the City of Los Angeles "
+        "Measure ULA FAQ and IRS Topic 409 (constants matched the register exactly), and fetched the five "
+        "new official data-tool pages cited in the register (Census Geocoder, data.census.gov, LEHD "
+        "OnTheMap, LADOT traffic counts, CDE School Directory) live before adding them. "
+        "This file does not imply that other publishers or all current rows were re-opened by these sessions.",
         "All other current-row values and status dispositions are carried forward from their dated "
         "verification records; the full-register source audit remains dated 2026-11-12.",
         "",
@@ -1057,13 +1538,34 @@ def write_current_register() -> None:
         "",
         "- **Publisher:** Board of Governors of the Federal Reserve System, H.15 Selected Interest Rates, "
         "via Federal Reserve Bank of St. Louis FRED, series DGS10.",
-        "- **Official page fetched:** 2026-11-13; FRED displayed an update time of 3:16 PM CST.",
-        "- **Latest observation shown:** `5.10%` for 2026-11-12. The page showed no observation for "
-        "2026-11-11, `4.98%` for 2026-11-10, and `4.88%` for 2026-11-09.",
+        "- **Official page fetched:** 2026-11-13; re-fetched 2026-11-16. FRED displayed an update time of "
+        "3:16 PM CST; the 2026-11-16 re-read showed the same latest observation, with the next release due "
+        "2026-11-16.",
+        "- **Latest observation shown:** `5.10%` for 2026-11-12 (unchanged on the 2026-11-16 re-read). The "
+        "page showed no observation for 2026-11-11 or 2026-11-13, `4.98%` for 2026-11-10, and `4.88%` for "
+        "2026-11-09.",
         "- **Use limitation:** this dated market observation is not an Asset A property cap rate, owner-specific "
         "required return, mandatory discount-rate floor, or forecast. The projection remains a dimensionless "
         "sensitivity illustration, not a calibrated property model.",
         "- **Official source:** [FRED DGS10, Federal Reserve H.15](https://fred.stlouisfed.org/series/DGS10).",
+        "",
+        "## Targeted official-source re-reads and additions (2026-11-16, session `87ca5536`)",
+        "",
+        "- **Re-read, constants unchanged:** [Measure ULA FAQ, City of Los Angeles Office of Finance]"
+        "(https://finance.lacity.gov/faq/measure-ula) — base 0.45% ($2.25 per $500, base value rounded up to "
+        "the nearest $500), ULA 4% above $5,400,000 / 5.5% at or above $10,900,000 for transactions closing "
+        "after 2026-06-30, annual Chained-CPI indexation.",
+        "- **Re-read, constants unchanged:** [IRS Topic 409, Capital gains and losses]"
+        "(https://www.irs.gov/taxtopics/tc409) — 0%/15%/20% structure with 2025 thresholds, unrecaptured "
+        "§1250 gain at a 25% maximum rate, NIIT cross-reference to Topic 559.",
+        "- **Added after live fetch, official data tools:** Census Geocoder (geocoding.geo.census.gov/geocoder/), "
+        "data.census.gov, LEHD OnTheMap (onthemap.ces.census.gov; 2024 data notice dated 2026-11-05), LADOT "
+        "Traffic Counts on the City of Los Angeles GeoHub (dataset updated 2020-08-26), and the California "
+        "School Directory (sd.cde.ca.gov/SchoolDirectory/). Each page was fetched on 2026-11-16 before its "
+        "row was written; the rows describe the tools, not any parcel.",
+        "- **Checked and deliberately not cited:** the FEMA Flood Map Service Center returned HTTP 500 on "
+        "2026-11-16 (consistent with open flag F-18 on the National Risk Index portal); the registered "
+        "fema.gov/flood-maps source remains in use instead.",
         "",
         "## Official sources in the current register",
         "",
@@ -1289,6 +1791,29 @@ body.advisor-brief .srclink{font-size:9px;white-space:normal}
  body.advisor-brief a{color:#111;text-decoration:underline}
  body.advisor-brief .table-wrap{overflow:visible;border-color:#999;margin-bottom:5px}
 }
+
+/* ---- Private calculator (calculator.html). Inputs and results are plain divs:
+   nothing here can submit, store or transmit; the page has no form element. */
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px;margin:0 0 18px}
+.calc .field{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.calc .field label{display:block;font-size:11px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:7px}
+.calc .field input[type=number],.calc .field select{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
+.calc .field input[type=checkbox]{transform:scale(1.15);margin-right:6px}
+.calc .field small{display:block;margin-top:6px;font-size:11px;color:var(--mut);line-height:1.45}
+.calc .field .mini{font-size:12.5px;color:var(--ink)}
+.calc-actions{display:flex;gap:10px;margin:0 0 20px;flex-wrap:wrap}
+.calc-actions .button{cursor:pointer;border:1px solid var(--line);margin-top:0}
+.calc-actions .button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.calc-actions .button.primary:hover{filter:brightness(1.06);text-decoration:none}
+.calc-msg{display:none;border-radius:9px;padding:10px 14px;font-size:13px;margin:0 0 18px;background:#f1f4f9;border:1px solid var(--line)}
+.calc-msg.bad{background:var(--badbg);border-color:#f2c1bc;color:var(--bad)}
+.calc-results{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 16px;margin:0 0 20px}
+.calc-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.calc-row:last-child{border-bottom:0}
+.calc-row span{color:var(--ink)}
+.calc-row b{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.calc-row.total{font-size:14.5px;font-weight:600}
+.calc-row.total b{color:var(--accent)}
 """
 
 
@@ -1313,6 +1838,7 @@ def main() -> None:
         "questions.html": page_questions(),
         "suggestions.html": page_suggestions(),
         "decisions.html": page_decisions(),
+        "calculator.html": page_calculator(),
         "model.html": page_model(),
         "place.html": page_place(),
     }

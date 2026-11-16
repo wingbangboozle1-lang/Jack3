@@ -17,6 +17,7 @@ Inventory contract (repaired 2026-11-11, session b7ead2a1):
 import json
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 import subprocess
 import sys
 import unittest
@@ -41,6 +42,7 @@ ALLOWED_STATUSES = {'Verified', 'Blank', 'Analysis', 'Derived'}
 class Document(HTMLParser):
     def __init__(self, text):
         super().__init__()
+        self.text = text
         self.ids = set()
         self.links = []
         self.tags = set()
@@ -122,11 +124,29 @@ class PublicationTests(unittest.TestCase):
                         self.assertIn(unquote(url.fragment), target_doc.ids)
 
     def test_no_active_collection_or_remote_resources(self):
+        # The private calculator page is the single documented exception: it may embed
+        # one inline script and number inputs, and scripts/test_publication plus
+        # scripts/validate.py both prove the engine is offline. Every other page stays
+        # completely script-free.
+        allowed = {'calculator.html': {'script', 'input'}}
         for name, doc in self.docs.items():
+            extra = allowed.get(name, set())
             with self.subTest(page=name):
-                self.assertFalse(doc.tags & {'script', 'iframe', 'form', 'input', 'object', 'embed'})
+                self.assertFalse(doc.tags & ({'script', 'iframe', 'form', 'input', 'object', 'embed'} - extra))
                 self.assertEqual(doc.events, [])
                 self.assertEqual(doc.remote_resources, [])
+                if name == 'calculator.html':
+                    scripts = re.findall(r'<script\b([^>]*)>', doc.text, flags=re.I)
+                    self.assertEqual(len(scripts), 1)
+                    self.assertEqual(scripts[0].strip(), '', 'calculator script must be inline (no src)')
+                    lowered = doc.text.lower()
+                    self.assertIn('stays in this browser tab', lowered)
+                    engine = re.search(r'<script>(.*?)</script>', doc.text, flags=re.I | re.S).group(1).lower()
+                    for token in ('fetch', 'xmlhttprequest', 'websocket', 'eventsource', 'sendbeacon',
+                                  'import(', 'https://', 'http://', 'localstorage', 'sessionstorage',
+                                  'indexeddb', 'document.cookie', 'eval(', 'new function', 'location',
+                                  'postmessage', 'navigator.', 'src=', 'action=', '<iframe', '<form'):
+                        self.assertNotIn(token, engine)
 
     def test_all_pages_accessible_from_shared_navigation(self):
         # Every staged page must carry the shared nav that reaches every

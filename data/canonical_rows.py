@@ -16,7 +16,7 @@ publisher states that exact observation.
 This module is data only.  scripts/build_canonical.py renders it.
 """
 
-SNAPSHOT = "2026-11-13"
+SNAPSHOT = "2026-11-16"
 FULL_AUDIT_DATE = "2026-11-12"
 
 # key -> (short label, publisher, official URL, kind)
@@ -151,6 +151,22 @@ SOURCES = {
                   "U.S. Securities and Exchange Commission / issuer filing",
                   "https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm",
                   "Issuer filing"),
+    # ---- Official data tools verified live 2026-11-16 (session 87ca5536); used by the
+    # ---- private trade-area workflow and the parcel hazard screening sheet. The owner's
+    # ---- address is entered only on these government sites, never in this repository.
+    "GEOCODER": ("Census Geocoder · address-to-geography matching", "U.S. Census Bureau",
+                 "https://geocoding.geo.census.gov/geocoder/", "Government statistics"),
+    "ACSDATA": ("data.census.gov · tables, maps and profiles, searchable by area or address",
+                "U.S. Census Bureau", "https://data.census.gov/", "Government statistics"),
+    "OTM": ("OnTheMap · workplace-area employment and commuting analysis (2024 data available)",
+            "U.S. Census Bureau · Local Employment Dynamics (LEHD)",
+            "https://onthemap.ces.census.gov/", "Government statistics"),
+    "LADOT": ("Traffic Counts · locations where LADOT has collected traffic information",
+              "City of Los Angeles · GeoHub (Los Angeles Department of Transportation)",
+              "https://geohub.lacity.org/maps/a27ad0d462f74efb92bfa230e5f64239", "City / county data"),
+    "CDEDIR": ("California School Directory · search by name, county, district, CDS code, city or zip",
+               "California Department of Education", "https://sd.cde.ca.gov/SchoolDirectory/",
+               "Government statistics"),
 }
 
 CATEGORIES = [
@@ -198,6 +214,21 @@ ROWS = [
       "Jurisdiction, permitted use, drive-through rights and alternate uses unverified.", "Blank", "ZIMAS"),
     R("Geography", "Competition, traffic counts, transit, crime, development pipeline", "", "Asset A",
       "No authenticated site-specific dataset; no numerical value assigned.", "Blank", "ZIMAS"),
+    # ---- Private trade-area workflow (W-01 / SG-07 public part; session 87ca5536, 2026-11-16).
+    # ---- These rows describe official TOOLS, verified live by fetching each tool's own page.
+    # ---- The parcel address is used only on the government sites, never in this repository.
+    R("Geography", "Private tract-identification workflow · step 1", "Census Geocoder matches an address to its census tract (GEOID) and other geographies",
+      "United States · tool page fetched 2026-11-16",
+      "The address is entered only on the Census Bureau's own site and never reaches this repository, its data or its pages. Closes the method gap behind the blank trade-area row above without publishing any location.", "Verified", "GEOCODER"),
+    R("Geography", "Tract-level tables with margins of error · step 2", "data.census.gov serves tract-level table, map and profile views, searchable by area or address",
+      "United States · tool page fetched 2026-11-16",
+      "Once tracts are selected privately, tract-level population, income and housing tables are pulled with their margins of error; the tract identifier is recorded in the owner's private files, not published here.", "Verified", "ACSDATA"),
+    R("Geography", "Workplace-area job counts · step 3", "LEHD OnTheMap analyses workplace-area employment, worker composition and inflow/outflow for drawn tracts, rings or drives; 2024 data available",
+      "United States · tool page fetched 2026-11-16 (data notice dated 2026-11-05)",
+      "Produces the daytime-worker and jobs evidence the city-wide register rows cannot; results stay in the owner's private files.", "Verified", "OTM"),
+    R("Geography", "Intersection traffic counts · step 4", "The City's GeoHub publishes the locations where LADOT has collected traffic information (dataset updated 2020-08-26)",
+      "City of Los Angeles · dataset page fetched 2026-11-16",
+      "Volumes at intersections near the site are retrieved privately from the official layer; site-adjacent counts are not published here.", "Verified", "LADOT"),
     R("Geography", "Heat, air quality, contamination and insurability", "", "Asset A",
       "No site study, environmental assessment or insurance quote.", "Blank", "FHSZ"),
     R("Geography", "Jurisdiction gate", "Confirm the competent planning authority before applying any city rule", "Asset A",
@@ -354,8 +385,8 @@ ROWS = [
       "City of Los Angeles · Wages LA (CPI-W indexed)",
       "Up from $17.87/hour (2025-07-01); AB 1228 $20.00/hour fast-food floor still governs covered limited-service chains. Closes F-12.",
       "Verified", "LAMWO"),
-    R("Economy & jobs", "10-year Treasury constant maturity yield", "5.10%", "United States · 2026-11-12 · daily (latest shown on 2026-11-13)",
-      "FRED page refreshed 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation on 2026-11-09 is retained as dated history. Dated context only, not an Asset A discount rate, property cap rate or required return.", "Verified", "FRED"),
+    R("Economy & jobs", "10-year Treasury constant maturity yield", "5.10%", "United States · 2026-11-12 · daily (latest shown on 2026-11-13; re-read 2026-11-16)",
+      "FRED page refreshed 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation on 2026-11-09 is retained as dated history. Re-read 2026-11-16: 5.10% for 2026-11-12 is still the latest observation (page updated 2026-11-13 3:16 PM CST; next release 2026-11-16); no value changed. Dated context only, not an Asset A discount rate, property cap rate or required return.", "Verified", "FRED"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "4.98%", "United States · 2026-11-10 · daily",
       "Previous non-missing observation shown on the official FRED page fetched 2026-11-13.", "Verified", "FRED"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "4.88%", "United States · 2026-11-09 · daily",
@@ -423,6 +454,9 @@ ROWS = [
       "School assignment is address-specific; no address was supplied.", "Blank", "CDEACGR"),
     R("Schools", "School-level performance measures", "", "Asset A",
       "No campus was selected; aggregate district rates are not school ratings.", "Blank", "DASH"),
+    R("Schools", "Assigned-campus lookup workflow", "California School Directory searches public schools and districts by name, county, district, CDS code, city or zip",
+      "California · tool page fetched 2026-11-16",
+      "Private trade-area workflow step 5: the address is used privately to name the campuses; campus names and results are then read on the Dashboard and are not published here.", "Verified", "CDEDIR"),
 
     # --------------------------------------------------------------- Tenant & lease
     R("Tenant & lease", "System same-store sales", "-1.1%", "Issuer systemwide · 12 weeks ended 2026-07-05",
@@ -721,7 +755,7 @@ ROWS = [
     R("Projection anchors", "Verified price anchor", "CPI-U +3.7%; ECI +3.9%",
       "Los Angeles metro / CSA · September 2026", "Historical cost-escalation context; lease escalators unknown.", "Verified", "BLS"),
     R("Projection anchors", "Verified rate anchor", "10-year Treasury 5.10% (2026-11-12)",
-      "United States · daily H.15 · latest shown on 2026-11-13", "Risk-free market reference only; not a property cap rate, required return or universal discount-rate floor.", "Verified", "FRED"),
+      "United States · daily H.15 · latest shown on 2026-11-13; re-read 2026-11-16 unchanged", "Risk-free market reference only; not a property cap rate, required return or universal discount-rate floor.", "Verified", "FRED"),
     R("Projection anchors", "Official long-range employment projection",
       "SCAG region 8,937k (2022) → 10,276k (2050), +0.50%/yr",
       "SCAG six-county region · adopted 2024", "Planning forecast with stated uncertainty; not a property forecast.", "Verified", "SCAG"),
@@ -1201,8 +1235,8 @@ INFO_REGISTER = [
 SUGGESTIONS = [
     ("SG-01", "Decision tool", "After-tax net-proceeds worksheet",
      "Turns the verified tax rules into one number the owner can compare with the hold case.",
-     "A: an offline spreadsheet template with empty input cells, kept out of the public site. B: an on-page calculator that runs only in the browser. C: leave it to the CPA.",
-     "A keeps private figures off the web and is about a day of work. B needs JavaScript, which the site currently forbids.", "ULA"),
+     "A: an offline spreadsheet template with empty input cells, kept out of the public site. B: an on-page calculator that runs only in the browser — IMPLEMENTED 2026-11-16 as calculator.html, with the no-network/no-storage gate. C: leave it to the CPA.",
+     "The owner brief mandates a browser calculator and an after-tax module, so option B was selected by the owner. Inputs stay in the reader's browser; nothing is stored, transmitted or published; the site's no-script rule was relaxed for this one page with strict offline checks. Verify results with the CPA.", "ULA"),
     ("SG-02", "Decision tool", "Lease abstract checklist",
      "Answers Q-01 to Q-03 in one pass and stops the decision resting on the 'NNN' label.",
      "A: a printable blank checklist page. B: an offline template only. C: none.",
@@ -1210,7 +1244,7 @@ SUGGESTIONS = [
     ("SG-03", "Decision tool", "Parcel hazard screening sheet",
      "Replaces regional hazard context with the parcel's actual zone status for earthquake, fire and flood.",
      "A: the owner runs the three official viewers privately and records the result offline. B: publish only 'checked / not checked' status. C: none.",
-     "The address must never be entered into this repository. One hour for the owner.", "EQZAPP"),
+     "The address must never be entered into this repository. One hour for the owner. The public part of A — the checklist of the official viewers and the private recording steps — was added to the Hazards page on 2026-11-16; the parcel's actual zone results stay offline.", "EQZAPP"),
     ("SG-04", "Decision tool", "Dated trigger timeline",
      "Shows when the notice windows, the option dates and a possible marketing period fall; no deadline is verified until the lease is read.",
      "A: an offline timeline with real dates. B: a public timeline in relative months only. C: both.",
@@ -1226,7 +1260,7 @@ SUGGESTIONS = [
     ("SG-07", "Evidence", "Neighbourhood module at tract level",
      "City and county averages cannot describe one corner of Los Angeles.",
      "A: the owner supplies only a census tract and the site publishes tract tables with margins of error. B: the analysis stays offline. C: none.",
-     "A tract narrows the location to a few thousand people; the owner must decide whether that is acceptable.", "CITY"),
+     "A tract narrows the location to a few thousand people; the owner must decide whether that is acceptable. On 2026-11-16 the public part of B was added to the Geography page: a five-step private workflow using the Census Geocoder, data.census.gov, LEHD OnTheMap, LADOT counts and the CDE directory, so tract-level evidence can be gathered without publishing any location.", "CITY"),
     ("SG-08", "Evidence", "County hazard scores from the federal risk index",
      "Adds an official composite comparison of county hazard exposure; the cell is blank today.",
      "A: use the official data download. B: leave blank.",

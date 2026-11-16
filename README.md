@@ -4,8 +4,8 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 
 **Live site:** https://wingbangboozle1-lang.github.io/Jack3/
 
-> **Current canonical site snapshot (2026-11-13; targeted DGS10 refresh only).** This repository publishes **one** consolidated site, generated
-> from a single canonical register. The full row-by-row audit remains dated 2026-11-12; the 2026-11-13 register records the 4.98% (Nov 10) DGS10 observation, retains 4.88% (Nov 9) as history, and uses 5.10% (Nov 12) as the latest dated reference—without implying a full-register re-audit. Earlier companion layers below are historical and excluded from GitHub Pages.
+> **Current canonical site snapshot (2026-11-16; targeted re-reads plus new private-tool pages).** This repository publishes **one** consolidated site, generated
+> from a single canonical register. The full row-by-row audit remains dated 2026-11-12; the 2026-11-13 register recorded the 5.10% (Nov 12) DGS10 observation as the latest dated reference, and the 2026-11-16 update re-read FRED (still 5.10%, no newer observation), re-read the Measure ULA FAQ and IRS Topic 409 (constants unchanged), and added five official data-tool sources fetched live the same day—without implying a full-register re-audit. Earlier companion layers below are historical and excluded from GitHub Pages.
 
 ## Start here
 
@@ -13,7 +13,7 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 - [Independent 240-row / 45-source verification (2026-11-12)](research/VERIFICATION-2026-11-12-7b04b8ee.md) — independent line-by-line official-source verification of all 240 canonical rows and 45 sources, paired with [`research/REPO-REVIEW-2026-11-12-7b04b8ee.md`](research/REPO-REVIEW-2026-11-12-7b04b8ee.md).
 - [Dated row-by-row register (2026-11-12)](research/VERIFICATION-2026-11-12-c56c569e.md) — immutable record of the 240-row, 45-source verification pass, with pages read in part and items not confirmed.
 - [Targeted freshness audit (2026-11-13)](research/AUDIT-2026-11-13-02fb510c.md) — official FRED DGS10 refresh to 5.10% (2026-11-12 observation), with sampled other-source checks documented separately; no claim of a full re-verification.
-- [Current generated register (2026-11-13)](research/VERIFICATION-2026-11-13-406ca5a9.md) — 242 current rows and 45 official/issuer sources; only this session's DGS10 observations and dependent anchor text are refreshed, with the 2026-11-12 full audit preserved.
+- [Current generated register (2026-11-16)](research/VERIFICATION-2026-11-13-406ca5a9.md) — 260 current rows and 53 official/issuer sources; the 2026-11-16 update re-read FRED (unchanged), the ULA FAQ and IRS Topic 409 (unchanged), and added five official data-tool sources fetched live that day, with the 2026-11-12 full audit preserved.
 - [Line-by-line verification (2026-11-12)](research/VERIFICATION-2026-11-12-f0b78eb6.md) — a separate hand-written pass of the same date, made when the register held 230 rows and 40 sources, plus closed minimum-wage, 10-K, 2026 LTCG, and FEMA NRI updates (extending [2026-11-11](research/VERIFICATION-2026-11-11-d644184d.md) and [2026-11-12 targeted review](research/VERIFICATION-2026-11-12-ec869c7c.md)).
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
@@ -36,12 +36,16 @@ Verify lease dates and notice rights privately now; prepare sale and renewal tra
 | [Flagged for Review](review.html) | Every unverified value, conflict, closed item and irregularity, published for manual review |
 | [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
 | [Line-by-line verification record](research/VERIFICATION-2026-11-12-c56c569e.md) | Immutable record of the 240-row 2026-11-12 re-read; a second hand-written record is [`VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md); the scoped 2026-11-13 rate refresh is [`AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md) |
-| [Sources & method](sources.html) | 45 official/issuer sources, verification standard and privacy boundary |
+| [Private calculator](calculator.html) | After-tax sale proceeds, sell-versus-hold comparison and short-lease-discount pricing; runs entirely in the reader's browser with no network or storage |
+| [Sources & method](sources.html) | 53 official/issuer sources, verification standard and privacy boundary |
 
 ## Build and verify
 
-23 static HTML pages (22 shared-navigation pages plus the `flagged.html` alias) plus `assets/style.css`, for a 24-file Pages artifact. Every table body row carries an official source link; every
-unconfirmed value is an **empty cell** and appears on *Flagged for Review*. No JavaScript, forms, analytics,
+24 static HTML pages (23 shared-navigation pages plus the `flagged.html` alias) plus `assets/style.css`, for a 25-file Pages artifact. Every table body row carries an official source link; every
+unconfirmed value is an **empty cell** and appears on *Flagged for Review*. One deliberate exception to the
+no-JavaScript rule: `calculator.html` embeds a single inline arithmetic engine that makes no network request,
+stores nothing and loads no external asset (enforced by `scripts/validate.py`); every other page stays
+script-free. No forms, analytics,
 third-party assets, owner identifiers, addresses or parcel numbers.
 
 | Page | Path | Contents |
@@ -49,25 +53,26 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 | Overview / dashboard | `/` | Conditional recommendation, six verified anchors, risk balance, navigation |
 | Executive summary | `/executive-summary.html` | Decision, findings, matrix, evidence gates, what stays blank |
 | Printable advisor brief | `/advisor-brief.html` | One-page landscape print view with source-linked evidence and private-work gates |
-| All entries & findings | `/master.html` | 242-row master register, grouped by category |
-| Geography | `/geography.html` | City / county scale; every parcel-level gap flagged |
+| All entries & findings | `/master.html` | 260-row master register, grouped by category |
+| Geography | `/geography.html` | City / county scale, every parcel-level gap flagged, plus the private trade-area workflow (Census Geocoder, data.census.gov, OnTheMap, LADOT counts, CDE directory) |
 | People & income | `/demographics.html` | Population, households, income, poverty, education, spending capacity |
 | Economy & jobs | `/economy.html` | Employment, wages, prices, output, rates, official long-range forecasts |
 | Schools | `/schools.html` | LAUSD scale, graduation outcomes, attendance-boundary gap |
 | Tenant & lease | `/tenant.html` | Issuer SEC 10-K / 8-K filings, closure programme, Q4 trigger, missing executed lease |
 | Taxes & transfer | `/taxes.html` | Prop 13, transfer taxes, Measure ULA, 2025/2026 capital gains, §1031 |
-| Hazards | `/hazards.html` | Earthquake, wildfire, flood: official observations and scenarios |
+| Hazards | `/hazards.html` | Earthquake, wildfire, flood: official observations and scenarios, plus the parcel-level hazard screening sheet (EQ Zapp, FHSZ, FEMA flood maps, ZIMAS, insurance and engineering steps) |
 | Projection anchors | `/anchors.html` | Dated observations, official forecasts and withheld outputs |
 | Risk register | `/risk.html` | 24 business-as-usual and black-swan risks, plus the risk of each of the eight decisions, with context sources |
 | Projection system | `/projections.html` | 13-step reproducible framework and the outputs deliberately withheld |
 | Questions & answers | `/questions.html` | 20-question information register, order of work, and 16 current answers |
-| Suggestions to review | `/suggestions.html` | 4 paths to choose from, 7 process proposals, 6 technical options and 16 site suggestions with lettered options; nothing implemented |
-| Decision matrix | `/decisions.html` | Eight pathways, gates, the business-as-usual and black-swan risk of each, and the recommended sequence |
+| Suggestions to review | `/suggestions.html` | 4 paths to choose from, 7 process proposals, 6 technical options and 16 site suggestions with lettered options; what was built (SG-01B) is marked |
+| Decision matrix | `/decisions.html` | Eight pathways, gates, the business-as-usual and black-swan risk of each, the decision-gate progress board, and the recommended sequence |
+| Private calculator | `/calculator.html` | After-tax sale, hold-versus-sell and short-lease-discount modules; verified rule constants with official links; owner inputs stay in the browser |
 | Model & method | `/model.html` | Verification standard, published arithmetic, monitoring checklist |
 | Evidence boundary | `/place.html` | What the site deliberately does not assert about Asset A |
 | Flagged for Review | `/review.html` (alias `/flagged.html`) | Unverified values, conflicts, closed checks and irregularities |
 | Repo review | `/repo-review.html` | Line-by-line inherited-layer findings |
-| Sources & method | `/sources.html` | 45 official/issuer sources, verification standard, privacy boundary |
+| Sources & method | `/sources.html` | 53 official/issuer sources, verification standard, privacy boundary |
 
 ## Build and verification
 

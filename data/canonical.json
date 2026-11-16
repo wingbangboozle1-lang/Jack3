@@ -1,5 +1,5 @@
 {
-  "snapshot": "2026-11-13",
+  "snapshot": "2026-11-16",
   "privacy": "Asset A / Owner A placeholders only; no personal or property identifiers.",
   "sources": {
     "CITY": {
@@ -289,6 +289,36 @@
       "publisher": "U.S. Securities and Exchange Commission / issuer filing",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm",
       "type": "Issuer filing"
+    },
+    "GEOCODER": {
+      "label": "Census Geocoder \u00b7 address-to-geography matching",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://geocoding.geo.census.gov/geocoder/",
+      "type": "Government statistics"
+    },
+    "ACSDATA": {
+      "label": "data.census.gov \u00b7 tables, maps and profiles, searchable by area or address",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://data.census.gov/",
+      "type": "Government statistics"
+    },
+    "OTM": {
+      "label": "OnTheMap \u00b7 workplace-area employment and commuting analysis (2024 data available)",
+      "publisher": "U.S. Census Bureau \u00b7 Local Employment Dynamics (LEHD)",
+      "url": "https://onthemap.ces.census.gov/",
+      "type": "Government statistics"
+    },
+    "LADOT": {
+      "label": "Traffic Counts \u00b7 locations where LADOT has collected traffic information",
+      "publisher": "City of Los Angeles \u00b7 GeoHub (Los Angeles Department of Transportation)",
+      "url": "https://geohub.lacity.org/maps/a27ad0d462f74efb92bfa230e5f64239",
+      "type": "City / county data"
+    },
+    "CDEDIR": {
+      "label": "California School Directory \u00b7 search by name, county, district, CDS code, city or zip",
+      "publisher": "California Department of Education",
+      "url": "https://sd.cde.ca.gov/SchoolDirectory/",
+      "type": "Government statistics"
     }
   },
   "categories": [
@@ -428,6 +458,12 @@
       "id": "decisions",
       "title": "Decision matrix",
       "file": "decisions.html",
+      "group": "ANALYSIS"
+    },
+    {
+      "id": "calculator",
+      "title": "Private calculator",
+      "file": "calculator.html",
       "group": "ANALYSIS"
     },
     {
@@ -584,6 +620,42 @@
       "note": "No authenticated site-specific dataset; no numerical value assigned.",
       "status": "Blank",
       "source": "ZIMAS"
+    },
+    {
+      "category": "Geography",
+      "indicator": "Private tract-identification workflow \u00b7 step 1",
+      "value": "Census Geocoder matches an address to its census tract (GEOID) and other geographies",
+      "scope": "United States \u00b7 tool page fetched 2026-11-16",
+      "note": "The address is entered only on the Census Bureau's own site and never reaches this repository, its data or its pages. Closes the method gap behind the blank trade-area row above without publishing any location.",
+      "status": "Verified",
+      "source": "GEOCODER"
+    },
+    {
+      "category": "Geography",
+      "indicator": "Tract-level tables with margins of error \u00b7 step 2",
+      "value": "data.census.gov serves tract-level table, map and profile views, searchable by area or address",
+      "scope": "United States \u00b7 tool page fetched 2026-11-16",
+      "note": "Once tracts are selected privately, tract-level population, income and housing tables are pulled with their margins of error; the tract identifier is recorded in the owner's private files, not published here.",
+      "status": "Verified",
+      "source": "ACSDATA"
+    },
+    {
+      "category": "Geography",
+      "indicator": "Workplace-area job counts \u00b7 step 3",
+      "value": "LEHD OnTheMap analyses workplace-area employment, worker composition and inflow/outflow for drawn tracts, rings or drives; 2024 data available",
+      "scope": "United States \u00b7 tool page fetched 2026-11-16 (data notice dated 2026-11-05)",
+      "note": "Produces the daytime-worker and jobs evidence the city-wide register rows cannot; results stay in the owner's private files.",
+      "status": "Verified",
+      "source": "OTM"
+    },
+    {
+      "category": "Geography",
+      "indicator": "Intersection traffic counts \u00b7 step 4",
+      "value": "The City's GeoHub publishes the locations where LADOT has collected traffic information (dataset updated 2020-08-26)",
+      "scope": "City of Los Angeles \u00b7 dataset page fetched 2026-11-16",
+      "note": "Volumes at intersections near the site are retrieved privately from the official layer; site-adjacent counts are not published here.",
+      "status": "Verified",
+      "source": "LADOT"
     },
     {
       "category": "Geography",
@@ -1300,8 +1372,8 @@
       "category": "Economy & jobs",
       "indicator": "10-year Treasury constant maturity yield",
       "value": "5.10%",
-      "scope": "United States \u00b7 2026-11-12 \u00b7 daily (latest shown on 2026-11-13)",
-      "note": "FRED page refreshed 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation on 2026-11-09 is retained as dated history. Dated context only, not an Asset A discount rate, property cap rate or required return.",
+      "scope": "United States \u00b7 2026-11-12 \u00b7 daily (latest shown on 2026-11-13; re-read 2026-11-16)",
+      "note": "FRED page refreshed 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation on 2026-11-09 is retained as dated history. Re-read 2026-11-16: 5.10% for 2026-11-12 is still the latest observation (page updated 2026-11-13 3:16 PM CST; next release 2026-11-16); no value changed. Dated context only, not an Asset A discount rate, property cap rate or required return.",
       "status": "Verified",
       "source": "FRED"
     },
@@ -1565,6 +1637,15 @@
       "note": "No campus was selected; aggregate district rates are not school ratings.",
       "status": "Blank",
       "source": "DASH"
+    },
+    {
+      "category": "Schools",
+      "indicator": "Assigned-campus lookup workflow",
+      "value": "California School Directory searches public schools and districts by name, county, district, CDS code, city or zip",
+      "scope": "California \u00b7 tool page fetched 2026-11-16",
+      "note": "Private trade-area workflow step 5: the address is used privately to name the campuses; campus names and results are then read on the Dashboard and are not published here.",
+      "status": "Verified",
+      "source": "CDEDIR"
     },
     {
       "category": "Tenant & lease",
@@ -2713,7 +2794,7 @@
       "category": "Projection anchors",
       "indicator": "Verified rate anchor",
       "value": "10-year Treasury 5.10% (2026-11-12)",
-      "scope": "United States \u00b7 daily H.15 \u00b7 latest shown on 2026-11-13",
+      "scope": "United States \u00b7 daily H.15 \u00b7 latest shown on 2026-11-13; re-read 2026-11-16 unchanged",
       "note": "Risk-free market reference only; not a property cap rate, required return or universal discount-rate floor.",
       "status": "Verified",
       "source": "FRED"
@@ -3898,8 +3979,8 @@
       "Decision tool",
       "After-tax net-proceeds worksheet",
       "Turns the verified tax rules into one number the owner can compare with the hold case.",
-      "A: an offline spreadsheet template with empty input cells, kept out of the public site. B: an on-page calculator that runs only in the browser. C: leave it to the CPA.",
-      "A keeps private figures off the web and is about a day of work. B needs JavaScript, which the site currently forbids.",
+      "A: an offline spreadsheet template with empty input cells, kept out of the public site. B: an on-page calculator that runs only in the browser \u2014 IMPLEMENTED 2026-11-16 as calculator.html, with the no-network/no-storage gate. C: leave it to the CPA.",
+      "The owner brief mandates a browser calculator and an after-tax module, so option B was selected by the owner. Inputs stay in the reader's browser; nothing is stored, transmitted or published; the site's no-script rule was relaxed for this one page with strict offline checks. Verify results with the CPA.",
       "ULA"
     ],
     [
@@ -3917,7 +3998,7 @@
       "Parcel hazard screening sheet",
       "Replaces regional hazard context with the parcel's actual zone status for earthquake, fire and flood.",
       "A: the owner runs the three official viewers privately and records the result offline. B: publish only 'checked / not checked' status. C: none.",
-      "The address must never be entered into this repository. One hour for the owner.",
+      "The address must never be entered into this repository. One hour for the owner. The public part of A \u2014 the checklist of the official viewers and the private recording steps \u2014 was added to the Hazards page on 2026-11-16; the parcel's actual zone results stay offline.",
       "EQZAPP"
     ],
     [
@@ -3953,7 +4034,7 @@
       "Neighbourhood module at tract level",
       "City and county averages cannot describe one corner of Los Angeles.",
       "A: the owner supplies only a census tract and the site publishes tract tables with margins of error. B: the analysis stays offline. C: none.",
-      "A tract narrows the location to a few thousand people; the owner must decide whether that is acceptable.",
+      "A tract narrows the location to a few thousand people; the owner must decide whether that is acceptable. On 2026-11-16 the public part of B was added to the Geography page: a five-step private workflow using the Census Geocoder, data.census.gov, LEHD OnTheMap, LADOT counts and the CDE directory, so tract-level evidence can be gathered without publishing any location.",
       "CITY"
     ],
     [
@@ -4069,7 +4150,7 @@
     ]
   ],
   "counts": {
-    "Verified": 225,
+    "Verified": 230,
     "Blank": 26,
     "Analysis": 1,
     "Derived": 3
