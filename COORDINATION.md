@@ -2357,3 +2357,24 @@ Claim made after reading the shared board and inspecting the current tree. Prior
 ### J3 integration / concurrent-session record
 
 While PR #87 was open, session `a1a7af0c` merged PR #86, advancing `main` from `b0f1e13` to `b168458`. PR #87 reported a coordination-file conflict. Fetched and rebased this fixed branch onto the new `origin/main`; the only conflict was at the append-only `COORDINATION.md` tail. Preserved the complete `a1a7af0c` claim, audit and merge/deploy record, plus this session's claim; no other-session content or site/data files were discarded. Re-ran the canonical generator, validation, staging, link/host checks, PII scan, both companion verifiers, projection generator, 17 unit tests and `git diff --check` on the combined tree; all passed and the generator left published files unchanged. Jekyll is still unavailable locally; no source page was re-read. PR #87 remains open pending refreshed PR checks and status review.
+
+---
+
+# Session `arena/0261166a-jack3` — privacy-first browser calculator and final audit (2026-11-16)
+
+**Session ID:** `0261166a` · **Branch:** `arena/0261166a-jack3` (platform-fixed; work remains on this branch) · **Date:** 2026-11-16 (UTC) · **Rebased base:** `main` at `e0a45dea642246ecd5516603eb709844249eda94` · **Status:** active
+
+**Scope claim (append-only):** `COORDINATION.md` (this section), `scripts/build_canonical.py`, `scripts/validate.py`, `scripts/test_publication.py`, `data/canonical_rows.py` (SG-01 only if needed), generated canonical root pages and `data/canonical.json`, `README.md`, and one dated verification record under `research/`. Existing public evidence facts and source values are not being refreshed. No address, APN, owner identity, lease document, tax basis, account, or private financial input will be collected or published. No other session's open PR will be merged, closed, or edited.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| A1 | Read coordination board and inspect the current canonical site; record a non-overlapping claim | done | `0261166a` | `COORDINATION.md` (this section) |
+| A2 | Re-run current canonical build, validation, regression, link, and privacy gates before changes | in progress | `0261166a` | read-only checks |
+| A3 | Implement the requested local-only browser calculator for CPA/escrow-verified inputs; no network submission or persistence | planned | `0261166a` | `scripts/build_canonical.py`, `scripts/validate.py`, `scripts/test_publication.py`, registered page/nav, generated pages |
+| A4 | Reconcile current-facing README and SG-01 wording with the published register and calculator; keep historical verification logs immutable | planned | `0261166a` | `README.md`, `data/canonical_rows.py` (SG-01 only), generated suggestion page |
+| A5 | Run all gates, record source/privacy limits, create PR from this branch, merge only if checks pass, confirm Pages deployment | planned | `0261166a` | verification record, this section, PR |
+
+## Initial coordination note
+
+- The preceding final-integration session (`681faa63`) and current-tree audit session (`344e8a0f`) are marked complete in this board. No open task is claimed by another active session in this checkout. The current branch is platform-fixed; the user-requested `session-<id>/<task>` naming convention is not used, consistent with earlier entries.
+- `git ls-remote` confirmed `origin/main` is the base commit above and no remote head exists yet for this fixed session branch. This claim is being committed and pushed immediately on the current branch.
