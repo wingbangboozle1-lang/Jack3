@@ -12,9 +12,14 @@ Enforced:
      Inline, network-free JavaScript is allowed ONLY on the disclosed interactive
      pages (JS_PAGES): the private browser calculator and the master-register
      filter. Those pages must contain no external script source and no storage,
-     transmission or import primitive. Every other page forbids <script entirely.
+     transmission, dynamic-execution or import primitive anywhere on the page, and
+     their script blocks must contain no navigation or document-writing primitive
+     (location, postMessage, window.open, document.write, history). Every other
+     page forbids <script entirely.
      (Relaxed 2026-11-16, session 7f1087ce, to implement adopted suggestion
-     SG-01B / Path 2; logged in COORDINATION.md. All other rules unchanged.)
+     SG-01B / Path 2, logged in COORDINATION.md; strengthened the same day by
+     session 87ca5536 with the dynamic-execution and navigation tokens below.
+     All other rules unchanged.)
   8. Privacy gate: no emails, phone numbers, street addresses, parcel numbers,
      taxpayer identifiers, account handles or tenant officer names in published files.
   9. Determinism: rebuilding does not change any published file.
@@ -53,8 +58,16 @@ FORBIDDEN = ("<iframe", "<form", "googletagmanager", "google-analytics",
              "localhost", "127.0.0.1", "http://", "onclick=", "onerror=")
 # Disclosed interactive pages: inline, network-free JavaScript only (SG-01B / Path 2).
 JS_PAGES = {"calculator.html", "master.html"}
+# Whole-page tokens: none of these strings may appear anywhere on an interactive page
+# (verified absent from both engines and their prose when this gate was extended).
 JS_FORBIDDEN = ("<script src", "fetch(", "xmlhttprequest", "sendbeacon", "localstorage",
-                "sessionstorage", "document.cookie", "import(", "websocket")
+                "sessionstorage", "document.cookie", "import(", "websocket",
+                "eval(", "new function", "navigator.", "indexeddb")
+# Script-block tokens: navigation and document-writing primitives that must never run
+# on a published page. Checked only inside <script> blocks, because words such as
+# "location" or "action=" legitimately occur in source-link URLs and prose.
+JS_BLOCK_FORBIDDEN = ("location", "postmessage", "src=", "action=", "window.open",
+                      "document.write", "history.")
 
 
 class PageParser(html.parser.HTMLParser):
@@ -133,6 +146,13 @@ def main() -> int:
             for token in JS_FORBIDDEN:
                 if token in low:
                     errors.append(f"{p.name}: forbidden token on interactive page {token!r}")
+            for i, block in enumerate(re.findall(r"<script>(.*?)</script>", text, re.I | re.S), 1):
+                bl = block.lower()
+                for token in JS_BLOCK_FORBIDDEN:
+                    if token in bl:
+                        errors.append(f"{p.name}: script block {i} contains {token!r}")
+            if not re.search(r"<script>", low):
+                errors.append(f"{p.name}: interactive page carries no inline script")
         for token in FORBIDDEN:
             if token in low:
                 errors.append(f"{p.name}: forbidden token {token!r}")

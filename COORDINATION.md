@@ -2360,6 +2360,133 @@ While PR #87 was open, session `a1a7af0c` merged PR #86, advancing `main` from `
 
 ---
 
+# Session `arena/87ca5536-jack3` — private calculator, decision-gate board, hazard sheet, trade-area workflow (2026-11-16)
+
+**Session ID:** `arena/87ca5536-jack3` · **Branch:** `arena/87ca5536-jack3` (platform-fixed branch; the brief's
+`session-<id>/<task>` naming is unavailable in this environment — same recorded deviation as earlier sessions) ·
+**Base:** `main` at `a68b55e` (merge of PR #107, session `344e8a0f`) · **Status:** active
+
+**Claim.** The board shows no active claims; all prior sessions are recorded done/merged. This session claims the
+tasks below with non-overlapping scope. Outbound fetches of official pages are possible from this sandbox today via
+the platform's page-fetch tooling, so new official sources can be genuinely verified before being cited.
+
+## Task board
+
+| ID | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| J8-01 | Read board, claim scope, record base | done | `arena/87ca5536-jack3` | `COORDINATION.md` (this section) | Base `a68b55e`; baseline gates re-run green before any edit |
+| J8-02 | Private browser calculator (SG-01B / after-tax module / short-lease discount method) | in progress | `arena/87ca5536-jack3` | `scripts/build_canonical.py` (new page + CSS), `scripts/validate.py` (scoped offline-script gate), `scripts/test_publication.py` (scoped tag allowlist), new `calculator.html` (generated) | Owner brief mandates "a private calculator that runs in the reader's browser" and "an after-tax module"; Path 2 trade-off (no-JS rule relaxed for exactly one offline page) is implemented with strict no-network/no-storage checks. Verified-rule constants only (ULA, county DTT, §1250 25%, LTCG, NIIT, CA ordinary treatment, §1031); personal inputs default blank; no winner selected. |
+| J8-03 | Decision-gate progress board (W-03) | in progress | `arena/87ca5536-jack3` | `scripts/build_canonical.py` (generated `decisions.html`) | Gates derived from the 20-question information register; every status is honestly "Open — awaiting private verified inputs"; no private progress is invented. |
+| J8-04 | Parcel-level hazard screening sheet (W-04 / SG-03 public part) | in progress | `arena/87ca5536-jack3` | `scripts/build_canonical.py` (generated `hazards.html`) | Checklist of the official viewers (EQ Zapp, FHSZ, FEMA flood maps, ZIMAS, NRI) + insurance/engineering steps; statuses "not performed here — private workflow". |
+| J8-05 | Private trade-area / tract workflow (W-01 / SG-07 public part) + 5 new verified official sources | in progress | `arena/87ca5536-jack3` | `data/canonical_rows.py` (SOURCES + rows), `scripts/build_canonical.py` (generated `geography.html`) | GEOCODER, ACSDATA, OTM, LADOT, CDEDIR — each fetched live 2026-11-16 before citation. No tract identifier or address is published. |
+| J8-06 | Suggestions register truth-up (SG-01B implemented; SG-03/SG-07 public checklists added) | in progress | `arena/87ca5536-jack3` | `data/canonical_rows.py` (SUGGESTIONS), `scripts/build_canonical.py` (generated `suggestions.html`) | The page keeps its review purpose; statuses updated to reflect what was actually built and why. |
+| J8-07 | README / VERIFY / model-page doc truth-up | in progress | `arena/87ca5536-jack3` | `README.md`, `VERIFY.md`, `scripts/build_canonical.py` docstrings | Reflect the single-page offline-calculator exception and new counts. |
+| J8-08 | Final integration for this batch: gates, PR, merge, Pages deploy confirmation | pending | `arena/87ca5536-jack3` | PR + this section | Single-session run (same precedent as `sess-8d650ba0`); no other active session exists. |
+
+## Verification log (running)
+
+- 2026-11-16 — baseline gates on clean tree `a68b55e`: build (23 pages, 255 rows, 48 sources), validate PASS,
+  stage PASS, pii_scan 0 findings, 19 unit tests OK.
+- 2026-11-16 — live official-source re-reads before citation (platform page fetch):
+  - https://geocoding.geo.census.gov/geocoder/ — Census Geocoder, address-to-geography matching. VERIFIED live.
+  - https://data.census.gov/ — tables/maps/profiles, address search. VERIFIED live.
+  - https://onthemap.ces.census.gov/ — LEHD OnTheMap; "2024 data now available", notice dated 11/5/2026. VERIFIED live.
+  - https://geohub.lacity.org/search?q=traffic%20counts then dataset page — "Traffic Counts … Locations where the
+    Los Angeles Department of Transportation has collected traffic information" (dataset updated 2020-08-26). VERIFIED live.
+  - https://sd.cde.ca.gov/SchoolDirectory/ — California School Directory search. VERIFIED live.
+  - https://finance.lacity.gov/faq/measure-ula — confirms base rate 0.45% ($2.25 per $500, base rounded up to the
+    nearest $500), ULA 4% above $5,400,000 / 5.5% at or above $10,900,000, effective for transactions closing after
+    2026-06-30; annual Chained-CPI indexation. Matches the register exactly.
+  - https://www.irs.gov/taxtopics/tc409 — 0/15/20% LTCG structure, 2025 thresholds, unrecaptured §1250 gain max 25%,
+    NIIT via Topic 559. Matches the register.
+  - https://fred.stlouisfed.org/series/DGS10 — latest observation still 5.10% (2026-11-12); page updated 2026-11-13
+    3:16 PM CST; next release 2026-11-16. NO value change; register remains current; no rate refresh needed.
+  - https://msc.fema.gov/portal/home — HTTP 500 today (consistent with open flag F-18 on the NRI portal). NOT cited;
+    the registered fema.gov/flood-maps source remains in use.
+
+Cross-session requests: none.
+
+## Completion record (J8-01..J8-08 done, 2026-11-16)
+
+All tasks are **done**. Marking J8-02..J8-07 complete with the following results:
+
+- **J8-02 (calculator, SG-01B):** new `calculator.html` (page id `calculator`, ANALYSIS group) with three
+  modules — after-tax net sale proceeds, sell-now versus hold to a chosen horizon, and short-lease-discount
+  pricing from real quotes. Only verified rule constants are pre-filled (city base 0.45% with per-$500
+  rounding-up, ULA 4%/5.5% tiers at $5,400,000/$10,900,000, county 0.11%, §1250 recapture 25% max, LTCG
+  0/15/20 with 2026 Rev. Proc. 2025-32 brackets, NIIT 3.8% (disclosed simplification), California ordinary
+  treatment, §1031 context); every personal field starts blank and nothing is inferred. The page carries a
+  no-winner statement consistent with the PR #98 neutrality correction.
+- **Offline-script gate:** `scripts/validate.py` now allows exactly one inline, src-less script on
+  `calculator.html` and forbids inside it: fetch/XHR/WebSocket/EventSource/sendBeacon/import()/http(s)://,
+  localStorage/sessionStorage/indexedDB/document.cookie, eval/new Function, location, postMessage,
+  navigator., src=/action=; the privacy notice text is asserted present; every other page keeps the strict
+  no-script rule; `scripts/test_publication.py` mirrors the allowlist (script+input tags on calculator.html
+  only, no on* events, no remote resources anywhere). CI contract unchanged otherwise.
+- **Engine verification:** `tools/calculator_engine_test.js` (new) runs 40 checks of the extracted engine
+  against an independent re-implementation of the verified rules — per-$500 rounding, ULA tier boundary at
+  exactly $10,900,000, below-threshold case, county-only jurisdiction, recapture/LTCG/NIIT/CA ordering,
+  discounted hold case with terminal sale re-run through the same engine, reinvestment compounding,
+  short-lease implied price/implied cap/per-year discount, blank-input honesty, loss case with zero taxes.
+  **All 40 pass.** Two engine bugs found and fixed during verification (missing output helper; implied-cap
+  percent formatting). Node is required only for this tool; it is not part of the Python CI gates.
+- **J8-03 (W-03):** decision-gate progress board added to `decisions.html` — 16 High-priority register
+  questions as gates, with what closes each, who holds the answer, and an honest uniform status
+  "Open — awaiting private, verified inputs"; the page states that the public site cannot observe private
+  progress.
+- **J8-04 (W-04 / SG-03 public part):** parcel-level hazard screening sheet added to `hazards.html` —
+  eight ordered steps (EQ Zapp, UCERF3/ShakeOut context, CAL FIRE FHSZ, FEMA flood maps, FEMA NRI with the
+  F-18 caveat, ZIMAS, insurance, structural engineering), each with what to record privately and a status
+  of "Not performed here — private step" where applicable.
+- **J8-05 (W-01 / SG-07 public part):** private trade-area workflow added to `geography.html` — five
+  official tools in order (Census Geocoder → data.census.gov → LEHD OnTheMap → LADOT traffic counts → CDE
+  School Directory, plus ZIMAS for planning context), each step's result explicitly kept in the owner's
+  private file; the page explains why tract tables are deliberately not published (a tract narrows the
+  location). Five new register rows (4 Geography + 1 Schools) and five new sources (GEOCODER, ACSDATA, OTM,
+  LADOT, CDEDIR), each page fetched live 2026-11-16 before citation.
+- **J8-06:** suggestions page callout and stats updated (1 implemented: SG-01B; rationale recorded); SG-01,
+  SG-03, SG-07 entries and Path 2 privacy text marked accordingly; the review-first purpose of the page is
+  preserved and all other items remain proposals.
+- **J8-07:** README (snapshot paragraph, file counts, pages table, no-JS exception), VERIFY.md (scope,
+  gates, 2026-11-16 targeted update section) and the generated model/sources/register text updated;
+  `write_current_register` now documents both the 2026-11-13 refresh and the 2026-11-16 targeted
+  re-reads/additions.
+- **J8-08 (integration):** final gates on the merged tree — `build_canonical.py` 24 pages / 260 rows
+  (230 verified, 3 derived, 1 analysis, 26 blank) / 53 sources; `validate.py` PASS (25 published files,
+  34 official hosts, deterministic rebuild clean); `stage_pages.py` PASS (25-file artifact, every table
+  row source-linked, every internal link resolves); 19 unit tests OK; `tools/calculator_engine_test.js`
+  40/40 PASS; `tools/check_site.py` ALL CHECKS PASSED; `tools/linkcheck.py` no broken internal links or
+  anchors; `tools/check_links.py` OK; `tools/pii_scan.py` 0 findings; `_advisory_src/verify_advisory.py`
+  and `_dashboard_src/verify.py` PASS (historical layers untouched); committed-tree determinism
+  (`git diff --exit-code -- '*.html'`) clean.
+
+## Merge conflict log (2026-11-16)
+
+While preparing the push, `git pull --rebase origin main` reported a conflict: PR #87 (session
+`1b7e5d21`, COORDINATION.md-only) had just been merged to `main` as `e0a45de`, and both sessions had
+appended sections to the append-only board tail. Resolution: both sections preserved in full, in order
+(`1b7e5d21`'s section first, this session's claim after); `git rebase --continue` replayed the three
+session commits cleanly onto `e0a45de`; the branch was updated with `--force-with-lease` on this
+session's own branch only (no shared branch was touched), then all gates were re-run green on the
+rebased tree. Nothing from any other session was discarded. Process note: the pull's failure was masked
+in a `| tail -1` pipeline during the first push attempt; the accidental push carried the pre-rebase
+equivalent content of this branch only, was immediately superseded by the rebased push, and is recorded
+here for transparency.
+
+## Verification limitation (disclosed)
+
+This session re-read 10 official pages live on 2026-11-16 (listed in the verification log above) and
+added only rows backed by those fetches. The remaining register rows were not re-read; the last full
+line-by-line audit remains 2026-11-12. The site's figures are dated observations carried forward from
+their verification records, not today's readings.
+
+## Privacy boundary
+
+Asset A / Owner A placeholders only. The calculator asks only for figures the owner types in their own
+browser and transmits or stores nothing; the trade-area and hazard workflows direct the owner to use the
+parcel address only on official government sites. No address, parcel identifier, tract identifier, lease
+document, owner financial fact or personal contact appears anywhere in the published site; `pii_scan`
+reports 0 findings.
 # Session `arena/7f1087ce-jack3` — fresh line-by-line source re-verification + private in-browser calculator (2026-11-16)
 
 **Session ID:** `7f1087ce` · **Branch:** `arena/7f1087ce-jack3` (platform-fixed branch name; the brief's `session-<id>/<task>` naming is unavailable in this environment — same recorded deviation as earlier sessions) · **Base:** `main` at `a68b55e` (merge of PR #107) · **Status:** active
@@ -2380,3 +2507,57 @@ Notes: this session treats itself as the active integration session (no other se
 ## Session `7f1087ce` — completion record (2026-11-16, UTC)
 
 **S7-01 done** (claim pushed 2026-11-16 from base `a68b55e`). **S7-02 done:** baseline gates on `a68b55e` all PASS (build 23 pages / 255 rows / 48 sources; validate; stage 24 files; 19 tests; linkcheck; PII 0 findings in 156 files). **S7-03 done:** fresh official-source re-verification pass; 34 sources re-read live on 2026-11-16 (per-source results in `research/VERIFICATION-2026-11-16-7f1087ce.md`); every re-read value matched the register exactly and no value changed; snapshot date bumped to 2026-11-16; FEMA NRI portal status refreshed (legacy URL now redirects to the Resilience Analysis and Planning Tool, NRI v1.20 available; LA County figures still not extracted; row stays blank; F-18 updated); static archived publications (BOE 220, NRIDECK, USGS OFR 2008-1150, USGS FS 2015-3009, 2025 Dashboard vintage) rest on the full 2026-11-12 audit and are unchanged. **S7-04 done:** the owner's standing brief requires "a private calculator that runs in the reader's browser," which selects the already-documented suggestion SG-01 option B and Path 2; implemented `calculator.html` (sell-versus-hold after-tax worksheet, inline network-free JavaScript, owner inputs never stored or transmitted, every table row source-linked) and the SG-12A text filter on `master.html`; `scripts/validate.py` no-script rule relaxed only for these two disclosed pages (JS_FORBIDDEN bans external script sources, fetch/XHR/sendBeacon, storage, import, websockets; all other rules unchanged); three new regression tests added. Final gates on the merged tree: build 24 pages / 255 rows / 48 sources; validate PASS (25 published files); stage PASS; 22 tests OK; check_site / linkcheck / check_links PASS; PII scan 0 findings; advisory + dashboard verifiers PASS; `git diff --check` clean. **S7-05 done:** PR #87 (COORDINATION.md-only audit record from session `1b7e5d21`) reviewed as integration owner and merged without conflicts; the 11 older stale PRs (#4–#51) are left untouched per SG-15 option C and prior sessions' recorded convention (owner decision). **S7-06 in progress:** PR from `arena/7f1087ce-jack3` to `main` created and merged without waiting for approval; result recorded below in the PR/deploy record.
+
+## Merge reconciliation record — PR #109 (session `7f1087ce`) merged to main during this session (2026-11-16)
+
+**What happened.** While this session was implementing its claimed tasks, a parallel session `7f1087ce` — working
+from the same base `a68b55e` and the same owner brief — claimed and executed an overlapping scope (fresh
+official-source re-verification, its own SG-01B calculator, the SG-12A master-register filter) and merged it to
+`main` as PR #109 (`d20c7e5`) before this session's pull request existed. Both sessions then modified
+`scripts/build_canonical.py`, `scripts/validate.py`, `scripts/test_publication.py`, `data/canonical_rows.py`,
+`calculator.html` and the generated pages. Per the board rules (stop, resolve without discarding the other
+session's work, log it), this session merged `origin/main` into its branch and reconciled as follows.
+
+**Resolution decisions (nothing from either session discarded in substance):**
+- **Adopted as canonical:** session `7f1087ce`'s `calculator.html` sell-versus-hold worksheet, its
+  `master.html` register filter, its `validate.py`/`test_publication.py` interactive-page gate design
+  (JS_PAGES + JS_FORBIDDEN), its 2026-11-16 re-verification of 34 official sources (no value changed; snapshot
+  2026-11-16; FEMA NRI legacy-portal redirect to RAPT recorded in F-18), and its PR #87 stale-PR integration.
+- **Withdrawn:** this session's parallel calculator implementation (page id, engines and its gate variant),
+  to avoid two competing calculators. Its short-lease-discount module — which PR #109's calculator lacked —
+  was re-implemented as an addition INSIDE the adopted calculator page rather than left out, because the
+  owner brief lists "Price the short-lease discount from real quotes" as a requirement.
+- **Re-applied unchanged (this session's unique deliverables, untouched by PR #109):** the decision-gate
+  progress board on `decisions.html`; the parcel-level hazard screening sheet on `hazards.html` (updated to
+  cite the recorded RAPT redirect for the NRI step); the private trade-area workflow on `geography.html`; the
+  five official data-tool sources and five register rows (GEOCODER, ACSDATA, OTM, LADOT, CDEDIR); the
+  suggestions-page truth-up (now "2 implemented: SG-01B, SG-12A"); README/VERIFY truth-ups (reconciled counts:
+  260 rows, 53 sources, 24 shared-navigation pages).
+- **Gate strengthening on top of PR #109's design:** JS_FORBIDDEN now also bans dynamic execution
+  (`eval(`, `new function`, `navigator.`, `indexeddb`) on the whole page, and script blocks are additionally
+  checked for navigation/document-writing primitives (`location`, `postMessage`, `src=`, `action=`,
+  `window.open`, `document.write`, `history.`) — verified absent from both engines before adoption.
+
+**Line-by-line engine verification found and fixed two arithmetic issues in the merged calculator:**
+1. The transfer-tax base used a flat 0.45% / 0.11% multiplication, contradicting the verified rule (and the
+   calculator's own rules table) that the city base tax ($2.25 per $500) and county tax ($0.55 per $500) round
+   the conveyed value UP to the next multiple of $500. Fixed to `Math.ceil(v / 500) * rate` per the
+   [Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) (re-read 2026-11-16).
+2. A sale below adjusted basis produced NEGATIVE tax lines (an implicit credit inside a single-asset
+   worksheet). Fixed by clamping every gain-tax portion at zero, and a caution note was added telling the
+   owner how a loss is treated is a CPA question.
+Both fixes are locked by `tools/calculator_engine_test.js` — 31 checks against an independent
+re-implementation, all passing (per-$500 rounding on a non-divisible price, ULA tier boundaries at exactly
+$10,900,000 and just below, full sale/exit tax ordering, discounted hold case, quote pricing, blank-input
+honesty, loss case).
+
+**Gates after the merge (all PASS):** build 24 pages / 260 rows (230 verified, 3 derived, 1 analysis, 26
+blank) / 53 sources; validate PASS (25 published files, 34 official hosts, deterministic rebuild clean);
+22 unit tests OK; `tools/calculator_engine_test.js` 31/31 PASS; stage PASS; PII scan 0 findings;
+check_site / linkcheck / check_links PASS; advisory + dashboard companion verifiers PASS; `projection.py`
+runs; committed-tree determinism clean.
+
+**Process note for future sessions:** this is the second same-brief overlap in this repository (after the
+2026-11-06 session 5cb84cd0 / ff406d61 collision). Both times the append-only coordination log made an
+honest merge possible. Sessions starting work should re-read `git log origin/main --oneline -5` immediately
+before implementing, not only before pushing.

@@ -1,8 +1,8 @@
 # Verification — canonical publication
 
-- **Current register snapshot:** 2026-11-13 (targeted DGS10 refresh only).
+- **Current register snapshot:** 2026-11-16 (targeted re-reads plus the private calculator and private-workflow pages; see the 2026-11-16 section below).
 - **Last full line-by-line source audit:** 2026-11-12 (240 rows / 45 sources).
-- **Current public scope:** 22 static HTML pages (21 shared-navigation pages including `suggestions.html` and `questions.html`, plus the `flagged.html` alias), 242 evidence rows (213 verified, 2 derived, 1 analysis, 26 blank), 20 information-register questions, 16 decision Q&A rows, 24 risks, 8 pathway-risk rows, 32 review flags (`F-01`–`F-32`), 36 repo-review findings, and 45 official/issuer sources. Historical companion layers are excluded.
+- **Current public scope:** 24 static HTML pages (23 shared-navigation pages plus the `flagged.html` alias), 260 evidence rows (230 verified, 3 derived, 1 analysis, 26 blank), 20 information-register questions, 16 decision Q&A rows, 24 risks, 8 pathway-risk rows, 32 review flags (`F-01`–`F-32` plus `F-33`–`F-35` added 2026-11-15), 36 repo-review findings, and 53 official/issuer sources. Historical companion layers are excluded.
 
 ## Evidence and corrections
 
@@ -39,7 +39,9 @@ python3 _dashboard_src/verify.py
 git diff --exit-code -- '*.html'
 ```
 
-The canonical build is deterministic and dependency-free. Validation checks row provenance, official hosts, blank-value handling, every table row, local links/fragments, shared navigation, prohibited embeds, privacy and deterministic regeneration. Staging validates the actual **23-file artifact** (`22` HTML pages plus `assets/style.css`), and publication regression tests assert its exact inventory and parser contracts.
+The canonical build is deterministic and dependency-free. Validation checks row provenance, official hosts, blank-value handling, every table row, local links/fragments, shared navigation, prohibited embeds, privacy and deterministic regeneration. Staging validates the actual **25-file artifact** (`24` HTML pages plus `assets/style.css`), and publication regression tests assert its exact inventory and parser contracts.
+
+Two disclosed exceptions to the historical no-JavaScript rule (2026-11-16): `calculator.html` (sell-versus-hold after-tax worksheet plus short-lease-discount pricer) and the `master.html` register filter embed inline engines. `scripts/validate.py` and `scripts/test_publication.py` prove that the engine is inline (no `src`), makes no network request (`fetch`, `XMLHttpRequest`, `WebSocket`, `EventSource`, `sendBeacon`, `import(`, any `http(s)://` reference), stores nothing (`localStorage`, `sessionStorage`, `indexedDB`, `document.cookie`), executes nothing dynamically (`eval`, `new Function`), does not navigate or message out (`location`, `postMessage`), and that every other published page remains completely script-free. The calculators' arithmetic is tested line by line by `node tools/calculator_engine_test.js` against an independent re-implementation of the verified rules (per-$500 rounding-up, ULA tiers and boundaries, §1250 recapture, LTCG/NIIT/California treatment, discounted hold case with after-tax exit, short-lease discount per remaining year, blank-input honesty, loss case with zero taxes) — 31 checks, all passing.
 
 ## Privacy and decision limits
 
@@ -50,3 +52,15 @@ The recommendation remains a conditional dual track: privately verify lease date
 ## Targeted freshness update — 2026-11-13
 
 The [Federal Reserve Bank of St. Louis FRED DGS10](https://fred.stlouisfed.org/series/DGS10) page read on 2026-11-13 showed **5.10% for 2026-11-12**, no observation for 2026-11-11, **4.98% for 2026-11-10**, and **4.88% for 2026-11-09**. PR #76 refreshed the current anchor and dimensionless sensitivity input to 5.10%; this follow-up retains 4.88% as history, adds the 4.98% dated row and regenerates the 242-row current register. The 2026-11-12 240-row / 45-source audit remains unchanged. See [`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md) and the [`current generated register`](research/VERIFICATION-2026-11-13-406ca5a9.md). This is still a targeted DGS10 update, not a new line-by-line verification of all current rows.
+
+## Targeted update — 2026-11-16 (session `arena/87ca5536-jack3`)
+
+Scope of this update (no full-register re-audit claimed; the 2026-11-12 audit remains the last complete pass):
+
+- **FRED DGS10 re-read (no value change):** the official page fetched 2026-11-16 still showed **5.10% for 2026-11-12** as the latest observation (page updated 2026-11-13 3:16 PM CST; no observation for 2026-11-11 or 2026-11-13; next release 2026-11-16). The register rows were updated to record the re-read; no value changed.
+- **Rule constants re-read (unchanged):** [Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) — base 0.45% ($2.25 per $500, base value rounded up to the nearest $500), ULA 4% above $5,400,000 / 5.5% at or above $10,900,000 effective for transactions closing after 2026-06-30, annual Chained-CPI indexation; [IRS Topic 409](https://www.irs.gov/taxtopics/tc409) — 0/15/20% structure, unrecaptured §1250 gain at a 25% maximum rate, NIIT via Topic 559. Both matched the register exactly and are now encoded (with links) in the private calculator.
+- **Five official data-tool sources added after live fetch on 2026-11-16:** [Census Geocoder](https://geocoding.geo.census.gov/geocoder/), [data.census.gov](https://data.census.gov/), [LEHD OnTheMap](https://onthemap.ces.census.gov/) (2024 data notice dated 2026-11-05), [LADOT Traffic Counts on the City GeoHub](https://geohub.lacity.org/maps/a27ad0d462f74efb92bfa230e5f64239) (dataset updated 2020-08-26), and the [California School Directory](https://sd.cde.ca.gov/SchoolDirectory/). Each backs one new Geography/Schools workflow row; the rows describe the tools, not any parcel.
+- **Checked and deliberately not cited:** the FEMA Flood Map Service Center returned HTTP 500 on 2026-11-16 (same failure mode as open flag F-18); the registered fema.gov/flood-maps source remains in use.
+- **New pages/sections:** `calculator.html` (private after-tax calculator and short-lease-discount pricer, SG-01B, mandated by the owner brief), the decision-gate progress board on `decisions.html`, the parcel hazard screening sheet on `hazards.html`, and the private trade-area workflow on `geography.html`. No owner figure, address, parcel identifier or tract identifier is published anywhere; all new "status" cells honestly read Open / Not performed here.
+- **Engine arithmetic verification:** `node tools/calculator_engine_test.js` — 31 checks against an independent re-implementation, all passing (per-$500 rounding, ULA tier boundary at exactly $10,900,000, county-only jurisdiction, recapture/LTCG/NIIT/CA ordering, discounted hold case with terminal sale, short-lease discount per remaining year, blank-input honesty, loss case with zero taxes).
+- **Privacy scan:** 0 findings across all published files; the calculator page stores and transmits nothing.

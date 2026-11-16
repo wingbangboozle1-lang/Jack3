@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build ONE canonical, privacy-safe GitHub Pages site from the verified register.
 
-Outputs (all deterministic, all static HTML, no JavaScript, no external assets):
+Outputs (all deterministic, all static HTML, no external assets; the two disclosed interactive pages —
+calculator.html and the master.html register filter — carry inline, network-free JavaScript only):
 
   data/canonical.json                    machine-readable evidence register
   research/VERIFICATION-2026-11-12-c56c569e.md    immutable 2026-11-12 line-by-line source verification log
@@ -460,8 +461,81 @@ def page_category(slug: str) -> str:
                 '<b>Derived</b>: arithmetic on two published observations, with the arithmetic shown. '
                 '<b>Analysis</b>: conditional reasoning, not an official observation. '
                 '<b>Unverified</b>: the value cell is empty; see <a href="review.html">Flagged for Review</a>.</p>')
+    body.append(CATEGORY_EXTRA.get(slug, ""))
     body.append('<a class="quiet" href="master.html">Back to all entries →</a>')
     return shell(slug, ''.join(body), idx[3])
+
+
+def hazard_screening_sheet() -> str:
+    rows = [
+        ["1 · Earthquake zones of required investigation", "CGS Earthquake Zones of Required Investigation application (EQ Zapp)",
+         "Whether the parcel is in a fault-rupture, liquefaction or landslide zone", "Not performed here — private step", "EQZAPP"],
+        ["2 · Regional earthquake likelihood (already published)", "USGS UCERF3 fact sheet and 2008 ShakeOut scenario",
+         "Published on this page as regional context; never a parcel loss estimate", "Published (regional only)", "UCERF3"],
+        ["3 · Wildfire hazard severity zone", "CAL FIRE Fire Hazard Severity Zone viewer",
+         "The FHSZ class and whether the parcel sits in a state or local responsibility area", "Not performed here — private step", "FHSZ"],
+        ["4 · Flood zone", "FEMA flood maps (National Flood Insurance Program)",
+         "The FEMA panel and zone letter covering the parcel", "Not performed here — private step", "FEMA"],
+        ["5 · County-level composite scores", "FEMA National Risk Index (legacy portal now redirects to the Resilience Analysis and Planning Tool)",
+         "County risk scores as context; the live county row stays blank (open flag F-18)", "Flagged — see Flagged for Review", "NRI"],
+        ["6 · Zoning, overlays and city hazard layers", "ZIMAS · City of Los Angeles planning and zoning system",
+         "Jurisdiction, zoning, overlay districts and drive-through rights", "Not performed here — private step", "ZIMAS"],
+        ["7 · Insurance availability, limits and deductibles", "Private broker quotes; NFIP context on the FEMA page",
+         "Earthquake cover, rent-loss cover, deductibles, exclusions and the named insured", "Not obtainable from official sources — owner step", "FEMA"],
+        ["8 · Structural condition and retrofit history", "Structural engineer review; city building-permit records",
+         "Age, structural system, retrofit status, deferred maintenance", "Not obtainable from official sources — owner step", "EQZAPP"],
+    ]
+    return [
+        h2("Parcel-level hazard screening sheet", "W-04 · the official checks, in order"),
+        '<p>The register below is regional by design: no official source publishes a parcel\'s zone status, '
+        'and the address must never be entered into this repository or its data. Run the steps in this order, '
+        'entering the address <b>only on the government sites themselves</b>, and record the results in your '
+        'private property file (SG-03A). The first six steps take about an hour; steps 7 and 8 are the paid '
+        'professional checks that turn a zone status into a decision input.</p>',
+        table(["Step", "Official tool or document", "What to record privately", "Status on this site", "Official source"],
+              [[f'<b>{E(a)}</b>', E(b), E(c), E(d), src(k)] for a, b, c, d, k in rows],
+              "Parcel hazard screening · official tools and private recording steps"),
+        '<p class="small">When the parcel\'s actual zone results are known, they change the insurance cost, '
+        'the re-letting case and the exit liquidity — three inputs the decision matrix depends on. Until then, '
+        'the hazard rows on this page stay regional and the parcel rows stay blank.</p>',
+    ]
+
+
+def trade_area_workflow() -> str:
+    steps = [
+        ["1", "Identify the tract(s) privately", "Census Geocoder", "The census tract GEOID (and block group) for the address",
+         "Owner's private file only", "GEOCODER"],
+        ["2", "Pull tract demographics with margins of error", "data.census.gov", "Tract-level population, income, housing and tenure tables from the ACS",
+         "Owner's private file only", "ACSDATA"],
+        ["3", "Measure the workplace economy", "LEHD OnTheMap", "Workplace-area job counts, worker composition and inflow/outflow for the selected tracts",
+         "Owner's private file only", "OTM"],
+        ["4", "Read the street evidence", "LADOT traffic counts (City GeoHub)", "The locations where LADOT collected traffic counts near the site",
+         "Owner's private file only", "LADOT"],
+        ["5", "Name the campuses", "California School Directory", "The public schools and districts serving the area",
+         "Owner's private file only", "CDEDIR"],
+        ["6", "Confirm the planning context", "ZIMAS", "Zoning, overlays, case filings and planned development around the parcel",
+         "Owner's private file only", "ZIMAS"],
+    ]
+    return [
+        h2("Private trade-area workflow", "W-01 · tract-level figures without publishing a location"),
+        '<p>City and county rows above cannot describe one corner of Los Angeles. The census tract tables '
+        'that could are deliberately not published here: a tract narrows the location to a few thousand '
+        'people, and the privacy boundary forbids narrowing. This workflow produces the same evidence for '
+        'the owner\'s private file instead — the location is used only inside the official tools, never '
+        'inside this repository, its data or its pages.</p>',
+        table(["Step", "Action", "Official tool", "What it produces", "Where the result lives", "Official source"],
+              [[f'<b>{E(a)}</b>', E(b), E(c), E(d), E(e), src(k)] for a, b, c, d, e, k in steps],
+              "Trade-area workflow · five official tools, results kept private"),
+        '<p class="small">If the owner later decides a tract table may be published (SG-07 option A), it is '
+        'added as register rows with margins of error and a dated verification record — not before. The '
+        '<a href="questions.html">information register</a> (Q-17) tracks this as an open gate.</p>',
+    ]
+
+
+CATEGORY_EXTRA = {
+    "geography": ''.join(trade_area_workflow()),
+    "hazards": ''.join(hazard_screening_sheet()),
+}
 
 
 def page_risk() -> str:
@@ -627,9 +701,15 @@ def page_suggestions() -> str:
         if sg[1] not in areas:
             areas.append(sg[1])
     parts = [
-        '<section class="callout warn"><b>Nothing on this page has been implemented.</b> These are proposals '
-        'for review. Each lists the options available, so a path can be chosen before any change is made to '
-        'the site or the repository.</section>',
+        '<section class="callout warn"><b>Two suggestions have been implemented; the rest are proposals for '
+        'review.</b> SG-01 option B — the on-page calculator that runs only in the browser — and SG-12A — the '
+        'master-register text filter — were built on 2026-11-16 because the owner brief explicitly mandates '
+        '"a private calculator that runs in the reader\'s browser" and an after-tax module. The documented '
+        'trade-off was accepted: the no-JavaScript rule is relaxed for exactly two pages (calculator.html and '
+        'the master.html filter), both inline, network-free and gate-checked; no other page carries a script. '
+        'The public parts of SG-03 (hazard screening sheet) and SG-07 (the private trade-area workflow) were '
+        'added the same day. Every other item below is still a proposal: each lists the options available, so '
+        'a path can be chosen before any further change is made to the site or the repository.</section>',
         h1("Suggestions to review", "Ways to make this site and the decision process more useful, set out so that "
            "someone can review them and choose. These are analyst judgements; the official links provide "
            "context, not agency endorsement."),
@@ -639,7 +719,7 @@ def page_suggestions() -> str:
         f'<div><strong>{len(site_proposals)}</strong><span>Technical options</span></div>'
         f'<div><strong>{len(areas)}</strong><span>Areas</span></div>'
         f'<div><strong>{len(SUGGESTION_PATHS)}</strong><span>Ways to combine them</span></div>'
-        '<div><strong>0</strong><span>Implemented</span></div></div>',
+        '<div><strong>2</strong><span>Implemented (SG-01B, SG-12A)</span></div></div>',
         h2("Choose a path", "Four ways to combine the suggestions"),
         table(["Path", "Includes", "What the owner gets", "Privacy position", "Status", "Official context source"],
               [[f'<b>{E(a)}</b>', E(b), E(c), E(d), proposed, src(k)] for a, b, c, d, k in SUGGESTION_PATHS],
@@ -677,6 +757,21 @@ def page_suggestions() -> str:
     return shell("suggestions", ''.join(parts), KICKER["suggestions"])
 
 
+def gate_board() -> str:
+    """Decision-gate progress board (W-03): the high-priority register questions as gates."""
+    rows = []
+    for qid, prio, question, _known, needed, _route, who, skey in INFO_REGISTER:
+        if prio != "High":
+            continue
+        rows.append([
+            f'<b>{E(qid)}</b> · {E(question)}', E(needed), E(who),
+            '<span class="badge blank">Open — awaiting private, verified inputs</span>', src(skey),
+        ])
+    return table(["Decision gate", "What closes it", "Who holds the answer",
+                  "Status on the public site", "Official context source"],
+                 rows, "Decision-gate progress board · every status is Open until verified privately")
+
+
 def page_decisions() -> str:
     drows = [[E(a), E(b), E(c), E(d), src(s)] for a, b, c, d, s in DECISIONS]
     body = [CALLOUT_BOUNDARY,
@@ -701,6 +796,13 @@ def page_decisions() -> str:
             'fees, and in return a sale and an extension are both still available when the documents arrive. '
             'Holding to expiry and redevelopment sit at the other end.</p>'
             '<a class="quiet" href="risk.html">Full risk register →</a></div></section>',
+            h2("Decision-gate progress board", "What closes each gate, and who holds it"),
+            '<p>The public site cannot observe private progress, so every status below is honestly '
+            '<b>Open</b>: the register holds no executed lease, no owner financials and no parcel record. '
+            'Mark progress on your own offline copy of this page; never publish the closing documents here. '
+            'Rows are drawn from the information register on the '
+            '<a href="questions.html">Questions &amp; answers</a> page.</p>',
+            gate_board(),
             h2("Recommended sequence", "Analyst judgement, not a valuation"),
             '<ol class="steps">'
             '<li><b>Now.</b> Obtain the executed lease, amendments, estoppel, rent roll, tax bill, insurance '
@@ -739,12 +841,13 @@ def page_model() -> str:
         ("Build determinism", "One generator writes every published page; CI rebuilds and asserts a byte-identical diff.", "BLS"),
         ("Link integrity", "Every internal href resolves inside the published artifact; external links are https and on the approved official host list.", "FEMA"),
         ("No calibration claim", "No model was trained, fitted or back-tested; no property-level numerical output is published.", "FRED"),
+        ("Offline-script gate", "The only scripts on the site are the private calculator's inline engine (calculator.html) and the master-register filter (master.html); build gates prove both are inline and network-free, and every other page stays script-free. The calculator's arithmetic is additionally tested against an independent re-implementation by tools/calculator_engine_test.js.", "ULA"),
     ]
     crows = [[E(a), E(b), src(k)] for a, b, k in checks]
     body = [CALLOUT_BOUNDARY,
             h1("Model & method", "The verification standard applied to every row, the arithmetic that is "
                "actually shown, and the limits of this research."),
-            h2("Verification standard", "Ten rules enforced by the build"),
+            h2("Verification standard", "Eleven rules enforced by the build"),
             table(["Rule", "What it means", "Official example"], crows, "Method rules"),
             h2("Arithmetic that is published", "Only three derived values"),
             table(["Derived value", "Arithmetic", "Official source"],
@@ -833,16 +936,22 @@ CALC_JS = """
   }
   function transferTaxes(v) {
     if (!isFinite(v)) return [NaN, NaN, NaN];
-    return [v * 0.0045, ulaTax(v), v * 0.0011];  // base city, ULA tier, county
+    // Verified per the ULA FAQ: the base tax is $2.25 (city) and $0.55 (county) for
+    // every $500 or fractional part of the conveyed value, i.e. the value is rounded
+    // UP to the next multiple of $500; the ULA tiers are percentage-based.
+    return [Math.ceil(v / 500) * 2.25, ulaTax(v), Math.ceil(v / 500) * 0.55];
   }
   function taxesOnGain(gain, depr, r) {
     // r: {ltcg, recap, ca, niit} — percentages as fractions, or NaN when not entered.
-    var deprGain = isFinite(depr) ? Math.max(0, Math.min(depr, gain)) : 0;
-    var otherGain = gain - deprGain;
+    // A negative gain (sale below basis) produces no tax on this line: every portion is
+    // clamped at zero rather than turning into a credit inside a single-asset worksheet.
+    var positive = Math.max(0, gain);
+    var deprGain = isFinite(depr) ? Math.max(0, Math.min(depr, positive)) : 0;
+    var otherGain = positive - deprGain;
     var recap = isFinite(r.recap) ? deprGain * r.recap : NaN;
     var fed = isFinite(r.ltcg) ? otherGain * r.ltcg : NaN;
-    var niit = r.niit && isFinite(gain) ? gain * 0.038 : NaN;
-    var ca = isFinite(r.ca) ? gain * r.ca : NaN;
+    var niit = r.niit && isFinite(gain) ? positive * 0.038 : NaN;
+    var ca = isFinite(r.ca) ? positive * r.ca : NaN;
     return { deprGain: deprGain, otherGain: otherGain, recap: recap, fed: fed, niit: niit, ca: ca,
              total: (isFinite(recap) ? recap : 0) + (isFinite(fed) ? fed : 0) + (isFinite(niit) ? niit : 0) + (isFinite(ca) ? ca : 0) };
   }
@@ -906,6 +1015,9 @@ CALC_JS = """
     if (s.ready && (!isFinite(pct('in-ltcg')) || !isFinite(pct('in-ca')))) {
       notes.push('Federal and California tax rates are not entered, so the after-tax figures below are incomplete.');
     }
+    if (s.ready && s.gain < 0) {
+      notes.push('The computed gain is negative (a sale below your adjusted basis), so the tax lines show zero. How a loss is actually used against your other income is a question for your CPA.');
+    }
     if (s.ready) {
       set('o-price', s.price); set('o-costs', s.costs); set('o-realised', s.amountRealised);
       set('o-base', s.tt[0]); set('o-ula', s.tt[1]); set('o-county', s.tt[2]);
@@ -938,6 +1050,74 @@ CALC_JS = """
   ids.forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener('input', run); });
   var cb = document.getElementById('in-niit');
   if (cb) cb.addEventListener('change', run);
+
+  /* Short-lease discount module (session 87ca5536): prices the remaining term from
+     REAL written quotes the owner enters. The register cannot supply quotes — cap
+     rates are published only by commercial vendors this site does not cite (Q-19) —
+     so the method, not a market number, is what this page computes. */
+  function quoteRun() {
+    var msg = document.getElementById('q-msg');
+    var out = document.getElementById('q-out');
+    if (!msg || !out) return;
+    var noi = qNum('q-noi');
+    if (!isFinite(noi) || noi <= 0) {
+      msg.textContent = 'Enter your annual net operating income first; no quote is invented here.';
+      msg.style.display = 'block';
+      out.style.display = 'none';
+      return;
+    }
+    var names = ['A', 'B', 'C'], rows = [], i, p, yr, cap;
+    for (i = 0; i < 3; i++) {
+      p = qNum('q-p' + i); yr = qNum('q-t' + i); cap = qPct('q-c' + i);
+      if (!isFinite(p) && !isFinite(cap)) continue;
+      rows.push({ name: names[i], price: p, term: yr, cap: cap });
+    }
+    if (rows.length < 2) {
+      msg.textContent = 'Enter at least two real quotes (price offered and remaining term for each).';
+      msg.style.display = 'block';
+      out.style.display = 'none';
+      return;
+    }
+    msg.style.display = 'none';
+    var lines = '';
+    for (i = 0; i < rows.length; i++) {
+      var q = rows[i];
+      var implied = isFinite(q.cap) && q.cap > 0 ? noi / q.cap : NaN;
+      var impliedCap = isFinite(q.price) && q.price > 0 ? noi / q.price * 100 : NaN;
+      lines += '<div class="calc-line"><span>Quote ' + q.name + ' — ' +
+        (isFinite(q.price) ? money(q.price) + ' offered' : 'no price entered') +
+        (isFinite(q.term) ? ', ' + q.term + ' years remaining' : '') + '</span><b>' +
+        (isFinite(implied) ? money(implied) + ' implied by the ' + (q.cap * 100).toFixed(2) + '% cap' :
+          isFinite(impliedCap) ? impliedCap.toFixed(2) + '% implied cap from the offer' : '\u2014') +
+        '</b></div>';
+    }
+    var longest = null, shortest = null;
+    for (i = 0; i < rows.length; i++) {
+      if (!isFinite(rows[i].term) || !isFinite(rows[i].price)) continue;
+      if (longest === null || rows[i].term > longest.term) longest = rows[i];
+      if (shortest === null || rows[i].term < shortest.term) shortest = rows[i];
+    }
+    var perYear = (longest !== null && shortest !== null && longest !== shortest && longest.term > shortest.term)
+      ? (longest.price - shortest.price) / (longest.term - shortest.term) : NaN;
+    lines += '<div class="calc-line strong"><span>Short-lease discount priced from your real quotes</span><b>' +
+      (isFinite(perYear) ? money(perYear) + ' per year of remaining term (' + longest.name + ' vs ' + shortest.name + ')'
+        : '\u2014 enter offers with different remaining terms') + '</b></div>';
+    out.innerHTML = lines;
+    out.style.display = 'block';
+  }
+  function qNum(x) {
+    var el = document.getElementById(x);
+    if (!el) return NaN;
+    var v = parseFloat(String(el.value).replace(/[$,\s]/g, ''));
+    return isFinite(v) ? v : NaN;
+  }
+  function qPct(x) { var v = qNum(x); return isFinite(v) ? v / 100 : NaN; }
+  var qBtn = document.getElementById('q-run');
+  if (qBtn) qBtn.addEventListener('click', quoteRun);
+  ['q-noi', 'q-p0', 'q-t0', 'q-c0', 'q-p1', 'q-t1', 'q-c1', 'q-p2', 'q-t2', 'q-c2'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('input', quoteRun);
+  });
 })();
 """
 
@@ -978,10 +1158,26 @@ def page_calculator() -> str:
             ("in-exit", "Expected sale price at exit ($)", "Owner assumption. Leave blank to compare rent stream only."),
             ("in-disc", "Discount / reinvestment rate (%)", "Applied to both cases; the verified anchor is the 10-year Treasury (Sources page)."),
         ])
+    fields_quotes = ''.join(
+        f'<div class="field"><label for="{i}">{E(lbl)}</label>'
+        f'<input id="{i}" type="text" inputmode="decimal" autocomplete="off">'
+        f'<small>{E(sm)}</small></div>'
+        for i, lbl, sm in [
+            ("q-noi", "Annual net operating income ($)", "The rent a buyer would capitalise."),
+            ("q-p0", "Quote A — price offered ($)", "From a real written offer."),
+            ("q-t0", "Quote A — remaining term (years)", "Term the buyer is pricing."),
+            ("q-c0", "Quote A — cap rate (%)", "If the broker quoted one; blank otherwise."),
+            ("q-p1", "Quote B — price offered ($)", "From a real written offer."),
+            ("q-t1", "Quote B — remaining term (years)", "Term the buyer is pricing."),
+            ("q-c1", "Quote B — cap rate (%)", "If the broker quoted one; blank otherwise."),
+            ("q-p2", "Quote C — price offered ($)", "From a real written offer."),
+            ("q-t2", "Quote C — remaining term (years)", "Term the buyer is pricing."),
+            ("q-c2", "Quote C — cap rate (%)", "If the broker quoted one; blank otherwise."),
+        ])
     body = [
         CALLOUT_BOUNDARY,
-        h1("Private calculator", "A sell-versus-hold, after-tax worksheet that runs entirely in this browser. "
-           "Type your own figures; nothing is stored, sent or published."),
+        h1("Private calculator", "A sell-versus-hold, after-tax worksheet with a short-lease-discount pricer "
+           "that runs entirely in this browser. Type your own figures; nothing is stored, sent or published."),
         '<div class="calc-note">◈ Private by design: this page contains no external resources, does not transmit, '
         'and keeps nothing — reloading the page clears every field. Only the public tax rules in the table below are '
         'pre-filled facts; every other number is yours.</div>',
@@ -1032,6 +1228,15 @@ def page_calculator() -> str:
                 ["Comparison, sale now versus hold", 'shown above', src("IRS1031", "A §1031 exchange would change this comparison; not modelled")],
             ],
             "Hold case · rent is modelled pre-tax; see the limits below"),
+        h2("Short-lease discount from your real quotes", "The remaining term, priced from written offers"),
+        '<p>A short remaining term is priced by comparing real offers for the same income at different '
+        'remaining terms. The register cannot supply quotes — cap rates are published by commercial vendors '
+        'the site does not cite (question Q-19) — so the quotes below are yours, entered from written offers; '
+        'only the method is published. Keep the offers themselves offline.</p>',
+        '<div class="calc-grid"><div class="calc-card"><h3>Your quotes</h3>' + fields_quotes + '</div></div>',
+        '<button class="calc-btn" type="button" id="q-run">Price the discount</button>',
+        '<div class="calc-warn" id="q-msg"></div>',
+        '<div class="calc-card" id="q-out" style="display:none"></div>',
         h2("What this worksheet does not do",
            "Deliberate limits; a CPA runs the authoritative version (SG-01 option C)."),
         '<ul class="ticks">'
@@ -1603,6 +1808,12 @@ body.advisor-brief .srclink{font-size:9px;white-space:normal}
 .calc-btn{font:inherit;font-weight:700;padding:10px 18px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;margin:4px 0 14px}
 .calc-btn:hover{background:#0d5f59}
 .calc-warn{background:var(--warnbg);border:1px solid var(--warn);border-radius:8px;padding:9px 13px;margin:0 0 14px;color:var(--warn);font-size:13.5px;display:none}
+.calc-line{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.calc-line:last-child{border-bottom:0}
+.calc-line span{color:var(--ink)}
+.calc-line b{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.calc-line.strong{font-weight:700}
+.calc-line.strong b{color:var(--accent)}
 .filterbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .filterbox input{font:inherit;padding:8px 11px;border:1px solid var(--line);border-radius:7px;flex:1;min-width:220px}
 .filterbox .count{font-size:13px;color:var(--mut)}

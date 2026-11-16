@@ -176,6 +176,12 @@ body.advisor-brief .srclink{font-size:9px;white-space:normal}
 .calc-btn{font:inherit;font-weight:700;padding:10px 18px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;margin:4px 0 14px}
 .calc-btn:hover{background:#0d5f59}
 .calc-warn{background:var(--warnbg);border:1px solid var(--warn);border-radius:8px;padding:9px 13px;margin:0 0 14px;color:var(--warn);font-size:13.5px;display:none}
+.calc-line{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.calc-line:last-child{border-bottom:0}
+.calc-line span{color:var(--ink)}
+.calc-line b{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.calc-line.strong{font-weight:700}
+.calc-line.strong b{color:var(--accent)}
 .filterbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .filterbox input{font:inherit;padding:8px 11px;border:1px solid var(--line);border-radius:7px;flex:1;min-width:220px}
 .filterbox .count{font-size:13px;color:var(--mut)}
