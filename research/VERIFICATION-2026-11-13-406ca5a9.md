@@ -1,12 +1,12 @@
-# Current evidence register — targeted DGS10 refresh 2026-11-13 (UTC)
+# Current evidence register — targeted DGS10 refresh 2026-11-16 (UTC)
 
-**Current register:** 255 rows (225 Verified, 3 Derived, 1 Analysis, 26 Blank) across 48 official/issuer sources. The published site contains 23 HTML pages including the flagged alias.
+**Current register:** 255 rows (225 Verified, 3 Derived, 1 Analysis, 26 Blank) across 48 official/issuer sources. The published site contains 24 HTML pages including the flagged alias.
 
 ## Verification boundary
 
 The last full independent line-by-line audit covered 240 rows and 45 sources on 2026-11-12; see [`research/VERIFICATION-2026-11-12-7b04b8ee.md`](research/VERIFICATION-2026-11-12-7b04b8ee.md) and the immutable generated [`research/VERIFICATION-2026-11-12-c56c569e.md`](research/VERIFICATION-2026-11-12-c56c569e.md). A separate 2026-11-12 pass is recorded in [`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md).
 
-For this 2026-11-13 register update, session `406ca5a9` re-read only the official FRED DGS10 series and its directly dependent rate-anchor text. A separate source-check session also sampled other official pages; its scope is recorded in [`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md). This file does not imply that other publishers or all current rows were re-opened by this session.
+For this 2026-11-16 register update, session `406ca5a9` re-read only the official FRED DGS10 series and its directly dependent rate-anchor text. A separate source-check session also sampled other official pages; its scope is recorded in [`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md). This file does not imply that other publishers or all current rows were re-opened by this session.
 All other current-row values and status dispositions are carried forward from their dated verification records; the full-register source audit remains dated 2026-11-12.
 
 ## Targeted official-source refresh
@@ -359,7 +359,7 @@ Unconfirmed values remain empty in the register and are listed on Flagged for Re
 - **FEMA flood zone for the subject parcel** — Requires an address or parcel identifier; none supplied. Official research route: https://www.fema.gov/flood-maps
 - **Fire Hazard Severity Zone for the subject parcel** — Requires the address in the official viewer. Official research route: https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones
 - **Seismic hazard zone for the subject parcel** — Requires the address in EQ Zapp. Official research route: https://www.conservation.ca.gov/cgs/geohazards/eq-zapp
-- **FEMA National Risk Index county scores (live portal)** — hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12; current portal county values remain unavailable and third-party mirrors are rejected. Official research route: https://hazards.fema.gov/nri/
+- **FEMA National Risk Index county scores (live portal)** — hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12. Re-checked 2026-11-16: the legacy portal now redirects to FEMA's Resilience Analysis and Planning Tool (RAPT), which hosts the National Risk Index v1.20 dataset update; Los Angeles County figures still not extracted, so the value stays blank. Official research route: https://hazards.fema.gov/nri/
 - **Post-catastrophe insurance availability and pricing** — No official source publishes a forward price or availability figure for this parcel. Official research route: https://www.fema.gov/flood-maps
 - **Subject property's 2030-2035 value, rent, cap rate or sale price** — No official source publishes any of these. Numerical forecasts are deliberately withheld. Official research route: https://fred.stlouisfed.org/series/DGS10
 - **Probability of tenant renewal or closure at this site** — Chain-wide guidance is not a site probability; no value published. Official research route: https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm

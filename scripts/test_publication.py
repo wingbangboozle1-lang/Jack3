@@ -122,11 +122,39 @@ class PublicationTests(unittest.TestCase):
                         self.assertIn(unquote(url.fragment), target_doc.ids)
 
     def test_no_active_collection_or_remote_resources(self):
+        # Inline, network-free JavaScript and text inputs are allowed only on the
+        # disclosed interactive pages (SG-01B calculator + SG-12A register filter).
+        js_pages = {'calculator.html', 'master.html'}
         for name, doc in self.docs.items():
             with self.subTest(page=name):
-                self.assertFalse(doc.tags & {'script', 'iframe', 'form', 'input', 'object', 'embed'})
+                allowed = {'script', 'input', 'button'} if name in js_pages else set()
+                self.assertFalse(doc.tags & ({'script', 'iframe', 'form', 'input', 'object', 'embed'} - allowed))
                 self.assertEqual(doc.events, [])
                 self.assertEqual(doc.remote_resources, [])
+
+    def test_calculator_is_inline_and_network_free(self):
+        text = (PUBLIC / 'calculator.html').read_text(encoding='utf-8')
+        low = text.lower()
+        self.assertIn('<script>', low)
+        for token in ('<script src', 'fetch(', 'xmlhttprequest', 'sendbeacon',
+                      'localstorage', 'sessionstorage', 'document.cookie', 'import(', 'http://'):
+            self.assertNotIn(token, low)
+        self.assertIn('runs entirely in this browser', low)
+
+    def test_master_register_filter_is_inline_and_local(self):
+        text = (PUBLIC / 'master.html').read_text(encoding='utf-8')
+        low = text.lower()
+        self.assertIn('id="mq"', low)
+        self.assertIn('<script>', low)
+        for token in ('<script src', 'fetch(', 'xmlhttprequest', 'sendbeacon', 'http://'):
+            self.assertNotIn(token, low)
+
+    def test_no_script_on_any_other_published_page(self):
+        for name, doc in self.docs.items():
+            if name in ('calculator.html', 'master.html'):
+                continue
+            with self.subTest(page=name):
+                self.assertNotIn('script', doc.tags)
 
     def test_all_pages_accessible_from_shared_navigation(self):
         # Every staged page must carry the shared nav that reaches every

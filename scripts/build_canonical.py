@@ -70,6 +70,8 @@ PAGES = [
      "Every available pathway, its risks, its evidence gate and the recommended sequence."),
     ("model", "Model & method", "ANALYSIS", "14 / MODEL & METHOD",
      "Verification standard, arithmetic, monitoring rules and the limits of the analysis."),
+    ("calculator", "Private calculator", "ANALYSIS", "14A / PRIVATE CALCULATOR",
+     "A sell-versus-hold after-tax worksheet that runs entirely in the reader's browser. No input leaves the page."),
     ("place", "Evidence boundary", "ANALYSIS", "15 / EVIDENCE BOUNDARY",
      "What this site deliberately does not assert about the subject property."),
     ("suggestions", "Suggestions to review", "GOVERNANCE", "16 / SUGGESTIONS",
@@ -420,6 +422,9 @@ def page_master() -> str:
     )
     parts = [CALLOUT_BOUNDARY, h1("All entries & findings",
              "Every row published on this site, grouped by category. Blank cells are unverified values, never estimates."),
+             '<div class="filterbox"><label for="mq"><b>Filter rows</b></label>'
+             '<input id="mq" type="text" autocomplete="off" placeholder="Type to filter every register row (e.g. ULA, unemployment, cap rate)">'
+             '<span class="count" id="mq-count"></span></div>',
              f'<div class="chips">{jumps}</div>']
     for i, (title, slug, desc) in enumerate(CATEGORIES):
         rows = [r for r in ROWS if r["category"] == title]
@@ -435,6 +440,7 @@ def page_master() -> str:
                  '<a href="review.html"><b>Flagged for Review</b><p>Unverified items and irregularities.</p><span>Open →</span></a>'
                  '<a href="repo-review.html"><b>Repo review</b><p>Line-by-line inherited-layer findings.</p><span>Open →</span></a>'
                  '<a href="sources.html"><b>Sources & method</b><p>Official source register.</p><span>Open →</span></a></div>')
+    parts.append('<script>' + MASTER_FILTER_JS + '</script>')
     return shell("master", ''.join(parts), KICKER["master"])
 
 
@@ -770,6 +776,301 @@ def page_model() -> str:
                   "Monitoring checklist"),
             '<a class="quiet" href="projections.html">See the 13-step projection system →</a>']
     return shell("model", ''.join(body), KICKER["model"])
+
+
+# ---------------------------------------------------------------------------
+# Private calculator (SG-01B / Path 2, adopted 2026-11-16).
+# Inline, network-free JavaScript only: no external resources, no storage, no
+# transmission.  Owner figures are typed in the browser and stay there.
+# ---------------------------------------------------------------------------
+
+CALC_RULES_ROWS = [
+    ["City base transfer tax", "0.45% of the consideration or value ($2.25 per $500 or fraction)",
+     src("ULA", "City of Los Angeles · Office of Finance — Measure ULA FAQ")],
+    ["Measure ULA surcharge", "4% above $5,400,000 and below $10,900,000; 5.5% at $10,900,000 or more (closings after 2026-06-30)",
+     src("ULA", "City of Los Angeles · Office of Finance — Measure ULA FAQ")],
+    ["County documentary transfer tax", "$0.55 per $500 (0.11%), computed on value exclusive of remaining liens",
+     src("DTT", "LA County Registrar-Recorder — Documentary Transfer Tax")],
+    ["Federal long-term capital-gain rates", "0% / 15% / 20% by taxable income; unrecaptured §1250 gain taxed at a maximum 25%",
+     src("IRS409", "IRS · Topic 409, Capital gains and losses")],
+    ["2026 federal breakpoints (for reference)", "15% rate applies up to $613,700 taxable income (MFJ; $545,500 single); 20% above",
+     src("IRSRP25", "IRS · Rev. Proc. 2025-32 §4.03 (tax year 2026)")],
+    ["Net investment income tax", "3.8% on net investment income (simplified here to the gain; the lesser-of MAGI test is not modelled)",
+     src("IRS559", "IRS · Topic 559, Net investment income tax")],
+    ["California treatment", "No preferential capital-gain rate; the whole gain is taxed as ordinary income",
+     src("FTB", "CA Franchise Tax Board — Capital gains and losses")],
+    ["Reassessment on sale (Prop 13)", "A sale re-establishes the assessed value; the general levy is 1% of the new assessed value",
+     src("ASSESSOR", "LA County Assessor — Proposition 13")],
+    ["§1031 exchange alternative", "Real-property like-kind exchange defers (does not eliminate) tax; not modelled in this worksheet",
+     src("IRS1031", "IRS — Like-kind exchanges, real estate tax tips")],
+]
+
+CALC_JS = """
+(function () {
+  'use strict';
+  var ids = ['in-price','in-basis','in-depr','in-debt','in-sellcost','in-ltcg','in-recap',
+             'in-ca','in-noi','in-esc','in-years','in-exit','in-disc'];
+  function num(id) {
+    var el = document.getElementById(id);
+    if (!el) return NaN;
+    var v = parseFloat(String(el.value).replace(/[$,\\s]/g, ''));
+    return isFinite(v) ? v : NaN;
+  }
+  function pct(id) { var v = num(id); return isFinite(v) ? v / 100 : NaN; }
+  function money(v) {
+    if (!isFinite(v)) return '—';
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(v);
+  }
+  function set(id, v) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = money(v);
+  }
+  function ulaTax(v) {
+    if (!isFinite(v)) return NaN;
+    if (v >= 10900000) return v * 0.055;
+    if (v > 5400000) return v * 0.04;
+    return 0;
+  }
+  function transferTaxes(v) {
+    if (!isFinite(v)) return [NaN, NaN, NaN];
+    return [v * 0.0045, ulaTax(v), v * 0.0011];  // base city, ULA tier, county
+  }
+  function taxesOnGain(gain, depr, r) {
+    // r: {ltcg, recap, ca, niit} — percentages as fractions, or NaN when not entered.
+    var deprGain = isFinite(depr) ? Math.max(0, Math.min(depr, gain)) : 0;
+    var otherGain = gain - deprGain;
+    var recap = isFinite(r.recap) ? deprGain * r.recap : NaN;
+    var fed = isFinite(r.ltcg) ? otherGain * r.ltcg : NaN;
+    var niit = r.niit && isFinite(gain) ? gain * 0.038 : NaN;
+    var ca = isFinite(r.ca) ? gain * r.ca : NaN;
+    return { deprGain: deprGain, otherGain: otherGain, recap: recap, fed: fed, niit: niit, ca: ca,
+             total: (isFinite(recap) ? recap : 0) + (isFinite(fed) ? fed : 0) + (isFinite(niit) ? niit : 0) + (isFinite(ca) ? ca : 0) };
+  }
+  function saleCase(p) {
+    var price = num('in-price');
+    var basis = num('in-basis');
+    var out = { ready: false };
+    if (!isFinite(price) || price <= 0 || !isFinite(basis)) return out;
+    var sellcost = pct('in-sellcost'); if (!isFinite(sellcost)) sellcost = 0;
+    var debt = num('in-debt'); if (!isFinite(debt)) debt = 0;
+    var costs = price * sellcost;
+    var amountRealised = price - costs;
+    var tt = transferTaxes(price);
+    var gain = amountRealised - basis;
+    var t = taxesOnGain(gain, num('in-depr'),
+      { ltcg: pct('in-ltcg'), recap: pct('in-recap'), ca: pct('in-ca'), niit: document.getElementById('in-niit').checked });
+    var afterTax = amountRealised - tt[0] - tt[1] - tt[2] - debt - t.total;
+    out.ready = true;
+    out.price = price; out.costs = costs; out.amountRealised = amountRealised;
+    out.tt = tt; out.debt = debt; out.gain = gain; out.t = t; out.afterTax = afterTax;
+    return out;
+  }
+  function holdCase(p) {
+    var noi = num('in-noi'); var years = num('in-years'); var exit = num('in-exit'); var d = pct('in-disc');
+    var out = { ready: false };
+    if (!isFinite(noi) || noi <= 0 || !isFinite(years) || years <= 0 || !isFinite(d)) return out;
+    var esc = pct('in-esc'); if (!isFinite(esc)) esc = 0;
+    var pvNoi = 0;
+    for (var t = 1; t <= years; t++) pvNoi += noi * Math.pow(1 + esc, t) / Math.pow(1 + d, t);
+    out.pvNoi = pvNoi;
+    if (!isFinite(exit) || exit <= 0) { out.ready = true; out.exitDone = false; out.total = pvNoi; return out; }
+    var sellcost = pct('in-sellcost'); if (!isFinite(sellcost)) sellcost = 0;
+    var basis = num('in-basis');
+    var costs = exit * sellcost;
+    var amountRealised = exit - costs;
+    var tt = transferTaxes(exit);
+    var gain = isFinite(basis) ? amountRealised - basis : NaN;
+    var taxTotal = 0;
+    if (isFinite(gain)) {
+      var t = taxesOnGain(gain, num('in-depr'),
+        { ltcg: pct('in-ltcg'), recap: pct('in-recap'), ca: pct('in-ca'), niit: document.getElementById('in-niit').checked });
+      taxTotal = t.total;
+    }
+    var debt = num('in-debt'); if (!isFinite(debt)) debt = 0;
+    var afterTaxExit = amountRealised - tt[0] - tt[1] - tt[2] - debt - taxTotal;
+    var pvExit = afterTaxExit / Math.pow(1 + d, years);
+    out.exitDone = true; out.exit = exit; out.costs = costs; out.tt = tt; out.gain = gain;
+    out.taxTotal = taxTotal; out.afterTaxExit = afterTaxExit; out.pvExit = pvExit;
+    out.total = pvNoi + pvExit;
+    out.ready = true;
+    return out;
+  }
+  function run() {
+    var warn = document.getElementById('calc-warn');
+    var verdict = document.getElementById('calc-verdict');
+    var notes = [];
+    var s = saleCase();
+    var h = holdCase();
+    if (!s.ready) notes.push('Enter at least the expected sale price and your adjusted basis to compute the sale-now case.');
+    if (!h.ready) notes.push('Enter the annual net rent, years held and a discount rate to compute the hold case.');
+    if (s.ready && (!isFinite(pct('in-ltcg')) || !isFinite(pct('in-ca')))) {
+      notes.push('Federal and California tax rates are not entered, so the after-tax figures below are incomplete.');
+    }
+    if (s.ready) {
+      set('o-price', s.price); set('o-costs', s.costs); set('o-realised', s.amountRealised);
+      set('o-base', s.tt[0]); set('o-ula', s.tt[1]); set('o-county', s.tt[2]);
+      set('o-debt', s.debt); set('o-gain', s.gain);
+      set('o-deprgain', s.t.deprGain); set('o-recap', s.t.recap); set('o-fed', s.t.fed);
+      set('o-niit', s.t.niit); set('o-ca', s.t.ca);
+      set('o-aftertax', s.afterTax);
+    }
+    if (h.ready) {
+      set('o-holdnoi', h.pvNoi);
+      if (h.exitDone) { set('o-exittax', h.tt[0] + h.tt[1] + h.tt[2]); set('o-exitaftertax', h.afterTaxExit); set('o-exitpv', h.pvExit); }
+      else { ['o-exittax','o-exitaftertax','o-exitpv'].forEach(function (x) { set(x, NaN); }); }
+      set('o-holdtotal', h.total);
+    }
+    if (s.ready && h.ready) {
+      var diff = s.afterTax - h.total;
+      var dir = diff >= 0 ? 'Selling now nets more than holding' : 'Holding nets more than selling now';
+      verdict.textContent = dir + ' by ' + money(Math.abs(diff)) + ' in present-value terms under THESE owner-supplied inputs. This is arithmetic, not a recommendation.';
+      verdict.style.display = 'block';
+    } else {
+      verdict.style.display = 'none';
+    }
+    if (warn) {
+      if (notes.length) { warn.innerHTML = ''; notes.forEach(function (n) { var d = document.createElement('div'); d.textContent = n; warn.appendChild(d); }); warn.style.display = 'block'; }
+      else { warn.style.display = 'none'; }
+    }
+  }
+  var btn = document.getElementById('calc-run');
+  if (btn) btn.addEventListener('click', run);
+  ids.forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener('input', run); });
+  var cb = document.getElementById('in-niit');
+  if (cb) cb.addEventListener('change', run);
+})();
+"""
+
+
+def page_calculator() -> str:
+    rules = table(
+        ["Rule", "What the official source states", "Source"],
+        CALC_RULES_ROWS,
+        "Verified public rules the worksheet applies (owner figures are not part of this table)")
+    fields_sale = ''.join(
+        f'<div class="field"><label for="{i}">{E(lbl)}</label>'
+        f'<input id="{i}" type="text" inputmode="decimal" autocomplete="off">'
+        f'<small>{E(sm)}</small></div>'
+        for i, lbl, sm in [
+            ("in-price", "Expected sale price today ($)", "Owner assumption. Transfer taxes below are computed from it."),
+            ("in-basis", "Adjusted basis ($)", "Original cost + capital improvements − depreciation deducted. From Owner A's private records; never published."),
+            ("in-depr", "Depreciation deducted to date ($, federal)", "Drives the unrecaptured §1250 portion of the gain."),
+            ("in-debt", "Loan balance to pay off at closing ($)", "Private to Owner A."),
+            ("in-sellcost", "Brokerage + closing costs (% of price)", "Owner-supplied; the site publishes no market commission figure."),
+        ])
+    fields_tax = ''.join(
+        f'<div class="field"><label for="{i}">{E(lbl)}</label>'
+        f'<input id="{i}" type="text" inputmode="decimal" autocomplete="off">'
+        f'<small>{E(sm)}</small></div>'
+        for i, lbl, sm in [
+            ("in-ltcg", "Federal long-term capital-gain rate (%)", "Owner's marginal rate; 15% up to $613,700 taxable income (MFJ, 2026), 20% above."),
+            ("in-recap", "Rate on depreciation recapture (%)", "Federal unrecaptured §1250 rate; 25% maximum."),
+            ("in-ca", "California marginal rate (%)", "Applied to the whole gain; California has no preferential rate."),
+        ])
+    fields_hold = ''.join(
+        f'<div class="field"><label for="{i}">{E(lbl)}</label>'
+        f'<input id="{i}" type="text" inputmode="decimal" autocomplete="off">'
+        f'<small>{E(sm)}</small></div>'
+        for i, lbl, sm in [
+            ("in-noi", "Annual net rent to owner today ($)", "Owner assumption; the site publishes no rent for Asset A."),
+            ("in-esc", "Annual rent escalation (%)", "Owner assumption from the executed lease (private)."),
+            ("in-years", "Years held from today", "The lease runs to 2030-2035; the expiry year is unverified."),
+            ("in-exit", "Expected sale price at exit ($)", "Owner assumption. Leave blank to compare rent stream only."),
+            ("in-disc", "Discount / reinvestment rate (%)", "Applied to both cases; the verified anchor is the 10-year Treasury (Sources page)."),
+        ])
+    body = [
+        CALLOUT_BOUNDARY,
+        h1("Private calculator", "A sell-versus-hold, after-tax worksheet that runs entirely in this browser. "
+           "Type your own figures; nothing is stored, sent or published."),
+        '<div class="calc-note">◈ Private by design: this page contains no external resources, does not transmit, '
+        'and keeps nothing — reloading the page clears every field. Only the public tax rules in the table below are '
+        'pre-filled facts; every other number is yours.</div>',
+        h2("Verified public rules the worksheet applies",
+           "The only pre-filled facts; each carries its official source."),
+        rules,
+        h2("Your inputs (stay in this browser)", "Blank fields are treated as zero; the cautions list anything missing."),
+        '<div class="calc-grid">'
+        f'<div class="calc-card"><h3>Sale now</h3>{fields_sale}</div>'
+        f'<div class="calc-card"><h3>Tax rates (yours)</h3>{fields_tax}'
+        '<div class="field"><label for="in-niit"><input id="in-niit" type="checkbox" style="width:auto;margin-right:6px">'
+        'Apply the 3.8% net investment income tax to the gain</label>'
+        '<small>Simplified: the lesser-of MAGI test is not modelled.</small></div></div>'
+        f'<div class="calc-card"><h3>Hold and sell later</h3>{fields_hold}</div>'
+        '</div>',
+        '<button class="calc-btn" type="button" id="calc-run">Compute comparison</button>',
+        '<div class="calc-warn" id="calc-warn"></div>',
+        '<div class="callout" id="calc-verdict" style="display:none"></div>',
+        h2("Sale-now result", "Computed locally from your inputs and the verified rules above."),
+        table(
+            ["Line", "Amount", "Basis for the line"],
+            [
+                ["Gross price", '<b id="o-price">—</b>', src("ULA", "Tax is computed on consideration or value")],
+                ["Selling costs", '<b id="o-costs">—</b>', src("IRS409", "Selling expenses reduce the amount realised")],
+                ["Amount realised", '<b id="o-realised">—</b>', src("IRS409", "IRS · Topic 409")],
+                ["City base transfer tax (0.45%)", '<b id="o-base">—</b>', src("ULA", "City of Los Angeles")],
+                ["Measure ULA surcharge (4% / 5.5%)", '<b id="o-ula">—</b>', src("ULA", "City of Los Angeles")],
+                ["County transfer tax (0.11%)", '<b id="o-county">—</b>', src("DTT", "LA County Registrar-Recorder")],
+                ["Loan payoff (owner input)", '<b id="o-debt">—</b>', src("DTT", "Value exclusive of remaining liens")],
+                ["Capital gain before depreciation split", '<b id="o-gain">—</b>', src("IRS409", "IRS · Topic 409")],
+                ["Portion from depreciation (§1250)", '<b id="o-deprgain">—</b>', src("IRS409", "Taxed at a maximum 25%")],
+                ["Tax on §1250 portion (your rate)", '<b id="o-recap">—</b>', src("IRS409", "IRS · Topic 409")],
+                ["Federal tax on remaining gain (your rate)", '<b id="o-fed">—</b>', src("IRSRP25", "2026 brackets in Rev. Proc. 2025-32")],
+                ["NIIT 3.8% (if selected)", '<b id="o-niit">—</b>', src("IRS559", "IRS · Topic 559")],
+                ["California tax (your rate)", '<b id="o-ca">—</b>', src("FTB", "No preferential state rate")],
+                ["After-tax proceeds from a sale today", '<b id="o-aftertax">—</b>', src("IRS409", "After debt payoff and all taxes above")],
+            ],
+            "Sale-now case · every line is local arithmetic on your inputs"),
+        h2("Hold case (present value)", "After-tax rent stream plus an optional after-tax exit, discounted at your rate."),
+        table(
+            ["Line", "Amount", "Basis for the line"],
+            [
+                ["PV of the rent stream over the hold", '<b id="o-holdnoi">—</b>', src("FRED", "Discount-rate anchor: 10-year Treasury")],
+                ["Transfer taxes at exit (all three)", '<b id="o-exittax">—</b>', src("ULA", "Same tier rules at the exit price")],
+                ["After-tax exit proceeds", '<b id="o-exitaftertax">—</b>', src("IRS409", "Same gain/tax mechanics at exit")],
+                ["PV of after-tax exit proceeds", '<b id="o-exitpv">—</b>', src("FRED", "Discounted at your rate")],
+                ["Hold-case total (present value)", '<b id="o-holdtotal">—</b>', src("FRED", "Rent stream + exit, same discount rate")],
+                ["Comparison, sale now versus hold", 'shown above', src("IRS1031", "A §1031 exchange would change this comparison; not modelled")],
+            ],
+            "Hold case · rent is modelled pre-tax; see the limits below"),
+        h2("What this worksheet does not do",
+           "Deliberate limits; a CPA runs the authoritative version (SG-01 option C)."),
+        '<ul class="ticks">'
+        '<li>It models neither income tax on rents during the hold, nor depreciation going forward, nor cost segregation.</li>'
+        '<li>It does not model §1031 deferral, installment sales, opportunity zones, or an entity-level sale.</li>'
+        '<li>NIIT is applied to the whole gain when selected; the statutory lesser-of MAGI test is not modelled.</li>'
+        '<li>California taxes the whole gain as ordinary income; no separate state recapture is computed.</li>'
+        '<li>The hold case assumes the same adjusted basis at exit and no capital expenditure during the hold.</li>'
+        '<li>Every rate and price is owner-supplied except the verified public rules table above. '
+        'This page is arithmetic, not tax advice.</li>'
+        '</ul>',
+        '<p class="small">Method and verification standard: <a href="model.html">Model &amp; method</a> · '
+        'What stays blank and why: <a href="review.html">Flagged for Review</a> · '
+        'Questions to answer first: <a href="questions.html">Questions &amp; answers</a>.</p>',
+        '<script>' + CALC_JS + '</script>',
+    ]
+    return shell("calculator", ''.join(body), KICKER["calculator"])
+
+
+MASTER_FILTER_JS = """
+(function () {
+  'use strict';
+  var q = document.getElementById('mq');
+  var count = document.getElementById('mq-count');
+  if (!q || !count) return;
+  var rows = [].slice.call(document.querySelectorAll('.table-wrap table tbody tr'));
+  function upd() {
+    var t = q.value.toLowerCase();
+    var n = 0;
+    rows.forEach(function (tr) {
+      var hit = !t || tr.textContent.toLowerCase().indexOf(t) >= 0;
+      if (hit) { n += 1; tr.className = ''; } else { tr.className = 'hide'; }
+    });
+    count.textContent = n + ' of ' + rows.length + ' rows shown';
+  }
+  q.addEventListener('input', upd);
+  upd();
+})();
+"""
 
 
 def page_place() -> str:
@@ -1289,6 +1590,23 @@ body.advisor-brief .srclink{font-size:9px;white-space:normal}
  body.advisor-brief a{color:#111;text-decoration:underline}
  body.advisor-brief .table-wrap{overflow:visible;border-color:#999;margin-bottom:5px}
 }
+/* Private calculator (inline, network-free JS) and master-register text filter. */
+.calc-note{background:var(--okbg);border:1px solid var(--ok);border-radius:8px;padding:10px 14px;margin:0 0 16px;color:var(--ok);font-weight:600}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin:0 0 16px}
+.calc-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.calc-card h3{margin:0 0 10px;font-size:15px}
+.field{display:flex;flex-direction:column;gap:3px;margin-bottom:9px}
+.field label{font-size:12.5px;color:var(--mut);font-weight:600}
+.field small{font-size:11.5px;color:var(--mut);line-height:1.35}
+.field input{font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);max-width:230px}
+.field input:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+.calc-btn{font:inherit;font-weight:700;padding:10px 18px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;margin:4px 0 14px}
+.calc-btn:hover{background:#0d5f59}
+.calc-warn{background:var(--warnbg);border:1px solid var(--warn);border-radius:8px;padding:9px 13px;margin:0 0 14px;color:var(--warn);font-size:13.5px;display:none}
+.filterbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.filterbox input{font:inherit;padding:8px 11px;border:1px solid var(--line);border-radius:7px;flex:1;min-width:220px}
+.filterbox .count{font-size:13px;color:var(--mut)}
+tr.hide{display:none}
 """
 
 
@@ -1314,6 +1632,7 @@ def main() -> None:
         "suggestions.html": page_suggestions(),
         "decisions.html": page_decisions(),
         "model.html": page_model(),
+        "calculator.html": page_calculator(),
         "place.html": page_place(),
     }
     for _title, slug, _desc in CATEGORIES:

@@ -13,10 +13,21 @@ publisher states that exact observation.
 ``Blank``   = no official value could be confirmed; the value cell is empty and the
               row is published on the Flagged for Review page.
 
+Fresh re-verification pass (2026-11-16, session 7f1087ce): every dynamic official
+source (Census QuickFacts, BLS LA summary, FRED DGS10, IRS/FTB/BOE/LA City/County
+tax pages, DIR wage pages, CAL FIRE incident and FHSZ pages, CGS EQ Zapp, FEMA
+flood-map and NRI pages, CDE profile/dashboard/end-of-year pages, SEC filings and
+issuer releases, CA DOF estimates) was re-read live; every cited value matched this
+register exactly and no value was changed. Static archived publications last fully
+verified 2026-11-12 (see FULL_AUDIT_DATE) were not altered by their publishers.
+The only content change in this pass is the refreshed FEMA NRI portal status note
+(row "FEMA National Risk Index county scores" and flag F-18): the legacy portal now
+redirects to the Resilience Analysis and Planning Tool with a v1.20 dataset update.
+
 This module is data only.  scripts/build_canonical.py renders it.
 """
 
-SNAPSHOT = "2026-11-13"
+SNAPSHOT = "2026-11-16"
 FULL_AUDIT_DATE = "2026-11-12"
 
 # key -> (short label, publisher, official URL, kind)
@@ -705,7 +716,7 @@ ROWS = [
     R("Hazards", "Seismic hazard zone for the subject parcel", "", "Asset A",
       "Requires the address in EQ Zapp.", "Blank", "EQZAPP"),
     R("Hazards", "FEMA National Risk Index county scores (live portal)", "", "Los Angeles County · live portal",
-      "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12; current portal county values remain unavailable and third-party mirrors are rejected.", "Blank", "NRI"),
+      "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12. Re-checked 2026-11-16: the legacy portal now redirects to FEMA's Resilience Analysis and Planning Tool (RAPT), which hosts the National Risk Index v1.20 dataset update; Los Angeles County figures still not extracted, so the value stays blank.", "Blank", "NRI"),
     R("Hazards", "FEMA National Risk Index · Los Angeles County (archived v1.19.0)",
       "#1 nationally; EAL Value $3.9B; Risk Value $5.3B (Community Risk Factor 1.36)",
       "Los Angeles County · March 2023 (NRI v1.19.0 PrepToolkit briefing)",
@@ -900,9 +911,9 @@ FLAGS = [
     ("F-17", "Medium", "BEA statistic mislabelled in some inherited layers",
      "$818.5 billion is total personal income in Los Angeles County for 2024 (current dollars), not metro GDP. BEA discontinued metro-area statistics with this release.",
      "Use county-level BEA series and label the measure exactly.", "BEA"),
-    ("F-18", "Low", "FEMA National Risk Index live portal HTTP 500; archived v1.19.0 published",
-     "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12, so current portal scores remain blank. Archived FEMA PrepToolkit v1.19.0 (March 2023) county figures ($3.9B EAL, $5.3B Risk Value, #1 nationally) are published with vintage caveats.",
-     "Re-check hazards.fema.gov/nri/ once service recovers if post-2023 county NRI values are needed.", "NRIDECK"),
+    ("F-18", "Low", "FEMA National Risk Index live county scores still unpublished; legacy portal redirects to RAPT",
+     "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12. Re-checked 2026-11-16: the legacy portal now redirects to FEMA's Resilience Analysis and Planning Tool (RAPT), which hosts the National Risk Index v1.20 dataset update. Archived FEMA PrepToolkit v1.19.0 (March 2023) county figures ($3.9B EAL, $5.3B Risk Value, #1 nationally) are published with vintage caveats.",
+     "Extract the current Los Angeles County scores from the official RAPT app or its v1.20 data download if post-2023 values are needed; the row stays blank until then.", "NRIDECK"),
     ("F-19", "High", "Inherited companion layers carry unsupported numbers",
      "Several repository-only dashboards publish scenario weights, cap rates and pathway rankings that their cited official sources do not establish.",
      "Those directories are excluded from the live site; see Repo review for the file list.", "SECQ3"),
@@ -1202,7 +1213,7 @@ SUGGESTIONS = [
     ("SG-01", "Decision tool", "After-tax net-proceeds worksheet",
      "Turns the verified tax rules into one number the owner can compare with the hold case.",
      "A: an offline spreadsheet template with empty input cells, kept out of the public site. B: an on-page calculator that runs only in the browser. C: leave it to the CPA.",
-     "A keeps private figures off the web and is about a day of work. B needs JavaScript, which the site currently forbids.", "ULA"),
+     "CHOSEN 2026-11-16 (session 7f1087ce): option B is implemented as calculator.html — inline, network-free JavaScript; no input is stored or transmitted; the no-script rule was relaxed only for that page and logged in COORDINATION.md.", "ULA"),
     ("SG-02", "Decision tool", "Lease abstract checklist",
      "Answers Q-01 to Q-03 in one pass and stops the decision resting on the 'NNN' label.",
      "A: a printable blank checklist page. B: an offline template only. C: none.",
@@ -1246,7 +1257,7 @@ SUGGESTIONS = [
     ("SG-12", "Layout", "Search and filter on the master register",
      "More than 220 rows are hard to scan on a phone.",
      "A: a text filter, which needs JavaScript. B: more anchors and per-category jump links, no script. C: leave as is.",
-     "A relaxes the no-script rule; B does not.", "CITY"),
+     "ADOPTED 2026-11-16: option A is implemented as a small inline text filter on master.html (runs locally; no external resources).", "CITY"),
     ("SG-13", "Layout", "One-page printable brief for advisers",
      "Gives a broker, CPA or attorney the recommendation, the gates and the open questions on a single sheet.",
      "A: a print stylesheet for the executive summary. B: a separate brief page. C: none.",
@@ -1274,7 +1285,7 @@ SUGGESTION_PATHS = [
     ("Path 2 · Interactive site",
      "Path 1 plus SG-01B and SG-12A",
      "Calculator and table filter on the site itself.",
-     "Inputs stay in the browser, but the no-JavaScript rule and its checks must be relaxed.", "ULA"),
+     "ADOPTED 2026-11-16 for SG-01B and SG-12A: the owner's standing brief requires a private calculator that runs in the reader's browser. Inputs stay in the browser; the no-script rule was relaxed only for inline, network-free JavaScript on calculator.html and the master-register filter, with all external-resource, tracking and privacy rules unchanged.", "ULA"),
     ("Path 3 · Neighbourhood depth",
      "Path 1 plus SG-07A, SG-08 and SG-09",
      "Tract-level trend evidence alongside the regional figures.",
