@@ -4,8 +4,7 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 
 **Live site:** https://wingbangboozle1-lang.github.io/Jack3/
 
-> **Current canonical site snapshot (2026-11-13; targeted DGS10 refresh only).** This repository publishes **one** consolidated site, generated
-> from a single canonical register. The full row-by-row audit remains dated 2026-11-12; the 2026-11-13 register records the 4.98% (Nov 10) DGS10 observation, retains 4.88% (Nov 9) as history, and uses 5.10% (Nov 12) as the latest dated reference—without implying a full-register re-audit. Earlier companion layers below are historical and excluded from GitHub Pages.
+> **Canonical evidence snapshot: 2026-11-13 · README updated 2026-11-16.** The current register contains 255 evidence rows across 48 official or issuer sources (225 Verified, 3 Derived, 1 Analysis, 26 Blank). The full independent line-by-line pass covered 240 rows and 45 sources on 2026-11-12; later additions and updates were checked only within their documented scopes, not as a fresh full-register audit. The 2026-11-13 DGS10 refresh records 4.88% (Nov 9), 4.98% (Nov 10), and 5.10% (Nov 12). Earlier companion layers below are historical and excluded from GitHub Pages.
 
 ## Start here
 
@@ -13,7 +12,8 @@ Privacy-safe, source-linked research for an anonymized single-tenant Jack in the
 - [Independent 240-row / 45-source verification (2026-11-12)](research/VERIFICATION-2026-11-12-7b04b8ee.md) — independent line-by-line official-source verification of all 240 canonical rows and 45 sources, paired with [`research/REPO-REVIEW-2026-11-12-7b04b8ee.md`](research/REPO-REVIEW-2026-11-12-7b04b8ee.md).
 - [Dated row-by-row register (2026-11-12)](research/VERIFICATION-2026-11-12-c56c569e.md) — immutable record of the 240-row, 45-source verification pass, with pages read in part and items not confirmed.
 - [Targeted freshness audit (2026-11-13)](research/AUDIT-2026-11-13-02fb510c.md) — official FRED DGS10 refresh to 5.10% (2026-11-12 observation), with sampled other-source checks documented separately; no claim of a full re-verification.
-- [Current generated register (2026-11-13)](research/VERIFICATION-2026-11-13-406ca5a9.md) — 242 current rows and 45 official/issuer sources; only this session's DGS10 observations and dependent anchor text are refreshed, with the 2026-11-12 full audit preserved.
+- [Current generated register (snapshot 2026-11-13)](research/VERIFICATION-2026-11-13-406ca5a9.md) — current row/source counts and the explicit boundary: the 2026-11-12 full audit is preserved; later changes were scoped.
+- [Session 0261166a audit (2026-11-16)](research/VERIFICATION-2026-11-16-0261166a.md) — calculator privacy contract, repository checks, and the no-fresh-source-re-fetch limitation.
 - [Line-by-line verification (2026-11-12)](research/VERIFICATION-2026-11-12-f0b78eb6.md) — a separate hand-written pass of the same date, made when the register held 230 rows and 40 sources, plus closed minimum-wage, 10-K, 2026 LTCG, and FEMA NRI updates (extending [2026-11-11](research/VERIFICATION-2026-11-11-d644184d.md) and [2026-11-12 targeted review](research/VERIFICATION-2026-11-12-ec869c7c.md)).
 - [Verification summary](VERIFY.md) — build checks, corrections and privacy boundary.
 - [Repository review](REPO_REVIEW.md) — irregularities and publication decisions.
@@ -30,26 +30,25 @@ Verify lease dates and notice rights privately now; prepare sale and renewal tra
 | [Live dashboard](https://wingbangboozle1-lang.github.io/Jack3/) | Clean landing page, eight evidence categories, analysis pages and governance pages |
 | [Executive summary](executive-summary.html) | Recommendation, decision matrix, six driving findings, risk balance, and what stays blank |
 | [Printable advisor brief](advisor-brief.html) | One-page print layout, decision gates, privacy boundary, and official-source context |
-| [Suggestions to review](suggestions.html) | Proposed workflow, site, data and model improvements with trade-offs before implementation |
+| [Private browser calculator](private-calculator.html) | Self-contained client-side comparison; blank by default, no input transmission or app-side storage, tax amounts supplied by advisers |
+| [Suggestions to review](suggestions.html) | Calculator and one-page advisor brief implemented; tenant series partially complete; remaining proposals are shown with trade-offs |
 | [Questions & answers](questions.html) | 20-question information register (what is known, what is not, how to find out, who holds it; 9 gate the decision), an order of work, and 16 current answers |
 | [All entries & findings](master.html) | Every published row in one source-linked table |
 | [Flagged for Review](review.html) | Every unverified value, conflict, closed item and irregularity, published for manual review |
 | [Repo review](repo-review.html) | Line-by-line findings on the inherited repository layers |
 | [Line-by-line verification record](research/VERIFICATION-2026-11-12-c56c569e.md) | Immutable record of the 240-row 2026-11-12 re-read; a second hand-written record is [`VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md); the scoped 2026-11-13 rate refresh is [`AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md) |
-| [Sources & method](sources.html) | 45 official/issuer sources, verification standard and privacy boundary |
+| [Sources & method](sources.html) | 48 official/issuer sources, verification standard and privacy boundary |
 
 ## Build and verify
 
-23 static HTML pages (22 shared-navigation pages plus the `flagged.html` alias) plus `assets/style.css`, for a 24-file Pages artifact. Every table body row carries an official source link; every
-unconfirmed value is an **empty cell** and appears on *Flagged for Review*. No JavaScript, forms, analytics,
-third-party assets, owner identifiers, addresses or parcel numbers.
+24 static HTML pages (23 shared-navigation pages plus the `flagged.html` alias) plus `assets/style.css`, for a 25-file Pages artifact. Every table body row carries an official source link; every unconfirmed evidence value is an **empty cell** and appears on *Flagged for Review*. One self-contained inline script appears only in the private calculator; its page CSP blocks network connections, and the script uses no network or browser-storage APIs. There are no forms, analytics, trackers, third-party assets, owner identifiers, addresses or parcel numbers.
 
 | Page | Path | Contents |
 |---|---|---|
 | Overview / dashboard | `/` | Conditional recommendation, six verified anchors, risk balance, navigation |
 | Executive summary | `/executive-summary.html` | Decision, findings, matrix, evidence gates, what stays blank |
 | Printable advisor brief | `/advisor-brief.html` | One-page landscape print view with source-linked evidence and private-work gates |
-| All entries & findings | `/master.html` | 242-row master register, grouped by category |
+| All entries & findings | `/master.html` | 255-row master register, grouped by category |
 | Geography | `/geography.html` | City / county scale; every parcel-level gap flagged |
 | People & income | `/demographics.html` | Population, households, income, poverty, education, spending capacity |
 | Economy & jobs | `/economy.html` | Employment, wages, prices, output, rates, official long-range forecasts |
@@ -61,13 +60,14 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 | Risk register | `/risk.html` | 24 business-as-usual and black-swan risks, plus the risk of each of the eight decisions, with context sources |
 | Projection system | `/projections.html` | 13-step reproducible framework and the outputs deliberately withheld |
 | Questions & answers | `/questions.html` | 20-question information register, order of work, and 16 current answers |
-| Suggestions to review | `/suggestions.html` | 4 paths to choose from, 7 process proposals, 6 technical options and 16 site suggestions with lettered options; nothing implemented |
+| Private browser calculator | `/private-calculator.html` | Self-contained, blank-by-default arithmetic using CPA/escrow-supplied taxes and costs; compares sale-now net with hold and renewal present values, but does not calculate tax liability |
+| Suggestions to review | `/suggestions.html` | 4 paths, 7 process proposals, 6 technical options and 16 site suggestions; two are implemented, the tenant series is partial, and the rest await review |
 | Decision matrix | `/decisions.html` | Eight pathways, gates, the business-as-usual and black-swan risk of each, and the recommended sequence |
 | Model & method | `/model.html` | Verification standard, published arithmetic, monitoring checklist |
 | Evidence boundary | `/place.html` | What the site deliberately does not assert about Asset A |
 | Flagged for Review | `/review.html` (alias `/flagged.html`) | Unverified values, conflicts, closed checks and irregularities |
 | Repo review | `/repo-review.html` | Line-by-line inherited-layer findings |
-| Sources & method | `/sources.html` | 45 official/issuer sources, verification standard, privacy boundary |
+| Sources & method | `/sources.html` | 48 official/issuer sources, verification standard, privacy boundary |
 
 ## Build and verification
 
@@ -75,6 +75,8 @@ third-party assets, owner identifiers, addresses or parcel numbers.
 python3 scripts/build_canonical.py   # regenerate published pages + data/canonical.json; dated verification logs remain immutable
 python3 scripts/validate.py          # row provenance, official hosts, blank values, links, PII, determinism
 python3 scripts/stage_pages.py       # build the exact Pages artifact and check every row / link
+python3 -m unittest discover -s scripts -p 'test_*.py'
+node --check scripts/private_calculator.js && node scripts/test_private_calculator.js
 ```
 
 `scripts/build.py` is a compatibility alias for the canonical generator. `.github/workflows/validate.yml` runs
@@ -162,4 +164,4 @@ The Pages artifact contains only the curated root dashboard and its stylesheet. 
 - Every table row links to a government or issuer source.
 - Unverified values are blank and flagged; values are never inferred to fill a gap.
 - Official planning forecasts are identified as such. Break-even cap rates and growth rates are disclosed assumptions, not verified market facts. No sale price, renewal probability, disaster probability or calibrated 2030–2035 forecast is invented.
-- The site has no forms, trackers, external scripts or third-party embeds.
+- The only script is the inline browser calculator; it has no network or storage APIs, is embedded in a self-contained page, and is covered by a restrictive CSP and tests. No entered amounts are submitted or saved; the hosted page is public and its normal access logs may contain visit metadata.

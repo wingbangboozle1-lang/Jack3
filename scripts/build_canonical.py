@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Build ONE canonical, privacy-safe GitHub Pages site from the verified register.
 
-Outputs (all deterministic, all static HTML, no JavaScript, no external assets):
+Outputs are deterministic static HTML with no third-party assets. The sole browser
+script is the self-contained private calculator: it is embedded inline, runs only
+on the reader's device, and is guarded by a restrictive page-level CSP plus tests.
 
   data/canonical.json                    machine-readable evidence register
   research/VERIFICATION-2026-11-12-c56c569e.md    immutable 2026-11-12 line-by-line source verification log
@@ -33,6 +35,7 @@ from data.canonical_rows import (  # noqa: E402
 )
 
 E = html.escape
+PRIVATE_CALCULATOR_JS = (ROOT / "scripts/private_calculator.js").read_text(encoding="utf-8")
 
 # (id, title, group, kicker, description)
 PAGES = [
@@ -68,12 +71,14 @@ PAGES = [
      "What must be answered before deciding: what is known, what is not, and how to find out."),
     ("decisions", "Decision matrix", "ANALYSIS", "13 / DECISION MATRIX",
      "Every available pathway, its risks, its evidence gate and the recommended sequence."),
+    ("private-calculator", "Private calculator", "ANALYSIS", "13A / PRIVATE CALCULATOR",
+     "A blank, self-contained browser calculator for adviser-verified after-tax sale, hold and renewal inputs."),
     ("model", "Model & method", "ANALYSIS", "14 / MODEL & METHOD",
      "Verification standard, arithmetic, monitoring rules and the limits of the analysis."),
     ("place", "Evidence boundary", "ANALYSIS", "15 / EVIDENCE BOUNDARY",
      "What this site deliberately does not assert about the subject property."),
     ("suggestions", "Suggestions to review", "GOVERNANCE", "16 / SUGGESTIONS",
-     "Proposed improvements to this site, with options to choose from. Nothing here has been built."),
+     "The requested private calculator is implemented; remaining site and process improvements are still proposals."),
     ("review", "Flagged for Review", "GOVERNANCE", "17 / FLAGGED FOR REVIEW",
      "Every unverified value, conflict and irregularity, published for manual review after the site is live."),
     ("repo-review", "Repo review", "GOVERNANCE", "18 / REPO REVIEW",
@@ -128,7 +133,7 @@ def evidence_table(rows: list[dict], caption: str) -> str:
                  body, caption)
 
 
-def shell(page_id: str, content: str, kicker: str = "", description: str = "") -> str:
+def shell(page_id: str, content: str, kicker: str = "", description: str = "", self_contained: bool = False) -> str:
     groups: list[tuple[str, list[tuple[str, str]]]] = []
     for pid, title, group, _k, _d in PAGES:
         if not groups or groups[-1][0] != group:
@@ -144,6 +149,15 @@ def shell(page_id: str, content: str, kicker: str = "", description: str = "") -
     desc = description or PAGE_TITLES[page_id]
     title = PAGE_TITLES[page_id]
     body_class = ' class="advisor-brief"' if page_id == "advisor-brief" else ""
+    if self_contained:
+        resource_policy = ("<meta http-equiv=\"Content-Security-Policy\" "
+                           "content=\"default-src 'none'; style-src 'unsafe-inline'; "
+                           "script-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; "
+                           "font-src 'none'; object-src 'none'; form-action 'none'; base-uri 'none'\">")
+        style_markup = f"<style>{CSS}</style>"
+    else:
+        resource_policy = ""
+        style_markup = '<link rel="stylesheet" href="assets/style.css">'
     # Empty layout disables GitHub Pages' default theme wrapper and keeps the
     # published bytes identical to this generator's output after Jekyll strips
     # the front matter.  scripts/stage_pages.py strips the same front matter.
@@ -157,7 +171,8 @@ layout: null
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="{E(desc)}">
 <title>{E(title)} · Asset A decision desk</title>
-<link rel="stylesheet" href="assets/style.css">
+{resource_policy}
+{style_markup}
 </head>
 <body{body_class}>
 <a class="skip" href="#main">Skip to content</a>
@@ -173,7 +188,7 @@ layout: null
     {f'<div class="eyebrow">{E(kicker)}</div>' if kicker else ''}
     {content}
   </main>
-  <footer>Independent decision-support research, not an appraisal, legal opinion or personalised financial advice.<br>Static evidence snapshot · No forms, tracking, third-party assets or private documents · <a href="sources.html">Methodology &amp; limitations</a> · <a href="review.html">Flagged for Review</a></footer>
+  <footer>Independent decision-support research, not an appraisal, legal opinion or personalised financial advice.<br>Static evidence snapshot · No analytics, tracking or third-party embeds · Calculator inputs are not transmitted or saved by this page · <a href="sources.html">Methodology &amp; limitations</a> · <a href="review.html">Flagged for Review</a></footer>
 </div>
 </div>
 </body>
@@ -223,10 +238,11 @@ def page_index() -> str:
             ("advisor-brief", "One-page print summary for confidential conversations with your advisors."),
             ("risk", "Business-as-usual and black-swan risks, each with a context source."),
             ("projections", "The reproducible 2026-2035 framework and the outputs withheld."),
-            ("decisions", "Eight pathways, their gates, the risk of each and the recommended sequence."),
+            ("decisions", "Eight pathways, their gates, the risk of each and the evidence-led sequence."),
+            ("private-calculator", "Browser-only arithmetic for adviser-verified sale, hold and renewal inputs; blank by default."),
             ("questions", "What must be answered before deciding, what is known and how to find the rest."),
-            ("suggestions", "Proposed site improvements with options to choose from; nothing is built yet."),
-            ("master", "Every row in this site, in one source-linked table."),
+            ("suggestions", "Review the remaining site and process proposals; the requested calculator is implemented."),
+            ("master", "Every evidence row in this site, in one source-linked table."),
             ("review", "Unverified values, conflicts and irregularities for manual review."),
             ("repo-review", "Line-by-line findings on the inherited repository layers."),
         ]
@@ -589,13 +605,16 @@ def page_questions() -> str:
         '<div id="answers">' + h2("Current answers", f"{len(rows)} decision questions answered as far as the evidence allows") + '</div>',
         table(["Question", "Current answer", "Evidence needed / discovery route", "Decision consequence", "Status", "Official source"],
               body, "Decision questions, answers and evidence gaps"),
-        '<a class="quiet" href="suggestions.html">Tools proposed to help answer these →</a>',
+        '<a class="quiet" href="private-calculator.html">Open the browser calculator →</a> · '
+        '<a class="quiet" href="suggestions.html">Review the remaining proposals →</a>',
     ]
     return shell("questions", ''.join(parts), KICKER["questions"])
 
 
 def page_suggestions() -> str:
     proposed = '<span class="badge proposed">Proposed</span>'
+    implemented = '<span class="badge implemented">Implemented</span>'
+    partial = '<span class="badge partial">Partially implemented</span>'
     # Seven process proposals published by an earlier session (PR #60); kept verbatim.
     # Recommendations are analyst proposals, not claims made by the linked agencies.
     process_items = [
@@ -621,9 +640,8 @@ def page_suggestions() -> str:
         if sg[1] not in areas:
             areas.append(sg[1])
     parts = [
-        '<section class="callout warn"><b>Nothing on this page has been implemented.</b> These are proposals '
-        'for review. Each lists the options available, so a path can be chosen before any change is made to '
-        'the site or the repository.</section>',
+        '<section class="callout warn"><b>Requested decision-support items are clearly status-labeled.</b> The browser calculator and printable advisor brief are implemented; the tenant series is partial because quarterly rental revenue is not reconciled. '
+        'All other site and process improvements remain proposals for review and choice before implementation.</section>',
         h1("Suggestions to review", "Ways to make this site and the decision process more useful, set out so that "
            "someone can review them and choose. These are analyst judgements; the official links provide "
            "context, not agency endorsement."),
@@ -633,13 +651,14 @@ def page_suggestions() -> str:
         f'<div><strong>{len(site_proposals)}</strong><span>Technical options</span></div>'
         f'<div><strong>{len(areas)}</strong><span>Areas</span></div>'
         f'<div><strong>{len(SUGGESTION_PATHS)}</strong><span>Ways to combine them</span></div>'
-        '<div><strong>0</strong><span>Implemented</span></div></div>',
+        '<div><strong>2</strong><span>Implemented</span></div>'
+        '<div><strong>1</strong><span>Partially implemented</span></div></div>',
         h2("Choose a path", "Four ways to combine the suggestions"),
         table(["Path", "Includes", "What the owner gets", "Privacy position", "Status", "Official context source"],
               [[f'<b>{E(a)}</b>', E(b), E(c), E(d), proposed, src(k)] for a, b, c, d, k in SUGGESTION_PATHS],
-              "Paths · choose one before anything is built"),
-        '<p class="small">Path 1 is recommended because it adds the tools the decision needs while keeping every '
-        'owner-specific figure out of the repository and off the web.</p>',
+              "Paths · choose the remaining package to pursue"),
+        '<p class="small">Path 1 uses the requested calculator with a private adviser workflow; Path 2 avoids browser inputs entirely. '
+        'Both paths require an executed-lease review and independently prepared tax figures before any decision.</p>',
     ]
     parts.append(h2("Process proposals", f"{len(process_items)} proposals in priority order"))
     parts.append(table(
@@ -660,13 +679,14 @@ def page_suggestions() -> str:
         parts.append(table(
             ["ID", "Suggestion", "Why it helps the decision", "Options to choose from", "Privacy and effort", "Status",
              "Official context source"],
-            [[f'<b>{E(i)}</b>', E(t), E(why), E(opts), E(cost), proposed, src(k)]
+            [[f'<b>{E(i)}</b>', E(t), E(why), E(opts), E(cost),
+              implemented if i in {"SG-01", "SG-13"} else partial if i == "SG-05" else proposed, src(k)]
              for i, _a, t, why, opts, cost, k in items],
-            f"{area} · proposed, not implemented"))
+            f"{area} · status shown for each item"))
     parts.append(
-        '<section class="callout"><b>How to choose.</b> Reply with a path, or with a list of suggestion IDs and '
-        'the option letter for each, for example "Path 1, plus SG-08 A". Until a choice is recorded, the site '
-        'stays as it is and only the evidence is refreshed.</section>'
+        '<section class="callout"><b>How to choose.</b> The browser calculator and printable advisor brief are available. '
+        'For remaining proposals, choose a path or list suggestion IDs and option letters, for example "Path 1, plus SG-08 A". '
+        'No other proposal will be implemented without a recorded choice.</section>'
         '<a class="quiet" href="questions.html">The questions these tools are meant to answer →</a>')
     return shell("suggestions", ''.join(parts), KICKER["suggestions"])
 
@@ -770,6 +790,96 @@ def page_model() -> str:
                   "Monitoring checklist"),
             '<a class="quiet" href="projections.html">See the 13-step projection system →</a>']
     return shell("model", ''.join(body), KICKER["model"])
+
+
+def page_private_calculator() -> str:
+    def number_field(field_id: str, label: str, help_text: str, *, minimum: str | None = None,
+                     maximum: str | None = None, step: str = "0.01", integer: bool = False) -> str:
+        bounds = ""
+        if minimum is not None:
+            bounds += f' min="{E(minimum)}"'
+        if maximum is not None:
+            bounds += f' max="{E(maximum)}"'
+        mode = "numeric" if integer else "decimal"
+        return (f'<div class="calc-field"><label for="{E(field_id)}">{E(label)}</label>'
+                f'<input id="{E(field_id)}" type="number" inputmode="{mode}" step="{E(step)}"{bounds} '
+                f'autocomplete="off" aria-describedby="{E(field_id)}-help">'
+                f'<small id="{E(field_id)}-help">{help_text}</small></div>')
+
+    body = [
+        '<section class="callout warn"><b>Privacy and use.</b> Inputs are blank by default and calculations run only in this page. '
+        'The calculator makes no request containing entered values and the page code does not save them to browser storage, cookies, files, or a server. '
+        'Browser history and session-restore behavior are outside the page\'s control; use Clear all and close the browser when finished. The hosted page itself is public and the host may record ordinary page-access logs; '
+        'this is not an access-controlled adviser workspace. Do not enter names, addresses, parcel numbers, account details, or upload documents. '
+        'For the strongest separation, download the blank, self-contained HTML page and use it offline with authorized advisers.</section>',
+        h1("Private browser calculator", "An arithmetic-only comparison of a documented sale-now net amount with hold and negotiated-renewal cases. "
+           "No property or owner values are prefilled; no option is selected."),
+        '<div class="calc-actions"><a class="quiet" href="private-calculator.html" download="asset-a-private-calculator.html">Download the blank standalone calculator for offline use ↓</a></div>',
+        '<section class="callout"><b>Use only dated, documented inputs.</b> Sale-now line items should come from a written offer, escrow and the owner’s CPA/tax counsel. '
+        'The hold and renewal cash flows and exit proceeds are scenarios; label any assumption as unverified in your private workpapers. '
+        'A positive difference means only that the entered scenario has a larger calculated present value than the sale-now net under the selected discount rate. '
+        'It is not a recommendation, appraisal, tax calculation or risk ranking.</section>',
+        h2("1 · Comparison assumptions", "No default horizon or discount rate"),
+        '<div class="calc-grid">',
+        number_field("horizon-years", "Comparison horizon (whole years)",
+                     "Use a date supported by the lease abstract and decision plan. Current lease expiry is not verified.",
+                     minimum="1", step="1", integer=True),
+        number_field("discount-rate", "Required annual return / discount rate (%)",
+                     "Owner/adviser-selected hurdle rate, not the Treasury yield or a property forecast.",
+                     minimum="0", step="0.01"),
+        '</div>',
+        h2("2 · Sell now", "Gross offer less documented costs, taxes and debt"),
+        '<div class="calc-grid">',
+        number_field("sale-gross", "Current written sale price ($)", "Use an executable written offer or a dated broker indication; distinguish the two.", minimum="0"),
+        number_field("sale-costs", "Transaction costs ($)", "Broker, legal, escrow and other documented transaction expenses; enter 0 only if verified.", minimum="0"),
+        number_field("sale-transfer", "City / county transfer taxes ($)", "Use the current official jurisdiction and escrow calculation; include applicable transfer taxes.", minimum="0"),
+        number_field("sale-debt", "Debt and lien payoff ($)", "Use a dated lender payoff statement; do not publish it.", minimum="0"),
+        number_field("sale-tax", "CPA-estimated sale income taxes ($)", "Enter the CPA's case-specific estimate, including applicable federal, California and other income taxes.", minimum="0"),
+        number_field("sale-other", "Other sale costs ($)", "Other documented costs not already included above; avoid double-counting.", minimum="0"),
+        '</div>',
+        '<p class="calc-formula"><b>Sale-now net:</b> written price − transaction costs − transfer taxes − debt/lien payoff − CPA-estimated income taxes − other costs.</p>',
+        h2("3 · Hold existing lease", "Constant annual after-tax cash flow plus a net exit amount"),
+        '<div class="calc-grid">',
+        number_field("hold-annual-net", "Annual owner cash flow after tax and costs ($)", "Level annual amount for every year of the horizon; net of recurring operating costs, debt service, reserves, repairs and tax.", step="0.01"),
+        number_field("hold-terminal-net", "Terminal sale proceeds after all costs, debt and taxes ($)", "Net amount at the end of the horizon; use a documented case-specific estimate and label any forecast as an assumption.", step="0.01"),
+        '</div>',
+        h2("4 · Negotiate renewal, hold, then exit", "Use only enforceable renewal terms for a decision-ready case"),
+        '<div class="calc-grid">',
+        number_field("renew-annual-net", "Annual owner cash flow after tax and costs ($)", "Level annual amount for every year; model signed renewal rent, expenses, concessions, capex and tax with advisers first.", step="0.01"),
+        number_field("renew-terminal-net", "Terminal sale proceeds after all costs, debt and taxes ($)", "Net amount at the end of the same horizon under the renewal case; a future value is a scenario, not an observed quote.", step="0.01"),
+        '</div>',
+        '<div class="calc-buttons"><button id="calculate-button" type="button">Calculate comparison</button> '
+        '<button id="clear-button" type="button" class="secondary">Clear all values</button></div>',
+        '<p id="calculator-error" class="calc-error" role="alert" hidden></p>',
+        '<section id="calculator-results" class="calc-results" aria-live="polite" hidden>'
+        '<h2>Calculated present values · no path selected</h2>'
+        '<div class="calc-grid calc-output">'
+        '<article><span>Sell now · net after-tax proceeds today</span><strong id="result-sale">—</strong></article>'
+        '<article><span>Hold existing lease · present value</span><strong id="result-hold">—</strong></article>'
+        '<article><span>Negotiated renewal · present value</span><strong id="result-renew">—</strong></article>'
+        '<article><span>Hold present value minus sale-now net</span><strong id="result-hold-gap">—</strong></article>'
+        '<article><span>Renewal present value minus sale-now net</span><strong id="result-renew-gap">—</strong></article>'
+        '</div><p class="small">The arithmetic does not choose a winner. It assumes a level after-tax cash flow received at each year-end, a terminal net amount at the end of the selected horizon, no growth, and the same user-selected annual discount rate for both hold cases. It does not model probabilities, changing tax rules, lease-option timing, vacancy, inflation, risk tolerance or reinvestment opportunities unless reflected in the inputs.</p></section>',
+        h2("Formula and decision limits", "Arithmetic only; tax and market inputs remain external"),
+        '<div class="split"><div><h3>Present-value formula</h3>'
+        '<p>For each hold case: <code>PV = annual net cash flow × annuity factor + terminal net proceeds ÷ (1 + r)<sup>N</sup></code>. '
+        'The annuity factor is <code>(1 − (1 + r)<sup>−N</sup>) ÷ r</code>; when <code>r = 0</code>, it equals <code>N</code>. '
+        'All annual flows are assumed to arrive at year-end.</p>'
+        '<p class="small">The sale-now net amount is not discounted because it is measured today. Keep all amounts in the same currency and use a consistent nominal or real-dollar convention with the matching discount rate.</p></div>'
+        '<div><h3>What this tool does not calculate</h3>'
+        '<p>It does not compute taxable gain, adjusted basis, depreciation recapture, capital-gain brackets, NIIT, California tax, Measure ULA, county transfer tax or §1031 eligibility. '
+        'It only subtracts the tax and cost amounts entered by the user. Tax and legal rules can change before a 2030–2035 transaction; obtain a current professional calculation.</p>'
+        '<p class="small">A higher modeled present value is not a personalized wealth recommendation. The sale, hold and renewal alternatives also differ in liquidity, concentration, catastrophe exposure and feasibility.</p></div></div>',
+        h2("Official review routes", "Sources explain rules; the calculator does not encode rates"),
+        '<ul class="ticks plain">'
+        '<li>' + src("IRS409", "IRS capital gains and losses") + ' · ' + src("IRSRP25", "IRS tax-year 2026 guidance") + ' · ' + src("IRS559", "IRS net investment income tax") + '</li>'
+        '<li>' + src("FTB", "California Franchise Tax Board · capital gains") + ' · ' + src("IRS1031", "IRS like-kind exchange guidance") + '</li>'
+        '<li>' + src("ULA", "City of Los Angeles · Measure ULA and transfer tax") + ' · ' + src("DTT", "Los Angeles County · documentary transfer tax") + '</li>'
+        '</ul>',
+        '<p class="small">The linked pages are official sources for manual review, not a tax opinion about the owner. No personal tax result or future transfer-tax amount has been prefilled.</p>',
+        '<script>\n' + PRIVATE_CALCULATOR_JS + '\n</script>'
+    ]
+    return shell("private-calculator", ''.join(body), KICKER["private-calculator"], self_contained=True)
 
 
 def page_place() -> str:
@@ -885,8 +995,8 @@ def page_sources() -> str:
                   "Official source register"),
             h2("Verification standard", "What 'Verified' means here"),
             '<p><b>Verified</b> means the publisher states that observation, with the geography, period, unit and vintage shown in the row. '
-            'The broad row-by-row publisher review is dated 2026-11-12; FRED DGS10 was refreshed on 2026-11-13, '
-            'and the snapshot date does not imply every other source was re-read that day. It does not mean the observation predicts this property. <b>Derived</b> means arithmetic on '
+            'The broad row-by-row publisher review covered 240 rows and 45 sources on 2026-11-12; later additions and updates were checked only within their documented scopes, and no full-register re-audit is claimed here. FRED DGS10 was refreshed on 2026-11-13. '
+            'The snapshot date does not imply every other source was re-read that day. A verified observation does not predict this property. <b>Derived</b> means arithmetic on '
             'two published observations; the arithmetic is printed in the row. <b>Analysis</b> is our '
             'conditional reasoning and its link supplies background context only. <b>Unverified</b> rows '
             'have an empty value cell and an entry on the <a href="review.html">Flagged for Review</a> page.</p>',
@@ -902,9 +1012,9 @@ def page_sources() -> str:
             'contact detail, financial account, tax basis, debt statement or private lease record is '
             'collected or published. Official filings and agency pages encountered during research contain '
             'named contacts, emails, telephone numbers and street addresses; none of that is reproduced '
-            'here. The site has no forms, analytics, tracking, third-party embeds or external scripts. '
-            'Public source links open their publishers\' websites; GitHub hosting may retain standard '
-            'access logs.</p>',
+            'here. There are no analytics, trackers, third-party embeds, form submissions or remote scripts. '
+            'The private calculator is the sole inline script; its CSP denies network connections, and the code has no network, cookie or browser-storage APIs. '
+            'Entered values are neither submitted nor saved. Public source links open their publishers\' websites; GitHub hosting may retain standard page-access logs.</p>',
             h2("Reproducibility", "One dataset, one generator"),
             '<p>The evidence register lives in <code>data/canonical_rows.py</code> and is exported to '
             '<code>data/canonical.json</code>. <code>scripts/build_canonical.py</code> renders every page; '
@@ -1225,6 +1335,27 @@ td:first-child{font-weight:600;color:#26344c}
 .badge.proposed{background:#f1ecfb;color:#4b2e83}
 .jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;font-size:12.5px}
 .jump a{padding:5px 11px;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:inherit;background:#fff}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:13px;margin:0 0 18px}
+.calc-field{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.calc-field label{display:block;font-weight:700;font-size:13px;margin-bottom:7px;color:#26344c}
+.calc-field input{width:100%;padding:10px 11px;border:1px solid #aab5c6;border-radius:7px;background:#fff;color:var(--ink);font:inherit;font-variant-numeric:tabular-nums}
+.calc-field input:focus{outline:3px solid #b7e4dc;border-color:var(--accent)}
+.calc-field small{display:block;color:var(--mut);font-size:11px;line-height:1.4;margin-top:7px}
+.calc-formula{background:#f7f9fc;border-left:3px solid var(--accent2);padding:10px 13px;margin:-6px 0 18px;font-size:12.5px}
+.calc-buttons{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 12px}
+.calc-buttons button{border:0;border-radius:8px;background:var(--ink);color:#fff;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer}
+.calc-buttons button:hover{background:#263b60}
+.calc-buttons button:focus-visible{outline:3px solid #74cfc1;outline-offset:2px}
+.calc-buttons button.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.calc-buttons button.secondary:hover{background:#f1f4f9}
+.calc-error{background:var(--badbg);color:var(--bad);border:1px solid #f4c7c3;padding:12px 14px;border-radius:8px;margin:0 0 18px}
+.calc-results{background:#fff;border:1px solid var(--line);border-radius:11px;padding:18px;margin:18px 0}
+.calc-results h2{margin-bottom:14px}
+.calc-output article{background:#f7f9fc;border:1px solid var(--line);border-radius:8px;padding:14px}
+.calc-output article span{display:block;color:var(--mut);font-size:11.5px;min-height:34px}
+.calc-output article strong{display:block;color:var(--ink);font-size:20px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.badge.implemented{background:var(--okbg);color:var(--ok)}
+.badge.partial{background:#fff4dd;color:#8a5300}
 .empty{display:inline-block;min-width:52px;height:14px;background:repeating-linear-gradient(45deg,#f5ead2,#f5ead2 5px,#fff8e9 5px,#fff8e9 10px);border:1px dashed #d9b96f;border-radius:3px;vertical-align:middle}
 .srclink{font-size:11.5px;white-space:nowrap}
 ul.ticks{margin:0 0 12px;padding-left:18px}
@@ -1313,6 +1444,7 @@ def main() -> None:
         "questions.html": page_questions(),
         "suggestions.html": page_suggestions(),
         "decisions.html": page_decisions(),
+        "private-calculator.html": page_private_calculator(),
         "model.html": page_model(),
         "place.html": page_place(),
     }

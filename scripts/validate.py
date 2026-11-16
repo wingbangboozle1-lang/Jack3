@@ -8,7 +8,7 @@ Enforced:
   4. Every external link is https and on an approved official host.
   5. Every internal link and fragment resolves inside the published artifact.
   6. Every page carries the shared navigation, and no page links to a missing file.
-  7. No scripts, iframes, forms, tracking vendors, localhost or http:// links.
+  7. No tracking, remote scripts, forms, localhost or http:// links. Exactly one self-contained inline calculator script is allowed on private-calculator.html; its CSP and source are checked for network/storage APIs.
   8. Privacy gate: no emails, phone numbers, street addresses, parcel numbers,
      taxpayer identifiers, account handles or tenant officer names in published files.
   9. Determinism: rebuilding does not change any published file.
@@ -43,8 +43,15 @@ PII = {
     "account-handle": re.compile(r"wingbangboozle1", re.I),
     "officer-name": re.compile(r"Lance Tucker|Mark King|Rachel Webb|Andres Chait", re.I),
 }
-FORBIDDEN = ("<script", "<iframe", "<form", "googletagmanager", "google-analytics",
+FORBIDDEN = ("<iframe", "<form", "googletagmanager", "google-analytics",
              "localhost", "127.0.0.1", "http://", "onclick=", "onerror=")
+PRIVATE_CALCULATOR = "private-calculator.html"
+NETWORK_APIS = tuple(re.compile(pattern, re.I) for pattern in (
+    r"\bfetch\s*\(", r"\bXMLHttpRequest\b", r"\bWebSocket\b",
+    r"\bEventSource\b", r"\bsendBeacon\b", r"\blocalStorage\b",
+    r"\bsessionStorage\b", r"\bindexedDB\b", r"document\s*\.\s*cookie",
+    r"\bserviceWorker\b", r"\bWorker\s*\("
+))
 
 
 class PageParser(html.parser.HTMLParser):
@@ -58,9 +65,29 @@ class PageParser(html.parser.HTMLParser):
         self.internal: list[str] = []
         self.ids: set[str] = set()
         self.links: list[str] = []
+        self.tags: set[str] = set()
+        self.scripts: list[str] = []
+        self.script_srcs: list[str] = []
+        self.resource_srcs: list[str] = []
+        self.inputs: list[dict[str, str | None]] = []
+        self.meta_csp: list[str] = []
+        self.event_handlers: list[str] = []
+        self._script_parts: list[str] | None = None
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        self.tags.add(tag)
+        self.event_handlers.extend(k for k in a if k.lower().startswith("on"))
+        if tag == "input":
+            self.inputs.append(a)
+        if tag == "meta" and a.get("http-equiv", "").lower() == "content-security-policy":
+            self.meta_csp.append(a.get("content", ""))
+        if tag == "script":
+            self._script_parts = []
+            if a.get("src"):
+                self.script_srcs.append(a["src"])
+        if a.get("src"):
+            self.resource_srcs.append(a["src"])
         if a.get("id"):
             self.ids.add(a["id"])
         if tag == "tbody":
@@ -86,7 +113,14 @@ class PageParser(html.parser.HTMLParser):
         if tag == "tr" and not self.in_tbody:
             self.row = None
 
+    def handle_data(self, data):
+        if self._script_parts is not None:
+            self._script_parts.append(data)
+
     def handle_endtag(self, tag):
+        if tag == "script" and self._script_parts is not None:
+            self.scripts.append("".join(self._script_parts))
+            self._script_parts = None
         if tag == "tr" and self.row is not None:
             self.rows.append(self.row)
             self.row = None
@@ -128,6 +162,39 @@ def main() -> int:
         parser = PageParser(p.name)
         parser.feed(text)
         all_ids[p.name] = parser.ids
+        if p.name == PRIVATE_CALCULATOR:
+            required_ids = {
+                "horizon-years", "discount-rate", "sale-gross", "sale-costs", "sale-transfer",
+                "sale-debt", "sale-tax", "sale-other", "hold-annual-net", "hold-terminal-net",
+                "renew-annual-net", "renew-terminal-net",
+            }
+            input_ids = {a.get("id") for a in parser.inputs}
+            if len(parser.scripts) != 1 or parser.script_srcs:
+                errors.append(f"{p.name}: expected exactly one inline script and no external scripts")
+            if input_ids != required_ids or len(parser.inputs) != len(required_ids):
+                errors.append(f"{p.name}: calculator fields differ from the reviewed blank-input set")
+            if any("value" in a or "name" in a or a.get("autocomplete") != "off" for a in parser.inputs):
+                errors.append(f"{p.name}: calculator inputs must be unnamed, blank by default, and autocomplete-off")
+            if parser.resource_srcs:
+                errors.append(f"{p.name}: self-contained calculator has an external resource: {parser.resource_srcs}")
+            if parser.event_handlers:
+                errors.append(f"{p.name}: inline event handler is not allowed")
+            policy = " ".join(parser.meta_csp).lower()
+            required_directives = ("default-src 'none'", "style-src 'unsafe-inline'", "script-src 'unsafe-inline'",
+                                   "connect-src 'none'", "img-src 'none'", "object-src 'none'",
+                                   "form-action 'none'", "base-uri 'none'")
+            for directive in required_directives:
+                if directive not in policy:
+                    errors.append(f"{p.name}: missing restrictive CSP directive {directive}")
+            script = parser.scripts[0] if parser.scripts else ""
+            for pattern in NETWORK_APIS:
+                if pattern.search(script):
+                    errors.append(f"{p.name}: prohibited network/storage API {pattern.pattern}")
+            source_js = (ROOT / "scripts/private_calculator.js").read_text(encoding="utf-8").strip()
+            if script.strip() != source_js:
+                errors.append(f"{p.name}: embedded calculator differs from its reviewed source")
+        elif parser.scripts or parser.inputs:
+            errors.append(f"{p.name}: scripts and user inputs are restricted to {PRIVATE_CALCULATOR}")
         for row in parser.rows:
             if not any(u in OFFICIAL_URLS for u in row):
                 errors.append(f"{p.name}: table row without official source link: {row[:3]}")
