@@ -2561,3 +2561,31 @@ runs; committed-tree determinism clean.
 2026-11-06 session 5cb84cd0 / ff406d61 collision). Both times the append-only coordination log made an
 honest merge possible. Sessions starting work should re-read `git log origin/main --oneline -5` immediately
 before implementing, not only before pushing.
+
+## PR / merge / deploy record (session `arena/87ca5536-jack3`, J8-08 complete)
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack3/pull/111 — `arena/87ca5536-jack3` → `main`,
+  "Session 87ca5536: decision-gate progress board, parcel hazard screening sheet, private trade-area
+  workflow, 5 verified data-tool sources; calculator verification fixes".
+- **Merge:** merged to `main` via `gh pr merge 111 --merge` (no `--auto`, no approval wait) as merge commit
+  `a828707` on 2026-11-16.
+- **Pages deploy:** GitHub Pages API reports `status: built` for commit `a8287073` (`error: null`);
+  source `main:/`.
+- **Live checks (2026-11-16, platform page fetch):** https://wingbangboozle1-lang.github.io/Jack3/calculator.html
+  serves the merged worksheet with the verified-rules table and source links;
+  https://wingbangboozle1-lang.github.io/Jack3/decisions.html serves the decision-gate progress board with
+  its "Open — awaiting private, verified inputs" statuses;
+  https://wingbangboozle1-lang.github.io/Jack3/geography.html serves the private trade-area workflow with
+  the five new official tool sources.
+- **Result:** PR #111 merged; the site is live with 24 shared-navigation pages, 260 evidence rows (230
+  verified / 3 derived / 1 analysis / 26 blank) and 53 official sources. All tasks J8-01..J8-08 are done.
+- **Open items for owner review (non-blocking, published on Flagged for Review):** F-01–F-35 and the
+  repo-review irregularities, including F-18 (FEMA NRI legacy portal now redirects to RAPT; county row
+  stays blank until the current county scores are extracted from the official tool); 26 intentionally
+  blank owner-specific rows; FEMA Flood Map Service Center HTTP 500 on 2026-11-16 (not cited; registered
+  fema.gov/flood-maps in use). The sell/renewal decision remains deliberately unselected pending private
+  verified inputs.
+- **Session note:** after a PR from a platform-fixed branch is merged, the branch sits one merge commit
+  behind `main`; fast-forward with `git merge --ff-only origin/main` before appending further records.
+  `git pull --rebase` fails by design on a branch whose history already contains merge commits (see the
+  conflict log above); `git fetch` + an ancestry check is the reliable pre-push step.
