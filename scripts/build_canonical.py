@@ -704,9 +704,15 @@ def page_suggestions() -> str:
         if sg[1] not in areas:
             areas.append(sg[1])
     parts = [
-        '<section class="callout warn"><b>Nothing on this page has been implemented.</b> These are proposals '
-        'for review. Each lists the options available, so a path can be chosen before any change is made to '
-        'the site or the repository.</section>',
+        '<section class="callout warn"><b>One suggestion has been implemented; the rest are proposals for '
+        'review.</b> SG-01 option B — the on-page calculator that runs only in the browser — was built on '
+        '2026-11-16 as <a href="calculator.html">calculator.html</a> because the owner brief explicitly mandates '
+        '"a private calculator that runs in the reader\'s browser" and an after-tax module, with the documented '
+        'trade-off that the site\'s no-JavaScript rule is relaxed for that one offline page under strict '
+        'no-network/no-storage gates. The public parts of SG-03 (hazard screening sheet) and SG-07 (the private '
+        'trade-area workflow) were added the same day. Every other item below is still a proposal: each lists '
+        'the options available, so a path can be chosen before any further change is made to the site or the '
+        'repository.</section>',
         h1("Suggestions to review", "Ways to make this site and the decision process more useful, set out so that "
            "someone can review them and choose. These are analyst judgements; the official links provide "
            "context, not agency endorsement."),
@@ -716,7 +722,7 @@ def page_suggestions() -> str:
         f'<div><strong>{len(site_proposals)}</strong><span>Technical options</span></div>'
         f'<div><strong>{len(areas)}</strong><span>Areas</span></div>'
         f'<div><strong>{len(SUGGESTION_PATHS)}</strong><span>Ways to combine them</span></div>'
-        '<div><strong>0</strong><span>Implemented</span></div></div>',
+        '<div><strong>1</strong><span>Implemented (SG-01B)</span></div></div>',
         h2("Choose a path", "Four ways to combine the suggestions"),
         table(["Path", "Includes", "What the owner gets", "Privacy position", "Status", "Official context source"],
               [[f'<b>{E(a)}</b>', E(b), E(c), E(d), proposed, src(k)] for a, b, c, d, k in SUGGESTION_PATHS],

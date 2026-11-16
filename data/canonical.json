@@ -4130,8 +4130,8 @@
     [
       "Path 2 \u00b7 Interactive site",
       "Path 1 plus SG-01B and SG-12A",
-      "Calculator and table filter on the site itself.",
-      "Inputs stay in the browser, but the no-JavaScript rule and its checks must be relaxed.",
+      "Calculator and table filter on the site itself. SG-01B is implemented (calculator.html, 2026-11-16); the table filter (SG-12A) remains a proposal.",
+      "Inputs stay in the browser; the no-JavaScript rule and its checks were relaxed for the calculator page only, under strict no-network/no-storage gates.",
       "ULA"
     ],
     [
