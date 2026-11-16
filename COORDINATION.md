@@ -2357,3 +2357,51 @@ Claim made after reading the shared board and inspecting the current tree. Prior
 ### J3 integration / concurrent-session record
 
 While PR #87 was open, session `a1a7af0c` merged PR #86, advancing `main` from `b0f1e13` to `b168458`. PR #87 reported a coordination-file conflict. Fetched and rebased this fixed branch onto the new `origin/main`; the only conflict was at the append-only `COORDINATION.md` tail. Preserved the complete `a1a7af0c` claim, audit and merge/deploy record, plus this session's claim; no other-session content or site/data files were discarded. Re-ran the canonical generator, validation, staging, link/host checks, PII scan, both companion verifiers, projection generator, 17 unit tests and `git diff --check` on the combined tree; all passed and the generator left published files unchanged. Jekyll is still unavailable locally; no source page was re-read. PR #87 remains open pending refreshed PR checks and status review.
+
+---
+
+# Session `arena/87ca5536-jack3` — private calculator, decision-gate board, hazard sheet, trade-area workflow (2026-11-16)
+
+**Session ID:** `arena/87ca5536-jack3` · **Branch:** `arena/87ca5536-jack3` (platform-fixed branch; the brief's
+`session-<id>/<task>` naming is unavailable in this environment — same recorded deviation as earlier sessions) ·
+**Base:** `main` at `a68b55e` (merge of PR #107, session `344e8a0f`) · **Status:** active
+
+**Claim.** The board shows no active claims; all prior sessions are recorded done/merged. This session claims the
+tasks below with non-overlapping scope. Outbound fetches of official pages are possible from this sandbox today via
+the platform's page-fetch tooling, so new official sources can be genuinely verified before being cited.
+
+## Task board
+
+| ID | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| J8-01 | Read board, claim scope, record base | done | `arena/87ca5536-jack3` | `COORDINATION.md` (this section) | Base `a68b55e`; baseline gates re-run green before any edit |
+| J8-02 | Private browser calculator (SG-01B / after-tax module / short-lease discount method) | in progress | `arena/87ca5536-jack3` | `scripts/build_canonical.py` (new page + CSS), `scripts/validate.py` (scoped offline-script gate), `scripts/test_publication.py` (scoped tag allowlist), new `calculator.html` (generated) | Owner brief mandates "a private calculator that runs in the reader's browser" and "an after-tax module"; Path 2 trade-off (no-JS rule relaxed for exactly one offline page) is implemented with strict no-network/no-storage checks. Verified-rule constants only (ULA, county DTT, §1250 25%, LTCG, NIIT, CA ordinary treatment, §1031); personal inputs default blank; no winner selected. |
+| J8-03 | Decision-gate progress board (W-03) | in progress | `arena/87ca5536-jack3` | `scripts/build_canonical.py` (generated `decisions.html`) | Gates derived from the 20-question information register; every status is honestly "Open — awaiting private verified inputs"; no private progress is invented. |
+| J8-04 | Parcel-level hazard screening sheet (W-04 / SG-03 public part) | in progress | `arena/87ca5536-jack3` | `scripts/build_canonical.py` (generated `hazards.html`) | Checklist of the official viewers (EQ Zapp, FHSZ, FEMA flood maps, ZIMAS, NRI) + insurance/engineering steps; statuses "not performed here — private workflow". |
+| J8-05 | Private trade-area / tract workflow (W-01 / SG-07 public part) + 5 new verified official sources | in progress | `arena/87ca5536-jack3` | `data/canonical_rows.py` (SOURCES + rows), `scripts/build_canonical.py` (generated `geography.html`) | GEOCODER, ACSDATA, OTM, LADOT, CDEDIR — each fetched live 2026-11-16 before citation. No tract identifier or address is published. |
+| J8-06 | Suggestions register truth-up (SG-01B implemented; SG-03/SG-07 public checklists added) | in progress | `arena/87ca5536-jack3` | `data/canonical_rows.py` (SUGGESTIONS), `scripts/build_canonical.py` (generated `suggestions.html`) | The page keeps its review purpose; statuses updated to reflect what was actually built and why. |
+| J8-07 | README / VERIFY / model-page doc truth-up | in progress | `arena/87ca5536-jack3` | `README.md`, `VERIFY.md`, `scripts/build_canonical.py` docstrings | Reflect the single-page offline-calculator exception and new counts. |
+| J8-08 | Final integration for this batch: gates, PR, merge, Pages deploy confirmation | pending | `arena/87ca5536-jack3` | PR + this section | Single-session run (same precedent as `sess-8d650ba0`); no other active session exists. |
+
+## Verification log (running)
+
+- 2026-11-16 — baseline gates on clean tree `a68b55e`: build (23 pages, 255 rows, 48 sources), validate PASS,
+  stage PASS, pii_scan 0 findings, 19 unit tests OK.
+- 2026-11-16 — live official-source re-reads before citation (platform page fetch):
+  - https://geocoding.geo.census.gov/geocoder/ — Census Geocoder, address-to-geography matching. VERIFIED live.
+  - https://data.census.gov/ — tables/maps/profiles, address search. VERIFIED live.
+  - https://onthemap.ces.census.gov/ — LEHD OnTheMap; "2024 data now available", notice dated 11/5/2026. VERIFIED live.
+  - https://geohub.lacity.org/search?q=traffic%20counts then dataset page — "Traffic Counts … Locations where the
+    Los Angeles Department of Transportation has collected traffic information" (dataset updated 2020-08-26). VERIFIED live.
+  - https://sd.cde.ca.gov/SchoolDirectory/ — California School Directory search. VERIFIED live.
+  - https://finance.lacity.gov/faq/measure-ula — confirms base rate 0.45% ($2.25 per $500, base rounded up to the
+    nearest $500), ULA 4% above $5,400,000 / 5.5% at or above $10,900,000, effective for transactions closing after
+    2026-06-30; annual Chained-CPI indexation. Matches the register exactly.
+  - https://www.irs.gov/taxtopics/tc409 — 0/15/20% LTCG structure, 2025 thresholds, unrecaptured §1250 gain max 25%,
+    NIIT via Topic 559. Matches the register.
+  - https://fred.stlouisfed.org/series/DGS10 — latest observation still 5.10% (2026-11-12); page updated 2026-11-13
+    3:16 PM CST; next release 2026-11-16. NO value change; register remains current; no rate refresh needed.
+  - https://msc.fema.gov/portal/home — HTTP 500 today (consistent with open flag F-18 on the NRI portal). NOT cited;
+    the registered fema.gov/flood-maps source remains in use.
+
+Cross-session requests: none.
