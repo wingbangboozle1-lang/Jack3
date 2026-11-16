@@ -2333,3 +2333,27 @@ This session made no new factual claims about the market, parcel, lease or owner
 - **Post-merge Pages deployment:** GitHub Pages API `status: built` for commit `51f3280` (latest build `pages/builds/latest`, created 2026-11-15T23:19:26Z), source `main:/`, `https_enforced: true`. Live site: https://wingbangboozle1-lang.github.io/Jack3/
 - **Result:** PR #104 merged and the site is live; H-05 complete. All session tasks H-01 through H-05 are done.
 
+---
+
+# Session `1b7e5d21` — current canonical publication gate and deployment check (2026-11-15)
+
+**Platform-fixed branch:** `arena/1b7e5d21-jack3` · **Initial base:** `b0f1e1320eea8eabe604258d7a3e5057d5b387e5` · **Scope:** `COORDINATION.md` only. This is a limited operational re-check, not a new line-by-line source audit or an integration of other branches.
+
+| ID | Task | Status | Owner | Files / scope |
+|---|---|---|---|---|
+| J3-01 | Re-run the canonical repository publication gates without changing shared site/data files | **done** | `1b7e5d21` | read-only checks; this section only |
+| J3-02 | Verify the GitHub Pages state, latest recorded checks, and stale open-PR inventory through GitHub | **in progress** | `1b7e5d21` | read-only GitHub API/CLI; this section only |
+
+Claim made after reading the shared board and inspecting the current tree. Prior board sections and other session scopes are preserved. No external publisher pages have been re-read in this session, and no current canonical observation is asserted as freshly verified.
+
+### J3 audit results (2026-11-15)
+
+- **Local checks passed:** canonical generator (22 pages; 242 rows: 213 Verified / 2 Derived / 1 Analysis / 26 Blank; 45 sources); `scripts/validate.py`; exact 23-file Pages staging; `tools/check_site.py` (213 references); `tools/linkcheck.py` (256 internal links, no broken targets); `tools/check_links.py` (1,040 links across 30 hosts, zero unapproved hosts); PII scanner (154 files, zero findings); advisory and dashboard verifiers; projection output; all 17 publication/projection unit tests; and `git diff --check`. Rebuild was deterministic; no generated file changed.
+- **GitHub Pages:** GitHub Pages API reports `status: built`, HTTPS enforced, source `main:/`, public URL https://wingbangboozle1-lang.github.io/Jack3/ . Latest completed main deployment visible from GitHub's run list is `pages build and deployment` run `43537791945`, success for merge `b0f1e13` (PR #85); main validation and artifact regression runs `43538017685` / `43538017605` also succeeded.
+- **Open PR inventory:** GitHub CLI returned 11 open PRs (#4, #12, #22, #26, #31, #32, #36, #40, #44, #48, #51), last updated Nov 6–11. They are stale relative to merged main history; no PR was closed or merged as part of this scoped re-check.
+- **Limitations:** This pass did not fetch/re-read external official publishers and is not a fresh source audit. Ruby/Jekyll are not installed in this workspace, so the local Jekyll build step could not run. Push-triggered GitHub Actions runs `43715506555` (Validate public research) and `43715506180` (Public artifact regression tests) were still queued when checked; attempts to watch them through `gh` returned GitHub API HTTP 403 rate-limit errors. Public run pages corroborated queued state. No claim of CI completion is made here.
+- **No data/site changes:** existing public content is unchanged; no personal/parcel/owner data was collected, and no recommendation was recalibrated. The existing open items and source-gap flags remain non-blocking and require review by authorized advisers.
+
+### J3 integration / concurrent-session record
+
+While PR #87 was open, session `a1a7af0c` merged PR #86, advancing `main` from `b0f1e13` to `b168458`. PR #87 reported a coordination-file conflict. Fetched and rebased this fixed branch onto the new `origin/main`; the only conflict was at the append-only `COORDINATION.md` tail. Preserved the complete `a1a7af0c` claim, audit and merge/deploy record, plus this session's claim; no other-session content or site/data files were discarded. Re-ran the canonical generator, validation, staging, link/host checks, PII scan, both companion verifiers, projection generator, 17 unit tests and `git diff --check` on the combined tree; all passed and the generator left published files unchanged. Jekyll is still unavailable locally; no source page was re-read. PR #87 remains open pending refreshed PR checks and status review.
