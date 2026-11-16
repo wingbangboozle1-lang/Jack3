@@ -42,10 +42,10 @@ Verify lease dates and notice rights privately now; prepare sale and renewal tra
 ## Build and verify
 
 24 static HTML pages (23 shared-navigation pages plus the `flagged.html` alias) plus `assets/style.css`, for a 25-file Pages artifact. Every table body row carries an official source link; every
-unconfirmed value is an **empty cell** and appears on *Flagged for Review*. One deliberate exception to the
-no-JavaScript rule: `calculator.html` embeds a single inline arithmetic engine that makes no network request,
-stores nothing and loads no external asset (enforced by `scripts/validate.py`); every other page stays
-script-free. No forms, analytics,
+unconfirmed value is an **empty cell** and appears on *Flagged for Review*. Two disclosed exceptions to the
+no-JavaScript rule: `calculator.html` (the private after-tax worksheet and short-lease-discount pricer) and the
+`master.html` register filter embed inline, network-free engines that make no network request, store nothing and
+load no external asset (enforced by `scripts/validate.py`); every other page stays script-free. No forms, analytics,
 third-party assets, owner identifiers, addresses or parcel numbers.
 
 | Page | Path | Contents |

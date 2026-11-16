@@ -6,24 +6,16 @@
 
 The last full independent line-by-line audit covered 240 rows and 45 sources on 2026-11-12; see [`research/VERIFICATION-2026-11-12-7b04b8ee.md`](research/VERIFICATION-2026-11-12-7b04b8ee.md) and the immutable generated [`research/VERIFICATION-2026-11-12-c56c569e.md`](research/VERIFICATION-2026-11-12-c56c569e.md). A separate 2026-11-12 pass is recorded in [`research/VERIFICATION-2026-11-12-f0b78eb6.md`](research/VERIFICATION-2026-11-12-f0b78eb6.md).
 
-For the 2026-11-13 register update, session `406ca5a9` re-read only the official FRED DGS10 series and its directly dependent rate-anchor text. A separate source-check session also sampled other official pages; its scope is recorded in [`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md). 
-For the 2026-11-16 register update, session `87ca5536` re-read the FRED DGS10 series (no value change; 5.10% for 2026-11-12 remained the latest observation), re-read the City of Los Angeles Measure ULA FAQ and IRS Topic 409 (constants matched the register exactly), and fetched the five new official data-tool pages cited in the register (Census Geocoder, data.census.gov, LEHD OnTheMap, LADOT traffic counts, CDE School Directory) live before adding them. This file does not imply that other publishers or all current rows were re-opened by these sessions.
+For this 2026-11-16 register update, session `406ca5a9` re-read only the official FRED DGS10 series and its directly dependent rate-anchor text. A separate source-check session also sampled other official pages; its scope is recorded in [`research/AUDIT-2026-11-13-02fb510c.md`](research/AUDIT-2026-11-13-02fb510c.md). This file does not imply that other publishers or all current rows were re-opened by this session.
 All other current-row values and status dispositions are carried forward from their dated verification records; the full-register source audit remains dated 2026-11-12.
 
 ## Targeted official-source refresh
 
 - **Publisher:** Board of Governors of the Federal Reserve System, H.15 Selected Interest Rates, via Federal Reserve Bank of St. Louis FRED, series DGS10.
-- **Official page fetched:** 2026-11-13; re-fetched 2026-11-16. FRED displayed an update time of 3:16 PM CST; the 2026-11-16 re-read showed the same latest observation, with the next release due 2026-11-16.
-- **Latest observation shown:** `5.10%` for 2026-11-12 (unchanged on the 2026-11-16 re-read). The page showed no observation for 2026-11-11 or 2026-11-13, `4.98%` for 2026-11-10, and `4.88%` for 2026-11-09.
+- **Official page fetched:** 2026-11-13; FRED displayed an update time of 3:16 PM CST.
+- **Latest observation shown:** `5.10%` for 2026-11-12. The page showed no observation for 2026-11-11, `4.98%` for 2026-11-10, and `4.88%` for 2026-11-09.
 - **Use limitation:** this dated market observation is not an Asset A property cap rate, owner-specific required return, mandatory discount-rate floor, or forecast. The projection remains a dimensionless sensitivity illustration, not a calibrated property model.
 - **Official source:** [FRED DGS10, Federal Reserve H.15](https://fred.stlouisfed.org/series/DGS10).
-
-## Targeted official-source re-reads and additions (2026-11-16, session `87ca5536`)
-
-- **Re-read, constants unchanged:** [Measure ULA FAQ, City of Los Angeles Office of Finance](https://finance.lacity.gov/faq/measure-ula) — base 0.45% ($2.25 per $500, base value rounded up to the nearest $500), ULA 4% above $5,400,000 / 5.5% at or above $10,900,000 for transactions closing after 2026-06-30, annual Chained-CPI indexation.
-- **Re-read, constants unchanged:** [IRS Topic 409, Capital gains and losses](https://www.irs.gov/taxtopics/tc409) — 0%/15%/20% structure with 2025 thresholds, unrecaptured §1250 gain at a 25% maximum rate, NIIT cross-reference to Topic 559.
-- **Added after live fetch, official data tools:** Census Geocoder (geocoding.geo.census.gov/geocoder/), data.census.gov, LEHD OnTheMap (onthemap.ces.census.gov; 2024 data notice dated 2026-11-05), LADOT Traffic Counts on the City of Los Angeles GeoHub (dataset updated 2020-08-26), and the California School Directory (sd.cde.ca.gov/SchoolDirectory/). Each page was fetched on 2026-11-16 before its row was written; the rows describe the tools, not any parcel.
-- **Checked and deliberately not cited:** the FEMA Flood Map Service Center returned HTTP 500 on 2026-11-16 (consistent with open flag F-18 on the National Risk Index portal); the registered fema.gov/flood-maps source remains in use instead.
 
 ## Official sources in the current register
 
@@ -345,7 +337,7 @@ Every row retains its geography, period, status and official source URL. `Blank`
 | 252 | Projection anchors | Verified population anchor | LA city 3,869,089; LA County 9,694,934 (Census V2025) | Los Angeles city / County · 2025-07-01 | Verified | https://www.census.gov/quickfacts/losangelescitycalifornia |
 | 253 | Projection anchors | Verified employment anchor | 6,282.1 thousand nonfarm, +0.5% YoY | Los Angeles metro · September 2026 | Verified | https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf |
 | 254 | Projection anchors | Verified price anchor | CPI-U +3.7%; ECI +3.9% | Los Angeles metro / CSA · September 2026 | Verified | https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf |
-| 255 | Projection anchors | Verified rate anchor | 10-year Treasury 5.10% (2026-11-12) | United States · daily H.15 · latest shown on 2026-11-13; re-read 2026-11-16 unchanged | Verified | https://fred.stlouisfed.org/series/DGS10 |
+| 255 | Projection anchors | Verified rate anchor | 10-year Treasury 5.10% (2026-11-12) | United States · daily H.15 · latest shown on 2026-11-13 | Verified | https://fred.stlouisfed.org/series/DGS10 |
 | 256 | Projection anchors | Official long-range employment projection | SCAG region 8,937k (2022) → 10,276k (2050), +0.50%/yr | SCAG six-county region · adopted 2024 | Verified | https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf |
 | 257 | Projection anchors | Official long-range population projection | SCAG region 18,827,000 (2019) → 20,909,000 (2050) | SCAG six-county region · adopted 2024 | Verified | https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf |
 | 258 | Projection anchors | Subject property's 2030-2035 value, rent, cap rate or sale price |  | Asset A | Blank | https://fred.stlouisfed.org/series/DGS10 |
@@ -377,7 +369,7 @@ Unconfirmed values remain empty in the register and are listed on Flagged for Re
 - **FEMA flood zone for the subject parcel** — Requires an address or parcel identifier; none supplied. Official research route: https://www.fema.gov/flood-maps
 - **Fire Hazard Severity Zone for the subject parcel** — Requires the address in the official viewer. Official research route: https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones
 - **Seismic hazard zone for the subject parcel** — Requires the address in EQ Zapp. Official research route: https://www.conservation.ca.gov/cgs/geohazards/eq-zapp
-- **FEMA National Risk Index county scores (live portal)** — hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12; current portal county values remain unavailable and third-party mirrors are rejected. Official research route: https://hazards.fema.gov/nri/
+- **FEMA National Risk Index county scores (live portal)** — hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12. Re-checked 2026-11-16: the legacy portal now redirects to FEMA's Resilience Analysis and Planning Tool (RAPT), which hosts the National Risk Index v1.20 dataset update; Los Angeles County figures still not extracted, so the value stays blank. Official research route: https://hazards.fema.gov/nri/
 - **Post-catastrophe insurance availability and pricing** — No official source publishes a forward price or availability figure for this parcel. Official research route: https://www.fema.gov/flood-maps
 - **Subject property's 2030-2035 value, rent, cap rate or sale price** — No official source publishes any of these. Numerical forecasts are deliberately withheld. Official research route: https://fred.stlouisfed.org/series/DGS10
 - **Probability of tenant renewal or closure at this site** — Chain-wide guidance is not a site probability; no value published. Official research route: https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm

@@ -13,6 +13,17 @@ publisher states that exact observation.
 ``Blank``   = no official value could be confirmed; the value cell is empty and the
               row is published on the Flagged for Review page.
 
+Fresh re-verification pass (2026-11-16, session 7f1087ce): every dynamic official
+source (Census QuickFacts, BLS LA summary, FRED DGS10, IRS/FTB/BOE/LA City/County
+tax pages, DIR wage pages, CAL FIRE incident and FHSZ pages, CGS EQ Zapp, FEMA
+flood-map and NRI pages, CDE profile/dashboard/end-of-year pages, SEC filings and
+issuer releases, CA DOF estimates) was re-read live; every cited value matched this
+register exactly and no value was changed. Static archived publications last fully
+verified 2026-11-12 (see FULL_AUDIT_DATE) were not altered by their publishers.
+The only content change in this pass is the refreshed FEMA NRI portal status note
+(row "FEMA National Risk Index county scores" and flag F-18): the legacy portal now
+redirects to the Resilience Analysis and Planning Tool with a v1.20 dataset update.
+
 This module is data only.  scripts/build_canonical.py renders it.
 """
 
@@ -386,7 +397,7 @@ ROWS = [
       "Up from $17.87/hour (2025-07-01); AB 1228 $20.00/hour fast-food floor still governs covered limited-service chains. Closes F-12.",
       "Verified", "LAMWO"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "5.10%", "United States · 2026-11-12 · daily (latest shown on 2026-11-13; re-read 2026-11-16)",
-      "FRED page refreshed 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation on 2026-11-09 is retained as dated history. Re-read 2026-11-16: 5.10% for 2026-11-12 is still the latest observation (page updated 2026-11-13 3:16 PM CST; next release 2026-11-16); no value changed. Dated context only, not an Asset A discount rate, property cap rate or required return.", "Verified", "FRED"),
+      "FRED page refreshed 2026-11-13 shows 5.10% for 2026-11-12, no observation for 2026-11-11, and 4.98% for 2026-11-10. The 4.88% observation on 2026-11-09 is retained as dated history. Re-read 2026-11-16 by session 87ca5536: 5.10% for 2026-11-12 is still the latest observation (page updated 2026-11-13 3:16 PM CST; next release 2026-11-16); no value changed. Dated context only, not an Asset A discount rate, property cap rate or required return.", "Verified", "FRED"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "4.98%", "United States · 2026-11-10 · daily",
       "Previous non-missing observation shown on the official FRED page fetched 2026-11-13.", "Verified", "FRED"),
     R("Economy & jobs", "10-year Treasury constant maturity yield", "4.88%", "United States · 2026-11-09 · daily",
@@ -739,7 +750,7 @@ ROWS = [
     R("Hazards", "Seismic hazard zone for the subject parcel", "", "Asset A",
       "Requires the address in EQ Zapp.", "Blank", "EQZAPP"),
     R("Hazards", "FEMA National Risk Index county scores (live portal)", "", "Los Angeles County · live portal",
-      "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12; current portal county values remain unavailable and third-party mirrors are rejected.", "Blank", "NRI"),
+      "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12. Re-checked 2026-11-16: the legacy portal now redirects to FEMA's Resilience Analysis and Planning Tool (RAPT), which hosts the National Risk Index v1.20 dataset update; Los Angeles County figures still not extracted, so the value stays blank.", "Blank", "NRI"),
     R("Hazards", "FEMA National Risk Index · Los Angeles County (archived v1.19.0)",
       "#1 nationally; EAL Value $3.9B; Risk Value $5.3B (Community Risk Factor 1.36)",
       "Los Angeles County · March 2023 (NRI v1.19.0 PrepToolkit briefing)",
@@ -755,7 +766,7 @@ ROWS = [
     R("Projection anchors", "Verified price anchor", "CPI-U +3.7%; ECI +3.9%",
       "Los Angeles metro / CSA · September 2026", "Historical cost-escalation context; lease escalators unknown.", "Verified", "BLS"),
     R("Projection anchors", "Verified rate anchor", "10-year Treasury 5.10% (2026-11-12)",
-      "United States · daily H.15 · latest shown on 2026-11-13; re-read 2026-11-16 unchanged", "Risk-free market reference only; not a property cap rate, required return or universal discount-rate floor.", "Verified", "FRED"),
+      "United States · daily H.15 · latest shown on 2026-11-13", "Risk-free market reference only; not a property cap rate, required return or universal discount-rate floor.", "Verified", "FRED"),
     R("Projection anchors", "Official long-range employment projection",
       "SCAG region 8,937k (2022) → 10,276k (2050), +0.50%/yr",
       "SCAG six-county region · adopted 2024", "Planning forecast with stated uncertainty; not a property forecast.", "Verified", "SCAG"),
@@ -934,9 +945,9 @@ FLAGS = [
     ("F-17", "Medium", "BEA statistic mislabelled in some inherited layers",
      "$818.5 billion is total personal income in Los Angeles County for 2024 (current dollars), not metro GDP. BEA discontinued metro-area statistics with this release.",
      "Use county-level BEA series and label the measure exactly.", "BEA"),
-    ("F-18", "Low", "FEMA National Risk Index live portal HTTP 500; archived v1.19.0 published",
-     "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12, so current portal scores remain blank. Archived FEMA PrepToolkit v1.19.0 (March 2023) county figures ($3.9B EAL, $5.3B Risk Value, #1 nationally) are published with vintage caveats.",
-     "Re-check hazards.fema.gov/nri/ once service recovers if post-2023 county NRI values are needed.", "NRIDECK"),
+    ("F-18", "Low", "FEMA National Risk Index live county scores still unpublished; legacy portal redirects to RAPT",
+     "hazards.fema.gov/nri/ returned HTTP 500 on 2026-11-12. Re-checked 2026-11-16: the legacy portal now redirects to FEMA's Resilience Analysis and Planning Tool (RAPT), which hosts the National Risk Index v1.20 dataset update. Archived FEMA PrepToolkit v1.19.0 (March 2023) county figures ($3.9B EAL, $5.3B Risk Value, #1 nationally) are published with vintage caveats.",
+     "Extract the current Los Angeles County scores from the official RAPT app or its v1.20 data download if post-2023 values are needed; the row stays blank until then.", "NRIDECK"),
     ("F-19", "High", "Inherited companion layers carry unsupported numbers",
      "Several repository-only dashboards publish scenario weights, cap rates and pathway rankings that their cited official sources do not establish.",
      "Those directories are excluded from the live site; see Repo review for the file list.", "SECQ3"),
@@ -1235,8 +1246,8 @@ INFO_REGISTER = [
 SUGGESTIONS = [
     ("SG-01", "Decision tool", "After-tax net-proceeds worksheet",
      "Turns the verified tax rules into one number the owner can compare with the hold case.",
-     "A: an offline spreadsheet template with empty input cells, kept out of the public site. B: an on-page calculator that runs only in the browser — IMPLEMENTED 2026-11-16 as calculator.html, with the no-network/no-storage gate. C: leave it to the CPA.",
-     "The owner brief mandates a browser calculator and an after-tax module, so option B was selected by the owner. Inputs stay in the reader's browser; nothing is stored, transmitted or published; the site's no-script rule was relaxed for this one page with strict offline checks. Verify results with the CPA.", "ULA"),
+     "A: an offline spreadsheet template with empty input cells, kept out of the public site. B: an on-page calculator that runs only in the browser. C: leave it to the CPA.",
+     "CHOSEN 2026-11-16 (session 7f1087ce): option B is implemented as calculator.html — inline, network-free JavaScript; no input is stored or transmitted; the no-script rule was relaxed only for that page and logged in COORDINATION.md.", "ULA"),
     ("SG-02", "Decision tool", "Lease abstract checklist",
      "Answers Q-01 to Q-03 in one pass and stops the decision resting on the 'NNN' label.",
      "A: a printable blank checklist page. B: an offline template only. C: none.",
@@ -1244,7 +1255,7 @@ SUGGESTIONS = [
     ("SG-03", "Decision tool", "Parcel hazard screening sheet",
      "Replaces regional hazard context with the parcel's actual zone status for earthquake, fire and flood.",
      "A: the owner runs the three official viewers privately and records the result offline. B: publish only 'checked / not checked' status. C: none.",
-     "The address must never be entered into this repository. One hour for the owner. The public part of A — the checklist of the official viewers and the private recording steps — was added to the Hazards page on 2026-11-16; the parcel's actual zone results stay offline.", "EQZAPP"),
+     "The address must never be entered into this repository. One hour for the owner. The public part of A — the checklist of the official viewers and the private recording steps — was added to the Hazards page on 2026-11-16 (session 87ca5536); the parcel's actual zone results stay offline.", "EQZAPP"),
     ("SG-04", "Decision tool", "Dated trigger timeline",
      "Shows when the notice windows, the option dates and a possible marketing period fall; no deadline is verified until the lease is read.",
      "A: an offline timeline with real dates. B: a public timeline in relative months only. C: both.",
@@ -1260,7 +1271,7 @@ SUGGESTIONS = [
     ("SG-07", "Evidence", "Neighbourhood module at tract level",
      "City and county averages cannot describe one corner of Los Angeles.",
      "A: the owner supplies only a census tract and the site publishes tract tables with margins of error. B: the analysis stays offline. C: none.",
-     "A tract narrows the location to a few thousand people; the owner must decide whether that is acceptable. On 2026-11-16 the public part of B was added to the Geography page: a five-step private workflow using the Census Geocoder, data.census.gov, LEHD OnTheMap, LADOT counts and the CDE directory, so tract-level evidence can be gathered without publishing any location.", "CITY"),
+     "A tract narrows the location to a few thousand people; the owner must decide whether that is acceptable. On 2026-11-16 the public part of B was added to the Geography page (session 87ca5536): a five-step private workflow using the Census Geocoder, data.census.gov, LEHD OnTheMap, LADOT counts and the CDE directory, so tract-level evidence can be gathered without publishing any location.", "CITY"),
     ("SG-08", "Evidence", "County hazard scores from the federal risk index",
      "Adds an official composite comparison of county hazard exposure; the cell is blank today.",
      "A: use the official data download. B: leave blank.",
@@ -1280,7 +1291,7 @@ SUGGESTIONS = [
     ("SG-12", "Layout", "Search and filter on the master register",
      "More than 220 rows are hard to scan on a phone.",
      "A: a text filter, which needs JavaScript. B: more anchors and per-category jump links, no script. C: leave as is.",
-     "A relaxes the no-script rule; B does not.", "CITY"),
+     "ADOPTED 2026-11-16: option A is implemented as a small inline text filter on master.html (runs locally; no external resources).", "CITY"),
     ("SG-13", "Layout", "One-page printable brief for advisers",
      "Gives a broker, CPA or attorney the recommendation, the gates and the open questions on a single sheet.",
      "A: a print stylesheet for the executive summary. B: a separate brief page. C: none.",
@@ -1307,8 +1318,8 @@ SUGGESTION_PATHS = [
      "No private fact reaches the repository or the web.", "IRS409"),
     ("Path 2 · Interactive site",
      "Path 1 plus SG-01B and SG-12A",
-     "Calculator and table filter on the site itself. SG-01B is implemented (calculator.html, 2026-11-16); the table filter (SG-12A) remains a proposal.",
-     "Inputs stay in the browser; the no-JavaScript rule and its checks were relaxed for the calculator page only, under strict no-network/no-storage gates.", "ULA"),
+     "Calculator and table filter on the site itself.",
+     "ADOPTED 2026-11-16 for SG-01B and SG-12A: the owner's standing brief requires a private calculator that runs in the reader's browser. Inputs stay in the browser; the no-script rule was relaxed only for inline, network-free JavaScript on calculator.html and the master-register filter, with all external-resource, tracking and privacy rules unchanged.", "ULA"),
     ("Path 3 · Neighbourhood depth",
      "Path 1 plus SG-07A, SG-08 and SG-09",
      "Tract-level trend evidence alongside the regional figures.",

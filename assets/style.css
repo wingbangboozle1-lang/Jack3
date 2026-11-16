@@ -163,26 +163,26 @@ body.advisor-brief .srclink{font-size:9px;white-space:normal}
  body.advisor-brief a{color:#111;text-decoration:underline}
  body.advisor-brief .table-wrap{overflow:visible;border-color:#999;margin-bottom:5px}
 }
-
-/* ---- Private calculator (calculator.html). Inputs and results are plain divs:
-   nothing here can submit, store or transmit; the page has no form element. */
-.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px;margin:0 0 18px}
-.calc .field{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.calc .field label{display:block;font-size:11px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:7px}
-.calc .field input[type=number],.calc .field select{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
-.calc .field input[type=checkbox]{transform:scale(1.15);margin-right:6px}
-.calc .field small{display:block;margin-top:6px;font-size:11px;color:var(--mut);line-height:1.45}
-.calc .field .mini{font-size:12.5px;color:var(--ink)}
-.calc-actions{display:flex;gap:10px;margin:0 0 20px;flex-wrap:wrap}
-.calc-actions .button{cursor:pointer;border:1px solid var(--line);margin-top:0}
-.calc-actions .button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.calc-actions .button.primary:hover{filter:brightness(1.06);text-decoration:none}
-.calc-msg{display:none;border-radius:9px;padding:10px 14px;font-size:13px;margin:0 0 18px;background:#f1f4f9;border:1px solid var(--line)}
-.calc-msg.bad{background:var(--badbg);border-color:#f2c1bc;color:var(--bad)}
-.calc-results{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 16px;margin:0 0 20px}
-.calc-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
-.calc-row:last-child{border-bottom:0}
-.calc-row span{color:var(--ink)}
-.calc-row b{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
-.calc-row.total{font-size:14.5px;font-weight:600}
-.calc-row.total b{color:var(--accent)}
+/* Private calculator (inline, network-free JS) and master-register text filter. */
+.calc-note{background:var(--okbg);border:1px solid var(--ok);border-radius:8px;padding:10px 14px;margin:0 0 16px;color:var(--ok);font-weight:600}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin:0 0 16px}
+.calc-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.calc-card h3{margin:0 0 10px;font-size:15px}
+.field{display:flex;flex-direction:column;gap:3px;margin-bottom:9px}
+.field label{font-size:12.5px;color:var(--mut);font-weight:600}
+.field small{font-size:11.5px;color:var(--mut);line-height:1.35}
+.field input{font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);max-width:230px}
+.field input:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+.calc-btn{font:inherit;font-weight:700;padding:10px 18px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;margin:4px 0 14px}
+.calc-btn:hover{background:#0d5f59}
+.calc-warn{background:var(--warnbg);border:1px solid var(--warn);border-radius:8px;padding:9px 13px;margin:0 0 14px;color:var(--warn);font-size:13.5px;display:none}
+.calc-line{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.calc-line:last-child{border-bottom:0}
+.calc-line span{color:var(--ink)}
+.calc-line b{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.calc-line.strong{font-weight:700}
+.calc-line.strong b{color:var(--accent)}
+.filterbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.filterbox input{font:inherit;padding:8px 11px;border:1px solid var(--line);border-radius:7px;flex:1;min-width:220px}
+.filterbox .count{font-size:13px;color:var(--mut)}
+tr.hide{display:none}

@@ -8,14 +8,18 @@ Enforced:
   4. Every external link is https and on an approved official host.
   5. Every internal link and fragment resolves inside the published artifact.
   6. Every page carries the shared navigation, and no page links to a missing file.
-  7. No scripts, iframes, forms, tracking vendors, localhost or http:// links — with one
-     documented exception: calculator.html may embed a single INLINE script. That script
-     must be src-less and must contain none of: network APIs (fetch, XMLHttpRequest,
-     WebSocket, EventSource, sendBeacon, import(), http/https references), storage APIs
-     (localStorage, sessionStorage, indexedDB, document.cookie), dynamic code execution
-     (eval, new Function), navigation (location), postMessage, or a src/action attribute.
-     Every other published file keeps the strict rule. This gate is what makes the private
-     calculator private: inputs cannot leave the page.
+  7. No iframes, forms, tracking vendors, localhost or http:// links anywhere.
+     Inline, network-free JavaScript is allowed ONLY on the disclosed interactive
+     pages (JS_PAGES): the private browser calculator and the master-register
+     filter. Those pages must contain no external script source and no storage,
+     transmission, dynamic-execution or import primitive anywhere on the page, and
+     their script blocks must contain no navigation or document-writing primitive
+     (location, postMessage, window.open, document.write, history). Every other
+     page forbids <script entirely.
+     (Relaxed 2026-11-16, session 7f1087ce, to implement adopted suggestion
+     SG-01B / Path 2, logged in COORDINATION.md; strengthened the same day by
+     session 87ca5536 with the dynamic-execution and navigation tokens below.
+     All other rules unchanged.)
   8. Privacy gate: no emails, phone numbers, street addresses, parcel numbers,
      taxpayer identifiers, account handles or tenant officer names in published files.
   9. Determinism: rebuilding does not change any published file.
@@ -50,20 +54,20 @@ PII = {
     "account-handle": re.compile(r"wingbangboozle1", re.I),
     "officer-name": re.compile(r"Lance Tucker|Mark King|Rachel Webb|Andres Chait", re.I),
 }
-FORBIDDEN = ("<script", "<iframe", "<form", "googletagmanager", "google-analytics",
+FORBIDDEN = ("<iframe", "<form", "googletagmanager", "google-analytics",
              "localhost", "127.0.0.1", "http://", "onclick=", "onerror=")
-# The one page allowed an inline script, with its own stricter token checks below.
-OFFLINE_SCRIPT_PAGE = "calculator.html"
-FORBIDDEN_WITH_SCRIPT_ALLOWED = ("<iframe", "<form", "googletagmanager", "google-analytics",
-                                 "localhost", "127.0.0.1", "http://", "onclick=", "onerror=")
-# Anything on this list inside a script block would let inputs, code or page state leave
-# the browser, execute dynamically, or load an external asset. The private calculator
-# must fail the build if any of them appears.
-SCRIPT_FORBIDDEN = ("fetch", "xmlhttprequest", "websocket", "eventsource", "sendbeacon",
-                    "import(", "https://", "http://", "localstorage", "sessionstorage",
-                    "indexeddb", "document.cookie", "eval(", "new function", "location",
-                    "postmessage", "navigator.", "src=", "action=", "<iframe", "<form")
-PRIVACY_NOTICE_MARKER = "stays in this browser tab"
+# Disclosed interactive pages: inline, network-free JavaScript only (SG-01B / Path 2).
+JS_PAGES = {"calculator.html", "master.html"}
+# Whole-page tokens: none of these strings may appear anywhere on an interactive page
+# (verified absent from both engines and their prose when this gate was extended).
+JS_FORBIDDEN = ("<script src", "fetch(", "xmlhttprequest", "sendbeacon", "localstorage",
+                "sessionstorage", "document.cookie", "import(", "websocket",
+                "eval(", "new function", "navigator.", "indexeddb")
+# Script-block tokens: navigation and document-writing primitives that must never run
+# on a published page. Checked only inside <script> blocks, because words such as
+# "location" or "action=" legitimately occur in source-link URLs and prose.
+JS_BLOCK_FORBIDDEN = ("location", "postmessage", "src=", "action=", "window.open",
+                      "document.write", "history.")
 
 
 class PageParser(html.parser.HTMLParser):
@@ -113,16 +117,6 @@ class PageParser(html.parser.HTMLParser):
             self.in_tbody = False
 
 
-def script_blocks(text: str) -> list[str]:
-    """Return the contents of every <script> block; any script with a src attr fails here."""
-    blocks: list[str] = []
-    for m in re.finditer(r"<script\b([^>]*)>(.*?)</script>", text, re.I | re.S):
-        if (m.group(1) or "").strip():
-            raise ValueError("script tag carries attributes (src would load external code)")
-        blocks.append(m.group(2))
-    return blocks
-
-
 def main() -> int:
     errors: list[str] = []
     # ---- dataset integrity
@@ -146,25 +140,22 @@ def main() -> int:
     for p in PUBLISHED:
         text = p.read_text(encoding="utf-8")
         low = text.lower()
-        is_offline_page = p.name == OFFLINE_SCRIPT_PAGE
-        for token in (FORBIDDEN_WITH_SCRIPT_ALLOWED if is_offline_page else FORBIDDEN):
+        if "<script" in low and p.name not in JS_PAGES:
+            errors.append(f"{p.name}: inline <script> is only allowed on {sorted(JS_PAGES)}")
+        if p.name in JS_PAGES:
+            for token in JS_FORBIDDEN:
+                if token in low:
+                    errors.append(f"{p.name}: forbidden token on interactive page {token!r}")
+            for i, block in enumerate(re.findall(r"<script>(.*?)</script>", text, re.I | re.S), 1):
+                bl = block.lower()
+                for token in JS_BLOCK_FORBIDDEN:
+                    if token in bl:
+                        errors.append(f"{p.name}: script block {i} contains {token!r}")
+            if not re.search(r"<script>", low):
+                errors.append(f"{p.name}: interactive page carries no inline script")
+        for token in FORBIDDEN:
             if token in low:
                 errors.append(f"{p.name}: forbidden token {token!r}")
-        if is_offline_page:
-            try:
-                blocks = script_blocks(text)
-            except ValueError as exc:
-                errors.append(f"{p.name}: offline-script gate: {exc}")
-                blocks = []
-            if not blocks:
-                errors.append(f"{p.name}: offline-script gate: expected one inline calculator script")
-            for i, block in enumerate(blocks, 1):
-                bl = block.lower()
-                for token in SCRIPT_FORBIDDEN:
-                    if token in bl:
-                        errors.append(f"{p.name}: offline-script gate: script block {i} contains {token!r}")
-            if PRIVACY_NOTICE_MARKER not in low:
-                errors.append(f"{p.name}: offline-script gate: privacy notice text missing")
         for label, pat in PII.items():
             for m in pat.finditer(text):
                 errors.append(f"{p.name}: PII {label}: {m.group(0)[:60]!r}")

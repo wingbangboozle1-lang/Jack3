@@ -1,12 +1,30 @@
 #!/usr/bin/env node
 /**
- * Regression harness for the private calculator's inline arithmetic engine.
+ * Regression harness for the private calculator's inline arithmetic engines
+ * (calculator.html: the sell-versus-hold worksheet from session 7f1087ce, plus the
+ * short-lease-discount module from session 87ca5536).
  *
- * The engine (embedded in calculator.html by scripts/build_canonical.py) is the only
- * script allowed on the published site, so its arithmetic is tested line by line here
- * against an independent re-implementation of the same verified rules. The harness
- * stubs a minimal DOM — the engine performs no network or storage access by design
- * (enforced by scripts/validate.py), so a stub is sufficient and the test is offline.
+ * The engines are the only scripts allowed on the published site apart from the
+ * master-register filter, so their arithmetic is tested line by line here against an
+ * independent re-implementation of the same verified rules. The harness stubs a minimal
+ * DOM — the engines perform no network or storage access by design (enforced by
+ * scripts/validate.py), so a stub is sufficient and the test runs offline.
+ *
+ * Verified rules under test (each with its official source on the calculator page):
+ *   - City base transfer tax: $2.25 per $500 or FRACTIONAL PART of the conveyed value
+ *     (value rounded up to the next $500) — ULA FAQ, City of LA Office of Finance.
+ *   - County documentary transfer tax: $0.55 per $500 or fractional part — LA County
+ *     Registrar-Recorder.
+ *   - Measure ULA: 4% above $5,400,000 and below $10,900,000; 5.5% at or above
+ *     $10,900,000; percentage-based (no per-$500 rounding) — ULA FAQ.
+ *   - Unrecaptured §1250 gain taxed at the owner's recapture rate (25% maximum);
+ *     remaining gain at the owner's LTCG rate; NIIT 3.8% on the gain when selected;
+ *     California ordinary-income treatment on the whole gain — IRS Topics 409/559, FTB.
+ *   - Hold case: PV of the rent stream at the owner's escalation and discount rates,
+ *     plus an optional after-tax exit run through the same rules, discounted — FRED.
+ *   - Short-lease discount: implied price from NOI/cap, implied cap from an offer, and
+ *     the discount per year of remaining term between the longest- and shortest-term
+ *     offers — method only; no market number is invented.
  *
  * Run:  node tools/calculator_engine_test.js
  * Exit: 0 all checks pass; 1 otherwise. Requires node (any recent version).
@@ -23,60 +41,62 @@ if (!file) {
   process.exit(1);
 }
 const html = fs.readFileSync(file, 'utf8');
-const m = html.match(/<script>([\s\S]*?)<\/script>/);
-if (!m) { console.error('FAIL: no inline script found in ' + file); process.exit(1); }
+const blocks = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => m[1]);
+if (blocks.length === 0) { console.error('FAIL: no inline script found in ' + file); process.exit(1); }
 
 // ---- minimal DOM stub -------------------------------------------------------
 const els = {};
 function el(id) {
   if (!els[id]) {
     els[id] = {
-      id, value: '', checked: false, tagName: undefined, textContent: '', innerHTML: '',
-      style: {}, className: '', handlers: {},
+      id, value: '', checked: false, tagName: 'INPUT', textContent: '', innerHTML: '',
+      style: {}, handlers: {},
       addEventListener(ev, fn) { this.handlers[ev] = fn; },
+      appendChild() {},
     };
   }
   return els[id];
 }
 global.document = {
   getElementById: el,
-  querySelectorAll: (sel) => {
-    if (!sel.includes('input')) { return []; }
-    const out = [];
-    for (const k of Object.keys(els)) {
-      els[k].tagName = 'INPUT';
-      out.push(els[k]);
-    }
-    return out;
-  },
+  querySelectorAll: () => [],
+  createElement: (tag) => ({ tag, textContent: '', style: {} }),
 };
-eval(m[1]);
+for (const block of blocks) { eval(block); }
 
 // ---- helpers ----------------------------------------------------------------
 function set(id, v) { el(id).value = String(v); }
-function run(id) { el(id).handlers.click(); }
+function fire(id, ev) { if (el(id).handlers[ev]) el(id).handlers[ev](); }
 function get(id) { return el(id).textContent; }
-const M = v => '$' + Math.round(v).toLocaleString('en-US');
+const M = v => (Math.round(v) < 0 ? '-' : '') + '$' + Math.abs(Math.round(v)).toLocaleString('en-US');
 
 // ---- independent re-implementation of the verified rules --------------------
-// Transfer taxes: city base $2.25 per $500 or fractional part (rounded up to the next
-// $500); county $0.55 per $500 (same rounding); ULA 4% above $5,400,000 and 5.5% at or
-// above $10,900,000 (percentage-based, no rounding). Income taxes: unrecaptured §1250
-// gain at a 25% maximum rate; remainder at the owner's LTCG rate; NIIT 3.8% on the gain
-// (simplification); California ordinary-income treatment on the whole gain.
-function taxes(gross, inCity, basis, depr, sellPct, fed, ca, niit) {
-  const net = gross * (1 - sellPct);
-  const base = inCity ? Math.ceil(gross / 500) * 2.25 : 0;
-  const county = Math.ceil(gross / 500) * 0.55;
-  const ula = inCity ? (gross >= 10900000 ? 0.055 * gross : gross > 5400000 ? 0.04 * gross : 0) : 0;
-  const gain = net - (basis - depr);
-  const pos = Math.max(gain, 0);
-  const recap = 0.25 * Math.min(Math.max(depr, 0), pos);
-  const fedT = fed * Math.max(gain - depr, 0);
-  const niitT = niit ? 0.038 * pos : 0;
-  const caT = ca * pos;
-  const total = base + county + ula + recap + fedT + niitT + caT;
-  return { net, base, county, ula, gain, recap, fedT, niitT, caT, total };
+function transferTaxes(v) {
+  const base = Math.ceil(v / 500) * 2.25;
+  const ula = v >= 10900000 ? v * 0.055 : v > 5400000 ? v * 0.04 : 0;
+  const county = Math.ceil(v / 500) * 0.55;
+  return { base, ula, county };
+}
+function gainTaxes(gain, depr, ltcg, recapRate, ca, niit) {
+  // A negative gain (sale below basis) produces no tax on this line — every portion
+  // clamped at zero, matching the engine and standard single-asset arithmetic.
+  const positive = Math.max(0, gain);
+  const deprGain = Math.max(0, Math.min(depr, positive));
+  const otherGain = positive - deprGain;
+  const recap = deprGain * recapRate;
+  const fed = otherGain * ltcg;
+  const niitT = niit ? positive * 0.038 : 0;
+  const caT = positive * ca;
+  const total = recap + fed + niitT + caT;
+  return { deprGain, otherGain, recap, fed, niitT, caT, total };
+}
+function saleCase(o) {
+  const realised = o.price * (1 - o.sellcost);
+  const tt = transferTaxes(o.price);
+  const gain = realised - o.basis;
+  const t = gainTaxes(gain, o.depr, o.ltcg, o.recap, o.ca, o.niit);
+  const afterTax = realised - tt.base - tt.ula - tt.county - o.debt - t.total;
+  return { realised, tt, gain, t, afterTax };
 }
 
 // ---- checks -----------------------------------------------------------------
@@ -87,105 +107,99 @@ function check(label, actual, expected) {
   console.log((ok ? 'PASS' : 'FAIL') + ' | ' + label + (ok ? '' : ' | actual=' + actual + ' expected=' + expected));
 }
 
-// Case 1: full sale scenario, City of LA, tier 1.
-set('c1_price', '8000000'); set('c1_basis', '3000000'); set('c1_depr', '714286');
-set('c1_sellcost', '2'); set('c1_debt', '0'); set('c1_fedrate', '20'); set('c1_carate', '9.3');
-el('c1_juris').value = 'city'; el('c1_niit').checked = true;
-run('c1_go');
-const t1 = taxes(8000000, true, 3000000, 714286, 0.02, 0.20, 0.093, true);
-check('city base transfer tax', get('r1_base'), M(t1.base));
-check('county DTT', get('r1_county'), M(t1.county));
-check('ULA tier 1 amount', get('r1_ula'), M(t1.ula));
-check('ULA tier 1 label', get('r1_tier'), 'Tier 1 — 4% above $5,400,000');
-check('net price after costs', get('r1_net'), M(t1.net));
-check('adjusted basis', get('r1_adj'), M(3000000 - 714286));
-check('total gain', get('r1_gain'), M(t1.gain));
-check('recapture at 25% max', get('r1_recap'), M(t1.recap));
-check('federal LTCG on remainder', get('r1_fed'), M(t1.fedT) + ' at 20.0% on the non-recapture gain');
-check('NIIT simplified', get('r1_niit'), M(t1.niitT) + ' (3.8% — simplified; your MAGI governs)');
-check('California ordinary treatment', get('r1_ca'), M(t1.caT) + ' at 9.3% (ordinary-income treatment)');
-check('total taxes and costs', get('r1_total'), M(t1.total));
-check('after-tax proceeds', get('r1_proceeds'), M(t1.net - t1.total));
-check('proceeds after debt payoff', get('r1_proceeds2'), M(t1.net - t1.total) + ' after debt payoff of $0');
+function fillSale(o) {
+  set('in-price', o.price); set('in-basis', o.basis); set('in-depr', o.depr);
+  set('in-debt', o.debt); set('in-sellcost', o.sellcost * 100);
+  set('in-ltcg', o.ltcg * 100); set('in-recap', o.recap * 100); set('in-ca', o.ca * 100);
+  el('in-niit').checked = o.niit;
+}
+function fillHold(o) {
+  set('in-noi', o.noi); set('in-esc', o.esc); set('in-years', o.years);
+  set('in-exit', o.exit); set('in-disc', o.disc);
+}
+function runSale(o) { fillSale(o); fillHold({ noi: 300000, esc: 3, years: 5, exit: '', disc: 8 }); fire('calc-run', 'click'); }
 
-// Case 2: ULA tier boundary at exactly $10,900,000; zero gain.
-set('c1_price', '10900000'); set('c1_basis', '10900000'); set('c1_depr', '0');
-set('c1_sellcost', ''); set('c1_fedrate', '0'); set('c1_carate', '0'); el('c1_niit').checked = false;
-run('c1_go');
-const t2 = taxes(10900000, true, 10900000, 0, 0, 0, 0, false);
-check('tier 2 boundary label', get('r1_tier'), 'Tier 2 — 5.5% at or above $10,900,000');
-check('tier 2 amount', get('r1_ula'), M(t2.ula));
-check('zero gain', get('r1_gain'), M(t2.gain));
-check('boundary proceeds', get('r1_proceeds'), M(t2.net - t2.total));
+// Case 1: full sale scenario (round $8,000,000 — per-$500 rounding is exact here).
+const o1 = { price: 8000000, basis: 3000000, depr: 714286, debt: 0, sellcost: 0.02, ltcg: 0.20, recap: 0.25, ca: 0.093, niit: true };
+runSale(o1);
+const s1 = saleCase(o1);
+check('base transfer tax (round price)', get('o-base'), M(s1.tt.base));
+check('ULA tier 1 surcharge', get('o-ula'), M(s1.tt.ula));
+check('county transfer tax (round price)', get('o-county'), M(s1.tt.county));
+check('amount realised after costs', get('o-realised'), M(s1.realised));
+check('capital gain', get('o-gain'), M(s1.gain));
+check('§1250 portion', get('o-deprgain'), M(s1.t.deprGain));
+check('recapture tax at 25%', get('o-recap'), M(s1.t.recap));
+check('federal tax on remaining gain', get('o-fed'), M(s1.t.fed));
+check('NIIT 3.8%', get('o-niit'), M(s1.t.niitT));
+check('California tax', get('o-ca'), M(s1.t.caT));
+check('after-tax proceeds', get('o-aftertax'), M(s1.afterTax));
 
-// Case 2b: below-threshold city sale.
-set('c1_price', '5000000'); set('c1_basis', '5000000'); set('c1_fedrate', '0'); set('c1_carate', '0');
-run('c1_go');
-const t2b = taxes(5000000, true, 5000000, 0, 0, 0, 0, false);
-check('no-ULA label', get('r1_tier'), 'At or below $5,400,000 — no ULA surcharge');
-check('no-ULA amount', get('r1_ula'), M(t2b.ula));
-check('no-ULA proceeds', get('r1_proceeds'), M(t2b.net - t2b.total));
+// Case 2: per-$500 rounding on a non-divisible price ($8,000,001).
+const o2 = { ...o1, price: 8000001 };
+runSale(o2);
+const s2 = saleCase(o2);
+check('base tax rounds UP per $500', get('o-base'), M(s2.tt.base));
+check('county tax rounds UP per $500', get('o-county'), M(s2.tt.county));
+check('ULA stays percentage-based', get('o-ula'), M(s2.tt.ula));
 
-// Case 2c: county jurisdiction — city taxes must not apply.
-set('c1_price', '6000000'); set('c1_basis', '3000000'); set('c1_depr', '300000');
-set('c1_fedrate', '15'); set('c1_carate', '9.3'); el('c1_niit').checked = true; set('c1_sellcost', '');
-el('c1_juris').value = 'county';
-run('c1_go');
-const t2c = taxes(6000000, false, 3000000, 300000, 0, 0.15, 0.093, true);
-check('county: base tax suppressed', get('r1_base'), 'not applied (outside the city, as entered)');
-check('county: ULA suppressed', get('r1_ula'), 'not applied');
-check('county: county DTT only', get('r1_county'), M(t2c.county));
-check('county: proceeds', get('r1_proceeds'), M(t2c.net - t2c.total));
+// Case 3: ULA tier boundary at exactly $10,900,000 (5.5%) and just below (4%).
+const o3 = { ...o1, price: 10900000 };
+runSale(o3);
+check('ULA tier 2 at boundary', get('o-ula'), M(transferTaxes(10900000).ula));
+const o3b = { ...o1, price: 10899999 };
+runSale(o3b);
+check('ULA tier 1 just below boundary', get('o-ula'), M(transferTaxes(10899999).ula));
 
-// Case 3: sell-now vs hold, 5-year horizon.
-set('c1_price', '8000000'); set('c1_basis', '3000000'); set('c1_depr', '714286');
-set('c1_sellcost', '2'); set('c1_debt', '0'); set('c1_fedrate', '20'); set('c1_carate', '9.3');
-el('c1_juris').value = 'city'; el('c1_niit').checked = true; run('c1_go');
-const proceedsNow = t1.net - t1.total;
-set('c2_rent', '300000'); set('c2_renttax', '30'); set('c2_growth', '3'); set('c2_disc', '8');
-set('c2_years', '5'); set('c2_pricegrowth', '2'); set('c2_reinvest', '6'); run('c2_go');
+// Case 4: hold case, rent stream only (exit blank).
+fillSale(o1);
+fillHold({ noi: 300000, esc: 3, years: 5, exit: '', disc: 8 });
+fire('calc-run', 'click');
 let pv = 0;
-for (let t = 1; t <= 5; t++) { pv += 300000 * Math.pow(1.03, t) * 0.7 / Math.pow(1.08, t); }
-const grossH = 8000000 * Math.pow(1.02, 5);
-const tH = taxes(grossH, true, 3000000, 714286, 0.02, 0.20, 0.093, true);
-const proceedsH = tH.net - tH.total;
-const hold = pv + proceedsH / Math.pow(1.08, 5);
-const sale = proceedsNow * Math.pow(1.06, 5);
-check('hold: proceeds used', get('r2_proceeds'), M(proceedsNow));
-check('hold: pv of after-tax rent', get('r2_pvrent'), M(pv));
-check('hold: year-1 rent', get('r2_y1'), M(300000 * 0.7) + ' after tax in year 1');
-check('hold track total', get('r2_hold'), M(hold));
-check('sale track total', get('r2_sale'), M(sale) + ' at your 6.00% reinvestment rate');
-check('neutral difference', get('r2_diff'),
-  M(hold - sale) + ' — hold track minus sale-now track; positive means the hold path computes larger on your inputs');
+for (let t = 1; t <= 5; t++) { pv += 300000 * Math.pow(1.03, t) / Math.pow(1.08, t); }
+check('PV of rent stream (rent modelled pre-tax)', get('o-holdnoi'), M(pv));
+check('hold total equals rent PV without exit', get('o-holdtotal'), M(pv));
+check('exit lines cleared without exit price', get('o-exitpv'), '—');
 
-// Case 4: short-lease discount from entered quotes.
-set('c3_noi', '300000');
-set('c3_p0', '4800000'); set('c3_t0', '4'); set('c3_c0', '6.25');
-set('c3_p1', '5100000'); set('c3_t1', '9'); set('c3_c1', '');
-set('c3_p2', ''); set('c3_t2', ''); set('c3_c2', '');
-run('c3_go');
-const r3 = el('r3_rows').innerHTML.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-check('quote A implied by cap', r3.includes(M(300000 / 0.0625) + ' implied by the 6.25% cap'), true);
-check('quote B implied cap from offer', r3.includes((300000 / 5100000 * 100).toFixed(2) + '% implied cap from the offer'), true);
-check('per-year remaining-term discount', r3.includes(M((5100000 - 4800000) / 5) + ' per year of remaining term (B vs A)'), true);
+// Case 5: hold case with an after-tax exit at year 5.
+fillSale(o1);
+fillHold({ noi: 300000, esc: 3, years: 5, exit: 9000000, disc: 8 });
+fire('calc-run', 'click');
+const exitRealised = 9000000 * 0.98;
+const exitTT = transferTaxes(9000000);
+const exitGain = exitRealised - 3000000;
+const exitTax = gainTaxes(exitGain, 714286, 0.20, 0.25, 0.093, true);
+const afterTaxExit = exitRealised - exitTT.base - exitTT.ula - exitTT.county - 0 - exitTax.total;
+const pvExit = afterTaxExit / Math.pow(1.08, 5);
+check('exit transfer taxes (all three)', get('o-exittax'), M(exitTT.base + exitTT.ula + exitTT.county));
+check('after-tax exit proceeds', get('o-exitaftertax'), M(afterTaxExit));
+check('PV of after-tax exit', get('o-exitpv'), M(pvExit));
+check('hold-case total', get('o-holdtotal'), M(pv + pvExit));
+check('neutral verdict wording', get('calc-verdict').includes('This is arithmetic, not a recommendation.'), true);
 
-// Case 5: blank inputs must produce honest errors and cleared outputs.
-el('calc_clear').handlers.click();
-run('c1_go'); run('c2_go'); run('c3_go');
-check('blank module 1 errors honestly', el('m1_msg').className.includes('bad'), true);
-check('blank module 2 errors honestly', el('m2_msg').className.includes('bad'), true);
-check('blank module 3 errors honestly', el('m3_msg').className.includes('bad'), true);
-check('cleared proceeds output', get('r1_proceeds'), '—');
+// Case 6: short-lease discount from entered quotes.
+set('q-noi', '300000');
+set('q-p0', '4800000'); set('q-t0', '4'); set('q-c0', '6.25');
+set('q-p1', '5100000'); set('q-t1', '9'); set('q-c1', '');
+set('q-p2', ''); set('q-t2', ''); set('q-c2', '');
+fire('q-run', 'click');
+const qout = el('q-out').innerHTML;
+check('quote A implied by cap', qout.includes(M(300000 / 0.0625) + ' implied by the 6.25% cap'), true);
+check('quote B implied cap from offer', qout.includes((300000 / 5100000 * 100).toFixed(2) + '% implied cap from the offer'), true);
+check('per-year remaining-term discount', qout.includes(M((5100000 - 4800000) / 5) + ' per year of remaining term (B vs A)'), true);
 
-// Case 6: sale below basis — no invented positive taxes.
-set('c1_price', '2000000'); set('c1_basis', '3000000'); set('c1_depr', '0');
-set('c1_sellcost', '0'); set('c1_fedrate', '15'); set('c1_carate', '9.3');
-el('c1_niit').checked = true; el('c1_juris').value = 'city';
-run('c1_go');
-const t6 = taxes(2000000, true, 3000000, 0, 0, 0.15, 0.093, true);
-check('loss disclosed', get('r1_gain'), M(t6.gain) + ' (a loss — confirm treatment with your CPA)');
-check('no tax on a loss', get('r1_ca'), M(t6.caT) + ' at 9.3% (ordinary-income treatment)');
+// Case 7: quote module honesty on missing inputs.
+set('q-noi', ''); fire('q-run', 'click');
+check('missing NOI errors honestly', el('q-msg').textContent.includes('no quote is invented here'), true);
+set('q-noi', '300000'); set('q-p1', ''); set('q-t1', ''); fire('q-run', 'click');
+check('fewer than two quotes errors honestly', el('q-msg').textContent.includes('at least two real quotes'), true);
+
+// Case 8: sale case with a loss — no invented positive income taxes.
+const o8 = { price: 2000000, basis: 3000000, depr: 0, debt: 0, sellcost: 0, ltcg: 0.15, recap: 0.25, ca: 0.093, niit: true };
+runSale(o8);
+const s8 = saleCase(o8);
+check('loss computed honestly', get('o-gain'), M(s8.gain));
+check('zero tax on a loss', get('o-ca'), M(s8.t.caT));
 
 console.log(failures === 0 ? 'ALL ENGINE CHECKS PASS' : failures + ' FAILURE(S)');
 process.exit(failures > 0 ? 1 : 0);
