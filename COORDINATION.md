@@ -2393,7 +2393,7 @@ While PR #87 was open, session `a1a7af0c` merged PR #86, advancing `main` from `
 | A2 | done | Baseline checks passed; final-tree checks remain in A5. |
 | A3 | done | Browser-only calculator generated and safety-guarded. |
 | A4 | done | Current README and suggestion/flag wording reconciled; scope amendment logged. |
-| A5 | in progress | Full post-change gates and dated record are complete; PR, merge and Pages deployment confirmation pending. |
+| A5 | in progress | Full post-change gates and dated record are complete; PR #108 is open and initial GitHub Actions checks passed, including Jekyll build/artifact comparison; merge and Pages deployment confirmation pending. |
 
 ## A5 pre-PR verification and source links (2026-11-16)
 
